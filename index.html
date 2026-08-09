@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#573a3e">
+  <meta name="description" content="轻轻敲开和泉纱雾的房门，探索画桌秘密、翻看日常衣橱与夜晚画稿的原创同人互动页面。">
+  <title>和泉纱雾的房门里</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23573A3E'/%3E%3Cpath d='M18 14h30v40H18z' fill='%23D88CA2'/%3E%3Ccircle cx='40' cy='35' r='3' fill='%23F7D46A'/%3E%3Cpath d='m23 19 5 4 5-4 5 4 5-4v10H23z' fill='%23EAF4F5'/%3E%3C/svg%3E">
+  <link rel="preload" href="assets/v3/hero-peek.png" as="image" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!--
+  THESIS: 把角色页变成一次轻轻敲门的拜访，拒绝左右双栏首屏和重复动漫卡片墙。
+  OWN-WORLD: 草莓粉墙纸、银蓝月光、薄荷文具与可可木门；门牌、猫爪印章和铅笔标签承担全部控件语言。
+  STORY: 访客在门口被偷看，获准进入后发现桌面秘密，翻衣橱相册，看画稿，最后收到晚安纸条。
+  FIRST VIEWPORT: 半掩木门占据左侧前景，纱雾从门缝握边偷看；手写房间牌贴在门上，敲门按钮位于门把下方，台词在右下稿纸上。
+  FORM: code-led 房门偷看叙事，用户钉选方向；seed key sagiri-door-v3-code-led；签名互动为敲门后的受惊—脸红—开门表情演出。
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+  -->
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+
+  <header class="door-nav" id="top">
+    <a class="mini-sign" href="#home" aria-label="回到房门口">
+      <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M7 5h18v22H7zM11 9h10v7H11z"/><circle cx="21" cy="21" r="1.5"/></svg>
+      <span>纱雾的房间</span>
+    </a>
+    <nav aria-label="房间导览">
+      <a href="#room">画桌</a>
+      <a href="#wardrobe">衣橱</a>
+      <a href="#gallery">画稿</a>
+      <a href="#goodnight">晚安</a>
+    </nav>
+    <span class="quiet-lamp"><i aria-hidden="true"></i>请小声一点</span>
+  </header>
+
+  <main id="main-content">
+    <section class="door-hero" id="home" aria-labelledby="hero-title">
+      <div class="corridor-note" aria-hidden="true">
+        <span>二楼</span>
+        <i></i>
+        <span>尽头</span>
+      </div>
+
+      <div class="door-scene" id="doorScene">
+        <div class="room-glimpse" aria-hidden="true"></div>
+        <img class="hero-character" id="heroCharacter" src="assets/v3/hero-peek.png" width="1122" height="1402" alt="银白长发、蓝眼睛的纱雾穿着粉色猫耳家居服，握着半掩的卧室门害羞偷看">
+
+        <div class="door-leaf" id="doorLeaf" aria-hidden="true">
+          <div class="room-plaque">
+            <span>不要突然开门</span>
+            <h1 id="hero-title">和泉纱雾<br><small>的小小画室</small></h1>
+            <i></i>
+          </div>
+          <span class="door-hanger">正在画画</span>
+          <span class="door-knob"></span>
+        </div>
+
+        <div class="knock-card">
+          <div class="door-subtitle" id="doorStatus" role="status" aria-live="polite">
+            <span>门里传来很轻的脚步声。</span>
+            <strong>“先敲门……我才会开。”</strong>
+          </div>
+          <p>门缝里，好像有一双蓝眼睛正在偷看你。</p>
+          <div class="knock-actions">
+            <button class="paw-button" id="knockButton" type="button" aria-controls="doorScene" aria-expanded="false">
+              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11.2 14.2c-2.1 0-3.7-2-3.7-4.4s1.6-4.3 3.7-4.3 3.6 2 3.6 4.3-1.6 4.4-3.6 4.4Zm9.6 0c-2 0-3.6-2-3.6-4.4s1.6-4.3 3.6-4.3 3.7 2 3.7 4.3-1.6 4.4-3.7 4.4ZM5.8 21.4c-1.8 0-3.3-1.7-3.3-3.8s1.5-3.8 3.3-3.8 3.2 1.7 3.2 3.8-1.4 3.8-3.2 3.8Zm20.4 0c-1.8 0-3.2-1.7-3.2-3.8s1.4-3.8 3.2-3.8 3.3 1.7 3.3 3.8-1.5 3.8-3.3 3.8ZM16 29c-5.2 0-8.5-2.2-8.5-5.5 0-3 2.2-7.3 5.2-8.5 1.8-.7 2.2 1 3.3 1s1.5-1.7 3.3-1c3 1.2 5.2 5.5 5.2 8.5 0 3.3-3.3 5.5-8.5 5.5Z"/></svg>
+              <span>轻轻敲门</span>
+            </button>
+            <button class="pencil-button voice-trigger" type="button" data-voice="welcome" aria-label="播放欢迎回来的日语台词">
+              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M4 12h6l8-7v22l-8-7H4zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
+              听她回应
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="room-section" id="room" aria-labelledby="room-title">
+      <div class="room-intro">
+        <div class="room-title-wrap">
+          <h2 id="room-title">她的房间，<br>比自我介绍更诚实。</h2>
+        </div>
+        <p>她不太擅长把心情说得很长，却会认真收好每一张草稿。靠近画桌看看——五件东西里，藏着五种没有说出口的日常。</p>
+      </div>
+
+      <div class="room-notes" aria-label="纱雾的性格与爱好">
+        <article class="ledger-note">
+          <h3>害羞不是冷淡</h3>
+          <p>会先躲到门后，再偷偷确认你有没有离开。熟悉以后，回应会一点点变长。</p>
+        </article>
+        <blockquote class="torn-quote">
+          <p>“可以待在旁边……<br>但是不许一直看我。”</p>
+        </blockquote>
+        <article class="polaroid-note">
+          <span>创作开关</span>
+          <strong>拿起笔以后<br>会变得意外认真</strong>
+          <svg aria-hidden="true" viewBox="0 0 80 56"><path d="m8 42 15-11 11 7 19-24 19 28H8Z"/><circle cx="24" cy="17" r="5"/></svg>
+        </article>
+      </div>
+
+      <div class="desk-explore">
+        <div class="desk-copy">
+          <h3>找到五个小秘密</h3>
+          <p>每发现一个，就会得到一枚猫爪印章。全部找到后，上锁抽屉里的留言才会出现。</p>
+          <div class="paw-progress" id="secretProgress" aria-live="polite" aria-label="已经发现零个秘密">
+            <i></i><i></i><i></i><i></i><i></i>
+          </div>
+          <p class="secret-count"><strong id="secretCount">0</strong> / 5 已发现</p>
+          <button class="pencil-button voice-trigger" type="button" data-voice="drawing" aria-label="播放不许偷看画稿的日语台词">
+            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M4 12h6l8-7v22l-8-7H4zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
+            问问这张画
+          </button>
+        </div>
+
+        <div class="desk-board" aria-label="可探索的画桌">
+          <span class="desk-wall-pin desk-wall-pin--one" aria-hidden="true"></span>
+          <span class="desk-wall-pin desk-wall-pin--two" aria-hidden="true"></span>
+          <span class="desk-light" aria-hidden="true"></span>
+
+          <button class="desk-object desk-object--tablet secret-trigger" type="button" data-secret="tablet" aria-pressed="false" aria-label="查看数位板的秘密">
+            <svg aria-hidden="true" viewBox="0 0 110 76"><rect x="4" y="4" width="102" height="68" rx="5"/><path d="m21 54 17-18 14 10 20-27 17 35M82 64h12"/></svg>
+            <span>数位板</span>
+          </button>
+          <button class="desk-object desk-object--headphones secret-trigger" type="button" data-secret="headphones" aria-pressed="false" aria-label="查看耳机的秘密">
+            <svg aria-hidden="true" viewBox="0 0 72 72"><path d="M13 40V29a23 23 0 0 1 46 0v11M13 37H7v20h12V39m40-2h6v20H53V39M24 60c7 5 17 5 24 0"/></svg>
+            <span>耳机</span>
+          </button>
+          <button class="desk-object desk-object--manuscript secret-trigger" type="button" data-secret="manuscript" aria-pressed="false" aria-label="查看轻小说稿件的秘密">
+            <svg aria-hidden="true" viewBox="0 0 92 70"><path d="m10 13 61-7 8 49-61 9z"/><path d="m18 23 35-4m-33 13 45-5m-43 14 31-4"/></svg>
+            <span>轻小说稿件</span>
+          </button>
+          <button class="desk-object desk-object--plush secret-trigger" type="button" data-secret="plush" aria-pressed="false" aria-label="查看猫咪玩偶的秘密">
+            <svg aria-hidden="true" viewBox="0 0 72 72"><path d="m16 24 4-13 12 8a27 27 0 0 1 8 0l12-8 4 13c8 14 2 38-20 38S8 38 16 24Z"/><circle cx="27" cy="35" r="2"/><circle cx="45" cy="35" r="2"/><path d="M32 43q4 4 8 0"/></svg>
+            <span>猫咪玩偶</span>
+          </button>
+          <button class="desk-object desk-object--drawer secret-trigger" type="button" data-secret="drawer" aria-pressed="false" aria-label="查看上锁抽屉的秘密">
+            <svg aria-hidden="true" viewBox="0 0 100 56"><rect x="3" y="3" width="94" height="50" rx="3"/><path d="M42 16h16v9H42zM46 16v-4a4 4 0 0 1 8 0v4M10 34h80"/></svg>
+            <span>上锁抽屉</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="secret-message" id="secretMessage" role="status" tabindex="-1" hidden>
+        <svg aria-hidden="true" viewBox="0 0 48 48"><path d="M7 9h34v30H7zM12 15h24M12 22h18M12 29h21"/></svg>
+        <div>
+          <span>抽屉里的隐藏留言</span>
+          <p>“谢谢你没有催我开门。下次……也可以来。”</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wardrobe-section" id="wardrobe" aria-labelledby="wardrobe-title">
+      <div class="wardrobe-heading">
+        <span class="hanger-mark" aria-hidden="true"><svg viewBox="0 0 80 50"><path d="M33 11c0-6 4-9 8-9s8 3 8 7c0 7-9 6-9 13m0 0L6 45h68L40 22Z"/></svg></span>
+        <div>
+          <h2 id="wardrobe-title">今天要穿哪一套？</h2>
+          <p>不是只换一种颜色。每一套都有不同的轮廓、姿势和房间时间。</p>
+        </div>
+      </div>
+
+      <div class="wardrobe-album">
+        <div class="album-spine" aria-hidden="true"></div>
+        <div class="album-photo" id="outfitStage">
+          <img id="outfitImage" src="assets/v3/outfit-home.png" width="1122" height="1402" loading="lazy" alt="纱雾穿宽松粉色运动家居服，坐在床边害羞微笑">
+          <span class="photo-corner photo-corner--one" aria-hidden="true"></span>
+          <span class="photo-corner photo-corner--two" aria-hidden="true"></span>
+          <span class="outfit-time" id="outfitTime">午后 15:20</span>
+        </div>
+
+        <div class="album-copy">
+          <h3 id="outfitName">宽松运动家居服</h3>
+          <p id="outfitDescription">袖子要够长，裤脚要够软。窝在房间里画画的时候，这样才最安心。</p>
+          <div class="outfit-tabs" role="group" aria-label="选择纱雾的服装">
+            <button type="button" data-outfit="home" aria-pressed="true"><i></i><span>粉色运动服</span></button>
+            <button type="button" data-outfit="artist"><i></i><span>格纹画稿睡衣</span></button>
+            <button type="button" data-outfit="outing"><i></i><span>薄荷水手外套</span></button>
+          </div>
+          <div class="album-actions">
+            <button class="round-arrow" id="outfitPrev" type="button" aria-label="上一套服装">
+              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m19 7-9 9 9 9M10 16h14"/></svg>
+            </button>
+            <button class="pencil-button voice-trigger" type="button" data-voice="like" aria-label="播放如果喜欢就再画一张的日语台词">
+              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M4 12h6l8-7v22l-8-7H4zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
+              说喜欢看看
+            </button>
+            <button class="round-arrow" id="outfitNext" type="button" aria-label="下一套服装">
+              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m13 7 9 9-9 9m9-9H8"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <header class="gallery-heading">
+        <h2 id="gallery-title">翻到哪一页，<br>就看到哪一种她。</h2>
+        <p>胶片里收着六个房间片段。选择一格，主画稿会在同一页换到你面前。</p>
+      </header>
+
+      <div class="gallery-viewer">
+        <figure class="gallery-main" id="galleryStage">
+          <img id="galleryMainImage" src="assets/v3/gallery-drawing.png" width="1456" height="1092" loading="lazy" alt="深夜里，纱雾趴在数位板前认真画画">
+          <figcaption>
+            <span id="galleryIndex">01 / 06</span>
+            <div>
+              <h3 id="galleryCaption">进入专注模式</h3>
+              <p id="galleryNote">嘴上说着不许偷看，真正画起来以后，连门边的脚步声都听不见了。</p>
+            </div>
+          </figcaption>
+        </figure>
+
+        <div class="film-controls">
+          <button class="round-arrow" id="galleryPrev" type="button" aria-label="上一张画稿">
+            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m19 7-9 9 9 9M10 16h14"/></svg>
+          </button>
+          <div class="film-strip" id="galleryThumbs" aria-label="画稿缩略图"></div>
+          <button class="round-arrow" id="galleryNext" type="button" aria-label="下一张画稿">
+            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m13 7 9 9-9 9m9-9H8"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="goodnight-section" id="goodnight" aria-labelledby="goodnight-title">
+      <div class="night-window">
+        <img src="assets/v3/gallery-night.png" width="1456" height="1092" loading="lazy" alt="月光下，纱雾蜷坐在窗边抱着猫咪玩偶露出困倦微笑">
+        <span class="moon-dot" aria-hidden="true"></span>
+      </div>
+      <div class="goodnight-copy">
+        <h2 id="goodnight-title">门会关上，<br>纸条可以带走。</h2>
+        <p>今天的拜访到这里。她把一张很小的纸条塞到门缝下面——字写得急了一点，但没有收回去。</p>
+        <div class="fortune-note" id="fortuneNote" aria-live="polite">
+          <span>今晚的小纸条</span>
+          <strong>画不完也没关系，先把今天好好收起来。</strong>
+        </div>
+        <div class="goodnight-actions">
+          <button class="paw-button paw-button--night" id="fortuneButton" type="button">
+            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11.2 14.2c-2.1 0-3.7-2-3.7-4.4s1.6-4.3 3.7-4.3 3.6 2 3.6 4.3-1.6 4.4-3.6 4.4Zm9.6 0c-2 0-3.6-2-3.6-4.4s1.6-4.3 3.6-4.3 3.7 2 3.7 4.3-1.6 4.4-3.7 4.4ZM5.8 21.4c-1.8 0-3.3-1.7-3.3-3.8s1.5-3.8 3.3-3.8 3.2 1.7 3.2 3.8-1.4 3.8-3.2 3.8Zm20.4 0c-1.8 0-3.2-1.7-3.2-3.8s1.4-3.8 3.2-3.8 3.3 1.7 3.3 3.8-1.5 3.8-3.3 3.8ZM16 29c-5.2 0-8.5-2.2-8.5-5.5 0-3 2.2-7.3 5.2-8.5 1.8-.7 2.2 1 3.3 1s1.5-1.7 3.3-1c3 1.2 5.2 5.5 5.2 8.5 0 3.3-3.3 5.5-8.5 5.5Z"/></svg>
+            <span>再抽一张</span>
+          </button>
+          <button class="pencil-button voice-trigger" type="button" data-voice="goodnight" aria-label="播放晚安的日语台词">
+            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M4 12h6l8-7v22l-8-7H4zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
+            听她说晚安
+          </button>
+          <a class="back-link" href="#top">回到房门口</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="feedback-dock" id="feedbackDock" aria-label="纱雾的反应与语音字幕">
+    <aside class="reaction-corner" id="reactionCorner" aria-label="纱雾的即时反应">
+      <div class="reaction-face">
+        <img id="reactionImage" src="assets/v3/hero-peek.png" width="1122" height="1402" alt="纱雾的即时表情">
+      </div>
+      <div class="reaction-copy">
+        <span id="reactionLabel">纱雾的反应</span>
+        <strong id="reactionText">……门外是谁？</strong>
+      </div>
+    </aside>
+
+    <div class="subtitle-bar" id="subtitleBar" aria-live="polite" aria-atomic="true">
+      <div>
+        <span id="subtitleScene">房门口</span>
+        <p lang="ja" id="subtitleJapanese">音声ボタンを押すと、ここに台詞が表示されます。</p>
+      </div>
+      <strong id="subtitleChinese">点击语音按钮后，这里会一直显示简体中文字幕。</strong>
+      <button id="stopVoiceButton" type="button" aria-label="停止播放语音" hidden>
+        <svg aria-hidden="true" viewBox="0 0 32 32"><rect x="9" y="9" width="14" height="14" rx="2"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>个人非盈利原创同人页面 · 未使用官方图片、动画音轨或声优声纹克隆</p>
+    <p>日语语音：AivisSpeech「天深シノ」· 依据 ACML-NC 1.0 使用 · <a href="https://hub.aivis-project.com/aivm-models/0f6821f4-9f86-4da1-a41a-fbe6fff9ca88" target="_blank" rel="noreferrer">模型来源</a></p>
+    <p>标题字体：ZCOOL KuaiLe · SIL Open Font License 1.1</p>
+  </footer>
+
+  <noscript>
+    <div class="noscript-note">JavaScript 未启用：你仍然可以阅读角色介绍与查看基础插画；敲门、换装、语音和秘密探索需要启用 JavaScript。</div>
+  </noscript>
+  <script src="script.js"></script>
+</body>
+</html>
