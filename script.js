@@ -51,55 +51,171 @@ const CONTENT = {
   voiceLines: {
     welcome: {
       id: "welcome",
-      japanese: "お、おかえり……今日も、静かにしてね。",
-      chinese: "欢、欢迎回来……今天也要安静一点哦。",
-      takes: [
-        { label: "害羞地", file: "assets/audio/v3/welcome.wav" },
-        { label: "更小声", file: "assets/audio/v3/welcome-soft.mp3" },
-        { label: "慌张一点", file: "assets/audio/v3/welcome-flustered.mp3" }
-      ],
-      expression: "shy",
       scene: "房门口",
-      reaction: "欢、欢迎回来……"
+      replies: [
+        {
+          id: "welcome-home",
+          label: "认出你了",
+          japanese: "お、おかえり……ノック、一回でいいから。",
+          chinese: "欢、欢迎回来……敲一次就够了。",
+          file: "assets/audio/v4/welcome-home.mp3",
+          expression: "shy",
+          reaction: "欢、欢迎回来……敲一次我就听见了。"
+        },
+        {
+          id: "welcome-knock",
+          label: "隔着门嘟囔",
+          japanese: "聞こえてる……そんなに急かしたら、開けないから。",
+          chinese: "我听见了……再那么催我，我就不开门了。",
+          file: "assets/audio/v4/welcome-knock.mp3",
+          expression: "startled",
+          reaction: "再催的话……真的不开门了。"
+        },
+        {
+          id: "welcome-close",
+          label: "悄悄让开一点",
+          japanese: "入ってもいいけど……静かにして。あと、近すぎるのは禁止。",
+          chinese: "可以进来……但要安静。还有，不许靠得太近。",
+          file: "assets/audio/v4/welcome-close.mp3",
+          expression: "shy",
+          reaction: "可以进来……不许突然靠近。"
+        },
+        {
+          id: "welcome-waiting",
+          label: "嘴硬地等你",
+          japanese: "遅い……べ、別に待ってたわけじゃないけど。",
+          chinese: "好慢……我、我又没有在等你。",
+          file: "assets/audio/v4/welcome-waiting.mp3",
+          expression: "proud",
+          reaction: "才、才没有一直听门外的脚步声。"
+        }
+      ]
     },
     drawing: {
       id: "drawing",
-      japanese: "まだ描き終わってないから……勝手に見ちゃだめ。",
-      chinese: "这张画还没完成，不许偷看。",
-      takes: [
-        { label: "认真地", file: "assets/audio/v3/drawing.wav" },
-        { label: "小声嘟囔", file: "assets/audio/v3/drawing-mutter.mp3" },
-        { label: "被抓到啦", file: "assets/audio/v3/drawing-flustered.mp3" }
-      ],
-      expression: "startled",
       scene: "画桌旁",
-      reaction: "不许趁我没注意偷看。"
+      replies: [
+        {
+          id: "drawing-no-peeking",
+          label: "挡住画稿",
+          japanese: "まだ途中。勝手に覗いたら……追い出すから。",
+          chinese: "还没画完。敢擅自偷看……就把你赶出去。",
+          file: "assets/audio/v4/drawing-no-peeking.mp3",
+          expression: "startled",
+          reaction: "还、还在画……敢偷看就把你赶出去。"
+        },
+        {
+          id: "drawing-stay-still",
+          label: "偷偷拿你当参考",
+          japanese: "動かないで。いま、手の形が難しいの。",
+          chinese: "别动。我正在画……最难画的手。",
+          file: "assets/audio/v4/drawing-stay-still.mp3",
+          expression: "proud",
+          reaction: "别动……手的形状画歪了就怪你。"
+        },
+        {
+          id: "drawing-first-look",
+          label: "答应先给你看",
+          japanese: "あと一枚だけ。描けたら……最初に見せてあげる。",
+          chinese: "只差一张。画好以后……第一个给你看。",
+          file: "assets/audio/v4/drawing-first-look.mp3",
+          expression: "shy",
+          reaction: "只、只给你先看一眼。"
+        },
+        {
+          id: "drawing-opinion",
+          label: "小声讨要评价",
+          japanese: "見たいなら、感想ちゃんと言って。『かわいい』だけは禁止。",
+          chinese: "想看的话，就要认真说感想。只说“可爱”不算。",
+          file: "assets/audio/v4/drawing-opinion.mp3",
+          expression: "shy",
+          reaction: "只说“可爱”不算……要说哪里画得好。"
+        }
+      ]
     },
     like: {
       id: "like",
-      japanese: "気に入ったなら……もう一枚、描いてあげてもいいよ。",
-      chinese: "如果你喜欢的话……我可以再画一张。",
-      takes: [
-        { label: "有点得意", file: "assets/audio/v3/like.wav" },
-        { label: "偷偷开心", file: "assets/audio/v3/like-soft.mp3" },
-        { label: "藏不住开心", file: "assets/audio/v3/like-happy.mp3" }
-      ],
-      expression: "proud",
-      scene: "衣橱相册",
-      reaction: "也、也不是特意画给你的。"
+      scene: "画册旁",
+      replies: [
+        {
+          id: "like-another",
+          label: "藏不住一点得意",
+          japanese: "そ、そんなに好き？……じゃあ、もう一枚だけ。",
+          chinese: "有、那么喜欢吗？……那就，再给你看一张。",
+          file: "assets/audio/v4/like-another.mp3",
+          expression: "proud",
+          reaction: "只、只多给你看一张。"
+        },
+        {
+          id: "like-really",
+          label: "确认你不是哄她",
+          japanese: "本当に？　お世辞だったら……もう見せないから。",
+          chinese: "真的？要是客套话……以后就不给你看了。",
+          file: "assets/audio/v4/like-really.mp3",
+          expression: "shy",
+          reaction: "不许只是哄我……我会当真的。"
+        },
+        {
+          id: "like-again",
+          label: "想再听一次",
+          japanese: "褒めても何も出ない……もう一回言うなら、聞くけど。",
+          chinese: "就算夸我也没有奖励……不过要再说一次，我会听。",
+          file: "assets/audio/v4/like-again.mp3",
+          expression: "shy",
+          reaction: "再、再说一次也不是不可以。"
+        },
+        {
+          id: "like-gift",
+          label: "把画推给你",
+          japanese: "これ、あげる。折ったら……もう描いてあげない。",
+          chinese: "这个送给你。弄皱的话……以后就不给你画了。",
+          file: "assets/audio/v4/like-gift.mp3",
+          expression: "proud",
+          reaction: "弄皱的话……以后真的不画给你了。"
+        }
+      ]
     },
     goodnight: {
       id: "goodnight",
-      japanese: "おやすみ。明日も……一緒に頑張ろうね。",
-      chinese: "晚安，明天也要一起努力。",
-      takes: [
-        { label: "轻轻晚安", file: "assets/audio/v3/goodnight.wav" },
-        { label: "更轻一点", file: "assets/audio/v3/goodnight-soft.mp3" },
-        { label: "困困的", file: "assets/audio/v3/goodnight-sleepy.mp3" }
-      ],
-      expression: "shy",
       scene: "晚安以前",
-      reaction: "明天……也可以再来。"
+      replies: [
+        {
+          id: "goodnight-together",
+          label: "画师式催睡",
+          japanese: "もう遅い。寝ないと、明日の線がぶれるよ。",
+          chinese: "已经很晚了。不睡的话，明天画线会手抖哦。",
+          file: "assets/audio/v4/goodnight-together.mp3",
+          expression: "shy",
+          reaction: "熬夜的话，明天连直线都画不好。"
+        },
+        {
+          id: "goodnight-sleep",
+          label: "认真催你睡觉",
+          japanese: "明日も来るなら……今日はちゃんと寝て。",
+          chinese: "如果明天还要来……今天就好好睡觉。",
+          file: "assets/audio/v4/goodnight-sleep.mp3",
+          expression: "proud",
+          reaction: "不许偷偷熬夜，我会知道的。"
+        },
+        {
+          id: "goodnight-one-minute",
+          label: "舍不得赶你走",
+          japanese: "電気を消したら帰って。……あと一分だけなら、いていい。",
+          chinese: "关灯后就回去。……再待一分钟也可以。",
+          file: "assets/audio/v4/goodnight-one-minute.mp3",
+          expression: "shy",
+          reaction: "只有一分钟……不许偷偷加时。"
+        },
+        {
+          id: "goodnight-dream",
+          label: "答应明天继续",
+          japanese: "おやすみ。明日、続き見せてあげる……たぶん。",
+          chinese: "晚安。明天给你看后续……大概。",
+          file: "assets/audio/v4/goodnight-dream.mp3",
+          expression: "shy",
+          reaction: "明天……大概会给你看下一页。"
+        }
+      ]
     }
   },
   reactions: {
@@ -115,52 +231,74 @@ const CONTENT = {
   },
   gallery: [
     {
-      id: "drawing",
-      image: "assets/v3/gallery-drawing.png",
-      thumb: "assets/v3/gallery-drawing.png",
-      alt: "深夜里，纱雾趴在数位板前认真画画",
-      title: "进入专注模式",
-      note: "嘴上说着不许偷看，真正画起来以后，连门边的脚步声都听不见了。"
+      id: "bed-drawing",
+      image: "assets/v4/gallery-bed-drawing.webp",
+      thumb: "assets/v4/gallery-bed-drawing-thumb.webp",
+      alt: "银白长发的女孩穿粉色猫耳家居服，盘腿坐在床上用数位板画画，被发现后害羞抬眼",
+      title: "被抓到在床上画画",
+      note: "她原本把数位板藏在膝盖上。听见你靠近，只来得及红着脸抬头：“不许笑……这里比较舒服而已。”",
+      expression: "startled",
+      reaction: "我、我只是觉得床上比较暖……不许笑。"
     },
     {
-      id: "hide",
-      image: "assets/v3/gallery-hide.png",
-      thumb: "assets/v3/gallery-hide.png",
-      alt: "纱雾躲在大画册后，只露出一双俏皮明亮的蓝眼睛",
-      title: "被发现就先藏起来",
-      note: "画册挡住了大半张脸，但那双眼睛已经把“我知道你在看”全都说出来了。"
+      id: "show-drawing",
+      image: "assets/v4/gallery-show-drawing.webp",
+      thumb: "assets/v4/gallery-show-drawing-thumb.webp",
+      alt: "银白长发的女孩跪坐在床边，红着脸把画着可爱角色的速写本举给来访者看",
+      title: "只给你看三秒",
+      note: "画纸举得很认真，视线却躲到了旁边。“看、看完就要说感想……不许只点头。”",
+      expression: "shy",
+      reaction: "三秒……已经到了。所、所以感想呢？"
     },
     {
-      id: "night",
-      image: "assets/v3/gallery-night.png",
-      thumb: "assets/v3/gallery-night.png",
-      alt: "月光下，纱雾蜷坐在窗边抱着猫咪玩偶",
+      id: "pillow-offer",
+      image: "assets/v4/gallery-pillow-offer.webp",
+      thumb: "assets/v4/gallery-pillow-offer-thumb.webp",
+      alt: "银白长发的女孩穿蓝白格睡衣，抱着粉色猫咪靠枕，从靠枕后把一张小猫画递给来访者",
+      title: "躲在靠枕后把画递给你",
+      note: "大半张脸都藏起来了，画却认真地伸到你面前。“只、只许看画……不许一直看我。”",
+      expression: "shy",
+      reaction: "只许看画，不许看我……感想还是要说。"
+    },
+    {
+      id: "desk-night",
+      image: "assets/v4/gallery-desk-night.webp",
+      thumb: "assets/v4/gallery-desk-night-thumb.webp",
+      alt: "深夜里，银白长发的女孩趴在数位板前认真画画，桌灯照亮画稿",
+      title: "认真起来就忘了害羞",
+      note: "嘴上说着不许偷看，真正画起来以后，连门边的脚步声都听不见了。",
+      expression: "proud",
+      reaction: "这一笔很重要……等、等画完再和你说话。"
+    },
+    {
+      id: "sketchbook-hide",
+      image: "assets/v4/gallery-sketchbook-hide.webp",
+      thumb: "assets/v4/gallery-sketchbook-hide-thumb.webp",
+      alt: "银白长发的女孩躲在大画册后，只露出一双明亮的蓝眼睛",
+      title: "被看太久就藏起来",
+      note: "画册挡住了大半张脸，但那双眼睛已经把“我知道你还在看”全都说出来了。",
+      expression: "startled",
+      reaction: "看、看太久了……下一页要先征得同意。"
+    },
+    {
+      id: "awaiting-praise",
+      image: "assets/v4/gallery-awaiting-praise.webp",
+      thumb: "assets/v4/gallery-awaiting-praise-thumb.webp",
+      alt: "银白长发的女孩抱膝坐在床上，速写本朝向来访者，脸红着等待评价",
+      title: "装作没有在等夸奖",
+      note: "她把画留在最显眼的位置，自己却缩进了宽大的袖口里。“我、我没有催你……慢慢看也行。”",
+      expression: "shy",
+      reaction: "没有在等……但你可以再说具体一点。"
+    },
+    {
+      id: "goodnight",
+      image: "assets/v4/gallery-goodnight.webp",
+      thumb: "assets/v4/gallery-goodnight-thumb.webp",
+      alt: "月光下，银白长发的女孩蜷坐在窗边抱着猫咪玩偶，露出困倦的微笑",
       title: "今天的最后一页",
-      note: "稿子保存好，窗帘留一条缝，再抱住最软的玩偶，房间终于慢慢安静下来。"
-    },
-    {
-      id: "home",
-      image: "assets/v3/outfit-home.png",
-      thumb: "assets/v3/outfit-home.png",
-      alt: "纱雾穿宽松粉色运动服坐在床边",
-      title: "不用出门的午后",
-      note: "宽松袖口把手藏住一半。有人靠近时，她会先把膝盖并好，再抬眼确认。"
-    },
-    {
-      id: "artist",
-      image: "assets/v3/outfit-artist-night.png",
-      thumb: "assets/v3/outfit-artist-night.png",
-      alt: "纱雾穿蓝白格睡衣在深夜数位板前画稿",
-      title: "深夜画师模式",
-      note: "格纹睡衣和绘图手套是今晚的工作服。困意可以等，这一笔不能歪。"
-    },
-    {
-      id: "outing",
-      image: "assets/v3/outfit-outing-sailor.png",
-      thumb: "assets/v3/outfit-outing-sailor.png",
-      alt: "纱雾穿水手领裙装与薄荷针织外套站在门口",
-      title: "出门前的三十秒",
-      note: "书包已经拿好，鞋也穿好了。现在只剩下鼓起勇气跨过门槛这一件事。"
+      note: "稿子保存好，窗帘留一条缝，再抱住最软的玩偶。临睡前，她还是小声补了一句：“明天……也可以来。”",
+      expression: "shy",
+      reaction: "明天再翻一页……今天要好好睡觉。"
     }
   ],
   secrets: {
@@ -278,7 +416,8 @@ let galleryPosition = 0;
 let voiceSequence = 0;
 let lastFortune = 0;
 let feedbackTimer = 0;
-const lastVoiceTakes = new Map();
+const lastVoiceReplies = new Map();
+const voiceReplyQueues = new Map();
 
 const voicePlayer = new Audio();
 voicePlayer.preload = "none";
@@ -393,29 +532,47 @@ function stopVoice(keepSubtitle = true, keepDock = false) {
   if (!keepDock) settleFeedback(keepSubtitle ? 1200 : 2400);
 }
 
-function chooseVoiceTake(line) {
-  const previous = lastVoiceTakes.get(line.id) ?? -1;
-  let next = Math.floor(Math.random() * line.takes.length);
-  if (next === previous && line.takes.length > 1) next = (next + 1) % line.takes.length;
-  lastVoiceTakes.set(line.id, next);
-  return line.takes[next];
+function shuffledReplyIndexes(length) {
+  const indexes = Array.from({ length }, (_, index) => index);
+  for (let index = indexes.length - 1; index > 0; index -= 1) {
+    const swapIndex = Math.floor(Math.random() * (index + 1));
+    [indexes[index], indexes[swapIndex]] = [indexes[swapIndex], indexes[index]];
+  }
+  return indexes;
+}
+
+function chooseVoiceReply(line) {
+  let queue = voiceReplyQueues.get(line.id);
+  if (!queue?.length) {
+    queue = shuffledReplyIndexes(line.replies.length);
+    const previous = lastVoiceReplies.get(line.id);
+    const nextIndex = queue.length - 1;
+    if (queue.length > 1 && queue[nextIndex] === previous) {
+      const swapIndex = queue.findIndex((index) => index !== previous);
+      [queue[nextIndex], queue[swapIndex]] = [queue[swapIndex], queue[nextIndex]];
+    }
+  }
+  const replyIndex = queue.pop();
+  voiceReplyQueues.set(line.id, queue);
+  lastVoiceReplies.set(line.id, replyIndex);
+  return line.replies[replyIndex];
 }
 
 async function playVoice(id) {
   const line = CONTENT.voiceLines[id];
   if (!line) return;
-  const take = chooseVoiceTake(line);
+  const reply = chooseVoiceReply(line);
 
   stopVoice(true, true);
   const sequence = voiceSequence;
-  elements.subtitleScene.textContent = `${line.scene} · ${take.label}`;
-  elements.subtitleJapanese.textContent = line.japanese;
-  elements.subtitleChinese.textContent = line.chinese;
-  setHeroExpression(line.expression);
-  updateReaction({ expression: line.expression, label: `正在听 · ${take.label}`, text: line.reaction });
+  elements.subtitleScene.textContent = `${line.scene} · ${reply.label}`;
+  elements.subtitleJapanese.textContent = reply.japanese;
+  elements.subtitleChinese.textContent = reply.chinese;
+  setHeroExpression(reply.expression);
+  updateReaction({ expression: reply.expression, label: `她小声回答 · ${reply.label}`, text: reply.reaction });
   showFeedback(true);
 
-  voicePlayer.src = take.file;
+  voicePlayer.src = reply.file;
   voicePlayer.load();
   try {
     await voicePlayer.play();
@@ -570,7 +727,8 @@ async function switchGallery(index, announce = true) {
   if (normalized === galleryPosition && announce) {
     elements.galleryStage.classList.remove("is-switching");
     applyGallery(normalized);
-    updateReaction("gallery", false);
+    const current = CONTENT.gallery[normalized];
+    updateReaction({ expression: current.expression, label: "这一页还没看完", text: current.reaction }, false);
     return;
   }
   const item = CONTENT.gallery[normalized];
@@ -587,7 +745,7 @@ async function switchGallery(index, announce = true) {
     if (sequence !== gallerySequence) return;
     galleryPosition = normalized;
     applyGallery(normalized);
-    if (announce) updateReaction({ ...CONTENT.reactions.gallery, text: `“${item.title}”这一页不许折角。` });
+    if (announce) updateReaction({ expression: item.expression, label: `画册 · ${item.title}`, text: item.reaction });
   }, reducedMotion.matches ? 0 : 190);
 
   window.setTimeout(() => {
