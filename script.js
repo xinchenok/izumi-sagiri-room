@@ -63,15 +63,6 @@ const CONTENT = {
           reaction: "欢、欢迎回来……敲一次我就听见了。"
         },
         {
-          id: "welcome-knock",
-          label: "隔着门嘟囔",
-          japanese: "聞こえてる……そんなに急かしたら、開けないから。",
-          chinese: "我听见了……再那么催我，我就不开门了。",
-          file: "assets/audio/v4/welcome-knock.mp3",
-          expression: "startled",
-          reaction: "再催的话……真的不开门了。"
-        },
-        {
           id: "welcome-close",
           label: "悄悄让开一点",
           japanese: "入ってもいいけど……静かにして。あと、近すぎるのは禁止。",
@@ -81,13 +72,42 @@ const CONTENT = {
           reaction: "可以进来……不许突然靠近。"
         },
         {
+          id: "welcome-glad",
+          label: "藏不住一点开心",
+          japanese: "来たんだ……その、少しだけ嬉しい。",
+          chinese: "你来了呀……那个，只有一点点开心。",
+          file: "assets/audio/v4/welcome-glad.mp3",
+          expression: "shy",
+          reaction: "只、只有一点点开心……不要笑。"
+        },
+        {
+          id: "welcome-door-gap",
+          label: "给门留一条小缝",
+          japanese: "ドア、少しだけ開けておく。……見つめすぎないで。",
+          chinese: "门给你留一点缝……不许一直盯着看。",
+          file: "assets/audio/v4/welcome-door-gap.mp3",
+          expression: "shy",
+          reaction: "门缝只留这么大……不许一直看我。"
+        }
+      ],
+      guardedReplies: [
+        {
+          id: "welcome-knock",
+          label: "被连续催门",
+          japanese: "聞こえてる……そんなに急かしたら、開けないから。",
+          chinese: "我听见了……再那么催我，我就不开门了。",
+          file: "assets/audio/v4/welcome-knock.mp3",
+          expression: "startled",
+          reaction: "连着催门的话……真的不开了。"
+        },
+        {
           id: "welcome-waiting",
-          label: "嘴硬地等你",
+          label: "被催得有点嘴硬",
           japanese: "遅い……べ、別に待ってたわけじゃないけど。",
           chinese: "好慢……我、我又没有在等你。",
           file: "assets/audio/v4/welcome-waiting.mp3",
           expression: "proud",
-          reaction: "才、才没有一直听门外的脚步声。"
+          reaction: "一直敲什么……才、才没有在等你。"
         }
       ]
     },
@@ -95,15 +115,6 @@ const CONTENT = {
       id: "drawing",
       scene: "画桌旁",
       replies: [
-        {
-          id: "drawing-no-peeking",
-          label: "挡住画稿",
-          japanese: "まだ途中。勝手に覗いたら……追い出すから。",
-          chinese: "还没画完。敢擅自偷看……就把你赶出去。",
-          file: "assets/audio/v4/drawing-no-peeking.mp3",
-          expression: "startled",
-          reaction: "还、还在画……敢偷看就把你赶出去。"
-        },
         {
           id: "drawing-stay-still",
           label: "偷偷拿你当参考",
@@ -123,13 +134,42 @@ const CONTENT = {
           reaction: "只、只给你先看一眼。"
         },
         {
+          id: "drawing-one-second",
+          label: "准你偷看一秒",
+          japanese: "この線、うまくいった。……一秒だけなら、見てもいいよ。",
+          chinese: "这条线画得很好……只看一秒的话，可以哦。",
+          file: "assets/audio/v4/drawing-one-second.mp3",
+          expression: "proud",
+          reaction: "就、就一秒……这条线画得还不错吧。"
+        },
+        {
+          id: "drawing-stay-near",
+          label: "允许你安静陪着",
+          japanese: "隣にいてもいいけど、静かにして。……描き終わったら呼ぶから。",
+          chinese: "可以待在旁边，但要安静……画完我会叫你的。",
+          file: "assets/audio/v4/drawing-stay-near.mp3",
+          expression: "shy",
+          reaction: "可以待在旁边……画完以后我会叫你。"
+        }
+      ],
+      guardedReplies: [
+        {
+          id: "drawing-no-peeking",
+          label: "偷看得太急",
+          japanese: "まだ途中。勝手に覗いたら……追い出すから。",
+          chinese: "还没画完。敢擅自偷看……就把你赶出去。",
+          file: "assets/audio/v4/drawing-no-peeking.mp3",
+          expression: "startled",
+          reaction: "还在画……一直偷看的话要赶人了。"
+        },
+        {
           id: "drawing-opinion",
-          label: "小声讨要评价",
+          label: "追问得太多次",
           japanese: "見たいなら、感想ちゃんと言って。『かわいい』だけは禁止。",
           chinese: "想看的话，就要认真说感想。只说“可爱”不算。",
           file: "assets/audio/v4/drawing-opinion.mp3",
-          expression: "shy",
-          reaction: "只说“可爱”不算……要说哪里画得好。"
+          expression: "proud",
+          reaction: "问这么多次……那就要认真说感想。"
         }
       ]
     },
@@ -172,6 +212,15 @@ const CONTENT = {
           file: "assets/audio/v4/like-gift.mp3",
           expression: "proud",
           reaction: "弄皱的话……以后真的不画给你了。"
+        },
+        {
+          id: "like-noticed",
+          label: "发现你看得很认真",
+          japanese: "そこ、気づいたんだ……ちゃんと見てくれてたんだね。",
+          chinese: "你注意到那里了呀……真的有认真看呢。",
+          file: "assets/audio/v4/like-noticed.mp3",
+          expression: "shy",
+          reaction: "连那里都注意到了……原来真的有认真看。"
         }
       ]
     },
@@ -214,6 +263,15 @@ const CONTENT = {
           file: "assets/audio/v4/goodnight-dream.mp3",
           expression: "shy",
           reaction: "明天……大概会给你看下一页。"
+        },
+        {
+          id: "goodnight-answer",
+          label: "等你回一句晚安",
+          japanese: "おやすみって言ったら、ちゃんと返して。……聞いてから寝るから。",
+          chinese: "我说晚安以后，你也要好好回答……听见了我才睡。",
+          file: "assets/audio/v4/goodnight-answer.mp3",
+          expression: "shy",
+          reaction: "要、要等你也说完晚安……我才会睡。"
         }
       ]
     }
@@ -241,6 +299,26 @@ const CONTENT = {
       reaction: "我、我只是觉得床上比较暖……不许笑。"
     },
     {
+      id: "blanket-fort",
+      image: "assets/v4/gallery-blanket-fort.webp",
+      thumb: "assets/v4/gallery-blanket-fort-thumb.webp",
+      alt: "银白长发的女孩躲在被子搭成的小帐篷里画画，红着脸从帘边递出一张小猫速写",
+      title: "被窝画室只开一条缝",
+      note: "她用被子围出一间更小的画室，只把帘子拉开一点点。小猫速写先从缝里递出来，藏在袖口后的声音轻得几乎听不见：“画、画可以先看……”",
+      expression: "shy",
+      reaction: "帐篷里只能坐一个人……画可以先借你看。"
+    },
+    {
+      id: "stream-wave",
+      image: "assets/v4/gallery-stream-wave.webp",
+      thumb: "assets/v4/gallery-stream-wave-thumb.webp",
+      alt: "银白长发的女孩戴着猫耳耳机坐在数位板前进行安静的绘画直播，用袖口挡住红脸小幅挥手",
+      title: "直播开始前的小小挥手",
+      note: "进入画师模式时，她盯着线稿比谁都认真。发现镜头还开着，才用袖口挡住脸，飞快挥了一下手：“只、只是在确认画面。”",
+      expression: "startled",
+      reaction: "刚才不算打招呼……只是确认镜头。"
+    },
+    {
       id: "show-drawing",
       image: "assets/v4/gallery-show-drawing.webp",
       thumb: "assets/v4/gallery-show-drawing-thumb.webp",
@@ -261,6 +339,16 @@ const CONTENT = {
       reaction: "只许看画，不许看我……感想还是要说。"
     },
     {
+      id: "door-note",
+      image: "assets/v4/gallery-door-note.webp",
+      thumb: "assets/v4/gallery-door-note-thumb.webp",
+      alt: "银白长发的女孩藏在半开的卧室门后，脸红着从门缝递出一张画有小猫的卡片",
+      title: "谢谢要从门缝里递出来",
+      note: "亲口说出口还是太难了，于是她把认真画好的小猫卡片从门缝推给你。等你接稳，门后才传来一句：“那、那只小猫不许笑。”",
+      expression: "shy",
+      reaction: "卡片收好就行……不许笑上面那只小猫。"
+    },
+    {
       id: "desk-night",
       image: "assets/v4/gallery-desk-night.webp",
       thumb: "assets/v4/gallery-desk-night-thumb.webp",
@@ -269,6 +357,16 @@ const CONTENT = {
       note: "嘴上说着不许偷看，真正画起来以后，连门边的脚步声都听不见了。",
       expression: "proud",
       reaction: "这一笔很重要……等、等画完再和你说话。"
+    },
+    {
+      id: "sketch-sort",
+      image: "assets/v4/gallery-sketch-sort.webp",
+      thumb: "assets/v4/gallery-sketch-sort-thumb.webp",
+      alt: "银白长发的女孩穿粉色长袖家居服坐在地毯上整理速写，抱住一张画稿并害羞地把另一张推向来访者",
+      title: "最喜欢的那张先藏住",
+      note: "散在地毯上的草稿被分成好多小堆。她把最喜欢的一张紧紧抱住，却又把另一张悄悄推向你：“这张……可以替我保管一下。”",
+      expression: "shy",
+      reaction: "最喜欢的先不行……这张可以替我保管。"
     },
     {
       id: "sketchbook-hide",
@@ -418,6 +516,12 @@ let lastFortune = 0;
 let feedbackTimer = 0;
 const lastVoiceReplies = new Map();
 const voiceReplyQueues = new Map();
+const lastGuardedVoiceReplies = new Map();
+const guardedVoiceReplyQueues = new Map();
+const voicePressStates = new Map();
+const VOICE_GUARD_WINDOW_MS = 5000;
+const VOICE_GUARD_THRESHOLD = 4;
+const VOICE_GUARD_COOLDOWN_MS = 25000;
 
 const voicePlayer = new Audio();
 voicePlayer.preload = "none";
@@ -558,18 +662,59 @@ function chooseVoiceReply(line) {
   return line.replies[replyIndex];
 }
 
+function chooseGuardedVoiceReply(line) {
+  let queue = guardedVoiceReplyQueues.get(line.id);
+  if (!queue?.length) {
+    queue = shuffledReplyIndexes(line.guardedReplies.length);
+    const previous = lastGuardedVoiceReplies.get(line.id);
+    const nextIndex = queue.length - 1;
+    if (queue.length > 1 && queue[nextIndex] === previous) {
+      const swapIndex = queue.findIndex((index) => index !== previous);
+      [queue[nextIndex], queue[swapIndex]] = [queue[swapIndex], queue[nextIndex]];
+    }
+  }
+  const replyIndex = queue.pop();
+  guardedVoiceReplyQueues.set(line.id, queue);
+  lastGuardedVoiceReplies.set(line.id, replyIndex);
+  return line.guardedReplies[replyIndex];
+}
+
+function shouldUseGuardedReply(line, now = Date.now()) {
+  if (!line.guardedReplies?.length) return false;
+
+  const current = voicePressStates.get(line.id) || { presses: [], cooldownUntil: 0 };
+  if (now < current.cooldownUntil) {
+    current.presses = [];
+    voicePressStates.set(line.id, current);
+    return false;
+  }
+
+  current.presses = current.presses.filter((pressedAt) => now - pressedAt <= VOICE_GUARD_WINDOW_MS);
+  current.presses.push(now);
+  if (current.presses.length >= VOICE_GUARD_THRESHOLD) {
+    current.presses = [];
+    current.cooldownUntil = now + VOICE_GUARD_COOLDOWN_MS;
+    voicePressStates.set(line.id, current);
+    return true;
+  }
+
+  voicePressStates.set(line.id, current);
+  return false;
+}
+
 async function playVoice(id) {
   const line = CONTENT.voiceLines[id];
   if (!line) return;
-  const reply = chooseVoiceReply(line);
+  const guarded = shouldUseGuardedReply(line);
+  const reply = guarded ? chooseGuardedVoiceReply(line) : chooseVoiceReply(line);
 
   stopVoice(true, true);
   const sequence = voiceSequence;
-  elements.subtitleScene.textContent = `${line.scene} · ${reply.label}`;
+  elements.subtitleScene.textContent = guarded ? `${line.scene} · 连续打扰以后 · ${reply.label}` : `${line.scene} · ${reply.label}`;
   elements.subtitleJapanese.textContent = reply.japanese;
   elements.subtitleChinese.textContent = reply.chinese;
   setHeroExpression(reply.expression);
-  updateReaction({ expression: reply.expression, label: `她小声回答 · ${reply.label}`, text: reply.reaction });
+  updateReaction({ expression: reply.expression, label: `${guarded ? "她有点闹别扭" : "她小声回答"} · ${reply.label}`, text: reply.reaction });
   showFeedback(true);
 
   voicePlayer.src = reply.file;

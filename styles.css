@@ -250,7 +250,7 @@ h2 {
 
 .door-hero {
   position: relative;
-  min-height: calc(100svh - 4.6rem);
+  min-height: 0;
   padding: clamp(1rem, 3vw, 2.75rem);
   overflow: hidden;
   color: var(--white);
@@ -934,9 +934,9 @@ h2 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 2.35rem;
-  height: 2.35rem;
-  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.43rem;
   fill: var(--strawberry-soft);
   stroke: currentColor;
   stroke-width: 3;
@@ -946,7 +946,8 @@ h2 {
   border: 1px solid rgba(87, 58, 62, 0.72);
   border-radius: 50%;
   box-shadow: 0 5px 12px rgba(71, 42, 47, 0.2);
-  transition: transform 180ms var(--ease-soft), background-color 180ms var(--ease-soft);
+  opacity: 0.5;
+  transition: opacity 180ms var(--ease-soft), transform 180ms var(--ease-soft), background-color 180ms var(--ease-soft);
   transform: translate(-50%, -50%) rotate(-4deg);
 }
 
@@ -973,14 +974,20 @@ h2 {
 .desk-object:hover svg,
 .desk-object:focus-visible svg {
   background: var(--paper);
+  opacity: 1;
   transform: translate(-50%, calc(-50% - 2px)) rotate(-7deg) scale(1.05);
 }
 
-.desk-object:hover span,
-.desk-object:focus-visible span,
-.desk-object[aria-pressed="true"] span {
+.desk-object:focus-visible span {
   opacity: 1;
   transform: translate(-50%, 0);
+}
+
+@media (hover: hover) {
+  .desk-object:hover span {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 .desk-object[aria-pressed="true"] {
@@ -990,6 +997,7 @@ h2 {
 .desk-object[aria-pressed="true"] svg {
   background: var(--strawberry-soft);
   border-color: var(--strawberry-dark);
+  opacity: 0.72;
 }
 
 .desk-object--tablet {

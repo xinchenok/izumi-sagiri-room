@@ -17,7 +17,7 @@
     "bitrate_kbps": 112,
     "pitch_postprocessing": false
   },
-  "direction": "同一合成角色；轻声、短句、先警戒或嘴硬，再在句尾放软；谈画稿时认真，被夸时反复确认。不使用动画音轨或真实声优声纹克隆。",
+  "direction": "同一合成角色；普通回答以轻声、开心和害羞为主，谈画稿时认真，被夸时反复确认；ふきげん仅用于访客短时间连续催门或催稿的情境，不进入普通随机池。不使用动画音轨或真实声优声纹克隆。",
   "lines": [
     {
       "id": "welcome-home",
@@ -210,6 +210,78 @@
       "audio": "goodnight-dream.mp3",
       "duration_seconds": 4.493061,
       "sha256": "e5aa45815d49f092bc8b3fc0e91badc11cd928910be70846e9b333bf34074cd5"
+    },
+    {
+      "id": "welcome-glad",
+      "scene": "welcome",
+      "japanese": "来たんだ……その、少しだけ嬉しい。",
+      "chinese": "你来了呀……那个，只有一点点开心。",
+      "style": { "name": "ささやき", "id": 1063997411 },
+      "parameters": { "speedScale": 0.96, "pitchScale": 0, "intonationScale": 0.92, "volumeScale": 0.88 },
+      "query": "queries/welcome-glad.json",
+      "audio": "welcome-glad.mp3",
+      "duration_seconds": 3.500408,
+      "sha256": "0379603972d66768d9458146769ceeccd9a9afb02c7a14f997a6c22c3dcbf762"
+    },
+    {
+      "id": "welcome-door-gap",
+      "scene": "welcome",
+      "japanese": "ドア、少しだけ開けておく。……見つめすぎないで。",
+      "chinese": "门给你留一点缝……不许一直盯着看。",
+      "style": { "name": "ささやき", "id": 1063997411 },
+      "parameters": { "speedScale": 0.95, "pitchScale": 0, "intonationScale": 0.91, "volumeScale": 0.87 },
+      "query": "queries/welcome-door-gap.json",
+      "audio": "welcome-door-gap.mp3",
+      "duration_seconds": 4.257959,
+      "sha256": "8d290f6828eed2749040bf06cc63b3adecafd4b6e22746d72c5969b1a4125468"
+    },
+    {
+      "id": "drawing-one-second",
+      "scene": "drawing",
+      "japanese": "この線、うまくいった。……一秒だけなら、見てもいいよ。",
+      "chinese": "这条线画得很好……只看一秒的话，可以哦。",
+      "style": { "name": "じょうきげん", "id": 1063997409 },
+      "parameters": { "speedScale": 0.98, "pitchScale": 0, "intonationScale": 1.02, "volumeScale": 0.9 },
+      "query": "queries/drawing-one-second.json",
+      "audio": "drawing-one-second.mp3",
+      "duration_seconds": 4.858776,
+      "sha256": "ede837e4399cb821184dbc524c9a0094aaadc4facc56b8a147d77dee478074ba"
+    },
+    {
+      "id": "drawing-stay-near",
+      "scene": "drawing",
+      "japanese": "隣にいてもいいけど、静かにして。……描き終わったら呼ぶから。",
+      "chinese": "可以待在旁边，但要安静……画完我会叫你的。",
+      "style": { "name": "ささやき", "id": 1063997411 },
+      "parameters": { "speedScale": 0.95, "pitchScale": 0, "intonationScale": 0.91, "volumeScale": 0.87 },
+      "query": "queries/drawing-stay-near.json",
+      "audio": "drawing-stay-near.mp3",
+      "duration_seconds": 5.407347,
+      "sha256": "4474bf402564031af9a2d91370dbd993d231f2bcb1e7a7c8b766435c4fe08d2a"
+    },
+    {
+      "id": "like-noticed",
+      "scene": "like",
+      "japanese": "そこ、気づいたんだ……ちゃんと見てくれてたんだね。",
+      "chinese": "你注意到那里了呀……真的有认真看呢。",
+      "style": { "name": "じょうきげん", "id": 1063997409 },
+      "parameters": { "speedScale": 0.98, "pitchScale": 0, "intonationScale": 1.01, "volumeScale": 0.9 },
+      "query": "queries/like-noticed.json",
+      "audio": "like-noticed.mp3",
+      "duration_seconds": 3.996735,
+      "sha256": "49397ecebe9dd5f37bc3149fff993bda1a35cf0b9939bc2d881804a0898c08bf"
+    },
+    {
+      "id": "goodnight-answer",
+      "scene": "goodnight",
+      "japanese": "おやすみって言ったら、ちゃんと返して。……聞いてから寝るから。",
+      "chinese": "我说晚安以后，你也要好好回答……听见了我才睡。",
+      "style": { "name": "ささやき", "id": 1063997411 },
+      "parameters": { "speedScale": 0.92, "pitchScale": 0, "intonationScale": 0.89, "volumeScale": 0.85 },
+      "query": "queries/goodnight-answer.json",
+      "audio": "goodnight-answer.mp3",
+      "duration_seconds": 5.250612,
+      "sha256": "7374c6479091c67bbf9cf6bd905778f64ae54756831db9ab9536d9d944847cc4"
     }
   ]
 }
