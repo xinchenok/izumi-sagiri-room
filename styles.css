@@ -57,7 +57,7 @@ body {
 }
 
 body.feedback-active {
-  padding-bottom: 6.8rem;
+  padding-bottom: calc(6.8rem + env(safe-area-inset-bottom));
 }
 
 body::before {
@@ -167,6 +167,8 @@ h2 {
   gap: 2rem;
   min-height: 4.6rem;
   padding: 0.55rem max(1.1rem, calc((100vw - var(--max)) / 2));
+  padding-right: max(1.1rem, env(safe-area-inset-right), calc((100vw - var(--max)) / 2));
+  padding-left: max(1.1rem, env(safe-area-inset-left), calc((100vw - var(--max)) / 2));
   color: var(--white);
   background: var(--cocoa);
   border-bottom: 4px solid var(--cocoa-light);
@@ -297,7 +299,7 @@ h2 {
   position: relative;
   z-index: 3;
   width: min(1120px, calc(100vw - 7rem));
-  min-height: min(780px, calc(100svh - 8.2rem));
+  height: clamp(680px, calc(100svh - 8.2rem), 780px);
   margin: 0 auto;
   overflow: hidden;
   background: var(--wall-pink);
@@ -478,7 +480,7 @@ h2 {
 
 .door-knob {
   position: absolute;
-  top: 56%;
+  top: 52%;
   right: 8%;
   z-index: 4;
   width: 3.4rem;
@@ -566,8 +568,9 @@ h2 {
   transform: translateY(2px);
 }
 
-.paw-button[disabled] {
+.paw-button:disabled {
   cursor: default;
+  box-shadow: 0 4px 10px rgba(74, 35, 48, 0.18);
   opacity: 0.78;
   transform: none;
 }
@@ -781,12 +784,14 @@ h2 {
   line-height: 1.25;
 }
 
-.polaroid-note svg {
+.polaroid-note img {
   width: 100%;
-  height: 7rem;
-  fill: var(--mint);
-  stroke: var(--moon-deep);
-  stroke-width: 3;
+  height: 8.5rem;
+  object-fit: cover;
+  object-position: 50% 28%;
+  border: 5px solid var(--cream);
+  box-shadow: 0 8px 16px rgba(87, 58, 62, 0.16);
+  transform: rotate(-1.4deg);
 }
 
 .desk-explore {
@@ -866,95 +871,64 @@ h2 {
 
 .desk-board {
   position: relative;
-  min-height: 38rem;
+  min-height: 0;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background-color: var(--strawberry-soft);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='70' viewBox='0 0 70 70'%3E%3Cpath d='M14 17c5-7 12-6 15 0-3 7-11 7-15 0Zm38 32c3-5 8-4 10 0-2 5-7 5-10 0Z' fill='none' stroke='%23ad5e78' stroke-opacity='.17'/%3E%3C/svg%3E");
+  background: var(--night-deep);
+  isolation: isolate;
 }
 
-.desk-board::after {
+.desk-scene-picture,
+.desk-scene-picture img {
   position: absolute;
-  right: -4%;
-  bottom: -1rem;
-  left: -4%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.desk-scene-picture {
   z-index: 0;
-  height: 43%;
-  content: "";
-  background: var(--cocoa-light);
-  border-top: 8px solid var(--cocoa);
-  transform: rotate(-1deg);
 }
 
-.desk-wall-pin {
-  position: absolute;
-  z-index: 0;
-  width: 7rem;
-  height: 9rem;
-  background: var(--mint-pale);
-  border: 5px solid var(--cream);
-  box-shadow: 0 8px 12px var(--shadow-cocoa);
-}
-
-.desk-wall-pin::after {
-  position: absolute;
-  inset: 1rem;
-  content: "";
-  border: 2px dashed var(--moon-deep);
-}
-
-.desk-wall-pin--one {
-  top: 8%;
-  left: 12%;
-  transform: rotate(-5deg);
-}
-
-.desk-wall-pin--two {
-  top: 5%;
-  right: 14%;
-  width: 9rem;
-  height: 6.5rem;
-  background: var(--paper);
-  transform: rotate(3deg);
-}
-
-.desk-light {
-  position: absolute;
-  top: -5%;
-  left: 45%;
-  z-index: 0;
-  width: 10rem;
-  height: 10rem;
-  border: 4rem solid rgba(207, 232, 237, 0.26);
-  border-radius: 50%;
+.desk-scene-picture img {
+  object-fit: cover;
 }
 
 .desk-object {
   position: absolute;
   z-index: 2;
-  display: grid;
-  place-items: center;
-  padding: 0.3rem;
+  padding: 0;
   color: var(--cocoa);
-  background: transparent;
-  border: 0;
+  background: rgba(243, 209, 109, 0);
+  border: 2px solid transparent;
+  border-radius: 0.35rem;
   cursor: pointer;
+  transition: background-color 180ms var(--ease-soft), border-color 180ms var(--ease-soft);
 }
 
 .desk-object svg {
-  width: 100%;
-  height: auto;
-  fill: var(--cream);
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  width: 2.7rem;
+  height: 2.7rem;
+  padding: 0.48rem;
+  fill: var(--strawberry-soft);
   stroke: currentColor;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
-  filter: drop-shadow(0 8px 5px rgba(71, 42, 47, 0.2));
-  transition: transform 220ms var(--ease-soft), fill 220ms var(--ease-soft);
+  background: rgba(255, 246, 223, 0.94);
+  border: 2px solid var(--cocoa);
+  border-radius: 50%;
+  box-shadow: 0 5px 12px rgba(71, 42, 47, 0.2);
+  transition: transform 180ms var(--ease-soft), background-color 180ms var(--ease-soft);
 }
 
 .desk-object span {
   position: absolute;
-  bottom: -1.35rem;
+  bottom: 0.45rem;
+  left: 50%;
   padding: 0.18rem 0.45rem;
   color: var(--white);
   font-size: 0.68rem;
@@ -962,55 +936,70 @@ h2 {
   white-space: nowrap;
   background: var(--cocoa);
   opacity: 0;
-  transform: translateY(0.35rem);
+  transform: translate(-50%, 0.35rem);
   transition: opacity 180ms var(--ease-soft), transform 180ms var(--ease-soft);
+}
+
+.desk-object:hover,
+.desk-object:focus-visible {
+  background: rgba(243, 209, 109, 0.12);
+  border-color: rgba(255, 246, 223, 0.72);
 }
 
 .desk-object:hover svg,
 .desk-object:focus-visible svg {
-  transform: translateY(-7px) rotate(-2deg);
+  transform: translateY(-2px) rotate(-2deg);
 }
 
 .desk-object:hover span,
 .desk-object:focus-visible span,
 .desk-object[aria-pressed="true"] span {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(-50%, 0);
+}
+
+.desk-object[aria-pressed="true"] {
+  background: rgba(243, 209, 109, 0.15);
+  border-color: var(--yellow);
 }
 
 .desk-object[aria-pressed="true"] svg {
-  fill: var(--yellow);
+  background: var(--yellow);
 }
 
 .desk-object--tablet {
-  right: 25%;
-  bottom: 19%;
-  width: 37%;
+  top: 53%;
+  left: 34%;
+  width: 41%;
+  height: 31%;
 }
 
 .desk-object--headphones {
-  top: 30%;
-  left: 10%;
-  width: 16%;
+  top: 16%;
+  left: 2%;
+  width: 22%;
+  height: 31%;
 }
 
 .desk-object--manuscript {
-  bottom: 7%;
-  left: 14%;
-  width: 26%;
-  transform: rotate(-6deg);
+  bottom: 1%;
+  left: 2%;
+  width: 32%;
+  height: 34%;
 }
 
 .desk-object--plush {
-  top: 27%;
-  right: 8%;
-  width: 16%;
+  top: 20%;
+  right: 9%;
+  width: 20%;
+  height: 30%;
 }
 
 .desk-object--drawer {
-  right: 7%;
-  bottom: 2%;
-  width: 28%;
+  right: 1%;
+  bottom: 0;
+  width: 24%;
+  height: 22%;
 }
 
 .secret-message {
@@ -1029,12 +1018,27 @@ h2 {
   display: none;
 }
 
-.secret-message svg {
-  flex: 0 0 3rem;
-  width: 3rem;
-  fill: none;
-  stroke: var(--strawberry-dark);
-  stroke-width: 2.5;
+.secret-message:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.secret-message__portrait {
+  flex: 0 0 4rem;
+  width: 4rem;
+  height: 4rem;
+  overflow: hidden;
+  background: var(--strawberry-soft);
+  border: 3px solid var(--strawberry-dark);
+  border-radius: 50%;
+}
+
+.secret-message__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 24%;
+  transform: scale(2.2);
 }
 
 .secret-message span {
@@ -1581,7 +1585,7 @@ h2 {
 .feedback-dock.is-peeking {
   position: fixed;
   right: 50%;
-  bottom: 0.8rem;
+  bottom: max(0.8rem, env(safe-area-inset-bottom));
   margin: 0;
   transform: translateX(50%);
 }
@@ -1759,7 +1763,8 @@ h2 {
 @media (max-width: 1024px) {
   .door-scene {
     width: calc(100vw - 4rem);
-    min-height: min(720px, calc(100svh - 8rem));
+    height: clamp(680px, calc(100svh - 8rem), 720px);
+    min-height: 0;
   }
 
   .door-leaf {
@@ -1826,10 +1831,6 @@ h2 {
     grid-row: 3 / span 2;
   }
 
-  .desk-board {
-    min-height: 34rem;
-  }
-
   .wardrobe-album {
     grid-template-columns: 55% 45%;
   }
@@ -1850,7 +1851,7 @@ h2 {
   }
 
   body.feedback-active {
-    padding-bottom: 6rem;
+    padding-bottom: calc(6rem + env(safe-area-inset-bottom));
   }
 
   .door-nav {
@@ -1858,6 +1859,8 @@ h2 {
     gap: 0.6rem;
     min-height: 3.8rem;
     padding: 0.4rem 0.75rem;
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+    padding-left: max(0.75rem, env(safe-area-inset-left));
   }
 
   .mini-sign {
@@ -1899,6 +1902,7 @@ h2 {
 
   .door-scene {
     width: 100%;
+    height: auto;
     min-height: 44rem;
     border-width: 6px;
   }
@@ -2030,39 +2034,13 @@ h2 {
   }
 
   .desk-board {
-    min-height: 26rem;
-  }
-
-  .desk-wall-pin {
-    width: 4.5rem;
-    height: 6rem;
-  }
-
-  .desk-wall-pin--two {
-    width: 6rem;
-    height: 4.5rem;
-  }
-
-  .desk-object--tablet {
-    width: 43%;
-  }
-
-  .desk-object--headphones,
-  .desk-object--plush {
-    width: 20%;
-  }
-
-  .desk-object--manuscript {
-    width: 31%;
-  }
-
-  .desk-object--drawer {
-    width: 34%;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 
   .desk-object span {
     opacity: 1;
-    transform: none;
+    transform: translate(-50%, 0);
   }
 
   .secret-message {
@@ -2189,7 +2167,7 @@ h2 {
 
   .feedback-dock.is-peeking {
     right: 0.45rem;
-    bottom: 0.4rem;
+    bottom: max(0.4rem, env(safe-area-inset-bottom));
     left: 0.45rem;
     width: auto;
     margin: 0;

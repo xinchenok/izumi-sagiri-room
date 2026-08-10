@@ -53,7 +53,11 @@ const CONTENT = {
       id: "welcome",
       japanese: "お、おかえり……今日も、静かにしてね。",
       chinese: "欢、欢迎回来……今天也要安静一点哦。",
-      file: "assets/audio/v3/welcome.wav",
+      takes: [
+        { label: "害羞地", file: "assets/audio/v3/welcome.wav" },
+        { label: "更小声", file: "assets/audio/v3/welcome-soft.mp3" },
+        { label: "慌张一点", file: "assets/audio/v3/welcome-flustered.mp3" }
+      ],
       expression: "shy",
       scene: "房门口",
       reaction: "欢、欢迎回来……"
@@ -62,7 +66,11 @@ const CONTENT = {
       id: "drawing",
       japanese: "まだ描き終わってないから……勝手に見ちゃだめ。",
       chinese: "这张画还没完成，不许偷看。",
-      file: "assets/audio/v3/drawing.wav",
+      takes: [
+        { label: "认真地", file: "assets/audio/v3/drawing.wav" },
+        { label: "小声嘟囔", file: "assets/audio/v3/drawing-mutter.mp3" },
+        { label: "被抓到啦", file: "assets/audio/v3/drawing-flustered.mp3" }
+      ],
       expression: "startled",
       scene: "画桌旁",
       reaction: "不许趁我没注意偷看。"
@@ -71,7 +79,11 @@ const CONTENT = {
       id: "like",
       japanese: "気に入ったなら……もう一枚、描いてあげてもいいよ。",
       chinese: "如果你喜欢的话……我可以再画一张。",
-      file: "assets/audio/v3/like.wav",
+      takes: [
+        { label: "有点得意", file: "assets/audio/v3/like.wav" },
+        { label: "偷偷开心", file: "assets/audio/v3/like-soft.mp3" },
+        { label: "藏不住开心", file: "assets/audio/v3/like-happy.mp3" }
+      ],
       expression: "proud",
       scene: "衣橱相册",
       reaction: "也、也不是特意画给你的。"
@@ -80,7 +92,11 @@ const CONTENT = {
       id: "goodnight",
       japanese: "おやすみ。明日も……一緒に頑張ろうね。",
       chinese: "晚安，明天也要一起努力。",
-      file: "assets/audio/v3/goodnight.wav",
+      takes: [
+        { label: "轻轻晚安", file: "assets/audio/v3/goodnight.wav" },
+        { label: "更轻一点", file: "assets/audio/v3/goodnight-soft.mp3" },
+        { label: "困困的", file: "assets/audio/v3/goodnight-sleepy.mp3" }
+      ],
       expression: "shy",
       scene: "晚安以前",
       reaction: "明天……也可以再来。"
@@ -262,6 +278,7 @@ let galleryPosition = 0;
 let voiceSequence = 0;
 let lastFortune = 0;
 let feedbackTimer = 0;
+const lastVoiceTakes = new Map();
 
 const voicePlayer = new Audio();
 voicePlayer.preload = "none";
@@ -376,20 +393,29 @@ function stopVoice(keepSubtitle = true, keepDock = false) {
   if (!keepDock) settleFeedback(keepSubtitle ? 1200 : 2400);
 }
 
+function chooseVoiceTake(line) {
+  const previous = lastVoiceTakes.get(line.id) ?? -1;
+  let next = Math.floor(Math.random() * line.takes.length);
+  if (next === previous && line.takes.length > 1) next = (next + 1) % line.takes.length;
+  lastVoiceTakes.set(line.id, next);
+  return line.takes[next];
+}
+
 async function playVoice(id) {
   const line = CONTENT.voiceLines[id];
   if (!line) return;
+  const take = chooseVoiceTake(line);
 
   stopVoice(true, true);
   const sequence = voiceSequence;
-  elements.subtitleScene.textContent = line.scene;
+  elements.subtitleScene.textContent = `${line.scene} · ${take.label}`;
   elements.subtitleJapanese.textContent = line.japanese;
   elements.subtitleChinese.textContent = line.chinese;
   setHeroExpression(line.expression);
-  updateReaction({ expression: line.expression, label: `正在听 · ${line.scene}`, text: line.reaction });
+  updateReaction({ expression: line.expression, label: `正在听 · ${take.label}`, text: line.reaction });
   showFeedback(true);
 
-  voicePlayer.src = line.file;
+  voicePlayer.src = take.file;
   voicePlayer.load();
   try {
     await voicePlayer.play();

@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#573a3e">
   <meta name="description" content="轻轻敲开和泉纱雾的房门，探索画桌秘密、翻看日常衣橱与夜晚画稿的原创同人互动页面。">
   <title>和泉纱雾的房门里</title>
@@ -97,7 +97,7 @@
         <article class="polaroid-note">
           <span>创作开关</span>
           <strong>拿起笔以后<br>会变得意外认真</strong>
-          <svg aria-hidden="true" viewBox="0 0 80 56"><path d="m8 42 15-11 11 7 19-24 19 28H8Z"/><circle cx="24" cy="17" r="5"/></svg>
+          <img src="assets/v3/gallery-hide.png" width="1448" height="1086" loading="lazy" alt="纱雾躲在画册后，只露出一双蓝眼睛偷看">
         </article>
       </div>
 
@@ -116,9 +116,10 @@
         </div>
 
         <div class="desk-board" aria-label="可探索的画桌">
-          <span class="desk-wall-pin desk-wall-pin--one" aria-hidden="true"></span>
-          <span class="desk-wall-pin desk-wall-pin--two" aria-hidden="true"></span>
-          <span class="desk-light" aria-hidden="true"></span>
+          <picture class="desk-scene-picture">
+            <source srcset="assets/v3/desk-secrets.webp" type="image/webp">
+            <img src="assets/v3/desk-secrets.png" width="1448" height="1086" loading="lazy" alt="纱雾坐在黄昏的画桌前，桌面周围摆着耳机、轻小说稿件、数位板、猫咪玩偶和带锁抽屉">
+          </picture>
 
           <button class="desk-object desk-object--tablet secret-trigger" type="button" data-secret="tablet" aria-pressed="false" aria-label="查看数位板的秘密">
             <svg aria-hidden="true" viewBox="0 0 110 76"><rect x="4" y="4" width="102" height="68" rx="5"/><path d="m21 54 17-18 14 10 20-27 17 35M82 64h12"/></svg>
@@ -144,7 +145,9 @@
       </div>
 
       <div class="secret-message" id="secretMessage" role="status" tabindex="-1" hidden>
-        <svg aria-hidden="true" viewBox="0 0 48 48"><path d="M7 9h34v30H7zM12 15h24M12 22h18M12 29h21"/></svg>
+        <div class="secret-message__portrait" aria-hidden="true">
+          <img src="assets/v3/hero-shy.png" width="1122" height="1402" loading="lazy" alt="">
+        </div>
         <div>
           <span>抽屉里的隐藏留言</span>
           <p>“谢谢你没有催我开门。下次……也可以来。”</p>
@@ -265,9 +268,9 @@
     <div class="subtitle-bar" id="subtitleBar" aria-live="polite" aria-atomic="true">
       <div>
         <span id="subtitleScene">房门口</span>
-        <p lang="ja" id="subtitleJapanese">音声ボタンを押すと、ここに台詞が表示されます。</p>
+        <p lang="ja" id="subtitleJapanese">もう一度押すと、少し違う声で聞けます。</p>
       </div>
-      <strong id="subtitleChinese">点击语音按钮后，这里会一直显示简体中文字幕。</strong>
+      <strong id="subtitleChinese">每次重听，语气会悄悄变化；简体中文字幕会一直留在这里。</strong>
       <button id="stopVoiceButton" type="button" aria-label="停止播放语音" hidden>
         <svg aria-hidden="true" viewBox="0 0 32 32"><rect x="9" y="9" width="14" height="14" rx="2"/></svg>
       </button>
