@@ -3,26 +3,31 @@
 const CONTENT = {
   heroExpressions: {
     peek: {
-      image: "assets/v3/hero-peek.png",
+      image: "assets/v5/hero-peek.webp",
+      small: "assets/v5/hero-peek-560.webp",
       alt: "银白长发、蓝眼睛的纱雾穿着粉色猫耳家居服，握着半掩的卧室门安静偷看"
     },
     startled: {
-      image: "assets/v3/hero-startled.png",
+      image: "assets/v5/hero-startled.webp",
+      small: "assets/v5/hero-startled-560.webp",
       alt: "听见敲门后，纱雾睁大蓝眼睛露出突然受惊的可爱表情"
     },
     shy: {
-      image: "assets/v3/hero-shy.png",
+      image: "assets/v5/hero-shy.webp",
+      small: "assets/v5/hero-shy-560.webp",
       alt: "认出来访者后，纱雾握着门边脸红地害羞微笑"
     },
     proud: {
-      image: "assets/v3/hero-proud.png",
+      image: "assets/v5/hero-proud.webp",
+      small: "assets/v5/hero-proud-560.webp",
       alt: "纱雾握着门边，露出认真又有一点得意的可爱表情"
     }
   },
   outfits: {
     home: {
       name: "宽松运动家居服",
-      image: "assets/v3/outfit-home.png",
+      image: "assets/v5/outfit-home.webp",
+      small: "assets/v5/outfit-home-560.webp",
       alt: "纱雾穿宽松粉色运动外套和奶油色运动裤，坐在床边害羞微笑",
       description: "袖子要够长，裤脚要够软。窝在房间里画画的时候，这样才最安心。",
       time: "午后 15:20",
@@ -31,7 +36,8 @@ const CONTENT = {
     },
     artist: {
       name: "格纹画稿睡衣",
-      image: "assets/v3/outfit-artist-night.png",
+      image: "assets/v5/outfit-artist-night.webp",
+      small: "assets/v5/outfit-artist-night-560.webp",
       alt: "纱雾穿蓝白格长袖睡衣和长裤，戴着绘图手套在月光下认真画画",
       description: "蓝白格睡衣、绘图手套和不会掉下去的软拖鞋——熬夜画稿模式，准备完成。",
       time: "深夜 00:47",
@@ -40,14 +46,76 @@ const CONTENT = {
     },
     outing: {
       name: "薄荷水手外套",
-      image: "assets/v3/outfit-outing-sailor.png",
+      image: "assets/v5/outfit-outing-sailor.webp",
+      small: "assets/v5/outfit-outing-sailor-560.webp",
       alt: "纱雾穿水手领裙装、薄荷色针织外套和深色长袜，抱着棕色书包站在门口",
       description: "水手领、厚厚的薄荷针织和能挡住紧张的书包。真的要出门时，会在门口多站一会儿。",
       time: "早上 08:10",
       expression: "startled",
       reaction: "外、外面的人不会很多吧？"
+    },
+    bedtime: {
+      name: "草莓睡前服",
+      image: "assets/v5/outfit-bedtime.webp",
+      small: "assets/v5/outfit-bedtime-560.webp",
+      alt: "深夜里，纱雾穿奶油粉草莓长袖睡衣和长裤，侧躺在床上用数位板继续画画",
+      description: "已经换好睡衣，却还舍不得放下最后一笔。数位板垫在枕头上，画到眼睛发困才肯保存。",
+      time: "凌晨 01:13",
+      expression: "shy",
+      reaction: "再画这一小块就睡……真、真的。"
+    },
+    hooded: {
+      name: "猫耳连帽毯",
+      image: "assets/v5/outfit-hooded-blanket.webp",
+      small: "assets/v5/outfit-hooded-blanket-560.webp",
+      alt: "雨夜里，纱雾裹着薄荷灰猫耳连帽毯，穿长裤和暖袜坐在地毯上认真校对画稿",
+      description: "帽子拉低一点，袖子再长一点，就能把雨声和截稿压力都挡在外面；该改的线却一笔也不会漏。",
+      time: "雨夜 21:36",
+      expression: "proud",
+      reaction: "这样就不冷……也不会被看到太多。"
     }
   },
+  visitStages: [
+    {
+      id: "first",
+      maxVisits: 1,
+      note: "第一次站在门外",
+      hanger: "正在画画",
+      lead: "门里传来很轻的脚步声。",
+      quote: "“先敲门……我才会开。”",
+      reaction: "……门外是谁？",
+      openLead: "她认出来访者以后，脸更红了。",
+      openQuote: "“只、只可以安静地待一会儿。”",
+      openReaction: "只可以安静地待一会儿。",
+      secretMessage: "“谢谢你没有催我开门。下次……也可以来。”"
+    },
+    {
+      id: "familiar",
+      maxVisits: 3,
+      note: "她已经认得这阵脚步声",
+      hanger: "还是要先敲门",
+      lead: "你还没出声，门后的脚步就停近了一点。",
+      quote: "“又来了……还是要先敲门。”",
+      reaction: "又来了……我已经听见了。",
+      openLead: "她这次没有再问门外是谁。",
+      openQuote: "“进来吧……位置还是留在那里。”",
+      openReaction: "位置还是留在那里……不要靠得太近。",
+      secretMessage: "“你真的又来了……那下次，也不用站得那么远。”"
+    },
+    {
+      id: "close",
+      maxVisits: Infinity,
+      note: "门缝比上次多留了一点",
+      hanger: "有一张画想给你看",
+      lead: "门缝在你靠近以前，就先亮起了一线暖光。",
+      quote: "“我刚好有张画……想先听你的感想。”",
+      reaction: "来得正好……有一张画想先给你看。",
+      openLead: "画稿已经被悄悄放在桌边。",
+      openQuote: "“我没有等很久……进来吧。”",
+      openReaction: "才没有一直等……只是刚好画完。",
+      secretMessage: "“这次不用等我把留言藏好。反正……你还会再来。”"
+    }
+  ],
   voiceLines: {
     welcome: {
       id: "welcome",
@@ -287,6 +355,11 @@ const CONTENT = {
     fortune: { expression: "shy", label: "纸条换了一张", text: "这句……也送给你。" },
     voiceError: { expression: "peek", label: "声音没有播放", text: "字幕还在，先看这里也可以。" }
   },
+  galleryChapters: [
+    { id: "start", title: "第一章 · 偷偷开始", short: "偷偷开始", start: 0, end: 3 },
+    { id: "closer", title: "第二章 · 把画推近", short: "把画推近", start: 4, end: 7 },
+    { id: "praise", title: "第三章 · 等一句夸奖", short: "等一句夸奖", start: 8, end: 10 }
+  ],
   gallery: [
     {
       id: "bed-drawing",
@@ -400,11 +473,11 @@ const CONTENT = {
     }
   ],
   secrets: {
-    tablet: { label: "数位板", text: "快捷键都设成单手能按到，因为另一只手常常要抱着靠枕。" },
-    headphones: { label: "耳机", text: "画线稿时会循环同一张安静的歌单，音量永远只开到三格。" },
-    manuscript: { label: "轻小说稿件", text: "页边画满了表情草稿。比起剧情批注，她更先注意角色有没有好好笑出来。" },
-    plush: { label: "猫咪玩偶", text: "不顺利的时候会被抱得很紧。顺利的时候，也一样。" },
-    drawer: { label: "上锁抽屉", text: "钥匙藏在薄荷色铅笔盒底下。不过，要集齐五枚猫爪才可以打开。" }
+    tablet: { label: "数位板", hint: "她的手刚从画面中央那块最常碰的黑色板子旁收回来。", text: "快捷键都设成单手能按到，因为另一只手常常要抱着靠枕。" },
+    headphones: { label: "耳机", hint: "画线稿以前，她总会先看一眼画面左上方的耳机。", text: "画线稿时会循环同一张安静的歌单，音量永远只开到三格。" },
+    manuscript: { label: "轻小说稿件", hint: "桌面左下角那叠纸的页边，好像画了比正文更多的东西。", text: "页边画满了表情草稿。比起剧情批注，她更先注意角色有没有好好笑出来。" },
+    plush: { label: "猫咪玩偶", hint: "她卡住的时候，视线会飘向画面右上方那只软绵绵的家伙。", text: "不顺利的时候会被抱得很紧。顺利的时候，也一样。" },
+    drawer: { label: "上锁抽屉", hint: "最不肯解释的东西，通常被她推到桌子的右下角。", text: "钥匙藏在薄荷色铅笔盒底下。不过，要集齐五枚猫爪才可以打开。" }
   },
   fortunes: [
     "画不完也没关系，先把今天好好收起来。",
@@ -428,14 +501,37 @@ function validSecrets(value) {
   return Array.isArray(value) ? value.filter((key) => Object.prototype.hasOwnProperty.call(CONTENT.secrets, key)) : [];
 }
 
+function clampVolume(value) {
+  return Number.isFinite(value) ? Math.min(1, Math.max(0, value)) : 0.85;
+}
+
+function validGalleryIndex(value) {
+  return Number.isInteger(value) && value >= 0 && value < CONTENT.gallery.length ? value : 0;
+}
+
 function readState() {
-  const fallback = { outfit: "home", secrets: new Set() };
+  const fallback = {
+    outfit: "home",
+    secrets: new Set(),
+    visitCount: 0,
+    lastVisitAt: 0,
+    previousVisitAt: 0,
+    galleryIndex: 0,
+    voiceVolume: 0.85,
+    voiceMuted: false
+  };
   try {
     const current = JSON.parse(localStorage.getItem(STORAGE_KEY_V2));
     if (current) {
       return {
         outfit: validOutfit(current.outfit) ? current.outfit : "home",
-        secrets: new Set(validSecrets(current.secrets))
+        secrets: new Set(validSecrets(current.secrets)),
+        visitCount: Number.isInteger(current.visitCount) && current.visitCount > 0 ? current.visitCount : 0,
+        lastVisitAt: Number.isFinite(current.lastVisitAt) ? current.lastVisitAt : 0,
+        previousVisitAt: Number.isFinite(current.previousVisitAt) ? current.previousVisitAt : 0,
+        galleryIndex: validGalleryIndex(current.galleryIndex),
+        voiceVolume: clampVolume(current.voiceVolume),
+        voiceMuted: current.voiceMuted === true
       };
     }
 
@@ -443,10 +539,16 @@ function readState() {
     if (legacy) {
       const migrated = {
         outfit: validOutfit(legacy.outfit) ? legacy.outfit : "home",
-        secrets: validSecrets(legacy.secrets)
+        secrets: validSecrets(legacy.secrets),
+        visitCount: 0,
+        lastVisitAt: 0,
+        previousVisitAt: 0,
+        galleryIndex: 0,
+        voiceVolume: 0.85,
+        voiceMuted: false
       };
       localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(migrated));
-      return { outfit: migrated.outfit, secrets: new Set(migrated.secrets) };
+      return { ...migrated, secrets: new Set(migrated.secrets) };
     }
   } catch {
     return fallback;
@@ -460,18 +562,57 @@ function saveState() {
   try {
     localStorage.setItem(STORAGE_KEY_V2, JSON.stringify({
       outfit: state.outfit,
-      secrets: [...state.secrets]
+      secrets: [...state.secrets],
+      visitCount: state.visitCount,
+      lastVisitAt: state.lastVisitAt,
+      previousVisitAt: state.previousVisitAt,
+      galleryIndex: state.galleryIndex,
+      voiceVolume: state.voiceVolume,
+      voiceMuted: state.voiceMuted
     }));
   } catch {
     // 存储不可用时，仅保留当前会话状态。
   }
 }
 
+function isSameLocalDay(first, second) {
+  if (!first || !second) return false;
+  const a = new Date(first);
+  const b = new Date(second);
+  return a.getFullYear() === b.getFullYear()
+    && a.getMonth() === b.getMonth()
+    && a.getDate() === b.getDate();
+}
+
+function registerVisit(now = Date.now()) {
+  const fourHours = 4 * 60 * 60 * 1000;
+  const shouldCount = !state.lastVisitAt
+    || !isSameLocalDay(state.lastVisitAt, now)
+    || now - state.lastVisitAt >= fourHours;
+
+  if (shouldCount) {
+    state.previousVisitAt = state.lastVisitAt;
+    state.lastVisitAt = now;
+    state.visitCount = Math.max(0, state.visitCount) + 1;
+    saveState();
+  } else if (state.visitCount < 1) {
+    state.visitCount = 1;
+    saveState();
+  }
+
+  return CONTENT.visitStages.find((stage) => state.visitCount <= stage.maxVisits)
+    || CONTENT.visitStages.at(-1);
+}
+
+const visitStage = registerVisit();
+
 const elements = {
   doorScene: document.querySelector("#doorScene"),
   doorLeaf: document.querySelector("#doorLeaf"),
   knockButton: document.querySelector("#knockButton"),
   doorStatus: document.querySelector("#doorStatus"),
+  doorHanger: document.querySelector(".door-hanger"),
+  visitNote: document.querySelector("#visitNote"),
   heroCharacter: document.querySelector("#heroCharacter"),
   feedbackDock: document.querySelector("#feedbackDock"),
   reactionCorner: document.querySelector("#reactionCorner"),
@@ -481,6 +622,9 @@ const elements = {
   subtitleScene: document.querySelector("#subtitleScene"),
   subtitleJapanese: document.querySelector("#subtitleJapanese"),
   subtitleChinese: document.querySelector("#subtitleChinese"),
+  voicePlaybackState: document.querySelector("#voicePlaybackState"),
+  voiceVolume: document.querySelector("#voiceVolume"),
+  voiceMuteButton: document.querySelector("#voiceMuteButton"),
   stopVoiceButton: document.querySelector("#stopVoiceButton"),
   outfitStage: document.querySelector("#outfitStage"),
   outfitImage: document.querySelector("#outfitImage"),
@@ -493,15 +637,33 @@ const elements = {
   secretButtons: [...document.querySelectorAll("[data-secret]")],
   secretProgress: document.querySelector("#secretProgress"),
   secretCount: document.querySelector("#secretCount"),
+  secretHint: document.querySelector("#secretHint"),
+  deskBoard: document.querySelector(".desk-board"),
   secretMessage: document.querySelector("#secretMessage"),
+  secretMessageText: document.querySelector("#secretMessage p"),
   galleryStage: document.querySelector("#galleryStage"),
   galleryMainImage: document.querySelector("#galleryMainImage"),
   galleryIndex: document.querySelector("#galleryIndex"),
+  galleryChapter: document.querySelector("#galleryChapter"),
   galleryCaption: document.querySelector("#galleryCaption"),
   galleryNote: document.querySelector("#galleryNote"),
+  galleryChapters: document.querySelector("#galleryChapters"),
   galleryThumbs: document.querySelector("#galleryThumbs"),
   galleryPrev: document.querySelector("#galleryPrev"),
   galleryNext: document.querySelector("#galleryNext"),
+  galleryOpenButton: document.querySelector("#galleryOpenButton"),
+  galleryLightbox: document.querySelector("#galleryLightbox"),
+  lightboxClose: document.querySelector("#lightboxClose"),
+  lightboxStage: document.querySelector("#lightboxStage"),
+  lightboxPrev: document.querySelector("#lightboxPrev"),
+  lightboxNext: document.querySelector("#lightboxNext"),
+  lightboxImageButton: document.querySelector("#lightboxImageButton"),
+  lightboxImage: document.querySelector("#lightboxImage"),
+  lightboxChapter: document.querySelector("#lightboxChapter"),
+  lightboxIndex: document.querySelector("#lightboxIndex"),
+  lightboxTitle: document.querySelector("#lightboxTitle"),
+  lightboxNote: document.querySelector("#lightboxNote"),
+  lightboxZoomHint: document.querySelector("#lightboxZoomHint"),
   fortuneNote: document.querySelector("#fortuneNote strong"),
   fortuneButton: document.querySelector("#fortuneButton")
 };
@@ -510,10 +672,13 @@ let doorOpened = false;
 let heroSequence = 0;
 let outfitSequence = 0;
 let gallerySequence = 0;
-let galleryPosition = 0;
+let galleryPosition = state.galleryIndex;
 let voiceSequence = 0;
 let lastFortune = 0;
 let feedbackTimer = 0;
+let secretHintTimer = 0;
+let activeVoiceScene = "";
+let lightboxPointerStart = null;
 const lastVoiceReplies = new Map();
 const voiceReplyQueues = new Map();
 const lastGuardedVoiceReplies = new Map();
@@ -525,6 +690,8 @@ const VOICE_GUARD_COOLDOWN_MS = 25000;
 
 const voicePlayer = new Audio();
 voicePlayer.preload = "none";
+voicePlayer.volume = state.voiceVolume;
+voicePlayer.muted = state.voiceMuted;
 
 function preloadImage(source) {
   return new Promise((resolve, reject) => {
@@ -535,10 +702,37 @@ function preloadImage(source) {
   });
 }
 
+function responsiveSourceSet(item) {
+  return item.small ? `${item.small} 560w, ${item.image} 1122w` : "";
+}
+
+function preloadResponsiveImage(item, sizes) {
+  return new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(item.image);
+    image.onerror = reject;
+    if (item.small) {
+      image.srcset = responsiveSourceSet(item);
+      image.sizes = sizes;
+    }
+    image.src = item.image;
+  });
+}
+
 function setHeroExpression(key) {
   const expression = CONTENT.heroExpressions[key] || CONTENT.heroExpressions.peek;
   elements.heroCharacter.src = expression.image;
+  elements.heroCharacter.srcset = responsiveSourceSet(expression);
   elements.heroCharacter.alt = expression.alt;
+}
+
+function applyVisitStage() {
+  elements.visitNote.textContent = visitStage.note;
+  elements.doorHanger.textContent = visitStage.hanger;
+  elements.doorStatus.querySelector("span").textContent = visitStage.lead;
+  elements.doorStatus.querySelector("strong").textContent = visitStage.quote;
+  elements.reactionText.textContent = visitStage.reaction;
+  elements.secretMessageText.textContent = visitStage.secretMessage;
 }
 
 function sprinkle(origin) {
@@ -578,11 +772,18 @@ function showFeedback(persistent = false) {
   if (!persistent) settleFeedback();
 }
 
-function updateReaction(reaction, withConfetti = true) {
+function updateReaction(reaction, withConfetti = true, preserveSubtitles = false) {
   const next = typeof reaction === "string" ? CONTENT.reactions[reaction] : reaction;
   if (!next) return;
+  elements.feedbackDock.classList.toggle("is-voice-context", preserveSubtitles);
+  document.body.classList.toggle("voice-feedback-active", preserveSubtitles);
+  if (!preserveSubtitles) {
+    elements.subtitleScene.textContent = next.label;
+    elements.subtitleJapanese.textContent = "";
+    elements.subtitleChinese.textContent = next.text;
+  }
   const expression = CONTENT.heroExpressions[next.expression] || CONTENT.heroExpressions.peek;
-  elements.reactionImage.src = expression.image;
+  elements.reactionImage.src = expression.small || expression.image;
   elements.reactionImage.alt = expression.alt;
   elements.reactionLabel.textContent = next.label;
   elements.reactionText.textContent = next.text;
@@ -595,7 +796,7 @@ function updateReaction(reaction, withConfetti = true) {
 
 function openDoor() {
   if (doorOpened) {
-    updateReaction("open", false);
+    updateReaction({ expression: "shy", label: "门已经开着", text: visitStage.openReaction }, false);
     return;
   }
   doorOpened = true;
@@ -613,13 +814,23 @@ function openDoor() {
     elements.doorScene.classList.remove("is-startled");
     elements.knockButton.querySelector("span").textContent = "门已经打开啦";
     elements.knockButton.disabled = true;
-    elements.doorStatus.innerHTML = "<span>她认出你以后，脸更红了。</span><strong>“只、只可以安静地待一会儿。”</strong>";
+    elements.doorStatus.querySelector("span").textContent = visitStage.openLead;
+    elements.doorStatus.querySelector("strong").textContent = visitStage.openQuote;
     setHeroExpression("shy");
-    updateReaction("open", false);
+    updateReaction({ expression: "shy", label: "门打开以后", text: visitStage.openReaction }, false);
   }, reducedMotion.matches ? 20 : 760);
 }
 
-function stopVoice(keepSubtitle = true, keepDock = false) {
+function refreshVoiceControls() {
+  elements.voiceVolume.value = String(state.voiceVolume);
+  elements.voiceMuteButton.setAttribute("aria-pressed", String(state.voiceMuted));
+  elements.voiceMuteButton.querySelector("span").textContent = state.voiceMuted ? "恢复声音" : "只看字幕";
+  elements.voiceMuteButton.setAttribute("aria-label", state.voiceMuted ? "恢复语音声音" : "关闭声音，只看字幕");
+  voicePlayer.volume = state.voiceVolume;
+  voicePlayer.muted = state.voiceMuted;
+}
+
+function stopVoice(keepSubtitle = true, keepDock = false, announceStop = false) {
   voiceSequence += 1;
   voicePlayer.pause();
   try {
@@ -628,6 +839,7 @@ function stopVoice(keepSubtitle = true, keepDock = false) {
     // 某些浏览器在媒体尚未就绪时不允许重置时间。
   }
   elements.stopVoiceButton.hidden = true;
+  if (announceStop) elements.voicePlaybackState.textContent = "已经停下 · 字幕仍保留";
   if (!keepSubtitle) {
     elements.subtitleScene.textContent = "房门里";
     elements.subtitleJapanese.textContent = "音声を停止しました。";
@@ -714,37 +926,69 @@ async function playVoice(id) {
   elements.subtitleJapanese.textContent = reply.japanese;
   elements.subtitleChinese.textContent = reply.chinese;
   setHeroExpression(reply.expression);
-  updateReaction({ expression: reply.expression, label: `${guarded ? "她有点闹别扭" : "她小声回答"} · ${reply.label}`, text: reply.reaction });
+  updateReaction({ expression: reply.expression, label: `${guarded ? "她有点闹别扭" : "她小声回答"} · ${reply.label}`, text: reply.reaction }, true, true);
   showFeedback(true);
+  activeVoiceScene = line.scene;
+
+  if (state.voiceMuted) {
+    elements.voicePlaybackState.textContent = `只显示字幕 · ${line.scene}`;
+    elements.stopVoiceButton.hidden = true;
+    settleFeedback(4600);
+    return;
+  }
 
   voicePlayer.src = reply.file;
   voicePlayer.load();
   try {
     await voicePlayer.play();
     if (sequence !== voiceSequence) return;
+    elements.voicePlaybackState.textContent = `正在播放 · ${line.scene}`;
     elements.stopVoiceButton.hidden = false;
   } catch {
     if (sequence !== voiceSequence) return;
     elements.stopVoiceButton.hidden = true;
     elements.subtitleScene.textContent = `${line.scene} · 暂时没有声音`;
-    updateReaction("voiceError", false);
+    elements.voicePlaybackState.textContent = "声音暂时没加载出来 · 可以继续看字幕";
+    updateReaction("voiceError", false, true);
   }
 }
 
 voicePlayer.addEventListener("ended", () => {
   elements.stopVoiceButton.hidden = true;
+  elements.voicePlaybackState.textContent = `播放结束 · ${activeVoiceScene || "字幕仍保留"}`;
   settleFeedback(2600);
 });
 
 voicePlayer.addEventListener("error", () => {
   elements.stopVoiceButton.hidden = true;
+  elements.voicePlaybackState.textContent = "声音暂时没加载出来 · 可以继续看字幕";
   settleFeedback(3200);
 });
+
+function toggleVoiceMode() {
+  state.voiceMuted = !state.voiceMuted;
+  if (state.voiceMuted && !voicePlayer.paused) stopVoice(true, true);
+  refreshVoiceControls();
+  elements.voicePlaybackState.textContent = state.voiceMuted
+    ? "只显示字幕 · 不会播放声音"
+    : "声音已恢复 · 仍然只在点击后播放";
+  saveState();
+  elements.feedbackDock.classList.add("is-voice-context");
+  document.body.classList.add("voice-feedback-active");
+  showFeedback();
+}
+
+function changeVoiceVolume() {
+  state.voiceVolume = clampVolume(Number(elements.voiceVolume.value));
+  voicePlayer.volume = state.voiceVolume;
+  saveState();
+}
 
 function applyOutfit(key) {
   const outfit = CONTENT.outfits[key];
   if (!outfit) return;
   elements.outfitImage.src = outfit.image;
+  elements.outfitImage.srcset = responsiveSourceSet(outfit);
   elements.outfitImage.alt = outfit.alt;
   elements.outfitName.textContent = outfit.name;
   elements.outfitDescription.textContent = outfit.description;
@@ -767,7 +1011,7 @@ async function switchOutfit(key, announce = true) {
   elements.outfitStage.classList.add("is-turning");
 
   try {
-    await preloadImage(outfit.image);
+    await preloadResponsiveImage(outfit, "(max-width: 760px) calc(100vw - 3.2rem), (max-width: 1024px) 52vw, 600px");
   } catch {
     if (sequence === outfitSequence) {
       elements.outfitStage.classList.remove("is-turning");
@@ -781,6 +1025,7 @@ async function switchOutfit(key, announce = true) {
     applyOutfit(key);
     state.outfit = key;
     saveState();
+    preloadOutfitNeighbors(key);
     if (announce) {
       updateReaction({ expression: outfit.expression, label: `换上 · ${outfit.name}`, text: outfit.reaction });
     }
@@ -798,6 +1043,15 @@ function adjacentOutfit(direction) {
   switchOutfit(keys[next]);
 }
 
+function preloadOutfitNeighbors(key = state.outfit) {
+  const keys = Object.keys(CONTENT.outfits);
+  const position = Math.max(0, keys.indexOf(key));
+  [-1, 1].forEach((offset) => {
+    const next = (position + offset + keys.length) % keys.length;
+    preloadResponsiveImage(CONTENT.outfits[keys[next]], "(max-width: 760px) calc(100vw - 3.2rem), (max-width: 1024px) 52vw, 600px").catch(() => {});
+  });
+}
+
 function refreshSecrets() {
   elements.secretButtons.forEach((button) => {
     button.setAttribute("aria-pressed", String(state.secrets.has(button.dataset.secret)));
@@ -809,6 +1063,37 @@ function refreshSecrets() {
   elements.secretProgress.setAttribute("aria-label", `已经发现${state.secrets.size}个秘密`);
   const unlocked = state.secrets.size === Object.keys(CONTENT.secrets).length;
   elements.secretMessage.hidden = !unlocked;
+  if (unlocked) elements.secretHint.textContent = "她把抽屉推开了一点，没有再把线索藏回去。";
+}
+
+function undiscoveredSecretKeys() {
+  return Object.keys(CONTENT.secrets).filter((key) => !state.secrets.has(key));
+}
+
+function revealGentleHint() {
+  const remaining = undiscoveredSecretKeys();
+  if (!remaining.length) return;
+  const index = (Math.max(1, state.visitCount) + state.secrets.size) % remaining.length;
+  elements.secretHint.textContent = CONTENT.secrets[remaining[index]].hint;
+}
+
+function scheduleGentleHint(delay = 11000) {
+  window.clearTimeout(secretHintTimer);
+  if (!undiscoveredSecretKeys().length) return;
+  secretHintTimer = window.setTimeout(revealGentleHint, delay);
+}
+
+function setupSecretHints() {
+  if (!("IntersectionObserver" in window)) {
+    scheduleGentleHint();
+    return;
+  }
+
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) scheduleGentleHint();
+    else window.clearTimeout(secretHintTimer);
+  }, { threshold: 0.45 });
+  observer.observe(elements.deskBoard);
 }
 
 function discoverSecret(button) {
@@ -825,8 +1110,31 @@ function discoverSecret(button) {
   saveState();
   refreshSecrets();
   const unlocked = state.secrets.size === Object.keys(CONTENT.secrets).length;
+  if (!unlocked) {
+    elements.secretHint.textContent = `${secret.label}被她默默承认了。剩下的先别急着找。`;
+    scheduleGentleHint(7500);
+  }
   updateReaction(unlocked ? "unlocked" : { ...CONTENT.reactions.secret, text: `${secret.label}：${secret.text}` });
   if (unlocked) elements.secretMessage.focus?.();
+}
+
+function galleryChapterFor(index) {
+  return CONTENT.galleryChapters.find((chapter) => index >= chapter.start && index <= chapter.end)
+    || CONTENT.galleryChapters[0];
+}
+
+function buildGalleryChapters() {
+  const fragment = document.createDocumentFragment();
+  CONTENT.galleryChapters.forEach((chapter) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.chapter = chapter.id;
+    button.textContent = chapter.title;
+    button.setAttribute("aria-current", String(galleryPosition >= chapter.start && galleryPosition <= chapter.end));
+    button.addEventListener("click", () => switchGallery(chapter.start));
+    fragment.append(button);
+  });
+  elements.galleryChapters.append(fragment);
 }
 
 function buildGalleryThumbs() {
@@ -837,7 +1145,7 @@ function buildGalleryThumbs() {
     button.type = "button";
     button.dataset.galleryIndex = String(index);
     button.setAttribute("aria-label", `查看画稿：${item.title}`);
-    button.setAttribute("aria-pressed", String(index === 0));
+    button.setAttribute("aria-pressed", String(index === galleryPosition));
 
     const image = document.createElement("img");
     image.src = item.thumb;
@@ -854,26 +1162,44 @@ function buildGalleryThumbs() {
 
 function applyGallery(index) {
   const item = CONTENT.gallery[index];
+  const chapter = galleryChapterFor(index);
   elements.galleryMainImage.src = item.image;
   elements.galleryMainImage.alt = item.alt;
   elements.galleryIndex.textContent = `${String(index + 1).padStart(2, "0")} / ${String(CONTENT.gallery.length).padStart(2, "0")}`;
+  elements.galleryChapter.textContent = chapter.title;
   elements.galleryCaption.textContent = item.title;
   elements.galleryNote.textContent = item.note;
-  [...elements.galleryThumbs.children].forEach((button, thumbIndex) => {
-    button.setAttribute("aria-pressed", String(thumbIndex === index));
+  elements.galleryOpenButton.setAttribute("aria-label", `沉浸查看画稿：${item.title}`);
+  const thumbs = [...elements.galleryThumbs.querySelectorAll("[data-gallery-index]")];
+  thumbs.forEach((button) => {
+    button.setAttribute("aria-pressed", String(Number(button.dataset.galleryIndex) === index));
   });
-  const active = elements.galleryThumbs.children[index];
+  [...elements.galleryChapters.children].forEach((button) => {
+    button.setAttribute("aria-current", String(button.dataset.chapter === chapter.id));
+  });
+  const active = elements.galleryThumbs.querySelector(`[data-gallery-index="${index}"]`);
   active?.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "nearest", inline: "center" });
+  if (elements.galleryLightbox.open) applyLightbox(index);
+}
+
+function preloadGalleryNeighbors(index = galleryPosition) {
+  [-1, 1].forEach((offset) => {
+    const next = (index + offset + CONTENT.gallery.length) % CONTENT.gallery.length;
+    preloadImage(CONTENT.gallery[next].image).catch(() => {});
+  });
 }
 
 async function switchGallery(index, announce = true) {
   const normalized = (index + CONTENT.gallery.length) % CONTENT.gallery.length;
   const sequence = ++gallerySequence;
-  if (normalized === galleryPosition && announce) {
+  if (normalized === galleryPosition) {
     elements.galleryStage.classList.remove("is-switching");
     applyGallery(normalized);
-    const current = CONTENT.gallery[normalized];
-    updateReaction({ expression: current.expression, label: "这一页还没看完", text: current.reaction }, false);
+    if (announce) {
+      const current = CONTENT.gallery[normalized];
+      updateReaction({ expression: current.expression, label: "这一页还没看完", text: current.reaction }, false);
+    }
+    preloadGalleryNeighbors(normalized);
     return;
   }
   const item = CONTENT.gallery[normalized];
@@ -886,16 +1212,99 @@ async function switchGallery(index, announce = true) {
     return;
   }
 
-  window.setTimeout(() => {
-    if (sequence !== gallerySequence) return;
-    galleryPosition = normalized;
-    applyGallery(normalized);
-    if (announce) updateReaction({ expression: item.expression, label: `画册 · ${item.title}`, text: item.reaction });
-  }, reducedMotion.matches ? 0 : 190);
+  if (!reducedMotion.matches) await new Promise((resolve) => window.setTimeout(resolve, 190));
+  if (sequence !== gallerySequence) return;
+  galleryPosition = normalized;
+  state.galleryIndex = normalized;
+  saveState();
+  applyGallery(normalized);
+  preloadGalleryNeighbors(normalized);
+  if (announce) updateReaction({ expression: item.expression, label: `画册 · ${item.title}`, text: item.reaction });
 
   window.setTimeout(() => {
     if (sequence === gallerySequence) elements.galleryStage.classList.remove("is-switching");
   }, reducedMotion.matches ? 10 : 470);
+}
+
+function applyLightbox(index) {
+  const item = CONTENT.gallery[index];
+  const chapter = galleryChapterFor(index);
+  elements.lightboxImage.src = item.image;
+  elements.lightboxImage.alt = item.alt;
+  elements.lightboxChapter.textContent = chapter.title;
+  elements.lightboxIndex.textContent = `${String(index + 1).padStart(2, "0")} / ${String(CONTENT.gallery.length).padStart(2, "0")}`;
+  elements.lightboxTitle.textContent = item.title;
+  elements.lightboxNote.textContent = item.note;
+}
+
+function openLightbox() {
+  applyLightbox(galleryPosition);
+  elements.lightboxStage.classList.remove("is-zoomed");
+  elements.lightboxImageButton.setAttribute("aria-label", "放大当前画稿");
+  elements.lightboxZoomHint.textContent = "点一下画面可放大细节；方向键或滑动可以翻页。";
+  elements.galleryLightbox.showModal();
+  document.body.classList.add("lightbox-active");
+  elements.lightboxClose.focus();
+  preloadGalleryNeighbors(galleryPosition);
+}
+
+function closeLightbox() {
+  if (elements.galleryLightbox.open) elements.galleryLightbox.close();
+}
+
+function toggleLightboxZoom() {
+  const zoomed = elements.lightboxStage.classList.toggle("is-zoomed");
+  elements.lightboxImageButton.setAttribute("aria-label", zoomed ? "缩小当前画稿以适合屏幕" : "放大当前画稿");
+  elements.lightboxZoomHint.textContent = zoomed
+    ? "已按原图细节放大；拖动画面查看，点一下恢复全图。"
+    : "点一下画面可放大细节；方向键或滑动可以翻页。";
+}
+
+async function navigateLightbox(direction) {
+  elements.lightboxStage.classList.remove("is-zoomed");
+  await switchGallery(galleryPosition + direction, false);
+}
+
+function handleLightboxKey(event) {
+  if (event.key === "Tab") {
+    const focusable = [...elements.galleryLightbox.querySelectorAll("button")]
+      .filter((button) => !button.disabled && !button.hidden && button.getClientRects().length > 0);
+    const first = focusable[0];
+    const last = focusable.at(-1);
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last?.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first?.focus();
+    }
+    return;
+  }
+  if (event.key === "ArrowLeft") {
+    event.preventDefault();
+    navigateLightbox(-1);
+  }
+  if (event.key === "ArrowRight") {
+    event.preventDefault();
+    navigateLightbox(1);
+  }
+}
+
+function startLightboxSwipe(event) {
+  if (elements.lightboxStage.classList.contains("is-zoomed") || event.target.closest(".round-arrow")) return;
+  lightboxPointerStart = { x: event.clientX, y: event.clientY };
+}
+
+function finishLightboxSwipe(event) {
+  if (!lightboxPointerStart || elements.lightboxStage.classList.contains("is-zoomed")) {
+    lightboxPointerStart = null;
+    return;
+  }
+  const horizontal = event.clientX - lightboxPointerStart.x;
+  const vertical = event.clientY - lightboxPointerStart.y;
+  lightboxPointerStart = null;
+  if (Math.abs(horizontal) < 55 || Math.abs(horizontal) <= Math.abs(vertical)) return;
+  navigateLightbox(horizontal < 0 ? 1 : -1);
 }
 
 function newFortune() {
@@ -906,22 +1315,25 @@ function newFortune() {
   updateReaction("fortune");
 }
 
-function preloadDeferredAssets() {
+function preloadDoorSequence() {
   [CONTENT.heroExpressions.startled, CONTENT.heroExpressions.shy]
-    .forEach((item) => preloadImage(item.image).catch(() => {}));
+    .forEach((item) => preloadResponsiveImage(item, "(max-width: 760px) calc(100vw - 1.6rem), (max-width: 1024px) 78vw, 1120px").catch(() => {}));
 }
 
 function observeDeferredSections() {
-  if (!("IntersectionObserver" in window)) return;
+  if (!("IntersectionObserver" in window)) {
+    preloadOutfitNeighbors();
+    preloadGalleryNeighbors();
+    return;
+  }
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
       if (entry.target.id === "wardrobe") {
-        preloadImage(CONTENT.heroExpressions.proud.image).catch(() => {});
-        Object.values(CONTENT.outfits).forEach((item) => preloadImage(item.image).catch(() => {}));
+        preloadOutfitNeighbors();
       }
       if (entry.target.id === "gallery") {
-        CONTENT.gallery.forEach((item) => preloadImage(item.image).catch(() => {}));
+        preloadGalleryNeighbors();
       }
       observer.unobserve(entry.target);
     });
@@ -952,7 +1364,12 @@ elements.heroCharacter.addEventListener("error", () => {
 }, { once: true });
 
 elements.knockButton.addEventListener("click", openDoor);
-elements.stopVoiceButton.addEventListener("click", () => stopVoice(false));
+elements.knockButton.addEventListener("pointerenter", preloadDoorSequence, { once: true });
+elements.knockButton.addEventListener("focus", preloadDoorSequence, { once: true });
+elements.knockButton.addEventListener("pointerdown", preloadDoorSequence, { once: true });
+elements.stopVoiceButton.addEventListener("click", () => stopVoice(false, false, true));
+elements.voiceMuteButton.addEventListener("click", toggleVoiceMode);
+elements.voiceVolume.addEventListener("input", changeVoiceVolume);
 document.querySelectorAll("[data-voice]").forEach((button) => {
   button.addEventListener("click", () => playVoice(button.dataset.voice));
 });
@@ -966,17 +1383,34 @@ elements.secretButtons.forEach((button) => {
 });
 elements.galleryPrev.addEventListener("click", () => switchGallery(galleryPosition - 1));
 elements.galleryNext.addEventListener("click", () => switchGallery(galleryPosition + 1));
+elements.galleryOpenButton.addEventListener("click", openLightbox);
+elements.lightboxClose.addEventListener("click", closeLightbox);
+elements.lightboxPrev.addEventListener("click", () => navigateLightbox(-1));
+elements.lightboxNext.addEventListener("click", () => navigateLightbox(1));
+elements.lightboxImageButton.addEventListener("click", toggleLightboxZoom);
+elements.galleryLightbox.addEventListener("keydown", handleLightboxKey);
+elements.galleryLightbox.addEventListener("click", (event) => {
+  if (event.target === elements.galleryLightbox) closeLightbox();
+});
+elements.galleryLightbox.addEventListener("close", () => {
+  document.body.classList.remove("lightbox-active");
+  elements.lightboxStage.classList.remove("is-zoomed");
+});
+elements.lightboxStage.addEventListener("pointerdown", startLightboxSwipe);
+elements.lightboxStage.addEventListener("pointerup", finishLightboxSwipe);
+elements.lightboxStage.addEventListener("pointercancel", () => {
+  lightboxPointerStart = null;
+});
 elements.fortuneButton.addEventListener("click", newFortune);
 
+applyVisitStage();
+refreshVoiceControls();
+buildGalleryChapters();
 buildGalleryThumbs();
 applyOutfit(state.outfit);
+applyGallery(galleryPosition);
 refreshSecrets();
+setupSecretHints();
 setupParallax();
 observeDeferredSections();
 document.documentElement.dataset.js = "true";
-
-if ("requestIdleCallback" in window) {
-  window.requestIdleCallback(preloadDeferredAssets, { timeout: 1800 });
-} else {
-  window.setTimeout(preloadDeferredAssets, 500);
-}
