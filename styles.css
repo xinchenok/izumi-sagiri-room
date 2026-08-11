@@ -328,7 +328,7 @@ h2 {
   height: 100%;
   object-fit: cover;
   object-position: 61% center;
-  transition: filter 240ms var(--ease-soft), transform 900ms var(--ease-soft);
+  transition: filter 240ms var(--ease-soft), transform 900ms var(--ease-soft), width 900ms var(--ease-soft);
 }
 
 .door-leaf {
@@ -340,7 +340,7 @@ h2 {
   border-right: 12px solid var(--cocoa);
   box-shadow: 18px 0 30px rgba(51, 29, 34, 0.34);
   transform-origin: left center;
-  transition: transform 1100ms var(--ease-soft), box-shadow 1100ms var(--ease-soft);
+  transition: transform 1100ms var(--ease-soft), box-shadow 1100ms var(--ease-soft), opacity 720ms var(--ease-soft);
   transform-style: preserve-3d;
 }
 
@@ -376,6 +376,18 @@ h2 {
 
 .door-scene.is-open .hero-character {
   transform: translateX(-3%);
+}
+
+@media (min-width: 761px) {
+  .door-scene.is-open .door-leaf {
+    opacity: 0;
+    transform: rotateY(-88deg);
+  }
+
+  .door-scene.is-open .hero-character {
+    width: 100%;
+    transform: none;
+  }
 }
 
 .room-plaque {
