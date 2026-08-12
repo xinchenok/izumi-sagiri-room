@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-13",
+  "purpose": "房间地图操作后的短场景声；12 个地点事件与 2 个天气状态全部使用独立文件。",
+  "generation": {
+    "tool": "FFmpeg 6.1.1",
+    "source": "程序化合成的噪声、包络与短音色层；未使用第三方录音素材",
+    "autoplay": false,
+    "loop": false
+  },
+  "output": {
+    "codec": "MP3",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "bitrate_kbps": 192
+  },
+  "files": [
+    { "scene": "画桌·补完线条", "audio": "desk-pencil-line.mp3", "duration_seconds": 1.728, "sha256": "4e3731c4fbbf1c1c87b240fef76efee7472592c30749349f1f6cbbd0822a9b05" },
+    { "scene": "画桌·转动画纸", "audio": "desk-paper-turn.mp3", "duration_seconds": 2.016, "sha256": "d2579bd091bd68199d6fa02f7c42ea0860d129c06f20d7edc7a2172ba2d6fb3a" },
+    { "scene": "画桌·保存提示", "audio": "desk-save-tap.mp3", "duration_seconds": 1.488, "sha256": "69b7b3199c1a6b5c8df2d8f3e02b51f67c0aa84d991af0240e51ea5df5d074a0" },
+    { "scene": "床边·收回毯角", "audio": "bed-blanket-fold.mp3", "duration_seconds": 2.328, "sha256": "55a7da18cc8e2743a505e34706a9054faeff7170097728c9821745b906439fdb" },
+    { "scene": "床边·收起帐篷", "audio": "bed-fort-rustle.mp3", "duration_seconds": 2.736, "sha256": "74e2d9e4488952476446376a3c5a557dd409de7db3b8e1331471c65096fe3300" },
+    { "scene": "床边·推来靠枕", "audio": "bed-pillow-pat.mp3", "duration_seconds": 1.896, "sha256": "c1257a22df93fbf159fed7c0622622a581798a086b05164e7e482d06319300af" },
+    { "scene": "衣橱·扶稳衣架", "audio": "wardrobe-hanger-settle.mp3", "duration_seconds": 1.824, "sha256": "0ac3bf7d76d6b586433cd321e78ac2e0922b0a6b0cc7aba3f213f14ab379da13" },
+    { "scene": "衣橱·掠过布料", "audio": "wardrobe-fabric-swish.mp3", "duration_seconds": 2.232, "sha256": "32e853f48cf0272090977b6e4f54eff1e1be68b4e119a902a8bc65db28999ff5" },
+    { "scene": "衣橱·并排选择", "audio": "wardrobe-choice.mp3", "duration_seconds": 2.064, "sha256": "f3dd76e8eb4e94bdc2f3867ee2c74f6c00b06e6d3d9ff5634397618418033b7c" },
+    { "scene": "窗台·关小窗缝", "audio": "window-latch-rain.mp3", "duration_seconds": 2.664, "sha256": "21259f0a236f1f95942960eb3c07ce6b0c853b56d4f9ba5e1216941c61726375" },
+    { "scene": "窗台·摆好画纸", "audio": "window-paper-rain.mp3", "duration_seconds": 2.496, "sha256": "7287835009beca6fcf2ebf0664811b4f87d13199b106e758b9911612a506a9e2" },
+    { "scene": "窗台·合上窗帘", "audio": "window-curtain-close.mp3", "duration_seconds": 2.928, "sha256": "643910e5cd23e7c93d512e244da7b3d2f703f9329038da571f3037f0c824d18a" },
+    { "scene": "天气·雨落窗外", "audio": "weather-rain-window.mp3", "duration_seconds": 3.864, "sha256": "937e1c23d90c7bc00dced0e4ad102946a97b3a5dc55a48c1443d3043097e6c2b" },
+    { "scene": "天气·雨停见月", "audio": "weather-clear-window.mp3", "duration_seconds": 3.144, "sha256": "fa0274a7c6f8ba458d49685276e8a6f28eebaaab4f916766a8bd6bb4a1ff41fb" }
+  ]
+}

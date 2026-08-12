@@ -6,6 +6,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Noto Sans JP Room";
+  src: url("assets/fonts/NotoSansJP-Room-Subset.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --strawberry: #d8879f;
   --strawberry-dark: #a04f69;
@@ -53,7 +61,7 @@ body {
   overflow-x: hidden;
   color: var(--ink);
   background: var(--wall-pink);
-  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Kuaile", sans-serif;
+  font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", "Kuaile", "Noto Sans JP Room", sans-serif;
   line-height: 1.72;
   text-rendering: optimizeLegibility;
 }
@@ -2518,6 +2526,12 @@ body.lightbox-active {
   color: var(--moon);
 }
 
+.subtitle-copy p[lang="ja"] {
+  font-family: "Noto Sans JP Room", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025em;
+}
+
 .subtitle-copy p:empty {
   display: none;
 }
@@ -3709,16 +3723,50 @@ body.lightbox-active {
 
 .living-rain {
   position: absolute;
-  inset: 0;
+  top: 5%;
+  right: 0;
+  bottom: 18%;
+  left: 72%;
   z-index: 3;
   overflow: hidden;
   pointer-events: none;
   opacity: 0;
+  clip-path: inset(0 0 0 0 round 0.25rem);
   transition: opacity 420ms var(--ease-soft);
 }
 
 .living-room-stage[data-weather="rain"] .living-rain {
-  opacity: 0.55;
+  opacity: 0;
+}
+
+.living-room-stage[data-weather="rain"][data-place="desk"] .living-rain {
+  top: 2%;
+  right: 0;
+  bottom: 37%;
+  left: 76%;
+  opacity: 0.48;
+  transform: perspective(22rem) rotateY(-5deg);
+  transform-origin: right center;
+}
+
+.living-room-stage[data-weather="rain"][data-place="wardrobe"] .living-rain {
+  top: 1%;
+  right: 0;
+  bottom: 48%;
+  left: 88%;
+  opacity: 0.4;
+}
+
+.living-room-stage[data-weather="rain"][data-place="window"] .living-rain {
+  top: 0;
+  right: 0;
+  bottom: 2%;
+  left: 63%;
+  opacity: 0.6;
+}
+
+.living-room-stage[data-place="bed"] .living-rain {
+  display: none;
 }
 
 .living-rain i {
@@ -3966,6 +4014,20 @@ body.lightbox-active {
   min-width: 12.5rem;
 }
 
+.living-voice-button {
+  min-height: 3rem;
+  padding-inline: 0.9rem;
+}
+
+.living-voice-button svg {
+  width: 1.2rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 .living-deep-link {
   position: relative;
   display: inline-flex;
@@ -4204,6 +4266,11 @@ body.lightbox-active {
   .living-event-button {
     width: 100%;
     min-width: 0;
+    justify-content: center;
+  }
+
+  .living-voice-button {
+    width: 100%;
     justify-content: center;
   }
 
