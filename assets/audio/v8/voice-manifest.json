@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-13",
+  "purpose": "房间地图专属角色语音；4 个地点开场、12 个地点事件、2 个天气状态全部独立，不复用页面其他语音。",
+  "engine": {
+    "name": "Piper Plus",
+    "version": "0.6.0",
+    "model": "ayousanz/piper-plus-tsukuyomi-chan",
+    "model_revision": "36b59c825c36bd386b8960cf3f604382f52f2a87",
+    "model_file": "tsukuyomi-chan-6lang-fp16.onnx",
+    "model_sha256": "5289e9b6eaf21080803b7fe1c4dc85b5491d4c216121207a41df18dd5f68e5d7",
+    "model_license": "つくよみちゃんコーパス利用規約",
+    "model_source": "https://huggingface.co/ayousanz/piper-plus-tsukuyomi-chan",
+    "corpus_terms": "https://tyc.rei-yumesaki.net/material/corpus/",
+    "voice_cloning": false
+  },
+  "synthesis": {
+    "language": "ja",
+    "noise_scale": 0.667,
+    "length_scale": 1.5,
+    "noise_w": 0.8,
+    "speaker_embedding": "256 维零向量",
+    "speaker_embedding_mask": 0,
+    "note": "依照 Piper Plus Python 参考实现：未提供说话人嵌入时以零向量和 mask=0 回退到模型训练声线。"
+  },
+  "postprocessing": {
+    "filters": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7",
+    "codec": "MP3",
+    "sample_rate_hz": 44100,
+    "channels": 1,
+    "bitrate_kbps": 160,
+    "target_lufs": -17,
+    "true_peak_db": -1.5
+  },
+  "lines": [
+    {
+      "id": "room-desk-intro",
+      "scene": "画桌旁",
+      "japanese": "ここ、私のいちばん落ち着く場所。隣なら、少しだけ空いてるよ。",
+      "chinese": "这里是我最安心的地方。旁边的话……还空着一点。",
+      "audio": "voice/room-desk-intro.mp3",
+      "duration_seconds": 6.347755,
+      "sha256": "8d6c2a44853eec0180d6f2bc4bb30c22a9d43d2c8be472eefd023b3688c59c5b"
+    },
+    {
+      "id": "room-desk-pencil",
+      "scene": "画桌旁",
+      "japanese": "この線、やっと決まった。ちょっとだけ見ていいよ。",
+      "chinese": "这根线终于定下来了。只给你看一点点。",
+      "audio": "voice/room-desk-pencil.mp3",
+      "duration_seconds": 3.552653,
+      "sha256": "7100fbced2a9a03dc0480ed2e6ff3d0bcbdb0f50a2585f81dd49deeefddfa139"
+    },
+    {
+      "id": "room-desk-eye",
+      "scene": "画桌旁",
+      "japanese": "目のところだけ。ほかまで見たら隠すから。",
+      "chinese": "只许看眼睛。要是看到别的地方，我就藏起来。",
+      "audio": "voice/room-desk-eye.mp3",
+      "duration_seconds": 3.787755,
+      "sha256": "19f3f37fd794dcec483deb61adcd577f158d9268a3848358d7613d4fa216c512"
+    },
+    {
+      "id": "room-desk-stay",
+      "scene": "画桌旁",
+      "japanese": "まだいてくれたんだ。じゃあ、あと一枚だけ。",
+      "chinese": "你还在呀……那就再画一张。",
+      "audio": "voice/room-desk-stay.mp3",
+      "duration_seconds": 4.04898,
+      "sha256": "c7d4156ec8a02a24b3212b91fe6acc0a692b22ba067adb60539962428f886d19"
+    },
+    {
+      "id": "room-bed-intro",
+      "scene": "床边",
+      "japanese": "ベッドでも描けるから。さぼってるんじゃないよ。",
+      "chinese": "在床上也能画。所以我才不是在偷懒。",
+      "audio": "voice/room-bed-intro.mp3",
+      "duration_seconds": 3.84,
+      "sha256": "d92109162a7c976dd856b6947f9e8ba765431acde80500d62487e94d424adeb8"
+    },
+    {
+      "id": "room-bed-blanket",
+      "scene": "床边",
+      "japanese": "ありがとう。毛布、落ちるところだった。",
+      "chinese": "谢谢。毯子刚才差点就掉下去了。",
+      "audio": "voice/room-bed-blanket.mp3",
+      "duration_seconds": 5.041633,
+      "sha256": "b5760fff6beae5f6f0fa5bcf51127a9d772be03bcb26775cfd4af84680d3aad0"
+    },
+    {
+      "id": "room-bed-fort",
+      "scene": "床边",
+      "japanese": "この隙間は換気用。のぞくためじゃないから。",
+      "chinese": "这条缝是用来通风的。才不是让你偷看的。",
+      "audio": "voice/room-bed-fort.mp3",
+      "duration_seconds": 3.657143,
+      "sha256": "b36cac66502bd138f7611861eca7c96d321fae6a233979d9cceacb552f57de5c"
+    },
+    {
+      "id": "room-bed-pillow",
+      "scene": "床边",
+      "japanese": "そのクッション、少しだけ貸してあげる。",
+      "chinese": "那个靠枕……可以借你一会儿。",
+      "audio": "voice/room-bed-pillow.mp3",
+      "duration_seconds": 2.742857,
+      "sha256": "e5a04a92e4b427d35d5faa1df02b9a012dc9b7ad28f24aaabb104692e308b0c2"
+    },
+    {
+      "id": "room-wardrobe-intro",
+      "scene": "衣橱边",
+      "japanese": "どっちがいいと思う？ 笑わないなら、聞いてあげる。",
+      "chinese": "你觉得哪件好？只要不笑我……就听听你的意见。",
+      "audio": "voice/room-wardrobe-intro.mp3",
+      "duration_seconds": 5.12,
+      "sha256": "63b548068c3cdbb7292ae8773053c9f07792c52adff01f7b83c4f0c033ac665d"
+    },
+    {
+      "id": "room-wardrobe-hanger",
+      "scene": "衣橱边",
+      "japanese": "助かった。ハンガーの音、びっくりするから。",
+      "chinese": "帮大忙了。衣架的声音总会吓我一跳。",
+      "audio": "voice/room-wardrobe-hanger.mp3",
+      "duration_seconds": 4.336327,
+      "sha256": "22fbed2c061dd912d83416ff6f5a8c47dc8728298dfa3b444af34062152b52d5"
+    },
+    {
+      "id": "room-wardrobe-hood",
+      "scene": "衣橱边",
+      "japanese": "これは可愛いんじゃなくて、暖かいだけ。",
+      "chinese": "这件才不是为了可爱，只是比较暖而已。",
+      "audio": "voice/room-wardrobe-hood.mp3",
+      "duration_seconds": 3.63102,
+      "sha256": "732999d3e1aac087f687e38815d36bae346d1f561e161dc6e55cb66a4eca83ab"
+    },
+    {
+      "id": "room-wardrobe-choice",
+      "scene": "衣橱边",
+      "japanese": "ピンクとミント、どっちがいい？ ちゃんと選んで。",
+      "chinese": "粉色和薄荷色，哪件好？要认真选。",
+      "audio": "voice/room-wardrobe-choice.mp3",
+      "duration_seconds": 3.604898,
+      "sha256": "65ce79a2c06bc4aecba693492333cfc77a0fabe60bb1716248154a6705fc9b44"
+    },
+    {
+      "id": "room-window-intro",
+      "scene": "窗台",
+      "japanese": "窓のそばは静か。雨も、ここなら遠くに聞こえる。",
+      "chinese": "窗边很安静。连雨声在这里听起来也很远。",
+      "audio": "voice/room-window-intro.mp3",
+      "duration_seconds": 5.877551,
+      "sha256": "8cee62122ccc8bdde113e6cadc9d8db7e08b1142647d289e225c6d71f90602ed"
+    },
+    {
+      "id": "room-window-latch",
+      "scene": "窗台",
+      "japanese": "これくらいの隙間なら、雨の音も小さいね。",
+      "chinese": "窗缝留这么大的话，雨声也会小一点呢。",
+      "audio": "voice/room-window-latch.mp3",
+      "duration_seconds": 4.649796,
+      "sha256": "134e8137619974b3ebe6fc139a07c3b0212ca268c343453c039e3115601f23ec"
+    },
+    {
+      "id": "room-window-moon",
+      "scene": "窗台",
+      "japanese": "絵の月と本物の月、並べても変じゃないよね。",
+      "chinese": "画里的月亮和真的月亮摆在一起，也不奇怪吧？",
+      "audio": "voice/room-window-moon.mp3",
+      "duration_seconds": 4.937143,
+      "sha256": "fe2fc5af37cd52ac6903a2710d25275c5e12a075fd4bfbd1ba2cbad3da04a635"
+    },
+    {
+      "id": "room-window-close",
+      "scene": "窗台",
+      "japanese": "今日はここまで。あと一分なら、いていいよ。",
+      "chinese": "今天就到这里。再待一分钟的话……可以。",
+      "audio": "voice/room-window-close.mp3",
+      "duration_seconds": 3.787755,
+      "sha256": "f8fce1473c05624199c3ca6564340bceb415148dbb9f25d33fc307235b2894c7"
+    },
+    {
+      "id": "room-weather-rain",
+      "scene": "房间窗外",
+      "japanese": "雨、降ってきた。窓の外だけだから、心配しないで。",
+      "chinese": "下雨了。不过雨只在窗外，不用担心。",
+      "audio": "voice/room-weather-rain.mp3",
+      "duration_seconds": 6.269388,
+      "sha256": "5f1e70fbda9c7bd4dbecb91bcfa930aad1c816748211b2c5ddd6a807de7c5b42"
+    },
+    {
+      "id": "room-weather-clear",
+      "scene": "房间窗外",
+      "japanese": "雨、やんだみたい。月が見えるよ。",
+      "chinese": "雨好像停了。能看见月亮了。",
+      "audio": "voice/room-weather-clear.mp3",
+      "duration_seconds": 2.925714,
+      "sha256": "4fa015d74560a57aabf982d0b1531db3e51fddc47b29cc8bd8e20f2e024c533e"
+    }
+  ]
+}

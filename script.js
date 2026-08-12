@@ -590,6 +590,170 @@ const CONTENT = {
     }
   },
   livingRoom: {
+    voices: {
+      "room-desk-intro": {
+        scene: "画桌旁",
+        label: "留给你的座位",
+        japanese: "ここ、私のいちばん落ち着く場所。隣なら、少しだけ空いてるよ。",
+        chinese: "这里是我最安心的地方。旁边的话……还空着一点。",
+        file: "assets/audio/v8/voice/room-desk-intro.mp3",
+        expression: "shy",
+        reaction: "只是椅子刚好没有推回去……不是特意留的。"
+      },
+      "room-desk-pencil": {
+        scene: "画桌旁",
+        label: "最后一笔",
+        japanese: "この線、やっと決まった。ちょっとだけ見ていいよ。",
+        chinese: "这根线终于定下来了。只给你看一点点。",
+        file: "assets/audio/v8/voice/room-desk-pencil.mp3",
+        expression: "proud",
+        reaction: "她把刚画好的轮廓转过来一点，手指仍压着画纸的一角。"
+      },
+      "room-desk-eye": {
+        scene: "画桌旁",
+        label: "只看眼睛",
+        japanese: "目のところだけ。ほかまで見たら隠すから。",
+        chinese: "只许看眼睛。要是看到别的地方，我就藏起来。",
+        file: "assets/audio/v8/voice/room-desk-eye.mp3",
+        expression: "startled",
+        reaction: "她盯着你的视线，像真的随时会把数位板抱回去。"
+      },
+      "room-desk-stay": {
+        scene: "画桌旁",
+        label: "再画一张",
+        japanese: "まだいてくれたんだ。じゃあ、あと一枚だけ。",
+        chinese: "你还在呀……那就再画一张。",
+        file: "assets/audio/v8/voice/room-desk-stay.mp3",
+        expression: "shy",
+        reaction: "保存完成以后，她没有催你离开，只是又新建了一张画布。"
+      },
+      "room-bed-intro": {
+        scene: "床边",
+        label: "床上的小画室",
+        japanese: "ベッドでも描けるから。さぼってるんじゃないよ。",
+        chinese: "在床上也能画。所以我才不是在偷懒。",
+        file: "assets/audio/v8/voice/room-bed-intro.mp3",
+        expression: "proud",
+        reaction: "她把数位板摆得更正了一点，认真证明这里也是工作区。"
+      },
+      "room-bed-blanket": {
+        scene: "床边",
+        label: "接住毯角",
+        japanese: "ありがとう。毛布、落ちるところだった。",
+        chinese: "谢谢。毯子刚才差点就掉下去了。",
+        file: "assets/audio/v8/voice/room-bed-blanket.mp3",
+        expression: "shy",
+        reaction: "毯角被仔细收回脚边，旁边也悄悄空出了半个靠枕。"
+      },
+      "room-bed-fort": {
+        scene: "床边",
+        label: "小帐篷的缝",
+        japanese: "この隙間は換気用。のぞくためじゃないから。",
+        chinese: "这条缝是用来通风的。才不是让你偷看的。",
+        file: "assets/audio/v8/voice/room-bed-fort.mp3",
+        expression: "startled",
+        reaction: "帘边的缝没有合上，反而又露出了一点画纸。"
+      },
+      "room-bed-pillow": {
+        scene: "床边",
+        label: "借你靠枕",
+        japanese: "そのクッション、少しだけ貸してあげる。",
+        chinese: "那个靠枕……可以借你一会儿。",
+        file: "assets/audio/v8/voice/room-bed-pillow.mp3",
+        expression: "shy",
+        reaction: "最软的猫咪靠枕被推过来，她自己却先躲回了袖口后面。"
+      },
+      "room-wardrobe-intro": {
+        scene: "衣橱边",
+        label: "替她选一件",
+        japanese: "どっちがいいと思う？ 笑わないなら、聞いてあげる。",
+        chinese: "你觉得哪件好？只要不笑我……就听听你的意见。",
+        file: "assets/audio/v8/voice/room-wardrobe-intro.mp3",
+        expression: "shy",
+        reaction: "两种颜色被重新举到一样高，她终于肯把选择分给你一点。"
+      },
+      "room-wardrobe-hanger": {
+        scene: "衣橱边",
+        label: "扶稳衣架",
+        japanese: "助かった。ハンガーの音、びっくりするから。",
+        chinese: "帮大忙了。衣架的声音总会吓我一跳。",
+        file: "assets/audio/v8/voice/room-wardrobe-hanger.mp3",
+        expression: "shy",
+        reaction: "木衣架安静下来以后，她才慢慢松开一直绷着的肩膀。"
+      },
+      "room-wardrobe-hood": {
+        scene: "衣橱边",
+        label: "猫耳连帽毯",
+        japanese: "これは可愛いんじゃなくて、暖かいだけ。",
+        chinese: "这件才不是为了可爱，只是比较暖而已。",
+        file: "assets/audio/v8/voice/room-wardrobe-hood.mp3",
+        expression: "startled",
+        reaction: "嘴上说着只是保暖，露出来的猫耳却还在轻轻晃。"
+      },
+      "room-wardrobe-choice": {
+        scene: "衣橱边",
+        label: "粉色还是薄荷",
+        japanese: "ピンクとミント、どっちがいい？ ちゃんと選んで。",
+        chinese: "粉色和薄荷色，哪件好？要认真选。",
+        file: "assets/audio/v8/voice/room-wardrobe-choice.mp3",
+        expression: "proud",
+        reaction: "她等着你的答案，没有再偷偷把薄荷色那件藏到后面。"
+      },
+      "room-window-intro": {
+        scene: "窗台",
+        label: "窗边的安静",
+        japanese: "窓のそばは静か。雨も、ここなら遠くに聞こえる。",
+        chinese: "窗边很安静。连雨声在这里听起来也很远。",
+        file: "assets/audio/v8/voice/room-window-intro.mp3",
+        expression: "shy",
+        reaction: "她抱紧猫咪玩偶，给你留出了能一起看月亮的位置。"
+      },
+      "room-window-latch": {
+        scene: "窗台",
+        label: "关小窗缝",
+        japanese: "これくらいの隙間なら、雨の音も小さいね。",
+        chinese: "窗缝留这么大的话，雨声也会小一点呢。",
+        file: "assets/audio/v8/voice/room-window-latch.mp3",
+        expression: "shy",
+        reaction: "雨声退到玻璃外面，月光仍从没有关严的窗帘边落进来。"
+      },
+      "room-window-moon": {
+        scene: "窗台",
+        label: "两个月亮",
+        japanese: "絵の月と本物の月、並べても変じゃないよね。",
+        chinese: "画里的月亮和真的月亮摆在一起，也不奇怪吧？",
+        file: "assets/audio/v8/voice/room-window-moon.mp3",
+        expression: "proud",
+        reaction: "小猫画被靠在窗边，纸上的月亮刚好接住了外面的光。"
+      },
+      "room-window-close": {
+        scene: "窗台",
+        label: "再留一分钟",
+        japanese: "今日はここまで。あと一分なら、いていいよ。",
+        chinese: "今天就到这里。再待一分钟的话……可以。",
+        file: "assets/audio/v8/voice/room-window-close.mp3",
+        expression: "shy",
+        reaction: "画册已经合上，她却没有立刻把身边的位置收回去。"
+      },
+      "room-weather-rain": {
+        scene: "房间窗外",
+        label: "雨落在窗外",
+        japanese: "雨、降ってきた。窓の外だけだから、心配しないで。",
+        chinese: "下雨了。不过雨只在窗外，不用担心。",
+        file: "assets/audio/v8/voice/room-weather-rain.mp3",
+        expression: "shy",
+        reaction: "雨线只沿着窗玻璃落下，房间里的木地板仍然干燥温暖。"
+      },
+      "room-weather-clear": {
+        scene: "房间窗外",
+        label: "雨停见月",
+        japanese: "雨、やんだみたい。月が見えるよ。",
+        chinese: "雨好像停了。能看见月亮了。",
+        file: "assets/audio/v8/voice/room-weather-clear.mp3",
+        expression: "proud",
+        reaction: "窗上的雨线淡下去，月光重新落在玩偶柔软的耳朵上。"
+      }
+    },
     phases: {
       morning: { label: "清晨", note: "窗光刚越过床沿，房间还没有完全醒。" },
       day: { label: "午后", note: "墙纸被日光照得很软，连稿纸都显得轻一点。" },
@@ -622,14 +786,15 @@ const CONTENT = {
         },
         autonomousDuration: 145,
         action: "听她补完这一笔",
-        sound: "assets/audio/v7/pencil-soft.mp3",
+        voice: "room-desk-intro",
+        voiceLabel: "听她说说画桌",
         deepLink: "#desk-secrets",
         deepLabel: "再靠近画桌一点",
         expression: "proud",
         moments: [
-          { line: "她沿着刚才犹豫的轮廓补完最后一笔，肩膀终于松下来一点。", reaction: "这笔……刚才总觉得不对。现在可以了。" },
-          { line: "她把数位板转过来几度，只够你看见新画好的眼睛。", reaction: "只看这里。别、别顺便一直看我。" },
-          { line: "保存提示轻轻闪了一下，她才发现你一直安静坐在旁边。", reaction: "你还在啊……那就，再等我一小会儿。" }
+          { line: "她沿着刚才犹豫的轮廓补完最后一笔，肩膀终于松下来一点。", voice: "room-desk-pencil", sound: "assets/audio/v8/desk-pencil-line.mp3" },
+          { line: "她把数位板转过来几度，只够你看见新画好的眼睛。", voice: "room-desk-eye", sound: "assets/audio/v8/desk-paper-turn.mp3" },
+          { line: "保存提示轻轻闪了一下，她才发现你一直安静坐在旁边。", voice: "room-desk-stay", sound: "assets/audio/v8/desk-save-tap.mp3" }
         ]
       },
       bed: {
@@ -648,14 +813,16 @@ const CONTENT = {
           "困意把动作放慢了，手里的笔却还没有放下。"
         ],
         action: "把滑下来的毯角递回去",
-        sound: "assets/audio/v7/fabric-soft.mp3",
+        voice: "room-bed-intro",
+        voiceLabel: "听她说说床边",
         deepLink: "#gallery",
         deepLabel: "翻看床边的小片段",
         expression: "shy",
         moments: [
           {
             line: "毯角回到脚边，她愣了一下，又悄悄往旁边让出半个靠枕。",
-            reaction: "谢、谢谢……靠枕也可以分你一点。",
+            voice: "room-bed-blanket",
+            sound: "assets/audio/v8/bed-blanket-fold.mp3",
             frame: {
               image: "assets/v4/gallery-blanket-fort.webp",
               small: "assets/v4/gallery-blanket-fort-thumb.webp",
@@ -664,8 +831,8 @@ const CONTENT = {
               alt: "纱雾躲进被子搭成的小帐篷，从帘边害羞地递出一张小猫速写"
             }
           },
-          { line: "她把小帐篷收回床角，数位板又稳稳落在膝盖上。", reaction: "刚才那条缝……只是在通风。", frame: "base" },
-          { line: "最软的猫咪靠枕被推到你这边一点，她本人却迅速躲回袖口后。", reaction: "借你抱一下而已，不是送给你。" }
+          { line: "她把小帐篷收回床角，数位板又稳稳落在膝盖上。", voice: "room-bed-fort", sound: "assets/audio/v8/bed-fort-rustle.mp3", frame: "base" },
+          { line: "最软的猫咪靠枕被推到你这边一点，她本人却迅速躲回袖口后。", voice: "room-bed-pillow", sound: "assets/audio/v8/bed-pillow-pat.mp3" }
         ]
       },
       wardrobe: {
@@ -684,14 +851,15 @@ const CONTENT = {
           "她对着两种颜色看了很久，最后先偷偷观察你的反应。"
         ],
         action: "替她扶住晃动的衣架",
-        sound: "assets/audio/v7/hanger-soft.mp3",
+        voice: "room-wardrobe-intro",
+        voiceLabel: "听她说说衣橱",
         deepLink: "#wardrobe",
         deepLabel: "陪她认真选一套",
         expression: "startled",
         moments: [
-          { line: "木衣架终于安静下来，她把差点滑落的袖子重新挂好。", reaction: "我、我自己也扶得住……不过，谢谢。" },
-          { line: "她把猫耳毯往身后藏了藏，露出来的耳尖还是轻轻晃了一下。", reaction: "这个不是太可爱……只是比较暖。" },
-          { line: "两套衣服又被并排举起来，这次她终于把选择权分给你一点。", reaction: "只准从这两件里选。不许笑。" }
+          { line: "木衣架终于安静下来，她把差点滑落的袖子重新挂好。", voice: "room-wardrobe-hanger", sound: "assets/audio/v8/wardrobe-hanger-settle.mp3" },
+          { line: "她把猫耳毯往身后藏了藏，露出来的耳尖还是轻轻晃了一下。", voice: "room-wardrobe-hood", sound: "assets/audio/v8/wardrobe-fabric-swish.mp3" },
+          { line: "两套衣服又被并排举起来，这次她终于把选择权分给你一点。", voice: "room-wardrobe-choice", sound: "assets/audio/v8/wardrobe-choice.mp3" }
         ]
       },
       window: {
@@ -710,14 +878,15 @@ const CONTENT = {
           "合上的画册旁边，还留着一张没有写完的晚安纸条。"
         ],
         action: "替她把窗缝关小一点",
-        sound: "assets/audio/v7/curtain-rain.mp3",
+        voice: "room-window-intro",
+        voiceLabel: "听她说说窗边",
         deepLink: "#goodnight",
         deepLabel: "陪她收好今天",
         expression: "shy",
         moments: [
-          { line: "窗缝窄了一点，雨声变轻，玩偶耳朵上的月光却还留着。", reaction: "这样刚好……不是因为我怕冷。" },
-          { line: "她把上次那张小猫画靠在窗边，让画里的月亮和外面排在一起。", reaction: "两个月亮……也没有很奇怪吧。" },
-          { line: "窗帘安静落下，她在合上的画册上轻轻拍了两下。", reaction: "今天先到这里。你可以再待一分钟。" }
+          { line: "窗缝窄了一点，雨声变轻，玩偶耳朵上的月光却还留着。", voice: "room-window-latch", sound: "assets/audio/v8/window-latch-rain.mp3" },
+          { line: "她把上次那张小猫画靠在窗边，让画里的月亮和外面排在一起。", voice: "room-window-moon", sound: "assets/audio/v8/window-paper-rain.mp3" },
+          { line: "窗帘安静落下，她在合上的画册上轻轻拍了两下。", voice: "room-window-close", sound: "assets/audio/v8/window-curtain-close.mp3" }
         ]
       }
     }
@@ -957,6 +1126,7 @@ const elements = {
   livingPlaceLine: document.querySelector("#livingPlaceLine"),
   livingPlaceQuote: document.querySelector("#livingPlaceQuote"),
   livingEventButton: document.querySelector("#livingEventButton"),
+  livingVoiceButton: document.querySelector("#livingVoiceButton"),
   livingDeepLink: document.querySelector("#livingDeepLink"),
   livingPlaceButtons: [...document.querySelectorAll("[data-living-place]")],
   livingRoomStatus: document.querySelector("#livingRoomStatus"),
@@ -1030,7 +1200,7 @@ voicePlayer.muted = state.voiceMuted;
 
 const roomFxPlayer = new Audio();
 roomFxPlayer.preload = "none";
-roomFxPlayer.volume = 0.55;
+roomFxPlayer.volume = 0.62;
 roomFxPlayer.muted = state.roomSoundMuted;
 
 function preloadImage(source) {
@@ -1199,8 +1369,8 @@ function refreshLivingSoundControl() {
   const soundOn = !state.roomSoundMuted;
   roomFxPlayer.muted = !soundOn;
   elements.livingSoundToggle.setAttribute("aria-pressed", String(soundOn));
-  elements.livingSoundToggle.setAttribute("aria-label", soundOn ? "关闭房间里的短拟音" : "打开房间里的短拟音");
-  elements.livingSoundToggle.querySelector("span").textContent = soundOn ? "房间声 · 开" : "房间声 · 关";
+  elements.livingSoundToggle.setAttribute("aria-label", soundOn ? "关闭房间里的场景声" : "打开房间里的场景声");
+  elements.livingSoundToggle.querySelector("span").textContent = soundOn ? "场景声 · 开" : "场景声 · 关";
 }
 
 function refreshLivingWeather() {
@@ -1239,6 +1409,8 @@ function applyLivingPlace(key) {
   elements.livingPlaceLine.textContent = place.line;
   elements.livingPlaceQuote.textContent = place.quote;
   elements.livingEventButton.querySelector("span").textContent = place.action;
+  elements.livingVoiceButton.querySelector("span").textContent = place.voiceLabel;
+  elements.livingVoiceButton.setAttribute("aria-label", `听纱雾说说${place.label}的事`);
   elements.livingDeepLink.href = place.deepLink;
   elements.livingDeepLink.textContent = place.deepLabel;
   elements.livingPlaceButtons.forEach((button) => {
@@ -1297,7 +1469,7 @@ async function playRoomFx(file) {
   try {
     await roomFxPlayer.play();
   } catch {
-    elements.livingRoomStatus.textContent = "房间声暂时没有加载出来，画面与文字反馈仍然保留。";
+    elements.livingRoomStatus.textContent = "场景声暂时没有加载出来，画面与文字反馈仍然保留。";
   }
 }
 
@@ -1319,14 +1491,12 @@ function runLivingMoment() {
   else if (moment.frame) setLivingRoomImage(moment.frame);
 
   let momentLine = moment.line;
-  let reactionText = moment.reaction;
   if (key === "window" && index % place.moments.length === 1 && !validSharedDrawing(state.sharedDrawing)) {
     momentLine = "她把一张月亮小猫速写靠在窗边，让画里的夜色和外面排在一起。";
     elements.livingPlaceLine.textContent = momentLine;
-    reactionText = "画里的月亮……也可以在这里待一会儿。";
   }
-  playRoomFx(place.sound);
-  updateReaction({ expression: place.expression, label: `${place.label}的小事`, text: reactionText }, false);
+  playRoomFx(moment.sound);
+  playLivingVoice(moment.voice);
   elements.livingRoomStatus.textContent = `${place.label}：${momentLine}`;
   livingMomentTimer = window.setTimeout(() => {
     elements.livingRoomStage.classList.remove("is-moment");
@@ -1358,10 +1528,11 @@ function toggleLivingWeather() {
   state.livingWeather = state.livingWeather === "rain" ? "clear" : "rain";
   saveState();
   refreshLivingWeather();
-  playRoomFx(CONTENT.livingRoom.places.window.sound);
   const raining = state.livingWeather === "rain";
-  elements.livingRoomStatus.textContent = raining ? "房间窗外落起一阵细雨。" : "房间窗外的雨停了，露出一小片晴月。";
   updateReaction({ expression: "shy", label: "窗外的小天气", text: raining ? "雨声小一点的时候，比较容易专心。" : "月亮出来了……窗帘可以再留一条缝。" }, false);
+  playRoomFx(raining ? "assets/audio/v8/weather-rain-window.mp3" : "assets/audio/v8/weather-clear-window.mp3");
+  playLivingVoice(raining ? "room-weather-rain" : "room-weather-clear");
+  elements.livingRoomStatus.textContent = raining ? "房间窗外落起一阵细雨。" : "房间窗外的雨停了，露出一小片晴月。";
 }
 
 function toggleLivingSound() {
@@ -1369,10 +1540,10 @@ function toggleLivingSound() {
   if (state.roomSoundMuted) roomFxPlayer.pause();
   saveState();
   refreshLivingSoundControl();
-  elements.livingRoomStatus.textContent = state.roomSoundMuted ? "房间短拟音已经关闭。" : "房间短拟音已经打开，仍然只在操作后播放。";
+  elements.livingRoomStatus.textContent = state.roomSoundMuted ? "房间场景声已经关闭。" : "房间场景声已经打开，仍然只在操作后播放。";
   updateReaction({
     expression: "peek",
-    label: "房间里的声音",
+    label: "房间里的场景声",
     text: state.roomSoundMuted ? "安静看也可以，所有文字反馈都会保留。" : "只在你碰到物件时，才会轻轻响一下。"
   }, false);
 }
@@ -1467,8 +1638,8 @@ function openDoor() {
 function refreshVoiceControls() {
   elements.voiceVolume.value = String(state.voiceVolume);
   elements.voiceMuteButton.setAttribute("aria-pressed", String(state.voiceMuted));
-  elements.voiceMuteButton.querySelector("span").textContent = state.voiceMuted ? "恢复声音" : "只看字幕";
-  elements.voiceMuteButton.setAttribute("aria-label", state.voiceMuted ? "恢复语音声音" : "关闭声音，只看字幕");
+  elements.voiceMuteButton.querySelector("span").textContent = state.voiceMuted ? "恢复角色语音" : "只看角色字幕";
+  elements.voiceMuteButton.setAttribute("aria-label", state.voiceMuted ? "恢复角色语音" : "关闭角色语音，只看角色字幕");
   voicePlayer.volume = state.voiceVolume;
   voicePlayer.muted = state.voiceMuted;
 }
@@ -1557,6 +1728,44 @@ function shouldUseGuardedReply(line, now = Date.now()) {
   return false;
 }
 
+async function playLivingVoice(replyId) {
+  const reply = CONTENT.livingRoom.voices[replyId];
+  if (!reply) return;
+  const scene = reply.scene || CONTENT.livingRoom.places[state.livingPlace].label;
+
+  stopVoice(true, true);
+  const sequence = voiceSequence;
+  elements.subtitleScene.textContent = `${scene} · ${reply.label}`;
+  elements.subtitleJapanese.textContent = reply.japanese;
+  elements.subtitleChinese.textContent = reply.chinese;
+  setHeroExpression(reply.expression);
+  updateReaction({ expression: reply.expression, label: `她在${scene}小声回答`, text: reply.reaction }, false, true);
+  showFeedback(true);
+  activeVoiceScene = scene;
+
+  if (state.voiceMuted) {
+    elements.voicePlaybackState.textContent = `只显示字幕 · ${scene}`;
+    elements.stopVoiceButton.hidden = true;
+    settleFeedback(4600);
+    return;
+  }
+
+  voicePlayer.src = reply.file;
+  voicePlayer.load();
+  try {
+    await voicePlayer.play();
+    if (sequence !== voiceSequence) return;
+    elements.voicePlaybackState.textContent = `正在播放 · ${scene}`;
+    elements.stopVoiceButton.hidden = false;
+  } catch {
+    if (sequence !== voiceSequence) return;
+    elements.stopVoiceButton.hidden = true;
+    elements.subtitleScene.textContent = `${scene} · 暂时没有声音`;
+    elements.voicePlaybackState.textContent = "角色声音暂时没加载出来 · 可以继续看字幕";
+    updateReaction("voiceError", false, true);
+  }
+}
+
 async function playVoice(id) {
   const line = CONTENT.voiceLines[id];
   if (!line) return;
@@ -1613,8 +1822,8 @@ function toggleVoiceMode() {
   if (state.voiceMuted && !voicePlayer.paused) stopVoice(true, true);
   refreshVoiceControls();
   elements.voicePlaybackState.textContent = state.voiceMuted
-    ? "只显示字幕 · 不会播放声音"
-    : "声音已恢复 · 仍然只在点击后播放";
+    ? "只显示角色字幕 · 场景声由房间开关控制"
+    : "角色语音已恢复 · 仍然只在点击后播放";
   saveState();
   elements.feedbackDock.classList.add("is-voice-context");
   document.body.classList.add("voice-feedback-active");
@@ -2362,6 +2571,9 @@ elements.livingPlaceButtons.forEach((button) => {
   button.addEventListener("keydown", handleLivingTrackKey);
 });
 elements.livingEventButton.addEventListener("click", runLivingMoment);
+elements.livingVoiceButton.addEventListener("click", () => {
+  playLivingVoice(CONTENT.livingRoom.places[state.livingPlace].voice);
+});
 elements.livingWeatherToggle.addEventListener("click", toggleLivingWeather);
 elements.livingSoundToggle.addEventListener("click", toggleLivingSound);
 elements.livingRoomView.addEventListener("pointerdown", startLivingSwipe);
