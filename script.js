@@ -1182,8 +1182,14 @@ let livingAutonomyTimer = 0;
 let livingMomentTimer = 0;
 let livingInView = false;
 let livingPointerStart = null;
+let activeVoicePlayer = null;
+let activeRoomFxPlayer = null;
+let roomFxSequence = 0;
 const livingMomentIndexes = new Map();
 const livingAmbientIndexes = new Map();
+const voicePlayers = new Map();
+const roomFxPlayers = new Map();
+const preparedAudioSources = new Map();
 const lastVoiceReplies = new Map();
 const voiceReplyQueues = new Map();
 const lastGuardedVoiceReplies = new Map();
@@ -1193,15 +1199,90 @@ const VOICE_GUARD_WINDOW_MS = 5000;
 const VOICE_GUARD_THRESHOLD = 4;
 const VOICE_GUARD_COOLDOWN_MS = 25000;
 
-const voicePlayer = new Audio();
-voicePlayer.preload = "none";
-voicePlayer.volume = state.voiceVolume;
-voicePlayer.muted = state.voiceMuted;
+const ROOM_FX_VOLUME = 0.62;
 
-const roomFxPlayer = new Audio();
-roomFxPlayer.preload = "none";
-roomFxPlayer.volume = 0.62;
-roomFxPlayer.muted = state.roomSoundMuted;
+function resetAudioPlayer(player) {
+  player.pause();
+  try {
+    player.currentTime = 0;
+  } catch {
+    // 某些浏览器在媒体元数据尚未就绪时不允许重置时间。
+  }
+}
+
+function applyPreparedAudioSource(file, player) {
+  const source = preparedAudioSources.get(file);
+  if (!source?.blobUrl || player.src === source.blobUrl) return;
+  player.src = source.blobUrl;
+  player.preload = "auto";
+  player.load();
+}
+
+function warmAudioFile(file, player) {
+  const existing = preparedAudioSources.get(file);
+  if (existing) {
+    if (existing.blobUrl) applyPreparedAudioSource(file, player);
+    return;
+  }
+
+  if (window.location.protocol === "file:") {
+    player.preload = "auto";
+    player.load();
+    return;
+  }
+
+  const source = { blobUrl: "", promise: null };
+  source.promise = fetch(file, { cache: "force-cache", priority: "low" })
+    .then((response) => {
+      if (!response.ok) throw new Error(`音频请求失败：${response.status}`);
+      return response.blob();
+    })
+    .then((blob) => {
+      source.blobUrl = URL.createObjectURL(blob);
+      if (player !== activeVoicePlayer && player !== activeRoomFxPlayer) {
+        applyPreparedAudioSource(file, player);
+      }
+    })
+    .catch(() => {
+      player.preload = "auto";
+      player.load();
+    });
+  preparedAudioSources.set(file, source);
+}
+
+function prepareVoiceFile(file) {
+  if (!file) return null;
+  let player = voicePlayers.get(file);
+  if (player) return player;
+  player = new Audio();
+  player.preload = "none";
+  player.src = file;
+  player.dataset.sourceFile = file;
+  player.playsInline = true;
+  player.volume = state.voiceVolume;
+  player.muted = state.voiceMuted;
+  player.addEventListener("ended", handleVoiceEnded);
+  player.addEventListener("error", handleVoiceError);
+  voicePlayers.set(file, player);
+  warmAudioFile(file, player);
+  return player;
+}
+
+function prepareRoomFxFile(file) {
+  if (!file) return null;
+  let player = roomFxPlayers.get(file);
+  if (player) return player;
+  player = new Audio();
+  player.preload = "none";
+  player.src = file;
+  player.dataset.sourceFile = file;
+  player.playsInline = true;
+  player.volume = ROOM_FX_VOLUME;
+  player.muted = state.roomSoundMuted;
+  roomFxPlayers.set(file, player);
+  warmAudioFile(file, player);
+  return player;
+}
 
 function preloadImage(source) {
   return new Promise((resolve, reject) => {
@@ -1365,9 +1446,30 @@ function preloadLivingNeighbors(key) {
   neighbors.forEach((neighbor) => preloadLivingFrame(CONTENT.livingRoom.places[neighbor]).catch(() => {}));
 }
 
+function prepareLivingAudioForPlace(key) {
+  const place = CONTENT.livingRoom.places[validLivingPlace(key)];
+  if (!place) return;
+  prepareVoiceFile(CONTENT.livingRoom.voices[place.voice]?.file);
+  place.moments.forEach((moment) => {
+    prepareVoiceFile(CONTENT.livingRoom.voices[moment.voice]?.file);
+    prepareRoomFxFile(moment.sound);
+  });
+}
+
+function prepareAllLivingAudio() {
+  Object.keys(CONTENT.livingRoom.places).forEach(prepareLivingAudioForPlace);
+  ["room-weather-rain", "room-weather-clear"].forEach((id) => {
+    prepareVoiceFile(CONTENT.livingRoom.voices[id]?.file);
+  });
+  prepareRoomFxFile("assets/audio/v8/weather-rain-window.mp3");
+  prepareRoomFxFile("assets/audio/v8/weather-clear-window.mp3");
+}
+
 function refreshLivingSoundControl() {
   const soundOn = !state.roomSoundMuted;
-  roomFxPlayer.muted = !soundOn;
+  roomFxPlayers.forEach((player) => {
+    player.muted = !soundOn;
+  });
   elements.livingSoundToggle.setAttribute("aria-pressed", String(soundOn));
   elements.livingSoundToggle.setAttribute("aria-label", soundOn ? "关闭房间里的场景声" : "打开房间里的场景声");
   elements.livingSoundToggle.querySelector("span").textContent = soundOn ? "场景声 · 开" : "场景声 · 关";
@@ -1426,6 +1528,7 @@ function applyLivingPlace(key) {
 async function switchLivingPlace(key, announce = true) {
   const nextKey = validLivingPlace(key);
   const place = CONTENT.livingRoom.places[nextKey];
+  prepareLivingAudioForPlace(nextKey);
   const sequence = ++livingFrameSequence;
   window.clearTimeout(livingAutonomyTimer);
   window.clearTimeout(livingMomentTimer);
@@ -1458,17 +1561,18 @@ async function switchLivingPlace(key, announce = true) {
 
 async function playRoomFx(file) {
   if (state.roomSoundMuted || !file) return;
-  roomFxPlayer.pause();
+  const sequence = ++roomFxSequence;
+  if (activeRoomFxPlayer) resetAudioPlayer(activeRoomFxPlayer);
+  const player = prepareRoomFxFile(file);
+  if (!player) return;
+  applyPreparedAudioSource(file, player);
+  activeRoomFxPlayer = player;
+  resetAudioPlayer(player);
+  if (player.error || player.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) player.load();
   try {
-    roomFxPlayer.currentTime = 0;
-  } catch {
-    // 媒体尚未就绪时，不强行重置播放位置。
-  }
-  roomFxPlayer.src = file;
-  roomFxPlayer.load();
-  try {
-    await roomFxPlayer.play();
-  } catch {
+    await player.play();
+  } catch (error) {
+    if (sequence !== roomFxSequence || error?.name === "AbortError") return;
     elements.livingRoomStatus.textContent = "场景声暂时没有加载出来，画面与文字反馈仍然保留。";
   }
 }
@@ -1537,7 +1641,7 @@ function toggleLivingWeather() {
 
 function toggleLivingSound() {
   state.roomSoundMuted = !state.roomSoundMuted;
-  if (state.roomSoundMuted) roomFxPlayer.pause();
+  if (state.roomSoundMuted && activeRoomFxPlayer) resetAudioPlayer(activeRoomFxPlayer);
   saveState();
   refreshLivingSoundControl();
   elements.livingRoomStatus.textContent = state.roomSoundMuted ? "房间场景声已经关闭。" : "房间场景声已经打开，仍然只在操作后播放。";
@@ -1614,6 +1718,7 @@ function openDoor() {
     return;
   }
   doorOpened = true;
+  prepareAllLivingAudio();
   const sequence = ++heroSequence;
   elements.doorScene.classList.add("is-startled");
   elements.knockButton.setAttribute("aria-expanded", "true");
@@ -1640,18 +1745,15 @@ function refreshVoiceControls() {
   elements.voiceMuteButton.setAttribute("aria-pressed", String(state.voiceMuted));
   elements.voiceMuteButton.querySelector("span").textContent = state.voiceMuted ? "恢复角色语音" : "只看角色字幕";
   elements.voiceMuteButton.setAttribute("aria-label", state.voiceMuted ? "恢复角色语音" : "关闭角色语音，只看角色字幕");
-  voicePlayer.volume = state.voiceVolume;
-  voicePlayer.muted = state.voiceMuted;
+  voicePlayers.forEach((player) => {
+    player.volume = state.voiceVolume;
+    player.muted = state.voiceMuted;
+  });
 }
 
 function stopVoice(keepSubtitle = true, keepDock = false, announceStop = false) {
   voiceSequence += 1;
-  voicePlayer.pause();
-  try {
-    voicePlayer.currentTime = 0;
-  } catch {
-    // 某些浏览器在媒体尚未就绪时不允许重置时间。
-  }
+  if (activeVoicePlayer) resetAudioPlayer(activeVoicePlayer);
   elements.stopVoiceButton.hidden = true;
   if (announceStop) elements.voicePlaybackState.textContent = "已经停下 · 字幕仍保留";
   if (!keepSubtitle) {
@@ -1750,10 +1852,17 @@ async function playLivingVoice(replyId) {
     return;
   }
 
-  voicePlayer.src = reply.file;
-  voicePlayer.load();
+  const player = prepareVoiceFile(reply.file);
+  if (!player) return;
+  applyPreparedAudioSource(reply.file, player);
+  activeVoicePlayer = player;
+  resetAudioPlayer(player);
+  if (player.error || player.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) player.load();
+  if (player.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+    elements.voicePlaybackState.textContent = `正在准备 · ${scene}`;
+  }
   try {
-    await voicePlayer.play();
+    await player.play();
     if (sequence !== voiceSequence) return;
     elements.voicePlaybackState.textContent = `正在播放 · ${scene}`;
     elements.stopVoiceButton.hidden = false;
@@ -1789,10 +1898,17 @@ async function playVoice(id) {
     return;
   }
 
-  voicePlayer.src = reply.file;
-  voicePlayer.load();
+  const player = prepareVoiceFile(reply.file);
+  if (!player) return;
+  applyPreparedAudioSource(reply.file, player);
+  activeVoicePlayer = player;
+  resetAudioPlayer(player);
+  if (player.error || player.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) player.load();
+  if (player.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+    elements.voicePlaybackState.textContent = `正在准备 · ${line.scene}`;
+  }
   try {
-    await voicePlayer.play();
+    await player.play();
     if (sequence !== voiceSequence) return;
     elements.voicePlaybackState.textContent = `正在播放 · ${line.scene}`;
     elements.stopVoiceButton.hidden = false;
@@ -1805,21 +1921,23 @@ async function playVoice(id) {
   }
 }
 
-voicePlayer.addEventListener("ended", () => {
+function handleVoiceEnded(event) {
+  if (event.currentTarget !== activeVoicePlayer) return;
   elements.stopVoiceButton.hidden = true;
   elements.voicePlaybackState.textContent = `播放结束 · ${activeVoiceScene || "字幕仍保留"}`;
   settleFeedback(2600);
-});
+}
 
-voicePlayer.addEventListener("error", () => {
+function handleVoiceError(event) {
+  if (event.currentTarget !== activeVoicePlayer) return;
   elements.stopVoiceButton.hidden = true;
   elements.voicePlaybackState.textContent = "声音暂时没加载出来 · 可以继续看字幕";
   settleFeedback(3200);
-});
+}
 
 function toggleVoiceMode() {
   state.voiceMuted = !state.voiceMuted;
-  if (state.voiceMuted && !voicePlayer.paused) stopVoice(true, true);
+  if (state.voiceMuted && activeVoicePlayer && !activeVoicePlayer.paused) stopVoice(true, true);
   refreshVoiceControls();
   elements.voicePlaybackState.textContent = state.voiceMuted
     ? "只显示角色字幕 · 场景声由房间开关控制"
@@ -1832,7 +1950,9 @@ function toggleVoiceMode() {
 
 function changeVoiceVolume() {
   state.voiceVolume = clampVolume(Number(elements.voiceVolume.value));
-  voicePlayer.volume = state.voiceVolume;
+  voicePlayers.forEach((player) => {
+    player.volume = state.voiceVolume;
+  });
   saveState();
 }
 
@@ -2500,6 +2620,54 @@ function preloadDoorSequence() {
     .forEach((item) => preloadResponsiveImage(item, "(max-width: 760px) calc(100vw - 1.6rem), (max-width: 1024px) 78vw, 1120px").catch(() => {}));
 }
 
+function prepareVoiceLine(id) {
+  const line = CONTENT.voiceLines[id];
+  if (!line) return;
+  [...line.replies, ...(line.guardedReplies || [])].forEach((reply) => prepareVoiceFile(reply.file));
+}
+
+function setupAudioWarmup() {
+  const voiceButtons = [...document.querySelectorAll("[data-voice]")];
+  voiceButtons.forEach((button) => {
+    const prepare = () => prepareVoiceLine(button.dataset.voice);
+    button.addEventListener("pointerenter", prepare, { once: true });
+    button.addEventListener("focus", prepare, { once: true });
+    button.addEventListener("pointerdown", prepare, { once: true });
+  });
+
+  const prepareCurrentRoom = () => prepareLivingAudioForPlace(state.livingPlace);
+  [elements.livingEventButton, elements.livingVoiceButton].forEach((button) => {
+    button.addEventListener("pointerenter", prepareCurrentRoom);
+    button.addEventListener("focus", prepareCurrentRoom);
+    button.addEventListener("pointerdown", prepareCurrentRoom);
+  });
+  elements.livingWeatherToggle.addEventListener("pointerenter", prepareAllLivingAudio, { once: true });
+  elements.livingWeatherToggle.addEventListener("focus", prepareAllLivingAudio, { once: true });
+  elements.livingWeatherToggle.addEventListener("pointerdown", prepareAllLivingAudio, { once: true });
+
+  if (!("IntersectionObserver" in window)) {
+    voiceButtons.forEach((button) => prepareVoiceLine(button.dataset.voice));
+    prepareAllLivingAudio();
+    return;
+  }
+
+  const voiceObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      prepareVoiceLine(entry.target.dataset.voice);
+      voiceObserver.unobserve(entry.target);
+    });
+  }, { rootMargin: "520px 0px" });
+  voiceButtons.forEach((button) => voiceObserver.observe(button));
+
+  const roomObserver = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    prepareAllLivingAudio();
+    roomObserver.disconnect();
+  }, { rootMargin: "900px 0px" });
+  roomObserver.observe(elements.livingRoom);
+}
+
 function observeDeferredSections() {
   if (!("IntersectionObserver" in window)) {
     preloadOutfitNeighbors();
@@ -2634,5 +2802,6 @@ setupSecretHints();
 setupLivingRoom();
 setupDrawingStory();
 setupParallax();
+setupAudioWarmup();
 observeDeferredSections();
 document.documentElement.dataset.js = "true";
