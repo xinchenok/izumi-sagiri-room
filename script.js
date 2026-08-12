@@ -589,6 +589,139 @@ const CONTENT = {
       }
     }
   },
+  livingRoom: {
+    phases: {
+      morning: { label: "清晨", note: "窗光刚越过床沿，房间还没有完全醒。" },
+      day: { label: "午后", note: "墙纸被日光照得很软，连稿纸都显得轻一点。" },
+      evening: { label: "傍晚", note: "台灯先亮起来，窗外的颜色正在慢慢变深。" },
+      night: { label: "夜里", note: "木地板已经安静下来，只剩很轻的创作声。" },
+      late: { label: "深夜", note: "房间缩进一盏小灯里，她还舍不得停笔。" }
+    },
+    places: {
+      desk: {
+        label: "画桌旁",
+        image: "assets/v6/studio-focus.webp",
+        small: "assets/v6/studio-focus-720.webp",
+        width: 1448,
+        smallWidth: 720,
+        alt: "纱雾在暖灯与雨窗之间低头画稿，桌边放着数位板、铅笔和小猫玩偶",
+        title: "先别叫她，她正画到最认真的地方。",
+        line: "她把旁边的椅子留出一点，却一直装作只是忘了推回去。",
+        quote: "“可以靠近……不要突然碰到数位板。”",
+        ambient: [
+          "笔尖还在移动，台灯把线稿照得很暖。",
+          "她停下来眨了一下眼，又把刚才那根线重新描细。",
+          "桌边那张共同完成的小画，被压在最不容易折到的位置。"
+        ],
+        autonomousFrame: {
+          image: "assets/v6/studio-blink.webp",
+          small: "assets/v6/studio-blink-720.webp",
+          width: 1448,
+          smallWidth: 720,
+          alt: "纱雾低头画线时轻轻眨了一下眼睛"
+        },
+        autonomousDuration: 145,
+        action: "听她补完这一笔",
+        sound: "assets/audio/v7/pencil-soft.mp3",
+        deepLink: "#desk-secrets",
+        deepLabel: "再靠近画桌一点",
+        expression: "proud",
+        moments: [
+          { line: "她沿着刚才犹豫的轮廓补完最后一笔，肩膀终于松下来一点。", reaction: "这笔……刚才总觉得不对。现在可以了。" },
+          { line: "她把数位板转过来几度，只够你看见新画好的眼睛。", reaction: "只看这里。别、别顺便一直看我。" },
+          { line: "保存提示轻轻闪了一下，她才发现你一直安静坐在旁边。", reaction: "你还在啊……那就，再等我一小会儿。" }
+        ]
+      },
+      bed: {
+        label: "床边",
+        image: "assets/v4/gallery-bed-drawing.webp",
+        small: "assets/v4/gallery-bed-drawing-thumb.webp",
+        width: 1364,
+        smallWidth: 480,
+        alt: "纱雾穿粉色猫耳家居服，盘腿坐在床上用数位板画画，身边堆着柔软靠枕",
+        title: "床是休息的地方，也是她最小的画室。",
+        line: "数位板垫在膝盖上，滑下来的被角已经快碰到地板。",
+        quote: "“在床上画比较暖……这不是偷懒。”",
+        ambient: [
+          "靠枕被抱得慢慢陷下去，她还在检查刚画好的小猫耳朵。",
+          "她用被子围出一条很窄的缝，只把画先递到外面。",
+          "困意把动作放慢了，手里的笔却还没有放下。"
+        ],
+        action: "把滑下来的毯角递回去",
+        sound: "assets/audio/v7/fabric-soft.mp3",
+        deepLink: "#gallery",
+        deepLabel: "翻看床边的小片段",
+        expression: "shy",
+        moments: [
+          {
+            line: "毯角回到脚边，她愣了一下，又悄悄往旁边让出半个靠枕。",
+            reaction: "谢、谢谢……靠枕也可以分你一点。",
+            frame: {
+              image: "assets/v4/gallery-blanket-fort.webp",
+              small: "assets/v4/gallery-blanket-fort-thumb.webp",
+              width: 1364,
+              smallWidth: 480,
+              alt: "纱雾躲进被子搭成的小帐篷，从帘边害羞地递出一张小猫速写"
+            }
+          },
+          { line: "她把小帐篷收回床角，数位板又稳稳落在膝盖上。", reaction: "刚才那条缝……只是在通风。", frame: "base" },
+          { line: "最软的猫咪靠枕被推到你这边一点，她本人却迅速躲回袖口后。", reaction: "借你抱一下而已，不是送给你。" }
+        ]
+      },
+      wardrobe: {
+        label: "衣橱边",
+        image: "assets/v7/wardrobe-living.webp",
+        small: "assets/v7/wardrobe-living-720.webp",
+        width: 1448,
+        smallWidth: 720,
+        alt: "纱雾站在打开的木衣橱旁，害羞地比较粉色家居外套和薄荷猫耳连帽毯",
+        title: "她已经比较了很久，还不肯承认自己在犹豫。",
+        line: "粉色家居服比较安心，薄荷猫耳毯又足够挡住紧张的表情。",
+        quote: "“我只是确认哪一件比较方便画画。”",
+        ambient: [
+          "衣架轻轻碰了一下，她马上伸手扶住，像怕惊动整个房间。",
+          "薄荷猫耳毯被举到脸边，又因为太显眼悄悄放低。",
+          "她对着两种颜色看了很久，最后先偷偷观察你的反应。"
+        ],
+        action: "替她扶住晃动的衣架",
+        sound: "assets/audio/v7/hanger-soft.mp3",
+        deepLink: "#wardrobe",
+        deepLabel: "陪她认真选一套",
+        expression: "startled",
+        moments: [
+          { line: "木衣架终于安静下来，她把差点滑落的袖子重新挂好。", reaction: "我、我自己也扶得住……不过，谢谢。" },
+          { line: "她把猫耳毯往身后藏了藏，露出来的耳尖还是轻轻晃了一下。", reaction: "这个不是太可爱……只是比较暖。" },
+          { line: "两套衣服又被并排举起来，这次她终于把选择权分给你一点。", reaction: "只准从这两件里选。不许笑。" }
+        ]
+      },
+      window: {
+        label: "窗台",
+        image: "assets/v4/gallery-goodnight.webp",
+        small: "assets/v4/gallery-goodnight-thumb.webp",
+        width: 1364,
+        smallWidth: 480,
+        alt: "月光下，纱雾蜷坐在窗边抱着猫咪玩偶，身旁放着合上的画册",
+        title: "窗帘总会留一条缝，刚好够月光进来。",
+        line: "她说那样比较容易看清时间，其实只是舍不得把夜色全部关在外面。",
+        quote: "“雨小一点以后……月亮也许会出来。”",
+        ambient: [
+          "窗帘被风抬起一点，月光刚好落在她抱着的玩偶耳朵上。",
+          "雨线沿着玻璃慢慢滑下，她在心里给每一条安排了方向。",
+          "合上的画册旁边，还留着一张没有写完的晚安纸条。"
+        ],
+        action: "替她把窗缝关小一点",
+        sound: "assets/audio/v7/curtain-rain.mp3",
+        deepLink: "#goodnight",
+        deepLabel: "陪她收好今天",
+        expression: "shy",
+        moments: [
+          { line: "窗缝窄了一点，雨声变轻，玩偶耳朵上的月光却还留着。", reaction: "这样刚好……不是因为我怕冷。" },
+          { line: "她把上次那张小猫画靠在窗边，让画里的月亮和外面排在一起。", reaction: "两个月亮……也没有很奇怪吧。" },
+          { line: "窗帘安静落下，她在合上的画册上轻轻拍了两下。", reaction: "今天先到这里。你可以再待一分钟。" }
+        ]
+      }
+    }
+  },
   fortunes: [
     "画不完也没关系，先把今天好好收起来。",
     "今天已经很努力了，剩下的一小步留给明天。",
@@ -619,6 +752,14 @@ function validGalleryIndex(value) {
   return Number.isInteger(value) && value >= 0 && value < CONTENT.gallery.length ? value : 0;
 }
 
+function validLivingPlace(value) {
+  return Object.prototype.hasOwnProperty.call(CONTENT.livingRoom.places, value) ? value : "desk";
+}
+
+function validLivingWeather(value) {
+  return value === "clear" || value === "rain" ? value : "rain";
+}
+
 function validSharedDrawing(value) {
   if (!value || typeof value !== "object") return null;
   const validPresence = Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.presence, value.presence);
@@ -645,7 +786,10 @@ function readState() {
     galleryIndex: 0,
     voiceVolume: 0.85,
     voiceMuted: false,
-    sharedDrawing: null
+    sharedDrawing: null,
+    livingPlace: "desk",
+    livingWeather: "rain",
+    roomSoundMuted: false
   };
   try {
     const current = JSON.parse(localStorage.getItem(STORAGE_KEY_V2));
@@ -659,7 +803,10 @@ function readState() {
         galleryIndex: validGalleryIndex(current.galleryIndex),
         voiceVolume: clampVolume(current.voiceVolume),
         voiceMuted: current.voiceMuted === true,
-        sharedDrawing: validSharedDrawing(current.sharedDrawing)
+        sharedDrawing: validSharedDrawing(current.sharedDrawing),
+        livingPlace: validLivingPlace(current.livingPlace),
+        livingWeather: validLivingWeather(current.livingWeather),
+        roomSoundMuted: current.roomSoundMuted === true
       };
     }
 
@@ -674,7 +821,10 @@ function readState() {
         galleryIndex: 0,
         voiceVolume: 0.85,
         voiceMuted: false,
-        sharedDrawing: null
+        sharedDrawing: null,
+        livingPlace: "desk",
+        livingWeather: "rain",
+        roomSoundMuted: false
       };
       localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(migrated));
       return { ...migrated, secrets: new Set(migrated.secrets) };
@@ -698,7 +848,10 @@ function saveState() {
       galleryIndex: state.galleryIndex,
       voiceVolume: state.voiceVolume,
       voiceMuted: state.voiceMuted,
-      sharedDrawing: state.sharedDrawing
+      sharedDrawing: state.sharedDrawing,
+      livingPlace: state.livingPlace,
+      livingWeather: state.livingWeather,
+      roomSoundMuted: state.roomSoundMuted
     }));
   } catch {
     // 存储不可用时，仅保留当前会话状态。
@@ -791,6 +944,25 @@ const elements = {
   storyMemoryImage: document.querySelector("#storyMemoryImage"),
   storyMemoryTitle: document.querySelector("#storyMemoryTitle"),
   storyMemoryText: document.querySelector("#storyMemoryText"),
+  livingRoom: document.querySelector("#living-room"),
+  livingRoomStage: document.querySelector("#livingRoomStage"),
+  livingRoomView: document.querySelector(".living-room-view"),
+  livingRoomImage: document.querySelector("#livingRoomImage"),
+  livingRoomTime: document.querySelector("#livingRoomTime"),
+  livingWeatherToggle: document.querySelector("#livingWeatherToggle"),
+  livingSoundToggle: document.querySelector("#livingSoundToggle"),
+  livingRoomCaption: document.querySelector("#livingRoomCaption"),
+  livingRoomAmbient: document.querySelector("#livingRoomAmbient"),
+  livingPlaceTitle: document.querySelector("#livingPlaceTitle"),
+  livingPlaceLine: document.querySelector("#livingPlaceLine"),
+  livingPlaceQuote: document.querySelector("#livingPlaceQuote"),
+  livingEventButton: document.querySelector("#livingEventButton"),
+  livingDeepLink: document.querySelector("#livingDeepLink"),
+  livingPlaceButtons: [...document.querySelectorAll("[data-living-place]")],
+  livingRoomStatus: document.querySelector("#livingRoomStatus"),
+  livingDrawingMemory: document.querySelector("#livingDrawingMemory"),
+  livingDrawingMemoryImage: document.querySelector("#livingDrawingMemoryImage"),
+  livingDrawingMemoryLabel: document.querySelector("#livingDrawingMemoryLabel"),
   galleryStage: document.querySelector("#galleryStage"),
   galleryMainImage: document.querySelector("#galleryMainImage"),
   galleryIndex: document.querySelector("#galleryIndex"),
@@ -835,6 +1007,13 @@ let storyFrameSequence = 0;
 let storyBlinkTimer = 0;
 let storyInView = false;
 let storyDraft = { presence: "", subject: "", palette: "", praise: "" };
+let livingFrameSequence = 0;
+let livingAutonomyTimer = 0;
+let livingMomentTimer = 0;
+let livingInView = false;
+let livingPointerStart = null;
+const livingMomentIndexes = new Map();
+const livingAmbientIndexes = new Map();
 const lastVoiceReplies = new Map();
 const voiceReplyQueues = new Map();
 const lastGuardedVoiceReplies = new Map();
@@ -848,6 +1027,11 @@ const voicePlayer = new Audio();
 voicePlayer.preload = "none";
 voicePlayer.volume = state.voiceVolume;
 voicePlayer.muted = state.voiceMuted;
+
+const roomFxPlayer = new Audio();
+roomFxPlayer.preload = "none";
+roomFxPlayer.volume = 0.55;
+roomFxPlayer.muted = state.roomSoundMuted;
 
 function preloadImage(source) {
   return new Promise((resolve, reject) => {
@@ -948,6 +1132,309 @@ function updateReaction(reaction, withConfetti = true, preserveSubtitles = false
   elements.reactionCorner.classList.add("is-reacting");
   showFeedback();
   if (withConfetti) sprinkle(reactionOrigin());
+}
+
+function livingPhase(now = new Date()) {
+  const hour = now.getHours();
+  if (hour >= 5 && hour < 11) return "morning";
+  if (hour >= 11 && hour < 17) return "day";
+  if (hour >= 17 && hour < 21) return "evening";
+  if (hour >= 21 && hour < 24) return "night";
+  return "late";
+}
+
+function refreshLivingTime() {
+  const now = new Date();
+  const phaseKey = livingPhase(now);
+  const phase = CONTENT.livingRoom.phases[phaseKey];
+  const time = new Intl.DateTimeFormat("zh-CN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false
+  }).format(now);
+  elements.livingRoomTime.textContent = `现在 ${time} · ${phase.label}`;
+  elements.livingRoomStage.dataset.phase = phaseKey;
+}
+
+function livingSourceSet(item) {
+  if (!item.small) return "";
+  return `${item.small} ${item.smallWidth || 720}w, ${item.image} ${item.width || 1448}w`;
+}
+
+function setLivingRoomImage(item) {
+  if (!item) return;
+  elements.livingRoomImage.src = item.image;
+  elements.livingRoomImage.srcset = livingSourceSet(item);
+  elements.livingRoomImage.alt = item.alt;
+}
+
+function preloadLivingFrame(item) {
+  return new Promise((resolve, reject) => {
+    if (!item?.image) {
+      reject(new Error("缺少房间场景素材"));
+      return;
+    }
+    const image = new Image();
+    image.onload = () => resolve(item.image);
+    image.onerror = reject;
+    if (item.small) {
+      image.srcset = livingSourceSet(item);
+      image.sizes = "(max-width: 760px) calc(100vw - 2.5rem), (max-width: 1024px) 62vw, 760px";
+    }
+    image.src = item.image;
+  });
+}
+
+function preloadLivingNeighbors(key) {
+  const keys = Object.keys(CONTENT.livingRoom.places);
+  const index = keys.indexOf(validLivingPlace(key));
+  const neighbors = [
+    keys[(index - 1 + keys.length) % keys.length],
+    keys[(index + 1) % keys.length]
+  ];
+  neighbors.forEach((neighbor) => preloadLivingFrame(CONTENT.livingRoom.places[neighbor]).catch(() => {}));
+}
+
+function refreshLivingSoundControl() {
+  const soundOn = !state.roomSoundMuted;
+  roomFxPlayer.muted = !soundOn;
+  elements.livingSoundToggle.setAttribute("aria-pressed", String(soundOn));
+  elements.livingSoundToggle.setAttribute("aria-label", soundOn ? "关闭房间里的短拟音" : "打开房间里的短拟音");
+  elements.livingSoundToggle.querySelector("span").textContent = soundOn ? "房间声 · 开" : "房间声 · 关";
+}
+
+function refreshLivingWeather() {
+  const raining = state.livingWeather === "rain";
+  elements.livingRoomStage.dataset.weather = state.livingWeather;
+  elements.livingWeatherToggle.setAttribute("aria-pressed", String(raining));
+  elements.livingWeatherToggle.setAttribute("aria-label", raining ? "让房间窗外的细雨停一会儿" : "让房间窗外落一阵细雨");
+  elements.livingWeatherToggle.querySelector("strong").textContent = raining ? "细雨" : "晴月";
+}
+
+function renderLivingDrawingMemory() {
+  const memory = validSharedDrawing(state.sharedDrawing);
+  if (!memory || state.livingPlace !== "desk") {
+    elements.livingDrawingMemory.hidden = true;
+    return;
+  }
+  const subject = CONTENT.drawingStory.subjects[memory.subject];
+  const palette = CONTENT.drawingStory.palettes[memory.palette];
+  elements.livingDrawingMemory.hidden = false;
+  elements.livingDrawingMemoryImage.src = subject.image;
+  elements.livingDrawingMemoryImage.alt = `${subject.alt}，使用${palette.label}配色，放在画桌边保存`;
+  elements.livingDrawingMemoryLabel.textContent = `上次一起画的 · ${subject.label}`;
+  setStoryPaletteClass(elements.livingDrawingMemoryImage, memory.palette);
+}
+
+function applyLivingPlace(key) {
+  const place = CONTENT.livingRoom.places[key];
+  if (!place) return;
+  const phase = CONTENT.livingRoom.phases[livingPhase()];
+  setLivingRoomImage(place);
+  elements.livingRoomStage.dataset.place = key;
+  elements.livingRoomStage.classList.remove("is-changing", "is-moment", "is-autonomous", "is-image-missing");
+  elements.livingRoomCaption.textContent = place.label;
+  elements.livingRoomAmbient.textContent = `${place.ambient[0]} ${phase.note}`;
+  elements.livingPlaceTitle.textContent = place.title;
+  elements.livingPlaceLine.textContent = place.line;
+  elements.livingPlaceQuote.textContent = place.quote;
+  elements.livingEventButton.querySelector("span").textContent = place.action;
+  elements.livingDeepLink.href = place.deepLink;
+  elements.livingDeepLink.textContent = place.deepLabel;
+  elements.livingPlaceButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.livingPlace === key));
+  });
+  renderLivingDrawingMemory();
+  if (place.autonomousFrame) preloadLivingFrame(place.autonomousFrame).catch(() => {});
+  place.moments.forEach((moment) => {
+    if (moment.frame && moment.frame !== "base") preloadLivingFrame(moment.frame).catch(() => {});
+  });
+}
+
+async function switchLivingPlace(key, announce = true) {
+  const nextKey = validLivingPlace(key);
+  const place = CONTENT.livingRoom.places[nextKey];
+  const sequence = ++livingFrameSequence;
+  window.clearTimeout(livingAutonomyTimer);
+  window.clearTimeout(livingMomentTimer);
+  elements.livingRoomStage.classList.add("is-changing");
+  try {
+    await preloadLivingFrame(place);
+  } catch {
+    if (sequence === livingFrameSequence) {
+      state.livingPlace = nextKey;
+      saveState();
+      applyLivingPlace(nextKey);
+      elements.livingRoomStage.classList.remove("is-changing");
+      elements.livingRoomStage.classList.add("is-image-missing");
+      elements.livingRoomStatus.textContent = `${place.label}的插画暂时没有加载出来，地点文字和入口仍然可以使用。`;
+    }
+    return;
+  }
+  if (!reducedMotion.matches) await new Promise((resolve) => window.setTimeout(resolve, 120));
+  if (sequence !== livingFrameSequence) return;
+  state.livingPlace = nextKey;
+  saveState();
+  applyLivingPlace(nextKey);
+  window.setTimeout(() => {
+    if (sequence === livingFrameSequence) elements.livingRoomStage.classList.remove("is-changing");
+  }, reducedMotion.matches ? 10 : 360);
+  if (announce) elements.livingRoomStatus.textContent = `已经移动到${place.label}。${place.title}`;
+  preloadLivingNeighbors(nextKey);
+  scheduleLivingAutonomy();
+}
+
+async function playRoomFx(file) {
+  if (state.roomSoundMuted || !file) return;
+  roomFxPlayer.pause();
+  try {
+    roomFxPlayer.currentTime = 0;
+  } catch {
+    // 媒体尚未就绪时，不强行重置播放位置。
+  }
+  roomFxPlayer.src = file;
+  roomFxPlayer.load();
+  try {
+    await roomFxPlayer.play();
+  } catch {
+    elements.livingRoomStatus.textContent = "房间声暂时没有加载出来，画面与文字反馈仍然保留。";
+  }
+}
+
+function runLivingMoment() {
+  const key = state.livingPlace;
+  const place = CONTENT.livingRoom.places[key];
+  if (!place) return;
+  const index = livingMomentIndexes.get(key) || 0;
+  const moment = place.moments[index % place.moments.length];
+  livingMomentIndexes.set(key, index + 1);
+  window.clearTimeout(livingAutonomyTimer);
+  window.clearTimeout(livingMomentTimer);
+  elements.livingRoomStage.classList.remove("is-moment");
+  void elements.livingRoomStage.offsetWidth;
+  elements.livingRoomStage.classList.add("is-moment");
+  elements.livingPlaceLine.textContent = moment.line;
+  elements.livingRoomAmbient.textContent = place.ambient[(index + 1) % place.ambient.length];
+  if (moment.frame === "base") setLivingRoomImage(place);
+  else if (moment.frame) setLivingRoomImage(moment.frame);
+
+  let momentLine = moment.line;
+  let reactionText = moment.reaction;
+  if (key === "window" && index % place.moments.length === 1 && !validSharedDrawing(state.sharedDrawing)) {
+    momentLine = "她把一张月亮小猫速写靠在窗边，让画里的夜色和外面排在一起。";
+    elements.livingPlaceLine.textContent = momentLine;
+    reactionText = "画里的月亮……也可以在这里待一会儿。";
+  }
+  playRoomFx(place.sound);
+  updateReaction({ expression: place.expression, label: `${place.label}的小事`, text: reactionText }, false);
+  elements.livingRoomStatus.textContent = `${place.label}：${momentLine}`;
+  livingMomentTimer = window.setTimeout(() => {
+    elements.livingRoomStage.classList.remove("is-moment");
+    scheduleLivingAutonomy();
+  }, reducedMotion.matches ? 20 : 2100);
+}
+
+function scheduleLivingAutonomy() {
+  window.clearTimeout(livingAutonomyTimer);
+  if (!livingInView || reducedMotion.matches || document.visibilityState !== "visible") return;
+  livingAutonomyTimer = window.setTimeout(() => {
+    const key = state.livingPlace;
+    const place = CONTENT.livingRoom.places[key];
+    const index = (livingAmbientIndexes.get(key) || 0) + 1;
+    livingAmbientIndexes.set(key, index);
+    elements.livingRoomAmbient.textContent = place.ambient[index % place.ambient.length];
+    elements.livingRoomStage.classList.add("is-autonomous");
+    if (place.autonomousFrame) setLivingRoomImage(place.autonomousFrame);
+    window.setTimeout(() => {
+      if (state.livingPlace !== key) return;
+      if (place.autonomousFrame) setLivingRoomImage(place);
+      elements.livingRoomStage.classList.remove("is-autonomous");
+      scheduleLivingAutonomy();
+    }, place.autonomousDuration || 1800);
+  }, 5600 + Math.random() * 3600);
+}
+
+function toggleLivingWeather() {
+  state.livingWeather = state.livingWeather === "rain" ? "clear" : "rain";
+  saveState();
+  refreshLivingWeather();
+  playRoomFx(CONTENT.livingRoom.places.window.sound);
+  const raining = state.livingWeather === "rain";
+  elements.livingRoomStatus.textContent = raining ? "房间窗外落起一阵细雨。" : "房间窗外的雨停了，露出一小片晴月。";
+  updateReaction({ expression: "shy", label: "窗外的小天气", text: raining ? "雨声小一点的时候，比较容易专心。" : "月亮出来了……窗帘可以再留一条缝。" }, false);
+}
+
+function toggleLivingSound() {
+  state.roomSoundMuted = !state.roomSoundMuted;
+  if (state.roomSoundMuted) roomFxPlayer.pause();
+  saveState();
+  refreshLivingSoundControl();
+  elements.livingRoomStatus.textContent = state.roomSoundMuted ? "房间短拟音已经关闭。" : "房间短拟音已经打开，仍然只在操作后播放。";
+  updateReaction({
+    expression: "peek",
+    label: "房间里的声音",
+    text: state.roomSoundMuted ? "安静看也可以，所有文字反馈都会保留。" : "只在你碰到物件时，才会轻轻响一下。"
+  }, false);
+}
+
+function moveLivingPlace(direction) {
+  const keys = Object.keys(CONTENT.livingRoom.places);
+  const index = keys.indexOf(state.livingPlace);
+  const next = (index + direction + keys.length) % keys.length;
+  switchLivingPlace(keys[next]);
+  elements.livingPlaceButtons[next]?.focus({ preventScroll: true });
+}
+
+function handleLivingTrackKey(event) {
+  if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+  event.preventDefault();
+  moveLivingPlace(event.key === "ArrowRight" ? 1 : -1);
+}
+
+function startLivingSwipe(event) {
+  livingPointerStart = { x: event.clientX, y: event.clientY };
+  if (elements.livingRoomView.setPointerCapture && event.pointerId >= 0) {
+    elements.livingRoomView.setPointerCapture(event.pointerId);
+  }
+}
+
+function finishLivingSwipe(event) {
+  if (!livingPointerStart) return;
+  const horizontal = event.clientX - livingPointerStart.x;
+  const vertical = event.clientY - livingPointerStart.y;
+  livingPointerStart = null;
+  if (elements.livingRoomView.hasPointerCapture?.(event.pointerId)) {
+    elements.livingRoomView.releasePointerCapture(event.pointerId);
+  }
+  if (Math.abs(horizontal) < 55 || Math.abs(horizontal) <= Math.abs(vertical)) return;
+  moveLivingPlace(horizontal < 0 ? 1 : -1);
+}
+
+function setupLivingRoom() {
+  refreshLivingTime();
+  refreshLivingWeather();
+  refreshLivingSoundControl();
+  applyLivingPlace(state.livingPlace);
+  window.setInterval(refreshLivingTime, 60000);
+  if (!("IntersectionObserver" in window)) {
+    livingInView = true;
+    elements.livingRoom.classList.add("is-in-view");
+    preloadLivingNeighbors(state.livingPlace);
+    scheduleLivingAutonomy();
+    return;
+  }
+  const observer = new IntersectionObserver(([entry]) => {
+    livingInView = entry.isIntersecting;
+    elements.livingRoom.classList.toggle("is-in-view", livingInView);
+    if (livingInView) {
+      preloadLivingNeighbors(state.livingPlace);
+      scheduleLivingAutonomy();
+    } else {
+      window.clearTimeout(livingAutonomyTimer);
+      elements.livingRoomStage.classList.remove("is-autonomous");
+    }
+  }, { threshold: 0.24 });
+  observer.observe(elements.livingRoom);
 }
 
 function openDoor() {
@@ -1559,6 +2046,7 @@ function renderStoryResult() {
   elements.storyRestart.hidden = false;
   refreshStoryArtPreview(true);
   renderStoryMemory();
+  renderLivingDrawingMemory();
   updateReaction({ expression: "shy", label: "一起完成的画", text: "只、只许认真收好……不许把纸角折到。" }, false);
   window.requestAnimationFrame(() => elements.storyRestart.focus({ preventScroll: true }));
 }
@@ -1869,6 +2357,18 @@ elements.outfitNext.addEventListener("click", () => adjacentOutfit(1));
 elements.secretButtons.forEach((button) => {
   button.addEventListener("click", () => discoverSecret(button));
 });
+elements.livingPlaceButtons.forEach((button) => {
+  button.addEventListener("click", () => switchLivingPlace(button.dataset.livingPlace));
+  button.addEventListener("keydown", handleLivingTrackKey);
+});
+elements.livingEventButton.addEventListener("click", runLivingMoment);
+elements.livingWeatherToggle.addEventListener("click", toggleLivingWeather);
+elements.livingSoundToggle.addEventListener("click", toggleLivingSound);
+elements.livingRoomView.addEventListener("pointerdown", startLivingSwipe);
+elements.livingRoomView.addEventListener("pointerup", finishLivingSwipe);
+elements.livingRoomView.addEventListener("pointercancel", () => {
+  livingPointerStart = null;
+});
 elements.storyBack.addEventListener("click", goBackInStory);
 elements.storyRestart.addEventListener("click", restartDrawingStory);
 elements.galleryPrev.addEventListener("click", () => switchGallery(galleryPosition - 1));
@@ -1893,8 +2393,22 @@ elements.lightboxStage.addEventListener("pointercancel", () => {
 });
 elements.fortuneButton.addEventListener("click", newFortune);
 document.addEventListener("visibilitychange", () => {
-  if (document.visibilityState === "visible") scheduleStoryBlink();
-  else window.clearTimeout(storyBlinkTimer);
+  if (document.visibilityState === "visible") {
+    scheduleStoryBlink();
+    scheduleLivingAutonomy();
+  } else {
+    window.clearTimeout(storyBlinkTimer);
+    window.clearTimeout(livingAutonomyTimer);
+  }
+});
+
+elements.livingRoomImage.addEventListener("load", () => {
+  elements.livingRoomStage.classList.remove("is-image-missing");
+});
+
+elements.livingRoomImage.addEventListener("error", () => {
+  elements.livingRoomStage.classList.add("is-image-missing");
+  elements.livingRoomAmbient.textContent = "场景插画暂时没有加载出来，地点文字、小事件和深入入口仍然可以使用。";
 });
 
 applyVisitStage();
@@ -1905,6 +2419,7 @@ applyOutfit(state.outfit);
 applyGallery(galleryPosition);
 refreshSecrets();
 setupSecretHints();
+setupLivingRoom();
 setupDrawingStory();
 setupParallax();
 observeDeferredSections();

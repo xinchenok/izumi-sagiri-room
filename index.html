@@ -4,20 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#573a3e">
-  <meta name="description" content="轻轻敲开和泉纱雾的房门，探索画桌秘密、翻看日常衣橱与夜晚画稿的原创同人互动页面。">
+  <meta name="description" content="轻轻敲开和泉纱雾的房门，在画桌、床边、衣橱和窗台之间移动，陪她画画、翻看画册，并听见不同语气的日语回应。">
   <title>和泉纱雾的房门里</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23573A3E'/%3E%3Cpath d='M18 14h30v40H18z' fill='%23D88CA2'/%3E%3Ccircle cx='40' cy='35' r='3' fill='%23F7D46A'/%3E%3Cpath d='m23 19 5 4 5-4 5 4 5-4v10H23z' fill='%23EAF4F5'/%3E%3C/svg%3E">
   <link rel="preload" href="assets/v5/hero-peek.webp" as="image" type="image/webp" imagesrcset="assets/v5/hero-peek-560.webp 560w, assets/v5/hero-peek.webp 1122w" imagesizes="(max-width: 760px) calc(100vw - 1.6rem), (max-width: 1024px) 78vw, 820px">
-  <link rel="stylesheet" href="styles.css?v=20260813-1">
+  <link rel="stylesheet" href="styles.css?v=20260813-2">
 </head>
 <body>
   <!--
-  THESIS: 把角色页变成一次轻轻敲门的拜访，拒绝左右双栏首屏和重复动漫卡片墙。
-  OWN-WORLD: 草莓粉墙纸、银蓝月光、薄荷文具与可可木门；门牌、猫爪印章和铅笔标签承担全部控件语言。
-  STORY: 访客在门口被偷看，获准进入后发现桌面秘密，翻衣橱相册，看画稿，最后收到晚安纸条。
+  THESIS: 轻轻敲门以后，不只浏览章节，而是在同一间卧室里移动视线，看纱雾继续生活。
+  OWN-WORLD: 草莓粉墙纸、银蓝月光、薄荷文具、可可木门、奶油稿纸与房间木轨；控件必须像房间物件或纸面标记。
+  STORY: 访客在门口被偷看，获准进入后沿木轨靠近画桌、床边、衣橱和窗台，再陪她画画、翻画册，最后收到晚安纸条。
   FIRST VIEWPORT: 半掩木门占据左侧前景，纱雾从门缝握边偷看；手写房间牌贴在门上，敲门按钮位于门把下方，台词在右下稿纸上。
-  FORM: code-led 房门偷看叙事，用户钉选方向；seed key sagiri-door-v3-code-led；签名互动为敲门后的受惊—脸红—开门表情演出。
-  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+  FORM: code-led 连续卧室体验；seed key sagiri-living-room-v7-code-led；签名互动是沿木轨或横滑时，取景、稿纸、物件和短拟音整体切换。
+  FINISH: 2026-08-13 inline finish review disposition ship；体验契约、资产溯源与门禁证据已同步到仓库文档。
   -->
   <a class="skip-link" href="#main-content">跳到主要内容</a>
 
@@ -27,7 +27,7 @@
       <span>纱雾的房间</span>
     </a>
     <nav aria-label="房间导览">
-      <a href="#room">画桌</a>
+      <a href="#living-room">房间</a>
       <a href="#drawing-story">一起画</a>
       <a href="#wardrobe">衣橱</a>
       <a href="#gallery">画稿</a>
@@ -88,6 +88,79 @@
         <p>她不太擅长把心情说得很长，却会认真收好每一张草稿。靠近一点也可以——只是被她发现时，记得先假装没有一直盯着看。</p>
       </div>
 
+      <section class="living-room-experience" id="living-room" aria-labelledby="living-room-title">
+        <header class="living-room-heading">
+          <div>
+            <h3 id="living-room-title">房间今天也在悄悄生活。</h3>
+            <p>沿着床边的木轨慢慢挪过去。她不会一直摆好姿势等你，每个角落都有正在发生的小事。</p>
+          </div>
+          <div class="living-room-settings" aria-label="房间氛围设置">
+            <span class="living-room-time" id="livingRoomTime">现在 · 夜里</span>
+            <button class="living-weather-toggle" id="livingWeatherToggle" type="button" aria-pressed="true">
+              房间里的天气 · <strong>细雨</strong>
+            </button>
+            <button class="living-sound-toggle" id="livingSoundToggle" type="button" aria-pressed="true">
+              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M5 12h6l7-6v20l-7-6H5zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
+              <span>房间声 · 开</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="living-room-shell">
+          <div class="living-room-stage" id="livingRoomStage" data-place="desk" data-weather="rain" data-phase="night">
+            <figure class="living-room-view">
+              <img class="living-room-image" id="livingRoomImage" src="assets/v6/studio-focus.webp" srcset="assets/v6/studio-focus-720.webp 720w, assets/v6/studio-focus.webp 1448w" sizes="(max-width: 760px) calc(100vw - 2.5rem), (max-width: 1024px) 62vw, 760px" width="1448" height="1086" loading="lazy" decoding="async" draggable="false" alt="纱雾在暖灯与雨窗之间低头画稿，桌边放着数位板、铅笔和小猫玩偶">
+              <div class="living-rain" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <span class="living-detail living-detail--pen" aria-hidden="true"></span>
+              <span class="living-detail living-detail--fabric" aria-hidden="true"></span>
+              <span class="living-detail living-detail--hanger" aria-hidden="true"></span>
+              <span class="living-detail living-detail--curtain" aria-hidden="true"></span>
+              <aside class="living-drawing-memory" id="livingDrawingMemory" aria-label="上次一起完成的画" hidden>
+                <img id="livingDrawingMemoryImage" src="assets/v6/drawing-door-moon.webp" width="960" height="720" loading="lazy" decoding="async" alt="">
+                <span id="livingDrawingMemoryLabel">上次一起画的</span>
+              </aside>
+              <figcaption>
+                <strong id="livingRoomCaption">画桌旁</strong>
+                <span id="livingRoomAmbient">笔尖还在移动，台灯把线稿照得很暖。</span>
+              </figcaption>
+            </figure>
+
+            <div class="living-room-sheet">
+              <h3 id="livingPlaceTitle" tabindex="-1">先别叫她，她正画到最认真的地方。</h3>
+              <p id="livingPlaceLine">她把旁边的椅子留出一点，却一直装作只是忘了推回去。</p>
+              <blockquote id="livingPlaceQuote">“可以靠近……不要突然碰到数位板。”</blockquote>
+              <div class="living-room-actions">
+                <button class="paw-button living-event-button" id="livingEventButton" type="button">
+                  <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11.2 14.2c-2.1 0-3.7-2-3.7-4.4s1.6-4.3 3.7-4.3 3.6 2 3.6 4.3-1.6 4.4-3.6 4.4Zm9.6 0c-2 0-3.6-2-3.6-4.4s1.6-4.3 3.6-4.3 3.7 2 3.7 4.3-1.6 4.4-3.7 4.4ZM5.8 21.4c-1.8 0-3.3-1.7-3.3-3.8s1.5-3.8 3.3-3.8 3.2 1.7 3.2 3.8-1.4 3.8-3.2 3.8Zm20.4 0c-1.8 0-3.2-1.7-3.2-3.8s1.4-3.8 3.2-3.8 3.3 1.7 3.3 3.8-1.5 3.8-3.3 3.8ZM16 29c-5.2 0-8.5-2.2-8.5-5.5 0-3 2.2-7.3 5.2-8.5 1.8-.7 2.2 1 3.3 1s1.5-1.7 3.3-1c3 1.2 5.2 5.5 5.2 8.5 0 3.3-3.3 5.5-8.5 5.5Z"/></svg>
+                  <span>听她补完这一笔</span>
+                </button>
+                <a class="living-deep-link" id="livingDeepLink" href="#desk-secrets">再靠近画桌一点</a>
+              </div>
+            </div>
+          </div>
+
+          <nav class="living-room-track" aria-label="在房间里移动">
+            <button type="button" data-living-place="desk" aria-pressed="true">
+              <svg aria-hidden="true" viewBox="0 0 48 32"><path d="M5 12h38v14H5zM10 26v4m28-4v4M17 12V6h14v6"/></svg>
+              <span><strong>画桌</strong><small>笔尖和稿纸</small></span>
+            </button>
+            <button type="button" data-living-place="bed" aria-pressed="false">
+              <svg aria-hidden="true" viewBox="0 0 48 32"><path d="M5 23h38v6H5zM8 23V10h9c4 0 7 3 7 7v6m0-7h15c3 0 4 2 4 5v2M8 29v2m32-2v2"/></svg>
+              <span><strong>床边</strong><small>靠枕和被角</small></span>
+            </button>
+            <button type="button" data-living-place="wardrobe" aria-pressed="false">
+              <svg aria-hidden="true" viewBox="0 0 48 32"><path d="M8 3h32v27H8zM24 3v27M20 17h1m6 0h1M14 8h6m8 0h6"/></svg>
+              <span><strong>衣橱</strong><small>衣架轻轻晃</small></span>
+            </button>
+            <button type="button" data-living-place="window" aria-pressed="false">
+              <svg aria-hidden="true" viewBox="0 0 48 32"><path d="M8 3h32v26H8zM24 3v26M8 16h32M4 29h40"/></svg>
+              <span><strong>窗台</strong><small>月光和雨声</small></span>
+            </button>
+          </nav>
+        </div>
+        <p class="visually-hidden" id="livingRoomStatus" role="status" aria-live="polite"></p>
+      </section>
+
       <div class="room-notes" aria-label="纱雾的性格与爱好">
         <article class="ledger-note">
           <h3>害羞不是冷淡</h3>
@@ -103,7 +176,7 @@
         </article>
       </div>
 
-      <div class="desk-explore">
+      <div class="desk-explore" id="desk-secrets">
         <div class="desk-copy">
           <h3>五个小秘密，<br>要轻轻地找</h3>
           <p>五件东西里藏着她不肯主动说的小习惯。直接碰一碰画面里的物件；全部找到后，她才肯把抽屉里的留言推给你。</p>
@@ -398,6 +471,6 @@
   <noscript>
     <div class="noscript-note">JavaScript 未启用：你仍然可以阅读角色介绍与查看基础插画；敲门、换装、语音和秘密探索需要启用 JavaScript。</div>
   </noscript>
-  <script src="script.js?v=20260813-1"></script>
+  <script src="script.js?v=20260813-2"></script>
 </body>
 </html>
