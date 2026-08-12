@@ -1238,14 +1238,16 @@ h2 {
 
 .studio-rain {
   position: absolute;
-  top: 0;
+  top: 0.5%;
   right: 0;
   z-index: 2;
-  width: 28%;
-  height: 43%;
+  width: 18.5%;
+  height: 16.5%;
   overflow: hidden;
   pointer-events: none;
-  opacity: 0.38;
+  opacity: 0.48;
+  clip-path: polygon(4% 0, 100% 0, 100% 92%, 0 100%);
+  mix-blend-mode: screen;
 }
 
 .studio-rain i {
@@ -3723,15 +3725,18 @@ body.lightbox-active {
 
 .living-rain {
   position: absolute;
-  top: 5%;
+  top: 0;
   right: 0;
-  bottom: 18%;
-  left: 72%;
+  bottom: auto;
+  left: auto;
   z-index: 3;
+  width: 0;
+  height: 0;
   overflow: hidden;
   pointer-events: none;
   opacity: 0;
-  clip-path: inset(0 0 0 0 round 0.25rem);
+  clip-path: polygon(4% 0, 100% 0, 100% 92%, 0 100%);
+  mix-blend-mode: screen;
   transition: opacity 420ms var(--ease-soft);
 }
 
@@ -3740,29 +3745,27 @@ body.lightbox-active {
 }
 
 .living-room-stage[data-weather="rain"][data-place="desk"] .living-rain {
-  top: 2%;
+  top: 0.5%;
   right: 0;
-  bottom: 37%;
-  left: 76%;
-  opacity: 0.48;
-  transform: perspective(22rem) rotateY(-5deg);
-  transform-origin: right center;
+  width: 18.5%;
+  height: 16.5%;
+  opacity: 0.5;
 }
 
 .living-room-stage[data-weather="rain"][data-place="wardrobe"] .living-rain {
-  top: 1%;
+  top: 0;
   right: 0;
-  bottom: 48%;
-  left: 88%;
-  opacity: 0.4;
+  width: 8.5%;
+  height: 17%;
+  opacity: 0.42;
 }
 
 .living-room-stage[data-weather="rain"][data-place="window"] .living-rain {
-  top: 0;
-  right: 0;
-  bottom: 2%;
-  left: 63%;
-  opacity: 0.6;
+  top: 1%;
+  right: 2%;
+  width: 17%;
+  height: 20%;
+  opacity: 0.54;
 }
 
 .living-room-stage[data-place="bed"] .living-rain {
@@ -3789,6 +3792,10 @@ body.lightbox-active {
 .living-rain i:nth-child(5) { left: 71%; animation-delay: -0.4s; }
 .living-rain i:nth-child(6) { left: 84%; animation-delay: -1.6s; animation-duration: 1.8s; }
 .living-rain i:nth-child(7) { left: 94%; animation-delay: -0.9s; animation-duration: 2s; }
+
+.living-room-stage[data-place="wardrobe"] .living-rain i:nth-child(n + 5) {
+  display: none;
+}
 
 @keyframes livingRain {
   to { transform: translate3d(-1.2rem, 830%, 0) rotate(9deg); }
