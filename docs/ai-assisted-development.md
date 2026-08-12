@@ -3,7 +3,7 @@
 - 更新日期：2026-08-13
 - 项目仓库：<https://github.com/xinchenok/izumi-sagiri-room>
 - 在线页面：<https://xinchenok.github.io/izumi-sagiri-room/>
-- 当前用户可见功能基线：[`b805201`](https://github.com/xinchenok/izumi-sagiri-room/commit/b8052011a1fad506efd2fd1d029e6d5a36ebc3d1)
+- 当前用户可见功能基线：[`5af5f9b`](https://github.com/xinchenok/izumi-sagiri-room/commit/5af5f9b7a122f168030191cab1ea36d12fa82deb)
 - 当前页面缓存标识：`20260813-4`
 
 本文记录“和泉纱雾的房门里”互动页如何在 AI 协助下完成、语音资源从哪里取得、怎样在本地重新合成，以及后续维护计划。它既是开发说明，也是后续接手者的复现入口。
@@ -138,6 +138,7 @@ AI 生成的内容经过人工目标约束与浏览器验收；AI 不是素材�
 | 2026-08-13 | [`5cf713a`](https://github.com/xinchenok/izumi-sagiri-room/commit/5cf713a9e08edc720e8463e0011de76acee39257) | 新增“今晚，陪她画完这一张”共同创作、四帧雨夜舞台、三张可选成稿、具体回访记忆、V6 字体子集与响应式 / 减少动态适配。 |
 | 2026-08-13 | [`fe27d6f`](https://github.com/xinchenok/izumi-sagiri-room/commit/fe27d6f6f15bfcdda284abcbae82c69d2e063a9f) | 通过 PR #2 发布 V7“会生活的房间”：四个连续地点、自主细节、重复小事件、独立短拟音、共同作品陈列、旧状态兼容与响应式 / 减少动态适配。 |
 | 2026-08-13 | [`b805201`](https://github.com/xinchenok/izumi-sagiri-room/commit/b8052011a1fad506efd2fd1d029e6d5a36ebc3d1) | 通过 PR #4 发布 V8 房间声音：十八条地点 / 事件 / 天气专属配音、十四段不复用场景声、互相独立的声音控制、窗玻璃雨线边界与完整日语字幕字体。 |
+| 2026-08-13 | [`5af5f9b`](https://github.com/xinchenok/izumi-sagiri-room/commit/5af5f9b7a122f168030191cab1ea36d12fa82deb) | 通过 PR #6 发布 V9 音频响应与雨线修复：逐文件播放器和 Blob 预热消除点击换源延迟，失败可重试，房间层与插画层雨线均限制在真实玻璃范围。 |
 
 ### 已完成的交付核验
 
