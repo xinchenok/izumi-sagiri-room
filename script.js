@@ -479,6 +479,116 @@ const CONTENT = {
     plush: { label: "猫咪玩偶", hint: "她卡住的时候，视线会飘向画面右上方那只软绵绵的家伙。", text: "不顺利的时候会被抱得很紧。顺利的时候，也一样。" },
     drawer: { label: "上锁抽屉", hint: "最不肯解释的东西，通常被她推到桌子的右下角。", text: "钥匙藏在薄荷色铅笔盒底下。不过，要集齐五枚猫爪才可以打开。" }
   },
+  drawingStory: {
+    frames: {
+      focus: {
+        image: "assets/v6/studio-focus.webp",
+        small: "assets/v6/studio-focus-720.webp",
+        alt: "纱雾在雨夜的画桌前低头用数位板认真画线稿"
+      },
+      blink: {
+        image: "assets/v6/studio-blink.webp",
+        small: "assets/v6/studio-blink-720.webp",
+        alt: "纱雾低头画线时轻轻眨了一下眼睛"
+      },
+      shy: {
+        image: "assets/v6/studio-shy.webp",
+        small: "assets/v6/studio-shy-720.webp",
+        alt: "被认真夸奖后，纱雾脸红着用长袖袖口遮住嘴角"
+      },
+      reveal: {
+        image: "assets/v6/studio-reveal.webp",
+        small: "assets/v6/studio-reveal-720.webp",
+        alt: "纱雾露出害羞又有一点得意的表情，把刚完成的小猫画推到桌边"
+      }
+    },
+    presence: {
+      quiet: {
+        label: "安静坐在旁边",
+        detail: "不催她，也不一直盯着屏幕",
+        line: "……这样就好。你可以看，但不许突然凑过来。",
+        memory: "安静坐在旁边"
+      },
+      help: {
+        label: "问她哪里需要帮忙",
+        detail: "等她自己把犹豫说出来",
+        line: "那、那就帮我决定画什么。只准认真选。",
+        memory: "先问我哪里需要帮忙"
+      },
+      distance: {
+        label: "把椅子挪远一点",
+        detail: "给她留出不会被盯着看的距离",
+        line: "不用那么远……会看不清的。靠回来一点也可以。",
+        memory: "还特意把椅子挪远了一点"
+      }
+    },
+    subjects: {
+      door: {
+        label: "门缝看月亮的小猫",
+        detail: "明明好奇，却只肯先探出半张脸",
+        image: "assets/v6/drawing-door-moon.webp",
+        alt: "奶油稿纸上，一只小猫从半开的房门后看向月亮和星星的铅笔水彩画",
+        line: "门只开这么大……但月亮还是看得见。",
+        stageNote: "她先画了一条很窄的门缝，又在外面留了一轮月亮。"
+      },
+      blanket: {
+        label: "被窝里画星星的小猫",
+        detail: "躲进最小的画室，还是很认真地下笔",
+        image: "assets/v6/drawing-blanket-star.webp",
+        alt: "奶油稿纸上，一只小猫躲在被窝帐篷里用铅笔画星星的铅笔水彩画",
+        line: "被子里面比较安静……画线也不会抖。",
+        stageNote: "她把被子画成一间很小的画室，只给笔尖留了出口。"
+      },
+      pencil: {
+        label: "抱着大铅笔的小猫",
+        detail: "看起来软绵绵，抱住画笔时却很认真",
+        image: "assets/v6/drawing-pencil-stars.webp",
+        alt: "奶油稿纸上，一只小猫抱住一支大铅笔，周围散着三颗小星星的铅笔水彩画",
+        line: "笔不能放开。灵感跑掉的话……很难抓回来。",
+        stageNote: "她把铅笔画得比小猫还大，爪子却抱得很稳。"
+      }
+    },
+    palettes: {
+      strawberry: {
+        label: "草莓黄昏",
+        detail: "暖粉、纸灯和一点点晚霞",
+        className: "palette-strawberry",
+        line: "暖一点也可以……但、不许说是因为我喜欢粉色。"
+      },
+      mint: {
+        label: "薄荷雨夜",
+        detail: "安静的薄荷青压住窗外雨声",
+        className: "palette-mint",
+        line: "这个颜色很安静。画久一点，眼睛也不会累。"
+      },
+      moon: {
+        label: "银蓝月光",
+        detail: "银白、月蓝和很淡的夜色",
+        className: "palette-moon",
+        line: "像窗帘没有完全拉紧的时候……就用这个。"
+      }
+    },
+    praises: {
+      soft: {
+        label: "线条看起来很软",
+        detail: "连门和铅笔都没有尖锐的感觉",
+        memory: "线条看起来很软",
+        line: "你连线条都认真看了……那、那我不改这一笔了。"
+      },
+      eyes: {
+        label: "小猫的眼神很认真",
+        detail: "害羞归害羞，它真的很喜欢画画",
+        memory: "小猫的眼神很认真",
+        line: "看得出来吗？我画那双眼睛……改了很多次。"
+      },
+      lamp: {
+        label: "配色像一盏小夜灯",
+        detail: "很安静，但不会让人觉得孤单",
+        memory: "配色像一盏小夜灯",
+        line: "小夜灯……这个说法，我会写在稿纸背面。"
+      }
+    }
+  },
   fortunes: [
     "画不完也没关系，先把今天好好收起来。",
     "今天已经很努力了，剩下的一小步留给明天。",
@@ -509,6 +619,22 @@ function validGalleryIndex(value) {
   return Number.isInteger(value) && value >= 0 && value < CONTENT.gallery.length ? value : 0;
 }
 
+function validSharedDrawing(value) {
+  if (!value || typeof value !== "object") return null;
+  const validPresence = Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.presence, value.presence);
+  const validSubject = Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.subjects, value.subject);
+  const validPalette = Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.palettes, value.palette);
+  const validPraise = Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.praises, value.praise);
+  if (!validPresence || !validSubject || !validPalette || !validPraise) return null;
+  return {
+    presence: value.presence,
+    subject: value.subject,
+    palette: value.palette,
+    praise: value.praise,
+    completedAt: Number.isFinite(value.completedAt) ? value.completedAt : 0
+  };
+}
+
 function readState() {
   const fallback = {
     outfit: "home",
@@ -518,7 +644,8 @@ function readState() {
     previousVisitAt: 0,
     galleryIndex: 0,
     voiceVolume: 0.85,
-    voiceMuted: false
+    voiceMuted: false,
+    sharedDrawing: null
   };
   try {
     const current = JSON.parse(localStorage.getItem(STORAGE_KEY_V2));
@@ -531,7 +658,8 @@ function readState() {
         previousVisitAt: Number.isFinite(current.previousVisitAt) ? current.previousVisitAt : 0,
         galleryIndex: validGalleryIndex(current.galleryIndex),
         voiceVolume: clampVolume(current.voiceVolume),
-        voiceMuted: current.voiceMuted === true
+        voiceMuted: current.voiceMuted === true,
+        sharedDrawing: validSharedDrawing(current.sharedDrawing)
       };
     }
 
@@ -545,7 +673,8 @@ function readState() {
         previousVisitAt: 0,
         galleryIndex: 0,
         voiceVolume: 0.85,
-        voiceMuted: false
+        voiceMuted: false,
+        sharedDrawing: null
       };
       localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(migrated));
       return { ...migrated, secrets: new Set(migrated.secrets) };
@@ -568,7 +697,8 @@ function saveState() {
       previousVisitAt: state.previousVisitAt,
       galleryIndex: state.galleryIndex,
       voiceVolume: state.voiceVolume,
-      voiceMuted: state.voiceMuted
+      voiceMuted: state.voiceMuted,
+      sharedDrawing: state.sharedDrawing
     }));
   } catch {
     // 存储不可用时，仅保留当前会话状态。
@@ -641,6 +771,26 @@ const elements = {
   deskBoard: document.querySelector(".desk-board"),
   secretMessage: document.querySelector("#secretMessage"),
   secretMessageText: document.querySelector("#secretMessage p"),
+  storySection: document.querySelector("#drawing-story"),
+  storyTheater: document.querySelector("#storyTheater"),
+  storyStage: document.querySelector("#storyStage"),
+  storyStageImage: document.querySelector("#storyStageImage"),
+  storyStageLabel: document.querySelector("#storyStageLabel"),
+  storyStageNote: document.querySelector("#storyStageNote"),
+  storyBeat: document.querySelector("#storyBeat"),
+  storyPrompt: document.querySelector("#storyPrompt"),
+  storyLine: document.querySelector("#storyLine"),
+  storyChoices: document.querySelector("#storyChoices"),
+  storyBack: document.querySelector("#storyBack"),
+  storyRestart: document.querySelector("#storyRestart"),
+  storyArtPreview: document.querySelector("#storyArtPreview"),
+  storyArtImage: document.querySelector("#storyArtImage"),
+  storyArtTitle: document.querySelector("#storyArtTitle"),
+  storyArtMeta: document.querySelector("#storyArtMeta"),
+  storyMemory: document.querySelector("#storyMemory"),
+  storyMemoryImage: document.querySelector("#storyMemoryImage"),
+  storyMemoryTitle: document.querySelector("#storyMemoryTitle"),
+  storyMemoryText: document.querySelector("#storyMemoryText"),
   galleryStage: document.querySelector("#galleryStage"),
   galleryMainImage: document.querySelector("#galleryMainImage"),
   galleryIndex: document.querySelector("#galleryIndex"),
@@ -679,6 +829,12 @@ let feedbackTimer = 0;
 let secretHintTimer = 0;
 let activeVoiceScene = "";
 let lightboxPointerStart = null;
+let storyStep = -1;
+let storyBusy = false;
+let storyFrameSequence = 0;
+let storyBlinkTimer = 0;
+let storyInView = false;
+let storyDraft = { presence: "", subject: "", palette: "", praise: "" };
 const lastVoiceReplies = new Map();
 const voiceReplyQueues = new Map();
 const lastGuardedVoiceReplies = new Map();
@@ -1118,6 +1274,333 @@ function discoverSecret(button) {
   if (unlocked) elements.secretMessage.focus?.();
 }
 
+const STORY_STEP_KEYS = ["presence", "subject", "palette", "praise"];
+const STORY_PALETTE_CLASSES = ["palette-strawberry", "palette-mint", "palette-moon"];
+
+function storyStepConfig(stepKey) {
+  const configs = {
+    presence: {
+      beat: "她终于发现旁边有人",
+      prompt: "你想怎么陪她？",
+      line: "她握着笔没有回头，只用余光确认椅子有没有被拉开。",
+      options: CONTENT.drawingStory.presence,
+      stageLabel: "笔尖停了一小会儿",
+      stageNote: "她没有赶人，只把旁边那把椅子往外挪了半格。"
+    },
+    subject: {
+      beat: "她新建了一张空白画布",
+      prompt: "这次画什么？",
+      line: "“只、只选一个。不是因为听你的……我刚好也在想。”",
+      options: CONTENT.drawingStory.subjects,
+      stageLabel: "空白画布已经打开",
+      stageNote: "她把三个很小的构图草稿排在数位板边缘。"
+    },
+    palette: {
+      beat: "线稿已经慢慢成形",
+      prompt: "给这张画留哪一种颜色？",
+      line: "纱雾把三张调色纸签推过来，自己先盯住了最安静的那一张。",
+      options: CONTENT.drawingStory.palettes,
+      stageLabel: "她在等一个颜色",
+      stageNote: "笔尖悬在色盘上方，灯光把纸边照得很暖。"
+    },
+    praise: {
+      beat: "她把屏幕转过来一点",
+      prompt: "你最先注意到了什么？",
+      line: "不要只说“可爱”。她装作在检查图层，其实一直在等一句具体的感想。",
+      options: CONTENT.drawingStory.praises,
+      stageLabel: "画面只给你看一会儿",
+      stageNote: "她的视线还停在屏幕上，耳朵却已经在等你的回答。"
+    }
+  };
+  return configs[stepKey];
+}
+
+function setStoryFrameSource(key) {
+  const frame = CONTENT.drawingStory.frames[key];
+  if (!frame) return;
+  elements.storyStageImage.src = frame.image;
+  elements.storyStageImage.srcset = responsiveSourceSet(frame);
+  elements.storyStageImage.alt = frame.alt;
+  elements.storyStage.dataset.frame = key;
+}
+
+async function transitionStoryFrame(key) {
+  const frame = CONTENT.drawingStory.frames[key];
+  if (!frame || elements.storyStage.dataset.frame === key) {
+    scheduleStoryBlink();
+    return;
+  }
+  const sequence = ++storyFrameSequence;
+  window.clearTimeout(storyBlinkTimer);
+  elements.storyStage.classList.add("is-changing");
+  try {
+    await preloadResponsiveImage(frame, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px");
+  } catch {
+    if (sequence === storyFrameSequence) elements.storyStage.classList.remove("is-changing");
+    return;
+  }
+  if (!reducedMotion.matches) await new Promise((resolve) => window.setTimeout(resolve, 120));
+  if (sequence !== storyFrameSequence) return;
+  setStoryFrameSource(key);
+  window.setTimeout(() => {
+    if (sequence === storyFrameSequence) elements.storyStage.classList.remove("is-changing");
+  }, reducedMotion.matches ? 10 : 320);
+  scheduleStoryBlink();
+}
+
+function canStoryBlink() {
+  return storyInView
+    && !storyBusy
+    && !reducedMotion.matches
+    && document.visibilityState === "visible"
+    && elements.storyStage.dataset.frame === "focus";
+}
+
+function scheduleStoryBlink() {
+  window.clearTimeout(storyBlinkTimer);
+  if (!canStoryBlink()) return;
+  storyBlinkTimer = window.setTimeout(() => {
+    if (!canStoryBlink()) return;
+    setStoryFrameSource("blink");
+    storyBlinkTimer = window.setTimeout(() => {
+      if (elements.storyStage.dataset.frame === "blink") setStoryFrameSource("focus");
+      scheduleStoryBlink();
+    }, 145);
+  }, 3600 + Math.random() * 2800);
+}
+
+function setStoryPaletteClass(image, paletteKey) {
+  image.classList.remove(...STORY_PALETTE_CLASSES);
+  image.parentElement?.classList.remove(...STORY_PALETTE_CLASSES);
+  const palette = CONTENT.drawingStory.palettes[paletteKey];
+  if (palette) {
+    image.classList.add(palette.className);
+    image.parentElement?.classList.add(palette.className);
+  }
+}
+
+function refreshStoryArtPreview(final = false) {
+  const subject = CONTENT.drawingStory.subjects[storyDraft.subject];
+  if (!subject) {
+    elements.storyArtPreview.hidden = true;
+    return;
+  }
+  const palette = CONTENT.drawingStory.palettes[storyDraft.palette];
+  elements.storyArtPreview.hidden = false;
+  elements.storyArtImage.src = subject.image;
+  elements.storyArtImage.alt = palette ? `${subject.alt}，使用${palette.label}配色` : subject.alt;
+  setStoryPaletteClass(elements.storyArtImage, storyDraft.palette);
+  elements.storyArtTitle.textContent = final ? `我们一起完成的「${subject.label}」` : subject.label;
+  elements.storyArtMeta.textContent = palette ? palette.label : "颜色还在等你决定";
+}
+
+function renderStoryMemory() {
+  const memory = validSharedDrawing(state.sharedDrawing);
+  if (!memory) {
+    elements.storyMemory.hidden = true;
+    return;
+  }
+  const presence = CONTENT.drawingStory.presence[memory.presence];
+  const subject = CONTENT.drawingStory.subjects[memory.subject];
+  const palette = CONTENT.drawingStory.palettes[memory.palette];
+  const praise = CONTENT.drawingStory.praises[memory.praise];
+  elements.storyMemory.hidden = false;
+  elements.storyMemoryImage.src = subject.image;
+  elements.storyMemoryImage.alt = `${subject.alt}，使用${palette.label}配色`;
+  setStoryPaletteClass(elements.storyMemoryImage, memory.palette);
+  elements.storyMemoryTitle.textContent = `她还留着「${subject.label}」`;
+  elements.storyMemoryText.textContent = `“上次你${presence.memory}。${palette.label}也没有改……你说${praise.memory}，我记得。”`;
+}
+
+function storyChoiceButton(stepKey, key, option) {
+  const button = document.createElement("button");
+  button.className = "story-choice";
+  button.type = "button";
+  button.dataset.storyChoice = key;
+  button.setAttribute("aria-pressed", String(storyDraft[stepKey] === key));
+  if (stepKey === "palette") {
+    const swatch = document.createElement("i");
+    swatch.className = `story-swatch story-swatch--${key}`;
+    swatch.setAttribute("aria-hidden", "true");
+    button.append(swatch);
+  }
+  const copy = document.createElement("span");
+  copy.className = "story-choice-copy";
+  const title = document.createElement("strong");
+  title.textContent = option.label;
+  const detail = document.createElement("small");
+  detail.textContent = option.detail;
+  copy.append(title, detail);
+  button.append(copy);
+  button.addEventListener("click", () => chooseStoryOption(stepKey, key));
+  return button;
+}
+
+function renderStoryIntro() {
+  storyStep = -1;
+  storyBusy = false;
+  elements.storyTheater.removeAttribute("aria-busy");
+  const hasMemory = Boolean(validSharedDrawing(state.sharedDrawing));
+  elements.storyBeat.textContent = hasMemory ? "桌边还压着上次的稿纸" : "笔尖还在慢慢移动";
+  elements.storyPrompt.textContent = hasMemory ? "这次，也陪她画一张吗？" : "要不要安静陪她画一会儿？";
+  elements.storyLine.textContent = hasMemory
+    ? "她没有把上次那张收进抽屉，只在旁边重新放了一张空白稿纸。"
+    : "她给旁边留了一点位置，却一直装作只是忘了把椅子推回去。";
+  elements.storyStageLabel.textContent = "截稿前的雨夜";
+  elements.storyStageNote.textContent = "她画得太认真，暂时没有发现你已经坐下。";
+  elements.storyArtPreview.hidden = true;
+  elements.storyBack.hidden = true;
+  elements.storyRestart.hidden = true;
+  const button = document.createElement("button");
+  button.className = "story-choice story-choice--primary";
+  button.type = "button";
+  button.dataset.storyStart = "";
+  const title = document.createElement("strong");
+  title.textContent = "坐到她留出的椅子旁";
+  const detail = document.createElement("span");
+  detail.textContent = "只在她需要的时候开口";
+  button.append(title, detail);
+  button.addEventListener("click", startDrawingStory);
+  elements.storyChoices.replaceChildren(button);
+  transitionStoryFrame("focus");
+}
+
+function renderStoryStep(focusFirstChoice = true) {
+  const stepKey = STORY_STEP_KEYS[storyStep];
+  const config = storyStepConfig(stepKey);
+  if (!config) return;
+  elements.storyBeat.textContent = config.beat;
+  elements.storyPrompt.textContent = config.prompt;
+  elements.storyLine.textContent = config.line;
+  elements.storyStageLabel.textContent = config.stageLabel;
+  elements.storyStageNote.textContent = config.stageNote;
+  elements.storyBack.hidden = storyStep <= 0;
+  elements.storyRestart.hidden = true;
+  const choices = Object.entries(config.options).map(([key, option]) => storyChoiceButton(stepKey, key, option));
+  elements.storyChoices.replaceChildren(...choices);
+  refreshStoryArtPreview();
+  if (focusFirstChoice) {
+    window.requestAnimationFrame(() => elements.storyChoices.querySelector("button")?.focus({ preventScroll: true }));
+  }
+}
+
+function startDrawingStory() {
+  storyDraft = { presence: "", subject: "", palette: "", praise: "" };
+  storyStep = 0;
+  preloadResponsiveImage(CONTENT.drawingStory.frames.shy, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px").catch(() => {});
+  preloadResponsiveImage(CONTENT.drawingStory.frames.reveal, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px").catch(() => {});
+  transitionStoryFrame("focus");
+  renderStoryStep();
+  updateReaction({ expression: "shy", label: "椅子被留出来了", text: "……可以坐。只要安静一点。" }, false);
+}
+
+async function chooseStoryOption(stepKey, key) {
+  if (storyBusy || STORY_STEP_KEYS[storyStep] !== stepKey) return;
+  const config = storyStepConfig(stepKey);
+  const option = config?.options[key];
+  if (!option) return;
+  storyBusy = true;
+  storyDraft[stepKey] = key;
+  [...elements.storyChoices.children].forEach((button) => {
+    button.disabled = true;
+    button.setAttribute("aria-pressed", String(button.dataset.storyChoice === key));
+  });
+
+  if (stepKey === "subject") {
+    preloadImage(option.image).catch(() => {});
+    elements.storyStageNote.textContent = option.stageNote;
+  }
+  if (stepKey === "palette") refreshStoryArtPreview();
+
+  const labels = {
+    presence: "她允许你留下",
+    subject: "画面决定了",
+    palette: "颜色落在稿纸上"
+  };
+  if (stepKey !== "praise") {
+    updateReaction({ expression: stepKey === "subject" ? "proud" : "shy", label: labels[stepKey], text: option.line }, false);
+    window.setTimeout(() => {
+      storyBusy = false;
+      storyStep += 1;
+      renderStoryStep();
+    }, reducedMotion.matches ? 10 : 280);
+    return;
+  }
+
+  elements.storyTheater.setAttribute("aria-busy", "true");
+  updateReaction({ expression: "shy", label: "被认真看见了", text: option.line }, false);
+  await transitionStoryFrame("shy");
+  if (!reducedMotion.matches) await new Promise((resolve) => window.setTimeout(resolve, 680));
+  state.sharedDrawing = {
+    presence: storyDraft.presence,
+    subject: storyDraft.subject,
+    palette: storyDraft.palette,
+    praise: storyDraft.praise,
+    completedAt: Date.now()
+  };
+  saveState();
+  await transitionStoryFrame("reveal");
+  storyBusy = false;
+  renderStoryResult();
+}
+
+function renderStoryResult() {
+  const subject = CONTENT.drawingStory.subjects[storyDraft.subject];
+  const palette = CONTENT.drawingStory.palettes[storyDraft.palette];
+  const praise = CONTENT.drawingStory.praises[storyDraft.praise];
+  elements.storyTheater.removeAttribute("aria-busy");
+  elements.storyBeat.textContent = "她终于把笔放下";
+  elements.storyPrompt.textContent = "这张画，完成了。";
+  elements.storyLine.textContent = `“${palette.label}是你选的。还有……你说${praise.memory}。我记住了。”`;
+  elements.storyStageLabel.textContent = "完成稿被推到桌边";
+  elements.storyStageNote.textContent = `${subject.label}只画了一张，她没有再收回去。`;
+  elements.storyChoices.replaceChildren();
+  elements.storyBack.hidden = true;
+  elements.storyRestart.hidden = false;
+  refreshStoryArtPreview(true);
+  renderStoryMemory();
+  updateReaction({ expression: "shy", label: "一起完成的画", text: "只、只许认真收好……不许把纸角折到。" }, false);
+  window.requestAnimationFrame(() => elements.storyRestart.focus({ preventScroll: true }));
+}
+
+function goBackInStory() {
+  if (storyBusy || storyStep <= 0) return;
+  storyStep -= 1;
+  transitionStoryFrame("focus");
+  renderStoryStep();
+}
+
+function restartDrawingStory() {
+  storyDraft = { presence: "", subject: "", palette: "", praise: "" };
+  storyStep = 0;
+  transitionStoryFrame("focus");
+  renderStoryStep();
+}
+
+function setupDrawingStory() {
+  renderStoryMemory();
+  renderStoryIntro();
+  if (!("IntersectionObserver" in window)) {
+    storyInView = true;
+    elements.storySection.classList.add("is-in-view");
+    preloadResponsiveImage(CONTENT.drawingStory.frames.blink, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px").catch(() => {});
+    scheduleStoryBlink();
+    return;
+  }
+  const observer = new IntersectionObserver(([entry]) => {
+    storyInView = entry.isIntersecting;
+    elements.storySection.classList.toggle("is-in-view", storyInView);
+    if (storyInView) {
+      preloadResponsiveImage(CONTENT.drawingStory.frames.blink, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px").catch(() => {});
+      scheduleStoryBlink();
+    } else {
+      window.clearTimeout(storyBlinkTimer);
+      if (elements.storyStage.dataset.frame === "blink") setStoryFrameSource("focus");
+    }
+  }, { threshold: 0.28 });
+  observer.observe(elements.storySection);
+}
+
 function galleryChapterFor(index) {
   return CONTENT.galleryChapters.find((chapter) => index >= chapter.start && index <= chapter.end)
     || CONTENT.galleryChapters[0];
@@ -1363,6 +1846,11 @@ elements.heroCharacter.addEventListener("error", () => {
   elements.doorStatus.innerHTML = "<span>人物插画暂时没有加载出来。</span><strong>房门和她留下的文字还在。</strong>";
 }, { once: true });
 
+elements.storyStageImage.addEventListener("error", () => {
+  elements.storyStage.classList.add("is-image-missing");
+  elements.storyStageNote.textContent = "场景插画暂时没有加载出来，她写下的台词和选择还可以继续。";
+}, { once: true });
+
 elements.knockButton.addEventListener("click", openDoor);
 elements.knockButton.addEventListener("pointerenter", preloadDoorSequence, { once: true });
 elements.knockButton.addEventListener("focus", preloadDoorSequence, { once: true });
@@ -1381,6 +1869,8 @@ elements.outfitNext.addEventListener("click", () => adjacentOutfit(1));
 elements.secretButtons.forEach((button) => {
   button.addEventListener("click", () => discoverSecret(button));
 });
+elements.storyBack.addEventListener("click", goBackInStory);
+elements.storyRestart.addEventListener("click", restartDrawingStory);
 elements.galleryPrev.addEventListener("click", () => switchGallery(galleryPosition - 1));
 elements.galleryNext.addEventListener("click", () => switchGallery(galleryPosition + 1));
 elements.galleryOpenButton.addEventListener("click", openLightbox);
@@ -1402,6 +1892,10 @@ elements.lightboxStage.addEventListener("pointercancel", () => {
   lightboxPointerStart = null;
 });
 elements.fortuneButton.addEventListener("click", newFortune);
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") scheduleStoryBlink();
+  else window.clearTimeout(storyBlinkTimer);
+});
 
 applyVisitStage();
 refreshVoiceControls();
@@ -1411,6 +1905,7 @@ applyOutfit(state.outfit);
 applyGallery(galleryPosition);
 refreshSecrets();
 setupSecretHints();
+setupDrawingStory();
 setupParallax();
 observeDeferredSections();
 document.documentElement.dataset.js = "true";
