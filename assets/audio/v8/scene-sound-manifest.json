@@ -1,13 +1,25 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-13",
+  "generated_at": "2026-08-14",
   "purpose": "房间地图操作后的短场景声；12 个地点事件与 2 个天气状态全部使用独立文件。",
   "generation": {
     "tool": "FFmpeg 6.1.1",
-    "source": "程序化合成的噪声、包络、短音色层与多频段玻璃雨滴；未使用第三方录音素材",
+    "source": "13 段程序化短拟音；天气·雨落窗外改用 nicoproson 的真实室内窗玻璃轻雨录音（Freesound 648529，CC0 1.0）并做 24 秒节选、70 Hz 高通、-23 LUFS 归一化与淡入淡出",
     "autoplay": false,
     "loop": false
   },
+  "external_sources": [
+    {
+      "audio": "weather-rain-window.mp3",
+      "title": "RAIN on glass window.wav",
+      "creator": "nicoproson",
+      "source_page": "https://freesound.org/s/648529/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/648/648529_457982-hq.mp3",
+      "retrieved_asset_sha256": "536a435b4d96608aeeff56786652114fe66748184807d87c2303d7087eb309a0",
+      "license": "CC0 1.0",
+      "retrieved_at": "2026-08-14"
+    }
+  ],
   "output": {
     "codec": "MP3",
     "sample_rate_hz": 48000,
@@ -27,7 +39,7 @@
     { "scene": "窗台·关小窗缝", "audio": "window-latch-rain.mp3", "duration_seconds": 2.664, "sha256": "21259f0a236f1f95942960eb3c07ce6b0c853b56d4f9ba5e1216941c61726375" },
     { "scene": "窗台·摆好画纸", "audio": "window-paper-rain.mp3", "duration_seconds": 2.496, "sha256": "7287835009beca6fcf2ebf0664811b4f87d13199b106e758b9911612a506a9e2" },
     { "scene": "窗台·合上窗帘", "audio": "window-curtain-close.mp3", "duration_seconds": 2.928, "sha256": "643910e5cd23e7c93d512e244da7b3d2f703f9329038da571f3037f0c824d18a" },
-    { "scene": "天气·雨落窗外", "audio": "weather-rain-window.mp3", "duration_seconds": 7.224, "sha256": "a2139d53604bb36693c6ea522a1c1131385d1614046c402527bc39a9bb599ea6" },
+    { "scene": "天气·雨落窗外", "audio": "weather-rain-window.mp3", "duration_seconds": 24.024, "sha256": "1d2068eceacb4419a78224f753b9bef917c4d5a87045011da3a02b9941cef897" },
     { "scene": "天气·雨停见月", "audio": "weather-clear-window.mp3", "duration_seconds": 3.144, "sha256": "fa0274a7c6f8ba458d49685276e8a6f28eebaaab4f916766a8bd6bb4a1ff41fb" }
   ]
 }

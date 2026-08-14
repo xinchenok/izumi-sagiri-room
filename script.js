@@ -484,7 +484,7 @@ const CONTENT = {
       focus: {
         image: "assets/v6/studio-focus.webp",
         small: "assets/v6/studio-focus-720.webp",
-        alt: "纱雾在雨夜的画桌前低头用数位板认真画线稿"
+        alt: "纱雾在夜色里的画桌前低头用数位板认真画线稿"
       },
       blink: {
         image: "assets/v6/studio-blink.webp",
@@ -768,7 +768,7 @@ const CONTENT = {
         small: "assets/v6/studio-focus-720.webp",
         width: 1448,
         smallWidth: 720,
-        alt: "纱雾在暖灯与雨窗之间低头画稿，桌边放着数位板、铅笔和小猫玩偶",
+        alt: "纱雾在暖灯与夜窗之间低头画稿，桌边放着数位板、铅笔和小猫玩偶",
         title: "先别叫她，她正画到最认真的地方。",
         line: "她把旁边的椅子留出一点，却一直装作只是忘了推回去。",
         quote: "“可以靠近……不要突然碰到数位板。”",
@@ -1208,28 +1208,28 @@ const RAIN_GLASS_SCENES = {
     seed: 1103,
     source: [1448, 1086],
     panes: [
-      { x: 1110, y: 0, width: 166, height: 153 },
-      { x: 1310, y: 0, width: 138, height: 153 },
-      { x: 1112, y: 194, width: 160, height: 78 }
+      { points: [[1132, 2], [1266, 2], [1266, 145], [1120, 140]] },
+      { points: [[1316, 2], [1446, 2], [1446, 147], [1317, 145]] },
+      { points: [[1118, 196], [1264, 201], [1264, 267], [1132, 267]] }
     ]
   },
   wardrobe: {
     seed: 2707,
     source: [1448, 1086],
     panes: [
-      { x: 1205, y: 0, width: 80, height: 88 },
-      { x: 1320, y: 0, width: 128, height: 88 },
-      { x: 1207, y: 105, width: 78, height: 168 },
-      { x: 1320, y: 105, width: 128, height: 145 }
+      { points: [[1247, 2], [1282, 2], [1282, 86], [1218, 86], [1231, 52]] },
+      { points: [[1320, 2], [1446, 2], [1446, 87], [1320, 86]] },
+      { points: [[1222, 108], [1281, 108], [1281, 249], [1266, 249], [1254, 208], [1238, 164]] },
+      { points: [[1320, 108], [1446, 108], [1446, 244], [1320, 247]] }
     ]
   },
   window: {
     seed: 4613,
     source: [1364, 1023],
     panes: [
-      { x: 748, y: 0, width: 268, height: 207 },
-      { x: 1092, y: 0, width: 272, height: 217 },
-      { x: 1092, y: 292, width: 272, height: 282 }
+      { points: [[772, 2], [1011, 2], [1011, 198], [832, 242], [798, 146], [785, 75]] },
+      { points: [[1094, 2], [1362, 2], [1362, 219], [1094, 279]] },
+      { points: [[1094, 299], [1362, 239], [1362, 559], [1094, 559]] }
     ]
   }
 };
@@ -1253,7 +1253,7 @@ class WindowRain {
     new ResizeObserver(this.resize).observe(canvas.parentElement);
     new MutationObserver(this.resize).observe(canvas.parentElement, {
       attributes: true,
-      attributeFilter: ["data-place"]
+      attributeFilter: ["data-place", "data-weather"]
     });
     this.resize();
     window.requestAnimationFrame(this.draw);
@@ -1286,12 +1286,29 @@ class WindowRain {
     const positionY = Number.parseFloat(position[1] || position[0]) / 100 || 0.5;
     const offsetX = (width - renderedWidth) * positionX;
     const offsetY = (height - renderedHeight) * positionY;
-    this.panes = config.panes.map((pane) => ({
-      x: offsetX + pane.x * scale,
-      y: offsetY + pane.y * scale,
-      width: pane.width * scale,
-      height: pane.height * scale
-    })).filter((pane) => pane.width > 2 && pane.height > 2);
+    this.panes = config.panes.map((pane) => {
+      const sourcePoints = pane.points || [
+        [pane.x, pane.y],
+        [pane.x + pane.width, pane.y],
+        [pane.x + pane.width, pane.y + pane.height],
+        [pane.x, pane.y + pane.height]
+      ];
+      const points = sourcePoints.map(([x, y]) => ({
+        x: offsetX + x * scale,
+        y: offsetY + y * scale
+      }));
+      const horizontal = points.map((point) => point.x);
+      const vertical = points.map((point) => point.y);
+      const x = Math.min(...horizontal);
+      const y = Math.min(...vertical);
+      return {
+        points,
+        x,
+        y,
+        width: Math.max(...horizontal) - x,
+        height: Math.max(...vertical) - y
+      };
+    }).filter((pane) => pane.width > 2 && pane.height > 2);
     this.seed = config.seed + this.seedOffset;
     this.drops = [];
     this.beads = [];
@@ -1332,14 +1349,21 @@ class WindowRain {
     this.lastFrame = timestamp;
     const width = this.canvas.clientWidth;
     const height = this.canvas.clientHeight;
-    this.context.clearRect(0, 0, width, height);
+    this.context.save();
+    this.context.setTransform(1, 0, 0, 1, 0, 0);
+    this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.context.restore();
     if (!this.active() || reducedMotion.matches || document.visibilityState !== "visible") return;
 
     this.panes.forEach((pane, paneIndex) => {
       const context = this.context;
       context.save();
       context.beginPath();
-      context.rect(pane.x, pane.y, pane.width, pane.height);
+      pane.points.forEach((point, index) => {
+        if (index === 0) context.moveTo(point.x, point.y);
+        else context.lineTo(point.x, point.y);
+      });
+      context.closePath();
       context.clip();
       context.fillStyle = "rgba(207, 232, 237, 0.018)";
       context.fillRect(pane.x, pane.y, pane.width, pane.height);
@@ -1418,7 +1442,7 @@ function setupWindowRain() {
     image: elements.storyStageImage,
     scene: () => RAIN_GLASS_SCENES.desk,
     seedOffset: 809,
-    active: () => storyInView
+    active: () => storyInView && state.livingWeather === "rain"
   });
 }
 
@@ -1699,9 +1723,11 @@ function refreshLivingSoundControl() {
 function refreshLivingWeather() {
   const raining = state.livingWeather === "rain";
   elements.livingRoomStage.dataset.weather = state.livingWeather;
+  elements.storyStage.dataset.weather = state.livingWeather;
   elements.livingWeatherToggle.setAttribute("aria-pressed", String(raining));
   elements.livingWeatherToggle.setAttribute("aria-label", raining ? "让房间窗外的细雨停一会儿" : "让房间窗外落一阵细雨");
   elements.livingWeatherToggle.querySelector("strong").textContent = raining ? "细雨" : "晴月";
+  if (storyStep < 0) elements.storyStageLabel.textContent = raining ? "截稿前的雨夜" : "截稿前的晴夜";
 }
 
 function renderLivingDrawingMemory() {
@@ -2483,7 +2509,7 @@ function renderStoryIntro() {
   elements.storyLine.textContent = hasMemory
     ? "她没有把上次那张收进抽屉，只在旁边重新放了一张空白稿纸。"
     : "她给旁边留了一点位置，却一直装作只是忘了把椅子推回去。";
-  elements.storyStageLabel.textContent = "截稿前的雨夜";
+  elements.storyStageLabel.textContent = state.livingWeather === "rain" ? "截稿前的雨夜" : "截稿前的晴夜";
   elements.storyStageNote.textContent = "她画得太认真，暂时没有发现你已经坐下。";
   elements.storyArtPreview.hidden = true;
   elements.storyBack.hidden = true;
