@@ -1097,6 +1097,7 @@ const elements = {
   storyTheater: document.querySelector("#storyTheater"),
   storyStage: document.querySelector("#storyStage"),
   storyStageImage: document.querySelector("#storyStageImage"),
+  studioRainCanvas: document.querySelector("#studioRainCanvas"),
   storyStageLabel: document.querySelector("#storyStageLabel"),
   storyStageNote: document.querySelector("#storyStageNote"),
   storyBeat: document.querySelector("#storyBeat"),
@@ -1117,6 +1118,7 @@ const elements = {
   livingRoomStage: document.querySelector("#livingRoomStage"),
   livingRoomView: document.querySelector(".living-room-view"),
   livingRoomImage: document.querySelector("#livingRoomImage"),
+  livingRainCanvas: document.querySelector("#livingRainCanvas"),
   livingRoomTime: document.querySelector("#livingRoomTime"),
   livingWeatherToggle: document.querySelector("#livingWeatherToggle"),
   livingSoundToggle: document.querySelector("#livingSoundToggle"),
@@ -1200,6 +1202,225 @@ const VOICE_GUARD_THRESHOLD = 4;
 const VOICE_GUARD_COOLDOWN_MS = 25000;
 
 const ROOM_FX_VOLUME = 0.62;
+
+const RAIN_GLASS_SCENES = {
+  desk: {
+    seed: 1103,
+    source: [1448, 1086],
+    panes: [
+      { x: 1110, y: 0, width: 166, height: 153 },
+      { x: 1310, y: 0, width: 138, height: 153 },
+      { x: 1112, y: 194, width: 160, height: 78 }
+    ]
+  },
+  wardrobe: {
+    seed: 2707,
+    source: [1448, 1086],
+    panes: [
+      { x: 1205, y: 0, width: 80, height: 88 },
+      { x: 1320, y: 0, width: 128, height: 88 },
+      { x: 1207, y: 105, width: 78, height: 168 },
+      { x: 1320, y: 105, width: 128, height: 145 }
+    ]
+  },
+  window: {
+    seed: 4613,
+    source: [1364, 1023],
+    panes: [
+      { x: 748, y: 0, width: 268, height: 207 },
+      { x: 1092, y: 0, width: 272, height: 217 },
+      { x: 1092, y: 292, width: 272, height: 282 }
+    ]
+  }
+};
+
+class WindowRain {
+  constructor({ canvas, image, scene, active, seedOffset = 0 }) {
+    this.canvas = canvas;
+    this.image = image;
+    this.scene = scene;
+    this.active = active;
+    this.seedOffset = seedOffset;
+    this.context = canvas.getContext("2d", { alpha: true });
+    this.seed = 1;
+    this.panes = [];
+    this.drops = [];
+    this.beads = [];
+    this.lastFrame = 0;
+    this.resize = this.resize.bind(this);
+    this.draw = this.draw.bind(this);
+    image.addEventListener("load", this.resize);
+    new ResizeObserver(this.resize).observe(canvas.parentElement);
+    new MutationObserver(this.resize).observe(canvas.parentElement, {
+      attributes: true,
+      attributeFilter: ["data-place"]
+    });
+    this.resize();
+    window.requestAnimationFrame(this.draw);
+  }
+
+  random() {
+    this.seed = (this.seed * 1664525 + 1013904223) >>> 0;
+    return this.seed / 4294967296;
+  }
+
+  resize() {
+    const width = this.canvas.clientWidth;
+    const height = this.canvas.clientHeight;
+    if (!width || !height) return;
+    const density = Math.min(window.devicePixelRatio || 1, 2);
+    this.canvas.width = Math.round(width * density);
+    this.canvas.height = Math.round(height * density);
+    this.context.setTransform(density, 0, 0, density, 0, 0);
+    const config = this.scene();
+    if (!config) {
+      this.panes = [];
+      return;
+    }
+    const [sourceWidth, sourceHeight] = config.source;
+    const scale = Math.max(width / sourceWidth, height / sourceHeight);
+    const renderedWidth = sourceWidth * scale;
+    const renderedHeight = sourceHeight * scale;
+    const position = getComputedStyle(this.image).objectPosition.split(" ");
+    const positionX = Number.parseFloat(position[0]) / 100 || 0.5;
+    const positionY = Number.parseFloat(position[1] || position[0]) / 100 || 0.5;
+    const offsetX = (width - renderedWidth) * positionX;
+    const offsetY = (height - renderedHeight) * positionY;
+    this.panes = config.panes.map((pane) => ({
+      x: offsetX + pane.x * scale,
+      y: offsetY + pane.y * scale,
+      width: pane.width * scale,
+      height: pane.height * scale
+    })).filter((pane) => pane.width > 2 && pane.height > 2);
+    this.seed = config.seed + this.seedOffset;
+    this.drops = [];
+    this.beads = [];
+    this.panes.forEach((pane, paneIndex) => {
+      const area = pane.width * pane.height;
+      const dropCount = Math.max(3, Math.min(15, Math.round(area / 2100)));
+      const beadCount = Math.max(2, Math.min(8, Math.round(area / 4800)));
+      for (let index = 0; index < dropCount; index += 1) {
+        this.drops.push({
+          paneIndex,
+          x: 0.05 + this.random() * 0.9,
+          y: this.random() * 1.15 - 0.15,
+          speed: 0.32 + this.random() * 0.68,
+          length: 8 + this.random() * 23,
+          width: 0.55 + this.random() * 0.7,
+          alpha: 0.13 + this.random() * 0.25,
+          slant: 0.06 + this.random() * 0.14,
+          curve: (this.random() - 0.5) * 3.4,
+          heavy: this.random() > 0.82
+        });
+      }
+      for (let index = 0; index < beadCount; index += 1) {
+        this.beads.push({
+          paneIndex,
+          x: 0.07 + this.random() * 0.86,
+          y: 0.08 + this.random() * 0.84,
+          radius: 0.55 + this.random() * 1.25,
+          alpha: 0.1 + this.random() * 0.18
+        });
+      }
+    });
+  }
+
+  draw(timestamp) {
+    window.requestAnimationFrame(this.draw);
+    if (timestamp - this.lastFrame < 33) return;
+    const elapsed = Math.min((timestamp - this.lastFrame) / 1000, 0.08) || 0.033;
+    this.lastFrame = timestamp;
+    const width = this.canvas.clientWidth;
+    const height = this.canvas.clientHeight;
+    this.context.clearRect(0, 0, width, height);
+    if (!this.active() || reducedMotion.matches || document.visibilityState !== "visible") return;
+
+    this.panes.forEach((pane, paneIndex) => {
+      const context = this.context;
+      context.save();
+      context.beginPath();
+      context.rect(pane.x, pane.y, pane.width, pane.height);
+      context.clip();
+      context.fillStyle = "rgba(207, 232, 237, 0.018)";
+      context.fillRect(pane.x, pane.y, pane.width, pane.height);
+      context.lineCap = "round";
+
+      this.beads.filter((bead) => bead.paneIndex === paneIndex).forEach((bead) => {
+        const x = pane.x + bead.x * pane.width;
+        const y = pane.y + bead.y * pane.height;
+        context.beginPath();
+        context.ellipse(x, y, bead.radius * 0.72, bead.radius, -0.12, 0, Math.PI * 2);
+        context.fillStyle = `rgba(225, 241, 245, ${bead.alpha})`;
+        context.fill();
+        context.beginPath();
+        context.arc(x - bead.radius * 0.2, y - bead.radius * 0.25, Math.max(0.28, bead.radius * 0.2), 0, Math.PI * 2);
+        context.fillStyle = `rgba(255, 255, 255, ${bead.alpha * 0.72})`;
+        context.fill();
+      });
+
+      this.drops.filter((drop) => drop.paneIndex === paneIndex).forEach((drop) => {
+        drop.y += drop.speed * elapsed;
+        if (drop.y > 1.18) {
+          drop.y = -0.18 - this.random() * 0.32;
+          drop.x = 0.05 + this.random() * 0.9;
+        }
+        const x = pane.x + drop.x * pane.width;
+        const y = pane.y + drop.y * pane.height;
+        const endX = x - drop.length * drop.slant;
+        const endY = y + drop.length;
+        context.beginPath();
+        context.moveTo(x, y);
+        context.quadraticCurveTo(
+          x + drop.curve,
+          y + drop.length * 0.52,
+          endX,
+          endY
+        );
+        context.lineWidth = drop.width * 2.25;
+        context.strokeStyle = `rgba(94, 128, 151, ${drop.alpha * 0.28})`;
+        context.stroke();
+        context.beginPath();
+        context.moveTo(x, y);
+        context.quadraticCurveTo(
+          x + drop.curve,
+          y + drop.length * 0.52,
+          endX,
+          endY
+        );
+        context.lineWidth = drop.width;
+        context.strokeStyle = `rgba(225, 241, 245, ${drop.alpha})`;
+        context.stroke();
+        if (drop.heavy) {
+          context.beginPath();
+          context.ellipse(endX, endY, drop.width * 1.15, drop.width * 1.6, -0.14, 0, Math.PI * 2);
+          context.fillStyle = `rgba(226, 241, 245, ${drop.alpha * 0.78})`;
+          context.fill();
+        }
+      });
+      context.restore();
+    });
+  }
+}
+
+function setupWindowRain() {
+  if (!elements.livingRainCanvas || !elements.studioRainCanvas || !("ResizeObserver" in window)) return;
+  new WindowRain({
+    canvas: elements.livingRainCanvas,
+    image: elements.livingRoomImage,
+    scene: () => RAIN_GLASS_SCENES[elements.livingRoomStage.dataset.place],
+    seedOffset: 17,
+    active: () => livingInView
+      && elements.livingRoomStage.dataset.weather === "rain"
+      && elements.livingRoomStage.dataset.place !== "bed"
+  });
+  new WindowRain({
+    canvas: elements.studioRainCanvas,
+    image: elements.storyStageImage,
+    scene: () => RAIN_GLASS_SCENES.desk,
+    seedOffset: 809,
+    active: () => storyInView
+  });
+}
 
 function resetAudioPlayer(player) {
   player.pause();
@@ -2801,6 +3022,7 @@ refreshSecrets();
 setupSecretHints();
 setupLivingRoom();
 setupDrawingStory();
+setupWindowRain();
 setupParallax();
 setupAudioWarmup();
 observeDeferredSections();
