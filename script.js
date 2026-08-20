@@ -2953,6 +2953,70 @@ function setupParallax() {
   });
 }
 
+function cleanPageUrl() {
+  return window.location.href.split("#")[0];
+}
+
+function clearLocationHash() {
+  if (!window.location.hash) return;
+  window.history.replaceState(window.history.state, "", cleanPageUrl());
+}
+
+function setupPageNavigation() {
+  const pageLinks = [...document.querySelectorAll('a[href^="#"]')];
+  const sectionLinks = [...document.querySelectorAll('.door-nav nav a[href^="#"]')];
+  const sectionTargets = sectionLinks
+    .map((link) => ({ link, target: document.querySelector(link.getAttribute("href")) }))
+    .filter((item) => item.target);
+  const nav = document.querySelector(".door-nav");
+  let updateQueued = false;
+
+  const updateCurrentSection = () => {
+    updateQueued = false;
+    const marker = window.scrollY + (nav?.offsetHeight || 0) + Math.min(window.innerHeight * 0.18, 150);
+    let activeTarget = null;
+    sectionTargets.forEach((item) => {
+      const targetTop = item.target.getBoundingClientRect().top + window.scrollY;
+      if (targetTop <= marker) activeTarget = item.target;
+    });
+    sectionTargets.forEach((item) => {
+      if (item.target === activeTarget) item.link.setAttribute("aria-current", "location");
+      else item.link.removeAttribute("aria-current");
+    });
+  };
+
+  const queueCurrentSectionUpdate = () => {
+    if (updateQueued) return;
+    updateQueued = true;
+    window.requestAnimationFrame(updateCurrentSection);
+  };
+
+  pageLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      event.preventDefault();
+      clearLocationHash();
+      const navHeight = nav?.getBoundingClientRect().height || 0;
+      const targetTop = target.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: Math.max(0, targetTop - navHeight - 12),
+        behavior: reducedMotion.matches ? "auto" : "smooth"
+      });
+      if (link.classList.contains("skip-link")) target.focus({ preventScroll: true });
+    });
+  });
+
+  window.addEventListener("scroll", queueCurrentSectionUpdate, { passive: true });
+  window.addEventListener("resize", queueCurrentSectionUpdate);
+  window.addEventListener("pageshow", () => {
+    clearLocationHash();
+    queueCurrentSectionUpdate();
+  });
+  clearLocationHash();
+  updateCurrentSection();
+}
+
 elements.heroCharacter.addEventListener("error", () => {
   elements.heroCharacter.style.opacity = "0.18";
   elements.doorStatus.innerHTML = "<span>人物插画暂时没有加载出来。</span><strong>房门和她留下的文字还在。</strong>";
@@ -3049,6 +3113,7 @@ setupSecretHints();
 setupLivingRoom();
 setupDrawingStory();
 setupWindowRain();
+setupPageNavigation();
 setupParallax();
 setupAudioWarmup();
 observeDeferredSections();
