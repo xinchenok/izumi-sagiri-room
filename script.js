@@ -792,9 +792,9 @@ const CONTENT = {
         deepLabel: "再靠近画桌一点",
         expression: "proud",
         moments: [
-          { line: "她沿着刚才犹豫的轮廓补完最后一笔，肩膀终于松下来一点。", voice: "room-desk-pencil", sound: "assets/audio/v8/desk-pencil-line.mp3" },
-          { line: "她把数位板转过来几度，只够你看见新画好的眼睛。", voice: "room-desk-eye", sound: "assets/audio/v8/desk-paper-turn.mp3" },
-          { line: "保存提示轻轻闪了一下，她才发现你一直安静坐在旁边。", voice: "room-desk-stay", sound: "assets/audio/v8/desk-save-tap.mp3" }
+          { line: "她沿着刚才犹豫的轮廓补完最后一笔，肩膀终于松下来一点。", voice: "room-desk-pencil", sound: "assets/audio/v14/desk-stylus-line.mp3" },
+          { line: "她把数位板转过来几度，只够你看见新画好的眼睛。", voice: "room-desk-eye", sound: "assets/audio/v14/desk-tablet-turn.mp3" },
+          { line: "保存提示轻轻闪了一下，她才发现你一直安静坐在旁边。", voice: "room-desk-stay", sound: "assets/audio/v14/desk-save-key.mp3" }
         ]
       },
       bed: {
@@ -822,7 +822,7 @@ const CONTENT = {
           {
             line: "毯角回到脚边，她愣了一下，又悄悄往旁边让出半个靠枕。",
             voice: "room-bed-blanket",
-            sound: "assets/audio/v8/bed-blanket-fold.mp3",
+            sound: "assets/audio/v14/bed-blanket-fold.mp3",
             frame: {
               image: "assets/v4/gallery-blanket-fort.webp",
               small: "assets/v4/gallery-blanket-fort-thumb.webp",
@@ -831,8 +831,8 @@ const CONTENT = {
               alt: "纱雾躲进被子搭成的小帐篷，从帘边害羞地递出一张小猫速写"
             }
           },
-          { line: "她把小帐篷收回床角，数位板又稳稳落在膝盖上。", voice: "room-bed-fort", sound: "assets/audio/v8/bed-fort-rustle.mp3", frame: "base" },
-          { line: "最软的猫咪靠枕被推到你这边一点，她本人却迅速躲回袖口后。", voice: "room-bed-pillow", sound: "assets/audio/v8/bed-pillow-pat.mp3" }
+          { line: "她把小帐篷收回床角，数位板又稳稳落在膝盖上。", voice: "room-bed-fort", sound: "assets/audio/v14/bed-fort-rustle.mp3", frame: "base" },
+          { line: "最软的猫咪靠枕被推到你这边一点，她本人却迅速躲回袖口后。", voice: "room-bed-pillow", sound: "assets/audio/v14/bed-pillow-pat.mp3" }
         ]
       },
       wardrobe: {
@@ -857,9 +857,9 @@ const CONTENT = {
         deepLabel: "陪她认真选一套",
         expression: "startled",
         moments: [
-          { line: "木衣架终于安静下来，她把差点滑落的袖子重新挂好。", voice: "room-wardrobe-hanger", sound: "assets/audio/v8/wardrobe-hanger-settle.mp3" },
-          { line: "她把猫耳毯往身后藏了藏，露出来的耳尖还是轻轻晃了一下。", voice: "room-wardrobe-hood", sound: "assets/audio/v8/wardrobe-fabric-swish.mp3" },
-          { line: "两套衣服又被并排举起来，这次她终于把选择权分给你一点。", voice: "room-wardrobe-choice", sound: "assets/audio/v8/wardrobe-choice.mp3" }
+          { line: "木衣架终于安静下来，她把差点滑落的袖子重新挂好。", voice: "room-wardrobe-hanger", sound: "assets/audio/v14/wardrobe-hanger-settle.mp3" },
+          { line: "她把猫耳毯往身后藏了藏，露出来的耳尖还是轻轻晃了一下。", voice: "room-wardrobe-hood", sound: "assets/audio/v14/wardrobe-fabric-swish.mp3" },
+          { line: "两套衣服又被并排举起来，这次她终于把选择权分给你一点。", voice: "room-wardrobe-choice", sound: "assets/audio/v14/wardrobe-choice.mp3" }
         ]
       },
       window: {
@@ -884,9 +884,9 @@ const CONTENT = {
         deepLabel: "陪她收好今天",
         expression: "shy",
         moments: [
-          { line: "窗缝窄了一点，雨声变轻，玩偶耳朵上的月光却还留着。", voice: "room-window-latch", sound: "assets/audio/v8/window-latch-rain.mp3" },
-          { line: "她把上次那张小猫画靠在窗边，让画里的月亮和外面排在一起。", voice: "room-window-moon", sound: "assets/audio/v8/window-paper-rain.mp3" },
-          { line: "窗帘安静落下，她在合上的画册上轻轻拍了两下。", voice: "room-window-close", sound: "assets/audio/v8/window-curtain-close.mp3" }
+          { line: "窗缝窄了一点，雨声变轻，玩偶耳朵上的月光却还留着。", voice: "room-window-latch", sound: "assets/audio/v14/window-latch-close.mp3" },
+          { line: "她把上次那张小猫画靠在窗边，让画里的月亮和外面排在一起。", voice: "room-window-moon", sound: "assets/audio/v14/window-paper-slide.mp3" },
+          { line: "窗帘安静落下，她在合上的画册上轻轻拍了两下。", voice: "room-window-close", sound: "assets/audio/v14/window-curtain-close.mp3" }
         ]
       }
     }

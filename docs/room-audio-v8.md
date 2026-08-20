@@ -1,9 +1,9 @@
-# 房间专属配音、场景声与窗雨
+# 房间专属配音、真实场景声与窗雨
 
-- 最近更新：2026-08-14（V11 玻璃多边形与真实窗雨录音）
+- 最近更新：2026-08-20（V14 四地点真实现场拟音）
 - 用户目标：每一个房间地点、事件与天气状态都使用自己的配音和场景声，不从页面其他段落借用，也不在房间事件之间复用
 - 运行边界：全部音频随静态站点本地发布，只在明确操作后播放，不自动播放、不循环、不调用系统 TTS；接近交互时只做静音预热，不把加载误当成播放
-- 机器清单：[`assets/audio/v8/voice-manifest.json`](../assets/audio/v8/voice-manifest.json) 与 [`assets/audio/v8/scene-sound-manifest.json`](../assets/audio/v8/scene-sound-manifest.json)
+- 机器清单：角色语音与天气声见 [`assets/audio/v8/voice-manifest.json`](../assets/audio/v8/voice-manifest.json) 和 [`assets/audio/v8/scene-sound-manifest.json`](../assets/audio/v8/scene-sound-manifest.json)；十二段现役地点事件声见 [`assets/audio/v14/scene-sound-manifest.json`](../assets/audio/v14/scene-sound-manifest.json)
 
 ## 最终声音矩阵
 
@@ -55,11 +55,13 @@
 
 模型与配置本身不进入仓库；清单保存模型 revision、模型 SHA-256、完整文本和最终音频哈希，便于以后核对来源与变化。
 
-## 十四段独立场景声
+## 十二段真实事件拟音与两段天气声
 
-十二个地点事件、雨停状态继续使用 FFmpeg 噪声源、频段、包络、短音色层和立体声位置程序化制作；雨起状态改为一段许可明确的真实室内窗玻璃现场录音。十二个地点事件与两个天气状态仍各有一个文件，统一为 48 kHz、立体声、192 kbps MP3。它们不是自动播放或循环环境音，只承担一次明确操作的声音反馈。
+V14 用十二份不同的 Freesound CC0 现场录音替换原先十二段程序化事件拟音。画桌、床边、衣橱与窗台各三次操作分别对应数位笔、桌面滑动、单次按键、被毯、床单、靠枕、衣架、布料、带衣物的衣架、真实关窗、画纸滑动和窗帘轨道；每份来源只截取一次与动作相符的物件表演，不从同一录音拆出多个事件。完整来源页、原文件规格、官方预览哈希、截取区间、输出哈希与处理参数见 [`assets/audio/v14/ROOM-FOLEY-SOURCES.md`](../assets/audio/v14/ROOM-FOLEY-SOURCES.md)、机器清单和 [`tools/build-room-foley-v14.mjs`](../tools/build-room-foley-v14.mjs)。
 
-V7 的四段 44.1 kHz 单声道拟音仍留在 `assets/audio/v7/` 供历史复现，但 `script.js` 已没有运行时引用。雨起与雨停也没有借用窗台的关窗或窗帘文件，分别使用 `weather-rain-window.mp3` 与 `weather-clear-window.mp3`。
+十二个 V14 运行文件均为 48 kHz、双声道、192 kbps MP3，只做 65 Hz 高通、16 kHz 低通、响度处理与短淡入淡出，不叠加白噪声、合成冲击、算法混响或变调层。V7 的四段与 V8 的十二段程序化事件拟音仍留在仓库供历史复现，但 `script.js` 已没有运行时引用。
+
+雨起与雨停继续分别使用 `assets/audio/v8/weather-rain-window.mp3` 与 `assets/audio/v8/weather-clear-window.mp3`，不借用窗台的关窗或窗帘文件。窗台三次操作也不固定混入雨声，因为房间允许处于“晴月”状态；窗雨只由天气操作承担。十二段事件拟音与两段天气声都不是自动播放或循环环境音，只承担一次明确操作的声音反馈。
 
 V11 的雨起声来自 nicoproson 的 [`RAIN on glass window.wav`](https://freesound.org/s/648529/)：原作品是室内视角的轻雨窗玻璃录音，发布规格为 96 kHz、32-bit、立体声 WAV、2:53.931，并以 CC0 1.0 发布。仓库生成脚本取得 Freesound 官方 HQ 预览并先核对 SHA-256，再取第 44–68 秒，做 70 Hz 高通、`I=-23 / TP=-4 / LRA=8` 响度处理、80 ms 淡入和 800 ms 淡出。最终文件实测 24.024 秒、-22.7 LUFS、真峰值 -4.2 dBFS；没有叠加程序化白噪声或合成雨滴。来源、取得哈希和完整处理合同见 [`assets/audio/v8/RAIN-SOURCE.md`](../assets/audio/v8/RAIN-SOURCE.md) 与 [`tools/generate-rain-window-audio.mjs`](../tools/generate-rain-window-audio.mjs)。
 
@@ -95,7 +97,7 @@ V11 把三组窗格全部改为原图像素坐标多边形。每个顶点沿真�
 发布前必须继续满足以下门禁：
 
 - 桌面 1440 × 1000 与手机 390 × 844 实际点击：4 条地点语音、12 条事件语音、2 条天气语音全部是十八个不同 V8 文件。
-- 同样路径确认 12 段事件声和 2 段天气声全部不同，场景声关闭后角色语音仍可播放。
+- 同样路径确认 12 段事件声全部引用 `assets/audio/v14`、对应 12 个不同来源 ID、文件哈希与 V14 清单一致；2 段天气声保持独立，场景声关闭后角色语音仍可播放。
 - 故障注入阻断 `room-desk-intro.mp3`，双语字幕与错误说明仍保留。
 - 床边画布缓冲为零；画桌、衣橱、窗台和共同创作舞台的每个非透明 Canvas 像素都必须落在映射后的玻璃多边形内（只允许路径抗锯齿产生的低透明边缘像素），不覆盖人物、窗帘、窗框、灯具或任何室内物件；画桌与共同创作使用不同随机种子。
 - 细雨切到晴月后，房间与共同创作两张 Canvas 的 alpha 总和都必须为零、可见透明度为零，共同创作初始标签为“截稿前的晴夜”；重新切回细雨后才恢复绘制。
