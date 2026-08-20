@@ -129,42 +129,44 @@ const sources = [
   },
   {
     scene: "窗台·关小窗缝",
-    output: "window-latch-close.mp3",
-    id: 776184,
-    creator: "soundandmelodies",
-    title: "SFX-Window,Closing",
-    page: "https://freesound.org/s/776184/",
-    preview: "https://cdn.freesound.org/previews/776/776184_10924423-hq.mp3",
-    previewSha256: "adf13f809bec1a74ef7b96b8113695bbfc1fdf1122a1fb4e6bc2f87ecd8e317e",
-    originalSpec: "48 kHz / 24-bit / stereo WAV；真实公寓旧窗关闭",
-    start: 1,
-    duration: 1.42
+    output: "window-latch-slide-clean.mp3",
+    id: 582425,
+    creator: "Dave_Gibson",
+    title: "Window slide closed.wav",
+    page: "https://freesound.org/s/582425/",
+    preview: "https://cdn.freesound.org/previews/582/582425_13105763-hq.mp3",
+    previewSha256: "e0d01e81dfc64253e8ffd2d4527a3198c2cf901154581c9ebb2ca1bdf773795e",
+    originalSpec: "44.1 kHz / 16-bit / mono WAV；一次完整的金属推拉窗轻关动作",
+    start: 0.28,
+    duration: 2.45,
+    filter: "highpass=f=65,lowpass=f=16000,acompressor=threshold=-30dB:ratio=4:attack=5:release=120:makeup=8dB,loudnorm=I=-18:TP=-3:LRA=5",
+    processing: "去除动作前后空白，保留一次完整关窗；宽动态轻压缩，65 Hz 高通、16 kHz 低通、响度处理与短淡入淡出"
   },
   {
     scene: "窗台·摆好画纸",
-    output: "window-paper-slide.mp3",
-    id: 46631,
-    creator: "123jorre456",
-    title: "sliding paper on table.wav",
-    page: "https://freesound.org/s/46631/",
-    preview: "https://cdn.freesound.org/previews/46/46631_326544-hq.mp3",
-    previewSha256: "c2209a62a13572dc8c4fe50223ba110590fbd30bf5dc74e01e0eb605256a7c0a",
-    originalSpec: "48 kHz / 16-bit / stereo WAV；纸张沿桌面移动的多次真实录音",
-    start: 6.85,
-    duration: 0.84
+    output: "window-paper-slide-clean.mp3",
+    id: 444431,
+    creator: "MTJohnson",
+    title: "Sliding Envelope.wav",
+    page: "https://freesound.org/s/444431/",
+    preview: "https://cdn.freesound.org/previews/444/444431_8522109-hq.mp3",
+    previewSha256: "08ccc42b35d09cc7394d1bb1312c51b54c4ef0cf01141fadd0b916bfadc271d7",
+    originalSpec: "48 kHz / 24-bit / stereo WAV；信封纸张在桌面上的一次短滑动",
+    start: 0.28,
+    duration: 0.6
   },
   {
     scene: "窗台·合上窗帘",
-    output: "window-curtain-close.mp3",
-    id: 708206,
-    creator: "Kate_is_yellow",
-    title: "Opening and Closing of Curtains",
-    page: "https://freesound.org/s/708206/",
-    preview: "https://cdn.freesound.org/previews/708/708206_14710317-hq.mp3",
-    previewSha256: "3acb6cc6534869793f7f6df38c93d012c21fe03f93b5143202b330f0125c6387",
-    originalSpec: "44.1 kHz / 24-bit / stereo WAV；Zoom H6 枪式麦克风录制厚窗帘在塑料轨道上收拢",
-    start: 10.2,
-    duration: 0.92
+    output: "window-curtain-close-clean.mp3",
+    id: 347237,
+    creator: "BraveFrog",
+    title: "curtain.wav",
+    page: "https://freesound.org/s/347237/",
+    preview: "https://cdn.freesound.org/previews/347/347237_6323390-hq.mp3",
+    previewSha256: "c10d1419cea62e61bf12a5488c2d570fc46cc6e294d8d5a07ee3960e2edb7a87",
+    originalSpec: "44.1 kHz / 24-bit / stereo WAV；在家中录制的一次完整窗帘轨道动作",
+    start: 0.16,
+    duration: 1.58
   }
 ];
 
@@ -213,10 +215,11 @@ for (const source of sources) {
   const sourceFile = await downloadSource(source);
   const outputFile = join(outputDirectory, source.output);
   const fadeOutStart = Math.max(0, source.duration - 0.1).toFixed(3);
+  const filter = source.filter || "highpass=f=65,lowpass=f=16000,loudnorm=I=-18:TP=-2:LRA=5";
   run("ffmpeg", [
     "-hide_banner", "-loglevel", "error", "-y",
     "-ss", String(source.start), "-t", String(source.duration), "-i", sourceFile,
-    "-af", `highpass=f=65,lowpass=f=16000,loudnorm=I=-18:TP=-2:LRA=5,afade=t=in:st=0:d=0.025,afade=t=out:st=${fadeOutStart}:d=0.10`,
+    "-af", `${filter},afade=t=in:st=0:d=0.025,afade=t=out:st=${fadeOutStart}:d=0.10`,
     "-ar", "48000", "-ac", "2", "-c:a", "libmp3lame", "-b:a", "192k", outputFile
   ]);
   const probe = JSON.parse(run("ffprobe", [
@@ -231,6 +234,7 @@ for (const source of sources) {
     source_preview_sha256: source.previewSha256,
     trim_start_seconds: source.start,
     trim_duration_seconds: source.duration,
+    processing: source.processing || "截取一次真实动作，65 Hz 高通、16 kHz 低通、I=-18/TP=-2/LRA=5 响度处理与短淡入淡出",
     duration_seconds: Number(Number(probe.format.duration).toFixed(3)),
     sha256: await sha256(outputFile),
     ...measureLoudness(outputFile)
@@ -245,7 +249,7 @@ const manifest = {
   generation: {
     tool: "FFmpeg 6.1.1",
     source: "Freesound 官方 HQ 预览；全部来源页面标记为 Creative Commons 0",
-    processing: "按动作截取一次真实表演，65 Hz 高通、16 kHz 低通、I=-18/TP=-2/LRA=5 响度处理、25 ms 淡入、100 ms 淡出",
+    processing: "按动作截取一次真实表演，65 Hz 高通、16 kHz 低通、响度处理、25 ms 淡入、100 ms 淡出；宽动态关窗声另做轻压缩",
     autoplay: false,
     loop: false
   },

@@ -19,13 +19,14 @@
 | 扶稳晃动的衣架 | CarikaDarvall · [Hanging clothes](https://freesound.org/s/764474/) | 衣物实际挂入衣橱；48 kHz、24-bit、立体声 | CC0 1.0 |
 | 把猫耳毯藏到身后 | IENBA · [Fabric Flapping](https://freesound.org/s/701647/) | Zoom H4n、Sennheiser MKH50；48 kHz、24-bit、立体声 | CC0 1.0 |
 | 并排举起两套衣服 | Breezy2000uk · [Clothes Hangers on a Metal Rail.wav](https://freesound.org/s/577888/) | 带衣物与空衣架沿金属轨道移动；48 kHz、24-bit、立体声 | CC0 1.0 |
-| 把窗缝关小 | soundandmelodies · [SFX-Window,Closing](https://freesound.org/s/776184/) | 真实公寓旧窗关闭；48 kHz、24-bit、立体声 | CC0 1.0 |
-| 把画纸靠在窗边 | 123jorre456 · [sliding paper on table.wav](https://freesound.org/s/46631/) | 纸张沿桌面移动；48 kHz、16-bit、立体声 | CC0 1.0 |
-| 合上窗帘 | Kate_is_yellow · [Opening and Closing of Curtains](https://freesound.org/s/708206/) | Zoom H6 枪式麦克风录制厚窗帘沿轨道收拢；44.1 kHz、24-bit、立体声 | CC0 1.0 |
+| 把窗缝关小 | Dave_Gibson · [Window slide closed.wav](https://freesound.org/s/582425/) | 一次完整的金属推拉窗轻关动作；44.1 kHz、16-bit | CC0 1.0 |
+| 把画纸靠在窗边 | MTJohnson · [Sliding Envelope.wav](https://freesound.org/s/444431/) | 信封纸张在桌面上的一次短滑动；48 kHz、24-bit、立体声 | CC0 1.0 |
+| 合上窗帘 | BraveFrog · [curtain.wav](https://freesound.org/s/347237/) | 在家中录制的一次完整窗帘轨道动作；44.1 kHz、24-bit、立体声 | CC0 1.0 |
 
 ## 处理边界
 
 - 每份来源只截取与当前动作相符的一次表演；十二个运行文件对应十二个不同 Freesound 来源，不把同一段布料声切成多个文件伪装差异。
-- 只做 65 Hz 高通、16 kHz 低通、统一响度、短淡入淡出和 MP3 导出；不叠加白噪声、合成冲击、算法混响或变调层。
+- 窗台三条改用只包含单次短动作的独立来源，并去掉动作前后的空白；不再从长录音尾部取样，避免把录音者的说话、呼吸或收设备声带进页面。关窗原声动态较宽，额外做轻压缩以在小音量下保留滑轨细节。
+- 只做 65 Hz 高通、16 kHz 低通、统一响度、短淡入淡出和 MP3 导出；关窗声另做轻压缩，不叠加白噪声、合成冲击、算法混响或变调层。
 - 窗台三次物件操作不固定混入雨声，因为页面允许切换“细雨 / 晴月”；窗雨只由天气操作的真实室内玻璃录音承担，晴月时不会错误听见雨。
 - Freesound 页面上的原文件规格与许可在取得时逐项核对；复现脚本下载官方 HQ 预览后先验证 SHA-256，任何来源变化都会中止生成。

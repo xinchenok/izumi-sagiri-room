@@ -1,6 +1,6 @@
 # 房间专属配音、真实场景声与窗雨
 
-- 最近更新：2026-08-20（V14 四地点真实现场拟音）
+- 最近更新：2026-08-20（V15 窗台无杂音独立拟音）
 - 用户目标：每一个房间地点、事件与天气状态都使用自己的配音和场景声，不从页面其他段落借用，也不在房间事件之间复用
 - 运行边界：全部音频随静态站点本地发布，只在明确操作后播放，不自动播放、不循环、不调用系统 TTS；接近交互时只做静音预热，不把加载误当成播放
 - 机器清单：角色语音与天气声见 [`assets/audio/v8/voice-manifest.json`](../assets/audio/v8/voice-manifest.json) 和 [`assets/audio/v8/scene-sound-manifest.json`](../assets/audio/v8/scene-sound-manifest.json)；十二段现役地点事件声见 [`assets/audio/v14/scene-sound-manifest.json`](../assets/audio/v14/scene-sound-manifest.json)
@@ -58,6 +58,8 @@
 ## 十二段真实事件拟音与两段天气声
 
 V14 用十二份不同的 Freesound CC0 现场录音替换原先十二段程序化事件拟音。画桌、床边、衣橱与窗台各三次操作分别对应数位笔、桌面滑动、单次按键、被毯、床单、靠枕、衣架、布料、带衣物的衣架、真实关窗、画纸滑动和窗帘轨道；每份来源只截取一次与动作相符的物件表演，不从同一录音拆出多个事件。完整来源页、原文件规格、官方预览哈希、截取区间、输出哈希与处理参数见 [`assets/audio/v14/ROOM-FOLEY-SOURCES.md`](../assets/audio/v14/ROOM-FOLEY-SOURCES.md)、机器清单和 [`tools/build-room-foley-v14.mjs`](../tools/build-room-foley-v14.mjs)。
+
+V15 再替换窗台的关窗、画纸和窗帘三条来源：三份原录音本身都只记录一次短动作，运行片段去掉点击前空白，也不再从长录音末尾截取。这样可排除录音者说话、呼吸与收设备尾音，同时让关小窗缝保持室内近场的轻滑轨声；三条均不烘焙雨底，晴月状态不会错误听见雨。
 
 十二个 V14 运行文件均为 48 kHz、双声道、192 kbps MP3，只做 65 Hz 高通、16 kHz 低通、响度处理与短淡入淡出，不叠加白噪声、合成冲击、算法混响或变调层。V7 的四段与 V8 的十二段程序化事件拟音仍留在仓库供历史复现，但 `script.js` 已没有运行时引用。
 
