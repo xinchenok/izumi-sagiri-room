@@ -884,9 +884,9 @@ const CONTENT = {
         deepLabel: "陪她收好今天",
         expression: "shy",
         moments: [
-          { line: "窗缝窄了一点，雨声变轻，玩偶耳朵上的月光却还留着。", voice: "room-window-latch", sound: "assets/audio/v14/window-latch-close.mp3" },
-          { line: "她把上次那张小猫画靠在窗边，让画里的月亮和外面排在一起。", voice: "room-window-moon", sound: "assets/audio/v14/window-paper-slide.mp3" },
-          { line: "窗帘安静落下，她在合上的画册上轻轻拍了两下。", voice: "room-window-close", sound: "assets/audio/v14/window-curtain-close.mp3" }
+          { line: "窗缝窄了一点，雨声变轻，玩偶耳朵上的月光却还留着。", voice: "room-window-latch", sound: "assets/audio/v14/window-latch-slide-clean.mp3" },
+          { line: "她把上次那张小猫画靠在窗边，让画里的月亮和外面排在一起。", voice: "room-window-moon", sound: "assets/audio/v14/window-paper-slide-clean.mp3" },
+          { line: "窗帘安静落下，她在合上的画册上轻轻拍了两下。", voice: "room-window-close", sound: "assets/audio/v14/window-curtain-close-clean.mp3" }
         ]
       }
     }
