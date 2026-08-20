@@ -891,6 +891,9 @@ const CONTENT = {
       }
     }
   },
+  goodnight: {
+    doorSound: "assets/audio/v16/goodnight-door-close.mp3"
+  },
   fortunes: [
     "画不完也没关系，先把今天好好收起来。",
     "今天已经很努力了，剩下的一小步留给明天。",
@@ -929,6 +932,10 @@ function validLivingWeather(value) {
   return value === "clear" || value === "rain" ? value : "rain";
 }
 
+function validFortune(value) {
+  return typeof value === "string" && CONTENT.fortunes.includes(value) ? value : "";
+}
+
 function validSharedDrawing(value) {
   if (!value || typeof value !== "object") return null;
   const validPresence = Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.presence, value.presence);
@@ -958,7 +965,9 @@ function readState() {
     sharedDrawing: null,
     livingPlace: "desk",
     livingWeather: "rain",
-    roomSoundMuted: false
+    roomSoundMuted: false,
+    keptFortune: "",
+    keptFortuneAt: 0
   };
   try {
     const current = JSON.parse(localStorage.getItem(STORAGE_KEY_V2));
@@ -975,7 +984,9 @@ function readState() {
         sharedDrawing: validSharedDrawing(current.sharedDrawing),
         livingPlace: validLivingPlace(current.livingPlace),
         livingWeather: validLivingWeather(current.livingWeather),
-        roomSoundMuted: current.roomSoundMuted === true
+        roomSoundMuted: current.roomSoundMuted === true,
+        keptFortune: validFortune(current.keptFortune),
+        keptFortuneAt: Number.isFinite(current.keptFortuneAt) ? current.keptFortuneAt : 0
       };
     }
 
@@ -993,7 +1004,9 @@ function readState() {
         sharedDrawing: null,
         livingPlace: "desk",
         livingWeather: "rain",
-        roomSoundMuted: false
+        roomSoundMuted: false,
+        keptFortune: "",
+        keptFortuneAt: 0
       };
       localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(migrated));
       return { ...migrated, secrets: new Set(migrated.secrets) };
@@ -1020,7 +1033,9 @@ function saveState() {
       sharedDrawing: state.sharedDrawing,
       livingPlace: state.livingPlace,
       livingWeather: state.livingWeather,
-      roomSoundMuted: state.roomSoundMuted
+      roomSoundMuted: state.roomSoundMuted,
+      keptFortune: state.keptFortune,
+      keptFortuneAt: state.keptFortuneAt
     }));
   } catch {
     // 存储不可用时，仅保留当前会话状态。
@@ -1067,6 +1082,7 @@ const elements = {
   visitNote: document.querySelector("#visitNote"),
   heroCharacter: document.querySelector("#heroCharacter"),
   feedbackDock: document.querySelector("#feedbackDock"),
+  feedbackCollapseButton: document.querySelector("#feedbackCollapseButton"),
   reactionCorner: document.querySelector("#reactionCorner"),
   reactionImage: document.querySelector("#reactionImage"),
   reactionLabel: document.querySelector("#reactionLabel"),
@@ -1158,11 +1174,17 @@ const elements = {
   lightboxTitle: document.querySelector("#lightboxTitle"),
   lightboxNote: document.querySelector("#lightboxNote"),
   lightboxZoomHint: document.querySelector("#lightboxZoomHint"),
+  goodnightSection: document.querySelector("#goodnight"),
+  fortuneLabel: document.querySelector("#fortuneLabel"),
   fortuneNote: document.querySelector("#fortuneNote strong"),
-  fortuneButton: document.querySelector("#fortuneButton")
+  fortuneButton: document.querySelector("#fortuneButton"),
+  copyFortuneButton: document.querySelector("#copyFortuneButton"),
+  takeNoteButton: document.querySelector("#takeNoteButton"),
+  goodnightStatus: document.querySelector("#goodnightStatus")
 };
 
 let doorOpened = false;
+let doorOpeningPromise = null;
 let heroSequence = 0;
 let outfitSequence = 0;
 let gallerySequence = 0;
@@ -1171,6 +1193,7 @@ let voiceSequence = 0;
 let lastFortune = 0;
 let feedbackTimer = 0;
 let secretHintTimer = 0;
+let secretMissCount = 0;
 let activeVoiceScene = "";
 let lightboxPointerStart = null;
 let storyStep = -1;
@@ -1593,12 +1616,15 @@ function reactionOrigin() {
   return { x: bounds.left + bounds.width * 0.55, y: bounds.top + bounds.height * 0.5 };
 }
 
+function collapseFeedback() {
+  window.clearTimeout(feedbackTimer);
+  elements.feedbackDock.classList.remove("is-peeking");
+  document.body.classList.remove("feedback-active", "voice-feedback-active");
+}
+
 function settleFeedback(delay = 3200) {
   window.clearTimeout(feedbackTimer);
-  feedbackTimer = window.setTimeout(() => {
-    elements.feedbackDock.classList.remove("is-peeking");
-    document.body.classList.remove("feedback-active");
-  }, delay);
+  feedbackTimer = window.setTimeout(collapseFeedback, delay);
 }
 
 function showFeedback(persistent = false) {
@@ -1701,13 +1727,34 @@ function prepareLivingAudioForPlace(key) {
   });
 }
 
-function prepareAllLivingAudio() {
-  Object.keys(CONTENT.livingRoom.places).forEach(prepareLivingAudioForPlace);
-  ["room-weather-rain", "room-weather-clear"].forEach((id) => {
-    prepareVoiceFile(CONTENT.livingRoom.voices[id]?.file);
+function prepareLivingAudioPreviewForPlace(key) {
+  const place = CONTENT.livingRoom.places[validLivingPlace(key)];
+  if (place) prepareVoiceFile(CONTENT.livingRoom.voices[place.voice]?.file);
+}
+
+function prepareLivingAudioNeighbors(key = state.livingPlace) {
+  const keys = Object.keys(CONTENT.livingRoom.places);
+  const index = Math.max(0, keys.indexOf(validLivingPlace(key)));
+  [-1, 1].forEach((offset) => {
+    const neighbor = keys[(index + offset + keys.length) % keys.length];
+    prepareLivingAudioPreviewForPlace(neighbor);
   });
-  prepareRoomFxFile("assets/audio/v8/weather-rain-window.mp3");
-  prepareRoomFxFile("assets/audio/v8/weather-clear-window.mp3");
+}
+
+function prepareLivingWeatherAudio(weather = state.livingWeather) {
+  const raining = validLivingWeather(weather) === "rain";
+  const voice = raining ? "room-weather-rain" : "room-weather-clear";
+  const sound = raining
+    ? "assets/audio/v8/weather-rain-window.mp3"
+    : "assets/audio/v8/weather-clear-window.mp3";
+  prepareVoiceFile(CONTENT.livingRoom.voices[voice]?.file);
+  prepareRoomFxFile(sound);
+}
+
+function prepareCurrentLivingAudio() {
+  prepareLivingAudioForPlace(state.livingPlace);
+  prepareLivingAudioNeighbors(state.livingPlace);
+  prepareLivingWeatherAudio(state.livingWeather);
 }
 
 function refreshLivingSoundControl() {
@@ -1820,7 +1867,11 @@ async function playRoomFx(file) {
     await player.play();
   } catch (error) {
     if (sequence !== roomFxSequence || error?.name === "AbortError") return;
-    elements.livingRoomStatus.textContent = "场景声暂时没有加载出来，画面与文字反馈仍然保留。";
+    if (file === CONTENT.goodnight.doorSound) {
+      elements.goodnightStatus.textContent = "纸条已经收好，门也已经合上；只是这次木门声没有加载出来。";
+    } else {
+      elements.livingRoomStatus.textContent = "场景声暂时没有加载出来，画面与文字反馈仍然保留。";
+    }
   }
 }
 
@@ -1960,31 +2011,44 @@ function setupLivingRoom() {
 }
 
 function openDoor() {
+  if (doorOpeningPromise) return doorOpeningPromise;
   if (doorOpened) {
     updateReaction({ expression: "shy", label: "门已经开着", text: visitStage.openReaction }, false);
-    return;
+    return Promise.resolve();
   }
   doorOpened = true;
-  prepareAllLivingAudio();
+  prepareCurrentLivingAudio();
   const sequence = ++heroSequence;
+  elements.visitNote.textContent = visitStage.note;
+  elements.takeNoteButton.disabled = false;
+  elements.takeNoteButton.querySelector("span").textContent = "收下纸条，轻轻带上门";
+  elements.doorScene.classList.remove("is-goodnight-closed");
   elements.doorScene.classList.add("is-startled");
   elements.knockButton.setAttribute("aria-expanded", "true");
+  elements.knockButton.disabled = true;
   elements.knockButton.querySelector("span").textContent = "门正在打开";
   elements.doorStatus.innerHTML = "<span>她被吓了一小跳。</span><strong>“咿——！先、先等一下……”</strong>";
   setHeroExpression("startled");
   updateReaction("knock");
 
-  window.setTimeout(() => {
-    if (sequence !== heroSequence) return;
-    elements.doorScene.classList.add("is-open");
-    elements.doorScene.classList.remove("is-startled");
-    elements.knockButton.querySelector("span").textContent = "门已经打开啦";
-    elements.knockButton.disabled = true;
-    elements.doorStatus.querySelector("span").textContent = visitStage.openLead;
-    elements.doorStatus.querySelector("strong").textContent = visitStage.openQuote;
-    setHeroExpression("shy");
-    updateReaction({ expression: "shy", label: "门打开以后", text: visitStage.openReaction }, false);
-  }, reducedMotion.matches ? 20 : 760);
+  doorOpeningPromise = new Promise((resolve) => {
+    window.setTimeout(() => {
+      if (sequence === heroSequence) {
+        elements.doorScene.classList.add("is-open");
+        elements.doorScene.classList.remove("is-startled");
+        elements.knockButton.querySelector("span").textContent = "门已经打开啦";
+        elements.doorStatus.querySelector("span").textContent = visitStage.openLead;
+        elements.doorStatus.querySelector("strong").textContent = visitStage.openQuote;
+        setHeroExpression("shy");
+        updateReaction({ expression: "shy", label: "门打开以后", text: visitStage.openReaction }, false);
+      }
+      window.setTimeout(() => {
+        doorOpeningPromise = null;
+        resolve();
+      }, reducedMotion.matches ? 20 : 1100);
+    }, reducedMotion.matches ? 20 : 760);
+  });
+  return doorOpeningPromise;
 }
 
 function refreshVoiceControls() {
@@ -2273,7 +2337,10 @@ function preloadOutfitNeighbors(key = state.outfit) {
 
 function refreshSecrets() {
   elements.secretButtons.forEach((button) => {
-    button.setAttribute("aria-pressed", String(state.secrets.has(button.dataset.secret)));
+    const found = state.secrets.has(button.dataset.secret);
+    button.setAttribute("aria-pressed", String(found));
+    button.classList.toggle("is-found", found);
+    if (found) button.classList.remove("is-hinting");
   });
   [...elements.secretProgress.children].forEach((paw, index) => {
     paw.classList.toggle("is-found", index < state.secrets.size);
@@ -2293,10 +2360,14 @@ function revealGentleHint() {
   const remaining = undiscoveredSecretKeys();
   if (!remaining.length) return;
   const index = (Math.max(1, state.visitCount) + state.secrets.size) % remaining.length;
-  elements.secretHint.textContent = CONTENT.secrets[remaining[index]].hint;
+  const key = remaining[index];
+  elements.secretButtons.forEach((button) => {
+    button.classList.toggle("is-hinting", button.dataset.secret === key);
+  });
+  elements.secretHint.textContent = CONTENT.secrets[key].hint;
 }
 
-function scheduleGentleHint(delay = 11000) {
+function scheduleGentleHint(delay = 7000) {
   window.clearTimeout(secretHintTimer);
   if (!undiscoveredSecretKeys().length) return;
   secretHintTimer = window.setTimeout(revealGentleHint, delay);
@@ -2325,16 +2396,27 @@ function discoverSecret(button) {
     return;
   }
 
+  secretMissCount = 0;
+  elements.secretButtons.forEach((item) => item.classList.remove("is-hinting"));
   state.secrets.add(key);
   saveState();
   refreshSecrets();
   const unlocked = state.secrets.size === Object.keys(CONTENT.secrets).length;
   if (!unlocked) {
     elements.secretHint.textContent = `${secret.label}被她默默承认了。剩下的先别急着找。`;
-    scheduleGentleHint(7500);
+    scheduleGentleHint(5600);
   }
   updateReaction(unlocked ? "unlocked" : { ...CONTENT.reactions.secret, text: `${secret.label}：${secret.text}` });
   if (unlocked) elements.secretMessage.focus?.();
+}
+
+function noticeSecretMiss(event) {
+  if (event.target.closest(".secret-trigger")) return;
+  secretMissCount += 1;
+  if (secretMissCount < 2) return;
+  secretMissCount = 0;
+  window.clearTimeout(secretHintTimer);
+  revealGentleHint();
 }
 
 const STORY_STEP_KEYS = ["presence", "subject", "palette", "praise"];
@@ -2865,7 +2947,79 @@ function newFortune() {
   if (CONTENT.fortunes.length > 1 && next === lastFortune) next = (next + 1) % CONTENT.fortunes.length;
   lastFortune = next;
   elements.fortuneNote.textContent = CONTENT.fortunes[next];
+  elements.fortuneLabel.textContent = "今晚的小纸条";
+  elements.goodnightStatus.textContent = "这一张还没有收好；想带到别处，也可以先复制纸条文字。";
+  elements.goodnightSection.classList.remove("is-note-kept");
+  elements.takeNoteButton.disabled = false;
+  elements.takeNoteButton.querySelector("span").textContent = "收下纸条，轻轻带上门";
   updateReaction("fortune");
+}
+
+function applySavedFortune() {
+  if (!state.keptFortune) return;
+  elements.fortuneNote.textContent = state.keptFortune;
+  elements.fortuneLabel.textContent = "上次收好的小纸条";
+  elements.goodnightStatus.textContent = "她还记得你把这张收好了。今晚也可以换一张，或者再次带上门。";
+  elements.goodnightSection.classList.add("is-note-kept");
+  lastFortune = Math.max(0, CONTENT.fortunes.indexOf(state.keptFortune));
+}
+
+async function copyFortuneText() {
+  const note = elements.fortuneNote.textContent.trim();
+  let copied = false;
+  try {
+    await navigator.clipboard.writeText(`今晚的小纸条：${note}`);
+    copied = true;
+  } catch {
+    const fallback = document.createElement("textarea");
+    fallback.value = `今晚的小纸条：${note}`;
+    fallback.setAttribute("readonly", "");
+    fallback.style.position = "fixed";
+    fallback.style.opacity = "0";
+    document.body.append(fallback);
+    fallback.select();
+    copied = document.execCommand("copy");
+    fallback.remove();
+  }
+  elements.goodnightStatus.textContent = copied
+    ? "纸条文字已经复制，可以贴到自己的备忘录里。"
+    : "浏览器没有允许复制；纸条仍然可以收在这台设备里。";
+  updateReaction({
+    expression: "shy",
+    label: copied ? "纸条已经复制" : "纸条还在这里",
+    text: copied ? "……只许自己留着。" : "没关系，收在房间里也不会丢。"
+  }, false);
+}
+
+function keepFortuneAndClose() {
+  const note = elements.fortuneNote.textContent.trim();
+  state.keptFortune = validFortune(note) || CONTENT.fortunes[0];
+  state.keptFortuneAt = Date.now();
+  saveState();
+  elements.fortuneLabel.textContent = "已经收好的小纸条";
+  elements.goodnightStatus.textContent = "纸条已经留在这台设备里。门正在身后轻轻合上。";
+  elements.goodnightSection.classList.add("is-note-kept");
+  elements.takeNoteButton.disabled = true;
+  elements.takeNoteButton.querySelector("span").textContent = "纸条已经收好";
+  stopVoice(true, false);
+  prepareRoomFxFile(CONTENT.goodnight.doorSound);
+  playRoomFx(CONTENT.goodnight.doorSound);
+  updateReaction({ expression: "shy", label: "晚安以前", text: "纸条……不许弄丢。" }, false);
+
+  doorOpened = false;
+  doorOpeningPromise = null;
+  heroSequence += 1;
+  elements.doorScene.classList.remove("is-open", "is-startled");
+  elements.doorScene.classList.add("is-goodnight-closed");
+  elements.knockButton.disabled = false;
+  elements.knockButton.setAttribute("aria-expanded", "false");
+  elements.knockButton.querySelector("span").textContent = "下次再轻轻敲门";
+  elements.visitNote.textContent = "今晚的纸条已经收好";
+  elements.doorStatus.innerHTML = "<span>木门在身后轻轻合上。</span><strong>“晚安。下次……也要先敲门。”</strong>";
+
+  window.setTimeout(() => {
+    scrollPageTarget(document.querySelector("#home"));
+  }, reducedMotion.matches ? 20 : 120);
 }
 
 function preloadDoorSequence() {
@@ -2894,13 +3048,19 @@ function setupAudioWarmup() {
     button.addEventListener("focus", prepareCurrentRoom);
     button.addEventListener("pointerdown", prepareCurrentRoom);
   });
-  elements.livingWeatherToggle.addEventListener("pointerenter", prepareAllLivingAudio, { once: true });
-  elements.livingWeatherToggle.addEventListener("focus", prepareAllLivingAudio, { once: true });
-  elements.livingWeatherToggle.addEventListener("pointerdown", prepareAllLivingAudio, { once: true });
+  const prepareNextWeather = () => prepareLivingWeatherAudio(state.livingWeather === "rain" ? "clear" : "rain");
+  elements.livingWeatherToggle.addEventListener("pointerenter", prepareNextWeather);
+  elements.livingWeatherToggle.addEventListener("focus", prepareNextWeather);
+  elements.livingWeatherToggle.addEventListener("pointerdown", prepareNextWeather);
+
+  const prepareGoodnightDoor = () => prepareRoomFxFile(CONTENT.goodnight.doorSound);
+  elements.takeNoteButton.addEventListener("pointerenter", prepareGoodnightDoor, { once: true });
+  elements.takeNoteButton.addEventListener("focus", prepareGoodnightDoor, { once: true });
+  elements.takeNoteButton.addEventListener("pointerdown", prepareGoodnightDoor, { once: true });
 
   if (!("IntersectionObserver" in window)) {
     voiceButtons.forEach((button) => prepareVoiceLine(button.dataset.voice));
-    prepareAllLivingAudio();
+    prepareCurrentLivingAudio();
     return;
   }
 
@@ -2915,7 +3075,7 @@ function setupAudioWarmup() {
 
   const roomObserver = new IntersectionObserver(([entry]) => {
     if (!entry.isIntersecting) return;
-    prepareAllLivingAudio();
+    prepareCurrentLivingAudio();
     roomObserver.disconnect();
   }, { rootMargin: "900px 0px" });
   roomObserver.observe(elements.livingRoom);
@@ -2968,6 +3128,17 @@ function clearLocationHash() {
   window.history.replaceState(window.history.state, "", cleanPageUrl());
 }
 
+function scrollPageTarget(target, focusTarget = false) {
+  if (!target) return;
+  const navHeight = document.querySelector(".door-nav")?.getBoundingClientRect().height || 0;
+  const targetTop = target.getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({
+    top: Math.max(0, targetTop - navHeight - 12),
+    behavior: reducedMotion.matches ? "auto" : "smooth"
+  });
+  if (focusTarget) target.focus({ preventScroll: true });
+}
+
 function setupPageNavigation() {
   const pageLinks = [...document.querySelectorAll('a[href^="#"]')];
   const sectionLinks = [...document.querySelectorAll('.door-nav nav a[href^="#"]')];
@@ -2998,18 +3169,14 @@ function setupPageNavigation() {
   };
 
   pageLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
+    link.addEventListener("click", async (event) => {
       const target = document.querySelector(link.getAttribute("href"));
       if (!target) return;
       event.preventDefault();
       clearLocationHash();
-      const navHeight = nav?.getBoundingClientRect().height || 0;
-      const targetTop = target.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: Math.max(0, targetTop - navHeight - 12),
-        behavior: reducedMotion.matches ? "auto" : "smooth"
-      });
-      if (link.classList.contains("skip-link")) target.focus({ preventScroll: true });
+      const entersRoom = Boolean(link.closest(".door-nav nav")) && !doorOpened;
+      if (entersRoom) await openDoor();
+      scrollPageTarget(target, link.classList.contains("skip-link"));
     });
   });
 
@@ -3041,6 +3208,7 @@ elements.knockButton.addEventListener("click", openDoor);
 elements.knockButton.addEventListener("pointerenter", preloadDoorSequence, { once: true });
 elements.knockButton.addEventListener("focus", preloadDoorSequence, { once: true });
 elements.knockButton.addEventListener("pointerdown", preloadDoorSequence, { once: true });
+elements.feedbackCollapseButton.addEventListener("click", collapseFeedback);
 elements.stopVoiceButton.addEventListener("click", () => stopVoice(false, false, true));
 elements.voiceMuteButton.addEventListener("click", toggleVoiceMode);
 elements.voiceVolume.addEventListener("input", changeVoiceVolume);
@@ -3055,6 +3223,7 @@ elements.outfitNext.addEventListener("click", () => adjacentOutfit(1));
 elements.secretButtons.forEach((button) => {
   button.addEventListener("click", () => discoverSecret(button));
 });
+elements.deskBoard.addEventListener("click", noticeSecretMiss);
 elements.livingPlaceButtons.forEach((button) => {
   button.addEventListener("click", () => switchLivingPlace(button.dataset.livingPlace));
   button.addEventListener("keydown", handleLivingTrackKey);
@@ -3093,6 +3262,8 @@ elements.lightboxStage.addEventListener("pointercancel", () => {
   lightboxPointerStart = null;
 });
 elements.fortuneButton.addEventListener("click", newFortune);
+elements.copyFortuneButton.addEventListener("click", copyFortuneText);
+elements.takeNoteButton.addEventListener("click", keepFortuneAndClose);
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "visible") {
     scheduleStoryBlink();
@@ -3119,6 +3290,7 @@ buildGalleryThumbs();
 applyOutfit(state.outfit);
 applyGallery(galleryPosition, false);
 refreshSecrets();
+applySavedFortune();
 setupSecretHints();
 setupLivingRoom();
 setupDrawingStory();

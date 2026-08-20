@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-20",
+  "purpose": "收下晚安纸条后播放一次独立的室内轻关门实录，与窗户、窗帘和房间物件声分开。",
+  "autoplay": false,
+  "loop": false,
+  "source": {
+    "id": 216877,
+    "creator": "CastIronCarousel",
+    "title": "Slow gentle close of squeaky wooden door.wav",
+    "source_page": "https://freesound.org/s/216877/",
+    "retrieved_asset": "https://cdn.freesound.org/previews/216/216877_4049088-hq.mp3",
+    "retrieved_asset_sha256": "49ee8a68a7df8e7832aedbe43f44b0c1879ac9087fa3894256562001ade5f070",
+    "original_spec": "96 kHz / 16-bit / stereo WAV；录音棚内一次缓慢轻关木门实录",
+    "license": "CC0 1.0"
+  },
+  "output": {
+    "audio": "goodnight-door-close.mp3",
+    "codec": "mp3",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "bitrate_kbps": 192,
+    "duration_seconds": 2.76,
+    "size_bytes": 66861,
+    "sha256": "6ff954af4415db09ef50fa30dc43a7f5864521f2a7bfdc2d881a7b8a305e5ea7",
+    "trim_start_seconds": 0.22,
+    "trim_duration_seconds": 2.72,
+    "processing": "去除动作前空白，保留一次完整慢速关门；55 Hz 高通、16 kHz 低通、宽动态轻压缩、I=-21/TP=-3/LRA=5 响度处理与短淡入淡出。",
+    "integrated_lufs": -24.3,
+    "true_peak_dbfs": -3.1
+  }
+}
