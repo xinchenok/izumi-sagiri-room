@@ -34,7 +34,7 @@ AI 生成的内容经过人工目标约束与浏览器验收；AI 不是素材�
 
 ## 完整实施与修复记录
 
-本节是项目截至 2026-08-20 的交付账本。带提交链接的发布表记录已经进入 GitHub `main` 并由 GitHub Pages 提供的实际工作；本次尚待发布的条目只记录已完成且经过本地核验的变更，不会把规划混写成已交付功能。
+本节是项目截至 2026-08-20 的交付账本。带提交链接的发布表只记录已经进入 GitHub `main`、并由 GitHub Pages 提供的实际工作；未完成规划仍只放在“已知问题与后续规划”，不会混写成已交付功能。
 
 ### 页面、角色与交互
 
@@ -197,6 +197,12 @@ AI 生成的内容经过人工目标约束与浏览器验收；AI 不是素材�
 | 2026-08-13 | [`b805201`](https://github.com/xinchenok/izumi-sagiri-room/commit/b8052011a1fad506efd2fd1d029e6d5a36ebc3d1) | 通过 PR #4 发布 V8 房间声音：十八条地点 / 事件 / 天气专属配音、十四段不复用场景声、互相独立的声音控制、窗玻璃雨线边界与完整日语字幕字体。 |
 | 2026-08-13 | [`5af5f9b`](https://github.com/xinchenok/izumi-sagiri-room/commit/5af5f9b7a122f168030191cab1ea36d12fa82deb) | 通过 PR #6 发布 V9 音频响应与雨线修复：逐文件播放器和 Blob 预热消除点击换源延迟，失败可重试，房间层与插画层雨线均限制在真实玻璃范围。 |
 | 2026-08-14 | [`d1a08d9`](https://github.com/xinchenok/izumi-sagiri-room/commit/d1a08d949cd6545ca8c84a9b42886ade29bcb599) | 通过 PR #7 发布 V10 逐窗格雨景：删除室内斜纹和固定 CSS 雨线，按真实玻璃裁剪独立 Canvas 雨滴，并重制可复现的 7.224 秒立体声窗雨。 |
+| 2026-08-14 | [`119f36a`](https://github.com/xinchenok/izumi-sagiri-room/commit/119f36ac6f948f72e0d1e43546db7eea6de1d296) | 通过 PR #8 发布 V11 玻璃多边形与真实窗雨：逐窗格沿遮挡轮廓内缩，晴月清空两套雨层，并换用可复现的 CC0 室内窗玻璃录音。 |
+| 2026-08-20 | [`bdeb412`](https://github.com/xinchenok/izumi-sagiri-room/commit/bdeb412ad9fba348da71a4e2a5e3f398acbd6bb4) | 通过 PR #9 发布 V12 无地址片段导航与手作纸签，消除 `#living-room` 一类标签和刷新跳转。 |
+| 2026-08-20 | [`af4b8c1`](https://github.com/xinchenok/izumi-sagiri-room/commit/af4b8c11011462318ac325b916805fb569074e4b) | 通过 PR #10 发布 V13 首屏与历史位置修复，让新访客稳定停在门口、旧访客恢复原阅读位置。 |
+| 2026-08-20 | [`3d5382f`](https://github.com/xinchenok/izumi-sagiri-room/commit/3d5382fced63c8941d1aabca71a0afc5771dd35e) | 通过 PR #11 发布 V14 四地点真实现场拟音：十二次物件操作使用十二份不复用的 CC0 实录。 |
+| 2026-08-20 | [`f44943a`](https://github.com/xinchenok/izumi-sagiri-room/commit/f44943abffe88f32b96ee8eede0921cb3f8c3b8d) | 通过 PR #12 发布 V15 窗台无杂音拟音：替换关窗、移纸和窗帘三条来源并裁掉点击前空白。 |
+| 2026-08-20 | [`40924f8`](https://github.com/xinchenok/izumi-sagiri-room/commit/40924f8c1e640f3e9adf1ace4a0e794c295466fb) | 通过 PR #13 发布 V16 完整拜访：导航先开门、秘密环境线索、渐进音频预热、可收起反馈，以及可保存纸条与真实木门轻合的关门结尾。 |
 
 ### 已完成的交付核验
 
@@ -209,6 +215,7 @@ AI 生成的内容经过人工目标约束与浏览器验收；AI 不是素材�
 - PR #2 的远端功能树 `aff11ec9f410997137f08179eff7ea59ce481153` 与本地验收树一致并合并为 `fe27d6f`；正式 Pages 返回 `HTTP 200` 和 `20260813-2`，线上 `index.html`、`styles.css`、`script.js`、字体、三张 V7 衣橱图片与四段 V7 拟音共 11 个关键运行文件均与本地版本 SHA-256 逐字节一致，V7 状态为 `live verified`。
 - V8 发布树共有 215 个受版本控制文件；静态门禁包括 JS / CSS / JSON、114 个本地资源引用、Markdown 内链、UTF-8 与重复 ID，93 张图片和 74 段音频全部解码。十八条房间配音与十四段场景声逐项核对唯一 ID、唯一文件、清单 SHA-256 和时长，日语字幕 173 个实际字符均由本地字体覆盖。Playwright 在桌面、1024px、390px、减少动态和 V6 旧状态下通过，并逐项触发 4 个地点开场、12 个地点事件、2 个天气状态、14 段场景声、两套独立静音与声音失败降级。
 - PR #4 的远端功能树 `f1159e7404b527034208e9ff95dfdf658e236d20` 与本地验收树一致并合并为 `b805201`；正式 Pages 返回 `HTTP 200` 和 `20260813-3`，线上页面三件套、两份音频清单、两套本地字体及全部 V8 配音 / 场景声等 40 个关键运行文件均与本地版本逐字节一致，V8 状态为 `live verified`。
+- PR #13 的远端功能树 `0106d3e49958d68600eb09963113853b366f26b4` 与本地验收树一致并合并为 `40924f8`；正式 Pages 返回缓存标识 `20260820-5`，线上 `index.html`、`styles.css`、`script.js` 与 V16 关门声和本地版本逐字节一致。受控 Chrome 在 1363 × 936 真实点击验证新访客首屏、门外导航先开门、无 hash 落点、秘密点空线索与发现痕迹、反馈收起、四地点事件、纸条抽取 / 复制 / 保存、门板闭合、刷新恢复和零横向溢出；页面自身无控制台错误，V16 状态为 `live verified`。
 
 ## 当前项目结构
 
