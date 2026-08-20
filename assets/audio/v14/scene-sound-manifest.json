@@ -1,0 +1,298 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-08-20",
+  "purpose": "画桌、床边、衣橱与窗台的 12 个操作使用 12 份独立真实现场录音；不使用程序化噪声，不跨事件复用。",
+  "generation": {
+    "tool": "FFmpeg 6.1.1",
+    "source": "Freesound 官方 HQ 预览；全部来源页面标记为 Creative Commons 0",
+    "processing": "按动作截取一次真实表演，65 Hz 高通、16 kHz 低通、I=-18/TP=-2/LRA=5 响度处理、25 ms 淡入、100 ms 淡出",
+    "autoplay": false,
+    "loop": false
+  },
+  "output": {
+    "codec": "MP3",
+    "sample_rate_hz": 48000,
+    "channels": 2,
+    "bitrate_kbps": 192
+  },
+  "sources": [
+    {
+      "id": 370216,
+      "creator": "Euphrosyyn",
+      "title": "SFX_StylusTabletDrawing Pen_DrawingOnTabletSurface.wav",
+      "source_page": "https://freesound.org/s/370216/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/370/370216_5051822-hq.mp3",
+      "retrieved_asset_sha256": "e484647ca7f9f0ba516211ff493d9f70befeb23e767b52e97ced1bf3bc704186",
+      "original_spec": "44.1 kHz / 24-bit / stereo WAV；真实数位笔刮过绘图板的一次动作",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 561017,
+      "creator": "TurboFool",
+      "title": "Sliding Book",
+      "source_page": "https://freesound.org/s/561017/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/561/561017_9160390-hq.mp3",
+      "retrieved_asset_sha256": "5ce06ad27879d0f242ddc13b2d581c78962133d7b1eed4ff164eeede7f5ca1b9",
+      "original_spec": "48 kHz / 32-bit / mono WAV；Blue Snowball 近距录制书本在桌面滑动",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 789629,
+      "creator": "Sadiquecat",
+      "title": "Keychron k10 Enter",
+      "source_page": "https://freesound.org/s/789629/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/789/789629_5287430-hq.mp3",
+      "retrieved_asset_sha256": "d6c152c6f3b698d9874776ef88fb03a16471b1912588d157d5f398023ef7726a",
+      "original_spec": "96 kHz / 24-bit WAV；Zoom H2n XY 模式录制 Keychron K10 的一次 Enter 按键",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 493262,
+      "creator": "Joao_Janz",
+      "title": "Blanket Rustling Movement 1_2",
+      "source_page": "https://freesound.org/s/493262/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/493/493262_9961300-hq.mp3",
+      "retrieved_asset_sha256": "c4abf0138b033e2a47de9021d5a3c894cb558266848c10a94ea089ea4092ec26",
+      "original_spec": "48 kHz / 24-bit / stereo WAV；Tascam DR-40 录制的短被毯折动",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 543573,
+      "creator": "BiancaDrey",
+      "title": "shufflinginbed.wav",
+      "source_page": "https://freesound.org/s/543573/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/543/543573_11124579-hq.mp3",
+      "retrieved_asset_sha256": "e529374fedc7851ee4d8d33ee380722f973e7dba9553ab5e289617eb2e1ed727",
+      "original_spec": "48 kHz / 24-bit / stereo WAV；Zoom H6 与 Rode NTG2 录制的床单和被子移动",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 389799,
+      "creator": "krnash",
+      "title": "Hitting Bed with Pillow.wav",
+      "source_page": "https://freesound.org/s/389799/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/389/389799_6136319-hq.mp3",
+      "retrieved_asset_sha256": "ad103c96f93235b013ddd087ee6f7911e6674ee1b6b4d33ffcdbac9580119d2c",
+      "original_spec": "48 kHz / 24-bit / stereo WAV；枕头落在床面的多次真实录音",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 764474,
+      "creator": "CarikaDarvall",
+      "title": "Hanging clothes",
+      "source_page": "https://freesound.org/s/764474/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/764/764474_15688439-hq.mp3",
+      "retrieved_asset_sha256": "36b1de507a39f59bee9eebb13b10a60b3fae3f4e5934dc5c5c820b8d77bca79d",
+      "original_spec": "48 kHz / 24-bit / stereo WAV；衣物实际挂入衣橱",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 701647,
+      "creator": "IENBA",
+      "title": "Fabric Flapping",
+      "source_page": "https://freesound.org/s/701647/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/701/701647_9616576-hq.mp3",
+      "retrieved_asset_sha256": "6c23355114c3d12d4c785acbfb10f7e5c854ddeb3bd28527a49289da6907a543",
+      "original_spec": "48 kHz / 24-bit / stereo WAV；Zoom H4n 与 Sennheiser MKH50 录制的多种布料移动",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 577888,
+      "creator": "Breezy2000uk",
+      "title": "Clothes Hangers on a Metal Rail.wav",
+      "source_page": "https://freesound.org/s/577888/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/577/577888_2626411-hq.mp3",
+      "retrieved_asset_sha256": "c53d223d9b04f4619f407f7f2fd16271eb30aded0e7a9ad18430c65cbdf889a0",
+      "original_spec": "48 kHz / 24-bit / stereo WAV；带衣物与空衣架在金属轨道上的多次移动",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 776184,
+      "creator": "soundandmelodies",
+      "title": "SFX-Window,Closing",
+      "source_page": "https://freesound.org/s/776184/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/776/776184_10924423-hq.mp3",
+      "retrieved_asset_sha256": "adf13f809bec1a74ef7b96b8113695bbfc1fdf1122a1fb4e6bc2f87ecd8e317e",
+      "original_spec": "48 kHz / 24-bit / stereo WAV；真实公寓旧窗关闭",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 46631,
+      "creator": "123jorre456",
+      "title": "sliding paper on table.wav",
+      "source_page": "https://freesound.org/s/46631/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/46/46631_326544-hq.mp3",
+      "retrieved_asset_sha256": "c2209a62a13572dc8c4fe50223ba110590fbd30bf5dc74e01e0eb605256a7c0a",
+      "original_spec": "48 kHz / 16-bit / stereo WAV；纸张沿桌面移动的多次真实录音",
+      "license": "CC0 1.0"
+    },
+    {
+      "id": 708206,
+      "creator": "Kate_is_yellow",
+      "title": "Opening and Closing of Curtains",
+      "source_page": "https://freesound.org/s/708206/",
+      "retrieved_asset": "https://cdn.freesound.org/previews/708/708206_14710317-hq.mp3",
+      "retrieved_asset_sha256": "3acb6cc6534869793f7f6df38c93d012c21fe03f93b5143202b330f0125c6387",
+      "original_spec": "44.1 kHz / 24-bit / stereo WAV；Zoom H6 枪式麦克风录制厚窗帘在塑料轨道上收拢",
+      "license": "CC0 1.0"
+    }
+  ],
+  "files": [
+    {
+      "scene": "画桌·数位笔补线",
+      "audio": "desk-stylus-line.mp3",
+      "source_id": 370216,
+      "source_page": "https://freesound.org/s/370216/",
+      "source_preview_sha256": "e484647ca7f9f0ba516211ff493d9f70befeb23e767b52e97ced1bf3bc704186",
+      "trim_start_seconds": 2.78,
+      "trim_duration_seconds": 1.8,
+      "duration_seconds": 1.824,
+      "sha256": "0817cc4a10dd661ba96560b7773bccecdc1a1ad388cbad87cd6ee3d04cdde436",
+      "integrated_lufs": -18.2,
+      "true_peak_dbfs": -7.7
+    },
+    {
+      "scene": "画桌·转过数位板",
+      "audio": "desk-tablet-turn.mp3",
+      "source_id": 561017,
+      "source_page": "https://freesound.org/s/561017/",
+      "source_preview_sha256": "5ce06ad27879d0f242ddc13b2d581c78962133d7b1eed4ff164eeede7f5ca1b9",
+      "trim_start_seconds": 4.14,
+      "trim_duration_seconds": 1.08,
+      "duration_seconds": 1.104,
+      "sha256": "b80141d3927574e52cf25335a749f02a39efeff4174a4db1acde1a6961a5edaa",
+      "integrated_lufs": -26.1,
+      "true_peak_dbfs": -5.2
+    },
+    {
+      "scene": "画桌·按键保存",
+      "audio": "desk-save-key.mp3",
+      "source_id": 789629,
+      "source_page": "https://freesound.org/s/789629/",
+      "source_preview_sha256": "d6c152c6f3b698d9874776ef88fb03a16471b1912588d157d5f398023ef7726a",
+      "trim_start_seconds": 0,
+      "trim_duration_seconds": 0.6,
+      "duration_seconds": 0.6,
+      "sha256": "b9cfe8ea8e288cf3e69ad640a3cf3666d6561ca4bd6da5d4b11cea4b799d7c4c",
+      "integrated_lufs": -26.6,
+      "true_peak_dbfs": -4.9
+    },
+    {
+      "scene": "床边·收回毯角",
+      "audio": "bed-blanket-fold.mp3",
+      "source_id": 493262,
+      "source_page": "https://freesound.org/s/493262/",
+      "source_preview_sha256": "c4abf0138b033e2a47de9021d5a3c894cb558266848c10a94ea089ea4092ec26",
+      "trim_start_seconds": 0.45,
+      "trim_duration_seconds": 1.72,
+      "duration_seconds": 1.752,
+      "sha256": "f862eb0c9431437f0229f7e508a18e920d3407b4387201400a4344017775613f",
+      "integrated_lufs": -18.2,
+      "true_peak_dbfs": -4.8
+    },
+    {
+      "scene": "床边·收起被窝帐篷",
+      "audio": "bed-fort-rustle.mp3",
+      "source_id": 543573,
+      "source_page": "https://freesound.org/s/543573/",
+      "source_preview_sha256": "e529374fedc7851ee4d8d33ee380722f973e7dba9553ab5e289617eb2e1ed727",
+      "trim_start_seconds": 1.6,
+      "trim_duration_seconds": 2.9,
+      "duration_seconds": 2.928,
+      "sha256": "7618da7052529d2f73a3e54bce5dd7cef716acc0d4ab08ade365661aa22c255b",
+      "integrated_lufs": -18.6,
+      "true_peak_dbfs": -2.3
+    },
+    {
+      "scene": "床边·推来靠枕",
+      "audio": "bed-pillow-pat.mp3",
+      "source_id": 389799,
+      "source_page": "https://freesound.org/s/389799/",
+      "source_preview_sha256": "ad103c96f93235b013ddd087ee6f7911e6674ee1b6b4d33ffcdbac9580119d2c",
+      "trim_start_seconds": 2.55,
+      "trim_duration_seconds": 1.25,
+      "duration_seconds": 1.296,
+      "sha256": "09529cc0ee7935dffa0a435a49d24759fa2d2a13f8851c24b0e8b437dea5cfd6",
+      "integrated_lufs": -23,
+      "true_peak_dbfs": -2.3
+    },
+    {
+      "scene": "衣橱·扶稳衣架",
+      "audio": "wardrobe-hanger-settle.mp3",
+      "source_id": 764474,
+      "source_page": "https://freesound.org/s/764474/",
+      "source_preview_sha256": "36b1de507a39f59bee9eebb13b10a60b3fae3f4e5934dc5c5c820b8d77bca79d",
+      "trim_start_seconds": 2.7,
+      "trim_duration_seconds": 0.75,
+      "duration_seconds": 0.792,
+      "sha256": "842dffdbc8d48ad0346947cec2342b05a4e8b738ddf560b3414d065f8366f58f",
+      "integrated_lufs": -27.3,
+      "true_peak_dbfs": -2.3
+    },
+    {
+      "scene": "衣橱·收起猫耳毯",
+      "audio": "wardrobe-fabric-swish.mp3",
+      "source_id": 701647,
+      "source_page": "https://freesound.org/s/701647/",
+      "source_preview_sha256": "6c23355114c3d12d4c785acbfb10f7e5c854ddeb3bd28527a49289da6907a543",
+      "trim_start_seconds": 8.72,
+      "trim_duration_seconds": 2,
+      "duration_seconds": 2.04,
+      "sha256": "50d62a80c413409dab41bd4c8c4da4b6c100649bcbef80ccbccc3a41aa471ebe",
+      "integrated_lufs": -21.9,
+      "true_peak_dbfs": -2.4
+    },
+    {
+      "scene": "衣橱·并排举起两套衣服",
+      "audio": "wardrobe-choice.mp3",
+      "source_id": 577888,
+      "source_page": "https://freesound.org/s/577888/",
+      "source_preview_sha256": "c53d223d9b04f4619f407f7f2fd16271eb30aded0e7a9ad18430c65cbdf889a0",
+      "trim_start_seconds": 5.82,
+      "trim_duration_seconds": 1.56,
+      "duration_seconds": 1.584,
+      "sha256": "47cea585e87646385f13c3f302a95bdf7af6d1691b5b479c466689d49d5fcd90",
+      "integrated_lufs": -28.2,
+      "true_peak_dbfs": -2.2
+    },
+    {
+      "scene": "窗台·关小窗缝",
+      "audio": "window-latch-close.mp3",
+      "source_id": 776184,
+      "source_page": "https://freesound.org/s/776184/",
+      "source_preview_sha256": "adf13f809bec1a74ef7b96b8113695bbfc1fdf1122a1fb4e6bc2f87ecd8e317e",
+      "trim_start_seconds": 1,
+      "trim_duration_seconds": 1.42,
+      "duration_seconds": 1.464,
+      "sha256": "e8dd15c80da94b98acd7d1b9e7fb0f707007140ccdbb30f98bc094fc64e8ed0e",
+      "integrated_lufs": -18.2,
+      "true_peak_dbfs": -4.4
+    },
+    {
+      "scene": "窗台·摆好画纸",
+      "audio": "window-paper-slide.mp3",
+      "source_id": 46631,
+      "source_page": "https://freesound.org/s/46631/",
+      "source_preview_sha256": "c2209a62a13572dc8c4fe50223ba110590fbd30bf5dc74e01e0eb605256a7c0a",
+      "trim_start_seconds": 6.85,
+      "trim_duration_seconds": 0.84,
+      "duration_seconds": 0.864,
+      "sha256": "741845101f9227950e3d5e33bb47d6b20c2d50221ccc4a41b673b5fb2c6687fc",
+      "integrated_lufs": -18.1,
+      "true_peak_dbfs": -6.5
+    },
+    {
+      "scene": "窗台·合上窗帘",
+      "audio": "window-curtain-close.mp3",
+      "source_id": 708206,
+      "source_page": "https://freesound.org/s/708206/",
+      "source_preview_sha256": "3acb6cc6534869793f7f6df38c93d012c21fe03f93b5143202b330f0125c6387",
+      "trim_start_seconds": 10.2,
+      "trim_duration_seconds": 0.92,
+      "duration_seconds": 0.96,
+      "sha256": "175bf71ca598604b9d0109b3a03625091edd9b3ac5729d50573ab5c793cf3edb",
+      "integrated_lufs": -18.2,
+      "true_peak_dbfs": -6.8
+    }
+  ]
+}
