@@ -2707,7 +2707,7 @@ function buildGalleryThumbs() {
   elements.galleryThumbs.append(fragment);
 }
 
-function applyGallery(index) {
+function applyGallery(index, animateThumbnail = true) {
   const item = CONTENT.gallery[index];
   const chapter = galleryChapterFor(index);
   elements.galleryMainImage.src = item.image;
@@ -2725,7 +2725,13 @@ function applyGallery(index) {
     button.setAttribute("aria-current", String(button.dataset.chapter === chapter.id));
   });
   const active = elements.galleryThumbs.querySelector(`[data-gallery-index="${index}"]`);
-  active?.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "nearest", inline: "center" });
+  if (active) {
+    const centeredLeft = active.offsetLeft - (elements.galleryThumbs.clientWidth - active.offsetWidth) / 2;
+    elements.galleryThumbs.scrollTo({
+      left: Math.max(0, centeredLeft),
+      behavior: reducedMotion.matches || !animateThumbnail ? "auto" : "smooth"
+    });
+  }
   if (elements.galleryLightbox.open) applyLightbox(index);
 }
 
@@ -3010,6 +3016,10 @@ function setupPageNavigation() {
   window.addEventListener("scroll", queueCurrentSectionUpdate, { passive: true });
   window.addEventListener("resize", queueCurrentSectionUpdate);
   window.addEventListener("pageshow", () => {
+    if (window.__sagiriDiscardedHash) {
+      window.__sagiriDiscardedHash = false;
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
     clearLocationHash();
     queueCurrentSectionUpdate();
   });
@@ -3107,7 +3117,7 @@ refreshVoiceControls();
 buildGalleryChapters();
 buildGalleryThumbs();
 applyOutfit(state.outfit);
-applyGallery(galleryPosition);
+applyGallery(galleryPosition, false);
 refreshSecrets();
 setupSecretHints();
 setupLivingRoom();

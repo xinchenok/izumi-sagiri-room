@@ -8,10 +8,11 @@
   <title>和泉纱雾的房门里</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23573A3E'/%3E%3Cpath d='M18 14h30v40H18z' fill='%23D88CA2'/%3E%3Ccircle cx='40' cy='35' r='3' fill='%23F7D46A'/%3E%3Cpath d='m23 19 5 4 5-4 5 4 5-4v10H23z' fill='%23EAF4F5'/%3E%3C/svg%3E">
   <link rel="preload" href="assets/v5/hero-peek.webp" as="image" type="image/webp" imagesrcset="assets/v5/hero-peek-560.webp 560w, assets/v5/hero-peek.webp 1122w" imagesizes="(max-width: 760px) calc(100vw - 1.6rem), (max-width: 1024px) 78vw, 820px">
-  <link rel="stylesheet" href="styles.css?v=20260820-1">
+  <link rel="stylesheet" href="styles.css?v=20260820-2">
   <script>
-    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-    if (window.location.hash) {
+    if ("scrollRestoration" in history) history.scrollRestoration = "auto";
+    window.__sagiriDiscardedHash = Boolean(window.location.hash);
+    if (window.__sagiriDiscardedHash) {
       history.replaceState(history.state, "", window.location.href.split("#")[0]);
     }
   </script>
@@ -22,8 +23,8 @@
   OWN-WORLD: 草莓粉墙纸、银蓝月光、薄荷文具、可可木门、奶油稿纸与房间木轨；控件必须像房间物件或纸面标记。
   STORY: 访客在门口被偷看，获准进入后沿木轨靠近画桌、床边、衣橱和窗台，再陪她画画、翻画册，最后收到晚安纸条。
   FIRST VIEWPORT: 半掩木门占据左侧前景，纱雾从门缝握边偷看；手写房间牌贴在门上，敲门按钮位于门把下方，台词在右下稿纸上。
-  FORM: code-led 连续卧室体验；seed key sagiri-living-room-v12-clean-navigation；签名互动是沿木轨或横滑时，取景、稿纸、物件、专属角色语音和独立场景声整体切换。
-  FINISH: 2026-08-20 clean-navigation polish；页内移动不写入地址片段，刷新与再次进入保持稳定，纸签导航延续房门手作感。
+  FORM: code-led 连续卧室体验；seed key sagiri-living-room-v13-scroll-stability；签名互动是沿木轨或横滑时，取景、稿纸、物件、专属角色语音和独立场景声整体切换。
+  FINISH: 2026-08-20 scroll-stability fix；新访客停在房门首屏，历史返回恢复原位置，画册初始化不再牵动页面纵向滚动。
   -->
   <a class="skip-link" href="#main-content">跳到主要内容</a>
 
@@ -482,6 +483,6 @@
   <noscript>
     <div class="noscript-note">JavaScript 未启用：你仍然可以阅读角色介绍与查看基础插画；敲门、换装、语音和秘密探索需要启用 JavaScript。</div>
   </noscript>
-  <script src="script.js?v=20260820-1"></script>
+  <script src="script.js?v=20260820-2"></script>
 </body>
 </html>
