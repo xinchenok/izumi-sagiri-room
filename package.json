@@ -1,0 +1,17 @@
+{
+  "name": "izumi-sagiri-room",
+  "version": "17.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "verify": "node tools/verify-site.mjs",
+    "test:e2e": "playwright test",
+    "test": "npm run verify && npm run test:e2e"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

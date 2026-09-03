@@ -502,6 +502,16 @@ const CONTENT = {
         alt: "纱雾露出害羞又有一点得意的表情，把刚完成的小猫画推到桌边"
       }
     },
+    peekReactions: [
+      { expression: "startled", label: "偷看被抓到了", text: "咿——！这、这张还没画完，不许突然凑过来。" },
+      { expression: "shy", label: "只露出一小角", text: "……只能看这里。再多一点就要等我画完。" },
+      { expression: "proud", label: "她还是推近了一点", text: "都说了没画完……不过，这根线可以先给你看。" }
+    ],
+    quietBeats: [
+      { at: 20000, time: "安静地待了二十秒", title: "她重新描细了一根线。", line: "袖口擦过数位板边缘。她没有抬头，只把旁边那把椅子又往外挪了半格。", frame: "focus" },
+      { at: 45000, time: "房间安静了四十五秒", title: "她终于确认你还在。", line: "“……你还在啊。”声音很轻，像是怕一说大声，这段安静就会结束。", frame: "shy" },
+      { at: 75000, time: "一起待过一分多钟", title: "画稿被悄悄推近了一点。", line: "她把屏幕转过来一点点，又立刻盯回笔尖：“接下来画什么……你可以帮我选。”", frame: "shy" }
+    ],
     presence: {
       quiet: {
         label: "安静坐在旁边",
@@ -792,9 +802,9 @@ const CONTENT = {
         deepLabel: "再靠近画桌一点",
         expression: "proud",
         moments: [
-          { line: "她沿着刚才犹豫的轮廓补完最后一笔，肩膀终于松下来一点。", voice: "room-desk-pencil", sound: "assets/audio/v14/desk-stylus-line.mp3" },
-          { line: "她把数位板转过来几度，只够你看见新画好的眼睛。", voice: "room-desk-eye", sound: "assets/audio/v14/desk-tablet-turn.mp3" },
-          { line: "保存提示轻轻闪了一下，她才发现你一直安静坐在旁边。", voice: "room-desk-stay", sound: "assets/audio/v14/desk-save-key.mp3" }
+          { line: "她沿着刚才犹豫的轮廓补完最后一笔，肩膀终于松下来一点。", memory: "等她补完了最后一根线", voice: "room-desk-pencil", sound: "assets/audio/v14/desk-stylus-line.mp3" },
+          { line: "她把数位板转过来几度，只够你看见新画好的眼睛。", memory: "只看了她肯转过来的那一点画稿", voice: "room-desk-eye", sound: "assets/audio/v14/desk-tablet-turn.mp3" },
+          { line: "保存提示轻轻闪了一下，她才发现你一直安静坐在旁边。", memory: "一直等到她按下保存键", voice: "room-desk-stay", sound: "assets/audio/v14/desk-save-key.mp3" }
         ]
       },
       bed: {
@@ -821,6 +831,7 @@ const CONTENT = {
         moments: [
           {
             line: "毯角回到脚边，她愣了一下，又悄悄往旁边让出半个靠枕。",
+            memory: "替她接住了滑下来的毯角",
             voice: "room-bed-blanket",
             sound: "assets/audio/v14/bed-blanket-fold.mp3",
             frame: {
@@ -831,8 +842,8 @@ const CONTENT = {
               alt: "纱雾躲进被子搭成的小帐篷，从帘边害羞地递出一张小猫速写"
             }
           },
-          { line: "她把小帐篷收回床角，数位板又稳稳落在膝盖上。", voice: "room-bed-fort", sound: "assets/audio/v14/bed-fort-rustle.mp3", frame: "base" },
-          { line: "最软的猫咪靠枕被推到你这边一点，她本人却迅速躲回袖口后。", voice: "room-bed-pillow", sound: "assets/audio/v14/bed-pillow-pat.mp3" }
+          { line: "她把小帐篷收回床角，数位板又稳稳落在膝盖上。", memory: "帮她把被窝小帐篷收回了床角", voice: "room-bed-fort", sound: "assets/audio/v14/bed-fort-rustle.mp3", frame: "base" },
+          { line: "最软的猫咪靠枕被推到你这边一点，她本人却迅速躲回袖口后。", memory: "接住了她推过来的猫咪靠枕", voice: "room-bed-pillow", sound: "assets/audio/v14/bed-pillow-pat.mp3" }
         ]
       },
       wardrobe: {
@@ -857,9 +868,9 @@ const CONTENT = {
         deepLabel: "陪她认真选一套",
         expression: "startled",
         moments: [
-          { line: "木衣架终于安静下来，她把差点滑落的袖子重新挂好。", voice: "room-wardrobe-hanger", sound: "assets/audio/v14/wardrobe-hanger-settle.mp3" },
-          { line: "她把猫耳毯往身后藏了藏，露出来的耳尖还是轻轻晃了一下。", voice: "room-wardrobe-hood", sound: "assets/audio/v14/wardrobe-fabric-swish.mp3" },
-          { line: "两套衣服又被并排举起来，这次她终于把选择权分给你一点。", voice: "room-wardrobe-choice", sound: "assets/audio/v14/wardrobe-choice.mp3" }
+          { line: "木衣架终于安静下来，她把差点滑落的袖子重新挂好。", memory: "替她扶稳了差点晃落的衣架", voice: "room-wardrobe-hanger", sound: "assets/audio/v14/wardrobe-hanger-settle.mp3" },
+          { line: "她把猫耳毯往身后藏了藏，露出来的耳尖还是轻轻晃了一下。", memory: "发现了她藏到身后的猫耳毯", voice: "room-wardrobe-hood", sound: "assets/audio/v14/wardrobe-fabric-swish.mp3" },
+          { line: "两套衣服又被并排举起来，这次她终于把选择权分给你一点。", memory: "认真看完了她举起来的两套衣服", voice: "room-wardrobe-choice", sound: "assets/audio/v14/wardrobe-choice.mp3" }
         ]
       },
       window: {
@@ -884,9 +895,9 @@ const CONTENT = {
         deepLabel: "陪她收好今天",
         expression: "shy",
         moments: [
-          { line: "窗缝窄了一点，雨声变轻，玩偶耳朵上的月光却还留着。", voice: "room-window-latch", sound: "assets/audio/v14/window-latch-slide-clean.mp3" },
-          { line: "她把上次那张小猫画靠在窗边，让画里的月亮和外面排在一起。", voice: "room-window-moon", sound: "assets/audio/v14/window-paper-slide-clean.mp3" },
-          { line: "窗帘安静落下，她在合上的画册上轻轻拍了两下。", voice: "room-window-close", sound: "assets/audio/v14/window-curtain-close-clean.mp3" }
+          { line: "窗缝窄了一点，雨声变轻，玩偶耳朵上的月光却还留着。", memory: "替她把漏进雨声的窗缝关小了一点", voice: "room-window-latch", sound: "assets/audio/v14/window-latch-slide-clean.mp3" },
+          { line: "她把上次那张小猫画靠在窗边，让画里的月亮和外面排在一起。", memory: "陪她把画里的月亮和窗外排在一起", voice: "room-window-moon", sound: "assets/audio/v14/window-paper-slide-clean.mp3" },
+          { line: "窗帘安静落下，她在合上的画册上轻轻拍了两下。", memory: "陪她把窗帘和今天一起收好了", voice: "room-window-close", sound: "assets/audio/v14/window-curtain-close-clean.mp3" }
         ]
       }
     }
@@ -933,7 +944,7 @@ function validLivingWeather(value) {
 }
 
 function validFortune(value) {
-  return typeof value === "string" && CONTENT.fortunes.includes(value) ? value : "";
+  return typeof value === "string" && value.trim().length > 0 && value.length <= 180 ? value.trim() : "";
 }
 
 function validSharedDrawing(value) {
@@ -952,6 +963,53 @@ function validSharedDrawing(value) {
   };
 }
 
+function validLastRoomMemory(value) {
+  if (!value || typeof value !== "object") return null;
+  const place = CONTENT.livingRoom.places[value.place];
+  const momentIndex = Number.isInteger(value.momentIndex) ? value.momentIndex : -1;
+  if (!place || !place.moments[momentIndex]) return null;
+  return {
+    place: value.place,
+    momentIndex,
+    rememberedAt: Number.isFinite(value.rememberedAt) ? value.rememberedAt : 0
+  };
+}
+
+function validLastOutfitMemory(value) {
+  if (!value || typeof value !== "object" || !validOutfit(value.outfit)) return null;
+  return {
+    outfit: value.outfit,
+    rememberedAt: Number.isFinite(value.rememberedAt) ? value.rememberedAt : 0
+  };
+}
+
+function validDrawingDraft(value) {
+  if (!value || typeof value !== "object") return null;
+  const choices = value.choices && typeof value.choices === "object" ? value.choices : {};
+  const normalized = {
+    presence: Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.presence, choices.presence) ? choices.presence : "",
+    subject: Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.subjects, choices.subject) ? choices.subject : "",
+    palette: Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.palettes, choices.palette) ? choices.palette : "",
+    praise: Object.prototype.hasOwnProperty.call(CONTENT.drawingStory.praises, choices.praise) ? choices.praise : ""
+  };
+  const keys = ["presence", "subject", "palette", "praise"];
+  const firstMissing = keys.findIndex((key) => !normalized[key]);
+  const requestedStep = Number.isInteger(value.step) ? value.step : Math.max(0, firstMissing);
+  const step = Math.min(3, Math.max(0, firstMissing < 0 ? requestedStep : Math.min(requestedStep, firstMissing)));
+  const quietElapsedMs = Number.isFinite(value.quietElapsedMs)
+    ? Math.min(75000, Math.max(0, value.quietElapsedMs))
+    : 0;
+  const peekCount = Number.isInteger(value.peekCount) ? Math.min(3, Math.max(0, value.peekCount)) : 0;
+  return {
+    choices: normalized,
+    step,
+    mode: value.mode === "quiet" && normalized.presence === "quiet" ? "quiet" : "choices",
+    quietElapsedMs,
+    peekCount,
+    updatedAt: Number.isFinite(value.updatedAt) ? value.updatedAt : 0
+  };
+}
+
 function readState() {
   const fallback = {
     outfit: "home",
@@ -963,6 +1021,9 @@ function readState() {
     voiceVolume: 0.85,
     voiceMuted: false,
     sharedDrawing: null,
+    drawingDraft: null,
+    lastRoomMemory: null,
+    lastOutfitMemory: null,
     livingPlace: "desk",
     livingWeather: "rain",
     roomSoundMuted: false,
@@ -982,6 +1043,9 @@ function readState() {
         voiceVolume: clampVolume(current.voiceVolume),
         voiceMuted: current.voiceMuted === true,
         sharedDrawing: validSharedDrawing(current.sharedDrawing),
+        drawingDraft: validDrawingDraft(current.drawingDraft),
+        lastRoomMemory: validLastRoomMemory(current.lastRoomMemory),
+        lastOutfitMemory: validLastOutfitMemory(current.lastOutfitMemory),
         livingPlace: validLivingPlace(current.livingPlace),
         livingWeather: validLivingWeather(current.livingWeather),
         roomSoundMuted: current.roomSoundMuted === true,
@@ -1002,6 +1066,9 @@ function readState() {
         voiceVolume: 0.85,
         voiceMuted: false,
         sharedDrawing: null,
+        drawingDraft: null,
+        lastRoomMemory: null,
+        lastOutfitMemory: null,
         livingPlace: "desk",
         livingWeather: "rain",
         roomSoundMuted: false,
@@ -1031,6 +1098,9 @@ function saveState() {
       voiceVolume: state.voiceVolume,
       voiceMuted: state.voiceMuted,
       sharedDrawing: state.sharedDrawing,
+      drawingDraft: state.drawingDraft,
+      lastRoomMemory: state.lastRoomMemory,
+      lastOutfitMemory: state.lastOutfitMemory,
       livingPlace: state.livingPlace,
       livingWeather: state.livingWeather,
       roomSoundMuted: state.roomSoundMuted,
@@ -1080,6 +1150,7 @@ const elements = {
   doorStatus: document.querySelector("#doorStatus"),
   doorHanger: document.querySelector(".door-hanger"),
   visitNote: document.querySelector("#visitNote"),
+  doorMemorySlip: document.querySelector("#doorMemorySlip"),
   heroCharacter: document.querySelector("#heroCharacter"),
   feedbackDock: document.querySelector("#feedbackDock"),
   feedbackCollapseButton: document.querySelector("#feedbackCollapseButton"),
@@ -1116,6 +1187,10 @@ const elements = {
   studioRainCanvas: document.querySelector("#studioRainCanvas"),
   storyStageLabel: document.querySelector("#storyStageLabel"),
   storyStageNote: document.querySelector("#storyStageNote"),
+  storyPeek: document.querySelector("#storyPeek"),
+  storyPeekPaper: document.querySelector("#storyPeekPaper"),
+  storyPeekImage: document.querySelector("#storyPeekImage"),
+  storyPeekButton: document.querySelector("#storyPeekButton"),
   storyBeat: document.querySelector("#storyBeat"),
   storyPrompt: document.querySelector("#storyPrompt"),
   storyLine: document.querySelector("#storyLine"),
@@ -1130,6 +1205,12 @@ const elements = {
   storyMemoryImage: document.querySelector("#storyMemoryImage"),
   storyMemoryTitle: document.querySelector("#storyMemoryTitle"),
   storyMemoryText: document.querySelector("#storyMemoryText"),
+  quietCompanion: document.querySelector("#quietCompanion"),
+  quietTime: document.querySelector("#quietTime"),
+  quietCompanionTitle: document.querySelector("#quietCompanionTitle"),
+  quietCompanionLine: document.querySelector("#quietCompanionLine"),
+  quietContinue: document.querySelector("#quietContinue"),
+  quietBeats: [...document.querySelectorAll("[data-quiet-beat]")],
   livingRoom: document.querySelector("#living-room"),
   livingRoomStage: document.querySelector("#livingRoomStage"),
   livingRoomView: document.querySelector(".living-room-view"),
@@ -1202,6 +1283,14 @@ let storyFrameSequence = 0;
 let storyBlinkTimer = 0;
 let storyInView = false;
 let storyDraft = { presence: "", subject: "", palette: "", praise: "" };
+let storyPeekSequence = 0;
+let storyPeekCount = 0;
+let quietTimer = 0;
+let quietActive = false;
+let quietElapsedMs = 0;
+let quietLastTickAt = 0;
+let quietRenderedBeat = -1;
+let quietSavedBucket = -1;
 let livingFrameSequence = 0;
 let livingAutonomyTimer = 0;
 let livingMomentTimer = 0;
@@ -1592,6 +1681,94 @@ function applyVisitStage() {
   elements.doorStatus.querySelector("strong").textContent = visitStage.quote;
   elements.reactionText.textContent = visitStage.reaction;
   elements.secretMessageText.textContent = visitStage.secretMessage;
+  refreshDoorMemory();
+}
+
+function rememberedRoomMoment(value = state.lastRoomMemory) {
+  const memory = validLastRoomMemory(value);
+  if (!memory) return null;
+  const place = CONTENT.livingRoom.places[memory.place];
+  return { ...memory, place, moment: place.moments[memory.momentIndex] };
+}
+
+function latestVisitMemory() {
+  const candidates = [];
+  if (state.keptFortune) candidates.push({ type: "fortune", at: state.keptFortuneAt || 0 });
+  const drawing = validSharedDrawing(state.sharedDrawing);
+  if (drawing) candidates.push({ type: "drawing", at: drawing.completedAt || 0 });
+  const room = rememberedRoomMoment();
+  if (room) candidates.push({ type: "room", at: room.rememberedAt || 0 });
+  const outfit = validLastOutfitMemory(state.lastOutfitMemory);
+  if (outfit) candidates.push({ type: "outfit", at: outfit.rememberedAt || 0 });
+  return candidates.sort((first, second) => second.at - first.at)[0] || null;
+}
+
+function buildPersonalizedFortune() {
+  const visitStartedAt = state.lastVisitAt || 0;
+  const savedDrawing = validSharedDrawing(state.sharedDrawing);
+  const savedRoom = rememberedRoomMoment();
+  const savedOutfit = validLastOutfitMemory(state.lastOutfitMemory);
+  const drawing = savedDrawing && savedDrawing.completedAt >= visitStartedAt ? savedDrawing : null;
+  const room = savedRoom && savedRoom.rememberedAt >= visitStartedAt ? savedRoom : null;
+  const outfitMemory = savedOutfit && savedOutfit.rememberedAt >= visitStartedAt ? savedOutfit : null;
+  if (drawing && room) {
+    const subject = CONTENT.drawingStory.subjects[drawing.subject];
+    const praise = CONTENT.drawingStory.praises[drawing.praise];
+    return `你${room.moment.memory}，还说${praise.memory}。那张${subject.label}……我会好好夹在画桌边。`;
+  }
+  if (drawing) {
+    const subject = CONTENT.drawingStory.subjects[drawing.subject];
+    const praise = CONTENT.drawingStory.praises[drawing.praise];
+    return `那张${subject.label}还夹在画桌边。你说${praise.memory}……我没有忘。`;
+  }
+  if (room) return `上次你${room.moment.memory}。今天也谢谢你，没有弄出很大的声音。`;
+  if (outfitMemory) {
+    const outfit = CONTENT.outfits[outfitMemory.outfit];
+    return `你替我选的${outfit.name}还放在最顺手的地方。下次……也可以再帮我看一眼。`;
+  }
+  const latest = latestVisitMemory();
+  if (latest?.type === "drawing" && savedDrawing) {
+    return `上次那张${CONTENT.drawingStory.subjects[savedDrawing.subject].label}还在。今晚，也可以再慢慢画一张。`;
+  }
+  if (latest?.type === "room" && savedRoom) return `我还记得你${savedRoom.moment.memory}。下次，也不用站得那么远。`;
+  if (latest?.type === "outfit" && savedOutfit) return `上次选好的${CONTENT.outfits[savedOutfit.outfit].name}还放在这里。谢谢你有认真看。`;
+  if (latest?.type === "fortune" && state.keptFortune) return state.keptFortune;
+  return CONTENT.fortunes[0];
+}
+
+function refreshDoorMemory() {
+  const memory = latestVisitMemory();
+  elements.doorMemorySlip.hidden = !memory;
+  if (!memory) return;
+  const labels = {
+    fortune: "上次收好的纸条，还夹在这里",
+    drawing: "上次一起画的那张，还好好收着",
+    room: "她好像记得上次那件小事",
+    outfit: state.lastOutfitMemory
+      ? `上次选的${CONTENT.outfits[state.lastOutfitMemory.outfit].name}，她没有换回去`
+      : "上次选好的衣服，她没有换回去"
+  };
+  const label = labels[memory.type];
+  elements.doorMemorySlip.querySelector("span").textContent = label;
+}
+
+function showDoorMemory() {
+  const latest = latestVisitMemory();
+  if (!latest) return;
+  const roomMemory = rememberedRoomMoment();
+  const drawing = validSharedDrawing(state.sharedDrawing);
+  const outfitMemory = validLastOutfitMemory(state.lastOutfitMemory);
+  let line = "";
+  if (latest.type === "fortune") line = state.keptFortune;
+  if (latest.type === "drawing" && drawing) {
+    line = `上次那张${CONTENT.drawingStory.subjects[drawing.subject].label}……我有好好收起来。`;
+  }
+  if (latest.type === "room" && roomMemory) line = `上次你${roomMemory.moment.memory}。我没有忘记。`;
+  if (latest.type === "outfit" && outfitMemory) line = `上次选的${CONTENT.outfits[outfitMemory.outfit].name}……今天也放在最顺手的地方。`;
+  if (!line) return;
+  elements.doorStatus.querySelector("span").textContent = "门牌下面露出一小截熟悉的纸角。";
+  elements.doorStatus.querySelector("strong").textContent = `“${line}”`;
+  updateReaction({ expression: "shy", label: "上次留下的纸角", text: "我、我只是还没来得及收进去。" }, false);
 }
 
 function sprinkle(origin) {
@@ -1800,7 +1977,10 @@ function applyLivingPlace(key) {
   elements.livingRoomStage.dataset.place = key;
   elements.livingRoomStage.classList.remove("is-changing", "is-moment", "is-autonomous", "is-image-missing");
   elements.livingRoomCaption.textContent = place.label;
-  elements.livingRoomAmbient.textContent = `${place.ambient[0]} ${phase.note}`;
+  const memory = rememberedRoomMoment();
+  elements.livingRoomAmbient.textContent = memory?.place === place
+    ? `上次你${memory.moment.memory}。${phase.note}`
+    : `${place.ambient[0]} ${phase.note}`;
   elements.livingPlaceTitle.textContent = place.title;
   elements.livingPlaceLine.textContent = place.line;
   elements.livingPlaceQuote.textContent = place.quote;
@@ -1899,6 +2079,14 @@ function runLivingMoment() {
   }
   playRoomFx(moment.sound);
   playLivingVoice(moment.voice);
+  state.lastRoomMemory = {
+    place: key,
+    momentIndex: index % place.moments.length,
+    rememberedAt: Date.now()
+  };
+  saveState();
+  refreshDoorMemory();
+  refreshPersonalizedFortune();
   elements.livingRoomStatus.textContent = `${place.label}：${momentLine}`;
   livingMomentTimer = window.setTimeout(() => {
     elements.livingRoomStage.classList.remove("is-moment");
@@ -2307,7 +2495,10 @@ async function switchOutfit(key, announce = true) {
     if (sequence !== outfitSequence) return;
     applyOutfit(key);
     state.outfit = key;
+    state.lastOutfitMemory = { outfit: key, rememberedAt: Date.now() };
     saveState();
+    refreshDoorMemory();
+    refreshPersonalizedFortune();
     preloadOutfitNeighbors(key);
     if (announce) {
       updateReaction({ expression: outfit.expression, label: `换上 · ${outfit.name}`, text: outfit.reaction });
@@ -2421,6 +2612,156 @@ function noticeSecretMiss(event) {
 
 const STORY_STEP_KEYS = ["presence", "subject", "palette", "praise"];
 const STORY_PALETTE_CLASSES = ["palette-strawberry", "palette-mint", "palette-moon"];
+
+function persistStoryDraft(mode = "choices", step = storyStep) {
+  state.drawingDraft = {
+    choices: { ...storyDraft },
+    step: Math.max(0, Math.min(3, step)),
+    mode,
+      quietElapsedMs: Math.round(quietElapsedMs),
+      peekCount: Math.min(3, storyPeekCount),
+    updatedAt: Date.now()
+  };
+  saveState();
+}
+
+function resetQuietCompanion() {
+  window.clearTimeout(quietTimer);
+  quietTimer = 0;
+  quietActive = false;
+  quietElapsedMs = 0;
+  quietLastTickAt = 0;
+  quietRenderedBeat = -1;
+  quietSavedBucket = -1;
+  elements.quietCompanion.hidden = true;
+  elements.storyTheater.classList.remove("is-quiet");
+  elements.quietBeats.forEach((mark) => mark.classList.remove("is-reached"));
+}
+
+function accumulateQuietTime(forceVisible = false) {
+  if (!quietActive) return;
+  const now = Date.now();
+  if (quietLastTickAt && storyInView && (forceVisible || document.visibilityState === "visible")) {
+    quietElapsedMs = Math.min(75000, quietElapsedMs + Math.max(0, now - quietLastTickAt));
+  }
+  quietLastTickAt = now;
+}
+
+function renderQuietCompanion() {
+  if (!quietActive) return;
+  accumulateQuietTime();
+  const beats = CONTENT.drawingStory.quietBeats;
+  const reached = beats.reduce((count, beat) => quietElapsedMs >= beat.at ? count + 1 : count, 0);
+  const current = reached > 0 ? beats[reached - 1] : null;
+  elements.quietBeats.forEach((mark, index) => mark.classList.toggle("is-reached", index < reached));
+  if (reached !== quietRenderedBeat) {
+    quietRenderedBeat = reached;
+    if (current) {
+      elements.quietTime.textContent = current.time;
+      elements.quietCompanionTitle.textContent = current.title;
+      elements.quietCompanionLine.textContent = current.line;
+      elements.storyStageLabel.textContent = current.time;
+      elements.storyStageNote.textContent = current.line;
+      transitionStoryFrame(current.frame);
+    }
+  }
+  const bucket = Math.floor(quietElapsedMs / 5000);
+  if (bucket !== quietSavedBucket) {
+    quietSavedBucket = bucket;
+    persistStoryDraft("quiet");
+  }
+  if (quietElapsedMs < 75000) {
+    quietTimer = window.setTimeout(renderQuietCompanion, 250);
+  } else {
+    quietTimer = 0;
+  }
+}
+
+function beginQuietCompanion(resume = false) {
+  resetQuietCompanion();
+  quietActive = true;
+  quietElapsedMs = resume ? validDrawingDraft(state.drawingDraft)?.quietElapsedMs || 0 : 0;
+  quietLastTickAt = Date.now();
+  storyStep = 1;
+  storyDraft.presence = "quiet";
+  storyBusy = false;
+  elements.storyTheater.removeAttribute("aria-busy");
+  elements.storyTheater.classList.add("is-quiet");
+  elements.storyTheater.dataset.storyStep = "quiet";
+  elements.quietCompanion.hidden = false;
+  elements.storyChoices.replaceChildren();
+  elements.storyBack.hidden = false;
+  elements.storyRestart.hidden = true;
+  elements.storyBeat.textContent = "谁都没有催促这一分钟";
+  elements.storyPrompt.textContent = "什么都不用说，也可以留下。";
+  elements.storyLine.textContent = "这里没有倒计时，也没有需要换取的奖励。她只是慢慢习惯旁边还有一个人。";
+  elements.quietTime.textContent = "房间刚刚安静下来";
+  elements.quietCompanionTitle.textContent = "就在旁边，先不催她。";
+  elements.quietCompanionLine.textContent = "笔尖还在移动。她确认了一下旁边的椅子，没有叫你离开。";
+  persistStoryDraft("quiet");
+  renderQuietCompanion();
+  window.requestAnimationFrame(() => elements.quietContinue.focus({ preventScroll: true }));
+}
+
+function finishQuietCompanion(goBack = false) {
+  accumulateQuietTime();
+  window.clearTimeout(quietTimer);
+  quietActive = false;
+  elements.quietCompanion.hidden = true;
+  elements.storyTheater.classList.remove("is-quiet");
+  transitionStoryFrame("focus");
+  if (goBack) {
+    storyDraft.presence = "";
+    storyStep = 0;
+  } else {
+    storyStep = 1;
+  }
+  persistStoryDraft("choices");
+  renderStoryStep();
+}
+
+function setStoryPeekSubject(subjectKey = storyDraft.subject) {
+  const subject = CONTENT.drawingStory.subjects[subjectKey] || CONTENT.drawingStory.subjects.door;
+  elements.storyPeekImage.src = subject.image;
+  elements.storyPeekImage.alt = `${subject.alt}，只露出还没有被稿纸盖住的一小角`;
+}
+
+function resetStoryPeek() {
+  storyPeekSequence += 1;
+  storyPeekCount = 0;
+  elements.storyPeek.hidden = true;
+  elements.storyPeek.classList.remove("is-opening", "is-caught", "is-relenting");
+  elements.storyPeekPaper.setAttribute("aria-hidden", "true");
+  elements.storyPeekButton.disabled = false;
+  elements.storyPeekButton.setAttribute("aria-expanded", "false");
+  elements.storyPeekButton.querySelector("span").textContent = "偷看画到哪里了";
+}
+
+async function peekAtStory() {
+  if (elements.storyPeekButton.disabled) return;
+  const sequence = ++storyPeekSequence;
+  const reaction = CONTENT.drawingStory.peekReactions[Math.min(storyPeekCount, CONTENT.drawingStory.peekReactions.length - 1)];
+  storyPeekCount += 1;
+  if (state.drawingDraft) persistStoryDraft(state.drawingDraft.mode);
+  setStoryPeekSubject();
+  elements.storyPeekButton.disabled = true;
+  elements.storyPeekButton.setAttribute("aria-expanded", "true");
+  elements.storyPeekPaper.setAttribute("aria-hidden", "false");
+  elements.storyPeek.classList.remove("is-opening", "is-caught", "is-relenting");
+  void elements.storyPeek.offsetWidth;
+  elements.storyPeek.classList.add("is-opening");
+  elements.storyStageLabel.textContent = "画稿露出了一小角";
+  elements.storyStageNote.textContent = "你刚靠近一点，她的袖口就停住了。";
+  updateReaction(reaction, false);
+  if (!reducedMotion.matches) await new Promise((resolve) => window.setTimeout(resolve, 260));
+  if (sequence !== storyPeekSequence) return;
+  elements.storyPeek.classList.add("is-caught");
+  if (!reducedMotion.matches) await new Promise((resolve) => window.setTimeout(resolve, 620));
+  if (sequence !== storyPeekSequence) return;
+  elements.storyPeek.classList.add("is-relenting");
+  elements.storyPeekButton.querySelector("span").textContent = "她只肯再露出一小角";
+  elements.storyPeekButton.disabled = false;
+}
 
 function storyStepConfig(stepKey) {
   const configs = {
@@ -2562,12 +2903,24 @@ function storyChoiceButton(stepKey, key, option) {
   button.className = "story-choice";
   button.type = "button";
   button.dataset.storyChoice = key;
+  button.dataset.storyKind = stepKey;
   button.setAttribute("aria-pressed", String(storyDraft[stepKey] === key));
   if (stepKey === "palette") {
     const swatch = document.createElement("i");
     swatch.className = `story-swatch story-swatch--${key}`;
     swatch.setAttribute("aria-hidden", "true");
     button.append(swatch);
+  }
+  if (stepKey === "subject") {
+    const thumbnail = document.createElement("img");
+    thumbnail.className = "story-choice-thumb";
+    thumbnail.src = option.image;
+    thumbnail.alt = "";
+    thumbnail.width = 960;
+    thumbnail.height = 720;
+    thumbnail.loading = "lazy";
+    thumbnail.decoding = "async";
+    button.append(thumbnail);
   }
   const copy = document.createElement("span");
   copy.className = "story-choice-copy";
@@ -2582,7 +2935,10 @@ function storyChoiceButton(stepKey, key, option) {
 }
 
 function renderStoryIntro() {
+  resetQuietCompanion();
+  resetStoryPeek();
   storyStep = -1;
+  elements.storyTheater.dataset.storyStep = "intro";
   storyBusy = false;
   elements.storyTheater.removeAttribute("aria-busy");
   const hasMemory = Boolean(validSharedDrawing(state.sharedDrawing));
@@ -2596,24 +2952,43 @@ function renderStoryIntro() {
   elements.storyArtPreview.hidden = true;
   elements.storyBack.hidden = true;
   elements.storyRestart.hidden = true;
-  const button = document.createElement("button");
-  button.className = "story-choice story-choice--primary";
-  button.type = "button";
-  button.dataset.storyStart = "";
-  const title = document.createElement("strong");
-  title.textContent = "坐到她留出的椅子旁";
-  const detail = document.createElement("span");
-  detail.textContent = "只在她需要的时候开口";
-  button.append(title, detail);
-  button.addEventListener("click", startDrawingStory);
-  elements.storyChoices.replaceChildren(button);
+  const savedDraft = validDrawingDraft(state.drawingDraft);
+  const makeButton = (titleText, detailText, primary, handler) => {
+    const button = document.createElement("button");
+    button.className = `story-choice${primary ? " story-choice--primary" : ""}`;
+    button.type = "button";
+    const title = document.createElement("strong");
+    title.textContent = titleText;
+    const detail = document.createElement("span");
+    detail.textContent = detailText;
+    button.append(title, detail);
+    button.addEventListener("click", handler);
+    return button;
+  };
+  const buttons = [];
+  if (savedDraft) {
+    buttons.push(makeButton(
+      savedDraft.mode === "quiet" ? "接着安静陪她一会儿" : "接着上次没画完的地方",
+      savedDraft.mode === "quiet" ? "房间会从上次停下的片刻继续" : "已经选过的内容都还夹在稿纸里",
+      true,
+      resumeDrawingStory
+    ));
+    buttons.push(makeButton("换一张空白稿纸", "从靠近她的方式重新开始", false, startDrawingStory));
+  } else {
+    buttons.push(makeButton("坐到她留出的椅子旁", "只在她需要的时候开口", true, startDrawingStory));
+  }
+  elements.storyChoices.replaceChildren(...buttons);
   transitionStoryFrame("focus");
 }
 
 function renderStoryStep(focusFirstChoice = true) {
+  elements.quietCompanion.hidden = true;
+  elements.storyTheater.classList.remove("is-quiet");
   const stepKey = STORY_STEP_KEYS[storyStep];
   const config = storyStepConfig(stepKey);
   if (!config) return;
+  elements.storyTheater.dataset.storyStep = stepKey;
+  elements.storyPeek.hidden = !storyDraft.subject;
   elements.storyBeat.textContent = config.beat;
   elements.storyPrompt.textContent = config.prompt;
   elements.storyLine.textContent = config.line;
@@ -2630,13 +3005,37 @@ function renderStoryStep(focusFirstChoice = true) {
 }
 
 function startDrawingStory() {
+  resetQuietCompanion();
+  resetStoryPeek();
   storyDraft = { presence: "", subject: "", palette: "", praise: "" };
   storyStep = 0;
+  persistStoryDraft("choices");
   preloadResponsiveImage(CONTENT.drawingStory.frames.shy, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px").catch(() => {});
   preloadResponsiveImage(CONTENT.drawingStory.frames.reveal, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px").catch(() => {});
   transitionStoryFrame("focus");
   renderStoryStep();
   updateReaction({ expression: "shy", label: "椅子被留出来了", text: "……可以坐。只要安静一点。" }, false);
+}
+
+function resumeDrawingStory() {
+  const savedDraft = validDrawingDraft(state.drawingDraft);
+  if (!savedDraft) {
+    renderStoryIntro();
+    return;
+  }
+  storyDraft = { ...savedDraft.choices };
+  storyStep = savedDraft.step;
+  storyPeekCount = savedDraft.peekCount;
+  setStoryPeekSubject(storyDraft.subject);
+  preloadResponsiveImage(CONTENT.drawingStory.frames.shy, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px").catch(() => {});
+  preloadResponsiveImage(CONTENT.drawingStory.frames.reveal, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px").catch(() => {});
+  if (savedDraft.mode === "quiet") {
+    beginQuietCompanion(true);
+  } else {
+    transitionStoryFrame("focus");
+    renderStoryStep();
+  }
+  updateReaction({ expression: "shy", label: "稿纸还留在原来的位置", text: "我没有收走……因为你还没说画完。" }, false);
 }
 
 async function chooseStoryOption(stepKey, key) {
@@ -2646,6 +3045,8 @@ async function chooseStoryOption(stepKey, key) {
   if (!option) return;
   storyBusy = true;
   storyDraft[stepKey] = key;
+  const pendingMode = stepKey === "presence" && key === "quiet" ? "quiet" : "choices";
+  persistStoryDraft(pendingMode, Math.min(3, storyStep + 1));
   [...elements.storyChoices.children].forEach((button) => {
     button.disabled = true;
     button.setAttribute("aria-pressed", String(button.dataset.storyChoice === key));
@@ -2653,6 +3054,8 @@ async function chooseStoryOption(stepKey, key) {
 
   if (stepKey === "subject") {
     preloadImage(option.image).catch(() => {});
+    setStoryPeekSubject(key);
+    elements.storyPeek.hidden = false;
     elements.storyStageNote.textContent = option.stageNote;
   }
   if (stepKey === "palette") refreshStoryArtPreview();
@@ -2667,15 +3070,18 @@ async function chooseStoryOption(stepKey, key) {
     window.setTimeout(() => {
       storyBusy = false;
       storyStep += 1;
-      renderStoryStep();
+      if (stepKey === "presence" && key === "quiet") {
+        beginQuietCompanion();
+      } else {
+        persistStoryDraft("choices");
+        renderStoryStep();
+      }
     }, reducedMotion.matches ? 10 : 280);
     return;
   }
 
   elements.storyTheater.setAttribute("aria-busy", "true");
   updateReaction({ expression: "shy", label: "被认真看见了", text: option.line }, false);
-  await transitionStoryFrame("shy");
-  if (!reducedMotion.matches) await new Promise((resolve) => window.setTimeout(resolve, 680));
   state.sharedDrawing = {
     presence: storyDraft.presence,
     subject: storyDraft.subject,
@@ -2683,7 +3089,12 @@ async function chooseStoryOption(stepKey, key) {
     praise: storyDraft.praise,
     completedAt: Date.now()
   };
+  state.drawingDraft = null;
   saveState();
+  refreshDoorMemory();
+  refreshPersonalizedFortune();
+  await transitionStoryFrame("shy");
+  if (!reducedMotion.matches) await new Promise((resolve) => window.setTimeout(resolve, 680));
   await transitionStoryFrame("reveal");
   storyBusy = false;
   renderStoryResult();
@@ -2694,6 +3105,10 @@ function renderStoryResult() {
   const palette = CONTENT.drawingStory.palettes[storyDraft.palette];
   const praise = CONTENT.drawingStory.praises[storyDraft.praise];
   elements.storyTheater.removeAttribute("aria-busy");
+  elements.storyTheater.dataset.storyStep = "result";
+  elements.quietCompanion.hidden = true;
+  elements.storyTheater.classList.remove("is-quiet");
+  elements.storyPeek.hidden = true;
   elements.storyBeat.textContent = "她终于把笔放下";
   elements.storyPrompt.textContent = "这张画，完成了。";
   elements.storyLine.textContent = `“${palette.label}是你选的。还有……你说${praise.memory}。我记住了。”`;
@@ -2710,15 +3125,24 @@ function renderStoryResult() {
 }
 
 function goBackInStory() {
-  if (storyBusy || storyStep <= 0) return;
+  if (storyBusy) return;
+  if (quietActive) {
+    finishQuietCompanion(true);
+    return;
+  }
+  if (storyStep <= 0) return;
   storyStep -= 1;
+  persistStoryDraft("choices");
   transitionStoryFrame("focus");
   renderStoryStep();
 }
 
 function restartDrawingStory() {
+  resetQuietCompanion();
+  resetStoryPeek();
   storyDraft = { presence: "", subject: "", palette: "", praise: "" };
   storyStep = 0;
+  persistStoryDraft("choices");
   transitionStoryFrame("focus");
   renderStoryStep();
 }
@@ -2734,9 +3158,17 @@ function setupDrawingStory() {
     return;
   }
   const observer = new IntersectionObserver(([entry]) => {
+    if (quietActive && !entry.isIntersecting) {
+      accumulateQuietTime(true);
+      window.clearTimeout(quietTimer);
+      quietTimer = 0;
+      persistStoryDraft("quiet");
+    }
     storyInView = entry.isIntersecting;
     elements.storySection.classList.toggle("is-in-view", storyInView);
     if (storyInView) {
+      quietLastTickAt = Date.now();
+      if (quietActive && !quietTimer && quietElapsedMs < 75000) renderQuietCompanion();
       preloadResponsiveImage(CONTENT.drawingStory.frames.blink, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px").catch(() => {});
       scheduleStoryBlink();
     } else {
@@ -2942,26 +3374,44 @@ function finishLightboxSwipe(event) {
   navigateLightbox(horizontal < 0 ? 1 : -1);
 }
 
+function fortuneOptions() {
+  return [...new Set([buildPersonalizedFortune(), ...CONTENT.fortunes])];
+}
+
+function refreshPersonalizedFortune() {
+  if (elements.goodnightSection.classList.contains("is-note-kept")) return;
+  if (elements.goodnightSection.dataset.noteOrigin === "random") return;
+  elements.fortuneNote.textContent = buildPersonalizedFortune();
+  elements.fortuneLabel.textContent = "她写给这次拜访的小纸条";
+  elements.goodnightSection.dataset.noteOrigin = "personalized";
+}
+
 function newFortune() {
-  let next = Math.floor(Math.random() * CONTENT.fortunes.length);
-  if (CONTENT.fortunes.length > 1 && next === lastFortune) next = (next + 1) % CONTENT.fortunes.length;
+  const options = fortuneOptions();
+  let next = Math.floor(Math.random() * options.length);
+  if (options.length > 1 && next === lastFortune) next = (next + 1) % options.length;
   lastFortune = next;
-  elements.fortuneNote.textContent = CONTENT.fortunes[next];
-  elements.fortuneLabel.textContent = "今晚的小纸条";
+  elements.fortuneNote.textContent = options[next];
+  elements.fortuneLabel.textContent = next === 0 ? "她写给这次拜访的小纸条" : "今晚的小纸条";
   elements.goodnightStatus.textContent = "这一张还没有收好；想带到别处，也可以先复制纸条文字。";
   elements.goodnightSection.classList.remove("is-note-kept");
+  elements.goodnightSection.dataset.noteOrigin = next === 0 ? "personalized" : "random";
   elements.takeNoteButton.disabled = false;
   elements.takeNoteButton.querySelector("span").textContent = "收下纸条，轻轻带上门";
   updateReaction("fortune");
 }
 
 function applySavedFortune() {
-  if (!state.keptFortune) return;
+  if (!state.keptFortune) {
+    refreshPersonalizedFortune();
+    return;
+  }
   elements.fortuneNote.textContent = state.keptFortune;
   elements.fortuneLabel.textContent = "上次收好的小纸条";
   elements.goodnightStatus.textContent = "她还记得你把这张收好了。今晚也可以换一张，或者再次带上门。";
   elements.goodnightSection.classList.add("is-note-kept");
-  lastFortune = Math.max(0, CONTENT.fortunes.indexOf(state.keptFortune));
+  elements.goodnightSection.dataset.noteOrigin = "saved";
+  lastFortune = Math.max(0, fortuneOptions().indexOf(state.keptFortune));
 }
 
 async function copyFortuneText() {
@@ -2996,6 +3446,7 @@ function keepFortuneAndClose() {
   state.keptFortune = validFortune(note) || CONTENT.fortunes[0];
   state.keptFortuneAt = Date.now();
   saveState();
+  refreshDoorMemory();
   elements.fortuneLabel.textContent = "已经收好的小纸条";
   elements.goodnightStatus.textContent = "纸条已经留在这台设备里。门正在身后轻轻合上。";
   elements.goodnightSection.classList.add("is-note-kept");
@@ -3209,6 +3660,7 @@ elements.knockButton.addEventListener("pointerenter", preloadDoorSequence, { onc
 elements.knockButton.addEventListener("focus", preloadDoorSequence, { once: true });
 elements.knockButton.addEventListener("pointerdown", preloadDoorSequence, { once: true });
 elements.feedbackCollapseButton.addEventListener("click", collapseFeedback);
+elements.doorMemorySlip.addEventListener("click", showDoorMemory);
 elements.stopVoiceButton.addEventListener("click", () => stopVoice(false, false, true));
 elements.voiceMuteButton.addEventListener("click", toggleVoiceMode);
 elements.voiceVolume.addEventListener("input", changeVoiceVolume);
@@ -3241,6 +3693,8 @@ elements.livingRoomView.addEventListener("pointercancel", () => {
 });
 elements.storyBack.addEventListener("click", goBackInStory);
 elements.storyRestart.addEventListener("click", restartDrawingStory);
+elements.storyPeekButton.addEventListener("click", peekAtStory);
+elements.quietContinue.addEventListener("click", () => finishQuietCompanion(false));
 elements.galleryPrev.addEventListener("click", () => switchGallery(galleryPosition - 1));
 elements.galleryNext.addEventListener("click", () => switchGallery(galleryPosition + 1));
 elements.galleryOpenButton.addEventListener("click", openLightbox);
@@ -3266,12 +3720,25 @@ elements.copyFortuneButton.addEventListener("click", copyFortuneText);
 elements.takeNoteButton.addEventListener("click", keepFortuneAndClose);
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "visible") {
+    quietLastTickAt = Date.now();
+    if (quietActive && !quietTimer) renderQuietCompanion();
     scheduleStoryBlink();
     scheduleLivingAutonomy();
   } else {
+    accumulateQuietTime(true);
+    window.clearTimeout(quietTimer);
+    quietTimer = 0;
+    if (quietActive) persistStoryDraft("quiet");
     window.clearTimeout(storyBlinkTimer);
     window.clearTimeout(livingAutonomyTimer);
   }
+});
+
+window.addEventListener("pagehide", () => {
+  accumulateQuietTime(true);
+  window.clearTimeout(quietTimer);
+  quietTimer = 0;
+  if (quietActive) persistStoryDraft("quiet");
 });
 
 elements.livingRoomImage.addEventListener("load", () => {

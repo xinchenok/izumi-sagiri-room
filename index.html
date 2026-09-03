@@ -8,7 +8,7 @@
   <title>和泉纱雾的房门里</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23573A3E'/%3E%3Cpath d='M18 14h30v40H18z' fill='%23D88CA2'/%3E%3Ccircle cx='40' cy='35' r='3' fill='%23F7D46A'/%3E%3Cpath d='m23 19 5 4 5-4 5 4 5-4v10H23z' fill='%23EAF4F5'/%3E%3C/svg%3E">
   <link rel="preload" href="assets/v5/hero-peek.webp" as="image" type="image/webp" imagesrcset="assets/v5/hero-peek-560.webp 560w, assets/v5/hero-peek.webp 1122w" imagesizes="(max-width: 760px) calc(100vw - 1.6rem), (max-width: 1024px) 78vw, 820px">
-  <link rel="stylesheet" href="styles.css?v=20260820-5">
+  <link rel="stylesheet" href="styles.css?v=20260904-1">
   <script>
     if ("scrollRestoration" in history) history.scrollRestoration = "auto";
     window.__sagiriDiscardedHash = Boolean(window.location.hash);
@@ -18,14 +18,6 @@
   </script>
 </head>
 <body>
-  <!--
-  THESIS: 轻轻敲门以后，不只浏览章节，而是在同一间卧室里移动视线，看纱雾继续生活。
-  OWN-WORLD: 草莓粉墙纸、银蓝月光、薄荷文具、可可木门、奶油稿纸与房间木轨；控件必须像房间物件或纸面标记。
-  STORY: 访客在门口被偷看，获准进入后沿木轨靠近画桌、床边、衣橱和窗台，再翻衣橱与画册、一起完成一张画，最后收下晚安纸条并轻轻带上门。
-  FIRST VIEWPORT: 半掩木门占据左侧前景，纱雾从门缝握边偷看；手写房间牌贴在门上，敲门按钮位于门把下方，台词在右下稿纸上。
-  FORM: code-led 连续卧室体验；seed key sagiri-complete-visit-v16；签名互动是获得允许后进入房间，沿木轨移动，最后收下纸条并轻轻带上门。
-  FINISH: 2026-08-20 complete-visit；主线重排、导航先敲门、秘密环境提示、按需音频、可收起反馈与真实关门结尾形成闭环。
-  -->
   <a class="skip-link" href="#main-content">跳到主要内容</a>
 
   <header class="door-nav" id="top">
@@ -67,6 +59,10 @@
 
         <div class="knock-card">
           <span class="visit-note" id="visitNote">第一次站在门外</span>
+          <button class="door-memory-slip" id="doorMemorySlip" type="button" hidden>
+            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M6 7h20v18H6zM9 11h14M9 16h10M9 21h7"/></svg>
+            <span>上次收好的纸条，还夹在这里</span>
+          </button>
           <div class="door-subtitle" id="doorStatus" role="status" aria-live="polite">
             <span>门里传来很轻的脚步声。</span>
             <strong>“先敲门……我才会开。”</strong>
@@ -345,8 +341,8 @@
 
     <section class="drawing-story-section" id="drawing-story" aria-labelledby="drawing-story-title">
       <header class="drawing-story-heading">
-        <h2 id="drawing-story-title">看过那些画以后，<br>今晚陪她完成一张。</h2>
-        <p>不是替她完成，也没有正确答案。你只需要在她犹豫时帮忙选一件小事，再认真告诉她你看见了什么。</p>
+        <h2 id="drawing-story-title">看过那些画以后，<br>今晚别走太早。</h2>
+        <p>她会发现你还在，也会在你偷看时慌张地把画盖住。可以帮忙选一件小事，也可以什么都不催，只安静陪她画一会儿。</p>
       </header>
 
       <aside class="story-memory" id="storyMemory" aria-label="上次共同完成的画" hidden>
@@ -365,6 +361,16 @@
           <canvas class="studio-rain" id="studioRainCanvas" aria-hidden="true"></canvas>
           <span class="studio-lamp-glow" aria-hidden="true"></span>
           <span class="studio-pen-glow" aria-hidden="true"></span>
+          <div class="story-peek" id="storyPeek" hidden>
+            <div class="story-peek-paper" id="storyPeekPaper" aria-hidden="true">
+              <img id="storyPeekImage" src="assets/v6/drawing-door-moon.webp" width="960" height="720" loading="lazy" decoding="async" alt="">
+              <span class="story-peek-cover"><i>还没画完</i></span>
+            </div>
+            <button class="story-peek-button" id="storyPeekButton" type="button" aria-expanded="false" aria-controls="storyPeekPaper">
+              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M3 16s5-7 13-7 13 7 13 7-5 7-13 7S3 16 3 16Z"/><circle cx="16" cy="16" r="3"/></svg>
+              <span>偷看画到哪里了</span>
+            </button>
+          </div>
           <figcaption>
             <span id="storyStageLabel">截稿前的雨夜</span>
             <strong id="storyStageNote">她画得太认真，暂时没有发现你已经坐下。</strong>
@@ -387,6 +393,16 @@
               <span id="storyArtMeta"></span>
             </figcaption>
           </figure>
+
+          <section class="quiet-companion" id="quietCompanion" aria-labelledby="quietCompanionTitle" hidden>
+            <div class="quiet-thread" aria-hidden="true">
+              <i data-quiet-beat="1"></i><i data-quiet-beat="2"></i><i data-quiet-beat="3"></i>
+            </div>
+            <span class="quiet-time" id="quietTime">房间刚刚安静下来</span>
+            <h4 id="quietCompanionTitle">就在旁边，先不催她。</h4>
+            <p id="quietCompanionLine" role="status" aria-live="polite">笔尖还在移动。她确认了一下旁边的椅子，没有叫你离开。</p>
+            <button class="pencil-button quiet-continue" id="quietContinue" type="button">轻轻问她接下来画什么</button>
+          </section>
 
           <div class="story-choices" id="storyChoices" role="group" aria-labelledby="storyPrompt">
             <button class="story-choice story-choice--primary" type="button" data-story-start>
@@ -491,6 +507,6 @@
   <noscript>
     <div class="noscript-note">JavaScript 未启用：你仍然可以阅读角色介绍与查看基础插画；敲门、换装、语音和秘密探索需要启用 JavaScript。</div>
   </noscript>
-  <script src="script.js?v=20260820-5"></script>
+  <script src="script.js?v=20260904-1"></script>
 </body>
 </html>
