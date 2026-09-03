@@ -1,0 +1,47 @@
+name: 验证静态网站
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: 静态检查与 Chromium 回归
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装开发依赖
+        run: npm ci
+
+      - name: 安装 Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: 运行静态验证
+        run: npm run verify
+
+      - name: 运行浏览器回归
+        run: npm run test:e2e
+
+      - name: 保存失败报告
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-failure-report
+          path: |
+            output/playwright/report
+            output/playwright/test-results
+          if-no-files-found: ignore
+          retention-days: 7
