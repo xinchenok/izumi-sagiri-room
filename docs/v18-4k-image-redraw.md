@@ -32,15 +32,30 @@ V18 在不改变 V17 页面结构、互动和叙事的前提下，把全部现�
 - `gallery-bed-drawing`、`gallery-blanket-fort`、`gallery-stream-wave`
 - `gallery-show-drawing`、`gallery-pillow-offer`、`gallery-door-note`
 - `gallery-desk-night`、`gallery-sketch-sort`、`gallery-sketchbook-hide`
-- `gallery-awaiting-praise`、`gallery-goodnight`
+- `gallery-awaiting-praise`、`gallery-goodnight-clean`
 
 ### 房间、陪画与成稿
 
 - `desk-secrets`、`wardrobe-living`
-- `studio-focus`、`studio-blink`、`studio-shy`、`studio-reveal`
+- `studio-focus-clean`、`studio-blink-clean`、`studio-shy-clean`、`studio-reveal-clean`
 - `drawing-door-moon`、`drawing-blanket-star`、`drawing-pencil-stars`
 
-共 29 张独立母版。表情与换装以新的 `hero-peek` 为身份锚点；陪画表情以新的 `studio-focus` 同时锁定人物、机位与房间。三张小猫成稿保持奶油稿纸上的铅笔水彩风，不改成角色人物画。
+共 29 张现役独立母版。表情与换装以新的 `hero-peek` 为身份锚点；陪画表情以 `studio-focus-clean` 同时锁定人物、机位与房间。三张小猫成稿保持奶油稿纸上的铅笔水彩风，不改成角色人物画。
+
+## V18.1 清晰度修正
+
+浏览器标注复核发现，原 `studio-focus` 同时用于连续房间画桌和深夜共同创作，它与同组 `studio-blink`、`studio-shy`、`studio-reveal` 的提示词都主动要求“手绘、水彩式过渡”，在手机实际显示时形成了不必要的厚涂与柔焦。`gallery-goodnight` 另有轻微软焦，页面还在已有窗户上叠加了十字窗框和装饰月亮。
+
+本轮使用内置 ImageGen 以原图、统一身份锚点和现役清晰画风为三重参考，生成四张 `studio-*-clean` 帧与一张 `gallery-goodnight-clean`：
+
+- 人物、房间、姿势、道具、机位和叙事意义保持不变。
+- 人物场景改为清晰日系数字线稿、受控赛璐璐明暗和明确材质边缘，禁止油画笔触、水彩晕染、空气笔柔焦与过量泛光。
+- 四张共同创作帧以 `studio-focus-clean` 为同一基准，只改变眨眼、袖口遮嘴和递出画稿所需区域。
+- 晚安窗户完整位于人物身后，页面删除额外十字窗框和假月亮；月亮只保留在插画本体中。
+- 连续房间和共同创作的图片切换不再使用 CSS `blur()`，只保留短淡入、轻微缩放与裁切，任何切换时刻都保持人物线条可辨。
+- `RAIN_GLASS_SCENES.desk` 按新画桌图重新内缩到右侧三个真实玻璃面，避开左侧窗帘、横竖窗框、玩偶和台灯；雨滴仍只出现在玻璃内。
+
+五组旧文件没有覆盖、移动或删除，仍按原 `studio-*` 与 `gallery-goodnight` 路径保留；现役 `manifest.json` 以每个 `*-clean` 条目的 `oldSource` 和 SHA-256 指向对应旧母版。现役规模因此仍是 29 张母版与 107 个 WebP，另有五组 20 个被替代 WebP 留作回退。
 
 ## 以图生图约束
 
@@ -62,7 +77,7 @@ V18 在不改变 V17 页面结构、互动和叙事的前提下，把全部现�
 
 ## 旧图归档
 
-V18 不覆盖、不移动、不删除旧图片。v3–v7 版本目录继续保留原文件，`assets/archive/pre-v18-images.json` 记录切换前 55 个现役图片引用的路径、像素尺寸、文件大小和 SHA-256。这样既能回滚，也能追溯每张 V18 图片对应的旧构图。
+V18 不覆盖、不移动、不删除旧图片。v3–v7 版本目录继续保留原文件，`assets/archive/pre-v18-images.json` 记录切换前 55 个现役图片引用的路径、像素尺寸、文件大小和 SHA-256。V18.1 被替代的五组图片同样保留在 `assets/v18` 原路径，现役 `*-clean` 清单记录旧母版哈希。这样既能回滚，也能追溯每张现役图片对应的旧构图。
 
 归档清单由下列命令重建：
 
