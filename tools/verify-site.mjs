@@ -12,7 +12,8 @@ const SKIPPED_DIRECTORIES = new Set([
   ".playwright-cli",
   ".tmp",
   "node_modules",
-  "output"
+  "output",
+  "test-results"
 ]);
 const TEXT_EXTENSIONS = new Set([
   ".css",
@@ -200,6 +201,10 @@ function sha256(filePath) {
   return createHash("sha256").update(readFileSync(filePath)).digest("hex");
 }
 
+function normalizeNewlines(value) {
+  return value.replace(/\r\n?/gu, "\n");
+}
+
 function checkV18Images() {
   const manifestPath = resolve(ROOT, "assets", "v18", "manifest.json");
   const archivePath = resolve(ROOT, "assets", "archive", "pre-v18-images.json");
@@ -229,7 +234,9 @@ function checkV18Images() {
         issues.push(`V18 图片缺少提示词来源：${version.provenance}`);
       } else {
         const provenance = JSON.parse(readUtf8(provenancePath));
-        if (provenance.prompt !== expectedPrompt) issues.push(`V18 图片提示词来源不一致：${version.provenance}`);
+        if (normalizeNewlines(provenance.prompt) !== normalizeNewlines(expectedPrompt)) {
+          issues.push(`V18 图片提示词来源不一致：${version.provenance}`);
+        }
       }
     }
   }

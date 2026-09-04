@@ -2,4 +2,5 @@
 .playwright-cli/
 .tmp/
 output/
+test-results/
 node_modules/
