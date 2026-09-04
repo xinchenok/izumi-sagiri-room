@@ -4,12 +4,15 @@
 
 在线访问：<https://xinchenok.github.io/izumi-sagiri-room/>
 
+V18 全量 4K 插画重绘已在本地完成并通过审查，当前仍待发布；上述公开地址现仍是 V17 线上基线。
+
 ## 本地浏览
 
 直接打开 `index.html` 即可使用。推荐当前版本的 Chrome、Edge、Firefox 或 Safari。
 
 ## 主要互动
 
+- 全部现役人物与场景由 29 张独立 V18 母版统一重绘：以同一身份锚点锁定角色，以每张旧图锁定构图，将可爱、害羞和全年龄的角色气质放在首位
 - 敲门后的受惊、害羞与开门表情演出
 - 顶部房门纸签提供无地址片段的页内移动：站在门外时先完成敲门回应再进入目标区段；新访客稳定停在房门首屏，浏览器返回或前进会恢复原来的阅读位置，旧的 `#living-room` 一类地址会被清理并回到顶部
 - “会生活的房间”：沿同一条木轨在画桌、床边、衣橱与窗台移动；每个地点都有自主细节、专属开场语音、三组独立语音事件、键盘方向键和手机横滑支持
@@ -29,7 +32,9 @@
 
 ## 使用技术
 
-页面仅使用原生 HTML、CSS 和 JavaScript，不依赖框架、后端或运行时外部服务。浏览器状态继续保存在 `sagiri-room-state-v2`；V17 在同一结构中加入未完成画稿、安静停留进度、偷看次数，以及最近房间事件和成功换装的时间，不新增后端或账号系统。首屏、表情与换装使用完整尺寸高质量 WebP，并按屏幕选择 560px 移动版本；共同创作与 V7 衣橱场景使用 1448 × 1086 / 720 × 540 两档本地 WebP。中文标题和日语字幕分别使用 ZCOOL KuaiLe、Noto Sans JP 的当前字符子集 WOFF2，画册与房间场景只在需要时预取；V17 沿用现有插画和配音，新反应只更新简体中文文字，不连接运行时语音服务。
+页面仅使用原生 HTML、CSS 和 JavaScript，不依赖框架、后端或运行时外部服务。浏览器状态继续保存在 `sagiri-room-state-v2`；未完成画稿、安静停留进度、偷看次数、最近房间事件和成功换装时间都沿用同一结构，不新增账号系统。中文标题和日语字幕分别使用 ZCOOL KuaiLe、Noto Sans JP 的当前字符子集 WOFF2，画册与房间场景只在需要时预取。
+
+V18 先由内置 ImageGen 参考旧图真正重新绘制，再用 Pillow Lanczos、轻量反锐化与高质量 WebP 编码生成 4K 母版和响应式派生图；这不是模型原生直接输出 4K，也不是仅将旧图放大。9 张竖版母版为 3072 × 3840，20 张 4:3 场景母版为 3840 × 2880；连同 720 / 1440 档和场景的 480 档，共有 107 个 WebP。页面通过 `srcset` 选图：手机不请求 4K，高密度桌面设备可取得 4K，画廊胶片缩略图使用 480 档。旧的 v3–v7 图片未被删除、覆盖或移动，仍可回滚和追溯。
 
 ## 自动验证
 
@@ -41,13 +46,23 @@ npm run verify
 npm run test:e2e
 ```
 
-`npm run verify` 检查 JavaScript 语法、HTML ID 与锚点、本地资源、JSON 解析、UTF-8 无 BOM 和乱码特征；`npm run test:e2e` 使用 Chromium 覆盖 V16 基线与 V17 的草稿恢复、安静停留、藏画偷看、真实记忆和存储失败降级。`npm test` 会依次执行两者，GitHub Actions 在推送和拉取请求时运行同一套检查。
+`npm run verify` 检查 JavaScript 语法、HTML ID 与锚点、本地资源、V18 图片矩阵与旧图归档、JSON 解析、UTF-8 无 BOM 和乱码特征；`npm run test:e2e` 使用 Chromium 覆盖 V16 / V17 互动基线与 V18 响应式图片请求。`npm test` 会依次执行两者，GitHub Actions 在推送和拉取请求时运行同一套检查。
 
-2026-09-04 的 V17 验收中，`npm test` 共 10 项全部通过；1440 × 900、1024 × 768 与 390 × 844 三档截图已打开复核，无横向溢出，页面与控制台未见异常。PR #15 的两条远端检查均通过，GitHub Pages 已构建合并提交；正式网址的 HTML、CSS 与 JavaScript 和远端提交逐字节一致，390 × 844 在线开门与安静陪画路径通过。真实手机仍属于后续实机验证范围。
+V18 的图片维护入口如下；单张 ImageGen 输出如何生成母版与派生图，以及每个参数的含义，见 [V18 全量 4K 插画重绘记录](docs/v18-4k-image-redraw.md)。
+
+```powershell
+$env:PYTHONUTF8="1"
+python tools\build-v18-archive-manifest.py
+python tools\build-v18-manifest.py
+```
+
+V17 的已发布历史验收中，`npm test` 共 10 项全部通过；PR #15 的两条远端检查均通过，GitHub Pages 已构建合并提交，390 × 844 在线开门与安静陪画路径通过。
+
+2026-09-04 的 V18 本地验收中，`npm test` 13 / 13 通过；静态门禁核对了 79 个页面本地资源、29 张母版的完整矩阵、55 个旧图归档哈希和 202 个 UTF-8 文本。三份联系表（contact sheet）与桌面 / 手机关键截图已人工审阅，控制台错误、`pageerror` 和资源 404 均为 0。V18 尚未执行远端 CI、GitHub Pages 构建或线上复核，仍是本地待发布基线。
 
 ## 开发与维护文档
 
-[AI 协作开发与维护手册](docs/ai-assisted-development.md)记录了逐阶段实施与修复账本、AI 协助完成的工作、插画方法、语音模型官方来源与本地合成流程、许可边界、上线验证和后续规划；[V6 共同创作插画记录](docs/drawing-v6-image-prompts.md)保存共同创作场景与成稿，[V7 房间素材记录](docs/living-room-v7-assets.md)保存连续房间的素材复用与新衣橱场景，[房间声音记录](docs/room-audio-v8.md)是当前房间专属配音、场景声、许可和验收的权威说明，[V14 现场拟音来源表](assets/audio/v14/ROOM-FOLEY-SOURCES.md)逐项记录十二次物件操作的真实录音，[V16 晚安关门声来源](assets/audio/v16/GOODNIGHT-DOOR-SOURCE.md)记录结尾木门录音与复现参数。语音使用预训练模型本地合成，本项目没有训练或克隆声优声纹。
+[V18 全量 4K 插画重绘记录](docs/v18-4k-image-redraw.md)是当前图像生成、响应式导出、提示词、来源边车与旧图归档的维护入口。[AI 协作开发与维护手册](docs/ai-assisted-development.md)记录了逐阶段实施与修复账本、AI 协助完成的工作、插画方法、语音模型官方来源与本地合成流程、许可边界、上线验证和后续规划；[V6 共同创作插画记录](docs/drawing-v6-image-prompts.md)保存历史共同创作场景与成稿，[V7 房间素材记录](docs/living-room-v7-assets.md)保存历史连续房间素材，[房间声音记录](docs/room-audio-v8.md)是当前房间专属配音、场景声、许可和验收的权威说明，[V14 现场拟音来源表](assets/audio/v14/ROOM-FOLEY-SOURCES.md)逐项记录十二次物件操作的真实录音，[V16 晚安关门声来源](assets/audio/v16/GOODNIGHT-DOOR-SOURCE.md)记录结尾木门录音与复现参数。语音使用预训练模型本地合成，本项目没有训练或克隆声优声纹。
 
 ## 声音与字体说明
 

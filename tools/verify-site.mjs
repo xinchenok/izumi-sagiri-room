@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, extname, relative, resolve, sep } from "node:path";
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -20,6 +21,7 @@ const TEXT_EXTENSIONS = new Set([
   ".json",
   ".md",
   ".mjs",
+  ".py",
   ".svg",
   ".txt",
   ".yaml",
@@ -142,7 +144,7 @@ function checkLocalResources() {
   }
   for (const match of script.matchAll(/(["'`])(assets\/[^"'`\s?#)]+)(?:\?[^"'`\s)]*)?\1/giu)) {
     const localReference = normalizeLocalReference(match[2]);
-    if (localReference) references.add(localReference);
+    if (localReference && !localReference.includes("${")) references.add(localReference);
   }
 
   const issues = [];
@@ -194,11 +196,65 @@ function checkTextEncoding(files) {
   return issues;
 }
 
+function sha256(filePath) {
+  return createHash("sha256").update(readFileSync(filePath)).digest("hex");
+}
+
+function checkV18Images() {
+  const manifestPath = resolve(ROOT, "assets", "v18", "manifest.json");
+  const archivePath = resolve(ROOT, "assets", "archive", "pre-v18-images.json");
+  const issues = [];
+  if (!existsSync(manifestPath)) return ["缺少 assets/v18/manifest.json"];
+  if (!existsSync(archivePath)) return ["缺少 assets/archive/pre-v18-images.json"];
+
+  const manifest = JSON.parse(readUtf8(manifestPath));
+  const archive = JSON.parse(readUtf8(archivePath));
+  if (!Array.isArray(manifest.assets) || manifest.assets.length !== 29) {
+    issues.push(`V18 清单应包含 29 张母版，实际为 ${manifest.assets?.length ?? 0}`);
+  }
+
+  for (const asset of manifest.assets || []) {
+    const promptPath = resolve(ROOT, asset.prompt || "");
+    const expectedPrompt = existsSync(promptPath) ? readUtf8(promptPath) : "";
+    if (!expectedPrompt) issues.push(`V18 资产缺少精确提示词：${asset.prompt}`);
+    for (const version of Object.values(asset.versions || {})) {
+      const filePath = resolve(ROOT, version.path || "");
+      const provenancePath = resolve(ROOT, version.provenance || "");
+      if (!existsSync(filePath)) {
+        issues.push(`V18 图片不存在：${version.path}`);
+        continue;
+      }
+      if (sha256(filePath) !== version.sha256) issues.push(`V18 图片哈希不一致：${version.path}`);
+      if (!existsSync(provenancePath)) {
+        issues.push(`V18 图片缺少提示词来源：${version.provenance}`);
+      } else {
+        const provenance = JSON.parse(readUtf8(provenancePath));
+        if (provenance.prompt !== expectedPrompt) issues.push(`V18 图片提示词来源不一致：${version.provenance}`);
+      }
+    }
+  }
+
+  for (const image of archive.images || []) {
+    const filePath = resolve(ROOT, image.path || "");
+    if (!existsSync(filePath)) {
+      issues.push(`归档旧图不存在：${image.path}`);
+      continue;
+    }
+    if (sha256(filePath) !== image.sha256) issues.push(`归档旧图哈希不一致：${image.path}`);
+  }
+
+  if (issues.length === 0) {
+    console.log(`信息：已核对 ${manifest.assets.length} 张 V18 母版矩阵与 ${archive.images.length} 个旧图归档引用`);
+  }
+  return issues;
+}
+
 const files = walkFiles();
 runCheck("Node 语法", checkJavaScriptSyntax);
 runCheck("HTML 的 ID 与锚点", checkHtmlStructure);
 runCheck("页面本地资源", checkLocalResources);
 runCheck("JSON 解析", () => checkJson(files));
+runCheck("V18 图片矩阵与旧图归档", checkV18Images);
 runCheck("UTF-8、BOM 与乱码特征", () => checkTextEncoding(files));
 
 if (failures.length > 0) {

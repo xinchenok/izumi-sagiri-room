@@ -1,33 +1,51 @@
 "use strict";
 
+function v18Portrait(name) {
+  return {
+    image: `assets/v18/master/${name}-4k.webp`,
+    medium: `assets/v18/${name}-1440.webp`,
+    small: `assets/v18/${name}-720.webp`,
+    width: 3072,
+    mediumWidth: 1440,
+    smallWidth: 720
+  };
+}
+
+function v18Scene(name) {
+  return {
+    image: `assets/v18/master/${name}-4k.webp`,
+    medium: `assets/v18/${name}-1440.webp`,
+    small: `assets/v18/${name}-720.webp`,
+    thumb: `assets/v18/${name}-480.webp`,
+    width: 3840,
+    mediumWidth: 1440,
+    smallWidth: 720
+  };
+}
+
 const CONTENT = {
   heroExpressions: {
     peek: {
-      image: "assets/v5/hero-peek.webp",
-      small: "assets/v5/hero-peek-560.webp",
+      ...v18Portrait("hero-peek"),
       alt: "银白长发、蓝眼睛的纱雾穿着粉色猫耳家居服，握着半掩的卧室门安静偷看"
     },
     startled: {
-      image: "assets/v5/hero-startled.webp",
-      small: "assets/v5/hero-startled-560.webp",
+      ...v18Portrait("hero-startled"),
       alt: "听见敲门后，纱雾睁大蓝眼睛露出突然受惊的可爱表情"
     },
     shy: {
-      image: "assets/v5/hero-shy.webp",
-      small: "assets/v5/hero-shy-560.webp",
+      ...v18Portrait("hero-shy"),
       alt: "认出来访者后，纱雾握着门边脸红地害羞微笑"
     },
     proud: {
-      image: "assets/v5/hero-proud.webp",
-      small: "assets/v5/hero-proud-560.webp",
+      ...v18Portrait("hero-proud"),
       alt: "纱雾握着门边，露出认真又有一点得意的可爱表情"
     }
   },
   outfits: {
     home: {
       name: "宽松运动家居服",
-      image: "assets/v5/outfit-home.webp",
-      small: "assets/v5/outfit-home-560.webp",
+      ...v18Portrait("outfit-home"),
       alt: "纱雾穿宽松粉色运动外套和奶油色运动裤，坐在床边害羞微笑",
       description: "袖子要够长，裤脚要够软。窝在房间里画画的时候，这样才最安心。",
       time: "午后 15:20",
@@ -36,8 +54,7 @@ const CONTENT = {
     },
     artist: {
       name: "格纹画稿睡衣",
-      image: "assets/v5/outfit-artist-night.webp",
-      small: "assets/v5/outfit-artist-night-560.webp",
+      ...v18Portrait("outfit-artist-night"),
       alt: "纱雾穿蓝白格长袖睡衣和长裤，戴着绘图手套在月光下认真画画",
       description: "蓝白格睡衣、绘图手套和不会掉下去的软拖鞋——熬夜画稿模式，准备完成。",
       time: "深夜 00:47",
@@ -46,8 +63,7 @@ const CONTENT = {
     },
     outing: {
       name: "薄荷水手外套",
-      image: "assets/v5/outfit-outing-sailor.webp",
-      small: "assets/v5/outfit-outing-sailor-560.webp",
+      ...v18Portrait("outfit-outing-sailor"),
       alt: "纱雾穿水手领裙装、薄荷色针织外套和深色长袜，抱着棕色书包站在门口",
       description: "水手领、厚厚的薄荷针织和能挡住紧张的书包。真的要出门时，会在门口多站一会儿。",
       time: "早上 08:10",
@@ -56,8 +72,7 @@ const CONTENT = {
     },
     bedtime: {
       name: "草莓睡前服",
-      image: "assets/v5/outfit-bedtime.webp",
-      small: "assets/v5/outfit-bedtime-560.webp",
+      ...v18Portrait("outfit-bedtime"),
       alt: "深夜里，纱雾穿奶油粉草莓长袖睡衣和长裤，侧躺在床上用数位板继续画画",
       description: "已经换好睡衣，却还舍不得放下最后一笔。数位板垫在枕头上，画到眼睛发困才肯保存。",
       time: "凌晨 01:13",
@@ -66,8 +81,7 @@ const CONTENT = {
     },
     hooded: {
       name: "猫耳连帽毯",
-      image: "assets/v5/outfit-hooded-blanket.webp",
-      small: "assets/v5/outfit-hooded-blanket-560.webp",
+      ...v18Portrait("outfit-hooded-blanket"),
       alt: "雨夜里，纱雾裹着薄荷灰猫耳连帽毯，穿长裤和暖袜坐在地毯上认真校对画稿",
       description: "帽子拉低一点，袖子再长一点，就能把雨声和截稿压力都挡在外面；该改的线却一笔也不会漏。",
       time: "雨夜 21:36",
@@ -363,8 +377,7 @@ const CONTENT = {
   gallery: [
     {
       id: "bed-drawing",
-      image: "assets/v4/gallery-bed-drawing.webp",
-      thumb: "assets/v4/gallery-bed-drawing-thumb.webp",
+      ...v18Scene("gallery-bed-drawing"),
       alt: "银白长发的女孩穿粉色猫耳家居服，盘腿坐在床上用数位板画画，被发现后害羞抬眼",
       title: "被抓到在床上画画",
       note: "她原本把数位板藏在膝盖上。听见你靠近，只来得及红着脸抬头：“不许笑……这里比较舒服而已。”",
@@ -373,8 +386,7 @@ const CONTENT = {
     },
     {
       id: "blanket-fort",
-      image: "assets/v4/gallery-blanket-fort.webp",
-      thumb: "assets/v4/gallery-blanket-fort-thumb.webp",
+      ...v18Scene("gallery-blanket-fort"),
       alt: "银白长发的女孩躲在被子搭成的小帐篷里画画，红着脸从帘边递出一张小猫速写",
       title: "被窝画室只开一条缝",
       note: "她用被子围出一间更小的画室，只把帘子拉开一点点。小猫速写先从缝里递出来，藏在袖口后的声音轻得几乎听不见：“画、画可以先看……”",
@@ -383,8 +395,7 @@ const CONTENT = {
     },
     {
       id: "stream-wave",
-      image: "assets/v4/gallery-stream-wave.webp",
-      thumb: "assets/v4/gallery-stream-wave-thumb.webp",
+      ...v18Scene("gallery-stream-wave"),
       alt: "银白长发的女孩戴着猫耳耳机坐在数位板前进行安静的绘画直播，用袖口挡住红脸小幅挥手",
       title: "直播开始前的小小挥手",
       note: "进入画师模式时，她盯着线稿比谁都认真。发现镜头还开着，才用袖口挡住脸，飞快挥了一下手：“只、只是在确认画面。”",
@@ -393,8 +404,7 @@ const CONTENT = {
     },
     {
       id: "show-drawing",
-      image: "assets/v4/gallery-show-drawing.webp",
-      thumb: "assets/v4/gallery-show-drawing-thumb.webp",
+      ...v18Scene("gallery-show-drawing"),
       alt: "银白长发的女孩跪坐在床边，红着脸把画着可爱角色的速写本举给来访者看",
       title: "只给你看三秒",
       note: "画纸举得很认真，视线却躲到了旁边。“看、看完就要说感想……不许只点头。”",
@@ -403,8 +413,7 @@ const CONTENT = {
     },
     {
       id: "pillow-offer",
-      image: "assets/v4/gallery-pillow-offer.webp",
-      thumb: "assets/v4/gallery-pillow-offer-thumb.webp",
+      ...v18Scene("gallery-pillow-offer"),
       alt: "银白长发的女孩穿蓝白格睡衣，抱着粉色猫咪靠枕，从靠枕后把一张小猫画递给来访者",
       title: "躲在靠枕后把画递给你",
       note: "大半张脸都藏起来了，画却认真地伸到你面前。“只、只许看画……不许一直看我。”",
@@ -413,8 +422,7 @@ const CONTENT = {
     },
     {
       id: "door-note",
-      image: "assets/v4/gallery-door-note.webp",
-      thumb: "assets/v4/gallery-door-note-thumb.webp",
+      ...v18Scene("gallery-door-note"),
       alt: "银白长发的女孩藏在半开的卧室门后，脸红着从门缝递出一张画有小猫的卡片",
       title: "谢谢要从门缝里递出来",
       note: "亲口说出口还是太难了，于是她把认真画好的小猫卡片从门缝推给你。等你接稳，门后才传来一句：“那、那只小猫不许笑。”",
@@ -423,8 +431,7 @@ const CONTENT = {
     },
     {
       id: "desk-night",
-      image: "assets/v4/gallery-desk-night.webp",
-      thumb: "assets/v4/gallery-desk-night-thumb.webp",
+      ...v18Scene("gallery-desk-night"),
       alt: "深夜里，银白长发的女孩趴在数位板前认真画画，桌灯照亮画稿",
       title: "认真起来就忘了害羞",
       note: "嘴上说着不许偷看，真正画起来以后，连门边的脚步声都听不见了。",
@@ -433,8 +440,7 @@ const CONTENT = {
     },
     {
       id: "sketch-sort",
-      image: "assets/v4/gallery-sketch-sort.webp",
-      thumb: "assets/v4/gallery-sketch-sort-thumb.webp",
+      ...v18Scene("gallery-sketch-sort"),
       alt: "银白长发的女孩穿粉色长袖家居服坐在地毯上整理速写，抱住一张画稿并害羞地把另一张推向来访者",
       title: "最喜欢的那张先藏住",
       note: "散在地毯上的草稿被分成好多小堆。她把最喜欢的一张紧紧抱住，却又把另一张悄悄推向你：“这张……可以替我保管一下。”",
@@ -443,8 +449,7 @@ const CONTENT = {
     },
     {
       id: "sketchbook-hide",
-      image: "assets/v4/gallery-sketchbook-hide.webp",
-      thumb: "assets/v4/gallery-sketchbook-hide-thumb.webp",
+      ...v18Scene("gallery-sketchbook-hide"),
       alt: "银白长发的女孩躲在大画册后，只露出一双明亮的蓝眼睛",
       title: "被看太久就藏起来",
       note: "画册挡住了大半张脸，但那双眼睛已经把“我知道你还在看”全都说出来了。",
@@ -453,8 +458,7 @@ const CONTENT = {
     },
     {
       id: "awaiting-praise",
-      image: "assets/v4/gallery-awaiting-praise.webp",
-      thumb: "assets/v4/gallery-awaiting-praise-thumb.webp",
+      ...v18Scene("gallery-awaiting-praise"),
       alt: "银白长发的女孩抱膝坐在床上，速写本朝向来访者，脸红着等待评价",
       title: "装作没有在等夸奖",
       note: "她把画留在最显眼的位置，自己却缩进了宽大的袖口里。“我、我没有催你……慢慢看也行。”",
@@ -463,8 +467,7 @@ const CONTENT = {
     },
     {
       id: "goodnight",
-      image: "assets/v4/gallery-goodnight.webp",
-      thumb: "assets/v4/gallery-goodnight-thumb.webp",
+      ...v18Scene("gallery-goodnight"),
       alt: "月光下，银白长发的女孩蜷坐在窗边抱着猫咪玩偶，露出困倦的微笑",
       title: "今天的最后一页",
       note: "稿子保存好，窗帘留一条缝，再抱住最软的玩偶。临睡前，她还是小声补了一句：“明天……也可以来。”",
@@ -482,23 +485,19 @@ const CONTENT = {
   drawingStory: {
     frames: {
       focus: {
-        image: "assets/v6/studio-focus.webp",
-        small: "assets/v6/studio-focus-720.webp",
+        ...v18Scene("studio-focus"),
         alt: "纱雾在夜色里的画桌前低头用数位板认真画线稿"
       },
       blink: {
-        image: "assets/v6/studio-blink.webp",
-        small: "assets/v6/studio-blink-720.webp",
+        ...v18Scene("studio-blink"),
         alt: "纱雾低头画线时轻轻眨了一下眼睛"
       },
       shy: {
-        image: "assets/v6/studio-shy.webp",
-        small: "assets/v6/studio-shy-720.webp",
+        ...v18Scene("studio-shy"),
         alt: "被认真夸奖后，纱雾脸红着用长袖袖口遮住嘴角"
       },
       reveal: {
-        image: "assets/v6/studio-reveal.webp",
-        small: "assets/v6/studio-reveal-720.webp",
+        ...v18Scene("studio-reveal"),
         alt: "纱雾露出害羞又有一点得意的表情，把刚完成的小猫画推到桌边"
       }
     },
@@ -536,7 +535,7 @@ const CONTENT = {
       door: {
         label: "门缝看月亮的小猫",
         detail: "明明好奇，却只肯先探出半张脸",
-        image: "assets/v6/drawing-door-moon.webp",
+        ...v18Scene("drawing-door-moon"),
         alt: "奶油稿纸上，一只小猫从半开的房门后看向月亮和星星的铅笔水彩画",
         line: "门只开这么大……但月亮还是看得见。",
         stageNote: "她先画了一条很窄的门缝，又在外面留了一轮月亮。"
@@ -544,7 +543,7 @@ const CONTENT = {
       blanket: {
         label: "被窝里画星星的小猫",
         detail: "躲进最小的画室，还是很认真地下笔",
-        image: "assets/v6/drawing-blanket-star.webp",
+        ...v18Scene("drawing-blanket-star"),
         alt: "奶油稿纸上，一只小猫躲在被窝帐篷里用铅笔画星星的铅笔水彩画",
         line: "被子里面比较安静……画线也不会抖。",
         stageNote: "她把被子画成一间很小的画室，只给笔尖留了出口。"
@@ -552,7 +551,7 @@ const CONTENT = {
       pencil: {
         label: "抱着大铅笔的小猫",
         detail: "看起来软绵绵，抱住画笔时却很认真",
-        image: "assets/v6/drawing-pencil-stars.webp",
+        ...v18Scene("drawing-pencil-stars"),
         alt: "奶油稿纸上，一只小猫抱住一支大铅笔，周围散着三颗小星星的铅笔水彩画",
         line: "笔不能放开。灵感跑掉的话……很难抓回来。",
         stageNote: "她把铅笔画得比小猫还大，爪子却抱得很稳。"
@@ -774,10 +773,7 @@ const CONTENT = {
     places: {
       desk: {
         label: "画桌旁",
-        image: "assets/v6/studio-focus.webp",
-        small: "assets/v6/studio-focus-720.webp",
-        width: 1448,
-        smallWidth: 720,
+        ...v18Scene("studio-focus"),
         alt: "纱雾在暖灯与夜窗之间低头画稿，桌边放着数位板、铅笔和小猫玩偶",
         title: "先别叫她，她正画到最认真的地方。",
         line: "她把旁边的椅子留出一点，却一直装作只是忘了推回去。",
@@ -788,10 +784,7 @@ const CONTENT = {
           "桌边那张共同完成的小画，被压在最不容易折到的位置。"
         ],
         autonomousFrame: {
-          image: "assets/v6/studio-blink.webp",
-          small: "assets/v6/studio-blink-720.webp",
-          width: 1448,
-          smallWidth: 720,
+          ...v18Scene("studio-blink"),
           alt: "纱雾低头画线时轻轻眨了一下眼睛"
         },
         autonomousDuration: 145,
@@ -809,10 +802,7 @@ const CONTENT = {
       },
       bed: {
         label: "床边",
-        image: "assets/v4/gallery-bed-drawing.webp",
-        small: "assets/v4/gallery-bed-drawing-thumb.webp",
-        width: 1364,
-        smallWidth: 480,
+        ...v18Scene("gallery-bed-drawing"),
         alt: "纱雾穿粉色猫耳家居服，盘腿坐在床上用数位板画画，身边堆着柔软靠枕",
         title: "床是休息的地方，也是她最小的画室。",
         line: "数位板垫在膝盖上，滑下来的被角已经快碰到地板。",
@@ -835,10 +825,7 @@ const CONTENT = {
             voice: "room-bed-blanket",
             sound: "assets/audio/v14/bed-blanket-fold.mp3",
             frame: {
-              image: "assets/v4/gallery-blanket-fort.webp",
-              small: "assets/v4/gallery-blanket-fort-thumb.webp",
-              width: 1364,
-              smallWidth: 480,
+              ...v18Scene("gallery-blanket-fort"),
               alt: "纱雾躲进被子搭成的小帐篷，从帘边害羞地递出一张小猫速写"
             }
           },
@@ -848,10 +835,7 @@ const CONTENT = {
       },
       wardrobe: {
         label: "衣橱边",
-        image: "assets/v7/wardrobe-living.webp",
-        small: "assets/v7/wardrobe-living-720.webp",
-        width: 1448,
-        smallWidth: 720,
+        ...v18Scene("wardrobe-living"),
         alt: "纱雾站在打开的木衣橱旁，害羞地比较粉色家居外套和薄荷猫耳连帽毯",
         title: "她已经比较了很久，还不肯承认自己在犹豫。",
         line: "粉色家居服比较安心，薄荷猫耳毯又足够挡住紧张的表情。",
@@ -875,10 +859,7 @@ const CONTENT = {
       },
       window: {
         label: "窗台",
-        image: "assets/v4/gallery-goodnight.webp",
-        small: "assets/v4/gallery-goodnight-thumb.webp",
-        width: 1364,
-        smallWidth: 480,
+        ...v18Scene("gallery-goodnight"),
         alt: "月光下，纱雾蜷坐在窗边抱着猫咪玩偶，身旁放着合上的画册",
         title: "窗帘总会留一条缝，刚好够月光进来。",
         line: "她说那样比较容易看清时间，其实只是舍不得把夜色全部关在外面。",
@@ -1651,7 +1632,11 @@ function preloadImage(source) {
 }
 
 function responsiveSourceSet(item) {
-  return item.small ? `${item.small} 560w, ${item.image} 1122w` : "";
+  const sources = [];
+  if (item.small) sources.push(`${item.small} ${item.smallWidth || 560}w`);
+  if (item.medium) sources.push(`${item.medium} ${item.mediumWidth || 1440}w`);
+  if (item.image) sources.push(`${item.image} ${item.width || 1122}w`);
+  return sources.join(", ");
 }
 
 function preloadResponsiveImage(item, sizes) {
@@ -1669,8 +1654,8 @@ function preloadResponsiveImage(item, sizes) {
 
 function setHeroExpression(key) {
   const expression = CONTENT.heroExpressions[key] || CONTENT.heroExpressions.peek;
-  elements.heroCharacter.src = expression.image;
   elements.heroCharacter.srcset = responsiveSourceSet(expression);
+  elements.heroCharacter.src = expression.image;
   elements.heroCharacter.alt = expression.alt;
 }
 
@@ -1856,14 +1841,13 @@ function refreshLivingTime() {
 }
 
 function livingSourceSet(item) {
-  if (!item.small) return "";
-  return `${item.small} ${item.smallWidth || 720}w, ${item.image} ${item.width || 1448}w`;
+  return responsiveSourceSet(item);
 }
 
 function setLivingRoomImage(item) {
   if (!item) return;
-  elements.livingRoomImage.src = item.image;
   elements.livingRoomImage.srcset = livingSourceSet(item);
+  elements.livingRoomImage.src = item.image;
   elements.livingRoomImage.alt = item.alt;
 }
 
@@ -1963,6 +1947,8 @@ function renderLivingDrawingMemory() {
   const subject = CONTENT.drawingStory.subjects[memory.subject];
   const palette = CONTENT.drawingStory.palettes[memory.palette];
   elements.livingDrawingMemory.hidden = false;
+  elements.livingDrawingMemoryImage.srcset = responsiveSourceSet(subject);
+  elements.livingDrawingMemoryImage.sizes = "(max-width: 760px) 6.5rem, 9rem";
   elements.livingDrawingMemoryImage.src = subject.image;
   elements.livingDrawingMemoryImage.alt = `${subject.alt}，使用${palette.label}配色，放在画桌边保存`;
   elements.livingDrawingMemoryLabel.textContent = `上次一起画的 · ${subject.label}`;
@@ -2458,8 +2444,8 @@ function changeVoiceVolume() {
 function applyOutfit(key) {
   const outfit = CONTENT.outfits[key];
   if (!outfit) return;
-  elements.outfitImage.src = outfit.image;
   elements.outfitImage.srcset = responsiveSourceSet(outfit);
+  elements.outfitImage.src = outfit.image;
   elements.outfitImage.alt = outfit.alt;
   elements.outfitName.textContent = outfit.name;
   elements.outfitDescription.textContent = outfit.description;
@@ -2722,6 +2708,8 @@ function finishQuietCompanion(goBack = false) {
 
 function setStoryPeekSubject(subjectKey = storyDraft.subject) {
   const subject = CONTENT.drawingStory.subjects[subjectKey] || CONTENT.drawingStory.subjects.door;
+  elements.storyPeekImage.srcset = responsiveSourceSet(subject);
+  elements.storyPeekImage.sizes = "(max-width: 760px) 12rem, 15rem";
   elements.storyPeekImage.src = subject.image;
   elements.storyPeekImage.alt = `${subject.alt}，只露出还没有被稿纸盖住的一小角`;
 }
@@ -2804,8 +2792,8 @@ function storyStepConfig(stepKey) {
 function setStoryFrameSource(key) {
   const frame = CONTENT.drawingStory.frames[key];
   if (!frame) return;
-  elements.storyStageImage.src = frame.image;
   elements.storyStageImage.srcset = responsiveSourceSet(frame);
+  elements.storyStageImage.src = frame.image;
   elements.storyStageImage.alt = frame.alt;
   elements.storyStage.dataset.frame = key;
 }
@@ -2873,6 +2861,8 @@ function refreshStoryArtPreview(final = false) {
   }
   const palette = CONTENT.drawingStory.palettes[storyDraft.palette];
   elements.storyArtPreview.hidden = false;
+  elements.storyArtImage.srcset = responsiveSourceSet(subject);
+  elements.storyArtImage.sizes = "(max-width: 760px) calc(100vw - 4rem), (max-width: 1024px) 38vw, 22rem";
   elements.storyArtImage.src = subject.image;
   elements.storyArtImage.alt = palette ? `${subject.alt}，使用${palette.label}配色` : subject.alt;
   setStoryPaletteClass(elements.storyArtImage, storyDraft.palette);
@@ -2891,6 +2881,8 @@ function renderStoryMemory() {
   const palette = CONTENT.drawingStory.palettes[memory.palette];
   const praise = CONTENT.drawingStory.praises[memory.praise];
   elements.storyMemory.hidden = false;
+  elements.storyMemoryImage.srcset = responsiveSourceSet(subject);
+  elements.storyMemoryImage.sizes = "(max-width: 760px) 6.4rem, 9.5rem";
   elements.storyMemoryImage.src = subject.image;
   elements.storyMemoryImage.alt = `${subject.alt}，使用${palette.label}配色`;
   setStoryPaletteClass(elements.storyMemoryImage, memory.palette);
@@ -2914,7 +2906,7 @@ function storyChoiceButton(stepKey, key, option) {
   if (stepKey === "subject") {
     const thumbnail = document.createElement("img");
     thumbnail.className = "story-choice-thumb";
-    thumbnail.src = option.image;
+    thumbnail.src = option.thumb || option.small || option.image;
     thumbnail.alt = "";
     thumbnail.width = 960;
     thumbnail.height = 720;
@@ -3053,7 +3045,7 @@ async function chooseStoryOption(stepKey, key) {
   });
 
   if (stepKey === "subject") {
-    preloadImage(option.image).catch(() => {});
+    preloadResponsiveImage(option, "(max-width: 760px) calc(100vw - 4rem), (max-width: 1024px) 38vw, 22rem").catch(() => {});
     setStoryPeekSubject(key);
     elements.storyPeek.hidden = false;
     elements.storyStageNote.textContent = option.stageNote;
@@ -3224,6 +3216,8 @@ function buildGalleryThumbs() {
 function applyGallery(index, animateThumbnail = true) {
   const item = CONTENT.gallery[index];
   const chapter = galleryChapterFor(index);
+  elements.galleryMainImage.srcset = responsiveSourceSet(item);
+  elements.galleryMainImage.sizes = "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 76vw, 920px";
   elements.galleryMainImage.src = item.image;
   elements.galleryMainImage.alt = item.alt;
   elements.galleryIndex.textContent = `${String(index + 1).padStart(2, "0")} / ${String(CONTENT.gallery.length).padStart(2, "0")}`;
@@ -3252,7 +3246,7 @@ function applyGallery(index, animateThumbnail = true) {
 function preloadGalleryNeighbors(index = galleryPosition) {
   [-1, 1].forEach((offset) => {
     const next = (index + offset + CONTENT.gallery.length) % CONTENT.gallery.length;
-    preloadImage(CONTENT.gallery[next].image).catch(() => {});
+    preloadResponsiveImage(CONTENT.gallery[next], "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 76vw, 920px").catch(() => {});
   });
 }
 
@@ -3273,7 +3267,7 @@ async function switchGallery(index, announce = true) {
   elements.galleryStage.classList.add("is-switching");
 
   try {
-    await preloadImage(item.image);
+    await preloadResponsiveImage(item, "(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 76vw, 920px");
   } catch {
     if (sequence === gallerySequence) elements.galleryStage.classList.remove("is-switching");
     return;
@@ -3296,6 +3290,8 @@ async function switchGallery(index, announce = true) {
 function applyLightbox(index) {
   const item = CONTENT.gallery[index];
   const chapter = galleryChapterFor(index);
+  elements.lightboxImage.srcset = responsiveSourceSet(item);
+  elements.lightboxImage.sizes = "96vw";
   elements.lightboxImage.src = item.image;
   elements.lightboxImage.alt = item.alt;
   elements.lightboxChapter.textContent = chapter.title;

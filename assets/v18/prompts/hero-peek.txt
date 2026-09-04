@@ -1,0 +1,8 @@
+Use case: identity-preserve
+Asset type: 4K-ready master illustration for a fan-made interactive character website hero
+Input images: Image 1 is the edit target and the identity/composition anchor.
+Primary request: redraw the supplied illustration from scratch at premium key-visual quality while preserving the same fictional character, exact shy doorway pose, framing, pink cat-ear hoodie, silver-white long hair, bright blue eyes, pink hair clips, hand placement, door geometry, bedroom layout, tablet, window, and warm afternoon light. Make her noticeably cuter and more alive: soft rounded face, luminous layered irises, tiny hesitant mouth, natural blush, expressive eyebrows, delicate individual hair strands, believable fingers, tactile knit fabric, polished hand-painted anime linework and nuanced soft shading. Increase clarity, material detail, depth, and cinematic lighting without making the image glossy or photorealistic.
+Composition/framing: preserve the original vertical 4:5 composition and every important crop; the character peeks from behind the wooden door and remains the clear focal point.
+Color palette: strawberry milk pink, silver-blue hair, mint stationery, cocoa wood, creamy daylight.
+Output intent: a clean high-detail master suitable for a 4K website source and responsive derivatives.
+Constraints: redraw rather than merely sharpen; preserve identity, age impression, body proportions, pose, expression intent, outfit, room objects, camera angle, and negative space. All-ages, wholesome, non-sexualized. No official screenshot replication, no logos, no watermark, no in-image text, no extra limbs or fingers, no malformed hands, no plastic skin, no blank stare, no exaggerated anatomy, no new props.
