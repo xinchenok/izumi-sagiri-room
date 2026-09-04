@@ -1,0 +1,1126 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-04",
+  "generator": "内置 ImageGen 以图生图；Pillow 12.2.0 生成 4K 与响应式 WebP",
+  "identityAnchor": "assets/v18/master/hero-peek-4k.webp",
+  "archive": "assets/archive/pre-v18-images.json",
+  "assets": [
+    {
+      "id": "hero-peek",
+      "kind": "portrait",
+      "oldSource": "assets/v5/hero-peek.webp",
+      "oldSourceSha256": "1a7b382646d407408157062c12c24676ca027cae30ad3dfd8d45954510504d07",
+      "prompt": "assets/v18/prompts/hero-peek.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/hero-peek-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1016928,
+          "sha256": "8d367013f4ad84295928f70d3a9cd3b1ee78981245c8a4ee66b638666d662b15",
+          "provenance": "assets/v18/master/hero-peek-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/hero-peek-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 265594,
+          "sha256": "6cf26d4c80104c0c6f2e1f2c0a8729102ece3b6cdbcbe3f43bf3c8eeed50e758",
+          "provenance": "assets/v18/hero-peek-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/hero-peek-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 81934,
+          "sha256": "be3cbebe0bcc75bffb18ae2a9642fac752a4aa7a3fe3c58b4e6b8788e814677a",
+          "provenance": "assets/v18/hero-peek-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "hero-startled",
+      "kind": "portrait",
+      "oldSource": "assets/v5/hero-startled.webp",
+      "oldSourceSha256": "447c1a71c417a11f5f5531c0d778bc8d1e2209c76a9933806d00cb7674e95102",
+      "prompt": "assets/v18/prompts/hero-startled.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/hero-startled-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1159964,
+          "sha256": "123bfa1526d2c2a370fb2dec1f2de8c3986930ea7d12aa79f0c522f8d80ecd97",
+          "provenance": "assets/v18/master/hero-startled-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/hero-startled-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 291348,
+          "sha256": "9effc1d87b0387f8ec415ed00faccaad8589029ef7a2ee036fe6fa400eb0a5f8",
+          "provenance": "assets/v18/hero-startled-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/hero-startled-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 86416,
+          "sha256": "4f91aac9162c4b096e3cfc4f6a3ddd4ef363f9213392761d04a45059d7b22d4d",
+          "provenance": "assets/v18/hero-startled-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "hero-shy",
+      "kind": "portrait",
+      "oldSource": "assets/v5/hero-shy.webp",
+      "oldSourceSha256": "d3a1683de9ece85ef233cb6105f7dd0cef894538989db4419f8ce2f0cc0aaa0d",
+      "prompt": "assets/v18/prompts/hero-shy.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/hero-shy-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 976066,
+          "sha256": "93e1f27c12584ca162fe3715ea403e84ddf654038c1ff8819470187900ace3ae",
+          "provenance": "assets/v18/master/hero-shy-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/hero-shy-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 255196,
+          "sha256": "595c9bcdf305c2445d328951abd5ed635675c24e72e0989b47e68e2e2e88748b",
+          "provenance": "assets/v18/hero-shy-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/hero-shy-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 83170,
+          "sha256": "2416cb16188da015dc669bc0479281ffb83c654d36a356e34dbffb3307b8c48a",
+          "provenance": "assets/v18/hero-shy-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "hero-proud",
+      "kind": "portrait",
+      "oldSource": "assets/v5/hero-proud.webp",
+      "oldSourceSha256": "c3c2001ee5c7ff5e423a1ea5695c06fc5ff99590dab52c8a16f43c5fe6beb509",
+      "prompt": "assets/v18/prompts/hero-proud.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/hero-proud-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 974070,
+          "sha256": "5c9913f68f9fa79967946553ef8f1f5b7ee4589eb694ad6ee27ec292b94b388d",
+          "provenance": "assets/v18/master/hero-proud-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/hero-proud-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 261540,
+          "sha256": "d79faadd89103f7b907b3bb88bc6a9d3461e81513df6911f7edfa4920fbc2be8",
+          "provenance": "assets/v18/hero-proud-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/hero-proud-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 84084,
+          "sha256": "940ce75317c2fb0f711f0fa2542be614969fb1dca6a7bbbdb8b5f978acf435d0",
+          "provenance": "assets/v18/hero-proud-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "outfit-home",
+      "kind": "portrait",
+      "oldSource": "assets/v5/outfit-home.webp",
+      "oldSourceSha256": "808c8cdb7c1e49e0a464621c870efd6c8fbddeb92468d1b1fa65df73e651d3d6",
+      "prompt": "assets/v18/prompts/outfit-home.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/outfit-home-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1046330,
+          "sha256": "dc3dab1e45fa1a561ef36144b83c15ac3790b8d52b4ecb294d9ecdc91c89da8f",
+          "provenance": "assets/v18/master/outfit-home-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/outfit-home-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 264990,
+          "sha256": "a112976567ab180c02e0a02d9d1f23432e5f3b4aae8d3992b29f0bd365935534",
+          "provenance": "assets/v18/outfit-home-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/outfit-home-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 79460,
+          "sha256": "4986060183c045fa75285cea23f4239f9415d2f2e0f783bd0ff9663f39842a3c",
+          "provenance": "assets/v18/outfit-home-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "outfit-artist-night",
+      "kind": "portrait",
+      "oldSource": "assets/v5/outfit-artist-night.webp",
+      "oldSourceSha256": "54e19fac06417702872db9de30d67c4d70ba53b69e2256384f76c9618a751f2a",
+      "prompt": "assets/v18/prompts/outfit-artist-night.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/outfit-artist-night-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 991902,
+          "sha256": "e38c526b2ad8efcdda15b6a57e5c0998a7f48b1d7166b6c957ca915f11041c2d",
+          "provenance": "assets/v18/master/outfit-artist-night-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/outfit-artist-night-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 257586,
+          "sha256": "cd2a2e8566fecc7caa9d78321d17b9cb45a569c86449b9b2aa65db6c135c3ceb",
+          "provenance": "assets/v18/outfit-artist-night-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/outfit-artist-night-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 83124,
+          "sha256": "3a239ebde0dda4c9766b521cc73e9c8b21cb17ebb4fb50fa55438a813ebc7189",
+          "provenance": "assets/v18/outfit-artist-night-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "outfit-outing-sailor",
+      "kind": "portrait",
+      "oldSource": "assets/v5/outfit-outing-sailor.webp",
+      "oldSourceSha256": "b4edfb9a11b2af2404e93db34fa3b99cb7db445b20f26886a08f29f5566ef42d",
+      "prompt": "assets/v18/prompts/outfit-outing-sailor.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/outfit-outing-sailor-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1099974,
+          "sha256": "405fab77b4977ba11bf35d9caaa76e5e4646e1a9b356825c01f12164edea60f8",
+          "provenance": "assets/v18/master/outfit-outing-sailor-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/outfit-outing-sailor-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 271406,
+          "sha256": "199e75b8200b6c5503207b226bcd8185ff61d5522339886e6006c30e87b59b1c",
+          "provenance": "assets/v18/outfit-outing-sailor-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/outfit-outing-sailor-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 73216,
+          "sha256": "460ad5bda6c0c5b5571993b06c28c29d890cdb6da17923f561cfea2bf2035cd3",
+          "provenance": "assets/v18/outfit-outing-sailor-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "outfit-bedtime",
+      "kind": "portrait",
+      "oldSource": "assets/v5/outfit-bedtime.webp",
+      "oldSourceSha256": "1e9f43d5c159484b33d4b926dc7330a3f0ce9a7ae6ccf2827216b13a8576d4c7",
+      "prompt": "assets/v18/prompts/outfit-bedtime.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/outfit-bedtime-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1289978,
+          "sha256": "e1cb92c12d724279d9c059cc1a8b3fffe4de686144b58584568dfb29f69206c4",
+          "provenance": "assets/v18/master/outfit-bedtime-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/outfit-bedtime-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 351050,
+          "sha256": "d480c13e96ecbb79ff663162868bbe5fc395f995cc23ae6bd484ef46d9143c86",
+          "provenance": "assets/v18/outfit-bedtime-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/outfit-bedtime-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 108338,
+          "sha256": "5832d00708ddec8b2a175f473bae63f2a685fb3bed3e883932bfa770b3ce0fb0",
+          "provenance": "assets/v18/outfit-bedtime-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "outfit-hooded-blanket",
+      "kind": "portrait",
+      "oldSource": "assets/v5/outfit-hooded-blanket.webp",
+      "oldSourceSha256": "1a25f7bd6cb50cce10287292761093f306d194b4a10ad81e4425f45e964c4f7b",
+      "prompt": "assets/v18/prompts/outfit-hooded-blanket.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/outfit-hooded-blanket-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1432988,
+          "sha256": "7181b3cf902eeef9de73945ddf36f936414391f90d6d5201c215d112f138a0ba",
+          "provenance": "assets/v18/master/outfit-hooded-blanket-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/outfit-hooded-blanket-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 375884,
+          "sha256": "42cf4e2858c5145f51b38834aa911dc2b457a63e4b5ae824169d83d422a00673",
+          "provenance": "assets/v18/outfit-hooded-blanket-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/outfit-hooded-blanket-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 108164,
+          "sha256": "0275fe73c16ee4cb9afd0783cecd987bfaaa4a3f9f1a52739990faed1772d43b",
+          "provenance": "assets/v18/outfit-hooded-blanket-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-bed-drawing",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-bed-drawing.webp",
+      "oldSourceSha256": "181b47f2edad609ac304ff1ff9e0be3c0c032a549f5ac255c4eb97435afc9629",
+      "prompt": "assets/v18/prompts/gallery-bed-drawing.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-bed-drawing-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1221998,
+          "sha256": "7be2fc5d566015497c0e1f6950cc2d221440b2783adc70247141908079fc3cdb",
+          "provenance": "assets/v18/master/gallery-bed-drawing-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-bed-drawing-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 252230,
+          "sha256": "615f925d56de7de9027d3ab10797db4fe30f5fecf49f0b6388bbf25aa46c6924",
+          "provenance": "assets/v18/gallery-bed-drawing-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-bed-drawing-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 71146,
+          "sha256": "62b641ad2f2951eabcfa07d77fdc58eba43634db390fbb6b3371c397c758c5a0",
+          "provenance": "assets/v18/gallery-bed-drawing-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-bed-drawing-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 33300,
+          "sha256": "ac92a0cff01216bd6ae08039afb32bbbadfcb3eb292f24c33ecbece890ed8c03",
+          "provenance": "assets/v18/gallery-bed-drawing-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-blanket-fort",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-blanket-fort.webp",
+      "oldSourceSha256": "aa6395826c578dd1936d4528846cfb98af447671074862bbf52108d9339c66f6",
+      "prompt": "assets/v18/prompts/gallery-blanket-fort.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-blanket-fort-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1327176,
+          "sha256": "c656befcd8cb557132fd315910797ae04e680ac8da4067d657449493acfd80e0",
+          "provenance": "assets/v18/master/gallery-blanket-fort-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-blanket-fort-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 271004,
+          "sha256": "1bee6d2228825fa1f6bcc877498f4ce4d3e763b285d39d9fcdfe29de3bfbda83",
+          "provenance": "assets/v18/gallery-blanket-fort-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-blanket-fort-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 73504,
+          "sha256": "ad4334be05dd3128fe739cc2e917da00139687a956b91acef1b5985fcf40e098",
+          "provenance": "assets/v18/gallery-blanket-fort-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-blanket-fort-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 32474,
+          "sha256": "6bffead76faa0d84285de9536f9a00bfa50fbc3d7f2bd95c80180d006d304b28",
+          "provenance": "assets/v18/gallery-blanket-fort-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-stream-wave",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-stream-wave.webp",
+      "oldSourceSha256": "33327ae106b41b1190584ae00a8a5a022d38dcec54c17b4641b5f706b8a61d12",
+      "prompt": "assets/v18/prompts/gallery-stream-wave.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-stream-wave-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1317484,
+          "sha256": "b5e805f83264ee82d6f00be21838c07c2e6b7c0add03b6bb9f0c402c04a6ddda",
+          "provenance": "assets/v18/master/gallery-stream-wave-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-stream-wave-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 260090,
+          "sha256": "af4686ea95cae89180db502cbaea5a912a9c0baac0fe5813b1fbf50411afaa16",
+          "provenance": "assets/v18/gallery-stream-wave-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-stream-wave-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 71016,
+          "sha256": "f3737591d945b39794438016b892b6c3c1d2a7ea921c2f34a09eca94cf900fb6",
+          "provenance": "assets/v18/gallery-stream-wave-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-stream-wave-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 31552,
+          "sha256": "b7135e84c2a3dd24f0482bf5ed3c68c2f45875c8c533680e399521a3ab9626f7",
+          "provenance": "assets/v18/gallery-stream-wave-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-show-drawing",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-show-drawing.webp",
+      "oldSourceSha256": "b8e9c6ae43937b13138a95ad40a08a5ba7b982407d619537e2bd70c800e4e11d",
+      "prompt": "assets/v18/prompts/gallery-show-drawing.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-show-drawing-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1218620,
+          "sha256": "43576b5b20fb43f86c154ce6e3f7ca51c2c358a3cf7823fd12ee64aacdfb69c5",
+          "provenance": "assets/v18/master/gallery-show-drawing-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-show-drawing-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 243392,
+          "sha256": "8852eb8a002a5fee92dd50d4d92a9c003f1838cf3aa290f0d519894f25007b2f",
+          "provenance": "assets/v18/gallery-show-drawing-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-show-drawing-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 63760,
+          "sha256": "8c50146b0f26e2bd1ac6435981c14199c94a810267f61e79b09b3c8a0bf0fccd",
+          "provenance": "assets/v18/gallery-show-drawing-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-show-drawing-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 28532,
+          "sha256": "a7f254fb801e8b622e0af8e4247a307cb87bd33f82c10162620ebbd8a8ca9a72",
+          "provenance": "assets/v18/gallery-show-drawing-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-pillow-offer",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-pillow-offer.webp",
+      "oldSourceSha256": "3a570e04b6222bfd09e474164a393e34fadfc4dc7d3573ca20614238085297b3",
+      "prompt": "assets/v18/prompts/gallery-pillow-offer.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-pillow-offer-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1038636,
+          "sha256": "4b5b24b901c3e671b8410e2b76c2e108f6e99e18eef98e894d9aed03545675c3",
+          "provenance": "assets/v18/master/gallery-pillow-offer-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-pillow-offer-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 203916,
+          "sha256": "5dc0d7d6edfb85b62c27206fcafba5985ba5e8707640635c02a659ae7aa9d460",
+          "provenance": "assets/v18/gallery-pillow-offer-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-pillow-offer-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 60674,
+          "sha256": "75b3903f0069d27011f6ff17fdbaf701157b904eab9a333493da6280f99854df",
+          "provenance": "assets/v18/gallery-pillow-offer-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-pillow-offer-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 27844,
+          "sha256": "a10a18a551c6ad1c52f067d8978a4fdefed68507ef85e965e93b1348dbb0ffc2",
+          "provenance": "assets/v18/gallery-pillow-offer-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-door-note",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-door-note.webp",
+      "oldSourceSha256": "e0c91acd0ca13975efc3c4a0730462c5be4323302e995c735ca7245c0c090137",
+      "prompt": "assets/v18/prompts/gallery-door-note.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-door-note-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1152628,
+          "sha256": "a92e2f9255eb96a018b43388fea03aa183235e6a6d821235c58c9cdb2689d23a",
+          "provenance": "assets/v18/master/gallery-door-note-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-door-note-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 225376,
+          "sha256": "b64a11f0ffcda4537fa3e68982d29dcd75190521286e58483401e6ce4cfaead0",
+          "provenance": "assets/v18/gallery-door-note-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-door-note-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 57836,
+          "sha256": "6d266b63886cc468333ad9593cffced1ab51dd22b4fa5f4f645b0d530b57217d",
+          "provenance": "assets/v18/gallery-door-note-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-door-note-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 26114,
+          "sha256": "d66fff18eabe5a6bb265189ab2e20f6d4706d885d9660abdc9cf02b24382af6f",
+          "provenance": "assets/v18/gallery-door-note-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-desk-night",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-desk-night.webp",
+      "oldSourceSha256": "66b828d86f5f19c3a85a10ab9ea784877a2cca418373392318f00edd3dd96599",
+      "prompt": "assets/v18/prompts/gallery-desk-night.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-desk-night-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1191174,
+          "sha256": "ff23c3d21c1a58c5a88cbfaed2a56234cff3116a21f117704eb14eca440a51c4",
+          "provenance": "assets/v18/master/gallery-desk-night-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-desk-night-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 232786,
+          "sha256": "f858853af6e4bb21b08335f3d40ffb21d322bcc69fcbaa40d6e8c6c87e0c83f8",
+          "provenance": "assets/v18/gallery-desk-night-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-desk-night-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 62894,
+          "sha256": "369297fafbf33d37545a93f90b68f46b2833b6fb813c40c512e902f8b9aec27d",
+          "provenance": "assets/v18/gallery-desk-night-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-desk-night-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 28556,
+          "sha256": "31abf0f49036cb50065de29cd04de3742c4cf514d5b43d4775b254a8e5b1b4b6",
+          "provenance": "assets/v18/gallery-desk-night-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-sketch-sort",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-sketch-sort.webp",
+      "oldSourceSha256": "4befb0f99e706f7ac67cb3bcd7d849be83ff6e986b9932253ef6acf3f6b6f229",
+      "prompt": "assets/v18/prompts/gallery-sketch-sort.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-sketch-sort-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1327046,
+          "sha256": "2ebc983e8f44271555ade8fd1616b6bdf83a39fef60cfb9e8240e82a84d9d2b3",
+          "provenance": "assets/v18/master/gallery-sketch-sort-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-sketch-sort-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 278954,
+          "sha256": "adcd040e045854a2068f537d042e2146894de44434350a57ec16c12a1b297224",
+          "provenance": "assets/v18/gallery-sketch-sort-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-sketch-sort-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 74464,
+          "sha256": "91ceaf63fcb4bc57ad41ab781f5b36dfe4ac8295c395df1702dd813a986bb2ce",
+          "provenance": "assets/v18/gallery-sketch-sort-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-sketch-sort-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 32500,
+          "sha256": "2a83d1b6593ddfcb1da57402deeb6fbf8440137bca9708cb7f25fecfb5ba78bd",
+          "provenance": "assets/v18/gallery-sketch-sort-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-sketchbook-hide",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-sketchbook-hide.webp",
+      "oldSourceSha256": "2a50446af1a9df5fa8feabd314a6d8f9edc183ef8147607ef7347a4ecbae7edf",
+      "prompt": "assets/v18/prompts/gallery-sketchbook-hide.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-sketchbook-hide-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 873080,
+          "sha256": "54811b3a3e08dbb20d8f34650345346e0c488ff5fb20b3ec2580270487eea9d0",
+          "provenance": "assets/v18/master/gallery-sketchbook-hide-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-sketchbook-hide-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 178044,
+          "sha256": "4212539b75b6a3f7614372200ba83b25b8c4f88f8944c2790fc851fdbce8d10b",
+          "provenance": "assets/v18/gallery-sketchbook-hide-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-sketchbook-hide-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 53492,
+          "sha256": "10eb835dba55facbcf2cf4a76c26a853f19165e6ee7a65b4c6b74f44286c7902",
+          "provenance": "assets/v18/gallery-sketchbook-hide-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-sketchbook-hide-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 25802,
+          "sha256": "55e4ccc9269fd552b9b20e631092f49e936a0747d3c36181875f591b4293f6ca",
+          "provenance": "assets/v18/gallery-sketchbook-hide-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-awaiting-praise",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-awaiting-praise.webp",
+      "oldSourceSha256": "501dd28e3a87b0d046091fd7d2889d6afd7beb86b4f92e6c867832624de7dd63",
+      "prompt": "assets/v18/prompts/gallery-awaiting-praise.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-awaiting-praise-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1272702,
+          "sha256": "d8a1ff1b79c8119d6b4fddc002406bfff6189e3206b00eb132ec3d02c8d99a25",
+          "provenance": "assets/v18/master/gallery-awaiting-praise-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-awaiting-praise-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 263236,
+          "sha256": "6c2b4c81383934c1b3813d55c653a491238b94a0f16a9d98f33cdcbc23ce0af6",
+          "provenance": "assets/v18/gallery-awaiting-praise-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-awaiting-praise-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 72782,
+          "sha256": "73b8cdc73655e5004a54597f655d1b12aa5f947266fe0028fd576b335815a2b3",
+          "provenance": "assets/v18/gallery-awaiting-praise-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-awaiting-praise-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 33096,
+          "sha256": "5b6b64f3110d3b28291766e09acc502e85865fa8d19c18edc868179b67e16910",
+          "provenance": "assets/v18/gallery-awaiting-praise-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-goodnight",
+      "kind": "scene",
+      "oldSource": "assets/v4/gallery-goodnight.webp",
+      "oldSourceSha256": "7de23429e18d4f14f0dd0a8e262461a4c2d9fd7f5563ad3ddcf3d1cc41529c22",
+      "prompt": "assets/v18/prompts/gallery-goodnight.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/gallery-goodnight-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 885058,
+          "sha256": "1629ff1fd6f0f937d663cf610e2866f7f9420af7827c7ab7f8e49b3dd896fb8d",
+          "provenance": "assets/v18/master/gallery-goodnight-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/gallery-goodnight-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 174238,
+          "sha256": "e9691f2fe23159cc17f35adc5ef2fb984137c1fd65127f7d0f9963af756ce5e8",
+          "provenance": "assets/v18/gallery-goodnight-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/gallery-goodnight-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 51598,
+          "sha256": "8a4b856165c77e5a60bca75cb3284c5377cd1155bedcc3cc5e5764aca94e3dde",
+          "provenance": "assets/v18/gallery-goodnight-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/gallery-goodnight-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 25524,
+          "sha256": "966686299def7930c1fa27e80b549fff0fc34c928981e676af5b68d2329bf077",
+          "provenance": "assets/v18/gallery-goodnight-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "desk-secrets",
+      "kind": "scene",
+      "oldSource": "assets/v3/desk-secrets.webp",
+      "oldSourceSha256": "4bfe82376907733f55d8ddf85bbeb2e9d49312a03a9c79fe681558233a45ceae",
+      "prompt": "assets/v18/prompts/desk-secrets.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/desk-secrets-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1514068,
+          "sha256": "263fda699d9142c7110741fcb837842756727486646345491680a4e531bb7b3e",
+          "provenance": "assets/v18/master/desk-secrets-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/desk-secrets-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 331788,
+          "sha256": "766c762d5614d6125d859730e777e386e91d92c27f3f9e820cf8721ab2f46197",
+          "provenance": "assets/v18/desk-secrets-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/desk-secrets-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 89632,
+          "sha256": "e26dac0abf212bbed2023708dd7c9796709e1094c87f1b510bfd1c7c25ca5822",
+          "provenance": "assets/v18/desk-secrets-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/desk-secrets-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42070,
+          "sha256": "9f52b8cbbaf6ebee991776f426e8b28e9257a83d6e8614944fa4517ffbad2b99",
+          "provenance": "assets/v18/desk-secrets-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "studio-focus",
+      "kind": "scene",
+      "oldSource": "assets/v6/studio-focus.webp",
+      "oldSourceSha256": "84953ab415a6b2587b60fd3c770eef586e1009f08bc92761864054b0189b8474",
+      "prompt": "assets/v18/prompts/studio-focus.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/studio-focus-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1515294,
+          "sha256": "079d1ef5ffd8ed8a045bd0d809a2e43c03dd9045af89a765b2ee15a39912f531",
+          "provenance": "assets/v18/master/studio-focus-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/studio-focus-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 324560,
+          "sha256": "a50a96739de32c1fc381b3524d99ac3133d5b9e74f213be164cdd46c1a745d20",
+          "provenance": "assets/v18/studio-focus-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/studio-focus-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 88006,
+          "sha256": "860ca8b5fb2cc981e6574a6b6bf776b9b1f27bac211a57d11ce56f541a7a7d2e",
+          "provenance": "assets/v18/studio-focus-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/studio-focus-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42334,
+          "sha256": "c3aa5ac0a43014de14c28dc9a4bee40d7d5558b0629fd6c70a7372a3a03bb8e3",
+          "provenance": "assets/v18/studio-focus-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "studio-blink",
+      "kind": "scene",
+      "oldSource": "assets/v6/studio-blink.webp",
+      "oldSourceSha256": "033dd2d540ba9b605aea57385a29a217f4e2ac3929fd74de65afe72ac314d5d3",
+      "prompt": "assets/v18/prompts/studio-blink.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/studio-blink-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1523886,
+          "sha256": "55f13fc9ea938d4697c0f5a1780e44e8810e1b566752d6e265537f80e6c058a0",
+          "provenance": "assets/v18/master/studio-blink-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/studio-blink-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 326866,
+          "sha256": "51987cf0ea24e4fdd7b13c68b4dd154d624ca5bf796c6a6aae1e398f2963ac06",
+          "provenance": "assets/v18/studio-blink-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/studio-blink-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 90506,
+          "sha256": "12e5149aa6b44d411836e07e7568fd7236e79c8367e9bcd392ff57ec1bb435d4",
+          "provenance": "assets/v18/studio-blink-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/studio-blink-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42914,
+          "sha256": "cfb213c5a8ffe61b43bd0c10971b05f0c6c5767848f48270e88c0132d7f20399",
+          "provenance": "assets/v18/studio-blink-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "studio-shy",
+      "kind": "scene",
+      "oldSource": "assets/v6/studio-shy.webp",
+      "oldSourceSha256": "28996e89d77f13500790bbad2f634432f611b534767eda53b172c80916cd08eb",
+      "prompt": "assets/v18/prompts/studio-shy.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/studio-shy-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1554250,
+          "sha256": "7662397c9ad11a89011ebe40ab4bb51854931a7bd8b3c82dbea74a549be2730c",
+          "provenance": "assets/v18/master/studio-shy-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/studio-shy-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 333770,
+          "sha256": "05320cafa215035c6bd0eae600d2a9fa8cfd3661cb1055baae72a5910f9b1a83",
+          "provenance": "assets/v18/studio-shy-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/studio-shy-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 94042,
+          "sha256": "420a11f16c096853b75256324c7afbda6319154ad4ccf6a5f9edbf1b6cc5019d",
+          "provenance": "assets/v18/studio-shy-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/studio-shy-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 43084,
+          "sha256": "c4d7e362acd07b5512b9572880fb3584fb926cf3f52972e23f1ed3bcd476707c",
+          "provenance": "assets/v18/studio-shy-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "studio-reveal",
+      "kind": "scene",
+      "oldSource": "assets/v6/studio-reveal.webp",
+      "oldSourceSha256": "07cdda93d64554126f2d0adc95a63b87cd6992a164a82b832b96d5f24ca9eac0",
+      "prompt": "assets/v18/prompts/studio-reveal.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/studio-reveal-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1636512,
+          "sha256": "b5ae6ef070f33cac5a22e4f65791dadd713b0682454c0ca880bd9b70deb048dc",
+          "provenance": "assets/v18/master/studio-reveal-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/studio-reveal-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 339220,
+          "sha256": "d2c0c968ac621f38a965dfd73842ce98a160a6834db4afb4af0c4667a7f6d948",
+          "provenance": "assets/v18/studio-reveal-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/studio-reveal-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 90976,
+          "sha256": "3d7b99f6a11a4a8f0a8b844c022f1d578d02a4e575c325dfb58d44b02edf6ab2",
+          "provenance": "assets/v18/studio-reveal-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/studio-reveal-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 43148,
+          "sha256": "01a7550692cc29303f523973e129e6f7033c9c9183134e7f151a595211901164",
+          "provenance": "assets/v18/studio-reveal-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "wardrobe-living",
+      "kind": "scene",
+      "oldSource": "assets/v7/wardrobe-living.webp",
+      "oldSourceSha256": "8d1af59562c2682feb8b7bb5a5830ac20c473a37ad4412d5180edd90ef0cc379",
+      "prompt": "assets/v18/prompts/wardrobe-living.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/wardrobe-living-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1162508,
+          "sha256": "078debf995e57eb94cc439161f34bc3900de997845985626c62a0646425f4d59",
+          "provenance": "assets/v18/master/wardrobe-living-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/wardrobe-living-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 228952,
+          "sha256": "c17f3d97768fe90ee97e780758ed7c2c06c7ec53214a6d6d332cc55ff85b2c12",
+          "provenance": "assets/v18/wardrobe-living-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/wardrobe-living-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 65698,
+          "sha256": "a71bc8660abb2ad432a0e94b06292ba5f37870958030a7a6a0f53fb762683edd",
+          "provenance": "assets/v18/wardrobe-living-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/wardrobe-living-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 29328,
+          "sha256": "0b75a435d1e3bc9cbcc2cfee4ef764c0c9aed27c0398986407d483528bbe0cb9",
+          "provenance": "assets/v18/wardrobe-living-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "drawing-door-moon",
+      "kind": "scene",
+      "oldSource": "assets/v6/drawing-door-moon.webp",
+      "oldSourceSha256": "b1bed7c56ae71f3008c3ced2b4081e8ddb2e94fe4739d6f7cf31096dcc1af832",
+      "prompt": "assets/v18/prompts/drawing-door-moon.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/drawing-door-moon-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 2025934,
+          "sha256": "78ab36ad8b115f245ea13be8d19e6509431dd4fb4a09cbfe4293ccbc876fc53e",
+          "provenance": "assets/v18/master/drawing-door-moon-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/drawing-door-moon-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 433074,
+          "sha256": "a15e3383233debecd596de7dfbc075043b9c286ee83bb590cff6e5a5e8f9e5e2",
+          "provenance": "assets/v18/drawing-door-moon-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/drawing-door-moon-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 83144,
+          "sha256": "617e004e05b74cf333acf304b6fe493c1b753990b48e0af0cdf8e23013fa6607",
+          "provenance": "assets/v18/drawing-door-moon-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/drawing-door-moon-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 29412,
+          "sha256": "bf9874b0cb262fc043afddcb9472796c1f5e0e8b3d4d86d3e2cc78221307b2ef",
+          "provenance": "assets/v18/drawing-door-moon-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "drawing-blanket-star",
+      "kind": "scene",
+      "oldSource": "assets/v6/drawing-blanket-star.webp",
+      "oldSourceSha256": "7b573eef59ec1a70225660844ef123fe9ab40cb4852ef29b12b13a95411f18f9",
+      "prompt": "assets/v18/prompts/drawing-blanket-star.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/drawing-blanket-star-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 2083300,
+          "sha256": "7d7bfc534a7af5071dac23e665227c206b9434dd36e74fc50f50b61fb6dc5b4c",
+          "provenance": "assets/v18/master/drawing-blanket-star-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/drawing-blanket-star-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 444976,
+          "sha256": "0b3db5ebef70d4733a8a470363fb06e57f1a42c32cd915ddc82eeff6ddb76350",
+          "provenance": "assets/v18/drawing-blanket-star-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/drawing-blanket-star-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 107928,
+          "sha256": "f2c43cc87887864b981163cf6101338e0b102e47d42ddc685be1a0c16490e90c",
+          "provenance": "assets/v18/drawing-blanket-star-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/drawing-blanket-star-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 43362,
+          "sha256": "d78c533cf9e021376c084ba68136ad00ea39d520a89e66f491662988bd3ca53e",
+          "provenance": "assets/v18/drawing-blanket-star-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "drawing-pencil-stars",
+      "kind": "scene",
+      "oldSource": "assets/v6/drawing-pencil-stars.webp",
+      "oldSourceSha256": "1dbc2030db178cc0c957a83498d9b78427649f8a3bbfb9862ea5e3d32493e1e8",
+      "prompt": "assets/v18/prompts/drawing-pencil-stars.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v18/master/drawing-pencil-stars-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1503902,
+          "sha256": "5df01c1dd91d8cf78d2cdc9c6c6b28673328f10bb1e636f596b51cb37c990411",
+          "provenance": "assets/v18/master/drawing-pencil-stars-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v18/drawing-pencil-stars-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 253386,
+          "sha256": "625a85b7e5801b42a5ecd6a2dedd4fa37dc53f50a3a28a976f28e999f8d6ff7a",
+          "provenance": "assets/v18/drawing-pencil-stars-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v18/drawing-pencil-stars-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 45280,
+          "sha256": "52634524856250a8905dbd721993b0c958d04c718aa42583f2aaf87280d7ff2f",
+          "provenance": "assets/v18/drawing-pencil-stars-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v18/drawing-pencil-stars-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 16206,
+          "sha256": "be34657b33c0cdd405e8e3be9fb57d7a5d8714f1d8d287965e3b54dfbeacde77",
+          "provenance": "assets/v18/drawing-pencil-stars-480.webp.json"
+        }
+      }
+    }
+  ]
+}
