@@ -467,7 +467,7 @@ const CONTENT = {
     },
     {
       id: "goodnight",
-      ...v18Scene("gallery-goodnight"),
+      ...v18Scene("gallery-goodnight-clean"),
       alt: "月光下，银白长发的女孩蜷坐在窗边抱着猫咪玩偶，露出困倦的微笑",
       title: "今天的最后一页",
       note: "稿子保存好，窗帘留一条缝，再抱住最软的玩偶。临睡前，她还是小声补了一句：“明天……也可以来。”",
@@ -485,19 +485,19 @@ const CONTENT = {
   drawingStory: {
     frames: {
       focus: {
-        ...v18Scene("studio-focus"),
+        ...v18Scene("studio-focus-clean"),
         alt: "纱雾在夜色里的画桌前低头用数位板认真画线稿"
       },
       blink: {
-        ...v18Scene("studio-blink"),
+        ...v18Scene("studio-blink-clean"),
         alt: "纱雾低头画线时轻轻眨了一下眼睛"
       },
       shy: {
-        ...v18Scene("studio-shy"),
+        ...v18Scene("studio-shy-clean"),
         alt: "被认真夸奖后，纱雾脸红着用长袖袖口遮住嘴角"
       },
       reveal: {
-        ...v18Scene("studio-reveal"),
+        ...v18Scene("studio-reveal-clean"),
         alt: "纱雾露出害羞又有一点得意的表情，把刚完成的小猫画推到桌边"
       }
     },
@@ -773,7 +773,7 @@ const CONTENT = {
     places: {
       desk: {
         label: "画桌旁",
-        ...v18Scene("studio-focus"),
+        ...v18Scene("studio-focus-clean"),
         alt: "纱雾在暖灯与夜窗之间低头画稿，桌边放着数位板、铅笔和小猫玩偶",
         title: "先别叫她，她正画到最认真的地方。",
         line: "她把旁边的椅子留出一点，却一直装作只是忘了推回去。",
@@ -784,7 +784,7 @@ const CONTENT = {
           "桌边那张共同完成的小画，被压在最不容易折到的位置。"
         ],
         autonomousFrame: {
-          ...v18Scene("studio-blink"),
+          ...v18Scene("studio-blink-clean"),
           alt: "纱雾低头画线时轻轻眨了一下眼睛"
         },
         autonomousDuration: 145,
@@ -859,7 +859,7 @@ const CONTENT = {
       },
       window: {
         label: "窗台",
-        ...v18Scene("gallery-goodnight"),
+        ...v18Scene("gallery-goodnight-clean"),
         alt: "月光下，纱雾蜷坐在窗边抱着猫咪玩偶，身旁放着合上的画册",
         title: "窗帘总会留一条缝，刚好够月光进来。",
         line: "她说那样比较容易看清时间，其实只是舍不得把夜色全部关在外面。",
@@ -1301,9 +1301,9 @@ const RAIN_GLASS_SCENES = {
     seed: 1103,
     source: [1448, 1086],
     panes: [
-      { points: [[1132, 2], [1266, 2], [1266, 145], [1120, 140]] },
-      { points: [[1316, 2], [1446, 2], [1446, 147], [1317, 145]] },
-      { points: [[1118, 196], [1264, 201], [1264, 267], [1132, 267]] }
+      { points: [[1205, 2], [1343, 2], [1343, 151], [1205, 151]] },
+      { points: [[1371, 2], [1446, 2], [1446, 151], [1371, 151]] },
+      { points: [[1207, 184], [1342, 184], [1342, 267], [1207, 267]] }
     ]
   },
   wardrobe: {

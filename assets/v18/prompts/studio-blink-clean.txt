@@ -1,0 +1,6 @@
+Use case: identity-preserve
+Asset type: matching 4:3 anime expression frame
+Input images: Image 1 is the exact new clean master scene and must be preserved. Image 2 is only the intended closed-eye blink reference. Image 3 confirms character identity.
+Primary request: Create the blink frame matching Image 1. Change only both eyelids and the minimum nearby eyebrow/cheek lines for a calm natural blink. Keep the exact clean digital anime finish.
+Constraints: Preserve Image 1's pixels and geometry as closely as possible everywhere except the eyes: face shape, hair, bows, hood, outfit, body, pose, hands, stylus, pen display, desk, props, furniture, window, camera, crop, lighting and colors. Same one girl, two arms, two hands, five fingers per visible hand. Crisp consistent line art, smooth cel shading, sharp prop edges.
+Avoid: oil paint, painterly brushwork, watercolor, soft-focus blur, smeared detail, composition drift, moved props, changed hands, wink, sleeping posture, mature face, extra limbs/fingers, text, logo, signature, watermark.
