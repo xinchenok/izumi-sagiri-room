@@ -222,6 +222,12 @@ function checkV18Images() {
     const promptPath = resolve(ROOT, asset.prompt || "");
     const expectedPrompt = existsSync(promptPath) ? readUtf8(promptPath) : "";
     if (!expectedPrompt) issues.push(`V18 资产缺少精确提示词：${asset.prompt}`);
+    const oldSourcePath = resolve(ROOT, asset.oldSource || "");
+    if (!existsSync(oldSourcePath)) {
+      issues.push(`V18 对应旧图不存在：${asset.oldSource}`);
+    } else if (sha256(oldSourcePath) !== asset.oldSourceSha256) {
+      issues.push(`V18 对应旧图哈希不一致：${asset.oldSource}`);
+    }
     for (const version of Object.values(asset.versions || {})) {
       const filePath = resolve(ROOT, version.path || "");
       const provenancePath = resolve(ROOT, version.provenance || "");
@@ -251,7 +257,7 @@ function checkV18Images() {
   }
 
   if (issues.length === 0) {
-    console.log(`信息：已核对 ${manifest.assets.length} 张 V18 母版矩阵与 ${archive.images.length} 个旧图归档引用`);
+    console.log(`信息：已核对 ${manifest.assets.length} 张 V18 母版矩阵、对应旧图与 ${archive.images.length} 个初始归档引用`);
   }
   return issues;
 }

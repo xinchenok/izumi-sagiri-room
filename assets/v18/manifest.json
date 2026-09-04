@@ -713,43 +713,43 @@
       }
     },
     {
-      "id": "gallery-goodnight",
+      "id": "gallery-goodnight-clean",
       "kind": "scene",
-      "oldSource": "assets/v4/gallery-goodnight.webp",
-      "oldSourceSha256": "7de23429e18d4f14f0dd0a8e262461a4c2d9fd7f5563ad3ddcf3d1cc41529c22",
-      "prompt": "assets/v18/prompts/gallery-goodnight.txt",
+      "oldSource": "assets/v18/master/gallery-goodnight-4k.webp",
+      "oldSourceSha256": "1629ff1fd6f0f937d663cf610e2866f7f9420af7827c7ab7f8e49b3dd896fb8d",
+      "prompt": "assets/v18/prompts/gallery-goodnight-clean.txt",
       "versions": {
         "4k": {
-          "path": "assets/v18/master/gallery-goodnight-4k.webp",
+          "path": "assets/v18/master/gallery-goodnight-clean-4k.webp",
           "width": 3840,
           "height": 2880,
-          "bytes": 885058,
-          "sha256": "1629ff1fd6f0f937d663cf610e2866f7f9420af7827c7ab7f8e49b3dd896fb8d",
-          "provenance": "assets/v18/master/gallery-goodnight-4k.webp.json"
+          "bytes": 1318006,
+          "sha256": "60f92bfef1e680e95f231b8bc33a4bf6d4f452fc0965301ea93f56e5bf57cd23",
+          "provenance": "assets/v18/master/gallery-goodnight-clean-4k.webp.json"
         },
         "1440": {
-          "path": "assets/v18/gallery-goodnight-1440.webp",
+          "path": "assets/v18/gallery-goodnight-clean-1440.webp",
           "width": 1440,
           "height": 1080,
-          "bytes": 174238,
-          "sha256": "e9691f2fe23159cc17f35adc5ef2fb984137c1fd65127f7d0f9963af756ce5e8",
-          "provenance": "assets/v18/gallery-goodnight-1440.webp.json"
+          "bytes": 277494,
+          "sha256": "524d8a288678d73e6464852d99aa7be5d37e443baf9b2f156e47b30504a4290a",
+          "provenance": "assets/v18/gallery-goodnight-clean-1440.webp.json"
         },
         "720": {
-          "path": "assets/v18/gallery-goodnight-720.webp",
+          "path": "assets/v18/gallery-goodnight-clean-720.webp",
           "width": 720,
           "height": 540,
-          "bytes": 51598,
-          "sha256": "8a4b856165c77e5a60bca75cb3284c5377cd1155bedcc3cc5e5764aca94e3dde",
-          "provenance": "assets/v18/gallery-goodnight-720.webp.json"
+          "bytes": 74378,
+          "sha256": "6926427a0fa9312450365333a77d6f25506b88e85511c5a1f5ceb821e0c96981",
+          "provenance": "assets/v18/gallery-goodnight-clean-720.webp.json"
         },
         "480": {
-          "path": "assets/v18/gallery-goodnight-480.webp",
+          "path": "assets/v18/gallery-goodnight-clean-480.webp",
           "width": 480,
           "height": 360,
-          "bytes": 25524,
-          "sha256": "966686299def7930c1fa27e80b549fff0fc34c928981e676af5b68d2329bf077",
-          "provenance": "assets/v18/gallery-goodnight-480.webp.json"
+          "bytes": 34328,
+          "sha256": "7cbf80b387aacf0ebea3ece26127269e6deaf4c2b898fcde9bae88956a515139",
+          "provenance": "assets/v18/gallery-goodnight-clean-480.webp.json"
         }
       }
     },
@@ -795,166 +795,166 @@
       }
     },
     {
-      "id": "studio-focus",
+      "id": "studio-focus-clean",
       "kind": "scene",
-      "oldSource": "assets/v6/studio-focus.webp",
-      "oldSourceSha256": "84953ab415a6b2587b60fd3c770eef586e1009f08bc92761864054b0189b8474",
-      "prompt": "assets/v18/prompts/studio-focus.txt",
+      "oldSource": "assets/v18/master/studio-focus-4k.webp",
+      "oldSourceSha256": "079d1ef5ffd8ed8a045bd0d809a2e43c03dd9045af89a765b2ee15a39912f531",
+      "prompt": "assets/v18/prompts/studio-focus-clean.txt",
       "versions": {
         "4k": {
-          "path": "assets/v18/master/studio-focus-4k.webp",
+          "path": "assets/v18/master/studio-focus-clean-4k.webp",
           "width": 3840,
           "height": 2880,
-          "bytes": 1515294,
-          "sha256": "079d1ef5ffd8ed8a045bd0d809a2e43c03dd9045af89a765b2ee15a39912f531",
-          "provenance": "assets/v18/master/studio-focus-4k.webp.json"
+          "bytes": 1747606,
+          "sha256": "6500e0a2696382aa222bf960097493483927bd755e5588100227e3d6b5bb2f1d",
+          "provenance": "assets/v18/master/studio-focus-clean-4k.webp.json"
         },
         "1440": {
-          "path": "assets/v18/studio-focus-1440.webp",
+          "path": "assets/v18/studio-focus-clean-1440.webp",
           "width": 1440,
           "height": 1080,
-          "bytes": 324560,
-          "sha256": "a50a96739de32c1fc381b3524d99ac3133d5b9e74f213be164cdd46c1a745d20",
-          "provenance": "assets/v18/studio-focus-1440.webp.json"
+          "bytes": 391246,
+          "sha256": "0c6e6073f18fd9a6ab62e000ac9f930960c1fac9b384cac38c1775ac10f8f3e3",
+          "provenance": "assets/v18/studio-focus-clean-1440.webp.json"
         },
         "720": {
-          "path": "assets/v18/studio-focus-720.webp",
+          "path": "assets/v18/studio-focus-clean-720.webp",
           "width": 720,
           "height": 540,
-          "bytes": 88006,
-          "sha256": "860ca8b5fb2cc981e6574a6b6bf776b9b1f27bac211a57d11ce56f541a7a7d2e",
-          "provenance": "assets/v18/studio-focus-720.webp.json"
+          "bytes": 109320,
+          "sha256": "a031ff82a7d37c9fb70aae299557f4fc03f67c771eaf5745005b573c98300a86",
+          "provenance": "assets/v18/studio-focus-clean-720.webp.json"
         },
         "480": {
-          "path": "assets/v18/studio-focus-480.webp",
+          "path": "assets/v18/studio-focus-clean-480.webp",
           "width": 480,
           "height": 360,
-          "bytes": 42334,
-          "sha256": "c3aa5ac0a43014de14c28dc9a4bee40d7d5558b0629fd6c70a7372a3a03bb8e3",
-          "provenance": "assets/v18/studio-focus-480.webp.json"
+          "bytes": 48766,
+          "sha256": "b06cf7c67e226a9c87a031cfb2803c8f1fc34e73db9202b2db76ba43ee37d709",
+          "provenance": "assets/v18/studio-focus-clean-480.webp.json"
         }
       }
     },
     {
-      "id": "studio-blink",
+      "id": "studio-blink-clean",
       "kind": "scene",
-      "oldSource": "assets/v6/studio-blink.webp",
-      "oldSourceSha256": "033dd2d540ba9b605aea57385a29a217f4e2ac3929fd74de65afe72ac314d5d3",
-      "prompt": "assets/v18/prompts/studio-blink.txt",
+      "oldSource": "assets/v18/master/studio-blink-4k.webp",
+      "oldSourceSha256": "55f13fc9ea938d4697c0f5a1780e44e8810e1b566752d6e265537f80e6c058a0",
+      "prompt": "assets/v18/prompts/studio-blink-clean.txt",
       "versions": {
         "4k": {
-          "path": "assets/v18/master/studio-blink-4k.webp",
+          "path": "assets/v18/master/studio-blink-clean-4k.webp",
           "width": 3840,
           "height": 2880,
-          "bytes": 1523886,
-          "sha256": "55f13fc9ea938d4697c0f5a1780e44e8810e1b566752d6e265537f80e6c058a0",
-          "provenance": "assets/v18/master/studio-blink-4k.webp.json"
+          "bytes": 1824684,
+          "sha256": "52a50f5fffedcc4985e8cc6ec8c3c168e1133f20d09ed1887520bb47ca158ec0",
+          "provenance": "assets/v18/master/studio-blink-clean-4k.webp.json"
         },
         "1440": {
-          "path": "assets/v18/studio-blink-1440.webp",
+          "path": "assets/v18/studio-blink-clean-1440.webp",
           "width": 1440,
           "height": 1080,
-          "bytes": 326866,
-          "sha256": "51987cf0ea24e4fdd7b13c68b4dd154d624ca5bf796c6a6aae1e398f2963ac06",
-          "provenance": "assets/v18/studio-blink-1440.webp.json"
+          "bytes": 413442,
+          "sha256": "d9556e2bbc5991e72551d20d7fce33d29e0494e51699892df7b13829321acbed",
+          "provenance": "assets/v18/studio-blink-clean-1440.webp.json"
         },
         "720": {
-          "path": "assets/v18/studio-blink-720.webp",
+          "path": "assets/v18/studio-blink-clean-720.webp",
           "width": 720,
           "height": 540,
-          "bytes": 90506,
-          "sha256": "12e5149aa6b44d411836e07e7568fd7236e79c8367e9bcd392ff57ec1bb435d4",
-          "provenance": "assets/v18/studio-blink-720.webp.json"
+          "bytes": 113088,
+          "sha256": "9f53aaf5b4ee5cc57f182c7a36ec3909ada215b053927226067e2b20efd58a6a",
+          "provenance": "assets/v18/studio-blink-clean-720.webp.json"
         },
         "480": {
-          "path": "assets/v18/studio-blink-480.webp",
+          "path": "assets/v18/studio-blink-clean-480.webp",
           "width": 480,
           "height": 360,
-          "bytes": 42914,
-          "sha256": "cfb213c5a8ffe61b43bd0c10971b05f0c6c5767848f48270e88c0132d7f20399",
-          "provenance": "assets/v18/studio-blink-480.webp.json"
+          "bytes": 49570,
+          "sha256": "f5cc32a38fdfce5f8acdf54131f02d532f5b6dcfd823b32f0fb96c97e5a7fd57",
+          "provenance": "assets/v18/studio-blink-clean-480.webp.json"
         }
       }
     },
     {
-      "id": "studio-shy",
+      "id": "studio-shy-clean",
       "kind": "scene",
-      "oldSource": "assets/v6/studio-shy.webp",
-      "oldSourceSha256": "28996e89d77f13500790bbad2f634432f611b534767eda53b172c80916cd08eb",
-      "prompt": "assets/v18/prompts/studio-shy.txt",
+      "oldSource": "assets/v18/master/studio-shy-4k.webp",
+      "oldSourceSha256": "7662397c9ad11a89011ebe40ab4bb51854931a7bd8b3c82dbea74a549be2730c",
+      "prompt": "assets/v18/prompts/studio-shy-clean.txt",
       "versions": {
         "4k": {
-          "path": "assets/v18/master/studio-shy-4k.webp",
+          "path": "assets/v18/master/studio-shy-clean-4k.webp",
           "width": 3840,
           "height": 2880,
-          "bytes": 1554250,
-          "sha256": "7662397c9ad11a89011ebe40ab4bb51854931a7bd8b3c82dbea74a549be2730c",
-          "provenance": "assets/v18/master/studio-shy-4k.webp.json"
+          "bytes": 1707574,
+          "sha256": "956c60d7d2ee51408b18bcf726eba4e6fa8a967b9e141689b8c453d5a8df2ca0",
+          "provenance": "assets/v18/master/studio-shy-clean-4k.webp.json"
         },
         "1440": {
-          "path": "assets/v18/studio-shy-1440.webp",
+          "path": "assets/v18/studio-shy-clean-1440.webp",
           "width": 1440,
           "height": 1080,
-          "bytes": 333770,
-          "sha256": "05320cafa215035c6bd0eae600d2a9fa8cfd3661cb1055baae72a5910f9b1a83",
-          "provenance": "assets/v18/studio-shy-1440.webp.json"
+          "bytes": 386328,
+          "sha256": "7f8d2f556363c78fd813228220677bdc8df8739960491c3ea010b6f2e5e62307",
+          "provenance": "assets/v18/studio-shy-clean-1440.webp.json"
         },
         "720": {
-          "path": "assets/v18/studio-shy-720.webp",
+          "path": "assets/v18/studio-shy-clean-720.webp",
           "width": 720,
           "height": 540,
-          "bytes": 94042,
-          "sha256": "420a11f16c096853b75256324c7afbda6319154ad4ccf6a5f9edbf1b6cc5019d",
-          "provenance": "assets/v18/studio-shy-720.webp.json"
+          "bytes": 107714,
+          "sha256": "b3982ee692953a516296911e4fc767cb1d9cd26ff3798e36ea2acf2b0e1fef8c",
+          "provenance": "assets/v18/studio-shy-clean-720.webp.json"
         },
         "480": {
-          "path": "assets/v18/studio-shy-480.webp",
+          "path": "assets/v18/studio-shy-clean-480.webp",
           "width": 480,
           "height": 360,
-          "bytes": 43084,
-          "sha256": "c4d7e362acd07b5512b9572880fb3584fb926cf3f52972e23f1ed3bcd476707c",
-          "provenance": "assets/v18/studio-shy-480.webp.json"
+          "bytes": 47628,
+          "sha256": "e9e625bcc6b06029cafa386285671baf6f2d81bcf509ba130e1ac274742bbedf",
+          "provenance": "assets/v18/studio-shy-clean-480.webp.json"
         }
       }
     },
     {
-      "id": "studio-reveal",
+      "id": "studio-reveal-clean",
       "kind": "scene",
-      "oldSource": "assets/v6/studio-reveal.webp",
-      "oldSourceSha256": "07cdda93d64554126f2d0adc95a63b87cd6992a164a82b832b96d5f24ca9eac0",
-      "prompt": "assets/v18/prompts/studio-reveal.txt",
+      "oldSource": "assets/v18/master/studio-reveal-4k.webp",
+      "oldSourceSha256": "b5ae6ef070f33cac5a22e4f65791dadd713b0682454c0ca880bd9b70deb048dc",
+      "prompt": "assets/v18/prompts/studio-reveal-clean.txt",
       "versions": {
         "4k": {
-          "path": "assets/v18/master/studio-reveal-4k.webp",
+          "path": "assets/v18/master/studio-reveal-clean-4k.webp",
           "width": 3840,
           "height": 2880,
-          "bytes": 1636512,
-          "sha256": "b5ae6ef070f33cac5a22e4f65791dadd713b0682454c0ca880bd9b70deb048dc",
-          "provenance": "assets/v18/master/studio-reveal-4k.webp.json"
+          "bytes": 1860398,
+          "sha256": "919304a964655424d635e11d14ad4553d901a45a6adc606889110ab499365d74",
+          "provenance": "assets/v18/master/studio-reveal-clean-4k.webp.json"
         },
         "1440": {
-          "path": "assets/v18/studio-reveal-1440.webp",
+          "path": "assets/v18/studio-reveal-clean-1440.webp",
           "width": 1440,
           "height": 1080,
-          "bytes": 339220,
-          "sha256": "d2c0c968ac621f38a965dfd73842ce98a160a6834db4afb4af0c4667a7f6d948",
-          "provenance": "assets/v18/studio-reveal-1440.webp.json"
+          "bytes": 408482,
+          "sha256": "2c253684ed2352e35a21356382c4bf7b32213c8d2ce38702eec1a05aa62da7ef",
+          "provenance": "assets/v18/studio-reveal-clean-1440.webp.json"
         },
         "720": {
-          "path": "assets/v18/studio-reveal-720.webp",
+          "path": "assets/v18/studio-reveal-clean-720.webp",
           "width": 720,
           "height": 540,
-          "bytes": 90976,
-          "sha256": "3d7b99f6a11a4a8f0a8b844c022f1d578d02a4e575c325dfb58d44b02edf6ab2",
-          "provenance": "assets/v18/studio-reveal-720.webp.json"
+          "bytes": 110988,
+          "sha256": "89692a76cc2b66b055018b5021a1cf34d1222d652ef255e8d0a12cd7099a7f54",
+          "provenance": "assets/v18/studio-reveal-clean-720.webp.json"
         },
         "480": {
-          "path": "assets/v18/studio-reveal-480.webp",
+          "path": "assets/v18/studio-reveal-clean-480.webp",
           "width": 480,
           "height": 360,
-          "bytes": 43148,
-          "sha256": "01a7550692cc29303f523973e129e6f7033c9c9183134e7f151a595211901164",
-          "provenance": "assets/v18/studio-reveal-480.webp.json"
+          "bytes": 48536,
+          "sha256": "8fe8981def2588965a18e558e67e1d99c355a24198fcb18d4f1df6afe12f6ba4",
+          "provenance": "assets/v18/studio-reveal-clean-480.webp.json"
         }
       }
     },
