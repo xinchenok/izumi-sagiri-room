@@ -3,8 +3,8 @@
 - 更新日期：2026-09-04
 - 项目仓库：<https://github.com/xinchenok/izumi-sagiri-room>
 - 在线页面：<https://xinchenok.github.io/izumi-sagiri-room/>
-- 当前开发基线：V18.1 场景清晰度修正（本地审查通过，待发布）
-- 当前线上基线：V18 全量 4K 插画重绘（已在线复核）
+- 当前开发基线：V18.1 场景清晰度修正
+- 当前线上基线：V18.1 场景清晰度修正（已在线复核）
 - 当前页面缓存标识：`20260904-3`
 
 本文记录“和泉纱雾的房门里”互动页如何在 AI 协助下完成、语音资源从哪里取得、怎样在本地重新合成，以及后续维护计划。它既是开发说明，也是后续接手者的复现入口。
@@ -158,13 +158,13 @@ AI 生成的内容经过人工目标约束与浏览器验收；AI 不是素材�
 - 本地 `npm test` 13 / 13 通过；静态门禁核对 79 个页面本地资源、29 张母版矩阵、55 个旧图归档哈希和 202 个 UTF-8 文本。三份联系表与桌面 / 手机关键截图已审，控制台错误、`pageerror` 和 404 均为 0；资源与视觉独立复核均认为达到发布条件。
 - Impeccable detector 仅运行一次，结果为 `DEGRADED`、`regex[]`，因此不记为完整 detector pass。独立文档复核此前因 `DESIGN.md` 仍把 v4–v7 写成现役而给出 `FIX`；同步现役资产、归档和响应式规范后复审为 PASS。PR #17 随后通过远端 CI，合并提交 `5f72762` 已由 GitHub Pages 发布并完成正式网址复核。
 
-### V18.1 场景清晰度修正（本地审查通过，待发布）
+### V18.1 场景清晰度修正（已发布并在线复核）
 
 - 全量复核 29 张 V18 母版后，将浏览器标注的 `studio-focus` 追溯到连续房间与共同创作共用源，并连同眨眼、害羞、递出画稿三帧作为一个一致性组处理；其他人物与画廊图无须整批返工，三张 `drawing-*` 铅笔水彩小画保留叙事内媒介。
 - 原共同创作提示词主动要求“手绘、水彩式过渡”，导致页面尺寸下出现厚涂和柔焦。内置 ImageGen 以旧构图、统一身份锚点和现役清晰图为参考，生成 `studio-focus-clean`、`studio-blink-clean`、`studio-shy-clean`、`studio-reveal-clean`，改为清晰数字线稿、受控赛璐璐明暗和明确材质边缘。
 - 轻微软焦的晚安图重绘为 `gallery-goodnight-clean`，窗框保持在人物身后；同时删除 `.night-window::before`、`.night-window::after` 与 `.moon-dot`，不再把页面生成的十字窗框和假月亮压在已有插画上。连续房间与共同创作换帧也移除 CSS `blur()`，任何切换时刻都保持线条可辨。
 - 五组新资产均提供 3840 × 2880 母版、480 / 720 / 1440 派生图、精确提示词和 provenance 边车。原五组 20 个 WebP 不覆盖、不移动、不删除，现役清单用 `oldSource` 与 SHA-256 指向旧母版；29 张现役母版与 107 个现役 WebP 的规模不变。
-- 缓存标识递增到 `20260904-3`，并按新画桌图重新标定 `RAIN_GLASS_SCENES.desk` 三个真实玻璃面，避开窗帘、窗框、玩偶和台灯。本地静态门禁核对 29 张现役母版、55 个旧图归档引用和 227 个 UTF-8 文本，Chromium 14 / 14 通过；390 × 844 与 1440 × 900 截图确认画桌、共同创作与晚安区裁切清楚，无重复窗框、控制台错误或资源失败。远端 CI、Pages 和正式网址仍待发布后复核。
+- 缓存标识递增到 `20260904-3`，并按新画桌图重新标定 `RAIN_GLASS_SCENES.desk` 三个真实玻璃面，避开窗帘、窗框、玩偶和台灯。本地静态门禁核对 29 张现役母版、55 个初始归档引用和 227 个 UTF-8 文本，Chromium 14 / 14 通过；独立完成审查为 PASS。PR #19、`main` CI、GitHub Pages 与正式网址逐文件 / 逐图核验均已通过，V18.1 为当前 `live verified` 基线。
 
 ### 桌面、手机与房门布局修复
 
@@ -232,6 +232,7 @@ AI 生成的内容经过人工目标约束与浏览器验收；AI 不是素材�
 | 2026-08-20 | [`40924f8`](https://github.com/xinchenok/izumi-sagiri-room/commit/40924f8c1e640f3e9adf1ace4a0e794c295466fb) | 通过 PR #13 发布 V16 完整拜访：导航先开门、秘密环境线索、渐进音频预热、可收起反馈，以及可保存纸条与真实木门轻合的关门结尾。 |
 | 2026-09-04 | [`b2d7ef0`](https://github.com/xinchenok/izumi-sagiri-room/commit/b2d7ef0942e249cc94b2f1331e0a0b57d23fd5c7) | 通过 PR #15 发布 V17“今晚别走太早”：可恢复深夜陪画、20 / 45 / 75 秒自愿停留、偷看藏画、真实最近记忆、个性化晚安纸条，以及自动静态与 Chromium 回归。 |
 | 2026-09-04 | [`5f72762`](https://github.com/xinchenok/izumi-sagiri-room/commit/5f7276206c467e924f285d526bfb043079eac7e1) | 通过 [PR #17](https://github.com/xinchenok/izumi-sagiri-room/pull/17) 发布 V18：29 张统一身份与构图双锁的可爱化重绘母版、107 个 4K / 响应式 WebP、逐图 provenance、55 项旧图归档，以及手机与高密度桌面取图回归。 |
+| 2026-09-04 | [`e06809a`](https://github.com/xinchenok/izumi-sagiri-room/commit/e06809a0252dcbe7aef424e832f40df40711f1d7) | 通过 [PR #19](https://github.com/xinchenok/izumi-sagiri-room/pull/19) 发布 V18.1：五组清晰赛璐璐场景替换、旧图原位回退、无模糊换帧、晚安重复窗框移除与新玻璃雨区。 |
 
 ### 已完成的交付核验
 
@@ -249,6 +250,7 @@ AI 生成的内容经过人工目标约束与浏览器验收；AI 不是素材�
 - 2026-09-04 的 V17 本地验收执行 `npm test`：静态门禁核对 Node 语法、HTML ID / 锚点、114 个本地资源、27 份 JSON 与 59 个 UTF-8 无 BOM / 无乱码文本；Chromium 10 项回归全部通过。1440 × 900、1024 × 768 与 390 × 844 三档截图已打开复核，无横向溢出，截图流程观测到的控制台和页面异常均为 0。该结论仅覆盖本地受控环境，不代表远端 CI、Pages 或真机验证已经完成。
 - PR #15 的功能分支包含 `a21d6b0` 与 `2e75b1b` 两个提交，两条 GitHub Actions 检查分别在 47 秒与 45 秒内通过，并合并为 `b2d7ef0`。GitHub Pages 随后报告该提交构建完成；正式网址的 `index.html`、`styles.css`、`script.js` 均返回 `HTTP 200`，并与合并提交逐字节一致。390 × 844 在线 Chromium 真实点击验证门外导航先开门、进入“今晚别走太早”、选择安静陪画、写入 quiet 草稿、缓存标识 `20260904-1`、零横向溢出和零控制台 / 页面 / 资源错误。V17 状态为 `live verified`；真实手机仍待实机验证。
 - V18 功能分支包含 `6fc974e` 与 `df9a75c` 两个提交，推送与 PR 两组 GitHub Actions 检查分别在 3 分 28 秒与 3 分 52 秒内通过；PR #17 合并为 `5f72762` 后，`main` 静态与 Chromium 检查以及 Pages 构建均成功。正式网址的 `index.html`、`styles.css`、`script.js`、`assets/v18/manifest.json`、README、DESIGN 与本手册共 7 个文件和合并提交逐字节一致；清单中的 107 个 V18 WebP 共 48,441,344 字节，全部返回成功且 SHA-256 一致。390 × 844、DPR 1 在线 Chromium 使用 720 档主图与 480 档画廊缩略图且没有请求 4K；1440 × 900、DPR 2 正确取得 4K 首图，两端均无控制台错误、`pageerror`、资源 404 或横向溢出。V18 状态为 `live verified`；真实手机与低端 Android 性能仍待实机验证。
+- V18.1 功能分支包含 `2c2e3cc` 与 `21a0725` 两个提交，推送与 PR 两组 GitHub Actions 检查分别在 7 分 49 秒与 3 分 13 秒内通过，并通过 PR #19 合并为 `e06809a`。GitHub Pages 与 `main` 检查随后成功；正式网址 7 个关键文件与合并提交逐字节一致，清单内 107 个现役 WebP 共 50,295,134 字节，全部返回成功且 SHA-256 一致。390 × 844、DPR 1 在线 Chromium 确认画桌与共同创作使用 `studio-focus-clean-720.webp`、晚安使用 `gallery-goodnight-clean-720.webp`，不请求 4K；1440 × 900、DPR 2 使用两组 1440 档清晰图。三处桌面 / 手机截图无重复窗框，两端均无 CSS `blur()`、控制台错误、`pageerror`、资源 404 或横向溢出。V18.1 状态为 `live verified`；真实手机与低端 Android 性能仍待实机验证。
 
 ## 当前项目结构
 
@@ -476,6 +478,8 @@ Invoke-WebRequest `
 
 V18 本地回归中，`npm test` 13 / 13 通过；静态门禁覆盖 79 个页面本地资源、29 张母版矩阵、55 个旧图归档哈希和 202 个 UTF-8 文本。三份联系表与桌面 / 手机关键截图已人工审阅，控制台错误、`pageerror` 和资源 404 均为 0。页面通过 `srcset` 让手机不请求 4K、高密度桌面取得 4K，画廊胶片缩略图使用 480 档。Impeccable detector 只运行过一次且结果为 `DEGRADED`、`regex[]`，不能视为完整 detector pass；独立完成复审为 PASS。PR #17、`main` CI、GitHub Pages 与正式网址逐文件 / 逐图核验均已通过，V18 为当前 `live verified` 基线。
 
+V18.1 本地回归中，`npm test` 14 / 14 通过；现役清单仍为 29 张母版和 107 个 WebP，五组旧文件原位保留。独立视觉复核确认五张清晰母版、四帧一致性、手部、手机 / 桌面裁切与晚安空间关系均通过；唯一雨区 P2 在重新标定后复审为 PASS。PR #19、`main` CI、GitHub Pages 和正式网址逐文件 / 逐图核验全部通过，V18.1 为当前 `live verified` 基线。
+
 后续发布仍应复核下列完整清单：
 
 - 2048×1138、1440×900、1024×768 和 390×844 四种视口的布局与横向溢出检查。
@@ -490,7 +494,7 @@ V18 本地回归中，`npm test` 13 / 13 通过；静态门禁覆盖 79 个页�
 - 29 张 V18 母版、107 个 WebP、精确提示词、逐文件 provenance 边车与 `manifest.json` 一致；55 个旧图归档哈希仍可复核，手机请求中不出现 4K。
 - Node.js 语法检查、V16 音频来源 / 输出哈希与解码检查、UTF-8 无 BOM 检查和中文乱码特征扫描。
 
-公开站点目前由 GitHub Pages 从 `main` 分支根目录发布 V18。普通内容更新的维护流程是：
+公开站点目前由 GitHub Pages 从 `main` 分支根目录发布 V18.1。普通内容更新的维护流程是：
 
 1. 在功能分支修改并本地验证。
 2. 提交并推送到 GitHub。
