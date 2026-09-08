@@ -1,641 +1,779 @@
 <!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#573a3e">
-  <meta name="description" content="轻轻敲开和泉纱雾的房门，在画桌、床边、衣橱和窗台之间移动，陪她画画、翻看画册，并听见不同语气的日语回应。">
-  <title>和泉纱雾的房门里</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23573A3E'/%3E%3Cpath d='M18 14h30v40H18z' fill='%23D88CA2'/%3E%3Ccircle cx='40' cy='35' r='3' fill='%23F7D46A'/%3E%3Cpath d='m23 19 5 4 5-4 5 4 5-4v10H23z' fill='%23EAF4F5'/%3E%3C/svg%3E">
-  <link rel="preload" href="assets/v19/door-peek-720.webp" as="image" type="image/webp" media="(max-width: 760px)">
-  <link rel="preload" href="assets/v19/door-peek-1440.webp" as="image" type="image/webp" media="(min-width: 761px)">
-  <link rel="stylesheet" href="styles.css?v=20260909-2">
-  <script>
-    if ("scrollRestoration" in history) history.scrollRestoration = "auto";
-    window.__sagiriDiscardedHash = Boolean(window.location.hash);
-    if (window.__sagiriDiscardedHash) {
-      history.replaceState(history.state, "", window.location.href.split("#")[0]);
-    }
-  </script>
-</head>
-<body>
-  <a class="skip-link" href="#main-content">跳到主要内容</a>
-
-  <header class="door-nav" id="top">
-    <a class="mini-sign" href="#home" aria-label="回到房门口">
-      <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M7 5h18v22H7zM11 9h10v7H11z"/><circle cx="21" cy="21" r="1.5"/></svg>
-      <span>纱雾的房间</span>
-    </a>
-    <nav aria-label="房间导览">
-      <a href="#cinematic-visit">拜访</a>
-      <a href="#living-room">房间</a>
-      <a href="#wardrobe">衣橱</a>
-      <a href="#gallery">画稿</a>
-      <a href="#drawing-story">一起画</a>
-      <a href="#goodnight">晚安</a>
-    </nav>
-    <button class="quiet-lamp" id="motionModeButton" type="button" aria-pressed="false">
-      <i aria-hidden="true"></i><span>让房间静一静</span>
-    </button>
-  </header>
-
-  <main id="main-content" tabindex="-1">
-    <section class="door-hero" id="home" aria-labelledby="hero-title">
-      <div class="corridor-note" aria-hidden="true">
-        <span>二楼</span>
-        <i></i>
-        <span>尽头</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#f3dce3" />
+    <meta
+      name="description"
+      content="走进纱雾的房间，自由看看画桌、衣橱和窗边，陪她画一会儿，并收好属于这次拜访的小纸条。"
+    />
+    <title>纱雾的房间</title>
+    <link rel="icon" href="assets/v20/room-mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=20260909-v20-1" />
+    <link rel="stylesheet" href="inspector.css?v=20260909-v20-1" />
+    <script src="script.js?v=20260909-v20-1" defer></script>
+    <script src="room-core.js?v=20260909-v20-1" defer></script>
+    <script src="room-inspector.js?v=20260909-v20-1" defer></script>
+    <script src="room.js?v=20260909-v20-1" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#roomStage">跳到房间</a>
+    <main
+      class="room-stage"
+      id="roomStage"
+      aria-label="纱雾的房间"
+      tabindex="-1"
+    >
+      <div class="room-world" id="roomWorld">
+        <picture
+          ><source
+            media="(max-width:760px)"
+            srcset="assets/v20/room/room-panorama-day-720.webp" />
+          <source
+            media="(min-width:761px)"
+            srcset="assets/v20/room/room-panorama-day-1440.webp" />
+          <img
+            class="room-backdrop"
+            id="roomBackdrop"
+            src="assets/v20/room/room-panorama-day-720.webp"
+            data-fallback="assets/plates/room-background.png"
+            alt="日光照进粉色卧室，左侧是床和衣橱，右侧是画桌与空出的椅子"
+            fetchpriority="high"
+        /></picture>
       </div>
-
-      <div class="door-scene" id="doorScene">
-        <div class="room-glimpse" aria-hidden="true"></div>
-        <picture id="heroPicture">
-          <source id="heroMobileSource" media="(max-width: 760px)" srcset="assets/v19/door-peek-720.webp">
-          <source id="heroDesktopSource" media="(min-width: 761px)" srcset="assets/v19/door-peek-1440.webp">
-          <img class="hero-character" id="heroCharacter" src="assets/v19/door-peek-720.webp" width="720" height="900" fetchpriority="high" alt="银白长发、蓝眼睛的纱雾穿着粉色猫耳家居服，握着半掩的卧室门害羞偷看">
-        </picture>
-
-        <div class="door-leaf" id="doorLeaf" aria-hidden="true">
-          <div class="room-plaque">
-            <span>不要突然开门</span>
-            <h1 id="hero-title">和泉纱雾<br><small>的小小画室</small></h1>
-            <i></i>
-          </div>
-          <span class="door-hanger">正在画画</span>
-          <span class="door-knob"></span>
-        </div>
-
-        <div class="knock-card">
-          <span class="visit-note" id="visitNote">第一次站在门外</span>
-          <button class="door-memory-slip" id="doorMemorySlip" type="button" hidden>
-            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M6 7h20v18H6zM9 11h14M9 16h10M9 21h7"/></svg>
-            <span>上次收好的纸条，还夹在这里</span>
+      <picture
+        ><source
+          media="(max-width:760px)"
+          srcset="assets/v20/character/home/standing-neutral-720.webp" />
+        <source
+          media="(min-width:761px)"
+          srcset="assets/v20/character/home/standing-neutral-1440.webp" />
+        <img
+          class="room-character"
+          id="roomCharacter"
+          src="assets/v20/character/home/standing-neutral-720.webp"
+          data-fallback="assets/plates/sagiri-character.png"
+          alt="纱雾回头看向你，悄悄指了指旁边的座位"
+          fetchpriority="high"
+      /></picture>
+      <header class="room-header">
+        <h1 class="room-title">
+          纱雾的房间<svg
+            class="title-paw"
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+          >
+            <ellipse cx="5" cy="7" rx="2.4" ry="3" />
+            <ellipse cx="12" cy="4" rx="2.4" ry="3" />
+            <ellipse cx="19" cy="8" rx="2.4" ry="3" />
+            <path
+              d="M12 10c-4 0-7 5-7 8 0 4 5 3 7 2 2 1 7 2 7-2 0-3-3-8-7-8Z"
+            />
+          </svg>
+        </h1>
+        <div class="room-tools" aria-label="房间设置">
+          <button id="soundButton" type="button" aria-label="声音设置">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+              <path
+                d="M3 9h4l5-5v16l-5-5H3ZM16 8c3 2 3 6 0 8M19 4c5 5 5 11 0 16"
+              /></svg
+            ><span>声音</span>
           </button>
-          <div class="door-subtitle" id="doorStatus" role="status" aria-live="polite">
-            <span>门里传来很轻的脚步声。</span>
-            <strong>“先敲门……我才会开。”</strong>
-          </div>
-          <p>门缝里，好像有一双蓝眼睛正在偷看你。</p>
-          <div class="knock-actions">
-            <button class="paw-button" id="knockButton" type="button" aria-controls="doorScene" aria-expanded="false">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11.2 14.2c-2.1 0-3.7-2-3.7-4.4s1.6-4.3 3.7-4.3 3.6 2 3.6 4.3-1.6 4.4-3.6 4.4Zm9.6 0c-2 0-3.6-2-3.6-4.4s1.6-4.3 3.6-4.3 3.7 2 3.7 4.3-1.6 4.4-3.7 4.4ZM5.8 21.4c-1.8 0-3.3-1.7-3.3-3.8s1.5-3.8 3.3-3.8 3.2 1.7 3.2 3.8-1.4 3.8-3.2 3.8Zm20.4 0c-1.8 0-3.2-1.7-3.2-3.8s1.4-3.8 3.2-3.8 3.3 1.7 3.3 3.8-1.5 3.8-3.3 3.8ZM16 29c-5.2 0-8.5-2.2-8.5-5.5 0-3 2.2-7.3 5.2-8.5 1.8-.7 2.2 1 3.3 1s1.5-1.7 3.3-1c3 1.2 5.2 5.5 5.2 8.5 0 3.3-3.3 5.5-8.5 5.5Z"/></svg>
-              <span>轻轻敲门</span>
-            </button>
-            <button class="pencil-button voice-trigger" type="button" data-voice="welcome" aria-label="听她换一句害羞的欢迎回答">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M4 12h6l8-7v22l-8-7H4zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
-              听她回应
-            </button>
-          </div>
+          <button
+            id="motionButton"
+            type="button"
+            aria-label="让房间静一静"
+            aria-pressed="false"
+          >
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+              <rect x="4" y="6" width="16" height="15" rx="2" />
+              <path d="m10 10 5 4-5 4ZM8 3h8" /></svg
+            ><span>动态</span>
+          </button>
+          <button id="settingsButton" type="button" aria-label="打开设置">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+              <path
+                d="m9 3 1-2h4l1 2 2 1 2-1 3 4-2 2v3l2 2-3 4-2-1-2 1-1 3h-4l-1-3-2-1-2 1-3-4 2-2V9L1 7l3-4 2 1Z"
+                transform="translate(1 1) scale(.9)"
+              />
+              <circle cx="12" cy="12" r="3" /></svg
+            ><span>设置</span>
+          </button>
         </div>
-
-      </div>
-    </section>
-
-    <section class="cinematic-visit" id="cinematic-visit" aria-labelledby="cinematic-title">
-      <header class="cinematic-heading">
-        <h2 id="cinematic-title">房间会记得你走近的方式。</h2>
-        <p>继续向下走，她会从门缝、笔尖和袖口里一点点回应你。滚动只推动画面，声音永远等你亲手触碰。</p>
       </header>
-
-      <div class="cinematic-scroll-grid" id="cinematicScrollGrid">
-        <div class="cinematic-stage-rail">
-          <figure class="cinematic-stage" id="cinematicStage" data-scene="door" data-frame-kind="portrait">
-            <div class="cinematic-frame" id="cinematicFrame">
-              <img class="cinematic-layer is-visible" id="cinematicLayerA" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23d9eee5'/%3E%3C/svg%3E" width="720" height="540" loading="lazy" decoding="async" alt="纱雾从半掩的卧室门后安静偷看">
-              <img class="cinematic-layer" id="cinematicLayerB" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23d9eee5'/%3E%3C/svg%3E" width="720" height="540" loading="lazy" decoding="async" alt="" aria-hidden="true">
-              <span class="cinematic-door-edge" aria-hidden="true"></span>
-              <span class="cinematic-pencil-trace" aria-hidden="true"></span>
-            </div>
-            <figcaption class="cinematic-caption">
-              <span id="cinematicActLabel">第一幕 · 房门</span>
-              <strong id="cinematicShortLine">她听见了，却还在确认是不是你。</strong>
-              <small id="cinematicFrameStatus">1 / 4 · 安静偷看</small>
-              <button id="cinematicRetry" type="button" hidden>重新加载这一幕</button>
-            </figcaption>
-            <button class="cinematic-inspect-button" id="cinematicInspectButton" type="button" aria-haspopup="dialog" aria-controls="cinematicInspectDialog">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M5 8h22v16H5zM10 13h12M10 18h8"/></svg>
-              <span>看看房间</span>
-            </button>
-          </figure>
-          <div class="cinematic-progress" id="cinematicProgress" aria-label="七幕拜访进度"></div>
-        </div>
-
-        <div class="cinematic-beats" id="cinematicBeats">
-          <article class="cinematic-beat is-active" data-scene="door" id="cinematic-door">
-            <div><span>第一幕</span><h3>房门</h3><p>她听见了，却还在确认是不是你。</p>
-              <details><summary>展开门口原稿</summary><p>先让敲门声落下，再等门缝里的蓝眼睛认出你。她并不冷淡，只是需要一个不会突然闯进来的理由。</p><a href="#home">回到房门互动</a></details>
-            </div>
-          </article>
-          <article class="cinematic-beat" data-scene="room" id="cinematic-room">
-            <div><span>第二幕</span><h3>房间</h3><p>笔尖没有停，旁边的椅子却悄悄空出来。</p>
-              <details><summary>展开房间原稿</summary><p>沿着床边慢慢挪过去，数位笔、椅子和窗帘都替她留下了一点允许靠近的痕迹。</p><a href="#living-room">进入完整房间</a></details>
-            </div>
-          </article>
-          <article class="cinematic-beat" data-scene="secrets" id="cinematic-secrets">
-            <div><span>第三幕</span><h3>桌面秘密</h3><p>每件被收好的东西，都比她更会说实话。</p>
-              <details><summary>展开秘密原稿</summary><p>耳机总朝着同一个方向，草稿只露出一个纸角，抽屉的锁扣则在等她亲手把秘密分你一半。</p><a href="#room">寻找五个旧彩蛋</a></details>
-            </div>
-          </article>
-          <article class="cinematic-beat" data-scene="wardrobe" id="cinematic-wardrobe">
-            <div><span>第四幕</span><h3>衣橱</h3><p>她说只是试一下，却一直等你点头。</p>
-              <details><summary>展开衣橱原稿</summary><p>长袖藏住手指，两套衣服挡在脸前。真正想问的不是哪件更好看，而是你有没有认真看她。</p><a href="#wardrobe">帮她换装</a></details>
-            </div>
-          </article>
-          <article class="cinematic-beat" data-scene="gallery" id="cinematic-gallery">
-            <div><span>第五幕</span><h3>画册</h3><p>画册越往后，她藏起来的速度越慢。</p>
-              <details><summary>展开画册原稿</summary><p>第一页还有些发抖，最后一页却已经向你推近。她把夸奖说成检查，只是不想承认自己在期待。</p><a href="#gallery">翻看秘密画稿</a></details>
-            </div>
-          </article>
-          <article class="cinematic-beat" data-scene="drawing" id="cinematic-drawing">
-            <div><span>第六幕</span><h3>一起画</h3><p>这次，她没有把旁边的位置收回去。</p>
-              <details><summary>展开共同创作原稿</summary><p>停笔、偷看、遮住画面，然后终于把完成稿推到你面前。整段沉默也可以是一种陪伴。</p><a href="#drawing-story">陪她完成一张画</a></details>
-            </div>
-          </article>
-          <article class="cinematic-beat" data-scene="goodnight" id="cinematic-goodnight">
-            <div><span>第七幕</span><h3>晚安</h3><p>门会合上，但她把明天留了一条缝。</p>
-              <details><summary>展开晚安原稿</summary><p>台灯变暗，玩偶被抱紧，书页停在下次继续的地方。她困得睁不开眼，还是记得提醒你下次敲门。</p><a href="#goodnight">收下今晚的小纸条</a></details>
-            </div>
-          </article>
-        </div>
+      <div
+        class="room-hotspots"
+        id="roomHotspots"
+        aria-label="可以看看这些物件"
+      >
+        <button
+          class="object-hotspot hotspot-wardrobe"
+          type="button"
+          data-place="wardrobe"
+        >
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" /></svg
+          ><span>看看衣服</span>
+        </button>
+        <button
+          class="object-hotspot hotspot-drawing"
+          type="button"
+          data-action="drawing"
+        >
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" /></svg
+          ><span>未完成的画</span>
+        </button>
+        <button
+          class="object-hotspot hotspot-gallery"
+          type="button"
+          data-action="gallery"
+        >
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9" /></svg
+          ><span>翻翻画册</span>
+        </button>
       </div>
-
-      <noscript>
-        <div class="cinematic-noscript">
-          <figure><img src="assets/v19/door-peek-720.webp" width="720" height="900" alt="纱雾从门后偷看"><figcaption>房门 · 她听见了，却还在确认是不是你。</figcaption><details><summary>展开门口原稿</summary><p>先让敲门声落下，再等门缝里的蓝眼睛认出你。她并不冷淡，只是需要一个不会突然闯进来的理由。</p><a href="#home">回到房门互动</a></details></figure>
-          <figure><img src="assets/v19/room-drawing-720.webp" width="720" height="540" alt="纱雾在画桌前继续画画"><figcaption>房间 · 笔尖没有停，旁边的椅子却悄悄空出来。</figcaption><details><summary>展开房间原稿</summary><p>沿着床边慢慢挪过去，数位笔、椅子和窗帘都替她留下了一点允许靠近的痕迹。</p><a href="#living-room">进入完整房间</a></details></figure>
-          <figure><img src="assets/v19/secrets-caught-720.webp" width="720" height="540" alt="纱雾发现你在看桌面秘密"><figcaption>桌面秘密 · 每件被收好的东西，都比她更会说实话。</figcaption><details><summary>展开秘密原稿</summary><p>耳机总朝着同一个方向，草稿只露出一个纸角，抽屉的锁扣则在等她亲手把秘密分你一半。</p><a href="#room">寻找五个旧彩蛋</a></details></figure>
-          <figure><img src="assets/v19/wardrobe-hides-sleeves-720.webp" width="720" height="900" alt="纱雾用长袖藏住手指"><figcaption>衣橱 · 她说只是试一下，却一直等你点头。</figcaption><details><summary>展开衣橱原稿</summary><p>长袖藏住手指，两套衣服挡在脸前。真正想问的不是哪件更好看，而是你有没有认真看她。</p><a href="#wardrobe">帮她换装</a></details></figure>
-          <figure><img src="assets/v19/gallery-hides-book-720.webp" width="720" height="540" alt="纱雾害羞地把画册挡在面前"><figcaption>画册 · 画册越往后，她藏起来的速度越慢。</figcaption><details><summary>展开画册原稿</summary><p>第一页还有些发抖，最后一页却已经向你推近。她把夸奖说成检查，只是不想承认自己在期待。</p><a href="#gallery">翻看秘密画稿</a></details></figure>
-          <figure><img src="assets/v19/drawing-focus-720.webp" width="720" height="540" alt="纱雾专心画下最后几笔"><figcaption>一起画 · 这次，她没有把旁边的位置收回去。</figcaption><details><summary>展开共同创作原稿</summary><p>停笔、偷看、遮住画面，然后终于把完成稿推到你面前。整段沉默也可以是一种陪伴。</p><a href="#drawing-story">陪她完成一张画</a></details></figure>
-          <figure><img src="assets/v19/goodnight-hug-720.webp" width="720" height="540" alt="纱雾在夜里抱紧猫咪玩偶"><figcaption>晚安 · 门会合上，但她把明天留了一条缝。</figcaption><details><summary>展开晚安原稿</summary><p>台灯变暗，玩偶被抱紧，书页停在下次继续的地方。她困得睁不开眼，还是记得提醒你下次敲门。</p><a href="#goodnight">收下今晚的小纸条</a></details></figure>
-        </div>
-      </noscript>
-    </section>
-
-    <section class="room-section" id="room" aria-labelledby="room-title">
-      <div class="room-intro">
-        <div class="room-title-wrap">
-          <h2 id="room-title">她的房间，<br>比自我介绍更诚实。</h2>
-        </div>
-        <p>她不太擅长把心情说得很长，却会认真收好每一张草稿。靠近一点也可以——只是被她发现时，记得先假装没有一直盯着看。</p>
+      <div
+        class="room-dialogue"
+        id="roomDialogue"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <p class="dialogue-zh" id="subtitleZh">……你来了。坐这里就好。</p>
+        <p class="dialogue-ja" id="subtitleJa" lang="ja" hidden></p>
+        <span class="voice-status" id="voiceStatus" hidden></span>
       </div>
-
-      <section class="living-room-experience" id="living-room" aria-labelledby="living-room-title">
-        <header class="living-room-heading">
-          <div>
-            <h3 id="living-room-title">房间今天也在悄悄生活。</h3>
-            <p>沿着床边的木轨慢慢挪过去。每个角落都有自己的说话方式，碰到的东西也会发出只属于那里的声音。</p>
-          </div>
-          <div class="living-room-settings" aria-label="房间氛围设置">
-            <span class="living-room-time" id="livingRoomTime">现在 · 夜里</span>
-            <button class="living-weather-toggle" id="livingWeatherToggle" type="button" aria-pressed="true">
-              房间里的天气 · <strong>细雨</strong>
-            </button>
-            <button class="living-sound-toggle" id="livingSoundToggle" type="button" aria-pressed="true">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M5 12h6l7-6v20l-7-6H5zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
-              <span>场景声 · 开</span>
-            </button>
-          </div>
-        </header>
-
-        <div class="living-room-shell">
-          <div class="living-room-stage" id="livingRoomStage" data-place="desk" data-weather="rain" data-phase="night">
-            <figure class="living-room-view">
-              <img class="living-room-image" id="livingRoomImage" src="assets/v18/master/studio-focus-clean-4k.webp" srcset="assets/v18/studio-focus-clean-720.webp 720w, assets/v18/studio-focus-clean-1440.webp 1440w, assets/v18/master/studio-focus-clean-4k.webp 3840w" sizes="(max-width: 760px) calc(100vw - 2.5rem), (max-width: 1024px) 62vw, 760px" width="3840" height="2880" loading="lazy" decoding="async" draggable="false" alt="纱雾在暖灯与夜窗之间低头画稿，桌边放着数位板、铅笔和小猫玩偶">
-              <canvas class="living-rain" id="livingRainCanvas" aria-hidden="true"></canvas>
-              <span class="living-detail living-detail--pen" aria-hidden="true"></span>
-              <span class="living-detail living-detail--fabric" aria-hidden="true"></span>
-              <span class="living-detail living-detail--hanger" aria-hidden="true"></span>
-              <span class="living-detail living-detail--curtain" aria-hidden="true"></span>
-              <aside class="living-drawing-memory" id="livingDrawingMemory" aria-label="上次一起完成的画" hidden>
-                <img id="livingDrawingMemoryImage" src="assets/v18/drawing-door-moon-720.webp" width="720" height="540" loading="lazy" decoding="async" alt="">
-                <span id="livingDrawingMemoryLabel">上次一起画的</span>
-              </aside>
-              <figcaption>
-                <strong id="livingRoomCaption">画桌旁</strong>
-                <span id="livingRoomAmbient">笔尖还在移动，台灯把线稿照得很暖。</span>
-              </figcaption>
-            </figure>
-
-            <div class="living-room-sheet">
-              <h3 id="livingPlaceTitle" tabindex="-1">先别叫她，她正画到最认真的地方。</h3>
-              <p id="livingPlaceLine">她把旁边的椅子留出一点，却一直装作只是忘了推回去。</p>
-              <blockquote id="livingPlaceQuote">“可以靠近……不要突然碰到数位板。”</blockquote>
-              <div class="living-room-actions">
-                <button class="paw-button living-event-button" id="livingEventButton" type="button">
-                  <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11.2 14.2c-2.1 0-3.7-2-3.7-4.4s1.6-4.3 3.7-4.3 3.6 2 3.6 4.3-1.6 4.4-3.6 4.4Zm9.6 0c-2 0-3.6-2-3.6-4.4s1.6-4.3 3.6-4.3 3.7 2 3.7 4.3-1.6 4.4-3.7 4.4ZM5.8 21.4c-1.8 0-3.3-1.7-3.3-3.8s1.5-3.8 3.3-3.8 3.2 1.7 3.2 3.8-1.4 3.8-3.2 3.8Zm20.4 0c-1.8 0-3.2-1.7-3.2-3.8s1.4-3.8 3.2-3.8 3.3 1.7 3.3 3.8-1.5 3.8-3.3 3.8ZM16 29c-5.2 0-8.5-2.2-8.5-5.5 0-3 2.2-7.3 5.2-8.5 1.8-.7 2.2 1 3.3 1s1.5-1.7 3.3-1c3 1.2 5.2 5.5 5.2 8.5 0 3.3-3.3 5.5-8.5 5.5Z"/></svg>
-                  <span>听她补完这一笔</span>
-                </button>
-                <button class="pencil-button living-voice-button" id="livingVoiceButton" type="button" aria-label="听纱雾说说画桌旁的事">
-                  <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 4a5 5 0 0 0-5 5v7a5 5 0 0 0 10 0V9a5 5 0 0 0-5-5Zm-9 12a9 9 0 0 0 18 0M16 25v4m-5 0h10"/></svg>
-                  <span>听她说说画桌</span>
-                </button>
-                <a class="living-deep-link" id="livingDeepLink" href="#desk-secrets">再靠近画桌一点</a>
-              </div>
-            </div>
-          </div>
-
-          <nav class="living-room-track" aria-label="在房间里移动">
-            <button type="button" data-living-place="desk" aria-pressed="true">
-              <svg aria-hidden="true" viewBox="0 0 48 32"><path d="M5 12h38v14H5zM10 26v4m28-4v4M17 12V6h14v6"/></svg>
-              <span><strong>画桌</strong><small>笔尖和稿纸</small></span>
-            </button>
-            <button type="button" data-living-place="bed" aria-pressed="false">
-              <svg aria-hidden="true" viewBox="0 0 48 32"><path d="M5 23h38v6H5zM8 23V10h9c4 0 7 3 7 7v6m0-7h15c3 0 4 2 4 5v2M8 29v2m32-2v2"/></svg>
-              <span><strong>床边</strong><small>靠枕和被角</small></span>
-            </button>
-            <button type="button" data-living-place="wardrobe" aria-pressed="false">
-              <svg aria-hidden="true" viewBox="0 0 48 32"><path d="M8 3h32v27H8zM24 3v27M20 17h1m6 0h1M14 8h6m8 0h6"/></svg>
-              <span><strong>衣橱</strong><small>衣架轻轻晃</small></span>
-            </button>
-            <button type="button" data-living-place="window" aria-pressed="false">
-              <svg aria-hidden="true" viewBox="0 0 48 32"><path d="M8 3h32v26H8zM24 3v26M8 16h32M4 29h40"/></svg>
-              <span><strong>窗台</strong><small>月光和雨声</small></span>
-            </button>
-          </nav>
-        </div>
-        <p class="visually-hidden" id="livingRoomStatus" role="status" aria-live="polite"></p>
-      </section>
-
-      <aside class="room-character-note" aria-label="纱雾留在稿纸边的小注">
-        <span>写在稿纸边的小注</span>
-        <p><strong>害羞不是冷淡。</strong>她会先躲到门后确认你还在；拿起笔以后，又会认真得忘记继续躲。</p>
-        <blockquote>“可以待在旁边……但是不许一直看我。”</blockquote>
-      </aside>
-
-      <div class="desk-explore" id="desk-secrets">
-        <div class="desk-copy">
-          <h3>五个小秘密，<br>要轻轻地找</h3>
-          <p>五件东西里藏着她不肯主动说的小习惯。直接碰一碰画面里的物件；全部找到后，她才肯把抽屉里的留言推给你。</p>
-          <div class="paw-progress" id="secretProgress" aria-live="polite" aria-label="已经发现零个秘密">
-            <i></i><i></i><i></i><i></i><i></i>
-          </div>
-          <p class="secret-count"><strong id="secretCount">0</strong> / 5 已发现</p>
-          <p class="secret-hint" id="secretHint" aria-live="polite">先随便看看。她不喜欢把秘密贴成醒目的标记。</p>
-          <button class="pencil-button voice-trigger" type="button" data-voice="drawing" aria-label="问她在画什么并听一句回答">
-            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M4 12h6l8-7v22l-8-7H4zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
-            问她在画什么
-          </button>
-        </div>
-
-        <div class="desk-board" aria-label="可探索的画桌">
-          <picture class="desk-scene-picture">
-            <source srcset="assets/v18/desk-secrets-720.webp 720w, assets/v18/desk-secrets-1440.webp 1440w, assets/v18/master/desk-secrets-4k.webp 3840w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 70vw, 760px" type="image/webp">
-            <img src="assets/v18/master/desk-secrets-4k.webp" width="3840" height="2880" loading="lazy" alt="纱雾坐在黄昏的画桌前，桌面周围摆着耳机、轻小说稿件、数位板、猫咪玩偶和带锁抽屉">
-          </picture>
-
-          <button class="desk-object desk-object--tablet secret-trigger" type="button" data-secret="tablet" aria-pressed="false" aria-label="查看数位板的秘密">
-            <span>数位板</span>
-          </button>
-          <button class="desk-object desk-object--headphones secret-trigger" type="button" data-secret="headphones" aria-pressed="false" aria-label="查看耳机的秘密">
-            <span>耳机</span>
-          </button>
-          <button class="desk-object desk-object--manuscript secret-trigger" type="button" data-secret="manuscript" aria-pressed="false" aria-label="查看轻小说稿件的秘密">
-            <span>轻小说稿件</span>
-          </button>
-          <button class="desk-object desk-object--plush secret-trigger" type="button" data-secret="plush" aria-pressed="false" aria-label="查看猫咪玩偶的秘密">
-            <span>猫咪玩偶</span>
-          </button>
-          <button class="desk-object desk-object--drawer secret-trigger" type="button" data-secret="drawer" aria-pressed="false" aria-label="查看上锁抽屉的秘密">
-            <span>上锁抽屉</span>
-          </button>
-        </div>
+      <div class="room-actions" id="roomActions">
+        <button class="primary-action" id="approachButton" type="button">
+          走到她身边
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m9 5 7 7-7 7" />
+          </svg>
+        </button>
+        <button class="secondary-action" id="lookButton" type="button">
+          先看看房间
+        </button>
       </div>
+      <nav class="place-navigation" aria-label="房间里的位置">
+        <button
+          class="place-link is-current"
+          data-place="room"
+          type="button"
+          aria-pressed="true"
+        >
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m3 11 9-8 9 8M5 10v11h5v-6h4v6h5V10" /></svg
+          ><span>房间</span>
+        </button>
+        <button
+          class="place-link"
+          data-place="desk"
+          type="button"
+          aria-pressed="false"
+        >
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m15 3 6 6-11 11-7 1 1-7Z M12 6l6 6M4 15l5 5" /></svg
+          ><span>画桌</span>
+        </button>
+        <button
+          class="place-link"
+          data-place="wardrobe"
+          type="button"
+          aria-pressed="false"
+        >
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m8 3-6 4 3 5 3-2v11h8V10l3 2 3-5-6-4c0 4-8 4-8 0Z" /></svg
+          ><span>衣橱</span>
+        </button>
+        <button
+          class="place-link"
+          data-place="bed"
+          type="button"
+          aria-pressed="false"
+        >
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M3 20v-9h18v9M3 16h18M5 11V5h14v6M8 8h3M14 8h3" /></svg
+          ><span>床边</span>
+        </button>
+        <button
+          class="place-link"
+          data-place="window"
+          type="button"
+          aria-pressed="false"
+        >
+          <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M3 3h18v18H3ZM12 3v18M3 12h18" /></svg
+          ><span>窗边</span>
+        </button>
+      </nav>
+    </main>
+    <noscript>
+      <section id="readableContent" aria-labelledby="readable-title">
+        <h2 id="readable-title">纱雾的小小画室 · 静静读一会儿</h2>
+        <p>
+          JavaScript
+          未启用。你仍然可以阅读角色介绍、衣橱说明、完整画廊、桌面秘密和晚安纸条；场景移动、换装、分支日常、共同创作与声音播放需要启用
+          JavaScript。这里不会自动播放声音，也不会代替你记录一次互动。
+        </p>
 
-      <div class="secret-message" id="secretMessage" role="status" tabindex="-1" hidden>
-        <div class="secret-message__portrait" aria-hidden="true">
-          <img src="assets/v18/hero-shy-720.webp" width="720" height="900" loading="lazy" decoding="async" alt="">
-        </div>
-        <div>
-          <span>抽屉里的隐藏留言</span>
-          <p>“谢谢你没有催我开门。下次……也可以来。”</p>
-        </div>
-      </div>
-    </section>
+        <section aria-labelledby="readable-about-title">
+          <h2 id="readable-about-title">和泉纱雾：害羞不是冷淡</h2>
+          <p>
+            她不太擅长把心情说得很长，却会认真收好每一张草稿。靠近一点也可以——只是被她发现时，记得先假装没有一直盯着看。
+          </p>
+          <p>她会先躲到门后确认你还在；拿起笔以后，又会认真得忘记继续躲。</p>
+          <p>“可以待在旁边……但是不许一直看我。”</p>
+        </section>
 
-    <section class="wardrobe-section" id="wardrobe" aria-labelledby="wardrobe-title">
-      <div class="wardrobe-heading">
-        <span class="hanger-mark" aria-hidden="true"><svg viewBox="0 0 80 50"><path d="M33 11c0-6 4-9 8-9s8 3 8 7c0 7-9 6-9 13m0 0L6 45h68L40 22Z"/></svg></span>
-        <div>
-          <h2 id="wardrobe-title">衣橱里，她还在认真犹豫。</h2>
-          <p>不是只换一种颜色。每一套都对应她留在房间里的某个时刻，你可以替她做一次不太郑重的决定。</p>
-        </div>
-      </div>
-
-      <div class="wardrobe-album">
-        <div class="album-spine" aria-hidden="true"></div>
-        <div class="album-photo" id="outfitStage">
-          <img id="outfitImage" src="assets/v18/master/outfit-home-4k.webp" srcset="assets/v18/outfit-home-720.webp 720w, assets/v18/outfit-home-1440.webp 1440w, assets/v18/master/outfit-home-4k.webp 3072w" sizes="(max-width: 760px) calc(100vw - 3.2rem), (max-width: 1024px) 52vw, 600px" width="3072" height="3840" loading="lazy" decoding="async" alt="纱雾穿宽松粉色运动家居服，坐在床边害羞微笑">
-          <span class="photo-corner photo-corner--one" aria-hidden="true"></span>
-          <span class="photo-corner photo-corner--two" aria-hidden="true"></span>
-          <span class="outfit-time" id="outfitTime">午后 15:20</span>
-        </div>
-
-        <div class="album-copy">
-          <h3 id="outfitName">宽松运动家居服</h3>
-          <p id="outfitDescription">袖子要够长，裤脚要够软。窝在房间里画画的时候，这样才最安心。</p>
-          <div class="outfit-tabs" role="group" aria-label="选择纱雾的服装">
-            <button type="button" data-outfit="home" aria-pressed="true"><i></i><span>粉色运动服</span></button>
-            <button type="button" data-outfit="artist"><i></i><span>格纹画稿睡衣</span></button>
-            <button type="button" data-outfit="outing"><i></i><span>薄荷水手外套</span></button>
-            <button type="button" data-outfit="bedtime"><i></i><span>草莓睡前服</span></button>
-            <button type="button" data-outfit="hooded"><i></i><span>猫耳连帽毯</span></button>
-          </div>
-          <div class="album-actions">
-            <button class="round-arrow" id="outfitPrev" type="button" aria-label="上一套服装">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m19 7-9 9 9 9M10 16h14"/></svg>
-            </button>
-            <button class="round-arrow" id="outfitNext" type="button" aria-label="下一套服装">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m13 7 9 9-9 9m9-9H8"/></svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
-      <header class="gallery-heading">
-        <h2 id="gallery-title">她的画册，<br>只肯一页一页给你看。</h2>
-        <p>房间里的片段被夹进三段胶片。从偷偷开始画，到终于把画推近一点，她越来越藏不住想听见认真感想的小心思。</p>
-      </header>
-
-      <div class="gallery-viewer">
-        <nav class="gallery-chapters" id="galleryChapters" aria-label="画册章节"></nav>
-        <figure class="gallery-main" id="galleryStage">
-          <button class="gallery-open" id="galleryOpenButton" type="button" aria-label="沉浸查看画稿：被抓到在床上画画">
-            <img id="galleryMainImage" src="assets/v18/master/gallery-bed-drawing-4k.webp" srcset="assets/v18/gallery-bed-drawing-720.webp 720w, assets/v18/gallery-bed-drawing-1440.webp 1440w, assets/v18/master/gallery-bed-drawing-4k.webp 3840w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 76vw, 920px" width="3840" height="2880" loading="lazy" decoding="async" alt="纱雾穿粉色猫耳家居服，盘腿坐在床上用数位板画画，被发现后害羞抬眼">
-            <span aria-hidden="true">靠近一点看</span>
-          </button>
-          <figcaption>
-            <span id="galleryIndex">01 / 11</span>
-            <div>
-              <small id="galleryChapter">第一章 · 偷偷开始</small>
-              <h3 id="galleryCaption">被抓到在床上画画</h3>
-              <p id="galleryNote">她原本把数位板藏在膝盖上。听见你靠近，只来得及红着脸抬头：“不许笑……这里比较舒服而已。”</p>
-            </div>
-          </figcaption>
-        </figure>
-
-        <div class="film-controls">
-          <button class="round-arrow" id="galleryPrev" type="button" aria-label="上一张画稿">
-            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m19 7-9 9 9 9M10 16h14"/></svg>
-          </button>
-          <div class="film-strip" id="galleryThumbs" aria-label="画稿缩略图"></div>
-          <button class="round-arrow" id="galleryNext" type="button" aria-label="下一张画稿">
-            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m13 7 9 9-9 9m9-9H8"/></svg>
-          </button>
-        </div>
-
-        <div class="gallery-praise">
-          <span>她把画推到你面前，自己先躲开了视线。</span>
-          <button class="pencil-button voice-trigger" type="button" data-voice="like" aria-label="夸她的画并听一句回答">
-            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M4 12h6l8-7v22l-8-7H4zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
-            夸夸她的画
-          </button>
-        </div>
-      </div>
-
-      <dialog class="gallery-lightbox" id="galleryLightbox" aria-labelledby="lightboxTitle">
-        <div class="lightbox-sheet">
-          <header class="lightbox-header">
-            <div>
-              <span id="lightboxChapter">第一章 · 偷偷开始</span>
-              <strong id="lightboxIndex">01 / 11</strong>
-            </div>
-            <button class="lightbox-close" id="lightboxClose" type="button" aria-label="关闭沉浸画册">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m8 8 16 16M24 8 8 24"/></svg>
-            </button>
-          </header>
-          <div class="lightbox-stage" id="lightboxStage">
-            <button class="round-arrow lightbox-prev" id="lightboxPrev" type="button" aria-label="上一张画稿">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m19 7-9 9 9 9M10 16h14"/></svg>
-            </button>
-            <button class="lightbox-image" id="lightboxImageButton" type="button" aria-label="放大当前画稿">
-              <img id="lightboxImage" src="assets/v18/master/gallery-bed-drawing-4k.webp" srcset="assets/v18/gallery-bed-drawing-720.webp 720w, assets/v18/gallery-bed-drawing-1440.webp 1440w, assets/v18/master/gallery-bed-drawing-4k.webp 3840w" sizes="96vw" width="3840" height="2880" alt="">
-            </button>
-            <button class="round-arrow lightbox-next" id="lightboxNext" type="button" aria-label="下一张画稿">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="m13 7 9 9-9 9m9-9H8"/></svg>
-            </button>
-          </div>
-          <div class="lightbox-copy">
-            <div>
-              <h3 id="lightboxTitle">被抓到在床上画画</h3>
-              <p id="lightboxNote">她原本把数位板藏在膝盖上。听见你靠近，只来得及红着脸抬头。</p>
-            </div>
-            <span id="lightboxZoomHint">点一下画面可放大细节；方向键或滑动可以翻页。</span>
-          </div>
-        </div>
-      </dialog>
-    </section>
-
-    <section class="drawing-story-section" id="drawing-story" aria-labelledby="drawing-story-title">
-      <header class="drawing-story-heading">
-        <h2 id="drawing-story-title">看过那些画以后，<br>今晚别走太早。</h2>
-        <p>她会发现你还在，也会在你偷看时慌张地把画盖住。可以帮忙选一件小事，也可以什么都不催，只安静陪她画一会儿。</p>
-      </header>
-
-      <aside class="story-memory" id="storyMemory" aria-label="上次共同完成的画" hidden>
-        <figure>
-          <img id="storyMemoryImage" src="assets/v18/drawing-door-moon-720.webp" width="720" height="540" loading="lazy" decoding="async" alt="">
-        </figure>
-        <div>
-          <strong id="storyMemoryTitle">上次那张画，她还放在桌边。</strong>
-          <p id="storyMemoryText"></p>
-        </div>
-      </aside>
-
-      <div class="studio-theater" id="storyTheater">
-        <figure class="studio-stage" id="storyStage" data-frame="focus" data-weather="rain">
-          <img id="storyStageImage" src="assets/v18/master/studio-focus-clean-4k.webp" srcset="assets/v18/studio-focus-clean-720.webp 720w, assets/v18/studio-focus-clean-1440.webp 1440w, assets/v18/master/studio-focus-clean-4k.webp 3840w" sizes="(max-width: 760px) calc(100vw - 2rem), (max-width: 1024px) 58vw, 700px" width="3840" height="2880" loading="lazy" decoding="async" alt="纱雾在夜色里的画桌前低头用数位板认真画线稿">
-          <canvas class="studio-rain" id="studioRainCanvas" aria-hidden="true"></canvas>
-          <span class="studio-lamp-glow" aria-hidden="true"></span>
-          <span class="studio-pen-glow" aria-hidden="true"></span>
-          <div class="story-peek" id="storyPeek" hidden>
-            <div class="story-peek-paper" id="storyPeekPaper" aria-hidden="true">
-              <img id="storyPeekImage" src="assets/v18/drawing-door-moon-720.webp" width="720" height="540" loading="lazy" decoding="async" alt="">
-              <span class="story-peek-cover"><i>还没画完</i></span>
-            </div>
-            <button class="story-peek-button" id="storyPeekButton" type="button" aria-expanded="false" aria-controls="storyPeekPaper">
-              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M3 16s5-7 13-7 13 7 13 7-5 7-13 7S3 16 3 16Z"/><circle cx="16" cy="16" r="3"/></svg>
-              <span>偷看画到哪里了</span>
-            </button>
-          </div>
-          <figcaption>
-            <span id="storyStageLabel">截稿前的雨夜</span>
-            <strong id="storyStageNote">她画得太认真，暂时没有发现你已经坐下。</strong>
-          </figcaption>
-        </figure>
-
-        <div class="story-sheet">
-          <div class="story-scene-copy" role="status" aria-live="polite" aria-atomic="true">
-            <span class="visually-hidden" id="storyBeat">笔尖还在慢慢移动</span>
-            <h3 id="storyPrompt" tabindex="-1">要不要安静陪她画一会儿？</h3>
-            <p id="storyLine">她给旁边留了一点位置，却一直装作只是忘了把椅子推回去。</p>
-          </div>
-
-          <figure class="story-art-preview" id="storyArtPreview" hidden>
-            <div class="story-art-frame">
-              <img id="storyArtImage" src="assets/v18/drawing-door-moon-720.webp" width="720" height="540" loading="lazy" decoding="async" alt="">
-            </div>
+        <section aria-labelledby="readable-outfits-title">
+          <h2 id="readable-outfits-title">衣橱里，她还在认真犹豫</h2>
+          <p>
+            不是只换一种颜色。每一套都对应她留在房间里的某个时刻，你可以替她做一次不太郑重的决定。下面保留衣橱原有的插画与说明，供安静阅读。
+          </p>
+          <figure>
+            <img
+              src="assets/v18/outfit-home-720.webp"
+              width="720"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              alt="纱雾穿宽松粉色运动外套和奶油色运动裤，坐在床边害羞微笑"
+            />
             <figcaption>
-              <strong id="storyArtTitle"></strong>
-              <span id="storyArtMeta"></span>
+              <h3>宽松运动家居服</h3>
+              <p>
+                袖子要够长，裤脚要够软。窝在房间里画画的时候，这样才最安心。
+              </p>
             </figcaption>
           </figure>
+          <figure>
+            <img
+              src="assets/v18/outfit-artist-night-720.webp"
+              width="720"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              alt="纱雾穿蓝白格长袖睡衣和长裤，戴着绘图手套在月光下认真画画"
+            />
+            <figcaption>
+              <h3>格纹画稿睡衣</h3>
+              <p>
+                蓝白格睡衣、绘图手套和不会掉下去的软拖鞋——熬夜画稿模式，准备完成。
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/outfit-outing-sailor-720.webp"
+              width="720"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              alt="纱雾穿水手领裙装、薄荷色针织外套和深色长袜，抱着棕色书包站在门口"
+            />
+            <figcaption>
+              <h3>薄荷水手外套</h3>
+              <p>
+                水手领、厚厚的薄荷针织和能挡住紧张的书包。真的要出门时，会在门口多站一会儿。
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/outfit-bedtime-720.webp"
+              width="720"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              alt="深夜里，纱雾穿奶油粉草莓长袖睡衣和长裤，侧躺在床上用数位板继续画画"
+            />
+            <figcaption>
+              <h3>草莓睡前服</h3>
+              <p>
+                已经换好睡衣，却还舍不得放下最后一笔。数位板垫在枕头上，画到眼睛发困才肯保存。
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/outfit-hooded-blanket-720.webp"
+              width="720"
+              height="900"
+              loading="lazy"
+              decoding="async"
+              alt="雨夜里，纱雾裹着薄荷灰猫耳连帽毯，穿长裤和暖袜坐在地毯上认真校对画稿"
+            />
+            <figcaption>
+              <h3>猫耳连帽毯</h3>
+              <p>
+                帽子拉低一点，袖子再长一点，就能把雨声和截稿压力都挡在外面；该改的线却一笔也不会漏。
+              </p>
+            </figcaption>
+          </figure>
+        </section>
 
-          <section class="quiet-companion" id="quietCompanion" aria-labelledby="quietCompanionTitle" hidden>
-            <div class="quiet-thread" aria-hidden="true">
-              <i data-quiet-beat="1"></i><i data-quiet-beat="2"></i><i data-quiet-beat="3"></i>
-            </div>
-            <span class="quiet-time" id="quietTime">房间刚刚安静下来</span>
-            <h4 id="quietCompanionTitle">就在旁边，先不催她。</h4>
-            <p id="quietCompanionLine" role="status" aria-live="polite">笔尖还在移动。她确认了一下旁边的椅子，没有叫你离开。</p>
-            <button class="pencil-button quiet-continue" id="quietContinue" type="button">轻轻问她接下来画什么</button>
-          </section>
+        <section aria-labelledby="readable-gallery-title">
+          <h2 id="readable-gallery-title">她的画册，只肯一页一页给你看</h2>
+          <p>
+            从偷偷开始画，到终于把画推近一点，她越来越藏不住想听见认真感想的小心思。这十一页原有画稿与旁注，都留在这里。
+          </p>
+          <figure>
+            <img
+              src="assets/v18/gallery-bed-drawing-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="银白长发的女孩穿粉色猫耳家居服，盘腿坐在床上用数位板画画，被发现后害羞抬眼"
+            />
+            <figcaption>
+              <h3>被抓到在床上画画</h3>
+              <p>
+                她原本把数位板藏在膝盖上。听见你靠近，只来得及红着脸抬头：“不许笑……这里比较舒服而已。”
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-blanket-fort-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="银白长发的女孩躲在被子搭成的小帐篷里画画，红着脸从帘边递出一张小猫速写"
+            />
+            <figcaption>
+              <h3>被窝画室只开一条缝</h3>
+              <p>
+                她用被子围出一间更小的画室，只把帘子拉开一点点。小猫速写先从缝里递出来，藏在袖口后的声音轻得几乎听不见：“画、画可以先看……”
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-stream-wave-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="银白长发的女孩戴着猫耳耳机坐在数位板前进行安静的绘画直播，用袖口挡住红脸小幅挥手"
+            />
+            <figcaption>
+              <h3>直播开始前的小小挥手</h3>
+              <p>
+                进入画师模式时，她盯着线稿比谁都认真。发现镜头还开着，才用袖口挡住脸，飞快挥了一下手：“只、只是在确认画面。”
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-show-drawing-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="银白长发的女孩跪坐在床边，红着脸把画着可爱角色的速写本举给来访者看"
+            />
+            <figcaption>
+              <h3>只给你看三秒</h3>
+              <p>
+                画纸举得很认真，视线却躲到了旁边。“看、看完就要说感想……不许只点头。”
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-pillow-offer-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="银白长发的女孩穿蓝白格睡衣，抱着粉色猫咪靠枕，从靠枕后把一张小猫画递给来访者"
+            />
+            <figcaption>
+              <h3>躲在靠枕后把画递给你</h3>
+              <p>
+                大半张脸都藏起来了，画却认真地伸到你面前。“只、只许看画……不许一直看我。”
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-door-note-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="银白长发的女孩藏在半开的卧室门后，脸红着从门缝递出一张画有小猫的卡片"
+            />
+            <figcaption>
+              <h3>谢谢要从门缝里递出来</h3>
+              <p>
+                亲口说出口还是太难了，于是她把认真画好的小猫卡片从门缝推给你。等你接稳，门后才传来一句：“那、那只小猫不许笑。”
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-desk-night-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="深夜里，银白长发的女孩趴在数位板前认真画画，桌灯照亮画稿"
+            />
+            <figcaption>
+              <h3>认真起来就忘了害羞</h3>
+              <p>
+                嘴上说着不许偷看，真正画起来以后，连门边的脚步声都听不见了。
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-sketch-sort-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="银白长发的女孩穿粉色长袖家居服坐在地毯上整理速写，抱住一张画稿并害羞地把另一张推向来访者"
+            />
+            <figcaption>
+              <h3>最喜欢的那张先藏住</h3>
+              <p>
+                散在地毯上的草稿被分成好多小堆。她把最喜欢的一张紧紧抱住，却又把另一张悄悄推向你：“这张……可以替我保管一下。”
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-sketchbook-hide-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="银白长发的女孩躲在大画册后，只露出一双明亮的蓝眼睛"
+            />
+            <figcaption>
+              <h3>被看太久就藏起来</h3>
+              <p>
+                画册挡住了大半张脸，但那双眼睛已经把“我知道你还在看”全都说出来了。
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-awaiting-praise-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="银白长发的女孩抱膝坐在床上，速写本朝向来访者，脸红着等待评价"
+            />
+            <figcaption>
+              <h3>装作没有在等夸奖</h3>
+              <p>
+                她把画留在最显眼的位置，自己却缩进了宽大的袖口里。“我、我没有催你……慢慢看也行。”
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/gallery-goodnight-clean-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="月光下，银白长发的女孩蜷坐在窗边抱着猫咪玩偶，露出困倦的微笑"
+            />
+            <figcaption>
+              <h3>今天的最后一页</h3>
+              <p>
+                稿子保存好，窗帘留一条缝，再抱住最软的玩偶。临睡前，她还是小声补了一句：“明天……也可以来。”
+              </p>
+            </figcaption>
+          </figure>
+        </section>
 
-          <div class="story-choices" id="storyChoices" role="group" aria-labelledby="storyPrompt">
-            <button class="story-choice story-choice--primary" type="button" data-story-start>
-              <strong>坐到她留出的椅子旁</strong>
-              <span>只在她需要的时候开口</span>
-            </button>
-          </div>
+        <section aria-labelledby="readable-secrets-title">
+          <h2 id="readable-secrets-title">桌面上，不肯主动说的小习惯</h2>
+          <p>数位板、耳机、稿件、玩偶和抽屉，各自收着她的一小段日常。</p>
+          <h3>数位板</h3>
+          <p>快捷键都设成单手能按到，因为另一只手常常要抱着靠枕。</p>
+          <h3>耳机</h3>
+          <p>画线稿时会循环同一张安静的歌单，音量永远只开到三格。</p>
+          <h3>轻小说稿件</h3>
+          <p>
+            页边画满了表情草稿。比起剧情批注，她更先注意角色有没有好好笑出来。
+          </p>
+          <h3>猫咪玩偶</h3>
+          <p>不顺利的时候会被抱得很紧。顺利的时候，也一样。</p>
+          <h3>上锁抽屉</h3>
+          <p>钥匙藏在薄荷色铅笔盒底下。她愿意一起打开时，留言就留在抽屉里。</p>
+          <p>抽屉里留过这样一句话：“谢谢你没有催我开门。下次……也可以来。”</p>
+        </section>
 
-          <div class="story-sheet-actions">
-            <button class="story-back" id="storyBack" type="button" hidden>回到刚才那一步</button>
-            <button class="story-restart" id="storyRestart" type="button" hidden>再陪她画另一张</button>
-          </div>
-        </div>
-      </div>
-    </section>
+        <section aria-labelledby="readable-drawing-title">
+          <h2 id="readable-drawing-title">看过那些画以后，今晚别走太早</h2>
+          <p>
+            她会发现你还在，也会在你偷看时慌张地把画盖住。可以帮忙选一件小事，也可以什么都不催，只安静陪她画一会儿。
+          </p>
+          <p>
+            共同创作从陪伴方式开始：安静坐在旁边（不催她，也不一直盯着屏幕）；问她哪里需要帮忙（等她自己把犹豫说出来）；把椅子挪远一点（给她留出不会被盯着看的距离）。停笔、偷看、遮住画面，然后终于把完成稿推到你面前；整段沉默也可以是一种陪伴。
+          </p>
+          <p>
+            可以一起选择画里的小猫和画面的配色。下面是原有的三个题材，它们并不表示你已经在这次拜访中完成了作品。
+          </p>
+          <figure>
+            <img
+              src="assets/v18/drawing-door-moon-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="奶油稿纸上，一只小猫从半开的房门后看向月亮和星星的铅笔水彩画"
+            />
+            <figcaption>
+              <h3>门缝看月亮的小猫</h3>
+              <p>
+                明明好奇，却只肯先探出半张脸。她先画了一条很窄的门缝，又在外面留了一轮月亮。
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/drawing-blanket-star-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="奶油稿纸上，一只小猫躲在被窝帐篷里用铅笔画星星的铅笔水彩画"
+            />
+            <figcaption>
+              <h3>被窝里画星星的小猫</h3>
+              <p>
+                躲进最小的画室，还是很认真地下笔。她把被子画成一间很小的画室，只给笔尖留了出口。
+              </p>
+            </figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/v18/drawing-pencil-stars-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="奶油稿纸上，一只小猫抱住一支大铅笔，周围散着三颗小星星的铅笔水彩画"
+            />
+            <figcaption>
+              <h3>抱着大铅笔的小猫</h3>
+              <p>
+                看起来软绵绵，抱住画笔时却很认真。她把铅笔画得比小猫还大，爪子却抱得很稳。
+              </p>
+            </figcaption>
+          </figure>
+          <p>
+            配色选择：草莓黄昏：暖粉、纸灯和一点点晚霞；薄荷雨夜：安静的薄荷青压住窗外雨声；银蓝月光：银白、月蓝和很淡的夜色。
+          </p>
+          <p>
+            看完以后，可以认真说说“线条看起来很软”、“小猫的眼神很认真”、“配色像一盏小夜灯”。这些具体感想，比只点一下头更能让她安心。
+          </p>
+          <p>
+            启用互动后，可以暂停、离开，再继续真实保存的未完成稿；共同成稿与回访记忆只依据实际发生的选择，不凭空补出共同经历。安静陪伴可以随时结束，不需要等够一段时间才能继续。
+          </p>
+        </section>
 
-    <section class="goodnight-section" id="goodnight" aria-labelledby="goodnight-title">
-      <div class="night-window">
-        <img src="assets/v18/master/gallery-goodnight-clean-4k.webp" srcset="assets/v18/gallery-goodnight-clean-720.webp 720w, assets/v18/gallery-goodnight-clean-1440.webp 1440w, assets/v18/master/gallery-goodnight-clean-4k.webp 3840w" sizes="(max-width: 760px) calc(100vw - 2rem), 50vw" width="3840" height="2880" loading="lazy" alt="月光下，纱雾蜷坐在窗边抱着猫咪玩偶露出困倦微笑">
-      </div>
-      <div class="goodnight-copy">
-        <h2 id="goodnight-title">门会关上，<br>纸条可以带走。</h2>
-        <p>一起画过以后，今天的拜访才到这里。她把一张很小的纸条塞到门缝下面——字写得急了一点，但没有收回去。</p>
-        <div class="fortune-note" id="fortuneNote" aria-live="polite">
-          <span id="fortuneLabel">今晚的小纸条</span>
-          <strong>画不完也没关系，先把今天好好收起来。</strong>
-        </div>
-        <p class="goodnight-status" id="goodnightStatus">收下后会保存在这台设备里；想带到别处，也可以复制纸条文字。</p>
-        <div class="goodnight-actions">
-          <button class="paw-button paw-button--night" id="takeNoteButton" type="button">
-            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11.2 14.2c-2.1 0-3.7-2-3.7-4.4s1.6-4.3 3.7-4.3 3.6 2 3.6 4.3-1.6 4.4-3.6 4.4Zm9.6 0c-2 0-3.6-2-3.6-4.4s1.6-4.3 3.6-4.3 3.7 2 3.7 4.3-1.6 4.4-3.7 4.4ZM5.8 21.4c-1.8 0-3.3-1.7-3.3-3.8s1.5-3.8 3.3-3.8 3.2 1.7 3.2 3.8-1.4 3.8-3.2 3.8Zm20.4 0c-1.8 0-3.2-1.7-3.2-3.8s1.4-3.8 3.2-3.8 3.3 1.7 3.3 3.8-1.5 3.8-3.3 3.8ZM16 29c-5.2 0-8.5-2.2-8.5-5.5 0-3 2.2-7.3 5.2-8.5 1.8-.7 2.2 1 3.3 1s1.5-1.7 3.3-1c3 1.2 5.2 5.5 5.2 8.5 0 3.3-3.3 5.5-8.5 5.5Z"/></svg>
-            <span>收下纸条，轻轻带上门</span>
-          </button>
-          <button class="pencil-button" id="fortuneButton" type="button">
-            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M7 10h18M7 16h14M7 22h10"/></svg>
-            <span>再抽一张</span>
-          </button>
-          <button class="pencil-button" id="copyFortuneButton" type="button">
-            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11 9h14v17H11zM7 22V5h14"/></svg>
-            <span>复制纸条文字</span>
-          </button>
-          <button class="pencil-button voice-trigger" type="button" data-voice="goodnight" aria-label="向她说晚安并听一句回答">
-            <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M4 12h6l8-7v22l-8-7H4zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
-            听她说晚安
-          </button>
-        </div>
-      </div>
-    </section>
-  </main>
+        <section aria-labelledby="readable-goodnight-title">
+          <h2 id="readable-goodnight-title">门会关上，纸条可以带走</h2>
+          <p>
+            一起画过以后，今天的拜访才到这里。她把一张很小的纸条塞到门缝下面——字写得急了一点，但没有收回去。
+          </p>
+          <figure>
+            <img
+              src="assets/v18/gallery-goodnight-clean-720.webp"
+              width="720"
+              height="540"
+              loading="lazy"
+              decoding="async"
+              alt="月光下，纱雾蜷坐在窗边抱着猫咪玩偶露出困倦微笑"
+            />
+            <figcaption>
+              台灯变暗，玩偶被抱紧，书页停在下次继续的地方。她困得睁不开眼，还是记得提醒你下次敲门。
+            </figcaption>
+          </figure>
+          <p>“画不完也没关系，先把今天好好收起来。”</p>
+          <p>“今天已经很努力了，剩下的一小步留给明天。”</p>
+          <p>“如果有点害怕，就先从门缝里看一眼。”</p>
+          <p>“喜欢的事情不用解释很大声，认真做下去就好。”</p>
+          <p>“晚安。明天醒来，线条会比今晚更轻一点。”</p>
+          <p>“有人安静陪着的时候，房间就没有那么小了。”</p>
+          <p>
+            这些是原有的晚安小纸条。静态阅读不会自动保存；启用互动后，可以收下或复制纸条文字。
+          </p>
+        </section>
+      </section>
+    </noscript>
 
-  <dialog class="cinematic-inspect" id="cinematicInspectDialog" aria-labelledby="cinematicInspectTitle">
-    <div class="cinematic-inspect-shell">
-      <header>
-        <div><span id="cinematicInspectAct">第一幕 · 房门</span><h2 id="cinematicInspectTitle">轻轻看看房间</h2></div>
-        <button class="cinematic-inspect-close" id="cinematicInspectClose" type="button" aria-label="退出观察模式">
-          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
-        </button>
-      </header>
-      <p class="cinematic-inspect-help" id="cinematicInspectHelp">拖动观察 · 滚轮或双指缩放 · 双击放大 · 方向键移动</p>
-      <div class="cinematic-inspect-viewport" id="cinematicInspectViewport" tabindex="0" aria-describedby="cinematicInspectHelp">
-        <div class="cinematic-inspect-canvas" id="cinematicInspectCanvas">
-          <img id="cinematicInspectImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23d9eee5'/%3E%3C/svg%3E" width="1440" height="1080" alt="房门场景的可自由观察插画" draggable="false">
-          <div class="cinematic-inspect-hotspots" id="cinematicInspectHotspots"></div>
-          <button class="cinematic-character-hotspot" id="cinematicCharacterHotspot" type="button" aria-label="轻声呼唤纱雾">
-            <span aria-hidden="true">纱雾</span>
-          </button>
-        </div>
-        <div class="cinematic-inspect-error" id="cinematicInspectError" hidden>
-          <strong>这一幕暂时没有加载出来。</strong>
-          <p id="cinematicInspectFallback">她听见了，却还在确认是不是你。</p>
-          <button id="cinematicInspectRetry" type="button">再试一次</button>
-        </div>
-      </div>
-      <footer>
-        <div class="cinematic-inspect-reply" aria-live="polite" aria-atomic="true">
-          <p id="cinematicInspectJapanese" lang="ja"></p>
-          <strong id="cinematicInspectChinese">碰一下物件，她会小声告诉你它的故事。</strong>
-          <span id="cinematicInspectPlayback">声音等你点击后才响起。</span>
-        </div>
-        <button id="cinematicZoomOut" type="button" aria-label="缩小观察画面">−</button>
-        <output id="cinematicZoomStatus" aria-live="polite">100%</output>
-        <button id="cinematicZoomIn" type="button" aria-label="放大观察画面">＋</button>
-        <button id="cinematicInspectReset" type="button">复位画面</button>
-        <button id="cinematicVoiceToggle" type="button" aria-pressed="false">角色声音 · 开</button>
-        <button id="cinematicFoleyToggle" type="button" aria-pressed="false">物件声音 · 开</button>
-        <button id="cinematicVoiceStop" type="button" aria-label="停止角色语音">停一下</button>
-      </footer>
-    </div>
-  </dialog>
+    <footer class="site-footer">
+      <details>
+        <summary>关于这个小小的房间 · 创作与素材</summary>
+        <h2>非官方的个人小画室</h2>
+        <p>
+          这是以和泉纱雾为主题的非官方、个人非商业原创同人页面，不是原作版权方、模型提供者或声优的官方作品。人物插画不是官方截图；没有使用动画音轨。配音不是原声优，不进行声纹克隆、训练或微调。
+        </p>
 
-  <section class="feedback-dock" id="feedbackDock" aria-label="纱雾的反应与语音字幕">
-    <aside class="reaction-corner" id="reactionCorner" aria-label="纱雾的即时反应">
-      <div class="reaction-face">
-        <img id="reactionImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23d9eee5'/%3E%3C/svg%3E" width="720" height="900" loading="lazy" decoding="async" alt="纱雾的即时表情">
-      </div>
-      <div class="reaction-copy">
-        <span id="reactionLabel">纱雾的反应</span>
-        <strong id="reactionText">……门外是谁？</strong>
-      </div>
-    </aside>
+        <h3>现在使用的角色声音</h3>
+        <p>
+          现役声线统一为 Piper Plus「つくよみちゃん」预训练模型。V20
+          新增二十四句日语日常配音，保留逐句简体中文字幕、参数与校验记录，不提供在线文本转语音服务。
+        </p>
+        <p>
+          语料署名：つくよみちゃんコーパス（CV.夢前黎 / © Rei
+          Yumesaki）。这些预先生成的配音只作为本个人非商业网站作品的一部分供欣赏，不授予音频二次素材利用许可；模型、语料和中间
+          WAV 不随网站分发。
+        </p>
+        <p>
+          <a href="https://huggingface.co/ayousanz/piper-plus-tsukuyomi-chan"
+            >Piper つくよみちゃん模型来源</a
+          >
+          ·
+          <a href="https://github.com/ayutaz/piper-plus">Piper Plus 推理源码</a>
+          ·
+          <a href="https://tyc.rei-yumesaki.net/material/corpus/"
+            >语料、署名与使用条款</a
+          >
+          ·
+          <a href="assets/audio/v20/VOICE-SOURCES.md"
+            >V20 二十四句配音来源与复现</a
+          >
+          · <a href="assets/audio/v20/voice-manifest.json">逐句音频清单</a>
+        </p>
 
-    <div class="subtitle-bar" id="subtitleBar" aria-live="polite" aria-atomic="true">
-      <div class="subtitle-copy">
-        <span id="subtitleScene">房门口</span>
-        <p lang="ja" id="subtitleJapanese">もう一度押すと、今度は違うことを話すかも。</p>
-      </div>
-      <strong id="subtitleChinese">再点一次，她会换一句可爱的回答；只有连续催得太急，她才会闹一点小脾气。</strong>
-      <div class="voice-controls" aria-label="语音控制">
-        <span id="voicePlaybackState">声音待机 · 不会自动播放</span>
-        <label class="voice-volume">
-          <span>音量</span>
-          <input id="voiceVolume" type="range" min="0" max="1" step="0.05" value="0.85" aria-label="语音音量">
-        </label>
-        <button class="voice-mode" id="voiceMuteButton" type="button" aria-pressed="false">
-          <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M4 12h6l8-7v22l-8-7H4zM22 11c2.7 2.7 2.7 7.3 0 10M25 7c5 5 5 13 0 18"/></svg>
-          <span>只看角色字幕</span>
-        </button>
-        <button class="voice-stop" id="stopVoiceButton" type="button" aria-label="停止播放语音" hidden>
-          <svg aria-hidden="true" viewBox="0 0 32 32"><rect x="9" y="9" width="14" height="14" rx="2"/></svg>
-        </button>
-      </div>
-    </div>
-    <button class="feedback-collapse" id="feedbackCollapseButton" type="button" aria-label="收起反应与字幕">
-      <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
-    </button>
-  </section>
+        <h3>历史语音仍然保留</h3>
+        <p>
+          旧版 AivisSpeech「天深シノ」素材按 ACML-NC 1.0
+          的非商业使用范围保留为历史资源，不再作为本版现役角色声线。历史素材的许可不同于当前
+          Piper 模型的语料条款，不能混用。
+        </p>
+        <p>
+          <a
+            href="https://hub.aivis-project.com/aivm-models/0f6821f4-9f86-4da1-a41a-fbe6fff9ca88"
+            >天深シノ模型与许可来源</a
+          >
+          ·
+          <a href="https://aivis-project.com/AivisSpeech">AivisSpeech 项目</a> ·
+          <a href="docs/ai-assisted-development.md"
+            >历史 AI 协作与语音制作记录</a
+          >
+          ·
+          <a href="assets/audio/v8/voice-manifest.json"
+            >旧房间 Piper 配音清单</a
+          >
+          ·
+          <a href="assets/audio/v19/voice-manifest.json">V19 Piper 配音清单</a>
+        </p>
 
-  <footer class="site-footer">
-    <details class="site-credits">
-      <summary>创作与素材说明</summary>
-      <div>
-        <p>个人非盈利原创同人页面 · 未使用官方图片、动画音轨或声优声纹克隆</p>
-        <p>原有场景按钮日语语音：AivisSpeech「天深シノ」· 依据 ACML-NC 1.0 使用 · <a href="https://hub.aivis-project.com/aivm-models/0f6821f4-9f86-4da1-a41a-fbe6fff9ca88" target="_blank" rel="noreferrer">模型来源</a></p>
-        <p>房间与 V19 七幕日语语音：Piper Plus「つくよみちゃん」预训练模型 · 不训练、不微调、不使用动画音轨或真实声优声纹克隆 · <a href="https://huggingface.co/ayousanz/piper-plus-tsukuyomi-chan" target="_blank" rel="noreferrer">模型来源</a> · <a href="https://tyc.rei-yumesaki.net/material/corpus/" target="_blank" rel="noreferrer">语料与使用条款</a></p>
-        <p>七幕物件声：二十一份互不复用的 Freesound CC0 现场录音 · <a href="https://github.com/xinchenok/izumi-sagiri-room/blob/main/assets/audio/v19/CINEMATIC-FOLEY-SOURCES.md" target="_blank" rel="noreferrer">完整来源与处理记录</a></p>
-        <p>旧版房间物件声与晚安关门声仍保留 · <a href="https://github.com/xinchenok/izumi-sagiri-room/blob/main/assets/audio/v14/ROOM-FOLEY-SOURCES.md" target="_blank" rel="noreferrer">房间来源</a> · <a href="https://github.com/xinchenok/izumi-sagiri-room/blob/main/assets/audio/v16/GOODNIGHT-DOOR-SOURCE.md" target="_blank" rel="noreferrer">关门来源</a></p>
-        <p>本地字体：ZCOOL KuaiLe、Noto Sans JP · SIL Open Font License 1.1</p>
-      </div>
-    </details>
-  </footer>
+        <h3>雨声与物件拟音</h3>
+        <p>
+          窗雨使用 nicoproson 的真实室内窗玻璃雨声录音；物件拟音保留 Freesound
+          CC0 实录的作者、来源、裁切与处理记录。旧音频仍在，不因新版界面而删除。
+        </p>
+        <p>
+          <a href="https://freesound.org/s/648529/"
+            >窗雨原录音：Freesound 648529</a
+          >
+          · <a href="assets/audio/v8/RAIN-SOURCE.md">窗雨来源与处理</a> ·
+          <a href="assets/audio/v14/ROOM-FOLEY-SOURCES.md"
+            >旧房间物件声完整来源</a
+          >
+          ·
+          <a href="assets/audio/v16/GOODNIGHT-DOOR-SOURCE.md">晚安关门声来源</a>
+          ·
+          <a href="assets/audio/v19/CINEMATIC-FOLEY-SOURCES.md"
+            >V19 二十一份拟音完整来源</a
+          >
+          ·
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/"
+            >CC0 1.0 许可</a
+          >
+        </p>
 
-  <noscript>
-    <div class="noscript-note">JavaScript 未启用：你仍然可以阅读角色介绍与查看基础插画；敲门、换装、语音和秘密探索需要启用 JavaScript。</div>
-  </noscript>
-  <script src="script.js?v=20260909-2"></script>
-</body>
+        <h3>插画与原始记录</h3>
+        <p>
+          同人插画使用内置 ImageGen 生成或根据已确认参考编辑。V20
+          分层人物与日夜房间分别保存精确提示词、来源指纹、原生尺寸和导出记录；标为
+          4K 的 V20 图片是等比放大导出，不宣称工具原生生成了
+          4K。旧插画与历史制作记录继续保留。
+        </p>
+        <p>
+          <a href="assets/v20/room/room-background-manifest.json"
+            >白天房间记录</a
+          >
+          ·
+          <a href="assets/v20/room/room-night-manifest.json">夜间房间记录</a> ·
+          <a href="assets/v20/character/home/home-manifest.json"
+            >家居服人物记录</a
+          >
+          ·
+          <a href="assets/v20/character/artist/artist-manifest.json"
+            >格纹睡衣人物记录</a
+          >
+          ·
+          <a href="assets/v20/character/outing/outing-manifest.json"
+            >薄荷水手装人物记录</a
+          >
+          ·
+          <a href="assets/v20/character/bedtime/bedtime-manifest.json"
+            >草莓睡前服人物记录</a
+          >
+          ·
+          <a href="assets/v20/character/hooded/hooded-manifest.json"
+            >猫耳连帽毯人物记录</a
+          >
+        </p>
+        <p>
+          <a href="docs/v18-4k-image-redraw.md">V18 插画制作与来源记录</a> ·
+          <a href="assets/v18/manifest.json">V18 图片清单</a> ·
+          <a href="docs/v19-cinematic-room.md">V19 插画与房间记录</a> ·
+          <a href="assets/v19/manifest.json">V19 图片清单</a>
+        </p>
+
+        <h3>本地字体与许可</h3>
+        <p>
+          正文使用 Noto Sans CJK SC，日文字幕使用 Noto Sans CJK
+          JP，短标题使用霞鹜文楷。网站加载本地 WOFF2 子集，分别命名为
+          RoomBody、RoomJapanese、RoomTitle；三者均保留 SIL Open Font License
+          1.1 及原作者版权声明。
+        </p>
+        <p>
+          <a
+            href="https://github.com/notofonts/noto-cjk/tree/f8d157532fbfaeda587e826d4cd5b21a49186f7c"
+            >Noto CJK 固定源码版本</a
+          >
+          ·
+          <a href="https://github.com/lxgw/LxgwWenKai/releases/tag/v1.522"
+            >霞鹜文楷 v1.522</a
+          >
+          ·
+          <a href="assets/fonts/v20/OFL-NotoSansCJK.txt">Noto CJK 完整许可</a> ·
+          <a href="assets/fonts/v20/OFL-LXGWWenKai.txt">文楷完整许可</a> ·
+          <a href="assets/fonts/v20/font-manifest.json">字体来源与子集记录</a>
+        </p>
+        <p>
+          旧版 ZCOOL KuaiLe 与 Noto Sans JP 字体及其许可继续保留：<a
+            href="assets/fonts/OFL.txt"
+            >ZCOOL KuaiLe 完整许可</a
+          >
+          ·
+          <a href="assets/fonts/OFL-NotoSansJP.txt">旧 Noto Sans JP 完整许可</a
+          >。
+        </p>
+      </details>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,53 @@
+{
+  "id": "gallery-open",
+  "scene": "打开画册",
+  "textJa": "スケッチブックを開くね。まだ恥ずかしいけど……見てもいいよ。",
+  "textZh": "我要打开画册了。虽然还是有点害羞……但可以给你看。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 125,
+  "paddedPhonemeCount": 125,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/gallery-open.wav",
+  "rawSha256": "d3c722be84b5da6a9ff78fb93ce0c7e8aeeb28bdd5669e1c00fad147225ab904",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -16.27,
+    "truePeakDb": 0.01,
+    "lra": 0.8,
+    "threshold": -26.9,
+    "targetOffset": -0.08,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.79,
+      "truePeakDb": -2.79,
+      "lra": 1.3,
+      "threshold": -29.42,
+      "targetOffset": 0.11
+    },
+    "decodedLoudnessCorrectionGainDb": 0.79
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-16.27:measured_LRA=0.8:measured_TP=0.01:measured_thresh=-26.9:offset=-0.08:linear=true:print_format=summary,volume=0.7900dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

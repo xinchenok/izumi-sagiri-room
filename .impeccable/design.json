@@ -1,0 +1,477 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-08T23:18:18.320Z",
+  "title": "Design System: 纱雾的房间",
+  "extensions": {
+    "colorMeta": {
+      "rose": {
+        "role": "primary",
+        "displayName": "玫红回应",
+        "tonalRamp": [
+          "oklch(15% 0.1557 5.82)",
+          "oklch(27% 0.1557 5.82)",
+          "oklch(39% 0.1557 5.82)",
+          "oklch(51% 0.1557 5.82)",
+          "oklch(63% 0.1557 5.82)",
+          "oklch(75% 0.1557 5.82)",
+          "oklch(87% 0.1557 5.82)",
+          "oklch(95% 0.1557 5.82)"
+        ]
+      },
+      "rose-light": {
+        "role": "primary",
+        "displayName": "浅玫红下划线",
+        "tonalRamp": [
+          "oklch(15% 0.1407 8.32)",
+          "oklch(27% 0.1407 8.32)",
+          "oklch(39% 0.1407 8.32)",
+          "oklch(51% 0.1407 8.32)",
+          "oklch(63% 0.1407 8.32)",
+          "oklch(75% 0.1407 8.32)",
+          "oklch(87% 0.1407 8.32)",
+          "oklch(95% 0.1407 8.32)"
+        ]
+      },
+      "room-pink": {
+        "role": "primary",
+        "displayName": "樱粉房间底",
+        "tonalRamp": [
+          "oklch(15% 0.0269 357.22)",
+          "oklch(27% 0.0269 357.22)",
+          "oklch(39% 0.0269 357.22)",
+          "oklch(51% 0.0269 357.22)",
+          "oklch(63% 0.0269 357.22)",
+          "oklch(75% 0.0269 357.22)",
+          "oklch(87% 0.0269 357.22)",
+          "oklch(95% 0.0269 357.22)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "近白纸面",
+        "tonalRamp": [
+          "oklch(15% 0.0065 5.62)",
+          "oklch(27% 0.0065 5.62)",
+          "oklch(39% 0.0065 5.62)",
+          "oklch(51% 0.0065 5.62)",
+          "oklch(63% 0.0065 5.62)",
+          "oklch(75% 0.0065 5.62)",
+          "oklch(87% 0.0065 5.62)",
+          "oklch(95% 0.0065 5.62)"
+        ]
+      },
+      "panel-surface": {
+        "role": "neutral",
+        "displayName": "阅读层浅底",
+        "tonalRamp": [
+          "oklch(15% 0.0069 354.79)",
+          "oklch(27% 0.0069 354.79)",
+          "oklch(39% 0.0069 354.79)",
+          "oklch(51% 0.0069 354.79)",
+          "oklch(63% 0.0069 354.79)",
+          "oklch(75% 0.0069 354.79)",
+          "oklch(87% 0.0069 354.79)",
+          "oklch(95% 0.0069 354.79)"
+        ]
+      },
+      "control-surface": {
+        "role": "neutral",
+        "displayName": "可选控件白",
+        "tonalRamp": [
+          "oklch(15% 0.0021 17.19)",
+          "oklch(27% 0.0021 17.19)",
+          "oklch(39% 0.0021 17.19)",
+          "oklch(51% 0.0021 17.19)",
+          "oklch(63% 0.0021 17.19)",
+          "oklch(75% 0.0021 17.19)",
+          "oklch(87% 0.0021 17.19)",
+          "oklch(95% 0.0021 17.19)"
+        ]
+      },
+      "control-hover": {
+        "role": "neutral",
+        "displayName": "悬停浅粉",
+        "tonalRamp": [
+          "oklch(15% 0.0179 351.14)",
+          "oklch(27% 0.0179 351.14)",
+          "oklch(39% 0.0179 351.14)",
+          "oklch(51% 0.0179 351.14)",
+          "oklch(63% 0.0179 351.14)",
+          "oklch(75% 0.0179 351.14)",
+          "oklch(87% 0.0179 351.14)",
+          "oklch(95% 0.0179 351.14)"
+        ]
+      },
+      "control-border": {
+        "role": "neutral",
+        "displayName": "控件粉边",
+        "tonalRamp": [
+          "oklch(15% 0.0473 350.32)",
+          "oklch(27% 0.0473 350.32)",
+          "oklch(39% 0.0473 350.32)",
+          "oklch(51% 0.0473 350.32)",
+          "oklch(63% 0.0473 350.32)",
+          "oklch(75% 0.0473 350.32)",
+          "oklch(87% 0.0473 350.32)",
+          "oklch(95% 0.0473 350.32)"
+        ]
+      },
+      "control-hover-ink": {
+        "role": "neutral",
+        "displayName": "悬停梅墨",
+        "tonalRamp": [
+          "oklch(15% 0.1274 0.16)",
+          "oklch(27% 0.1274 0.16)",
+          "oklch(39% 0.1274 0.16)",
+          "oklch(51% 0.1274 0.16)",
+          "oklch(63% 0.1274 0.16)",
+          "oklch(75% 0.1274 0.16)",
+          "oklch(87% 0.1274 0.16)",
+          "oklch(95% 0.1274 0.16)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "主要深梅墨",
+        "tonalRamp": [
+          "oklch(15% 0.0300 287.27)",
+          "oklch(27% 0.0300 287.27)",
+          "oklch(39% 0.0300 287.27)",
+          "oklch(51% 0.0300 287.27)",
+          "oklch(63% 0.0300 287.27)",
+          "oklch(75% 0.0300 287.27)",
+          "oklch(87% 0.0300 287.27)",
+          "oklch(95% 0.0300 287.27)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "辅助梅墨",
+        "tonalRamp": [
+          "oklch(15% 0.0332 343.20)",
+          "oklch(27% 0.0332 343.20)",
+          "oklch(39% 0.0332 343.20)",
+          "oklch(51% 0.0332 343.20)",
+          "oklch(63% 0.0332 343.20)",
+          "oklch(75% 0.0332 343.20)",
+          "oklch(87% 0.0332 343.20)",
+          "oklch(95% 0.0332 343.20)"
+        ]
+      },
+      "sign-ink": {
+        "role": "neutral",
+        "displayName": "门签深梅",
+        "tonalRamp": [
+          "oklch(15% 0.0657 348.93)",
+          "oklch(27% 0.0657 348.93)",
+          "oklch(39% 0.0657 348.93)",
+          "oklch(51% 0.0657 348.93)",
+          "oklch(63% 0.0657 348.93)",
+          "oklch(75% 0.0657 348.93)",
+          "oklch(87% 0.0657 348.93)",
+          "oklch(95% 0.0657 348.93)"
+        ]
+      },
+      "mint-found": {
+        "role": "secondary",
+        "displayName": "发现薄荷",
+        "tonalRamp": [
+          "oklch(15% 0.0193 167.92)",
+          "oklch(27% 0.0193 167.92)",
+          "oklch(39% 0.0193 167.92)",
+          "oklch(51% 0.0193 167.92)",
+          "oklch(63% 0.0193 167.92)",
+          "oklch(75% 0.0193 167.92)",
+          "oklch(87% 0.0193 167.92)",
+          "oklch(95% 0.0193 167.92)"
+        ]
+      },
+      "mint-found-ink": {
+        "role": "secondary",
+        "displayName": "薄荷状态墨",
+        "tonalRamp": [
+          "oklch(15% 0.0473 171.33)",
+          "oklch(27% 0.0473 171.33)",
+          "oklch(39% 0.0473 171.33)",
+          "oklch(51% 0.0473 171.33)",
+          "oklch(63% 0.0473 171.33)",
+          "oklch(75% 0.0473 171.33)",
+          "oklch(87% 0.0473 171.33)",
+          "oklch(95% 0.0473 171.33)"
+        ]
+      },
+      "focus": {
+        "role": "neutral",
+        "displayName": "焦点蓝",
+        "tonalRamp": [
+          "oklch(15% 0.0950 245.27)",
+          "oklch(27% 0.0950 245.27)",
+          "oklch(39% 0.0950 245.27)",
+          "oklch(51% 0.0950 245.27)",
+          "oklch(63% 0.0950 245.27)",
+          "oklch(75% 0.0950 245.27)",
+          "oklch(87% 0.0950 245.27)",
+          "oklch(95% 0.0950 245.27)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "房间门签",
+        "purpose": "仅 h1 的纱雾的房间五字。Long Cang 本地子集：assets/fonts/v20/RoomSign.woff2；字体和许可来源见 assets/fonts/v20/font-manifest.json。"
+      },
+      "title": {
+        "displayName": "纸面短标题",
+        "purpose": "LXGW WenKai 本地 RoomTitle：assets/fonts/v20/RoomTitle.woff2；面板标题、纸条和作品题签。"
+      },
+      "body": {
+        "displayName": "中文正文",
+        "purpose": "Noto Sans CJK SC 本地 RoomBody：assets/fonts/v20/RoomBody.woff2；常规文字、操作与中文说明。"
+      },
+      "panel-body": {
+        "displayName": "面板正文",
+        "purpose": "局部阅读层的段落，与房间短字幕区别排版。"
+      },
+      "dialogue": {
+        "displayName": "房间主字幕",
+        "purpose": "中文短句；手机、面板和观察器采用对应上下文的字号与行高。"
+      },
+      "japanese": {
+        "displayName": "日文辅助字幕",
+        "purpose": "Noto Sans CJK JP 本地 RoomJapanese：assets/fonts/v20/RoomJapanese.woff2；始终设置 lang=ja。"
+      },
+      "label": {
+        "displayName": "地点标签",
+        "purpose": "五地点导航和清楚的中文工具标签。"
+      },
+      "paper-quote": {
+        "displayName": "晚安纸条",
+        "purpose": "RoomTitle 的宽松引用行，不扩展成全页装饰字。"
+      }
+    },
+    "shadows": [
+      {
+        "name": "object-chip",
+        "value": "0 3px 10px rgba(94, 62, 72, 0.07)",
+        "purpose": "白色物件入口与插画的局部分离。"
+      },
+      {
+        "name": "room-panel",
+        "value": "0 15px 40px rgba(102, 64, 80, 0.13)",
+        "purpose": "可退出的局部阅读层。"
+      },
+      {
+        "name": "settings-invite",
+        "value": "0 12px 36px rgba(100, 62, 80, 0.14)",
+        "purpose": "设置、声音同意与小邀请。"
+      },
+      {
+        "name": "mobile-panel",
+        "value": "0 6px 22px rgba(112, 69, 90, 0.07)",
+        "purpose": "手机文档流中的轻量面板。"
+      },
+      {
+        "name": "mobile-navigation",
+        "value": "0 -4px 22px rgba(112, 69, 90, 0.09)",
+        "purpose": "固定底栏向内容侧投影。"
+      },
+      {
+        "name": "inspector",
+        "value": "0 22px 70px rgba(40, 38, 60, 0.2)",
+        "purpose": "原生观察对话框。"
+      },
+      {
+        "name": "memory-photo",
+        "value": "0 5px 15px rgba(93, 67, 60, 0.12)",
+        "purpose": "真实保存成稿的回忆照片。"
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "房间与控件的现役缓动。"
+      },
+      {
+        "name": "control-transition",
+        "value": "0.2s",
+        "purpose": "按钮、热点与选项状态。"
+      },
+      {
+        "name": "scene-transition",
+        "value": "0.65s",
+        "purpose": "房间镜头与人物容器变化。"
+      },
+      {
+        "name": "inspector-control",
+        "value": "0.15s",
+        "purpose": "观察器按钮背景与描边。"
+      },
+      {
+        "name": "quiet-breath",
+        "value": "5.5s ease-in-out",
+        "purpose": "活泼状态下人物 1.5px 轻呼吸；安静、暂停和减少动态遵循运行时停止路径。"
+      },
+      {
+        "name": "window-drop",
+        "value": "2.8s linear",
+        "purpose": "实际窗格中的细雨；不扩展到人物和室内。"
+      },
+      {
+        "name": "paper-peek",
+        "value": "0.7s",
+        "purpose": "藏画纸面的裁切变化。"
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "系统减少动态停用动画与过渡，保留内容和主动操作。"
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-max",
+        "value": "760px"
+      },
+      {
+        "name": "desktop-min",
+        "value": "761px"
+      },
+      {
+        "name": "compact-desktop-max",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "玫红主行动",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "房间入口的主要邀请，保留右向箭头、白边与明确焦点。",
+      "html": "<button class=\"ds-primary\" type=\"button\">走到她身边<svg class=\"ds-action-arrow\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"m9 5 7 7-7 7\"/></svg></button>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;border-radius:2rem;padding:.6rem 1.4rem;font-size:clamp(16px,1.2vw,20px);line-height:1.3;border:2px solid #fff;cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;transition:transform .2s var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-primary:hover{transform:translateY(-2px)}.ds-primary:active{transform:translateY(1px)}.ds-primary:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(max-width:760px){.ds-primary{min-height:45px;font-size:14px;padding:.6rem .75rem}}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none;animation:none}}.ds-primary{background:var(--rose,#b74063);color:var(--paper,#fff9fa);min-width:12.6vw}.ds-action-arrow{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}"
+    },
+    {
+      "name": "近白次行动",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "与主行动同组的次选择，不夺走人物与主行动层级。",
+      "html": "<button class=\"ds-secondary\" type=\"button\">先看看房间</button>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-secondary{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:52px;border-radius:2rem;padding:.6rem 1.4rem;font-size:clamp(16px,1.2vw,20px);line-height:1.3;border:2px solid #fff;cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;transition:transform .2s var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-secondary:hover{transform:translateY(-2px)}.ds-secondary:active{transform:translateY(1px)}.ds-secondary:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(max-width:760px){.ds-secondary{min-height:45px;font-size:14px;padding:.6rem .75rem}}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none;animation:none}}.ds-secondary{background:#fffafc;color:var(--ink,#323142);box-shadow:inset 0 0 0 1px #8e8390;min-width:10.6vw}"
+    },
+    {
+      "name": "物件入口标签",
+      "kind": "chip",
+      "refersTo": "object-chip",
+      "description": "圆环与中文标签靠近对应物件，手机用可见物件行提供等价入口。",
+      "html": "<button class=\"ds-object-chip\" type=\"button\"><svg class=\"ds-object-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><circle cx=\"12\" cy=\"12\" r=\"9\"/></svg><span>未完成的画</span></button>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-object-chip{display:flex;align-items:center;gap:.32em;border:0;border-radius:2rem;background:rgba(255,252,253,.97);color:var(--ink,#323142);padding:.16rem .55rem .16rem .35rem;min-height:44px;white-space:nowrap;font-size:clamp(16px,1.31vw,22px);line-height:1.1;box-shadow:0 3px 10px rgba(94,62,72,.07);cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;transition:transform .2s var(--ease,cubic-bezier(0.16,1,0.3,1)),color .2s var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-object-chip:hover{color:var(--rose,#b74063);transform:translateY(-2px)}.ds-object-icon{width:1.3em;height:1.3em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}.ds-object-chip:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-object-chip{transition:none;animation:none}}"
+    },
+    {
+      "name": "五地点导航",
+      "kind": "nav",
+      "refersTo": "place-navigation",
+      "description": "房间、画桌、衣橱、床边、窗边保持固定次序，文字、图标与下划线共同表达当前位置。",
+      "html": "<nav class=\"ds-place-nav\" aria-label=\"房间里的位置\"><button class=\"ds-place-link\" type=\"button\" aria-pressed=\"true\"><svg class=\"ds-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"m3 11 9-8 9 8M5 10v11h5v-6h4v6h5V10\"/></svg><span>房间</span></button><button class=\"ds-place-link\" type=\"button\" aria-pressed=\"false\"><svg class=\"ds-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"m15 3 6 6-11 11-7 1 1-7Z M12 6l6 6M4 15l5 5\"/></svg><span>画桌</span></button><button class=\"ds-place-link\" type=\"button\" aria-pressed=\"false\"><svg class=\"ds-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"m8 3-6 4 3 5 3-2v11h8V10l3 2 3-5-6-4c0 4-8 4-8 0Z\"/></svg><span>衣橱</span></button><button class=\"ds-place-link\" type=\"button\" aria-pressed=\"false\"><svg class=\"ds-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M3 20v-9h18v9M3 16h18M5 11V5h14v6M8 8h3M14 8h3\"/></svg><span>床边</span></button><button class=\"ds-place-link\" type=\"button\" aria-pressed=\"false\"><svg class=\"ds-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"M3 3h18v18H3ZM12 3v18M3 12h18\"/></svg><span>窗边</span></button></nav>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-place-nav{display:flex;align-items:stretch;justify-content:space-around;padding:0 .6rem;background:rgba(255,252,253,.98);color:var(--ink,#323142);border-radius:2.5rem;min-height:60px}.ds-place-link{position:relative;display:flex;align-items:center;justify-content:center;gap:.55em;flex:1;min-width:0;min-height:44px;border:0;background:none;color:inherit;font-size:clamp(14px,1.13vw,19px);line-height:1.6;cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;}.ds-place-link[aria-pressed=\"true\"],.ds-place-link:hover{color:var(--rose,#b74063)}.ds-place-link[aria-pressed=\"true\"]::after{position:absolute;content:\"\";height:3px;bottom:6px;left:12%;right:12%;background:var(--rose-light,#f38198);border-radius:3px}.ds-icon{width:1.45em;height:1.45em;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}.ds-place-link:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(max-width:760px){.ds-place-nav{border-radius:20px 20px 0 0;padding:0 .5rem;min-height:65px;box-shadow:0 -4px 22px rgba(112,69,90,.09)}.ds-place-link{flex-direction:column;gap:1px;font-size:12px;line-height:1.4;min-height:58px}.ds-place-link .ds-icon{width:22px;height:22px}.ds-place-link[aria-pressed=\"true\"]::after{height:2px;left:28%;right:28%}}"
+    },
+    {
+      "name": "小日常选择",
+      "kind": "button",
+      "refersTo": "story-choice",
+      "description": "明确可选的短句与补充说明，不使用正确答案、奖励或倒计时语言。",
+      "html": "<button class=\"ds-story-choice\" type=\"button\"><span>安静坐在旁边</span><small>不催她，也不一直盯着屏幕</small></button>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-story-choice{display:flex;flex-direction:column;align-items:flex-start;text-align:left;width:100%;border:1px solid #e8ccd7;border-radius:13px;background:#fffdfd;color:var(--ink,#323142);padding:.65rem .85rem;min-height:48px;cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;line-height:1.6;transition:border-color .2s var(--ease,cubic-bezier(0.16,1,0.3,1)),background .2s var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-story-choice span{font-size:.89rem}.ds-story-choice small{font-size:.74rem;color:#785969;margin-top:.2rem}.ds-story-choice:hover{border-color:#b54a70;color:#8f3456;background:#fff0f6}.ds-story-choice:active{transform:translateY(1px)}.ds-story-choice:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(max-width:760px){.ds-story-choice{min-height:52px}}@media(prefers-reduced-motion:reduce){.ds-story-choice{transition:none;animation:none}}"
+    },
+    {
+      "name": "局部阅读面板",
+      "kind": "card",
+      "refersTo": "room-panel",
+      "description": "房间中的轻量阅读层；示例仅呈现现役标题、内容和关闭结构，不合成新插画。",
+      "html": "<section class=\"ds-room-panel\" aria-labelledby=\"ds-panel-title\"><header class=\"ds-panel-header\"><h2 id=\"ds-panel-title\">刚才说过的话</h2><button type=\"button\" aria-label=\"收起当前内容，回到房间\">回到房间</button></header><div class=\"ds-panel-body\"><p>欢迎回来。今天……想先看看哪里？</p></div></section>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}@font-face{font-family:RoomTitle;src:url(\"assets/fonts/v20/RoomTitle.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-room-panel{display:flex;flex-direction:column;min-height:0;background:#fff9fb;color:var(--ink,#323142);border:1px solid #ecd1dc;border-radius:22px;box-shadow:0 15px 40px rgba(102,64,80,.13);overflow:hidden;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;}.ds-panel-header{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.25rem .65rem;border-bottom:1px solid #efdfe6}.ds-panel-header h2{margin:0;font-family:RoomTitle,serif;font-size:clamp(19px,1.65vw,28px);font-weight:400;line-height:1.3}.ds-panel-header button{flex:none;background:none;border:0;color:#765666;font-size:.75rem;padding:.5rem;min-height:44px;max-width:5.5rem;cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;}.ds-panel-header button:hover{cursor:pointer}.ds-panel-body{min-height:0;overflow:auto;overscroll-behavior:contain;padding:1rem 1.25rem}.ds-panel-body p{margin:.35rem 0 1rem;font-size:.91rem;line-height:1.75}.ds-panel-header button:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(max-width:760px){.ds-room-panel{border-radius:16px;box-shadow:0 6px 22px rgba(112,69,90,.07)}.ds-panel-header{padding:.65rem .85rem}.ds-panel-header h2{font-size:21px}.ds-panel-body{overflow:visible;padding:.85rem}.ds-panel-body p{font-size:.88rem}}"
+    },
+    {
+      "name": "观察器关闭按钮",
+      "kind": "button",
+      "refersTo": "inspector-button",
+      "description": "观察器中的关闭操作，保持原生按钮、44px 命中区与可见焦点。",
+      "html": "<button class=\"ds-inspector-button\" type=\"button\" aria-label=\"关闭观察，回到房间\"><svg class=\"ds-icon\" aria-hidden=\"true\" viewBox=\"0 0 24 24\"><path d=\"m6 6 12 12M18 6 6 18\"/></svg><span>关闭</span></button>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-inspector-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;flex-shrink:0;min-width:44px;min-height:44px;padding:8px 12px;border:1px solid #cdb2bf;border-radius:12px;background:#fff;color:var(--ink,#323142);font:400 15px/1.25 RoomBody,\"Microsoft YaHei\",sans-serif;cursor:pointer;transition:background-color .15s var(--ease,cubic-bezier(0.16,1,0.3,1)),border-color .15s var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-inspector-button:hover{background:#f8e9ef;border-color:#b77c94}.ds-inspector-button:active{background:#efd4df}.ds-inspector-button:disabled{opacity:.58;cursor:default}.ds-inspector-button:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:3px}.ds-icon{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}@media(prefers-reduced-motion:reduce){.ds-inspector-button{transition:none;animation:none}}@media(max-width:760px){.ds-inspector-button span{display:none}}"
+    },
+    {
+      "name": "观察器缩放输入",
+      "kind": "input",
+      "refersTo": "inspector-zoom",
+      "description": "原生范围输入用于 100%–200% 缩放；组件预览展示初始值，运行时由观察器同步百分比。",
+      "html": "<label class=\"ds-zoom-control\" for=\"ds-inspect-zoom\"><span>放大</span><input id=\"ds-inspect-zoom\" type=\"range\" min=\"1\" max=\"2\" step=\"0.01\" value=\"1\" aria-label=\"画面缩放比例\" aria-valuetext=\"100%\"><output for=\"ds-inspect-zoom\">100%</output></label>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-zoom-control{display:flex;align-items:center;gap:10px;min-width:0;font-size:14px;white-space:nowrap;color:var(--ink,#323142);font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;line-height:1.5}.ds-zoom-control input{min-width:65px;width:clamp(80px,14vw,190px);height:44px;margin:0;accent-color:var(--rose,#b74063);cursor:pointer}.ds-zoom-control input:hover,.ds-zoom-control input:active{cursor:pointer}.ds-zoom-control input:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:3px}.ds-zoom-control output{min-width:4ch;text-align:right;font-variant-numeric:tabular-nums}@media(max-width:760px){.ds-zoom-control{flex:1;gap:8px}.ds-zoom-control input{width:100%;flex:1}}"
+    },
+    {
+      "name": "共享字幕页脚",
+      "kind": "custom",
+      "refersTo": "dialogue-panel",
+      "description": "字幕跟随当前面板；中文为主，日文和准备状态附在同一处，示例展示声音失败的重试入口。",
+      "html": "<div class=\"ds-dialogue-footer\" aria-live=\"polite\" aria-atomic=\"true\"><p class=\"ds-dialogue-zh\">欢迎回来。今天……想先看看哪里？</p><p class=\"ds-dialogue-ja\" lang=\"ja\">おかえり。今日は……どこから見たい？</p><span class=\"ds-voice-status\">声音暂时没有播放，台词已经留下。可以再听一次。</span><div class=\"ds-voice-tools\"><button type=\"button\">再听一次</button><button type=\"button\">停止</button><button type=\"button\">回看对话</button></div></div>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}@font-face{font-family:RoomJapanese;src:url(\"assets/fonts/v20/RoomJapanese.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-dialogue-footer{padding:.65rem 1.1rem .9rem;border-top:1px solid #ecdde4;background:#fff4f8;color:var(--ink,#323142);font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;}.ds-dialogue-zh{margin:0;font-size:.94rem;line-height:1.7}.ds-dialogue-ja{margin:.35rem 0 0;font-family:RoomJapanese,RoomBody,sans-serif;font-size:.76rem;line-height:1.6;color:#775565}.ds-voice-status{display:block;margin-top:.3rem;font-size:.68rem;color:#705367}.ds-voice-tools{display:flex;gap:.7rem;align-items:center;margin-top:.3rem}.ds-voice-tools button{border:0;border-bottom:1px solid #c88aa0;background:none;font-size:.75rem;padding:.15rem .05rem;color:#744357;min-height:44px;min-width:44px;cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;line-height:1.6}.ds-voice-tools button:hover{cursor:pointer}.ds-voice-tools button:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(max-width:760px){.ds-dialogue-footer{padding:.65rem .85rem}.ds-dialogue-zh{font-size:.91rem}.ds-dialogue-ja{font-size:.75rem}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "清爽日光里的小小做客",
+    "overview": "角色和房间先于界面出现：樱粉墙面、浅木家具、银蓝头发与窗外日光构成主体，按钮和文字以少量浅色载体靠近可操作的物件。可爱来自她伸出的手、认真落笔的姿态、软软的袖口和眼神，不依靠额外爱心、脏纹理或厚重框架。\n\n这是一个低密度、物件在场的视觉系统。背景、人物和画板以本地栅格分层呈现；短手写门签保留随手写下的亲近感，细线图标与清楚的中日文负责操作。需要阅读或选择时才展开轻量面板，完成后让视线回到角色；纸面只承载真实的作品、留言和少量引用，不覆盖整个房间。",
+    "keyCharacteristics": [
+      "清爽赛璐璐房间与银发蓝眼角色占据视觉中心。",
+      "玫红行动、近白控件和细线图标保持轻巧而可辨认。",
+      "龙藏体只写房间门签，文楷写短标题与纸条，Noto 负责中日文阅读。",
+      "字幕只有一份，随当前操作上下文移动，不叠加多套反应浮层。",
+      "桌面保留空间关系，手机将阅读和操作接到画面下方。",
+      "作品本身、手与画板的关系承担共同创作的视觉证据。"
+    ],
+    "rules": [
+      {
+        "name": "The Clear Surface Rule",
+        "body": "文字所处背景会随场景改变时，使用紧凑的稳定浅底保证阅读；不把大面积半透明罩层铺到人物和房间上。",
+        "section": "colors"
+      },
+      {
+        "name": "The Four Font Jobs Rule",
+        "body": "RoomSign 只负责固定 h1，RoomTitle 负责短标题与纸条，RoomBody 负责中文，RoomJapanese 负责日文；新增内容先选职责，再选字号。",
+        "section": "typography"
+      },
+      {
+        "name": "The One Caption Rule",
+        "body": "同一个字幕节点在房间、任务面板和观察器之间移动；新回应替换旧回应，中文为主、日文为辅，声音状态与重试留在相同上下文。",
+        "section": "layout"
+      },
+      {
+        "name": "The Image Owns Depth Rule",
+        "body": "房间的透视和遮挡由图像承担，界面阴影只解释可操作层；不要用厚木框、硬偏移投影或额外暗罩重画房间边界。",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** 让角色、房间和真实物件承担视觉焦点，控件靠近它所操作的内容。",
+      "**Do** 用清爽赛璐璐、冷白银发、清透肤色与浅木家具保持人物和环境连续。",
+      "**Do** 保留五套服装在实时人物姿态间的连续性，同时明确区分收藏画作与当前人物。",
+      "**Do** 保持 RoomSign、RoomTitle、RoomBody 与 RoomJapanese 的字体职责和本地资源来源。",
+      "**Do** 用稳定浅底、中文标签、可见焦点和至少 44×44px 命中区实现可读可操作的轻量界面。",
+      "**Do** 让手机阅读回到文档流，并保留可见地点栏与物件入口。",
+      "**Do** 保持单一字幕节点，让音频失败、准备状态和重试留在当前上下文。",
+      "**Do** 让九张新作品以真实配色素材呈现，并让手、笔、画板与作品共用正确的坐标关系。",
+      "**Do** 用实际保存的画作和纸条表达回访，把未完成稿与共同成稿区分清楚。",
+      "**Do** 尊重原生滚动、原生输入和减少动态偏好，保持图像比例与退出路径。"
+    ],
+    "donts": [
+      "**Don't** 用深棕粗框、大片重复稿纸、油画脏纹理、颗粒、灰棕罩层或通用爱心替代角色气质。",
+      "**Don't** 把房间重新拆成七幕长页面、功能卡目录或强制按顺序解锁的地点。",
+      "**Don't** 让面板和装饰遮住脸、手、笔尖，或用拉伸图像修补构图问题。",
+      "**Don't** 把旧作品的滤镜兼容表现推广为新作品的配色机制。",
+      "**Don't** 为贴近参考图牺牲文字对比度、中文语义或触控命中区。",
+      "**Don't** 叠加多套 toast、表情角标和字幕条，或让自动动作伪造一段共同经历。",
+      "**Don't** 把长段正文改成手写字，也不要让五字门签字体承担未包含的字符。",
+      "**Don't** 把观察器资源的等比导出标成原生分辨率。",
+      "**Don't** 添加官方截图、动画音轨、声优声纹克隆、运行时外链字体或未记录来源的素材。"
+    ]
+  }
+}

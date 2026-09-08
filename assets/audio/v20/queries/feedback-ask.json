@@ -1,0 +1,53 @@
+{
+  "id": "feedback-ask",
+  "scene": "询问具体感想",
+  "textJa": "どこが好きだった？　色とか、表情とか……ちゃんと聞きたい。",
+  "textZh": "你喜欢哪里呢？颜色、表情之类的……我想认真听听。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 116,
+  "paddedPhonemeCount": 116,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/feedback-ask.wav",
+  "rawSha256": "bcd594243e091482c9fdaa3c751891c450b3de817c5033ac7407e9355b30a47b",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -15.8,
+    "truePeakDb": 0.01,
+    "lra": 0.5,
+    "threshold": -26.74,
+    "targetOffset": -0.42,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.45,
+      "truePeakDb": -2.63,
+      "lra": 0.5,
+      "threshold": -29.27,
+      "targetOffset": -0.43
+    },
+    "decodedLoudnessCorrectionGainDb": 0.45
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-15.8:measured_LRA=0.5:measured_TP=0.01:measured_thresh=-26.74:offset=-0.42:linear=true:print_format=summary,volume=0.4500dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

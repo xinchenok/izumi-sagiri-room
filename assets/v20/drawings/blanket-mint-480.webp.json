@@ -1,0 +1,55 @@
+{
+  "id": "blanket-mint",
+  "subject": "blanket",
+  "palette": "mint",
+  "title": "被窝里画星星的小猫",
+  "paletteName": "薄荷雨夜",
+  "alt": "薄荷雨夜配色：浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星",
+  "generatedAt": "2026-09-08T22:25:54.967801+00:00",
+  "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+  "source": ".tmp/v20-drawings/blanket/mint.png",
+  "sourceSha256": "798094a352c6c034e9a1d1a70287a6e7be5a83daba6827b06562fd043c60bd29",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "native4k": false,
+  "aspectRatio": "4:3",
+  "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+  "prompt": "Use case: precise-object-edit, color-palette variant. This image is the approved finished kitten artwork and the exact edit target. Change ONLY its illustration color palette as described below. Preserve the precise kitten identity, face, fur markings, expression, pose, silhouette, anatomy, linework, object shapes, sizes, positions, entire composition, plain paper, existing white margins, canvas size and exact 4:3 aspect ratio. Do not add, remove, shrink, move or redraw objects. Keep the current clean cute cel-anime illustration with thin clear lines, flat fills and simple pale shadows. Do not introduce paper texture, grain, brown/yellow aged wash, oil paint, watercolor, blur, haze, text, border, UI, signature or watermark. The background and existing paper margins stay clean near-white, not tinted.\nPalette replacement: Mint rainy-night palette: change the main pink door/blanket/pencil surfaces to pale mint green, use cool clean white and a little desaturated blue for secondary accents, and replace warm sunset-yellow decorations with soft cool pale-blue/white accents. The kitten remains very pale silver-gray with pink inner ears/nose and exactly the same dark eyes.",
+  "promptFile": "assets/v20/drawings/prompts/blanket-mint.txt",
+  "promptSha256": "fb58672cab37a9628aafacbbc946c04a26e055cefaf6a62d465ebc43a380d371",
+  "references": [
+    {
+      "path": ".tmp/v20-drawings/blanket/strawberry.png",
+      "sha256": "ece03e62c71d2598c5ed754bf8e537b32b99d4f2a0fb9417c96429d8653d8bdc",
+      "role": "同主题草莓母图；只改配色"
+    },
+    {
+      "path": ".tmp/v20-drawings/blanket/strawberry-initial.png",
+      "sha256": "44f6e8af4a8def72c24920500a0c114f8edf71f31b76f337c1906afd3c6fadd0",
+      "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+    },
+    {
+      "path": "assets/v18/drawing-blanket-star-720.webp",
+      "sha256": "f2c43cc87887864b981163cf6101338e0b102e47d42ddc685be1a0c16490e90c",
+      "role": "仅主题构图，不继承旧画风"
+    }
+  ],
+  "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+  "pillowVersion": "12.3.0",
+  "exports": [
+    {
+      "sizeClass": "480",
+      "file": "assets/v20/drawings/blanket-mint-480.webp",
+      "dimensions": [
+        480,
+        360
+      ],
+      "bytes": 15636,
+      "sha256": "0a2118300ef60b9367d726ec7aa0d404aa99a4e076b5311bf2ca61835a0fec6f"
+    }
+  ]
+}

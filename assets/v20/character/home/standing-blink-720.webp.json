@@ -1,0 +1,71 @@
+{
+  "id": "standing-blink",
+  "outfitId": "home",
+  "generatedAt": "2026-09-08T19:59:29.181470+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/home/standing-blink-green.png",
+  "sourceSha256": "d6ab5923fc260d4f90f77191c3a876c8f5604d5a4aa33a58ed6866db81074781",
+  "nativeSize": [
+    1062,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/standing-neutral-green.png",
+      "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: one closed-eye blink frame for the supplied anime sprite.\nInput image is the approved standing-neutral master. Change ONLY the eyelids into a natural relaxed blink: both eyes gently closed as two delicate curved anime eyelash lines, without squinting or exaggerated smile. Preserve the tiny smile, brows, head tilt and every other visible feature. Absolutely lock the character position, body silhouette, head outline, silver-white hair strands, pink clips, cat-ear pink hoodie, cream fully covered pajama trousers, hands, clothing folds, light and portrait framing. No gesture or pose changes, no extra props.\nRetain an opaque flat #00FF00 chroma-green backdrop including all empty holes between hair/arms/fingers. No actual transparency or checkerboard, no room, shadow, text, watermark, green spill, grain or painterly texture. Same 28:39 portrait ratio, same headroom and bottom thigh crop. Clean cute cel-anime, fully clothed, all-ages. One PNG image only.\n",
+  "promptFile": "assets/v20/character/home/standing-blink.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: one closed-eye blink frame for the supplied anime sprite.\nInput image is the approved standing-neutral master. Change ONLY the eyelids into a natural relaxed blink: both eyes gently closed as two delicate curved anime eyelash lines, without squinting or exaggerated smile. Preserve the tiny smile, brows, head tilt and every other visible feature. Absolutely lock the character position, body silhouette, head outline, silver-white hair strands, pink clips, cat-ear pink hoodie, cream fully covered pajama trousers, hands, clothing folds, light and portrait framing. No gesture or pose changes, no extra props.\nRetain an opaque flat #00FF00 chroma-green backdrop including all empty holes between hair/arms/fingers. No actual transparency or checkerboard, no room, shadow, text, watermark, green spill, grain or painterly texture. Same 28:39 portrait ratio, same headroom and bottom thigh crop. Clean cute cel-anime, fully clothed, all-ages. One PNG image only.\n",
+  "promptSha256": "2cf193a4d6ad65abd78ac8c0147fa5986c628863652a47289144565ec6ab4632",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/home/standing-blink-alpha.png",
+    "sha256": "0943db691e91fd9ecb545751fffa2024f2381b606dda732dd08842a55923ddcb",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1062,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    57,
+    61,
+    1013,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.053672,
+    0.041161,
+    0.953861,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/home/standing-blink-720.webp",
+      "dimensions": [
+        720,
+        1005
+      ],
+      "bytes": 120010,
+      "sha256": "37d09bed15880d319c0a5ff1eadf2c023d2ea5e9d4192d1575308f591383107e",
+      "hasAlpha": true
+    }
+  ]
+}

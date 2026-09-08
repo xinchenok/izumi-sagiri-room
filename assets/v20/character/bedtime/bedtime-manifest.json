@@ -1,0 +1,881 @@
+{
+  "version": "20.0.0",
+  "outfitId": "bedtime",
+  "generatedAt": "2026-09-08T20:09:08.652205+00:00",
+  "count": 9,
+  "assets": [
+    {
+      "id": "bed-hug",
+      "outfitId": "bedtime",
+      "generatedAt": "2026-09-08T20:06:58.155364+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/bedtime/bed-hug-green.png",
+      "sourceSha256": "adb8f4d6e0df2e6835079c3733cbf7a9d55bee513b9a239a77744c0c2370e070",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/bed-hug-green.png",
+          "sha256": "ed537c31d206c2a95ee5a0086813331f76a09d217a12ffe52f8407ac1cb4e888"
+        },
+        {
+          "path": ".tmp/v20-character/bedtime/standing-neutral-green.png",
+          "sha256": "d83d57ae02b40a906dedb2af89cec86ce365fcc367adfb79759e57774f519761"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20, bedtime outfit, bed-hug pose.\nInput images: Image 1 is the exact EDIT TARGET and exclusive identity, pose, expression, props, framing, lighting and clean art reference. Image 2 is the already-approved outfit design reference ONLY, not a pose reference.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nUnchanged target action: She is seated curled up with two bent knees and hugs one smiling pink cat plush. Keep her arms, fingers, knees, pink plush, facial expression and every object position exactly unchanged. Keep modest full-length trousers over both legs. No bed, floor or furniture.\nInvariants: preserve Image 1's silver-white long hair, bangs and strands, two pink hair clips, round youthful face, bright blue eyes, exact expression, head tilt, light-Q proportions, body pose, all hands and props, camera, canvas aspect ratio, scale and positions. Only clothing boundaries required by the garment may change. Do not reposition the character to resemble Image 2.\nBackdrop: match Image 1's flat vivid chroma green #00FF00 background with no objects, no gradients, no shadow, no ground. This is a temporary compositing screen. No green reflected light or green spill on hair, skin, objects or clothes; the actual clothes stay opaque and desaturated.\nStyle: identical to Image 1: crisp delicate anime ink lines, clean flat colors, simple two or three-tone cel shading, clear eyes and neat hair. No painterly strokes, no oil paint, no watercolor, no texture noise, no grain, no blurred or dirty gradients, no cloth fuzz.\nConstraints: all-ages fully covered ordinary home clothes, no mature or sensual body, no added accessories or props, no altered pose or expression, no extra fingers/limbs, no text or watermark. Return one character, not a sheet, retaining the edit target canvas.\n",
+      "promptFile": "assets/v20/character/bedtime/bed-hug.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20, bedtime outfit, bed-hug pose.\nInput images: Image 1 is the exact EDIT TARGET and exclusive identity, pose, expression, props, framing, lighting and clean art reference. Image 2 is the already-approved outfit design reference ONLY, not a pose reference.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nUnchanged target action: She is seated curled up with two bent knees and hugs one smiling pink cat plush. Keep her arms, fingers, knees, pink plush, facial expression and every object position exactly unchanged. Keep modest full-length trousers over both legs. No bed, floor or furniture.\nInvariants: preserve Image 1's silver-white long hair, bangs and strands, two pink hair clips, round youthful face, bright blue eyes, exact expression, head tilt, light-Q proportions, body pose, all hands and props, camera, canvas aspect ratio, scale and positions. Only clothing boundaries required by the garment may change. Do not reposition the character to resemble Image 2.\nBackdrop: match Image 1's flat vivid chroma green #00FF00 background with no objects, no gradients, no shadow, no ground. This is a temporary compositing screen. No green reflected light or green spill on hair, skin, objects or clothes; the actual clothes stay opaque and desaturated.\nStyle: identical to Image 1: crisp delicate anime ink lines, clean flat colors, simple two or three-tone cel shading, clear eyes and neat hair. No painterly strokes, no oil paint, no watercolor, no texture noise, no grain, no blurred or dirty gradients, no cloth fuzz.\nConstraints: all-ages fully covered ordinary home clothes, no mature or sensual body, no added accessories or props, no altered pose or expression, no extra fingers/limbs, no text or watermark. Return one character, not a sheet, retaining the edit target canvas.\n",
+      "promptSha256": "0da68cc177b4a2792310784480e1b310747b4fb7bfe1a5a8a2b7eca56016912c",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/bedtime/bed-hug-alpha.png",
+        "sha256": "32b477d17f0d616fc49ddded3bfcf42fabe4711bbf28770457e452d2ab532b00",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        48,
+        133,
+        1013,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.04524,
+        0.089744,
+        0.95476,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/bedtime/bed-hug-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 135452,
+          "sha256": "a8cdbafc552cc71c0077a1ab504930add3fda5f20006d629daa0b0c98cd8b5c4",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/bedtime/bed-hug-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 332400,
+          "sha256": "231b2629108d104dba86f86601522588b89884e063e644764b321bb61750b0ba",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/bedtime/bed-hug-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 777274,
+          "sha256": "665a7b64aaae7a1568946235be6a5a4dff0220de30e4cf6a8583d4ccdd111149",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "bed-sleepy",
+      "outfitId": "bedtime",
+      "generatedAt": "2026-09-08T20:07:18.011490+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/bedtime/bed-sleepy-green.png",
+      "sourceSha256": "f33988e1c06db444c3d9fa180f8ba883bfd5a4eec7b622830441695a516e58ad",
+      "nativeSize": [
+        1061,
+        1483
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/bed-sleepy-green.png",
+          "sha256": "07e2826a6f20bc3aa4dd51b193efc59526da51bf6efb6e6205770b0058d19382"
+        },
+        {
+          "path": ".tmp/v20-character/bedtime/bed-hug-green.png",
+          "sha256": "adb8f4d6e0df2e6835079c3733cbf7a9d55bee513b9a239a77744c0c2370e070"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, bed-sleepy state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep the exact curled-up seated pose hugging the same smiling pink cat plush, both full-trousered knees together, the same head tilt and peacefully closed sleepy eyes from Image 1. Do not reopen eyes, change plush or hand position, or add bed/furniture.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptFile": "assets/v20/character/bedtime/bed-sleepy.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, bed-sleepy state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep the exact curled-up seated pose hugging the same smiling pink cat plush, both full-trousered knees together, the same head tilt and peacefully closed sleepy eyes from Image 1. Do not reopen eyes, change plush or hand position, or add bed/furniture.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptSha256": "8cbc6964172d9a799afbff9d347bf71ccbeee17a64c16cbb77424346a6b9a406",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/bedtime/bed-sleepy-alpha.png",
+        "sha256": "3415721c23206e0349dadc59331e2f2dfbf5a300a0dcddefd55cc9ead890d0d6",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1483
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        48,
+        133,
+        1012,
+        1483
+      ],
+      "actorBBoxNormalized": [
+        0.04524,
+        0.089683,
+        0.953817,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/bedtime/bed-sleepy-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 136336,
+          "sha256": "9e4156e73c8c6ac86885cca06548c823814fb9071c6184965e2a3a6dfa0e3d14",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/bedtime/bed-sleepy-1440.webp",
+          "dimensions": [
+            1440,
+            2013
+          ],
+          "bytes": 332716,
+          "sha256": "4617ab3a7cd66424ae140297d75461f0171d65625f99f2b72903c5ece7b91e3f",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/bedtime/bed-sleepy-4k.webp",
+          "dimensions": [
+            2747,
+            3840
+          ],
+          "bytes": 782248,
+          "sha256": "729847f9b1b855916c68a177f26a5ed7c19882e46ac47a901d453e8215a3b72d",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "desk-blink",
+      "outfitId": "bedtime",
+      "generatedAt": "2026-09-08T20:06:19.582603+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/bedtime/desk-blink-green.png",
+      "sourceSha256": "a64ec0303a16eebf833de0beecfe540895528f2bef6ff9cd6b584b49900aafc8",
+      "nativeSize": [
+        1061,
+        1483
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/desk-blink-green.png",
+          "sha256": "4fdeec1386df09bcdfd406c2fdb143965e6bbd35f699029131c285633a5451c4"
+        },
+        {
+          "path": ".tmp/v20-character/bedtime/desk-focus-green.png",
+          "sha256": "3f885450d3501e649cb005e1958019a55cdb517467147436283278df19e5c8e7"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, desk-blink state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep her side-facing seated desk posture holding the same dark stylus, the exact downward face angle and gently closed eyelids from Image 1. No blue irises showing; do not reopen eyes. Preserve both hands, pen location, knees and bottom crop. Do not add desk or chair.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptFile": "assets/v20/character/bedtime/desk-blink.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, desk-blink state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep her side-facing seated desk posture holding the same dark stylus, the exact downward face angle and gently closed eyelids from Image 1. No blue irises showing; do not reopen eyes. Preserve both hands, pen location, knees and bottom crop. Do not add desk or chair.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptSha256": "977db9a857c94c83d75f7db4fc98973d74a1885d12891062a8551e72ffddc700",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/bedtime/desk-blink-alpha.png",
+        "sha256": "300a11fed419a64285fd134800ec49b35d76548c512b38c30ea81924a0f175de",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1483
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        22,
+        137,
+        1042,
+        1483
+      ],
+      "actorBBoxNormalized": [
+        0.020735,
+        0.09238,
+        0.982092,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/bedtime/desk-blink-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 125926,
+          "sha256": "bccde96393bd9c9110f07f35afbadd68491b5abb9638a5ab10ecab6bc509a0df",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/bedtime/desk-blink-1440.webp",
+          "dimensions": [
+            1440,
+            2013
+          ],
+          "bytes": 309572,
+          "sha256": "f3cbcab653f2d68d95ac0b3befd9dff480f17f8e3025ac24bbef7829f8ff9d1f",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/bedtime/desk-blink-4k.webp",
+          "dimensions": [
+            2747,
+            3840
+          ],
+          "bytes": 725776,
+          "sha256": "6372b5b143f41d174f50f2a6a5ccbf618abadcde0418f882bc97b9a9bb0b05b1",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "desk-focus",
+      "outfitId": "bedtime",
+      "generatedAt": "2026-09-08T20:05:39.106581+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/bedtime/desk-focus-green.png",
+      "sourceSha256": "3f885450d3501e649cb005e1958019a55cdb517467147436283278df19e5c8e7",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/desk-focus-green.png",
+          "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+        },
+        {
+          "path": ".tmp/v20-character/bedtime/standing-neutral-green.png",
+          "sha256": "d83d57ae02b40a906dedb2af89cec86ce365fcc367adfb79759e57774f519761"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20, bedtime outfit, desk-focus pose.\nInput images: Image 1 is the exact EDIT TARGET and exclusive identity, pose, expression, props, framing, lighting and clean art reference. Image 2 is the already-approved outfit design reference ONLY, not a pose reference.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nUnchanged target action: She is seated sideways facing right, gaze down at her drawing hand, holding one dark stylus with one hand, the other hand resting ready to draw. Preserve both hands, stylus shape and location, gaze, leg positions, bottom crop and all empty gaps. Do not add desk, chair, tablet or any furniture.\nInvariants: preserve Image 1's silver-white long hair, bangs and strands, two pink hair clips, round youthful face, bright blue eyes, exact expression, head tilt, light-Q proportions, body pose, all hands and props, camera, canvas aspect ratio, scale and positions. Only clothing boundaries required by the garment may change. Do not reposition the character to resemble Image 2.\nBackdrop: match Image 1's flat vivid chroma green #00FF00 background with no objects, no gradients, no shadow, no ground. This is a temporary compositing screen. No green reflected light or green spill on hair, skin, objects or clothes; the actual clothes stay opaque and desaturated.\nStyle: identical to Image 1: crisp delicate anime ink lines, clean flat colors, simple two or three-tone cel shading, clear eyes and neat hair. No painterly strokes, no oil paint, no watercolor, no texture noise, no grain, no blurred or dirty gradients, no cloth fuzz.\nConstraints: all-ages fully covered ordinary home clothes, no mature or sensual body, no added accessories or props, no altered pose or expression, no extra fingers/limbs, no text or watermark. Return one character, not a sheet, retaining the edit target canvas.\n",
+      "promptFile": "assets/v20/character/bedtime/desk-focus.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20, bedtime outfit, desk-focus pose.\nInput images: Image 1 is the exact EDIT TARGET and exclusive identity, pose, expression, props, framing, lighting and clean art reference. Image 2 is the already-approved outfit design reference ONLY, not a pose reference.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nUnchanged target action: She is seated sideways facing right, gaze down at her drawing hand, holding one dark stylus with one hand, the other hand resting ready to draw. Preserve both hands, stylus shape and location, gaze, leg positions, bottom crop and all empty gaps. Do not add desk, chair, tablet or any furniture.\nInvariants: preserve Image 1's silver-white long hair, bangs and strands, two pink hair clips, round youthful face, bright blue eyes, exact expression, head tilt, light-Q proportions, body pose, all hands and props, camera, canvas aspect ratio, scale and positions. Only clothing boundaries required by the garment may change. Do not reposition the character to resemble Image 2.\nBackdrop: match Image 1's flat vivid chroma green #00FF00 background with no objects, no gradients, no shadow, no ground. This is a temporary compositing screen. No green reflected light or green spill on hair, skin, objects or clothes; the actual clothes stay opaque and desaturated.\nStyle: identical to Image 1: crisp delicate anime ink lines, clean flat colors, simple two or three-tone cel shading, clear eyes and neat hair. No painterly strokes, no oil paint, no watercolor, no texture noise, no grain, no blurred or dirty gradients, no cloth fuzz.\nConstraints: all-ages fully covered ordinary home clothes, no mature or sensual body, no added accessories or props, no altered pose or expression, no extra fingers/limbs, no text or watermark. Return one character, not a sheet, retaining the edit target canvas.\n",
+      "promptSha256": "f49a70b408dbec99a2aa48be19efe045b81962e4a3d5bdcf3a03ea7e4bc326f8",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/bedtime/desk-focus-alpha.png",
+        "sha256": "8e05ad46bd70164303d6c547f836353493b0c6c87f139a702e562d32fb0d7a81",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        22,
+        138,
+        1042,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.020735,
+        0.093117,
+        0.982092,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/bedtime/desk-focus-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 125528,
+          "sha256": "8cc30c16a64a924fcdf8fc5217143d905013cfdb367d5d11a0aed977aaa666bd",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/bedtime/desk-focus-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 307190,
+          "sha256": "892a0354f95e9fbc4b68c93a99eb70373210b342d27f621ce697a6c212bd35bf",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/bedtime/desk-focus-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 721146,
+          "sha256": "dbde9440bcafc78b5111cee314a3f32ac2664149869bc7ced13f21712beab629",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "desk-shy",
+      "outfitId": "bedtime",
+      "generatedAt": "2026-09-08T20:05:59.475317+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/bedtime/desk-shy-green.png",
+      "sourceSha256": "a269e16cc64134f8f4188b0fd19906b50a13e3933d9a0fe55b7e4e26fb8ae496",
+      "nativeSize": [
+        1061,
+        1483
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/desk-shy-green.png",
+          "sha256": "b716888c3eb571e29ce219f366bc084f3db48494e3c54ecd7373f1afd2b2a588"
+        },
+        {
+          "path": ".tmp/v20-character/bedtime/desk-focus-green.png",
+          "sha256": "3f885450d3501e649cb005e1958019a55cdb517467147436283278df19e5c8e7"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, desk-shy state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep her side-facing seated desk posture holding the same dark stylus, the exact shy glance toward the visitor, blushing cheeks and slight smile from Image 1. Preserve both hands, pen location, knee positions and bottom crop. Do not add desk or chair.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptFile": "assets/v20/character/bedtime/desk-shy.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, desk-shy state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep her side-facing seated desk posture holding the same dark stylus, the exact shy glance toward the visitor, blushing cheeks and slight smile from Image 1. Preserve both hands, pen location, knee positions and bottom crop. Do not add desk or chair.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptSha256": "e37ce404202b261a7880984d058a906a61dd8fa30fd03721ccceb80ba1eb1b68",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/bedtime/desk-shy-alpha.png",
+        "sha256": "235ed1a8b12f22116803b98329673441411eddde7bf80d58e26d664f8fcbc909",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1483
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        23,
+        138,
+        1041,
+        1483
+      ],
+      "actorBBoxNormalized": [
+        0.021678,
+        0.093055,
+        0.98115,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/bedtime/desk-shy-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 122382,
+          "sha256": "58a9d73a09a17f58779f4542f4d61cd3f2b9d8ba6f5eba3883b3a810ebcdcd08",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/bedtime/desk-shy-1440.webp",
+          "dimensions": [
+            1440,
+            2013
+          ],
+          "bytes": 298704,
+          "sha256": "9cb45d0ac9700f082281ef586cc897eec977799d2a42b6c3428c748ca97a62cf",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/bedtime/desk-shy-4k.webp",
+          "dimensions": [
+            2747,
+            3840
+          ],
+          "bytes": 700200,
+          "sha256": "f8a53b42e49af10a9e0884253f0779aecb4925cdfdd6dad62622e138b0beca3e",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "reading-peek",
+      "outfitId": "bedtime",
+      "generatedAt": "2026-09-08T20:06:39.222634+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/bedtime/reading-peek-green.png",
+      "sourceSha256": "847ecb2c1da73fad50a96f06b4e9344951d3100cea575ce1d6ad179774217e52",
+      "nativeSize": [
+        1062,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/reading-peek-green.png",
+          "sha256": "dbb5c20c14593f098118ea0f13145b17235de24fe44c0d7d762ef1f1a77e813a"
+        },
+        {
+          "path": ".tmp/v20-character/bedtime/standing-neutral-green.png",
+          "sha256": "d83d57ae02b40a906dedb2af89cec86ce365fcc367adfb79759e57774f519761"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20, bedtime outfit, reading-peek pose.\nInput images: Image 1 is the exact EDIT TARGET and exclusive identity, pose, expression, props, framing, lighting and clean art reference. Image 2 is the already-approved outfit design reference ONLY, not a pose reference.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nUnchanged target action: She holds a cream spiral sketchbook upright over her mouth and lower nose with both hands, peeking over the top with bright blue eyes. Keep the book, hands, spiral binding, eyes, head tilt and standing stance in exactly the same places. The book cover is blank, no text.\nInvariants: preserve Image 1's silver-white long hair, bangs and strands, two pink hair clips, round youthful face, bright blue eyes, exact expression, head tilt, light-Q proportions, body pose, all hands and props, camera, canvas aspect ratio, scale and positions. Only clothing boundaries required by the garment may change. Do not reposition the character to resemble Image 2.\nBackdrop: match Image 1's flat vivid chroma green #00FF00 background with no objects, no gradients, no shadow, no ground. This is a temporary compositing screen. No green reflected light or green spill on hair, skin, objects or clothes; the actual clothes stay opaque and desaturated.\nStyle: identical to Image 1: crisp delicate anime ink lines, clean flat colors, simple two or three-tone cel shading, clear eyes and neat hair. No painterly strokes, no oil paint, no watercolor, no texture noise, no grain, no blurred or dirty gradients, no cloth fuzz.\nConstraints: all-ages fully covered ordinary home clothes, no mature or sensual body, no added accessories or props, no altered pose or expression, no extra fingers/limbs, no text or watermark. Return one character, not a sheet, retaining the edit target canvas.\n",
+      "promptFile": "assets/v20/character/bedtime/reading-peek.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20, bedtime outfit, reading-peek pose.\nInput images: Image 1 is the exact EDIT TARGET and exclusive identity, pose, expression, props, framing, lighting and clean art reference. Image 2 is the already-approved outfit design reference ONLY, not a pose reference.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nUnchanged target action: She holds a cream spiral sketchbook upright over her mouth and lower nose with both hands, peeking over the top with bright blue eyes. Keep the book, hands, spiral binding, eyes, head tilt and standing stance in exactly the same places. The book cover is blank, no text.\nInvariants: preserve Image 1's silver-white long hair, bangs and strands, two pink hair clips, round youthful face, bright blue eyes, exact expression, head tilt, light-Q proportions, body pose, all hands and props, camera, canvas aspect ratio, scale and positions. Only clothing boundaries required by the garment may change. Do not reposition the character to resemble Image 2.\nBackdrop: match Image 1's flat vivid chroma green #00FF00 background with no objects, no gradients, no shadow, no ground. This is a temporary compositing screen. No green reflected light or green spill on hair, skin, objects or clothes; the actual clothes stay opaque and desaturated.\nStyle: identical to Image 1: crisp delicate anime ink lines, clean flat colors, simple two or three-tone cel shading, clear eyes and neat hair. No painterly strokes, no oil paint, no watercolor, no texture noise, no grain, no blurred or dirty gradients, no cloth fuzz.\nConstraints: all-ages fully covered ordinary home clothes, no mature or sensual body, no added accessories or props, no altered pose or expression, no extra fingers/limbs, no text or watermark. Return one character, not a sheet, retaining the edit target canvas.\n",
+      "promptSha256": "62bdb4aeff1436df8d294a3da6ba4803a336d2ae5e4949c36d793ea4ddd4ad84",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/bedtime/reading-peek-alpha.png",
+        "sha256": "261e63564289e55134b261690fbd69c28ac05e3202480ea96aa9bba0366c2f3d",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        139,
+        789,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.053672,
+        0.093792,
+        0.742938,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/bedtime/reading-peek-720.webp",
+          "dimensions": [
+            720,
+            1005
+          ],
+          "bytes": 110444,
+          "sha256": "ab0ffa15e65a1e2082ffdee25defd46af9f5f2e647705a6d5d5d89bf38bf860f",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/bedtime/reading-peek-1440.webp",
+          "dimensions": [
+            1440,
+            2009
+          ],
+          "bytes": 276032,
+          "sha256": "77229d231d02ead6b034057a30b1b9cbc255174ff3ef57fe3a044d1e7a66ad06",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/bedtime/reading-peek-4k.webp",
+          "dimensions": [
+            2752,
+            3840
+          ],
+          "bytes": 646574,
+          "sha256": "088dcee9a5a8ce11c8fd388a3cab6fb8ee8a987d1a677031dfa91ed3b6587994",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "standing-blink",
+      "outfitId": "bedtime",
+      "generatedAt": "2026-09-08T20:05:18.668510+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/bedtime/standing-blink-green.png",
+      "sourceSha256": "9ee147a6f2b7eb2cfe1177064ed10c03d3c7df7be9468b1d24b44be34ed0e93a",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-blink-green.png",
+          "sha256": "d6ab5923fc260d4f90f77191c3a876c8f5604d5a4aa33a58ed6866db81074781"
+        },
+        {
+          "path": ".tmp/v20-character/bedtime/standing-neutral-green.png",
+          "sha256": "d83d57ae02b40a906dedb2af89cec86ce365fcc367adfb79759e57774f519761"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, standing-blink state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep her standing welcoming pose and EXACT closed-eye smile from Image 1. Both eyelids are gently closed as drawn, no blue irises showing; do not reopen eyes. Left hand remains near chest; right open hand remains extended in the same place.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptFile": "assets/v20/character/bedtime/standing-blink.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, standing-blink state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep her standing welcoming pose and EXACT closed-eye smile from Image 1. Both eyelids are gently closed as drawn, no blue irises showing; do not reopen eyes. Left hand remains near chest; right open hand remains extended in the same place.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptSha256": "c19e9913e9e0240cf2a5349e8307a8da0a200cfcb454d0941f468b9695b5ec21",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/bedtime/standing-blink-alpha.png",
+        "sha256": "c156d3c6ecda9e478684b69c4cff06e56ce944ab258621db4cbbc2592926e92a",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        139,
+        1012,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.053723,
+        0.093792,
+        0.953817,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/bedtime/standing-blink-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 119934,
+          "sha256": "ed1e3febc7a000cb4d14e43e99bb58d1fb977a797ff223b8e6771ca96bbfc4cf",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/bedtime/standing-blink-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 298550,
+          "sha256": "f66de36f316f33eeffc53383dfcbe482f7f6507734ff675c7099904cbb97cc57",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/bedtime/standing-blink-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 700692,
+          "sha256": "344612168272efa8a847124cb7971370b217d850cdfb8a8108410ac5e24d4f86",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "standing-neutral",
+      "outfitId": "bedtime",
+      "generatedAt": "2026-09-08T20:04:36.706026+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/bedtime/standing-neutral-green.png",
+      "sourceSha256": "d83d57ae02b40a906dedb2af89cec86ce365fcc367adfb79759e57774f519761",
+      "nativeSize": [
+        1062,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-neutral-green.png",
+          "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+        },
+        {
+          "path": "assets/v18/outfit-bedtime-1440.webp",
+          "sha256": "d480c13e96ecbb79ff663162868bbe5fc395f995cc23ae6bd484ef46d9143c86"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20 room website, bedtime outfit, standing-neutral pose.\nInput images: Image 1 is the exact edit target and exclusive face, pose, framing, line-art, lighting reference. Image 2 is CLOTHING DESIGN REFERENCE ONLY; do not inherit its room, pose, face, proportions, lighting, or painterly rendering.\nPrimary request: change ONLY the clothing of Image 1 to a modest cream-and-strawberry-pink long-sleeve pajama set, inspired by Image 2. Remove the pink cat-ear jacket and its hood. Keep her original silver hair, bangs, two pink bow hair clips, bright blue eyes, small shy smile, round youthful face, gentle head tilt, exact body position, left hand near chest, right hand welcoming with palm open, and original camera and canvas framing completely unchanged.\nClothing: soft cream button-front pajama top with pale strawberry-pink rounded collar, pink cuffs and hem, one small clear strawberry embroidery on chest. Loose pale pink-and-cream gingham LONG pajama trousers with occasional small strawberry motif. Not a dress. Fully covered ordinary all-ages home clothing. Pajamas are not fluffy fleece and have no hood, so they visibly differ from the jacket and hooded blanket outfits. Keep the same arm and hand poses and the same visible crop of trousers as Image 1.\nScene/backdrop: completely flat saturated chroma green #00FF00, identical to Image 1, no gradients, no shadow or ground, no objects. No green reflected light or green pixels on the person; preserve crisp separable edges. The green is only a temporary compositing background.\nStyle: match Image 1's clean, bright Japanese anime cel illustration exactly. Crisp restrained outlines, smooth flat color areas, two or three simple cel shadow tones, clear eye sparkles and hair strands. Do not add texture or detailed cloth noise.\nConstraints: outfit-only edit, one character, identity and expression and pose unchanged, no added accessories or objects, no text, no watermark, no mature body, no sensual framing, no extra fingers or limbs, no painterly strokes, no oily shine, no watercolor, no blurry shading, no film grain, no muddy warm tint, no heavy gradients. Keep the edit target canvas aspect ratio and character scale.\n",
+      "promptFile": "assets/v20/character/bedtime/standing-neutral.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20 room website, bedtime outfit, standing-neutral pose.\nInput images: Image 1 is the exact edit target and exclusive face, pose, framing, line-art, lighting reference. Image 2 is CLOTHING DESIGN REFERENCE ONLY; do not inherit its room, pose, face, proportions, lighting, or painterly rendering.\nPrimary request: change ONLY the clothing of Image 1 to a modest cream-and-strawberry-pink long-sleeve pajama set, inspired by Image 2. Remove the pink cat-ear jacket and its hood. Keep her original silver hair, bangs, two pink bow hair clips, bright blue eyes, small shy smile, round youthful face, gentle head tilt, exact body position, left hand near chest, right hand welcoming with palm open, and original camera and canvas framing completely unchanged.\nClothing: soft cream button-front pajama top with pale strawberry-pink rounded collar, pink cuffs and hem, one small clear strawberry embroidery on chest. Loose pale pink-and-cream gingham LONG pajama trousers with occasional small strawberry motif. Not a dress. Fully covered ordinary all-ages home clothing. Pajamas are not fluffy fleece and have no hood, so they visibly differ from the jacket and hooded blanket outfits. Keep the same arm and hand poses and the same visible crop of trousers as Image 1.\nScene/backdrop: completely flat saturated chroma green #00FF00, identical to Image 1, no gradients, no shadow or ground, no objects. No green reflected light or green pixels on the person; preserve crisp separable edges. The green is only a temporary compositing background.\nStyle: match Image 1's clean, bright Japanese anime cel illustration exactly. Crisp restrained outlines, smooth flat color areas, two or three simple cel shadow tones, clear eye sparkles and hair strands. Do not add texture or detailed cloth noise.\nConstraints: outfit-only edit, one character, identity and expression and pose unchanged, no added accessories or objects, no text, no watermark, no mature body, no sensual framing, no extra fingers or limbs, no painterly strokes, no oily shine, no watercolor, no blurry shading, no film grain, no muddy warm tint, no heavy gradients. Keep the edit target canvas aspect ratio and character scale.\n",
+      "promptSha256": "092562c103413a2f1c8dad5bdc74c1a618a89db39292962a3dfac01d32139d59",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/bedtime/standing-neutral-alpha.png",
+        "sha256": "d68938bc7ffd82a28e0340d6e398a2b3a314c9b755ca3f0c6d18f22bf5ce5a1f",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        139,
+        1012,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.053672,
+        0.093792,
+        0.952919,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/bedtime/standing-neutral-720.webp",
+          "dimensions": [
+            720,
+            1005
+          ],
+          "bytes": 120912,
+          "sha256": "c69003f2270f93415c38a52aabe5ce76c9290297a1fef7c3abdde55364dbeb9a",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/bedtime/standing-neutral-1440.webp",
+          "dimensions": [
+            1440,
+            2009
+          ],
+          "bytes": 303472,
+          "sha256": "1c6f8cd7dd2ba9dcdbe50e8c22685af58ed53b8ed95e4f152da8dd4c2b53488c",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/bedtime/standing-neutral-4k.webp",
+          "dimensions": [
+            2752,
+            3840
+          ],
+          "bytes": 713232,
+          "sha256": "21dc29c0fb6c1d3f9cc7c277fe5cc8e739834be396c7cb172d19a59bc5cd9d54",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "standing-shy",
+      "outfitId": "bedtime",
+      "generatedAt": "2026-09-08T20:04:57.991130+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/bedtime/standing-shy-green.png",
+      "sourceSha256": "4c243c0d21952cb9c0ea966c1d60833ded34c9f8a8c90ecb01a5a1f4583d400d",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-shy-green.png",
+          "sha256": "1da8cd2cb550d315f640255a182366fac3d956587a252cd5cc5c3df1ede1d249"
+        },
+        {
+          "path": ".tmp/v20-character/bedtime/standing-neutral-green.png",
+          "sha256": "d83d57ae02b40a906dedb2af89cec86ce365fcc367adfb79759e57774f519761"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, standing-shy state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep her standing welcoming pose and EXACT shy open-eyed expression from Image 1: brighter blush, slightly timid eyebrows and small restrained smile. Left hand remains near chest; right open hand remains extended in the same place.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptFile": "assets/v20/character/bedtime/standing-shy.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, bedtime clothes, standing-shy state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep her standing welcoming pose and EXACT shy open-eyed expression from Image 1: brighter blush, slightly timid eyebrows and small restrained smile. Left hand remains near chest; right open hand remains extended in the same place.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+      "promptSha256": "eb48033746dae916ff78ebd3722f9790082fc1e0456ba87743dbdca6e0ac4b87",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/bedtime/standing-shy-alpha.png",
+        "sha256": "f19190527c5c7e12244ee007735da73b09279b5a167f84f02b33d004dac13bb0",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        138,
+        1010,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.053723,
+        0.093117,
+        0.951932,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/bedtime/standing-shy-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 118802,
+          "sha256": "b787172eabfbb370d8d69ac2db83f6ec2808f5f034892d4ab10373f37e2f6e88",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/bedtime/standing-shy-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 295646,
+          "sha256": "cdd62fef1eedfbc245ff432c951d54a4bb3240138424530d9d3ec6e0bebac794",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/bedtime/standing-shy-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 693462,
+          "sha256": "27f3cfe175707380bc78f3566c34720c35a9f8cf3511dbcc2ef4926ce30973ec",
+          "hasAlpha": true
+        }
+      ]
+    }
+  ]
+}

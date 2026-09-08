@@ -1,0 +1,53 @@
+{
+  "id": "gallery-turn",
+  "scene": "慢慢翻页",
+  "textJa": "ページは、ゆっくりね。描き込みも、見つけてくれたら嬉しい。",
+  "textZh": "翻页慢一点哦。如果你能发现画里的小细节，我会很开心。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 122,
+  "paddedPhonemeCount": 122,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/gallery-turn.wav",
+  "rawSha256": "5e8e29e4095d67d18071f1821ae4c0d0b59707a99dd0752c658570a2b1b4a405",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -16.16,
+    "truePeakDb": 0.15,
+    "lra": 1.9,
+    "threshold": -27.06,
+    "targetOffset": -0.98,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.29,
+      "truePeakDb": -2.45,
+      "lra": 1.8,
+      "threshold": -29.14,
+      "targetOffset": -0.84
+    },
+    "decodedLoudnessCorrectionGainDb": 0.29
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-16.16:measured_LRA=1.9:measured_TP=0.15:measured_thresh=-27.06:offset=-0.98:linear=true:print_format=summary,volume=0.2900dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

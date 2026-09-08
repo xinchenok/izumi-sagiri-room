@@ -1,0 +1,75 @@
+{
+  "id": "desk-focus",
+  "outfitId": "artist",
+  "generatedAt": "2026-09-08T19:59:32.322016+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/artist/desk-focus-green.png",
+  "sourceSha256": "9dd0d157572f883b41054712afa8ce579f2aa33cbe698584affc8a387f7cb991",
+  "nativeSize": [
+    1061,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/desk-focus-green.png",
+      "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+    },
+    {
+      "path": ".tmp/v20-character/artist/standing-neutral-green.png",
+      "sha256": "bf2bce763678dd33937279a3a05ca1b13d24451737b58d3c99f4f75c5bf7f1ad"
+    }
+  ],
+  "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: blue-and-white gingham long-sleeve button-up pajamas with small notched collar, pale pink piping, and matching roomy full-length pants. Keep existing hands/gloves exactly as in image 1. No hood or apron. Current required pose: desk-focus; copy image 1's pose literally. \n",
+  "promptFile": "assets/v20/character/artist/desk-focus.prompt.txt",
+  "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: blue-and-white gingham long-sleeve button-up pajamas with small notched collar, pale pink piping, and matching roomy full-length pants. Keep existing hands/gloves exactly as in image 1. No hood or apron. Current required pose: desk-focus; copy image 1's pose literally. \n",
+  "promptSha256": "971567cbfe2b46c6b620a0f05a77efc009b2c445f1cf133a9ec644d68b36a813",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/artist/desk-focus-alpha.png",
+    "sha256": "ef080f7284e1fe24366dbef75beecd506c5d183b4667b9f93d9e3b01e552e9e7",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1061,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    23,
+    103,
+    1040,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.021678,
+    0.069501,
+    0.980207,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/artist/desk-focus-4k.webp",
+      "dimensions": [
+        2749,
+        3840
+      ],
+      "bytes": 743118,
+      "sha256": "e50e9c76053d6a565b6fcea3aa5cef7948503b134d5ea8f299bda88647d2976f",
+      "hasAlpha": true
+    }
+  ]
+}

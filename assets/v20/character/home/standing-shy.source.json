@@ -1,0 +1,93 @@
+{
+  "id": "standing-shy",
+  "outfitId": "home",
+  "generatedAt": "2026-09-08T19:59:08.680362+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/home/standing-shy-green.png",
+  "sourceSha256": "1da8cd2cb550d315f640255a182366fac3d956587a252cd5cc5c3df1ede1d249",
+  "nativeSize": [
+    1062,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/standing-neutral-green.png",
+      "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: one 2D anime animation frame on an opaque chroma-green backdrop.\nInput image is the approved standing-neutral master. Preserve the entire image pixel geometry and identical character placement, body silhouette, cat-ear pink hoodie, cream fully covered pajama trousers, hair, hands, daylight, linework, framing and 28:39 portrait canvas. Change ONLY her eyebrows, eyes, blush and tiny mouth: she notices the visitor's kindness, her blue eyes soften and glance just slightly toward the visitor, with a slightly more bashful small smile and subtle rosy cheeks. Do not move her head or body. Keep all hair, clothing folds, fingers and props unchanged. Do not enlarge the eyes or make a different face.\nThe entire empty background remains opaque, flat fluorescent green #00FF00, including all spaces between hair strands and fingers. No green light spill, white halo, shadow, gradient, texture, checkerboard, room, furniture, text or watermark. Keep the same 4% headroom, invitation hand position and bottom cropped-thigh framing. Clean cel-anime illustration, all-ages and fully clothed. Output one PNG, not a spritesheet, no side-by-side pictures.\n",
+  "promptFile": "assets/v20/character/home/standing-shy.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: one 2D anime animation frame on an opaque chroma-green backdrop.\nInput image is the approved standing-neutral master. Preserve the entire image pixel geometry and identical character placement, body silhouette, cat-ear pink hoodie, cream fully covered pajama trousers, hair, hands, daylight, linework, framing and 28:39 portrait canvas. Change ONLY her eyebrows, eyes, blush and tiny mouth: she notices the visitor's kindness, her blue eyes soften and glance just slightly toward the visitor, with a slightly more bashful small smile and subtle rosy cheeks. Do not move her head or body. Keep all hair, clothing folds, fingers and props unchanged. Do not enlarge the eyes or make a different face.\nThe entire empty background remains opaque, flat fluorescent green #00FF00, including all spaces between hair strands and fingers. No green light spill, white halo, shadow, gradient, texture, checkerboard, room, furniture, text or watermark. Keep the same 4% headroom, invitation hand position and bottom cropped-thigh framing. Clean cel-anime illustration, all-ages and fully clothed. Output one PNG, not a spritesheet, no side-by-side pictures.\n",
+  "promptSha256": "fe860eae2edac9b2adc3cd161ec9f49577ac0e4a6d2204942181cfd54440bf12",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/home/standing-shy-alpha.png",
+    "sha256": "99d93cfac1b00a63fa4f49ea0682da88634422ea7ad0592d7652ab93a2d600c8",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1062,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    58,
+    62,
+    1011,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.054614,
+    0.041835,
+    0.951977,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/home/standing-shy-720.webp",
+      "dimensions": [
+        720,
+        1005
+      ],
+      "bytes": 119708,
+      "sha256": "f58d0040e5f06b4ada308e88759bcccfa166acf48763927bfc1a098242c3e239",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/character/home/standing-shy-1440.webp",
+      "dimensions": [
+        1440,
+        2009
+      ],
+      "bytes": 289886,
+      "sha256": "739b4b72f65b9ea4d50e971841a5947111f2bfd894805bee0d0a04f6b1df2ef6",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/home/standing-shy-4k.webp",
+      "dimensions": [
+        2752,
+        3840
+      ],
+      "bytes": 671968,
+      "sha256": "a9126c354e50100c2b1e50d7b53c0880a6b039e2b493eb287597c18a2e877474",
+      "hasAlpha": true
+    }
+  ]
+}

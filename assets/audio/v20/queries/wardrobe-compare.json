@@ -1,0 +1,53 @@
+{
+  "id": "wardrobe-compare",
+  "scene": "衣橱比较",
+  "textJa": "並べてみると、雰囲気が違うね。今日は、どれがいいかな。",
+  "textZh": "放在一起看，感觉还真不一样呢。今天穿哪件好呢？",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 120,
+  "paddedPhonemeCount": 120,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/wardrobe-compare.wav",
+  "rawSha256": "7fe0142e1ff1ffe28148f5abfa8e5aed8ee8bcccb7b8618ef2b37c4edb0014aa",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -17.98,
+    "truePeakDb": -0.31,
+    "lra": 2.4,
+    "threshold": -28.71,
+    "targetOffset": -0.38,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.62,
+      "truePeakDb": -2.41,
+      "lra": 2.3,
+      "threshold": -29.34,
+      "targetOffset": -0.51
+    },
+    "decodedLoudnessCorrectionGainDb": 0.62
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-17.98:measured_LRA=2.4:measured_TP=-0.31:measured_thresh=-28.71:offset=-0.38:linear=true:print_format=summary,volume=0.6200dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

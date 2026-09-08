@@ -1,0 +1,122 @@
+{
+  "id": "lap-drawing-board",
+  "version": "20.0.0",
+  "createdAt": "2026-09-08T22:13:30.903729+00:00",
+  "tool": "内置 ImageGen",
+  "purpose": "五套服装共享的膝上画板前景，不修改人物图",
+  "source": ".tmp/v20-desk-prop/lap-drawing-board-v2-green.png",
+  "sourceSha256": "ebec2951f448085dfbf29a998d8a42c83e91c87bece80c5ff3a06026fb2ed85d",
+  "nativeSize": [
+    1061,
+    1482
+  ],
+  "prompt": "Use case: precise-object-edit\nImage 1 is the board sprite to correct. Image 2 is the exact fixed character pose for registration only; do not reproduce any person pixels.\n\nKeep exactly the same clean pale-wood board and blank white sheet style. Fix ONLY its position, size and perspective so the whole board fits inside the image and its white sheet touches just below the pen tip shown in Image 2. The current board is too low, too far left and cut off by the right edge. The board must not be cropped. Move it upward and make it narrower.\n\nUse EXACTLY the Image 2 portrait canvas aspect 1062:1482. The requested canvas is 1062 pixels wide, 1482 pixels tall. Keep all of the canvas except the lower-right board plain opaque fluorescent #00FF00. Do not reframe the board to fill the canvas. The whole board should have these approximate four top-surface corners in this 1062x1482 canvas, clockwise from the far left: (640,1050), (1016,986), (1040,1150), (704,1238). The bottom thickness adds at most 12 pixels. Rightmost board point is x=1040, leaving 22 pixels of green margin; never clip the right edge. This is a small lightweight LAP board, not a large landscape table.\n\nIts blank white paper inset should have corners around (656,1053), (1008,997), (1023,1137), (711,1219). At x=936 the top edge of the paper is near y=1008, immediately below the character's stylus tip at (936,1003), leaving the pen and fingers unobscured when composited in front. This specific placement matters more than symmetry or centering.\n\nRender only this board and one completely blank white sheet. No character, hands, legs, clothes, hair, pen, chair, room, shadows outside the board, text, marks, diagrams, logo or watermark. No chessboard, transparency, gradient green or green spill. Clean cute anime cel linework, smooth light wood without grain or dirty texture, soft light from upper right. Output one PNG image with the same composition and large green empty space described above.",
+  "promptText": "Use case: precise-object-edit\nImage 1 is the board sprite to correct. Image 2 is the exact fixed character pose for registration only; do not reproduce any person pixels.\n\nKeep exactly the same clean pale-wood board and blank white sheet style. Fix ONLY its position, size and perspective so the whole board fits inside the image and its white sheet touches just below the pen tip shown in Image 2. The current board is too low, too far left and cut off by the right edge. The board must not be cropped. Move it upward and make it narrower.\n\nUse EXACTLY the Image 2 portrait canvas aspect 1062:1482. The requested canvas is 1062 pixels wide, 1482 pixels tall. Keep all of the canvas except the lower-right board plain opaque fluorescent #00FF00. Do not reframe the board to fill the canvas. The whole board should have these approximate four top-surface corners in this 1062x1482 canvas, clockwise from the far left: (640,1050), (1016,986), (1040,1150), (704,1238). The bottom thickness adds at most 12 pixels. Rightmost board point is x=1040, leaving 22 pixels of green margin; never clip the right edge. This is a small lightweight LAP board, not a large landscape table.\n\nIts blank white paper inset should have corners around (656,1053), (1008,997), (1023,1137), (711,1219). At x=936 the top edge of the paper is near y=1008, immediately below the character's stylus tip at (936,1003), leaving the pen and fingers unobscured when composited in front. This specific placement matters more than symmetry or centering.\n\nRender only this board and one completely blank white sheet. No character, hands, legs, clothes, hair, pen, chair, room, shadows outside the board, text, marks, diagrams, logo or watermark. No chessboard, transparency, gradient green or green spill. Clean cute anime cel linework, smooth light wood without grain or dirty texture, soft light from upper right. Output one PNG image with the same composition and large green empty space described above.",
+  "promptFile": "assets/v20/props/lap-drawing-board.prompt.txt",
+  "promptSha256": "e0b97ce47801ddbb7836d47131d8f2c314dc8806499a37e5958b122ba435658d",
+  "references": [
+    {
+      "path": ".tmp/v20-desk-prop/lap-drawing-board-v1-green.png",
+      "sha256": "08220c3c7fe3f46f957602c5223146b8b071efb33c9e172f768692d61549f7cd"
+    },
+    {
+      "path": ".tmp/v20-character/home/desk-focus-green.png",
+      "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+    }
+  ],
+  "alphaPreparation": {
+    "method": "FFmpeg 专用背景色键封装；只对 alpha<250 边缘去绿",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-desk-prop/lap-drawing-board-v2-alpha.png",
+    "sha256": "111b0d1eadd54b654aa73c1be8d1d2b6d6f7e055bf09f802e0fc998369920975",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ]
+  },
+  "propBBox": [
+    504,
+    985,
+    1048,
+    1276
+  ],
+  "paperCornersPx": [
+    [
+      520,
+      1094
+    ],
+    [
+      932,
+      992
+    ],
+    [
+      1034,
+      1140
+    ],
+    [
+      633,
+      1249
+    ]
+  ],
+  "paperSafeCornersPx": [
+    [
+      528,
+      1100
+    ],
+    [
+      929,
+      1000
+    ],
+    [
+      1025,
+      1135
+    ],
+    [
+      635,
+      1240
+    ]
+  ],
+  "paperCornersNormalized": [
+    [
+      0.490104,
+      0.738192
+    ],
+    [
+      0.878417,
+      0.669366
+    ],
+    [
+      0.974552,
+      0.769231
+    ],
+    [
+      0.596607,
+      0.84278
+    ]
+  ],
+  "cornerOrder": "左上、右上、右下、左下；原图像素坐标，按稿纸可见边线目视标定；安全四角向纸内缩小，建议动态画稿使用安全区",
+  "registrationCanvas": [
+    1061,
+    1482
+  ],
+  "characterCanvas": [
+    1062,
+    1482
+  ],
+  "registrationNotes": "与 HOME 绘画人物使用同高同位置的画幅叠放；源图比人物窄1px，按归一化坐标适配，不拉伸人物。",
+  "resize": "Pillow 仅等比 Lanczos 缩放和 WebP 编码；4K为长边3840放大导出，不是原生4K",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/props/lap-drawing-board-720.webp",
+      "dimensions": [
+        720,
+        1006
+      ],
+      "bytes": 17000,
+      "sha256": "67a8605ca096bc0886d9fb625c9e676436b11273ff6f458d955ab53cd8278ced",
+      "hasAlpha": true
+    }
+  ]
+}

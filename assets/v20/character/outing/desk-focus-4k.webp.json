@@ -1,0 +1,75 @@
+{
+  "id": "desk-focus",
+  "outfitId": "outing",
+  "generatedAt": "2026-09-08T19:59:32.103647+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/outing/desk-focus-green.png",
+  "sourceSha256": "a62246809e3b9a035cab262ef849018eb05c1dcb720687808b8599895d66d201",
+  "nativeSize": [
+    1061,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/desk-focus-green.png",
+      "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+    },
+    {
+      "path": ".tmp/v20-character/outing/standing-neutral-green.png",
+      "sha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18"
+    }
+  ],
+  "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose: desk-focus; copy image 1's pose literally. \n",
+  "promptFile": "assets/v20/character/outing/desk-focus.prompt.txt",
+  "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose: desk-focus; copy image 1's pose literally. \n",
+  "promptSha256": "ce46757a5f9f5cfc28fe328f4b3c5aaa82bf114d00fd7238b5e09ad1b2dabc8c",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/outing/desk-focus-alpha.png",
+    "sha256": "c9a8890f63c298d2974ff3bcb3c7128f8c1d10c377ea4a0f1fed69e547c3e236",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1061,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    22,
+    95,
+    1041,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.020735,
+    0.064103,
+    0.98115,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/outing/desk-focus-4k.webp",
+      "dimensions": [
+        2749,
+        3840
+      ],
+      "bytes": 742824,
+      "sha256": "3e6e5f84ed8d60480b71e2c27cbf0513b172de6cea7f2d0922b534173129fe6f",
+      "hasAlpha": true
+    }
+  ]
+}

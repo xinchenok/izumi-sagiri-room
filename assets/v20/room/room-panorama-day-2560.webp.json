@@ -1,0 +1,21 @@
+{
+  "prompt": "Use the provided crop as the approved visual reference and recreate it as a clean production asset at the target aspect ratio. This is a designed illustration plate. Output the same drawing, same style, same line weight and shading. Preserve silhouette, composition, perspective, palette (#eccbd2, #dfa7b1, #f3eff1), lighting, material, and texture exactly. Remove every piece of UI text, label, caption, button, and interface chrome that is not part of the artwork itself. Remove letterboxing, borders, card corners, drop shadows, and any layout background that the page will draw in code. Do not add objects. Do not change the concept. Do not restyle. The artwork fills the whole frame edge to edge at the same scale as the reference; no margins, no border, no background band. Region: Full-bleed clean cel-anime bedroom panorama from original approved A. Extract the room as a continuous illustration WITHOUT the girl and WITHOUT all UI, title, hotspots, navigation or captions; reconstruct the floor and furniture naturally. Keep the original entrance-side left bed, wardrobe left, bookcase behind the girl, desk/chair/window right. This is the reusable background layer, not a crop of the composite..\n\nTarget output: same 1681:936 wide aspect ratio, ideally at least 2522 x 1404 pixels. The solid pink rectangles in the reference are removal markers for UI, not room objects: reconstruct the correct underlying wall, floor, furniture, window and artwork there. Preserve the exact original bed position and size. Do not create a second bed or move the bed beneath the window. No human figure, no body parts, no text, no watermark. Clean flat cel-anime fills and crisp outlines; no oil-paint grain, watercolor texture, blur, haze, or extra furniture.",
+  "createdAt": "2026-09-08T19:30:36.418387+00:00",
+  "id": "room-background",
+  "tool": "内置 ImageGen",
+  "approvedComposition": ".impeccable/mocks/v20-a.png",
+  "reference": ".impeccable/build/room-background-reference.png",
+  "referenceSha256": "e4f9cb10b811d3d2bbdedf968956be486d477e7207f650172f5c2c8965034bbf",
+  "source": ".tmp/v20-room/source/room-panorama-day-native.png",
+  "sourceSha256": "d9e0b9a93fae85426a07127465b4e70adebe8737f24c4db4f7b5998c8c22bd7f",
+  "sourceWidth": 1681,
+  "sourceHeight": 936,
+  "path": "assets/v20/room/room-panorama-day-2560.webp",
+  "width": 2560,
+  "height": 1425,
+  "fileSha256": "2202baee2154ce7f8035ac56f2479d6db205ff78772ad55e0e97318556c59d41",
+  "bytes": 457844,
+  "resizeMethod": "等比 Lanczos；仅缩放；不裁切、不锐化、不调色、不降噪、不添加纹理",
+  "native4k": false,
+  "visualNotes": "保留用户选定 A 的入口左床位与家具几何；人物和所有界面标记由 ImageGen 移除并补全遮挡区域。"
+}

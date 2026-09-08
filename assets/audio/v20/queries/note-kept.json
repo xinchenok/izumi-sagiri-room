@@ -1,0 +1,53 @@
+{
+  "id": "note-kept",
+  "scene": "收好纸条",
+  "textJa": "その紙、なくさないでね。読んだら……そっとしまっておいて。",
+  "textZh": "那张纸不要弄丢哦。读完以后……轻轻收好吧。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 112,
+  "paddedPhonemeCount": 112,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/note-kept.wav",
+  "rawSha256": "41e1d02f6183983775b62653bd865df6c91f1e1bd2f6be7fc76d6874009eb31c",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -15.75,
+    "truePeakDb": 0.18,
+    "lra": 0.4,
+    "threshold": -26.37,
+    "targetOffset": -0.26,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.45,
+      "truePeakDb": -2.5,
+      "lra": 0.4,
+      "threshold": -29.07,
+      "targetOffset": -0.26
+    },
+    "decodedLoudnessCorrectionGainDb": 0.45
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-15.75:measured_LRA=0.4:measured_TP=0.18:measured_thresh=-26.37:offset=-0.26:linear=true:print_format=summary,volume=0.4500dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

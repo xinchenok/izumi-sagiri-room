@@ -1,0 +1,90 @@
+{
+  "id": "blanket-moon",
+  "subject": "blanket",
+  "palette": "moon",
+  "title": "被窝里画星星的小猫",
+  "paletteName": "银蓝月光",
+  "alt": "银蓝月光配色：浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星",
+  "generatedAt": "2026-09-08T22:25:56.796067+00:00",
+  "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+  "source": ".tmp/v20-drawings/blanket/moon.png",
+  "sourceSha256": "7ec982e0eb624b583a81b3caf5976df9df131f9d6824cb25ddee65db6daa15a5",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "native4k": false,
+  "aspectRatio": "4:3",
+  "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+  "prompt": "Use case: precise-object-edit. This silver-blue kitten artwork is the exact edit target. There is one accidental shape change to fix: the pale yellow decorations printed on the blanket should ALL be ordinary FIVE-POINT STARS, not crescent moons. Replace each pale yellow crescent on the blanket with a five-point star of the same pale yellow, at the same printed-decoration location and same approximate size. Keep every existing white and yellow five-point star unchanged. There must be no crescent shapes on the blanket. Change NOTHING ELSE: preserve kitten face, fur markings, eyes, paws, pencil, paper with outlined star, blanket outline and folds, all object positions and scales, silver-blue/milk-white/moon-yellow palette, white margins, clean cel linework, 1448×1086 exact 4:3 canvas. Do not change colors, zoom, crop, add props, add text, watermark, border, texture, blur or grain.",
+  "promptFile": "assets/v20/drawings/prompts/blanket-moon.txt",
+  "promptSha256": "31d8075602258c66e30a564c012b1aa4f0ba27a872677137eaa0bf88fb0de1aa",
+  "references": [
+    {
+      "path": ".tmp/v20-drawings/blanket/moon-initial.png",
+      "sha256": "af6e89d55f163acb5602d57c7342a0ce2d04c6332af9b7fe45cf1598a0dbc433",
+      "role": "银蓝配色初版，仅把误变为月牙的毯面图案恢复成五角星"
+    },
+    {
+      "path": ".tmp/v20-drawings/blanket/strawberry.png",
+      "sha256": "ece03e62c71d2598c5ed754bf8e537b32b99d4f2a0fb9417c96429d8653d8bdc",
+      "role": "同主题草莓母图；只改配色"
+    },
+    {
+      "path": ".tmp/v20-drawings/blanket/strawberry-initial.png",
+      "sha256": "44f6e8af4a8def72c24920500a0c114f8edf71f31b76f337c1906afd3c6fadd0",
+      "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+    },
+    {
+      "path": "assets/v18/drawing-blanket-star-720.webp",
+      "sha256": "f2c43cc87887864b981163cf6101338e0b102e47d42ddc685be1a0c16490e90c",
+      "role": "仅主题构图，不继承旧画风"
+    }
+  ],
+  "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+  "pillowVersion": "12.3.0",
+  "exports": [
+    {
+      "sizeClass": "480",
+      "file": "assets/v20/drawings/blanket-moon-480.webp",
+      "dimensions": [
+        480,
+        360
+      ],
+      "bytes": 17366,
+      "sha256": "785a71f4325db474133af674a017a40b6737280b41d5541032b6c7af2afa5a7e"
+    },
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/drawings/blanket-moon-720.webp",
+      "dimensions": [
+        720,
+        540
+      ],
+      "bytes": 32368,
+      "sha256": "d6c68add38b3cd777d2c6f21670eb97443ed896fcbb42bcac37803273906ab9e"
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/drawings/blanket-moon-1440.webp",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "bytes": 90574,
+      "sha256": "a156bcc2e4476f788ebdfab73700bd24cdabfcfe831e987dd2db3e2d55addaf6"
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/drawings/blanket-moon-4k.webp",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 365288,
+      "sha256": "d148dc8710fe69c103e1e0d51116f54d2a0d313e620451b2b3a136f0a6062667"
+    }
+  ]
+}

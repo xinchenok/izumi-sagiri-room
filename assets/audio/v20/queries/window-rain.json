@@ -1,0 +1,53 @@
+{
+  "id": "window-rain",
+  "scene": "窗边细雨，仅在雨天触发",
+  "textJa": "細かい雨の音、聞こえる？　しばらく、ここで聞いていようか。",
+  "textZh": "听得见细细的雨声吗？要不要在这里听一会儿？",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 122,
+  "paddedPhonemeCount": 122,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/window-rain.wav",
+  "rawSha256": "3ca76b736426500482ea246c904dcc9dcbe58406c5cd90872236514a016d1626",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -17.98,
+    "truePeakDb": -0.56,
+    "lra": 2.9,
+    "threshold": -28.66,
+    "targetOffset": -0.62,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.66,
+      "truePeakDb": -2.44,
+      "lra": 3.7,
+      "threshold": -29.33,
+      "targetOffset": -0.75
+    },
+    "decodedLoudnessCorrectionGainDb": 0.66
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-17.98:measured_LRA=2.9:measured_TP=-0.56:measured_thresh=-28.66:offset=-0.62:linear=true:print_format=summary,volume=0.6600dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

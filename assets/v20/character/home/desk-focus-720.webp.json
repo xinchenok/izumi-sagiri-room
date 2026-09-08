@@ -1,0 +1,71 @@
+{
+  "id": "desk-focus",
+  "outfitId": "home",
+  "generatedAt": "2026-09-08T19:59:50.336389+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/home/desk-focus-green.png",
+  "sourceSha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce",
+  "nativeSize": [
+    1062,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/standing-neutral-green.png",
+      "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: isolated 2D anime seated drawing character sprite on opaque chroma-green.\nInput image is the approved original A standing-neutral master, used to lock identity, clothing, linework, colors and daylight. Change only the pose required for sitting at her drawing desk.\nDraw the exact same silver-white long-haired girl with the identical round face, bright blue eyes, pink bow clips, pink cat-ear zip hoodie with sleeve cuffs/pocket bow/white pom-poms, and cream fully covering pajama trousers. She sits naturally on an invisible chair facing toward the right, in a three-quarter side view, with her upper body leaning slightly forward over an invisible desk at elbow height. Her right hand holds a slim dark digital stylus and draws toward the lower right; her left hand rests lightly beside the drawing area. Her eyes look down attentively at her work, a tiny focused mouth, cheeks softly rosy. Keep both hands anatomically natural, fully visible and delicately drawn. Her long hair flows behind her back without covering the writing hand.\nDo not draw any furniture: no chair, desk, tablet, floor or room. Only the girl and her held stylus. The desk and chair are provided as separate website layers. Empty space below/around/between limbs and strands must be a single flat opaque fluorescent #00FF00 green, no background shadow or green reflection.\nPortrait composition 28:39, head fully visible with around 4% headroom, body arranged compactly inside canvas, fingertips within frame, crop through upper thighs at the bottom similarly to the reference. Preserve the existing petite proportions and soft daylight from right. Clean crisp anime cel drawing, smooth flat colors, no new wardrobe details, no mature/sexualized styling, no oil-paint grain, blurry shading, text, watermark, checkerboard or extra limbs. One PNG image.\n",
+  "promptFile": "assets/v20/character/home/desk-focus.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: isolated 2D anime seated drawing character sprite on opaque chroma-green.\nInput image is the approved original A standing-neutral master, used to lock identity, clothing, linework, colors and daylight. Change only the pose required for sitting at her drawing desk.\nDraw the exact same silver-white long-haired girl with the identical round face, bright blue eyes, pink bow clips, pink cat-ear zip hoodie with sleeve cuffs/pocket bow/white pom-poms, and cream fully covering pajama trousers. She sits naturally on an invisible chair facing toward the right, in a three-quarter side view, with her upper body leaning slightly forward over an invisible desk at elbow height. Her right hand holds a slim dark digital stylus and draws toward the lower right; her left hand rests lightly beside the drawing area. Her eyes look down attentively at her work, a tiny focused mouth, cheeks softly rosy. Keep both hands anatomically natural, fully visible and delicately drawn. Her long hair flows behind her back without covering the writing hand.\nDo not draw any furniture: no chair, desk, tablet, floor or room. Only the girl and her held stylus. The desk and chair are provided as separate website layers. Empty space below/around/between limbs and strands must be a single flat opaque fluorescent #00FF00 green, no background shadow or green reflection.\nPortrait composition 28:39, head fully visible with around 4% headroom, body arranged compactly inside canvas, fingertips within frame, crop through upper thighs at the bottom similarly to the reference. Preserve the existing petite proportions and soft daylight from right. Clean crisp anime cel drawing, smooth flat colors, no new wardrobe details, no mature/sexualized styling, no oil-paint grain, blurry shading, text, watermark, checkerboard or extra limbs. One PNG image.\n",
+  "promptSha256": "0dc9dfec22fe88789ca2c4748824c35df89aa37ab44af1236d2d4589675dbfff",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/home/desk-focus-alpha.png",
+    "sha256": "35084c23ab99097530e9af3a17e5efd54e6bad6af9cd77889b827f079c3f75b3",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1062,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    21,
+    42,
+    1042,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.019774,
+    0.02834,
+    0.981168,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/home/desk-focus-720.webp",
+      "dimensions": [
+        720,
+        1005
+      ],
+      "bytes": 131156,
+      "sha256": "99a7b78a2408fb02ceca87789075492a25c2dd6fe43829158239dfaf428439b6",
+      "hasAlpha": true
+    }
+  ]
+}

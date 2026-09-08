@@ -1,0 +1,75 @@
+{
+  "id": "desk-shy",
+  "outfitId": "artist",
+  "generatedAt": "2026-09-08T20:04:05.433774+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/artist/desk-shy-green.png",
+  "sourceSha256": "6c00887c63128bd734364b65c281aca453cebb9a38c3765ecabe35c49b973a44",
+  "nativeSize": [
+    1061,
+    1483
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/desk-shy-green.png",
+      "sha256": "b716888c3eb571e29ce219f366bc084f3db48494e3c54ecd7373f1afd2b2a588"
+    },
+    {
+      "path": ".tmp/v20-character/artist/standing-neutral-green.png",
+      "sha256": "bf2bce763678dd33937279a3a05ca1b13d24451737b58d3c99f4f75c5bf7f1ad"
+    }
+  ],
+  "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: blue-and-white gingham long-sleeve button-up pajamas with small notched collar, pale pink piping, and matching roomy full-length pants. Keep existing hands/gloves exactly as in image 1. No hood or apron. Current required pose/expression: desk-shy; copy image 1's pose and face literally. Preserve the shy blush and gentle expression from image 1. \n",
+  "promptFile": "assets/v20/character/artist/desk-shy.prompt.txt",
+  "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: blue-and-white gingham long-sleeve button-up pajamas with small notched collar, pale pink piping, and matching roomy full-length pants. Keep existing hands/gloves exactly as in image 1. No hood or apron. Current required pose/expression: desk-shy; copy image 1's pose and face literally. Preserve the shy blush and gentle expression from image 1. \n",
+  "promptSha256": "2c9cf221da25ec334b334c9c79c18aa746984ec37d8fe4b6979e09342cfa1b55",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/artist/desk-shy-alpha.png",
+    "sha256": "82bc6947cd4cf5344e8393b7f30f633378f0476183b5fbc92f1948869b81ee91",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1061,
+      1483
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    21,
+    87,
+    1041,
+    1483
+  ],
+  "actorBBoxNormalized": [
+    0.019793,
+    0.058665,
+    0.98115,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/artist/desk-shy-4k.webp",
+      "dimensions": [
+        2747,
+        3840
+      ],
+      "bytes": 825878,
+      "sha256": "8d3a76621ed0b6cf32339e373e7252c054cdc473ae764ca050925995fe282b47",
+      "hasAlpha": true
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "standing-neutral",
+  "outfitId": "hooded",
+  "generatedAt": "2026-09-08T20:04:36.706219+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/hooded/standing-neutral-green.png",
+  "sourceSha256": "b192c6533eecddfa2bca69386ac79e37d431626b0dba8c42e32e2b097f9e2d59",
+  "nativeSize": [
+    1062,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/standing-neutral-green.png",
+      "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+    },
+    {
+      "path": "assets/v18/outfit-hooded-blanket-1440.webp",
+      "sha256": "42cf4e2858c5145f51b38834aa911dc2b457a63e4b5ae824169d83d422a00673"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20 room website, hooded blanket outfit, standing-neutral pose.\nInput images: Image 1 is the exact edit target and exclusive face, pose, framing, line-art, lighting reference. Image 2 is CLOTHING DESIGN REFERENCE ONLY; do not inherit its room, pose, face, proportions, lighting, or painterly rendering.\nPrimary request: change ONLY the clothing of Image 1 to a loose low-saturation pale mint-GRAY cat-ear hooded wearable blanket with long trousers, inspired by Image 2. Keep her original silver hair, bangs, two pink bow hair clips, bright blue eyes, small shy smile, round youthful face, gentle head tilt, exact body position, left hand near chest, right hand welcoming with palm open, and original camera and canvas framing completely unchanged.\nClothing: a roomy wearable blanket cape with comfortable full sleeves, cat-ear hood up, cream fleece edge, simple pink bow closure and two cream pompom ties, no zipper or fitted jacket hem. Blanket outside is very pale desaturated gray with a subtle mint tint (#CAD6D0-like), NOT bright green, NOT cyan. Suggest fleece only with clean scalloped edge outlines and two simple cel tones; no fuzzy noisy texture. Show soft charcoal-gray full-length loose trousers at the existing lower crop. Ordinary fully covered all-ages loungewear. The oversized blanket silhouette and cream trim must distinguish it from Image 1's pink zipped jacket.\nScene/backdrop: completely flat saturated chroma green #00FF00, identical to Image 1, no gradients, no shadow or ground, no objects. No green spill or reflected green light on person or garment; the low-saturation gray-mint cloth must be clearly distinct from the pure green backdrop and have solid opaque fill. The green is only a temporary compositing background.\nStyle: match Image 1's clean, bright Japanese anime cel illustration exactly. Crisp restrained outlines, smooth flat color areas, two or three simple cel shadow tones, clear eye sparkles and hair strands. Do not add texture or detailed cloth noise.\nConstraints: outfit-only edit, one character, identity and expression and pose unchanged, no added accessories or objects, no text, no watermark, no mature body, no sensual framing, no extra fingers or limbs, no painterly strokes, no oily shine, no watercolor, no blurry shading, no film grain, no muddy warm tint, no heavy gradients. Keep the edit target canvas aspect ratio and character scale.\n",
+  "promptFile": "assets/v20/character/hooded/standing-neutral.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20 room website, hooded blanket outfit, standing-neutral pose.\nInput images: Image 1 is the exact edit target and exclusive face, pose, framing, line-art, lighting reference. Image 2 is CLOTHING DESIGN REFERENCE ONLY; do not inherit its room, pose, face, proportions, lighting, or painterly rendering.\nPrimary request: change ONLY the clothing of Image 1 to a loose low-saturation pale mint-GRAY cat-ear hooded wearable blanket with long trousers, inspired by Image 2. Keep her original silver hair, bangs, two pink bow hair clips, bright blue eyes, small shy smile, round youthful face, gentle head tilt, exact body position, left hand near chest, right hand welcoming with palm open, and original camera and canvas framing completely unchanged.\nClothing: a roomy wearable blanket cape with comfortable full sleeves, cat-ear hood up, cream fleece edge, simple pink bow closure and two cream pompom ties, no zipper or fitted jacket hem. Blanket outside is very pale desaturated gray with a subtle mint tint (#CAD6D0-like), NOT bright green, NOT cyan. Suggest fleece only with clean scalloped edge outlines and two simple cel tones; no fuzzy noisy texture. Show soft charcoal-gray full-length loose trousers at the existing lower crop. Ordinary fully covered all-ages loungewear. The oversized blanket silhouette and cream trim must distinguish it from Image 1's pink zipped jacket.\nScene/backdrop: completely flat saturated chroma green #00FF00, identical to Image 1, no gradients, no shadow or ground, no objects. No green spill or reflected green light on person or garment; the low-saturation gray-mint cloth must be clearly distinct from the pure green backdrop and have solid opaque fill. The green is only a temporary compositing background.\nStyle: match Image 1's clean, bright Japanese anime cel illustration exactly. Crisp restrained outlines, smooth flat color areas, two or three simple cel shadow tones, clear eye sparkles and hair strands. Do not add texture or detailed cloth noise.\nConstraints: outfit-only edit, one character, identity and expression and pose unchanged, no added accessories or objects, no text, no watermark, no mature body, no sensual framing, no extra fingers or limbs, no painterly strokes, no oily shine, no watercolor, no blurry shading, no film grain, no muddy warm tint, no heavy gradients. Keep the edit target canvas aspect ratio and character scale.\n",
+  "promptSha256": "2c441aad3a0b3bb8383831121844d45ceadea758ac50ce71fb1af6deb05fb01e",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/hooded/standing-neutral-alpha.png",
+    "sha256": "2d95eb86b947b91589bac37153b3e8f21a58e8a3a80d7ee7fc287a0120277f6c",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1062,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    56,
+    61,
+    1013,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.052731,
+    0.041161,
+    0.953861,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/hooded/standing-neutral-720.webp",
+      "dimensions": [
+        720,
+        1005
+      ],
+      "bytes": 110862,
+      "sha256": "aee27fc77c228c4e4778e34da9269c5da4c10372c91f74e7f5a3e4938f3f8174",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/character/hooded/standing-neutral-1440.webp",
+      "dimensions": [
+        1440,
+        2009
+      ],
+      "bytes": 270846,
+      "sha256": "1f76741ef25de6362bfe3ebfcbba9879385fb58e9de3d86f219822c5ef8212f5",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/hooded/standing-neutral-4k.webp",
+      "dimensions": [
+        2752,
+        3840
+      ],
+      "bytes": 629314,
+      "sha256": "4447cbf943ee03661a4933981fd1b3c2c12077bd92ab9fb5bbda99392b0a4790",
+      "hasAlpha": true
+    }
+  ]
+}

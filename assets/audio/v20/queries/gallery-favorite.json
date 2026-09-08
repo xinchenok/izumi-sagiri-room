@@ -1,0 +1,53 @@
+{
+  "id": "gallery-favorite",
+  "scene": "问最喜欢哪张",
+  "textJa": "この中で、どの絵が一番好き？　理由も、少しだけ教えて。",
+  "textZh": "这些画里，你最喜欢哪一张？理由也稍微告诉我一点吧。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 128,
+  "paddedPhonemeCount": 128,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/gallery-favorite.wav",
+  "rawSha256": "4ec877deec373f9e0ece9c2c087bffde84d93cf25650a665ec3cee310c0f1cf4",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -18.0,
+    "truePeakDb": 0.07,
+    "lra": 2.5,
+    "threshold": -28.59,
+    "targetOffset": 0.65,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.98,
+      "truePeakDb": -2.44,
+      "lra": 2.5,
+      "threshold": -29.57,
+      "targetOffset": 0.51
+    },
+    "decodedLoudnessCorrectionGainDb": 0.79
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-18.0:measured_LRA=2.5:measured_TP=0.07:measured_thresh=-28.59:offset=0.65:linear=true:print_format=summary,volume=0.7900dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

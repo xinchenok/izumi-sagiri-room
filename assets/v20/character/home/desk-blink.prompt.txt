@@ -1,0 +1,4 @@
+Use case: identity-preserve
+Asset type: one closed-eye blink frame of the supplied seated drawing sprite.
+The input image is the approved desk-focus master. Change ONLY the eyelids to a natural brief gentle blink: both eyes closed with delicate relaxed eyelash curves, no squinting, no exaggerated grin. Keep the same brows and tiny mouth, exact head angle and position, entire body, long hair, cat-ear pink hoodie, cream covered trousers, stylus and both hands pixel-position consistent. Do not change pose, framing, light, hair, folds or colors.
+Same portrait canvas and green background: uniform opaque fluorescent #00FF00 in all empty spaces. Do not add any desk, chair, room, shadow, extra object, text, watermark or checkerboard. Preserve cute all-ages clean cel linework. One PNG only.

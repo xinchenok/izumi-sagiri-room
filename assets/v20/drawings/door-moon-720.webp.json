@@ -1,0 +1,50 @@
+{
+  "id": "door-moon",
+  "subject": "door",
+  "palette": "moon",
+  "title": "门缝看月亮的小猫",
+  "paletteName": "银蓝月光",
+  "alt": "银蓝月光配色：浅银灰小猫从半开的门后探出圆脸和小爪，看向一弯月亮与两颗小星星",
+  "generatedAt": "2026-09-08T22:25:51.378773+00:00",
+  "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+  "source": ".tmp/v20-drawings/door/moon.png",
+  "sourceSha256": "1414ee60dfeb3cd217802468e8d799631fd0289fc5b715666d17f02e5a4a30b8",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "native4k": false,
+  "aspectRatio": "4:3",
+  "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+  "prompt": "Use case: precise-object-edit, color-palette variant. This image is the approved finished kitten artwork and the exact edit target. Change ONLY its illustration color palette as described below. Preserve the precise kitten identity, face, fur markings, expression, pose, silhouette, anatomy, linework, object shapes, sizes, positions, entire composition, plain paper, existing white margins, canvas size and exact 4:3 aspect ratio. Do not add, remove, shrink, move or redraw objects. Keep the current clean cute cel-anime illustration with thin clear lines, flat fills and simple pale shadows. Do not introduce paper texture, grain, brown/yellow aged wash, oil paint, watercolor, blur, haze, text, border, UI, signature or watermark. The background and existing paper margins stay clean near-white, not tinted.\nPalette replacement: Silver-blue moonlight palette: change the main pink door/blanket/pencil surfaces to soft silver-blue and clean silvery white, with delicate pale moon-yellow accents on the moon or stars. The kitten remains very pale silver-gray with pink inner ears/nose and exactly the same dark eyes.",
+  "promptFile": "assets/v20/drawings/prompts/door-moon.txt",
+  "promptSha256": "3d52363204cddce809079db6707764cc6ac7a6e9eaa5ff201c30e30e721220c0",
+  "references": [
+    {
+      "path": ".tmp/v20-drawings/door/strawberry.png",
+      "sha256": "51d1b5c38e1b2f8cebf2cc82ecdfc2ed556867f1d41b2834d1b8e6cba51bfcdf",
+      "role": "同主题草莓母图；只改配色"
+    },
+    {
+      "path": "assets/v18/drawing-door-moon-720.webp",
+      "sha256": "617e004e05b74cf333acf304b6fe493c1b753990b48e0af0cdf8e23013fa6607",
+      "role": "仅主题构图，不继承旧画风"
+    }
+  ],
+  "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+  "pillowVersion": "12.3.0",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/drawings/door-moon-720.webp",
+      "dimensions": [
+        720,
+        540
+      ],
+      "bytes": 16402,
+      "sha256": "79640e8e89f65d1f6e643c03e19009e3960e1fc68717adec96127b454840a823"
+    }
+  ]
+}

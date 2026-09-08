@@ -1,0 +1,93 @@
+{
+  "id": "desk-shy",
+  "outfitId": "home",
+  "generatedAt": "2026-09-08T20:00:11.254101+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/home/desk-shy-green.png",
+  "sourceSha256": "b716888c3eb571e29ce219f366bc084f3db48494e3c54ecd7373f1afd2b2a588",
+  "nativeSize": [
+    1061,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/desk-focus-green.png",
+      "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: one facial-expression variation of the supplied seated drawing sprite.\nThe input image is the approved desk-focus master. Change ONLY her gaze and tiny facial expression: she briefly notices the visitor beside her, both blue eyes turn slightly toward the viewer, eyebrows soften, cheeks become a touch rosier and her small mouth gives a shy pleased smile. Keep her head at the exact same angle and coordinates. Lock every other feature: identical silver-white hair strands, cat ears, pink bows, pink hoodie, cream fully covered pajama trousers, seated body, left resting hand, right writing hand and stylus, clothing folds, lighting, margins and crop. No body or hand movement, no head enlargement.\nRemain an opaque uniform #00FF00 chroma-green portrait image, same dimensions and composition as the input. Only the girl and stylus; no desk, chair, furniture, scenery, texture, cast shadow, gradient, green spill, checkerboard, text or watermark. Cute clean anime cel style, all-ages, fully clothed. One image only.\n",
+  "promptFile": "assets/v20/character/home/desk-shy.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: one facial-expression variation of the supplied seated drawing sprite.\nThe input image is the approved desk-focus master. Change ONLY her gaze and tiny facial expression: she briefly notices the visitor beside her, both blue eyes turn slightly toward the viewer, eyebrows soften, cheeks become a touch rosier and her small mouth gives a shy pleased smile. Keep her head at the exact same angle and coordinates. Lock every other feature: identical silver-white hair strands, cat ears, pink bows, pink hoodie, cream fully covered pajama trousers, seated body, left resting hand, right writing hand and stylus, clothing folds, lighting, margins and crop. No body or hand movement, no head enlargement.\nRemain an opaque uniform #00FF00 chroma-green portrait image, same dimensions and composition as the input. Only the girl and stylus; no desk, chair, furniture, scenery, texture, cast shadow, gradient, green spill, checkerboard, text or watermark. Cute clean anime cel style, all-ages, fully clothed. One image only.\n",
+  "promptSha256": "e650a43171b65b707398c3cb93c674de8d557cd1dad2ff636f7a80d90ce4a031",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/home/desk-shy-alpha.png",
+    "sha256": "7b7e66a2641ffcda2e332e9d078fc23b334156c034bf60ce1ef6a464d5e3ae87",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1061,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    21,
+    42,
+    1041,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.019793,
+    0.02834,
+    0.98115,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/home/desk-shy-720.webp",
+      "dimensions": [
+        720,
+        1006
+      ],
+      "bytes": 131106,
+      "sha256": "4213c2dac7a877cafda6b059adfa7dc5bb949bf65a9e382aef647f72cb70ecb5",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/character/home/desk-shy-1440.webp",
+      "dimensions": [
+        1440,
+        2011
+      ],
+      "bytes": 311116,
+      "sha256": "0a3634692b2aa63af298ff52f13fb323f1e90262ff89b47bdf010a277aab0a79",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/home/desk-shy-4k.webp",
+      "dimensions": [
+        2749,
+        3840
+      ],
+      "bytes": 727412,
+      "sha256": "410e74269e0e421122a1b8d8ae9739e1dfba635c0f3b5b82e8bdb5f0cbf9d735",
+      "hasAlpha": true
+    }
+  ]
+}

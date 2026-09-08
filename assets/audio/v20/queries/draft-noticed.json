@@ -1,0 +1,53 @@
+{
+  "id": "draft-noticed",
+  "scene": "草稿被看见",
+  "textJa": "あっ、それはまだ下書き。そんなにじっと見ないで……。",
+  "textZh": "啊，那还是草稿。别那么认真地盯着看……",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 103,
+  "paddedPhonemeCount": 103,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/draft-noticed.wav",
+  "rawSha256": "d286319046f6a6f562eda05e8e7c5a881f963b68b8434ff9778ae098a004c20d",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -15.46,
+    "truePeakDb": -0.54,
+    "lra": 1.1,
+    "threshold": -26.0,
+    "targetOffset": -0.98,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.45,
+      "truePeakDb": -3.55,
+      "lra": 1.1,
+      "threshold": -28.99,
+      "targetOffset": -0.98
+    },
+    "decodedLoudnessCorrectionGainDb": 0.45
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-15.46:measured_LRA=1.1:measured_TP=-0.54:measured_thresh=-26.0:offset=-0.98:linear=true:print_format=summary,volume=0.4500dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

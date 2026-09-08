@@ -1,0 +1,53 @@
+{
+  "id": "goodnight",
+  "scene": "晚安",
+  "textJa": "おやすみ。明日も……無理しないでね。",
+  "textZh": "晚安。明天也……不要勉强自己哦。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 73,
+  "paddedPhonemeCount": 73,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/goodnight.wav",
+  "rawSha256": "a9506f417d9026bdf5badb0f074d4656cd9b931743114e2dd5f516e4a3780135",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -14.66,
+    "truePeakDb": 0.09,
+    "lra": 1.7,
+    "threshold": -25.64,
+    "targetOffset": -2.26,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.45,
+      "truePeakDb": -3.7,
+      "lra": 1.7,
+      "threshold": -29.43,
+      "targetOffset": -2.26
+    },
+    "decodedLoudnessCorrectionGainDb": 0.45
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-14.66:measured_LRA=1.7:measured_TP=0.09:measured_thresh=-25.64:offset=-2.26:linear=true:print_format=summary,volume=0.4500dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}
