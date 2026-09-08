@@ -26,6 +26,7 @@ from fontTools.ttLib import TTFont
 
 NOTO_COMMIT = "f8d157532fbfaeda587e826d4cd5b21a49186f7c"
 NOTO_BASE = f"https://raw.githubusercontent.com/notofonts/noto-cjk/{NOTO_COMMIT}"
+LONG_CANG_COMMIT = "baa2e5561af8a4873b058859dcfe158bdd033942"
 SOURCES = (
     {
         "family": "RoomTitle", "sourceFamily": "LXGW WenKai", "file": "LXGWWenKai-Regular.ttf",
@@ -47,6 +48,14 @@ SOURCES = (
         "revision": NOTO_COMMIT, "sha256": "68a3fc98800b2a27b371f2fb79991daf3633bd89309d4ffaa6946fd587f375b5",
         "licenseFile": "OFL-NotoSansCJK.txt", "licenseUrl": f"{NOTO_BASE}/Sans/LICENSE",
         "licenseSha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+    },
+    {
+        "family": "RoomSign", "sourceFamily": "Long Cang", "file": "LongCang-Regular.ttf",
+        "url": f"https://raw.githubusercontent.com/google/fonts/{LONG_CANG_COMMIT}/ofl/longcang/LongCang-Regular.ttf",
+        "revision": LONG_CANG_COMMIT, "sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
+        "licenseFile": "OFL-LongCang.txt", "licenseUrl": f"https://raw.githubusercontent.com/google/fonts/{LONG_CANG_COMMIT}/ofl/longcang/OFL.txt",
+        "licenseSha256": "603546b7219a94bb59bf8294458194a5010119486354092b66a09a3fd61aeacc",
+        "subsetText": "纱雾的房间", "usage": "仅用于房间 h1 门签标题；不替代正文、日文字幕或其他短标题",
     },
 )
 
@@ -103,20 +112,25 @@ def rename_family(font: TTFont, family: str) -> None:
             top_dict.FullName = f"{family} Regular"
 
 
-def build(source_dir: Path, output_dir: Path, scan_files: list[Path]) -> None:
+def build(source_dir: Path, output_dir: Path, scan_files: list[Path], families: list[str] | None = None) -> None:
     codepoints, inputs = collect_codepoints(scan_files)
     output_dir.mkdir(parents=True, exist_ok=True)
     generated_at = datetime.now(timezone.utc).isoformat()
-    records = []
+    manifest_path = output_dir / "font-manifest.json"
+    previous = json.loads(manifest_path.read_text(encoding="utf-8")) if families and manifest_path.exists() else {}
+    records = [record for record in previous.get("fonts", []) if record["family"] not in families] if families else []
     for source in SOURCES:
+        if families and source["family"] not in families:
+            continue
         source_path = source_dir / source["file"]
         license_path = source_dir / source["licenseFile"]
         if sha256(source_path) != source["sha256"] or sha256(license_path) != source["licenseSha256"]:
             raise ValueError(f"固定源文件或许可哈希不一致：{source['family']}")
         font = TTFont(source_path, recalcTimestamp=False)
         source_cmap = font.getBestCmap()
-        supported = codepoints.intersection(source_cmap)
-        missing = codepoints.difference(source_cmap)
+        source_codepoints = set(map(ord, source["subsetText"])) if source.get("subsetText") else codepoints
+        supported = source_codepoints.intersection(source_cmap)
+        missing = source_codepoints.difference(source_cmap)
         language_missing = sorted(cp for cp in missing if required_language_codepoint(cp))
         if language_missing:
             raise ValueError(f"{source['family']} 原字体缺少所需中日文字：" + "".join(chr(cp) for cp in language_missing))
@@ -146,19 +160,19 @@ def build(source_dir: Path, output_dir: Path, scan_files: list[Path]) -> None:
             "sourcePath": relative(source_path), "sourceSha256": source["sha256"], "sourceBytes": source_path.stat().st_size,
             "output": relative(output_path), "outputSha256": sha256(output_path), "bytes": output_path.stat().st_size,
             "weight": 400, "style": "normal", "license": "SIL Open Font License 1.1",
-            "requestedCodepointCount": len(codepoints), "cmapCodepointCount": len(actual_cmap), "glyphCount": glyph_count,
+            "requestedCodepointCount": len(source_codepoints), "cmapCodepointCount": len(actual_cmap), "glyphCount": glyph_count,
             "missingLanguageCodepoints": [], "missingAfterExport": [],
             "systemFallbackSymbols": [{"codepoint": f"U+{cp:04X}", "character": chr(cp)} for cp in sorted(missing)],
         })
         print(f"{source['family']}: {output_path.stat().st_size:,} 字节；cmap {len(actual_cmap)}；中日文缺字 0")
     manifest = {
         "schemaVersion": 1, "generatedAt": generated_at, "fontToolsVersion": fonttools_version,
-        "purpose": "V20 本地字体；正文 Noto SC、日文 Noto JP、短标题文楷；非官方衍生子集名称",
-        "sourcesPinned": True, "inputFiles": inputs,
-        "requestedCodepoints": [f"U+{cp:04X}" for cp in sorted(codepoints)],
-        "fonts": records,
-        "rebuild": "python tools/build-v20-fonts.py --source-dir .tmp/v20-fonts/source --scan index.html script.js assets/audio/v20/voice-manifest.json",
-        "notes": ["完整原字体仅存忽略目录；发布三个 WOFF2 子集。", "每个字体包含全部扫描文本中其源字体支持的字符，含 ASCII、数字和符号；所有中日文字逐字检查 cmap。", "源字体不包含的少量绘图/表情符号交给系统回退；逐项记录，不隐藏中日文缺字。", "复跑会根据指定文本文件重建这三个 V20 派生子集；不会改动旧版本字体。"],
+        "purpose": "V20 本地字体；正文 Noto SC、日文 Noto JP、短标题文楷、房间 h1 龙藏体五字门签；非官方衍生子集名称",
+        "sourcesPinned": True, "inputFiles": previous.get("inputFiles", inputs),
+        "requestedCodepoints": previous.get("requestedCodepoints", [f"U+{cp:04X}" for cp in sorted(codepoints)]),
+        "fonts": sorted(records, key=lambda record: next(index for index, source in enumerate(SOURCES) if source["family"] == record["family"])),
+        "rebuild": "python tools/build-v20-fonts.py --source-dir .tmp/v20-fonts/source --scan " + " ".join(relative(path) for path in scan_files),
+        "notes": ["完整原字体仅存忽略目录；发布四个 WOFF2 子集。", "RoomTitle、RoomBody、RoomJapanese 包含扫描文本中其源字体支持的字符；RoomSign 仅包含固定标题纱雾的房间五字，实际 cmap 均逐字核验。", "源字体不包含的少量绘图/表情符号交给系统回退；逐项记录，不隐藏中日文缺字。", "--family 可只重建指定子集并保留其他已发布字体字节和原输入指纹；不指定时重建四个 V20 子集。不会删除旧版本字体。"],
     }
     (output_dir / "font-manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -168,13 +182,14 @@ def main() -> None:
     parser.add_argument("--source-dir", type=Path, default=ROOT / ".tmp/v20-fonts/source")
     parser.add_argument("--output-dir", type=Path, default=ROOT / "assets/fonts/v20")
     parser.add_argument("--scan", nargs="+", type=Path)
+    parser.add_argument("--family", action="append", choices=tuple(source["family"] for source in SOURCES), help="只构建指定字体，可重复；保留其他已生成字体与记录")
     args = parser.parse_args()
     scan_files = args.scan or [ROOT / "index.html", ROOT / "script.js"]
     if args.scan is None:
         audio_manifest = ROOT / "assets/audio/v20/voice-manifest.json"
         if audio_manifest.exists():
             scan_files.append(audio_manifest)
-    build(args.source_dir, args.output_dir, scan_files)
+    build(args.source_dir, args.output_dir, scan_files, args.family)
 
 
 if __name__ == "__main__":

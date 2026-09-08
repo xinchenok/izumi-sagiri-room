@@ -314,7 +314,8 @@ function voices() {
 
 function fonts() {
   const manifest = loadJson("assets/fonts/v20/font-manifest.json");
-  requireThat(manifest.fonts.length === 3 && new Set(manifest.fonts.map((font) => font.family)).size === 3, "需要三个本地字体子集");
+  const fontFamilies = new Set(["RoomTitle", "RoomBody", "RoomJapanese", "RoomSign"]);
+  requireThat(manifest.fonts.length === 4 && new Set(manifest.fonts.map((font) => font.family)).size === 4 && manifest.fonts.every((font) => fontFamilies.has(font.family)), "需要 RoomTitle、RoomBody、RoomJapanese 与 RoomSign 四个本地字体子集");
   for (const input of manifest.inputFiles) check(`字体扫描输入 ${input.path}`, () => {
     const path = runtimePath(input.path);
     requireThat(hashShape(input.sha256), "缺少构建时输入指纹");
@@ -328,6 +329,7 @@ function fonts() {
     requireThat(font.url?.startsWith("https://") && font.revision && font.license && font.licenseUrl, "缺少字体固定来源或许可");
     requireThat(font.missingAfterExport?.length === 0 && font.missingLanguageCodepoints?.length === 0, "字体清单报告中日文缺字");
     requireThat(font.cmapCodepointCount > 0 && font.glyphCount > 0, "缺少字体实际字符映射检查记录");
+    if (font.family === "RoomSign") requireThat(font.subsetText === "纱雾的房间" && font.requestedCodepointCount === 5 && font.cmapCodepointCount === 5, "RoomSign 必须只包含房间标题五字");
     counts.fonts += 1;
   });
 }

@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-08T22:43:52.656715+00:00",
+  "generatedAt": "2026-09-08T23:12:10.701943+00:00",
   "fontToolsVersion": "4.62.0",
-  "purpose": "V20 本地字体；正文 Noto SC、日文 Noto JP、短标题文楷；非官方衍生子集名称",
+  "purpose": "V20 本地字体；正文 Noto SC、日文 Noto JP、短标题文楷、房间 h1 龙藏体五字门签；非官方衍生子集名称",
   "sourcesPinned": true,
   "inputFiles": [
     {
       "path": "index.html",
-      "sha256": "bcfc5ddaac1827c5ea36bf95f514381db9b952282411c82b46b0b4a0becfd3dd",
-      "bytes": 32652
+      "sha256": "94f1e9c4e60f9da5a71af7ed77cbf79aba7c95c7f5a429d242482d6d8b5a9bc7",
+      "bytes": 32729
     },
     {
       "path": "script.js",
@@ -22,8 +22,8 @@
     },
     {
       "path": "room.js",
-      "sha256": "43c15068a02eb2df0aacee22818260b0d08761e767fbaedf7f42572d79bd97ef",
-      "bytes": 73644
+      "sha256": "7d68798cd34fe8770def48b8f5b866a833f6cc91eb50519eaa7789cb74a6c1e2",
+      "bytes": 73790
     },
     {
       "path": "room-inspector.js",
@@ -1276,13 +1276,41 @@
       "missingLanguageCodepoints": [],
       "missingAfterExport": [],
       "systemFallbackSymbols": []
+    },
+    {
+      "family": "RoomSign",
+      "sourceFamily": "Long Cang",
+      "file": "LongCang-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/baa2e5561af8a4873b058859dcfe158bdd033942/ofl/longcang/LongCang-Regular.ttf",
+      "revision": "baa2e5561af8a4873b058859dcfe158bdd033942",
+      "sha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
+      "licenseFile": "OFL-LongCang.txt",
+      "licenseUrl": "https://raw.githubusercontent.com/google/fonts/baa2e5561af8a4873b058859dcfe158bdd033942/ofl/longcang/OFL.txt",
+      "licenseSha256": "603546b7219a94bb59bf8294458194a5010119486354092b66a09a3fd61aeacc",
+      "subsetText": "纱雾的房间",
+      "usage": "仅用于房间 h1 门签标题；不替代正文、日文字幕或其他短标题",
+      "sourcePath": ".tmp/v20-fonts/source/LongCang-Regular.ttf",
+      "sourceSha256": "e5bf2c3f24ef2327c6f136d8f73e2f9dfdf44896fdbeb35a9515f44777bb91bc",
+      "sourceBytes": 5162508,
+      "output": "assets/fonts/v20/RoomSign.woff2",
+      "outputSha256": "2000391c403077908ca20087f423c73c8241bba6bb4435c9253f10ab09b02cef",
+      "bytes": 3076,
+      "weight": 400,
+      "style": "normal",
+      "license": "SIL Open Font License 1.1",
+      "requestedCodepointCount": 5,
+      "cmapCodepointCount": 5,
+      "glyphCount": 6,
+      "missingLanguageCodepoints": [],
+      "missingAfterExport": [],
+      "systemFallbackSymbols": []
     }
   ],
-  "rebuild": "python tools/build-v20-fonts.py --source-dir .tmp/v20-fonts/source --scan index.html script.js assets/audio/v20/voice-manifest.json",
+  "rebuild": "python tools/build-v20-fonts.py --source-dir .tmp/v20-fonts/source --scan index.html script.js room-core.js room.js room-inspector.js assets/audio/v20/voice-manifest.json",
   "notes": [
-    "完整原字体仅存忽略目录；发布三个 WOFF2 子集。",
-    "每个字体包含全部扫描文本中其源字体支持的字符，含 ASCII、数字和符号；所有中日文字逐字检查 cmap。",
+    "完整原字体仅存忽略目录；发布四个 WOFF2 子集。",
+    "RoomTitle、RoomBody、RoomJapanese 包含扫描文本中其源字体支持的字符；RoomSign 仅包含固定标题纱雾的房间五字，实际 cmap 均逐字核验。",
     "源字体不包含的少量绘图/表情符号交给系统回退；逐项记录，不隐藏中日文缺字。",
-    "复跑会根据指定文本文件重建这三个 V20 派生子集；不会改动旧版本字体。"
+    "--family 可只重建指定子集并保留其他已发布字体字节和原输入指纹；不指定时重建四个 V20 子集。不会删除旧版本字体。"
   ]
 }
