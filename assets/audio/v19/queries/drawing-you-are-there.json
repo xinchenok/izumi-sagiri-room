@@ -1,0 +1,44 @@
+{
+  "id": "drawing-you-are-there",
+  "scene": "一起画",
+  "japanese": "何も言わなくても、そこにいるのは分かってる。",
+  "chinese": "就算什么都不说，我也知道你在那里。",
+  "profile": "shy",
+  "requested_params": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "applied_scales": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 100,
+  "padded_phoneme_count": 100,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/drawing-you-are-there.wav",
+  "raw_wav_sha256": "88f91dd225c40823df83fc1e0ebd2e98345bedeab6c046d3d7d6ffe12f6715ac",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -17.54,
+    "true_peak_db": 0.14,
+    "lra": 1.9,
+    "threshold": -28.63,
+    "target_offset": -1.24
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-17.54:measured_LRA=1.9:measured_TP=0.14:measured_thresh=-28.63:offset=-1.24:linear=true:print_format=summary"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "room-chair",
+  "scene": "房间",
+  "japanese": "そこ、椅子を少しだけ空けておいたの。",
+  "chinese": "那里……我稍微把椅子空出来了。",
+  "profile": "shy",
+  "requested_params": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "applied_scales": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 74,
+  "padded_phoneme_count": 74,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/room-chair.wav",
+  "raw_wav_sha256": "ea97da2b1210cb095a2fd6046f812cfddab2a4f59675ad6abd49f99a815e91a3",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -16.72,
+    "true_peak_db": 0.16,
+    "lra": 0.3,
+    "threshold": -27.16,
+    "target_offset": -0.29
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-16.72:measured_LRA=0.3:measured_TP=0.16:measured_thresh=-27.16:offset=-0.29:linear=true:print_format=summary"
+}

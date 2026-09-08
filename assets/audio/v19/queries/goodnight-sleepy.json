@@ -1,0 +1,44 @@
+{
+  "id": "goodnight-sleepy",
+  "scene": "晚安",
+  "japanese": "もう少し起きていたいけど、目が勝手に閉じそう……。",
+  "chinese": "还想再醒一会儿，可眼睛好像要自己闭上了……",
+  "profile": "sleepy",
+  "requested_params": {
+    "noise_scale": 0.58,
+    "length_scale": 1.68,
+    "noise_w": 0.68
+  },
+  "applied_scales": {
+    "noise_scale": 0.58,
+    "length_scale": 1.68,
+    "noise_w": 0.68
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 102,
+  "padded_phoneme_count": 102,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/goodnight-sleepy.wav",
+  "raw_wav_sha256": "30e246324cc20afc6969a96547665ef8bba49d6c94fcf965193ec66daa2f4625",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -19.58,
+    "true_peak_db": 0.05,
+    "lra": 2.1,
+    "threshold": -29.99,
+    "target_offset": 0.17
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-19.58:measured_LRA=2.1:measured_TP=0.05:measured_thresh=-29.99:offset=0.17:linear=true:print_format=summary"
+}

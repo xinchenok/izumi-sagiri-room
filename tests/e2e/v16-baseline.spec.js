@@ -54,6 +54,13 @@ test("禁用 JavaScript 时仍能阅读基础内容", async ({ browser }) => {
     await expect(page.locator("#main-content")).toBeVisible();
     await expect(page.locator("#hero-title")).toContainText("和泉纱雾");
     await expect(page.locator("#heroCharacter")).toBeVisible();
+    await expect(page.locator("#cinematicScrollGrid")).toBeHidden();
+    await expect(page.locator("#motionModeButton")).toBeHidden();
+    await expect(page.locator(".cinematic-noscript figure")).toHaveCount(7);
+    await expect(page.locator(".cinematic-noscript details")).toHaveCount(7);
+    await page.locator(".cinematic-noscript summary").first().click();
+    await expect(page.locator(".cinematic-noscript details").first()).toHaveAttribute("open", "");
+    await expect(page.locator(".cinematic-noscript figure").first()).toBeVisible();
     await expect(page.locator(".noscript-note")).toContainText("JavaScript 未启用");
   } finally {
     await context.close();

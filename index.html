@@ -7,8 +7,9 @@
   <meta name="description" content="轻轻敲开和泉纱雾的房门，在画桌、床边、衣橱和窗台之间移动，陪她画画、翻看画册，并听见不同语气的日语回应。">
   <title>和泉纱雾的房门里</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23573A3E'/%3E%3Cpath d='M18 14h30v40H18z' fill='%23D88CA2'/%3E%3Ccircle cx='40' cy='35' r='3' fill='%23F7D46A'/%3E%3Cpath d='m23 19 5 4 5-4 5 4 5-4v10H23z' fill='%23EAF4F5'/%3E%3C/svg%3E">
-  <link rel="preload" href="assets/v18/hero-peek-1440.webp" as="image" type="image/webp" imagesrcset="assets/v18/hero-peek-720.webp 720w, assets/v18/hero-peek-1440.webp 1440w, assets/v18/master/hero-peek-4k.webp 3072w" imagesizes="(max-width: 760px) calc(100vw - 1.6rem), (max-width: 1024px) 78vw, 820px">
-  <link rel="stylesheet" href="styles.css?v=20260904-3">
+  <link rel="preload" href="assets/v19/door-peek-720.webp" as="image" type="image/webp" media="(max-width: 760px)">
+  <link rel="preload" href="assets/v19/door-peek-1440.webp" as="image" type="image/webp" media="(min-width: 761px)">
+  <link rel="stylesheet" href="styles.css?v=20260904-4">
   <script>
     if ("scrollRestoration" in history) history.scrollRestoration = "auto";
     window.__sagiriDiscardedHash = Boolean(window.location.hash);
@@ -26,13 +27,16 @@
       <span>纱雾的房间</span>
     </a>
     <nav aria-label="房间导览">
+      <a href="#cinematic-visit">拜访</a>
       <a href="#living-room">房间</a>
       <a href="#wardrobe">衣橱</a>
       <a href="#gallery">画稿</a>
       <a href="#drawing-story">一起画</a>
       <a href="#goodnight">晚安</a>
     </nav>
-    <span class="quiet-lamp"><i aria-hidden="true"></i>请小声一点</span>
+    <button class="quiet-lamp" id="motionModeButton" type="button" aria-pressed="false">
+      <i aria-hidden="true"></i><span>让房间静一静</span>
+    </button>
   </header>
 
   <main id="main-content" tabindex="-1">
@@ -45,7 +49,11 @@
 
       <div class="door-scene" id="doorScene">
         <div class="room-glimpse" aria-hidden="true"></div>
-        <img class="hero-character" id="heroCharacter" src="assets/v18/master/hero-peek-4k.webp" srcset="assets/v18/hero-peek-720.webp 720w, assets/v18/hero-peek-1440.webp 1440w, assets/v18/master/hero-peek-4k.webp 3072w" sizes="(max-width: 760px) calc(100vw - 1.6rem), (max-width: 1024px) 78vw, 820px" width="3072" height="3840" fetchpriority="high" alt="银白长发、蓝眼睛的纱雾穿着粉色猫耳家居服，握着半掩的卧室门害羞偷看">
+        <picture id="heroPicture">
+          <source id="heroMobileSource" media="(max-width: 760px)" srcset="assets/v19/door-peek-720.webp">
+          <source id="heroDesktopSource" media="(min-width: 761px)" srcset="assets/v19/door-peek-1440.webp">
+          <img class="hero-character" id="heroCharacter" src="assets/v19/door-peek-720.webp" width="720" height="900" fetchpriority="high" alt="银白长发、蓝眼睛的纱雾穿着粉色猫耳家居服，握着半掩的卧室门害羞偷看">
+        </picture>
 
         <div class="door-leaf" id="doorLeaf" aria-hidden="true">
           <div class="room-plaque">
@@ -81,6 +89,87 @@
         </div>
 
       </div>
+    </section>
+
+    <section class="cinematic-visit" id="cinematic-visit" aria-labelledby="cinematic-title">
+      <header class="cinematic-heading">
+        <h2 id="cinematic-title">房间会记得你走近的方式。</h2>
+        <p>继续向下走，她会从门缝、笔尖和袖口里一点点回应你。滚动只推动画面，声音永远等你亲手触碰。</p>
+      </header>
+
+      <div class="cinematic-scroll-grid" id="cinematicScrollGrid">
+        <div class="cinematic-stage-rail">
+          <figure class="cinematic-stage" id="cinematicStage" data-scene="door" data-frame-kind="portrait">
+            <div class="cinematic-frame" id="cinematicFrame">
+              <img class="cinematic-layer is-visible" id="cinematicLayerA" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23d9eee5'/%3E%3C/svg%3E" width="720" height="540" loading="lazy" decoding="async" alt="纱雾从半掩的卧室门后安静偷看">
+              <img class="cinematic-layer" id="cinematicLayerB" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23d9eee5'/%3E%3C/svg%3E" width="720" height="540" loading="lazy" decoding="async" alt="" aria-hidden="true">
+              <span class="cinematic-door-edge" aria-hidden="true"></span>
+              <span class="cinematic-pencil-trace" aria-hidden="true"></span>
+            </div>
+            <figcaption class="cinematic-caption">
+              <span id="cinematicActLabel">第一幕 · 房门</span>
+              <strong id="cinematicShortLine">她听见了，却还在确认是不是你。</strong>
+              <small id="cinematicFrameStatus">1 / 4 · 安静偷看</small>
+              <button id="cinematicRetry" type="button" hidden>重新加载这一幕</button>
+            </figcaption>
+            <button class="cinematic-inspect-button" id="cinematicInspectButton" type="button" aria-haspopup="dialog" aria-controls="cinematicInspectDialog">
+              <svg aria-hidden="true" viewBox="0 0 32 32"><path d="M5 8h22v16H5zM10 13h12M10 18h8"/></svg>
+              <span>看看房间</span>
+            </button>
+          </figure>
+          <div class="cinematic-progress" id="cinematicProgress" aria-label="七幕拜访进度"></div>
+        </div>
+
+        <div class="cinematic-beats" id="cinematicBeats">
+          <article class="cinematic-beat is-active" data-scene="door" id="cinematic-door">
+            <div><span>第一幕</span><h3>房门</h3><p>她听见了，却还在确认是不是你。</p>
+              <details><summary>展开门口原稿</summary><p>先让敲门声落下，再等门缝里的蓝眼睛认出你。她并不冷淡，只是需要一个不会突然闯进来的理由。</p><a href="#home">回到房门互动</a></details>
+            </div>
+          </article>
+          <article class="cinematic-beat" data-scene="room" id="cinematic-room">
+            <div><span>第二幕</span><h3>房间</h3><p>笔尖没有停，旁边的椅子却悄悄空出来。</p>
+              <details><summary>展开房间原稿</summary><p>沿着床边慢慢挪过去，数位笔、椅子和窗帘都替她留下了一点允许靠近的痕迹。</p><a href="#living-room">进入完整房间</a></details>
+            </div>
+          </article>
+          <article class="cinematic-beat" data-scene="secrets" id="cinematic-secrets">
+            <div><span>第三幕</span><h3>桌面秘密</h3><p>每件被收好的东西，都比她更会说实话。</p>
+              <details><summary>展开秘密原稿</summary><p>耳机总朝着同一个方向，草稿只露出一个纸角，抽屉的锁扣则在等她亲手把秘密分你一半。</p><a href="#room">寻找五个旧彩蛋</a></details>
+            </div>
+          </article>
+          <article class="cinematic-beat" data-scene="wardrobe" id="cinematic-wardrobe">
+            <div><span>第四幕</span><h3>衣橱</h3><p>她说只是试一下，却一直等你点头。</p>
+              <details><summary>展开衣橱原稿</summary><p>长袖藏住手指，两套衣服挡在脸前。真正想问的不是哪件更好看，而是你有没有认真看她。</p><a href="#wardrobe">帮她换装</a></details>
+            </div>
+          </article>
+          <article class="cinematic-beat" data-scene="gallery" id="cinematic-gallery">
+            <div><span>第五幕</span><h3>画册</h3><p>画册越往后，她藏起来的速度越慢。</p>
+              <details><summary>展开画册原稿</summary><p>第一页还有些发抖，最后一页却已经向你推近。她把夸奖说成检查，只是不想承认自己在期待。</p><a href="#gallery">翻看秘密画稿</a></details>
+            </div>
+          </article>
+          <article class="cinematic-beat" data-scene="drawing" id="cinematic-drawing">
+            <div><span>第六幕</span><h3>一起画</h3><p>这次，她没有把旁边的位置收回去。</p>
+              <details><summary>展开共同创作原稿</summary><p>停笔、偷看、遮住画面，然后终于把完成稿推到你面前。整段沉默也可以是一种陪伴。</p><a href="#drawing-story">陪她完成一张画</a></details>
+            </div>
+          </article>
+          <article class="cinematic-beat" data-scene="goodnight" id="cinematic-goodnight">
+            <div><span>第七幕</span><h3>晚安</h3><p>门会合上，但她把明天留了一条缝。</p>
+              <details><summary>展开晚安原稿</summary><p>台灯变暗，玩偶被抱紧，书页停在下次继续的地方。她困得睁不开眼，还是记得提醒你下次敲门。</p><a href="#goodnight">收下今晚的小纸条</a></details>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <noscript>
+        <div class="cinematic-noscript">
+          <figure><img src="assets/v19/door-peek-720.webp" width="720" height="900" alt="纱雾从门后偷看"><figcaption>房门 · 她听见了，却还在确认是不是你。</figcaption><details><summary>展开门口原稿</summary><p>先让敲门声落下，再等门缝里的蓝眼睛认出你。她并不冷淡，只是需要一个不会突然闯进来的理由。</p><a href="#home">回到房门互动</a></details></figure>
+          <figure><img src="assets/v19/room-drawing-720.webp" width="720" height="540" alt="纱雾在画桌前继续画画"><figcaption>房间 · 笔尖没有停，旁边的椅子却悄悄空出来。</figcaption><details><summary>展开房间原稿</summary><p>沿着床边慢慢挪过去，数位笔、椅子和窗帘都替她留下了一点允许靠近的痕迹。</p><a href="#living-room">进入完整房间</a></details></figure>
+          <figure><img src="assets/v19/secrets-caught-720.webp" width="720" height="540" alt="纱雾发现你在看桌面秘密"><figcaption>桌面秘密 · 每件被收好的东西，都比她更会说实话。</figcaption><details><summary>展开秘密原稿</summary><p>耳机总朝着同一个方向，草稿只露出一个纸角，抽屉的锁扣则在等她亲手把秘密分你一半。</p><a href="#room">寻找五个旧彩蛋</a></details></figure>
+          <figure><img src="assets/v19/wardrobe-hides-sleeves-720.webp" width="720" height="900" alt="纱雾用长袖藏住手指"><figcaption>衣橱 · 她说只是试一下，却一直等你点头。</figcaption><details><summary>展开衣橱原稿</summary><p>长袖藏住手指，两套衣服挡在脸前。真正想问的不是哪件更好看，而是你有没有认真看她。</p><a href="#wardrobe">帮她换装</a></details></figure>
+          <figure><img src="assets/v19/gallery-hides-book-720.webp" width="720" height="540" alt="纱雾害羞地把画册挡在面前"><figcaption>画册 · 画册越往后，她藏起来的速度越慢。</figcaption><details><summary>展开画册原稿</summary><p>第一页还有些发抖，最后一页却已经向你推近。她把夸奖说成检查，只是不想承认自己在期待。</p><a href="#gallery">翻看秘密画稿</a></details></figure>
+          <figure><img src="assets/v19/drawing-focus-720.webp" width="720" height="540" alt="纱雾专心画下最后几笔"><figcaption>一起画 · 这次，她没有把旁边的位置收回去。</figcaption><details><summary>展开共同创作原稿</summary><p>停笔、偷看、遮住画面，然后终于把完成稿推到你面前。整段沉默也可以是一种陪伴。</p><a href="#drawing-story">陪她完成一张画</a></details></figure>
+          <figure><img src="assets/v19/goodnight-hug-720.webp" width="720" height="540" alt="纱雾在夜里抱紧猫咪玩偶"><figcaption>晚安 · 门会合上，但她把明天留了一条缝。</figcaption><details><summary>展开晚安原稿</summary><p>台灯变暗，玩偶被抱紧，书页停在下次继续的地方。她困得睁不开眼，还是记得提醒你下次敲门。</p><a href="#goodnight">收下今晚的小纸条</a></details></figure>
+        </div>
+      </noscript>
     </section>
 
     <section class="room-section" id="room" aria-labelledby="room-title">
@@ -453,10 +542,50 @@
     </section>
   </main>
 
+  <dialog class="cinematic-inspect" id="cinematicInspectDialog" aria-labelledby="cinematicInspectTitle">
+    <div class="cinematic-inspect-shell">
+      <header>
+        <div><span id="cinematicInspectAct">第一幕 · 房门</span><h2 id="cinematicInspectTitle">轻轻看看房间</h2></div>
+        <button class="cinematic-inspect-close" id="cinematicInspectClose" type="button" aria-label="退出观察模式">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <p class="cinematic-inspect-help" id="cinematicInspectHelp">拖动观察 · 滚轮或双指缩放 · 双击放大 · 方向键移动</p>
+      <div class="cinematic-inspect-viewport" id="cinematicInspectViewport" tabindex="0" aria-describedby="cinematicInspectHelp">
+        <div class="cinematic-inspect-canvas" id="cinematicInspectCanvas">
+          <img id="cinematicInspectImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23d9eee5'/%3E%3C/svg%3E" width="1440" height="1080" alt="房门场景的可自由观察插画" draggable="false">
+          <div class="cinematic-inspect-hotspots" id="cinematicInspectHotspots"></div>
+          <button class="cinematic-character-hotspot" id="cinematicCharacterHotspot" type="button" aria-label="轻声呼唤纱雾">
+            <span aria-hidden="true">纱雾</span>
+          </button>
+        </div>
+        <div class="cinematic-inspect-error" id="cinematicInspectError" hidden>
+          <strong>这一幕暂时没有加载出来。</strong>
+          <p id="cinematicInspectFallback">她听见了，却还在确认是不是你。</p>
+          <button id="cinematicInspectRetry" type="button">再试一次</button>
+        </div>
+      </div>
+      <footer>
+        <div class="cinematic-inspect-reply" aria-live="polite" aria-atomic="true">
+          <p id="cinematicInspectJapanese" lang="ja"></p>
+          <strong id="cinematicInspectChinese">碰一下物件，她会小声告诉你它的故事。</strong>
+          <span id="cinematicInspectPlayback">声音等你点击后才响起。</span>
+        </div>
+        <button id="cinematicZoomOut" type="button" aria-label="缩小观察画面">−</button>
+        <output id="cinematicZoomStatus" aria-live="polite">100%</output>
+        <button id="cinematicZoomIn" type="button" aria-label="放大观察画面">＋</button>
+        <button id="cinematicInspectReset" type="button">复位画面</button>
+        <button id="cinematicVoiceToggle" type="button" aria-pressed="false">角色声音 · 开</button>
+        <button id="cinematicFoleyToggle" type="button" aria-pressed="false">物件声音 · 开</button>
+        <button id="cinematicVoiceStop" type="button" aria-label="停止角色语音">停一下</button>
+      </footer>
+    </div>
+  </dialog>
+
   <section class="feedback-dock" id="feedbackDock" aria-label="纱雾的反应与语音字幕">
     <aside class="reaction-corner" id="reactionCorner" aria-label="纱雾的即时反应">
       <div class="reaction-face">
-        <img id="reactionImage" src="assets/v18/hero-peek-720.webp" width="720" height="900" alt="纱雾的即时表情">
+        <img id="reactionImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='3'%3E%3Crect width='4' height='3' fill='%23d9eee5'/%3E%3C/svg%3E" width="720" height="900" loading="lazy" decoding="async" alt="纱雾的即时表情">
       </div>
       <div class="reaction-copy">
         <span id="reactionLabel">纱雾的反应</span>
@@ -495,9 +624,10 @@
       <summary>创作与素材说明</summary>
       <div>
         <p>个人非盈利原创同人页面 · 未使用官方图片、动画音轨或声优声纹克隆</p>
-        <p>日语语音：AivisSpeech「天深シノ」· 依据 ACML-NC 1.0 使用 · <a href="https://hub.aivis-project.com/aivm-models/0f6821f4-9f86-4da1-a41a-fbe6fff9ca88" target="_blank" rel="noreferrer">模型来源</a></p>
-        <p>房间专属日语语音：Piper Plus「つくよみちゃん」· <a href="https://huggingface.co/ayousanz/piper-plus-tsukuyomi-chan" target="_blank" rel="noreferrer">模型来源</a> · <a href="https://tyc.rei-yumesaki.net/material/corpus/" target="_blank" rel="noreferrer">语料与使用条款</a></p>
-        <p>房间物件声与晚安关门声：十三份 Freesound CC0 现场录音 · <a href="https://github.com/xinchenok/izumi-sagiri-room/blob/main/assets/audio/v14/ROOM-FOLEY-SOURCES.md" target="_blank" rel="noreferrer">房间来源</a> · <a href="https://github.com/xinchenok/izumi-sagiri-room/blob/main/assets/audio/v16/GOODNIGHT-DOOR-SOURCE.md" target="_blank" rel="noreferrer">关门来源</a></p>
+        <p>原有场景按钮日语语音：AivisSpeech「天深シノ」· 依据 ACML-NC 1.0 使用 · <a href="https://hub.aivis-project.com/aivm-models/0f6821f4-9f86-4da1-a41a-fbe6fff9ca88" target="_blank" rel="noreferrer">模型来源</a></p>
+        <p>房间与 V19 七幕日语语音：Piper Plus「つくよみちゃん」预训练模型 · 不训练、不微调、不使用动画音轨或真实声优声纹克隆 · <a href="https://huggingface.co/ayousanz/piper-plus-tsukuyomi-chan" target="_blank" rel="noreferrer">模型来源</a> · <a href="https://tyc.rei-yumesaki.net/material/corpus/" target="_blank" rel="noreferrer">语料与使用条款</a></p>
+        <p>七幕物件声：二十一份互不复用的 Freesound CC0 现场录音 · <a href="https://github.com/xinchenok/izumi-sagiri-room/blob/main/assets/audio/v19/CINEMATIC-FOLEY-SOURCES.md" target="_blank" rel="noreferrer">完整来源与处理记录</a></p>
+        <p>旧版房间物件声与晚安关门声仍保留 · <a href="https://github.com/xinchenok/izumi-sagiri-room/blob/main/assets/audio/v14/ROOM-FOLEY-SOURCES.md" target="_blank" rel="noreferrer">房间来源</a> · <a href="https://github.com/xinchenok/izumi-sagiri-room/blob/main/assets/audio/v16/GOODNIGHT-DOOR-SOURCE.md" target="_blank" rel="noreferrer">关门来源</a></p>
         <p>本地字体：ZCOOL KuaiLe、Noto Sans JP · SIL Open Font License 1.1</p>
       </div>
     </details>
@@ -506,6 +636,6 @@
   <noscript>
     <div class="noscript-note">JavaScript 未启用：你仍然可以阅读角色介绍与查看基础插画；敲门、换装、语音和秘密探索需要启用 JavaScript。</div>
   </noscript>
-  <script src="script.js?v=20260904-3"></script>
+  <script src="script.js?v=20260904-4"></script>
 </body>
 </html>

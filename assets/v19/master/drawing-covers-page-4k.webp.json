@@ -1,0 +1,10 @@
+{
+  "prompt": "EDIT the first 4:3 image in the exact clean bright Japanese TV-anime cel style of the second reference. Preserve the same silver-white long-haired blue-eyed shy girl, pink cat-ear hoodie, drawing desk, pen display, room geometry, pale honey wood, and pink/mint/cream palette. Correct the action: she has just noticed the visitor peeking and is hurriedly covering the pen-display artwork with ONE clearly visible cream-colored sketch sheet. The sheet must lie diagonally across and visibly cover most of the black pen display, held down by her open left hand/sleeve; her right hand still holds the stylus above the edge. Her eyes are wide and cheeks pink, cute and flustered. The paper must be unmistakably separate from the display and may show only very faint non-readable sketch marks. Coherent hands and believable contact. Clean flat color fills, crisp controlled line art, at most two cel-shadow bands. Absolutely no oil paint, watercolor, brush texture, grain, dirty color, haze, bloom, fuzzy edges, readable text, watermark, extra fingers or limbs.\n",
+  "createdAt": "2026-09-04T15:13:51.383770+00:00",
+  "pipeline": "内置 ImageGen 逐图清晰化；Pillow Lanczos 纯缩放响应式导出",
+  "sourceAsset": "drawing-covers-page.png",
+  "sourceSha256": "321b8293538613b86e9c725951f8e33f6fd758fd79c8368d09cfc92cf8e4ba41",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "resizeMethod": "Lanczos；不添加锐化、纹理、降噪或调色滤镜"
+}

@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-test("手机只选择响应式图片，不请求 4K 母版", async ({ browser }) => {
+test("手机首屏与旧功能只选择响应式图片，不请求 4K 母版", async ({ browser }) => {
   const context = await browser.newContext({
     viewport: { width: 390, height: 844 },
     deviceScaleFactor: 1,
@@ -14,7 +14,7 @@ test("手机只选择响应式图片，不请求 4K 母版", async ({ browser })
   try {
     await page.goto("/", { waitUntil: "networkidle" });
     await expect(page.locator("#heroCharacter")).toHaveJSProperty("complete", true);
-    expect(await page.locator("#heroCharacter").evaluate((image) => image.currentSrc)).toContain("hero-peek-720.webp");
+    expect(await page.locator("#heroCharacter").evaluate((image) => image.currentSrc)).toContain("door-peek-720.webp");
 
     await page.locator("#wardrobe").scrollIntoViewIfNeeded();
     await expect(page.locator("#outfitImage")).toHaveJSProperty("complete", true);
@@ -29,7 +29,7 @@ test("手机只选择响应式图片，不请求 4K 母版", async ({ browser })
   }
 });
 
-test("高密度桌面可以取得 4K 首屏母版", async ({ browser }) => {
+test("桌面普通首屏限制在 1440 档，4K 留给主动观察", async ({ browser }) => {
   const context = await browser.newContext({
     viewport: { width: 1440, height: 900 },
     deviceScaleFactor: 2,
@@ -39,7 +39,7 @@ test("高密度桌面可以取得 4K 首屏母版", async ({ browser }) => {
   try {
     await page.goto("/", { waitUntil: "networkidle" });
     await expect(page.locator("#heroCharacter")).toHaveJSProperty("complete", true);
-    expect(await page.locator("#heroCharacter").evaluate((image) => image.currentSrc)).toContain("hero-peek-4k.webp");
+    expect(await page.locator("#heroCharacter").evaluate((image) => image.currentSrc)).toContain("door-peek-1440.webp");
   } finally {
     await context.close();
   }

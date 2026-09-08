@@ -1,0 +1,11 @@
+Use case: style-transfer
+Asset type: V19 clean website scene source, exact landscape 4:3
+Primary request: Redraw Image 1 as "room-glances-over" while preserving only its composition and glance action. The girl stays seated at the pen display with one stylus near the work, turns her face slightly toward the visitor, and checks whether they are still there with bright blue eyes, a clear blush, and a tiny shy almost-smile.
+Input images: Image 1 is composition-and-action reference ONLY; preserve camera, crop, head angle, seated pose, furniture geometry, and major prop positions, but do not inherit its rendering style, texture, color grading, surface detail, or facial rendering. Image 2 is the sole and strict reference for character identity, clear visual style, line weight, flat shading, materials, brightness, and palette.
+Subject: exactly the youthful all-ages silver-haired girl from Image 2, with the same round cute face, layered blue eyes, tiny shy mouth, translucent light skin, cool-white hair, pink bows, and pink cat-ear hoodie.
+Style/medium: fresh bright Japanese TV anime cel animation frame; clean uniform line art; smooth flat untextured color fills; at most two crisp hard-edged shadow levels; restrained highlights; simple readable shapes.
+Color/materials: cool-white hair, clear peach skin, pale clean pink clothing, light natural blonde matte wood, clean mint accents, clear night blue.
+Composition/framing: exact 4:3; preserve Image 1's camera, subject scale, desk, display, window, headphones, plush, plants, papers, lamp, and glance silhouette. Simplify incidental surface detail.
+Hands: exactly two natural hands; one holds one stylus near the display, the other rests at the edge; correct fingers and wrists.
+Constraints: her glance must be visibly toward the visitor while remaining shy; crisp edges at 100% view; no text, letters, numbers, logo, signature, watermark, extra person, extra limb, or duplicated object.
+Avoid: direct confident posing, mature influencer face, oil painting, watercolor, gouache, painterly brushwork, visible brush texture, canvas texture, paper texture, grain, noise, speckles, dirt, stains, muddy colors, dark glossy wood, soft focus, haze, fog, bloom, glow veil, airbrush gradients, complex shading, photorealism, micro-detail clutter.

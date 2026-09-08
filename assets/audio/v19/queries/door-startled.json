@@ -1,0 +1,44 @@
+{
+  "id": "door-startled",
+  "scene": "房门",
+  "japanese": "び、びっくりしただけ。怖がってなんかないから。",
+  "chinese": "只、只是吓了一跳。我才没有害怕。",
+  "profile": "flustered",
+  "requested_params": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "applied_scales": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 99,
+  "padded_phoneme_count": 99,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/door-startled.wav",
+  "raw_wav_sha256": "75a6836b61b48ca1ad6891d2ce2d5f9555b57c2617ae5ce35b63a5361e641393",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -16.55,
+    "true_peak_db": 0.08,
+    "lra": 2.1,
+    "threshold": -27.59,
+    "target_offset": -1.73
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-16.55:measured_LRA=2.1:measured_TP=0.08:measured_thresh=-27.59:offset=-1.73:linear=true:print_format=summary"
+}

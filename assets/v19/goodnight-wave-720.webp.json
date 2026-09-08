@@ -1,0 +1,10 @@
+{
+  "prompt": "EDIT Image 1 and preserve its exact clean 4:3 doorway goodbye composition, character identity, pajamas, gray cat plush, open waving hand, pale honey-wood door, handle/latch, pink bedroom, cool moon-blue corridor, crisp flat TV-anime cel rendering, and all-ages mood. Add ONE clearly visible closed cream sketchbook with a slim red ribbon bookmark, using the book design from Image 2. Tuck the book securely under the gray plush and her hugging forearm at lower center-right so the cover and ribbon are readable as a book without covering her face, waving hand, plush face, door handle, or latch. Keep both hands anatomically unchanged: one waves, one hugs. Do not add a third hand. Smooth untextured fills and at most two clean shadow bands. Absolutely no oil paint, watercolor, grain, brush texture, dirty brown cast, haze, bloom, fuzzy edges, readable text, watermark, extra book, extra limbs or fingers.\n",
+  "createdAt": "2026-09-04T15:44:17.722646+00:00",
+  "pipeline": "内置 ImageGen 逐图清晰化；Pillow Lanczos 纯缩放响应式导出",
+  "sourceAsset": "goodnight-wave.png",
+  "sourceSha256": "a97e24cdc382dc19927a5b6ddd8d8118e11692014e8fb93d855bb6910c1f27f6",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "resizeMethod": "Lanczos；不添加锐化、纹理、降噪或调色滤镜"
+}

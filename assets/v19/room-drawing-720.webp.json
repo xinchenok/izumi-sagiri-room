@@ -1,0 +1,10 @@
+{
+  "prompt": "Execution: do not generate this image again. Copy Image 2 byte-for-byte to room-drawing.png as the calibrated clean room master.\nImage 1: .tmp/v19-images/room-secrets-gallery/room-drawing.png is composition-and-action reference only; retain only its drawing action and spatial intent when evaluating the copied master.\nImage 2: C:\\Users\\w1877\\.codex\\generated_images\\019fe1e4-7ba7-7db3-9235-fa82995f6cd4\\exec-df8798c4-c4ad-4eb4-aeee-0222b262ab9d.png is the sole clear visual-style, character-identity, and palette anchor and is the exact delivered room-drawing.png.\nRequired visual contract: fresh bright Japanese TV anime cel animation; smooth flat untextured color fills; clean uniform linework; at most two crisp hard-edged shadow levels; restrained highlights; light natural blonde matte wood instead of dark brown oily wood; cool-white silver hair; translucent clear skin; pale clean pink and mint accents.\nPreserve: exact 4:3 landscape composition, the girl actively drawing on the pen display, natural correct hands, one stylus, desk, window, headphones, cat plush, plants, papers and lamp.\nAvoid: oil painting, watercolor, gouache, painterly brushwork, visible brush texture, canvas texture, paper texture, grain, noise, speckles, dirt, stains, muddy color, glossy brown varnish, soft focus, haze, fog, bloom, glow veil, airbrush gradients, complex multi-level shading, photorealism, micro-detail clutter, text, logo, signature or watermark.\n",
+  "createdAt": "2026-09-04T12:47:12.510316+00:00",
+  "pipeline": "内置 ImageGen 逐图清晰化；Pillow Lanczos 纯缩放响应式导出",
+  "sourceAsset": "room-drawing.png",
+  "sourceSha256": "67c3f08b53f21b8a42ae5c3f7d75e4512de172d3379c66429406934fa08978a1",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "resizeMethod": "Lanczos；不添加锐化、纹理、降噪或调色滤镜"
+}

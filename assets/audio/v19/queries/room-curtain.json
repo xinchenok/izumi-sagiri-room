@@ -1,0 +1,44 @@
+{
+  "id": "room-curtain",
+  "scene": "房间",
+  "japanese": "カーテン、少しだけ閉めて。画面が見やすくなるから。",
+  "chinese": "把窗帘稍微拉上一点，这样屏幕会更清楚。",
+  "profile": "soft",
+  "requested_params": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "applied_scales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 113,
+  "padded_phoneme_count": 113,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/room-curtain.wav",
+  "raw_wav_sha256": "3a5872db98e1fcb0301045c6989e0d8424ae3ad7afcb45161f02b940c8119574",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -17.71,
+    "true_peak_db": -0.66,
+    "lra": 2.0,
+    "threshold": -27.85,
+    "target_offset": -1.07
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-17.71:measured_LRA=2.0:measured_TP=-0.66:measured_thresh=-27.85:offset=-1.07:linear=true:print_format=summary"
+}

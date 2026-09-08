@@ -1,0 +1,44 @@
+{
+  "id": "wardrobe-choice-wait",
+  "scene": "衣橱",
+  "japanese": "き、決めたなら早く言って。ずっと待ってるの、もっと恥ずかしいから。",
+  "chinese": "选、选好了就快点说。一直等着更让人害羞。",
+  "profile": "flustered",
+  "requested_params": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "applied_scales": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 140,
+  "padded_phoneme_count": 140,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/wardrobe-choice-wait.wav",
+  "raw_wav_sha256": "a926cbb3998e4be305938caefeabe1c33f43d70f6bb1ffbedb95b946339790a8",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -16.03,
+    "true_peak_db": -0.42,
+    "lra": 1.2,
+    "threshold": -26.89,
+    "target_offset": -0.97
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-16.03:measured_LRA=1.2:measured_TP=-0.42:measured_thresh=-26.89:offset=-0.97:linear=true:print_format=summary"
+}

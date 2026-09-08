@@ -1,0 +1,44 @@
+{
+  "id": "drawing-first-view",
+  "scene": "一起画",
+  "japanese": "できた。最初に見せるのは……今日は、あなたでいい。",
+  "chinese": "画好了。今天第一个给你看的人……可以是你。",
+  "profile": "proud",
+  "requested_params": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "applied_scales": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 102,
+  "padded_phoneme_count": 102,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/drawing-first-view.wav",
+  "raw_wav_sha256": "1ebcc076adbfe615726b60d7abed9351c8df529804c672b9965b9b694ed3118e",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -15.48,
+    "true_peak_db": -0.4,
+    "lra": 1.2,
+    "threshold": -26.12,
+    "target_offset": -1.0
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-15.48:measured_LRA=1.2:measured_TP=-0.4:measured_thresh=-26.12:offset=-1.0:linear=true:print_format=summary"
+}

@@ -1,0 +1,44 @@
+{
+  "id": "room-stay",
+  "scene": "房间",
+  "japanese": "見てるだけなら……静かに隣にいてもいいよ。",
+  "chinese": "只是看的话……可以安静待在旁边。",
+  "profile": "shy",
+  "requested_params": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "applied_scales": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 100,
+  "padded_phoneme_count": 100,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/room-stay.wav",
+  "raw_wav_sha256": "13ce2c5490402919c4ac67bd3c3202f91732ce611a37ed16b5b413a80272e616",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -16.06,
+    "true_peak_db": -0.08,
+    "lra": 0.6,
+    "threshold": -26.57,
+    "target_offset": -1.62
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-16.06:measured_LRA=0.6:measured_TP=-0.08:measured_thresh=-26.57:offset=-1.62:linear=true:print_format=summary"
+}

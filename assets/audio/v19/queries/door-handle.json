@@ -1,0 +1,44 @@
+{
+  "id": "door-handle",
+  "scene": "房门",
+  "japanese": "ドアノブ、そんなに見ないで。今、開けるから。",
+  "chinese": "别一直盯着门把手。我现在就开。",
+  "profile": "flustered",
+  "requested_params": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "applied_scales": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 90,
+  "padded_phoneme_count": 90,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/door-handle.wav",
+  "raw_wav_sha256": "05beb94dd05577ab913155236e57b2ca3d194093ed345ffec82ae84377523bae",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -16.77,
+    "true_peak_db": -0.5,
+    "lra": 2.3,
+    "threshold": -28.17,
+    "target_offset": -0.4
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-16.77:measured_LRA=2.3:measured_TP=-0.5:measured_thresh=-28.17:offset=-0.4:linear=true:print_format=summary"
+}

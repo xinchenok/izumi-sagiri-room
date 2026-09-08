@@ -1,0 +1,44 @@
+{
+  "id": "goodnight-book",
+  "scene": "晚安",
+  "japanese": "本はここに置いておく。続きは、また今度。",
+  "chinese": "书就放在这里。下次再看后面。",
+  "profile": "soft",
+  "requested_params": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "applied_scales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 91,
+  "padded_phoneme_count": 91,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/goodnight-book.wav",
+  "raw_wav_sha256": "76e1532c6924a77e9561e2c72c0aa6414c519e1dc9e49fe8980f6956bc231e34",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -15.98,
+    "true_peak_db": 0.03,
+    "lra": 1.7,
+    "threshold": -26.29,
+    "target_offset": -0.97
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-15.98:measured_LRA=1.7:measured_TP=0.03:measured_thresh=-26.29:offset=-0.97:linear=true:print_format=summary"
+}

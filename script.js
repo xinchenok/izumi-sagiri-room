@@ -23,23 +23,281 @@ function v18Scene(name) {
   };
 }
 
+function v19Portrait(name) {
+  return {
+    image: `assets/v19/master/${name}-4k.webp`,
+    medium: `assets/v19/${name}-1440.webp`,
+    small: `assets/v19/${name}-720.webp`,
+    width: 3072,
+    mediumWidth: 1440,
+    smallWidth: 720
+  };
+}
+
+function v19Scene(name) {
+  return {
+    image: `assets/v19/master/${name}-4k.webp`,
+    medium: `assets/v19/${name}-1440.webp`,
+    small: `assets/v19/${name}-720.webp`,
+    thumb: `assets/v19/${name}-480.webp`,
+    width: 3840,
+    mediumWidth: 1440,
+    smallWidth: 720
+  };
+}
+
 const CONTENT = {
+  cinematicScenes: [
+    {
+      id: "door",
+      sectionId: "cinematic-door",
+      label: "第一幕 · 房门",
+      shortLine: "她听见了，却还在确认是不是你。",
+      detailsLabel: "展开门口原稿",
+      frameKind: "portrait",
+      frames: [
+        { id: "door-peek", at: 0, label: "安静偷看", ...v19Portrait("door-peek"), alt: "纱雾从半掩的卧室门后安静偷看" },
+        { id: "door-listen", at: 0.28, label: "侧耳确认", ...v19Portrait("door-listen"), alt: "纱雾贴近门边侧耳确认来访者" },
+        { id: "door-startled", at: 0.58, label: "吓了一跳", ...v19Portrait("door-startled"), alt: "敲门声响起时纱雾睁大蓝眼睛轻轻受惊" },
+        { id: "door-open-smile", at: 0.86, label: "认出你了", ...v19Portrait("door-open-smile"), alt: "纱雾打开房门后脸红着露出安心微笑" }
+      ],
+      camera: {
+        desktop: [{ x: 3, y: -2, scale: 1.11 }, { x: -1, y: -3, scale: 1.16 }, { x: -2, y: -1, scale: 1.1 }, { x: 1, y: 0, scale: 1.04 }],
+        mobile: [{ x: 4, y: -1, scale: 1.16 }, { x: 1, y: -2, scale: 1.19 }, { x: -2, y: 0, scale: 1.13 }, { x: 0, y: 0, scale: 1.07 }]
+      },
+      inspectFrameId: "door-peek",
+      transition: "door-edge",
+      characterVoiceId: "door-closer",
+      hotspots: [
+        { id: "door-panel", label: "轻敲木门", desktopPosition: { x: 20, y: 42 }, mobilePosition: { x: 18, y: 45 }, reactionFrame: "door-listen", voiceId: "door-knock-wait", foleyId: "door-knock-soft" },
+        { id: "door-handle", label: "轻轻转动门把", desktopPosition: { x: 27, y: 71 }, mobilePosition: { x: 27, y: 71 }, reactionFrame: "door-startled", voiceId: "door-handle", foleyId: "door-handle-turn" },
+        { id: "door-gap", label: "看看亮起的门缝", desktopPosition: { x: 35, y: 27 }, mobilePosition: { x: 35, y: 27 }, reactionFrame: "door-open-smile", voiceId: "door-startled", foleyId: "door-open-gentle" }
+      ]
+    },
+    {
+      id: "room",
+      sectionId: "cinematic-room",
+      label: "第二幕 · 房间",
+      shortLine: "笔尖没有停，旁边的椅子却悄悄空出来。",
+      detailsLabel: "展开房间原稿",
+      frameKind: "scene",
+      frames: [
+        { id: "room-drawing", at: 0, label: "继续画画", ...v19Scene("room-drawing"), alt: "纱雾趴在数位板前认真画画" },
+        { id: "room-stops-pen", at: 0.28, label: "笔尖停住", ...v19Scene("room-stops-pen"), alt: "纱雾察觉到你以后暂时停住数位笔" },
+        { id: "room-glances-over", at: 0.58, label: "悄悄回望", ...v19Scene("room-glances-over"), alt: "纱雾从银白长发间害羞地回头看你" },
+        { id: "room-invites-seat", at: 0.86, label: "空出椅子", ...v19Scene("room-invites-seat"), alt: "纱雾把旁边的椅子轻轻推出来邀请你坐下" }
+      ],
+      camera: {
+        desktop: [{ x: 0, y: 2, scale: 1.03 }, { x: -3, y: 2, scale: 1.06 }, { x: 3, y: -1, scale: 1.08 }, { x: -1, y: 1, scale: 1.03 }],
+        mobile: [{ x: -4, y: 2, scale: 1.08 }, { x: -5, y: 3, scale: 1.1 }, { x: 4, y: -1, scale: 1.12 }, { x: 1, y: 1, scale: 1.08 }]
+      },
+      inspectFrameId: "room-invites-seat",
+      transition: "tablet-edge",
+      characterVoiceId: "room-stay",
+      hotspots: [
+        { id: "room-pen", label: "听数位笔划过板面", desktopPosition: { x: 38, y: 65 }, mobilePosition: { x: 38, y: 65 }, reactionFrame: "room-stops-pen", voiceId: "room-pen-tip", foleyId: "room-stylus-glide" },
+        { id: "room-chair", label: "把椅子轻轻挪近", desktopPosition: { x: 78, y: 55 }, mobilePosition: { x: 78, y: 55 }, reactionFrame: "room-invites-seat", voiceId: "room-chair", foleyId: "room-chair-slide" },
+        { id: "room-curtain", label: "替她拉上一点窗帘", desktopPosition: { x: 76, y: 22 }, mobilePosition: { x: 76, y: 22 }, reactionFrame: "room-glances-over", voiceId: "room-curtain", foleyId: "room-curtain-slide" }
+      ]
+    },
+    {
+      id: "secrets",
+      sectionId: "cinematic-secrets",
+      label: "第三幕 · 桌面秘密",
+      shortLine: "每件被收好的东西，都比她更会说实话。",
+      detailsLabel: "展开秘密原稿",
+      frameKind: "scene",
+      frames: [
+        { id: "secrets-caught", at: 0, label: "被她发现", ...v19Scene("secrets-caught"), alt: "纱雾发现你在看桌上的耳机和稿纸" },
+        { id: "secrets-protects-draft", at: 0.46, label: "护住草稿", ...v19Scene("secrets-protects-draft"), alt: "纱雾慌忙用袖口护住还没完成的草稿" },
+        { id: "secrets-opens-drawer", at: 0.82, label: "一起开抽屉", ...v19Scene("secrets-opens-drawer"), alt: "纱雾红着脸陪你打开木桌抽屉" }
+      ],
+      camera: {
+        desktop: [{ x: -2, y: 2, scale: 1.04 }, { x: 3, y: 4, scale: 1.08 }, { x: -3, y: 3, scale: 1.07 }],
+        mobile: [{ x: -4, y: 3, scale: 1.08 }, { x: 5, y: 4, scale: 1.12 }, { x: -5, y: 4, scale: 1.1 }]
+      },
+      inspectFrameId: "secrets-opens-drawer",
+      transition: "drawer-edge",
+      characterVoiceId: "secrets-nothing-weird",
+      hotspots: [
+        { id: "secrets-headphones", label: "把耳机放回原来的方向", desktopPosition: { x: 8, y: 34 }, mobilePosition: { x: 8, y: 34 }, reactionFrame: "secrets-caught", voiceId: "secrets-headphones", foleyId: "secrets-headphones-set" },
+        { id: "secrets-draft", label: "掀起草稿的一角", desktopPosition: { x: 24, y: 82 }, mobilePosition: { x: 24, y: 82 }, reactionFrame: "secrets-protects-draft", voiceId: "secrets-draft", foleyId: "secrets-paper-lift" },
+        { id: "secrets-drawer", label: "碰一下抽屉锁扣", desktopPosition: { x: 87, y: 91 }, mobilePosition: { x: 87, y: 91 }, reactionFrame: "secrets-opens-drawer", voiceId: "secrets-drawer", foleyId: "secrets-drawer-latch" }
+      ]
+    },
+    {
+      id: "wardrobe",
+      sectionId: "cinematic-wardrobe",
+      label: "第四幕 · 衣橱",
+      shortLine: "她说只是试一下，却一直等你点头。",
+      detailsLabel: "展开衣橱原稿",
+      frameKind: "portrait",
+      frames: [
+        { id: "wardrobe-hides-sleeves", at: 0, label: "袖口藏手", ...v19Portrait("wardrobe-hides-sleeves"), alt: "纱雾害羞地把双手藏进长长的袖口" },
+        { id: "wardrobe-holds-two", at: 0.28, label: "举起两套", ...v19Portrait("wardrobe-holds-two"), alt: "纱雾举起轮廓不同的两套衣服等你挑选" },
+        { id: "wardrobe-adjusts-bow", at: 0.58, label: "整理蝴蝶结", ...v19Portrait("wardrobe-adjusts-bow"), alt: "纱雾低头认真调整胸前的小蝴蝶结" },
+        { id: "wardrobe-chosen-shy", at: 0.86, label: "选好以后", ...v19Portrait("wardrobe-chosen-shy"), alt: "纱雾仍穿粉色家居服，抱着选中的薄荷猫耳外套害羞等你回应" }
+      ],
+      camera: {
+        desktop: [{ x: 0, y: 6, scale: 1.01 }, { x: 0, y: 6, scale: 1.02 }, { x: 0, y: 7, scale: 1.03 }, { x: 0, y: 6, scale: 1.02 }],
+        mobile: [{ x: 0, y: 7, scale: 1.03 }, { x: 0, y: 7, scale: 1.04 }, { x: 0, y: 8, scale: 1.05 }, { x: 0, y: 7, scale: 1.04 }]
+      },
+      inspectFrameId: "wardrobe-holds-two",
+      transition: "fabric-edge",
+      characterVoiceId: "wardrobe-choice-wait",
+      hotspots: [
+        { id: "wardrobe-hanger", label: "轻轻滑动衣架", desktopPosition: { x: 27, y: 29 }, mobilePosition: { x: 27, y: 29 }, reactionFrame: "wardrobe-holds-two", voiceId: "wardrobe-two-outfits", foleyId: "wardrobe-hanger-slide" },
+        { id: "wardrobe-sleeve", label: "摸摸藏住手的袖口", desktopPosition: { x: 22, y: 57 }, mobilePosition: { x: 22, y: 57 }, reactionFrame: "wardrobe-hides-sleeves", voiceId: "wardrobe-sleeves", foleyId: "wardrobe-sleeve-rustle" },
+        { id: "wardrobe-ribbon", label: "帮她看蝴蝶结有没有歪", desktopPosition: { x: 69, y: 44 }, mobilePosition: { x: 69, y: 44 }, reactionFrame: "wardrobe-adjusts-bow", voiceId: "wardrobe-ribbon", foleyId: "wardrobe-ribbon-rustle" }
+      ]
+    },
+    {
+      id: "gallery",
+      sectionId: "cinematic-gallery",
+      label: "第五幕 · 画册",
+      shortLine: "画册越往后，她藏起来的速度越慢。",
+      detailsLabel: "展开画册原稿",
+      frameKind: "scene",
+      frames: [
+        { id: "gallery-hides-book", at: 0, label: "藏起画册", ...v19Scene("gallery-hides-book"), alt: "纱雾把大画册挡在脸前只露出一点银白长发" },
+        { id: "gallery-peeks-over", at: 0.46, label: "从书后偷看", ...v19Scene("gallery-peeks-over"), alt: "纱雾从画册上方露出蓝眼睛观察你的反应" },
+        { id: "gallery-pushes-book", at: 0.82, label: "推近最后一页", ...v19Scene("gallery-pushes-book"), alt: "纱雾红着脸把打开的画册轻轻推到你面前" }
+      ],
+      camera: {
+        desktop: [{ x: 1, y: 1, scale: 1.04 }, { x: 0, y: -2, scale: 1.08 }, { x: 0, y: 3, scale: 1.07 }],
+        mobile: [{ x: 0, y: 1, scale: 1.08 }, { x: 0, y: -3, scale: 1.12 }, { x: 0, y: 4, scale: 1.1 }]
+      },
+      inspectFrameId: "gallery-pushes-book",
+      transition: "paper-edge",
+      characterVoiceId: "gallery-praise",
+      hotspots: [
+        { id: "gallery-cover", label: "替她托住画册封面", desktopPosition: { x: 34, y: 68 }, mobilePosition: { x: 34, y: 68 }, reactionFrame: "gallery-hides-book", voiceId: "gallery-first-page", foleyId: "gallery-book-open" },
+        { id: "gallery-page", label: "慢慢翻过一页", desktopPosition: { x: 57, y: 55 }, mobilePosition: { x: 57, y: 55 }, reactionFrame: "gallery-peeks-over", voiceId: "gallery-turn-slow", foleyId: "gallery-page-turn" },
+        { id: "gallery-picture", label: "把画纸轻轻滑近", desktopPosition: { x: 55, y: 74 }, mobilePosition: { x: 55, y: 74 }, reactionFrame: "gallery-pushes-book", voiceId: "gallery-close-look", foleyId: "gallery-photo-slide" }
+      ]
+    },
+    {
+      id: "drawing",
+      sectionId: "cinematic-drawing",
+      label: "第六幕 · 一起画",
+      shortLine: "这次，她没有把旁边的位置收回去。",
+      detailsLabel: "展开共同创作原稿",
+      frameKind: "scene",
+      frames: [
+        { id: "drawing-focus", at: 0, label: "认真收线", ...v19Scene("drawing-focus"), alt: "纱雾低头专心画下最后几条线" },
+        { id: "drawing-blink", at: 0.2, label: "眨一下眼", ...v19Scene("drawing-blink"), alt: "画到一半的纱雾轻轻眨眼休息" },
+        { id: "drawing-covers-page", at: 0.42, label: "慌忙遮画", ...v19Scene("drawing-covers-page"), alt: "发现你偷看后纱雾红着脸用稿纸遮住画面" },
+        { id: "drawing-shy-pause", at: 0.66, label: "害羞停笔", ...v19Scene("drawing-shy-pause"), alt: "纱雾握着数位笔害羞地停下来确认你还在" },
+        { id: "drawing-reveal", at: 0.86, label: "递出完成稿", ...v19Scene("drawing-reveal"), alt: "纱雾把刚完成的画推到你面前等候感想" }
+      ],
+      camera: {
+        desktop: [{ x: -2, y: 3, scale: 1.05 }, { x: 1, y: -1, scale: 1.07 }, { x: 3, y: 2, scale: 1.07 }, { x: 1, y: -1, scale: 1.06 }, { x: 0, y: 2, scale: 1.04 }],
+        mobile: [{ x: -4, y: 4, scale: 1.09 }, { x: 3, y: -2, scale: 1.1 }, { x: 4, y: 3, scale: 1.1 }, { x: 2, y: -1, scale: 1.09 }, { x: 0, y: 3, scale: 1.07 }]
+      },
+      inspectFrameId: "drawing-covers-page",
+      transition: "drawing-paper-edge",
+      characterVoiceId: "drawing-you-are-there",
+      hotspots: [
+        { id: "drawing-pen", label: "听她再画一条短线", desktopPosition: { x: 43, y: 58 }, mobilePosition: { x: 43, y: 58 }, reactionFrame: "drawing-focus", voiceId: "drawing-one-line", foleyId: "drawing-stylus-line" },
+        { id: "drawing-cover", label: "轻碰遮住画面的稿纸", desktopPosition: { x: 58, y: 68 }, mobilePosition: { x: 58, y: 68 }, reactionFrame: "drawing-covers-page", voiceId: "drawing-peek-again", foleyId: "drawing-paper-cover" },
+        { id: "drawing-sheet", label: "接住推近的完成稿", desktopPosition: { x: 69, y: 76 }, mobilePosition: { x: 69, y: 76 }, reactionFrame: "drawing-reveal", voiceId: "drawing-first-view", foleyId: "drawing-sheet-push" }
+      ]
+    },
+    {
+      id: "goodnight",
+      sectionId: "cinematic-goodnight",
+      label: "第七幕 · 晚安",
+      shortLine: "门会合上，但她把明天留了一条缝。",
+      detailsLabel: "展开晚安原稿",
+      frameKind: "scene",
+      frames: [
+        { id: "goodnight-hug", at: 0, label: "抱紧玩偶", ...v19Scene("goodnight-hug"), alt: "纱雾在夜晚床边蜷坐着抱紧猫咪玩偶" },
+        { id: "goodnight-yawn", at: 0.46, label: "困得打呵欠", ...v19Scene("goodnight-yawn"), alt: "纱雾抱着猫咪玩偶困倦地打了一个小呵欠" },
+        { id: "goodnight-wave", at: 0.82, label: "门缝里挥手", ...v19Scene("goodnight-wave"), alt: "月光下纱雾从将要合上的房门边轻轻挥手" }
+      ],
+      camera: {
+        desktop: [{ x: 2, y: 2, scale: 1.04 }, { x: 0, y: 2, scale: 1.07 }, { x: -2, y: 1, scale: 1.04 }],
+        mobile: [{ x: 4, y: 3, scale: 1.08 }, { x: 0, y: 3, scale: 1.1 }, { x: -3, y: 2, scale: 1.08 }]
+      },
+      inspectFrameId: "goodnight-wave",
+      transition: "night-window-edge",
+      characterVoiceId: "goodnight-sleepy",
+      hotspots: [
+        { id: "goodnight-plush", label: "轻轻按一下猫咪玩偶", desktopPosition: { x: 54, y: 48 }, mobilePosition: { x: 54, y: 48 }, reactionFrame: "goodnight-hug", voiceId: "goodnight-plush", foleyId: "goodnight-plush-squeeze" },
+        { id: "goodnight-book", label: "替她合上怀里的书", desktopPosition: { x: 52, y: 63 }, mobilePosition: { x: 52, y: 63 }, reactionFrame: "goodnight-yawn", voiceId: "goodnight-book", foleyId: "goodnight-book-close" },
+        { id: "goodnight-door", label: "把房门轻轻合上", desktopPosition: { x: 34, y: 75 }, mobilePosition: { x: 34, y: 75 }, reactionFrame: "goodnight-wave", voiceId: "goodnight-knock-next", foleyId: "goodnight-latch" }
+      ]
+    }
+  ],
+  cinematicVoices: {
+    "door-knock-wait": { id: "door-knock-wait", scene: "房门", label: "听见轻敲", japanese: "……ちゃんとノックしてくれたんだ。じゃあ、少しだけ待って。", chinese: "……你有好好敲门。那就稍微等一下。", file: "assets/audio/v19/voice/door-knock-wait.mp3", expression: "shy", reaction: "听见了……再等我一下。", frame: "door-listen" },
+    "door-startled": { id: "door-startled", scene: "房门", label: "只是一点受惊", japanese: "び、びっくりしただけ。怖がってなんかないから。", chinese: "只、只是吓了一跳。我才没有害怕。", file: "assets/audio/v19/voice/door-startled.mp3", expression: "startled", reaction: "只、只是吓了一小跳。", frame: "door-startled" },
+    "door-handle": { id: "door-handle", scene: "房门", label: "准备开门", japanese: "ドアノブ、そんなに見ないで。今、開けるから。", chinese: "别一直盯着门把手。我现在就开。", file: "assets/audio/v19/voice/door-handle.mp3", expression: "startled", reaction: "别盯着门把手啦……马上就开。", frame: "door-startled" },
+    "door-closer": { id: "door-closer", scene: "房门", label: "允许靠近", japanese: "今日は……いつもより、ちょっとだけ近くてもいいよ。", chinese: "今天……可以比平时再靠近一点点。", file: "assets/audio/v19/voice/door-closer.mp3", expression: "shy", reaction: "只可以……比平时近一点点。", frame: "door-open-smile" },
+    "room-chair": { id: "room-chair", scene: "房间", label: "空出的椅子", japanese: "そこ、椅子を少しだけ空けておいたの。", chinese: "那里……我稍微把椅子空出来了。", file: "assets/audio/v19/voice/room-chair.mp3", expression: "shy", reaction: "椅子只是刚好空着……坐吧。", frame: "room-invites-seat" },
+    "room-pen-tip": { id: "room-pen-tip", scene: "房间", label: "笔尖规矩", japanese: "ペン先を触るなら、線がずれないようにね。", chinese: "要碰笔尖的话，可别让线条歪掉。", file: "assets/audio/v19/voice/room-pen-tip.mp3", expression: "proud", reaction: "线条歪掉的话，要陪我重画。", frame: "room-stops-pen" },
+    "room-curtain": { id: "room-curtain", scene: "房间", label: "窗帘光线", japanese: "カーテン、少しだけ閉めて。画面が見やすくなるから。", chinese: "把窗帘稍微拉上一点，这样屏幕会更清楚。", file: "assets/audio/v19/voice/room-curtain.mp3", expression: "peek", reaction: "再拉上一点点……这样刚好。", frame: "room-glances-over" },
+    "room-stay": { id: "room-stay", scene: "房间", label: "安静坐在身边", japanese: "見てるだけなら……静かに隣にいてもいいよ。", chinese: "只是看的话……可以安静待在旁边。", file: "assets/audio/v19/voice/room-stay.mp3", expression: "shy", reaction: "不说话也没关系……我知道你在。", frame: "room-invites-seat" },
+    "secrets-draft": { id: "secrets-draft", scene: "桌面秘密", label: "还没完成的草稿", japanese: "そ、それは下書き。まだ見せる予定じゃなかったの。", chinese: "那、那只是草稿。我本来没打算给你看的。", file: "assets/audio/v19/voice/secrets-draft.mp3", expression: "startled", reaction: "还没画好……不许看太久。", frame: "secrets-protects-draft" },
+    "secrets-headphones": { id: "secrets-headphones", scene: "桌面秘密", label: "耳机的方向", japanese: "ヘッドホンの向き？　いつも同じじゃないと落ち着かないだけ。", chinese: "耳机的方向？只是每次不一样我就静不下来。", file: "assets/audio/v19/voice/secrets-headphones.mp3", expression: "proud", reaction: "只是摆整齐以后比较安心。", frame: "secrets-caught" },
+    "secrets-drawer": { id: "secrets-drawer", scene: "桌面秘密", label: "一起看抽屉", japanese: "引き出しは……開けるなら、私も一緒に見る。", chinese: "抽屉……要打开的话，我也一起看。", file: "assets/audio/v19/voice/secrets-drawer.mp3", expression: "shy", reaction: "要开的话……手不要松开。", frame: "secrets-opens-drawer" },
+    "secrets-nothing-weird": { id: "secrets-nothing-weird", scene: "桌面秘密", label: "没有奇怪东西", japanese: "秘密って言っても、変なものは入ってないからね。", chinese: "虽说是秘密，里面可没有奇怪的东西。", file: "assets/audio/v19/voice/secrets-nothing-weird.mp3", expression: "startled", reaction: "真、真的没有奇怪的东西。", frame: "secrets-caught" },
+    "wardrobe-sleeves": { id: "wardrobe-sleeves", scene: "衣橱", label: "喜欢长袖", japanese: "この袖、長すぎる？　でも、手が隠れるから好き。", chinese: "这袖子太长了吗？可我喜欢它能遮住手。", file: "assets/audio/v19/voice/wardrobe-sleeves.mp3", expression: "shy", reaction: "手藏起来的话……就没那么紧张。", frame: "wardrobe-hides-sleeves" },
+    "wardrobe-ribbon": { id: "wardrobe-ribbon", scene: "衣橱", label: "蝴蝶结检查", japanese: "リボン、曲がってないかだけ見て。", chinese: "只帮我看看蝴蝶结有没有歪。", file: "assets/audio/v19/voice/wardrobe-ribbon.mp3", expression: "peek", reaction: "只看蝴蝶结……别看别的地方。", frame: "wardrobe-adjusts-bow" },
+    "wardrobe-two-outfits": { id: "wardrobe-two-outfits", scene: "衣橱", label: "同时比较两套", japanese: "二着いっぺんに比べるの、ちょっと恥ずかしい……。", chinese: "一次比较两套，稍微有点害羞……", file: "assets/audio/v19/voice/wardrobe-two-outfits.mp3", expression: "startled", reaction: "两套一起举着……好害羞。", frame: "wardrobe-holds-two" },
+    "wardrobe-choice-wait": { id: "wardrobe-choice-wait", scene: "衣橱", label: "一直等你选择", japanese: "き、決めたなら早く言って。ずっと待ってるの、もっと恥ずかしいから。", chinese: "选、选好了就快点说。一直等着更让人害羞。", file: "assets/audio/v19/voice/wardrobe-choice-wait.mp3", expression: "startled", reaction: "快一点告诉我……我一直在等。", frame: "wardrobe-chosen-shy" },
+    "gallery-first-page": { id: "gallery-first-page", scene: "画册", label: "第一页的线", japanese: "最初のページは、まだ線が少し震えてるの。", chinese: "第一页的线条还有一点抖。", file: "assets/audio/v19/voice/gallery-first-page.mp3", expression: "peek", reaction: "第一页……不要笑我的线。", frame: "gallery-hides-book" },
+    "gallery-close-look": { id: "gallery-close-look", scene: "画册", label: "靠近看的约定", japanese: "その画、近くで見るなら……感想もちゃんと言って。", chinese: "要靠近看那张画……也要认真说感想。", file: "assets/audio/v19/voice/gallery-close-look.mp3", expression: "shy", reaction: "看完要认真告诉我感想。", frame: "gallery-peeks-over" },
+    "gallery-turn-slow": { id: "gallery-turn-slow", scene: "画册", label: "慢慢翻页", japanese: "ページ、ゆっくりめくって。角が折れたら困るから。", chinese: "慢慢翻页。折到书角我会很困扰。", file: "assets/audio/v19/voice/gallery-turn-slow.mp3", expression: "proud", reaction: "书角不可以折到。", frame: "gallery-peeks-over" },
+    "gallery-praise": { id: "gallery-praise", scene: "画册", label: "可以稍微夸奖", japanese: "最後まで見たの？　……じゃあ、少しくらい褒めてもいいよ。", chinese: "看到最后了吗？……那稍微夸一下也可以。", file: "assets/audio/v19/voice/gallery-praise.mp3", expression: "proud", reaction: "只允许……稍微夸一下。", frame: "gallery-pushes-book" },
+    "drawing-one-line": { id: "drawing-one-line", scene: "一起画", label: "再画一条线", japanese: "今いいところだから、あと一本だけ線を引かせて。", chinese: "正画到关键地方，让我再画一条线。", file: "assets/audio/v19/voice/drawing-one-line.mp3", expression: "proud", reaction: "就最后一条线……这次是真的。", frame: "drawing-focus" },
+    "drawing-peek-again": { id: "drawing-peek-again", scene: "一起画", label: "又被偷看", japanese: "また覗いた。……そんなに気になるの？", chinese: "又偷看。……就这么在意吗？", file: "assets/audio/v19/voice/drawing-peek-again.mp3", expression: "startled", reaction: "又偷看……有那么在意吗？", frame: "drawing-covers-page" },
+    "drawing-you-are-there": { id: "drawing-you-are-there", scene: "一起画", label: "知道你还在", japanese: "何も言わなくても、そこにいるのは分かってる。", chinese: "就算什么都不说，我也知道你在那里。", file: "assets/audio/v19/voice/drawing-you-are-there.mp3", expression: "shy", reaction: "不用说话……我知道你在。", frame: "drawing-shy-pause" },
+    "drawing-first-view": { id: "drawing-first-view", scene: "一起画", label: "第一个给你看", japanese: "できた。最初に見せるのは……今日は、あなたでいい。", chinese: "画好了。今天第一个给你看的人……可以是你。", file: "assets/audio/v19/voice/drawing-first-view.mp3", expression: "proud", reaction: "今天……先给你看。", frame: "drawing-reveal" },
+    "goodnight-sleepy": { id: "goodnight-sleepy", scene: "晚安", label: "眼睛要合上了", japanese: "もう少し起きていたいけど、目が勝手に閉じそう……。", chinese: "还想再醒一会儿，可眼睛好像要自己闭上了……", file: "assets/audio/v19/voice/goodnight-sleepy.mp3", expression: "shy", reaction: "眼睛好像……自己要合上了。", frame: "goodnight-yawn" },
+    "goodnight-plush": { id: "goodnight-plush", scene: "晚安", label: "不能少的玩偶", japanese: "ぬいぐるみ、ちゃんと返して。これがないと眠れないの。", chinese: "玩偶要好好还给我。没有它我睡不着。", file: "assets/audio/v19/voice/goodnight-plush.mp3", expression: "startled", reaction: "玩偶要还给我……睡觉需要它。", frame: "goodnight-hug" },
+    "goodnight-book": { id: "goodnight-book", scene: "晚安", label: "下次再看", japanese: "本はここに置いておく。続きは、また今度。", chinese: "书就放在这里。下次再看后面。", file: "assets/audio/v19/voice/goodnight-book.mp3", expression: "peek", reaction: "书签放好了……下次继续。", frame: "goodnight-yawn" },
+    "goodnight-knock-next": { id: "goodnight-knock-next", scene: "晚安", label: "下次也要敲门", japanese: "おやすみ。次も……ちゃんとノックしてね。", chinese: "晚安。下次也要……好好敲门哦。", file: "assets/audio/v19/voice/goodnight-knock-next.mp3", expression: "shy", reaction: "晚安……下次也要好好敲门。", frame: "goodnight-wave" }
+  },
+  cinematicFoley: {
+    "door-knock-soft": { id: "door-knock-soft", label: "轻敲木门", file: "assets/audio/v19/foley/door-knock-soft.mp3" },
+    "door-handle-turn": { id: "door-handle-turn", label: "门把转动", file: "assets/audio/v19/foley/door-handle-turn.mp3" },
+    "door-open-gentle": { id: "door-open-gentle", label: "木门轻开", file: "assets/audio/v19/foley/door-open-gentle.mp3" },
+    "room-stylus-glide": { id: "room-stylus-glide", label: "笔尖划过数位板", file: "assets/audio/v19/foley/room-stylus-glide.mp3" },
+    "room-chair-slide": { id: "room-chair-slide", label: "椅子轻移", file: "assets/audio/v19/foley/room-chair-slide.mp3" },
+    "room-curtain-slide": { id: "room-curtain-slide", label: "窗帘布料滑动", file: "assets/audio/v19/foley/room-curtain-slide.mp3" },
+    "secrets-headphones-set": { id: "secrets-headphones-set", label: "耳机放下", file: "assets/audio/v19/foley/secrets-headphones-set.mp3" },
+    "secrets-paper-lift": { id: "secrets-paper-lift", label: "稿纸掀起", file: "assets/audio/v19/foley/secrets-paper-lift.mp3" },
+    "secrets-drawer-latch": { id: "secrets-drawer-latch", label: "抽屉锁扣", file: "assets/audio/v19/foley/secrets-drawer-latch.mp3" },
+    "wardrobe-hanger-slide": { id: "wardrobe-hanger-slide", label: "衣架滑动", file: "assets/audio/v19/foley/wardrobe-hanger-slide.mp3" },
+    "wardrobe-sleeve-rustle": { id: "wardrobe-sleeve-rustle", label: "袖口布料", file: "assets/audio/v19/foley/wardrobe-sleeve-rustle.mp3" },
+    "wardrobe-ribbon-rustle": { id: "wardrobe-ribbon-rustle", label: "丝带轻响", file: "assets/audio/v19/foley/wardrobe-ribbon-rustle.mp3" },
+    "gallery-book-open": { id: "gallery-book-open", label: "画册打开", file: "assets/audio/v19/foley/gallery-book-open.mp3" },
+    "gallery-page-turn": { id: "gallery-page-turn", label: "单页翻动", file: "assets/audio/v19/foley/gallery-page-turn.mp3" },
+    "gallery-photo-slide": { id: "gallery-photo-slide", label: "画纸滑动", file: "assets/audio/v19/foley/gallery-photo-slide.mp3" },
+    "drawing-stylus-line": { id: "drawing-stylus-line", label: "数位笔短线", file: "assets/audio/v19/foley/drawing-stylus-line.mp3" },
+    "drawing-paper-cover": { id: "drawing-paper-cover", label: "稿纸盖住", file: "assets/audio/v19/foley/drawing-paper-cover.mp3" },
+    "drawing-sheet-push": { id: "drawing-sheet-push", label: "画纸推近", file: "assets/audio/v19/foley/drawing-sheet-push.mp3" },
+    "goodnight-plush-squeeze": { id: "goodnight-plush-squeeze", label: "玩偶轻压", file: "assets/audio/v19/foley/goodnight-plush-squeeze.mp3" },
+    "goodnight-book-close": { id: "goodnight-book-close", label: "书本合上", file: "assets/audio/v19/foley/goodnight-book-close.mp3" },
+    "goodnight-latch": { id: "goodnight-latch", label: "房门锁舌轻合", file: "assets/audio/v19/foley/goodnight-latch.mp3" }
+  },
   heroExpressions: {
     peek: {
-      ...v18Portrait("hero-peek"),
+      ...v19Portrait("door-peek"),
       alt: "银白长发、蓝眼睛的纱雾穿着粉色猫耳家居服，握着半掩的卧室门安静偷看"
     },
     startled: {
-      ...v18Portrait("hero-startled"),
+      ...v19Portrait("door-startled"),
       alt: "听见敲门后，纱雾睁大蓝眼睛露出突然受惊的可爱表情"
     },
     shy: {
-      ...v18Portrait("hero-shy"),
+      ...v19Portrait("door-open-smile"),
       alt: "认出来访者后，纱雾握着门边脸红地害羞微笑"
     },
     proud: {
-      ...v18Portrait("hero-proud"),
-      alt: "纱雾握着门边，露出认真又有一点得意的可爱表情"
+      ...v19Portrait("door-open-smile"),
+      alt: "纱雾握着门边，露出害羞又有一点得意的可爱微笑"
     }
   },
   outfits: {
@@ -924,6 +1182,10 @@ function validLivingWeather(value) {
   return value === "clear" || value === "rain" ? value : "rain";
 }
 
+function validMotionMode(value) {
+  return value === "quiet" ? "quiet" : "lively";
+}
+
 function validFortune(value) {
   return typeof value === "string" && value.trim().length > 0 && value.length <= 180 ? value.trim() : "";
 }
@@ -1008,6 +1270,7 @@ function readState() {
     livingPlace: "desk",
     livingWeather: "rain",
     roomSoundMuted: false,
+    motionMode: "lively",
     keptFortune: "",
     keptFortuneAt: 0
   };
@@ -1030,6 +1293,7 @@ function readState() {
         livingPlace: validLivingPlace(current.livingPlace),
         livingWeather: validLivingWeather(current.livingWeather),
         roomSoundMuted: current.roomSoundMuted === true,
+        motionMode: validMotionMode(current.motionMode),
         keptFortune: validFortune(current.keptFortune),
         keptFortuneAt: Number.isFinite(current.keptFortuneAt) ? current.keptFortuneAt : 0
       };
@@ -1053,6 +1317,7 @@ function readState() {
         livingPlace: "desk",
         livingWeather: "rain",
         roomSoundMuted: false,
+        motionMode: "lively",
         keptFortune: "",
         keptFortuneAt: 0
       };
@@ -1085,6 +1350,7 @@ function saveState() {
       livingPlace: state.livingPlace,
       livingWeather: state.livingWeather,
       roomSoundMuted: state.roomSoundMuted,
+      motionMode: state.motionMode,
       keptFortune: state.keptFortune,
       keptFortuneAt: state.keptFortuneAt
     }));
@@ -1125,6 +1391,41 @@ function registerVisit(now = Date.now()) {
 const visitStage = registerVisit();
 
 const elements = {
+  motionModeButton: document.querySelector("#motionModeButton"),
+  cinematicScrollGrid: document.querySelector("#cinematicScrollGrid"),
+  cinematicStage: document.querySelector("#cinematicStage"),
+  cinematicFrame: document.querySelector("#cinematicFrame"),
+  cinematicLayerA: document.querySelector("#cinematicLayerA"),
+  cinematicLayerB: document.querySelector("#cinematicLayerB"),
+  cinematicActLabel: document.querySelector("#cinematicActLabel"),
+  cinematicShortLine: document.querySelector("#cinematicShortLine"),
+  cinematicFrameStatus: document.querySelector("#cinematicFrameStatus"),
+  cinematicRetry: document.querySelector("#cinematicRetry"),
+  cinematicProgress: document.querySelector("#cinematicProgress"),
+  cinematicBeats: [...document.querySelectorAll(".cinematic-beat")],
+  cinematicInspectButton: document.querySelector("#cinematicInspectButton"),
+  cinematicInspectDialog: document.querySelector("#cinematicInspectDialog"),
+  cinematicInspectClose: document.querySelector("#cinematicInspectClose"),
+  cinematicInspectAct: document.querySelector("#cinematicInspectAct"),
+  cinematicInspectTitle: document.querySelector("#cinematicInspectTitle"),
+  cinematicInspectViewport: document.querySelector("#cinematicInspectViewport"),
+  cinematicInspectCanvas: document.querySelector("#cinematicInspectCanvas"),
+  cinematicInspectImage: document.querySelector("#cinematicInspectImage"),
+  cinematicInspectHotspots: document.querySelector("#cinematicInspectHotspots"),
+  cinematicCharacterHotspot: document.querySelector("#cinematicCharacterHotspot"),
+  cinematicInspectError: document.querySelector("#cinematicInspectError"),
+  cinematicInspectFallback: document.querySelector("#cinematicInspectFallback"),
+  cinematicInspectRetry: document.querySelector("#cinematicInspectRetry"),
+  cinematicZoomOut: document.querySelector("#cinematicZoomOut"),
+  cinematicZoomIn: document.querySelector("#cinematicZoomIn"),
+  cinematicZoomStatus: document.querySelector("#cinematicZoomStatus"),
+  cinematicInspectReset: document.querySelector("#cinematicInspectReset"),
+  cinematicInspectJapanese: document.querySelector("#cinematicInspectJapanese"),
+  cinematicInspectChinese: document.querySelector("#cinematicInspectChinese"),
+  cinematicInspectPlayback: document.querySelector("#cinematicInspectPlayback"),
+  cinematicVoiceToggle: document.querySelector("#cinematicVoiceToggle"),
+  cinematicFoleyToggle: document.querySelector("#cinematicFoleyToggle"),
+  cinematicVoiceStop: document.querySelector("#cinematicVoiceStop"),
   doorScene: document.querySelector("#doorScene"),
   doorLeaf: document.querySelector("#doorLeaf"),
   knockButton: document.querySelector("#knockButton"),
@@ -1132,6 +1433,8 @@ const elements = {
   doorHanger: document.querySelector(".door-hanger"),
   visitNote: document.querySelector("#visitNote"),
   doorMemorySlip: document.querySelector("#doorMemorySlip"),
+  heroMobileSource: document.querySelector("#heroMobileSource"),
+  heroDesktopSource: document.querySelector("#heroDesktopSource"),
   heroCharacter: document.querySelector("#heroCharacter"),
   feedbackDock: document.querySelector("#feedbackDock"),
   feedbackCollapseButton: document.querySelector("#feedbackCollapseButton"),
@@ -1139,6 +1442,7 @@ const elements = {
   reactionImage: document.querySelector("#reactionImage"),
   reactionLabel: document.querySelector("#reactionLabel"),
   reactionText: document.querySelector("#reactionText"),
+  subtitleBar: document.querySelector("#subtitleBar"),
   subtitleScene: document.querySelector("#subtitleScene"),
   subtitleJapanese: document.querySelector("#subtitleJapanese"),
   subtitleChinese: document.querySelector("#subtitleChinese"),
@@ -1277,6 +1581,7 @@ let livingAutonomyTimer = 0;
 let livingMomentTimer = 0;
 let livingInView = false;
 let livingPointerStart = null;
+let cinematicDirector = null;
 let activeVoicePlayer = null;
 let activeRoomFxPlayer = null;
 let roomFxSequence = 0;
@@ -1527,6 +1832,7 @@ function setupWindowRain() {
     scene: () => RAIN_GLASS_SCENES[elements.livingRoomStage.dataset.place],
     seedOffset: 17,
     active: () => livingInView
+      && !motionIsQuiet()
       && elements.livingRoomStage.dataset.weather === "rain"
       && elements.livingRoomStage.dataset.place !== "bed"
   });
@@ -1535,7 +1841,7 @@ function setupWindowRain() {
     image: elements.storyStageImage,
     scene: () => RAIN_GLASS_SCENES.desk,
     seedOffset: 809,
-    active: () => storyInView && state.livingWeather === "rain"
+    active: () => storyInView && !motionIsQuiet() && state.livingWeather === "rain"
   });
 }
 
@@ -1654,12 +1960,15 @@ function preloadResponsiveImage(item, sizes) {
 
 function setHeroExpression(key) {
   const expression = CONTENT.heroExpressions[key] || CONTENT.heroExpressions.peek;
-  elements.heroCharacter.srcset = responsiveSourceSet(expression);
-  elements.heroCharacter.src = expression.image;
+  elements.heroMobileSource.srcset = expression.small;
+  elements.heroDesktopSource.srcset = expression.medium;
+  elements.heroCharacter.removeAttribute("srcset");
+  elements.heroCharacter.src = expression.small;
   elements.heroCharacter.alt = expression.alt;
 }
 
 function applyVisitStage() {
+  setHeroExpression("peek");
   elements.visitNote.textContent = visitStage.note;
   elements.doorHanger.textContent = visitStage.hanger;
   elements.doorStatus.querySelector("span").textContent = visitStage.lead;
@@ -1757,7 +2066,7 @@ function showDoorMemory() {
 }
 
 function sprinkle(origin) {
-  if (reducedMotion.matches) return;
+  if (motionIsQuiet()) return;
   const colors = ["#f3d16d", "#a9cfbf", "#d8879f", "#cfe8ed"];
   for (let index = 0; index < 9; index += 1) {
     const piece = document.createElement("i");
@@ -1790,6 +2099,7 @@ function settleFeedback(delay = 3200) {
 }
 
 function showFeedback(persistent = false) {
+  if (elements.cinematicInspectDialog.open) return;
   window.clearTimeout(feedbackTimer);
   elements.feedbackDock.classList.add("is-peeking");
   document.body.classList.add("feedback-active");
@@ -2033,7 +2343,9 @@ async function playRoomFx(file) {
     await player.play();
   } catch (error) {
     if (sequence !== roomFxSequence || error?.name === "AbortError") return;
-    if (file === CONTENT.goodnight.doorSound) {
+    if (file.includes("/v19/foley/")) {
+      elements.voicePlaybackState.textContent = "物件声暂时没有加载出来 · 角色回应与画面仍然保留";
+    } else if (file === CONTENT.goodnight.doorSound) {
       elements.goodnightStatus.textContent = "纸条已经收好，门也已经合上；只是这次木门声没有加载出来。";
     } else {
       elements.livingRoomStatus.textContent = "场景声暂时没有加载出来，画面与文字反馈仍然保留。";
@@ -2082,7 +2394,7 @@ function runLivingMoment() {
 
 function scheduleLivingAutonomy() {
   window.clearTimeout(livingAutonomyTimer);
-  if (!livingInView || reducedMotion.matches || document.visibilityState !== "visible") return;
+  if (!livingInView || motionIsQuiet() || document.visibilityState !== "visible") return;
   livingAutonomyTimer = window.setTimeout(() => {
     const key = state.livingPlace;
     const place = CONTENT.livingRoom.places[key];
@@ -2117,6 +2429,7 @@ function toggleLivingSound() {
   saveState();
   refreshLivingSoundControl();
   elements.livingRoomStatus.textContent = state.roomSoundMuted ? "房间场景声已经关闭。" : "房间场景声已经打开，仍然只在操作后播放。";
+  if (elements.cinematicInspectDialog.open) return;
   updateReaction({
     expression: "peek",
     label: "房间里的场景声",
@@ -2404,6 +2717,844 @@ async function playVoice(id) {
     elements.voicePlaybackState.textContent = "声音暂时没加载出来 · 可以继续看字幕";
     updateReaction("voiceError", false, true);
   }
+}
+
+function cinematicFrameById(frameId) {
+  for (const scene of CONTENT.cinematicScenes) {
+    const frame = scene.frames.find((item) => item.id === frameId);
+    if (frame) return frame;
+  }
+  return null;
+}
+
+function cinematicImageSource(frame, inspect = false) {
+  const phone = window.matchMedia("(max-width: 760px)").matches;
+  if (inspect) return phone ? frame.medium : frame.image;
+  return phone ? frame.small : frame.medium;
+}
+
+const cinematicImageCache = new Map();
+
+function decodeCinematicImage(frame, inspect = false) {
+  const source = cinematicImageSource(frame, inspect);
+  if (cinematicImageCache.has(source)) return cinematicImageCache.get(source);
+  const promise = new Promise((resolve, reject) => {
+    const image = new Image();
+    image.decoding = "async";
+    image.onload = async () => {
+      try {
+        if (typeof image.decode === "function") await image.decode();
+      } catch {
+        // 已触发 load 的图片即使 decode 被浏览器拒绝，也可以安全显示。
+      }
+      resolve(source);
+    };
+    image.onerror = () => reject(new Error(`连续镜头加载失败：${source}`));
+    image.src = source;
+  });
+  cinematicImageCache.set(source, promise);
+  promise.catch(() => cinematicImageCache.delete(source));
+  return promise;
+}
+
+async function playCinematicVoice(voiceId) {
+  const reply = CONTENT.cinematicVoices[voiceId];
+  if (!reply) return;
+  stopVoice(true, true);
+  const sequence = voiceSequence;
+  elements.subtitleScene.textContent = `${reply.scene} · ${reply.label}`;
+  elements.subtitleJapanese.textContent = reply.japanese;
+  elements.subtitleChinese.textContent = reply.chinese;
+  updateReaction({ expression: reply.expression, label: `${reply.scene}里，她小声回答`, text: reply.reaction }, state.motionMode === "lively", true);
+  const reactionFrame = cinematicFrameById(reply.frame);
+  if (reactionFrame) {
+    elements.reactionImage.src = reactionFrame.small;
+    elements.reactionImage.alt = reactionFrame.alt;
+  }
+  showFeedback(true);
+  activeVoiceScene = reply.scene;
+
+  if (state.voiceMuted) {
+    elements.voicePlaybackState.textContent = `只显示字幕 · ${reply.scene}`;
+    elements.stopVoiceButton.hidden = true;
+    settleFeedback(4600);
+    return;
+  }
+
+  const player = prepareVoiceFile(reply.file);
+  if (!player) return;
+  applyPreparedAudioSource(reply.file, player);
+  activeVoicePlayer = player;
+  resetAudioPlayer(player);
+  if (player.error || player.networkState === HTMLMediaElement.NETWORK_NO_SOURCE) player.load();
+  if (player.readyState < HTMLMediaElement.HAVE_FUTURE_DATA) {
+    elements.voicePlaybackState.textContent = `正在准备 · ${reply.scene}`;
+  }
+  try {
+    await player.play();
+    if (sequence !== voiceSequence) return;
+    elements.voicePlaybackState.textContent = `正在播放 · ${reply.scene}`;
+    elements.stopVoiceButton.hidden = false;
+  } catch {
+    if (sequence !== voiceSequence) return;
+    elements.stopVoiceButton.hidden = true;
+    elements.subtitleScene.textContent = `${reply.scene} · 暂时没有声音`;
+    elements.voicePlaybackState.textContent = "角色声音暂时没加载出来 · 可以继续看日文与中文字幕";
+  }
+}
+
+function playCinematicInteraction(voiceId, foleyId, reactionFrame) {
+  const foley = CONTENT.cinematicFoley[foleyId];
+  if (foley) playRoomFx(foley.file);
+  if (cinematicInspector && reactionFrame) cinematicInspector.showReactionFrame(reactionFrame);
+  if (cinematicDirector && reactionFrame) cinematicDirector.flashReactionFrame(reactionFrame);
+  cinematicDirector?.noteInteraction();
+  playCinematicVoice(voiceId);
+}
+
+function motionIsQuiet() {
+  return reducedMotion.matches || state.motionMode === "quiet";
+}
+
+function refreshMotionMode() {
+  const systemReduced = reducedMotion.matches;
+  document.body.dataset.motion = systemReduced ? "reduced" : state.motionMode;
+  elements.motionModeButton.setAttribute("aria-pressed", String(state.motionMode === "quiet"));
+  elements.motionModeButton.disabled = systemReduced;
+  elements.motionModeButton.querySelector("span").textContent = systemReduced
+    ? "系统正在减少动态"
+    : state.motionMode === "quiet" ? "恢复房间活泼" : "让房间静一静";
+  elements.motionModeButton.setAttribute("aria-label", systemReduced
+    ? "系统已启用减少动态效果"
+    : state.motionMode === "quiet" ? "恢复房间的连续镜头和自主小动作" : "让房间静一静，关闭连续镜头和自主小动作");
+  if (motionIsQuiet()) {
+    window.clearTimeout(storyBlinkTimer);
+    window.clearTimeout(livingAutonomyTimer);
+    elements.livingRoomStage.classList.remove("is-autonomous");
+  } else {
+    scheduleStoryBlink();
+    scheduleLivingAutonomy();
+  }
+  cinematicDirector?.setMotionMode();
+}
+
+function toggleMotionMode() {
+  state.motionMode = state.motionMode === "quiet" ? "lively" : "quiet";
+  saveState();
+  refreshMotionMode();
+  updateReaction({
+    expression: state.motionMode === "quiet" ? "shy" : "proud",
+    label: "房间的动作",
+    text: state.motionMode === "quiet" ? "嗯……这样安静一点，也很好。" : "又可以动起来了……不要一直盯着看。"
+  }, false);
+}
+
+class CinematicDirector {
+  constructor(scenes) {
+    this.scenes = scenes;
+    this.beats = elements.cinematicBeats;
+    this.layers = [elements.cinematicLayerA, elements.cinematicLayerB];
+    this.activeSceneIndex = 0;
+    this.currentFrameIndex = 0;
+    this.renderState = { sceneIndex: 0, progress: 0, currentIndex: 0, nextIndex: 0, mix: 0 };
+    this.pairKey = "";
+    this.requestedPairKey = "";
+    this.pairAnimation = null;
+    this.hasRendered = false;
+    this.loadSequence = 0;
+    this.autonomySequence = 0;
+    this.autonomyCount = 0;
+    this.autonomyTimer = 0;
+    this.autonomyReturnTimer = 0;
+    this.visible = false;
+    this.dirty = true;
+    this.raf = 0;
+    this.dataSaver = Boolean(navigator.connection?.saveData)
+      || ["slow-2g", "2g"].includes(navigator.connection?.effectiveType || "");
+    this.onScroll = this.onScroll.bind(this);
+    this.tick = this.tick.bind(this);
+  }
+
+  setup() {
+    if (!elements.cinematicScrollGrid || !this.beats.length) return;
+    elements.cinematicRetry.addEventListener("click", () => {
+      this.pairKey = "";
+      this.requestUpdate();
+    });
+    this.buildProgress();
+    this.beats.forEach((beat, index) => {
+      beat.style.setProperty("--frame-intervals", String(this.scenes[index].frames.length - 1));
+    });
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    window.addEventListener("resize", this.onScroll, { passive: true });
+    if ("IntersectionObserver" in window) {
+      this.sectionObserver = new IntersectionObserver(([entry]) => {
+        this.visible = entry.isIntersecting;
+        if (this.visible) {
+          this.requestUpdate();
+          this.scheduleAutonomy();
+        } else {
+          this.stopAutonomy();
+        }
+      }, { rootMargin: "0px", threshold: 0 });
+      this.sectionObserver.observe(elements.cinematicScrollGrid);
+    } else {
+      this.visible = true;
+      this.requestUpdate();
+    }
+  }
+
+  buildProgress() {
+    const fragment = document.createDocumentFragment();
+    this.scenes.forEach((scene, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.dataset.sceneIndex = String(index);
+      button.setAttribute("aria-label", `前往${scene.label}`);
+      button.innerHTML = `<span>${index + 1}</span><i>${scene.label.split("·").at(-1).trim()}</i>`;
+      button.addEventListener("click", () => {
+        document.querySelector(`#${scene.sectionId}`)?.scrollIntoView({ behavior: motionIsQuiet() ? "auto" : "smooth", block: "center" });
+      });
+      fragment.append(button);
+    });
+    elements.cinematicProgress.replaceChildren(fragment);
+  }
+
+  onScroll() {
+    this.scrolled = true;
+    this.requestUpdate();
+  }
+
+  requestUpdate() {
+    this.dirty = true;
+    if (!this.raf) this.raf = window.requestAnimationFrame(this.tick);
+  }
+
+  tick() {
+    this.raf = 0;
+    if (!this.dirty) return;
+    this.dirty = false;
+    const gridBounds = elements.cinematicScrollGrid.getBoundingClientRect();
+    this.visible = gridBounds.bottom > 0 && gridBounds.top < window.innerHeight;
+    if (this.scrolled) {
+      this.scrolled = false;
+      this.autonomySequence += 1;
+      this.autonomyCount = 0;
+      this.stopAutonomy();
+    }
+    if (!this.visible || document.visibilityState !== "visible") {
+      this.stopAutonomy();
+      this.autonomySequence += 1;
+      this.loadSequence += 1;
+      this.requestedPairKey = "";
+      return;
+    }
+    const focusLine = window.innerHeight * (window.innerWidth <= 760 ? 0.68 : 0.52);
+    const selectionLine = focusLine + 2;
+    let bestIndex = 0;
+    let bestDistance = Number.POSITIVE_INFINITY;
+    this.beats.forEach((beat, index) => {
+      const rect = beat.getBoundingClientRect();
+      const distance = selectionLine < rect.top ? rect.top - selectionLine
+        : selectionLine >= rect.bottom ? selectionLine - rect.bottom : 0;
+      if (distance <= bestDistance) {
+        bestDistance = distance;
+        bestIndex = index;
+      }
+    });
+    const rect = this.beats[bestIndex].getBoundingClientRect();
+    const progress = Math.min(1, Math.max(0, (focusLine - rect.top) / Math.max(1, rect.height)));
+    this.render(bestIndex, progress);
+  }
+
+  render(sceneIndex, progress) {
+    const scene = this.scenes[sceneIndex];
+    if (!scene) return;
+    const reduced = reducedMotion.matches;
+    const quiet = state.motionMode === "quiet";
+    let currentIndex = 0;
+    for (let index = 0; index < scene.frames.length; index += 1) {
+      if (progress >= scene.frames[index].at) currentIndex = index;
+    }
+    let nextIndex = Math.min(currentIndex + 1, scene.frames.length - 1);
+    let mix = 0;
+    if (reduced) {
+      currentIndex = 0;
+      nextIndex = 0;
+    } else if (quiet) {
+      nextIndex = currentIndex;
+    } else if (nextIndex !== currentIndex) {
+      const nextAt = scene.frames[nextIndex].at;
+      const previousAt = scene.frames[currentIndex].at;
+      const blendSpan = Math.min(0.14, Math.max(0.07, (nextAt - previousAt) * 0.46));
+      const raw = Math.min(1, Math.max(0, (progress - (nextAt - blendSpan)) / blendSpan));
+      mix = raw * raw * (3 - 2 * raw);
+    }
+    if (this.dataSaver && mix === 0) nextIndex = currentIndex;
+    this.renderState = { sceneIndex, progress, currentIndex, nextIndex, mix };
+    if (this.activeSceneIndex !== sceneIndex) {
+      this.activeSceneIndex = sceneIndex;
+      this.autonomyCount = 0;
+      this.pairKey = "";
+    }
+    this.currentFrameIndex = currentIndex;
+    this.updateCopy(scene, this.currentFrameIndex);
+    this.updateCamera(scene, currentIndex, nextIndex, progress, mix);
+    const nextScene = this.scenes[sceneIndex + 1];
+    const boundaryProgress = !reduced && !quiet && nextScene && progress > 0.86
+      ? Math.min(1, (progress - 0.86) / 0.14) : 0;
+    elements.cinematicStage.classList.toggle("is-boundary", boundaryProgress > 0);
+    this.renderState.boundaryProgress = boundaryProgress;
+    this.presentPair(scene, currentIndex, nextIndex, mix, boundaryProgress > 0 ? nextScene.frames[0] : null);
+    this.preloadAround(sceneIndex, this.currentFrameIndex);
+    this.scheduleAutonomy();
+  }
+
+  updateCopy(scene, frameIndex) {
+    const frame = scene.frames[frameIndex];
+    elements.cinematicStage.dataset.scene = scene.id;
+    elements.cinematicStage.dataset.frameKind = scene.frameKind;
+    elements.cinematicStage.dataset.transition = scene.transition;
+    elements.cinematicStage.dataset.frame = frame.id;
+    elements.cinematicActLabel.textContent = scene.label;
+    elements.cinematicShortLine.textContent = scene.shortLine;
+    elements.cinematicFrameStatus.textContent = `${frameIndex + 1} / ${scene.frames.length} · ${frame.label}`;
+    this.beats.forEach((beat, index) => beat.classList.toggle("is-active", index === this.activeSceneIndex));
+    [...elements.cinematicProgress.children].forEach((button, index) => {
+      button.classList.toggle("is-active", index === this.activeSceneIndex);
+      if (index === this.activeSceneIndex) button.setAttribute("aria-current", "step");
+      else button.removeAttribute("aria-current");
+    });
+  }
+
+  updateCamera(scene, currentIndex, nextIndex, progress, mix) {
+    const cameraSet = window.innerWidth <= 760 ? scene.camera.mobile : scene.camera.desktop;
+    const from = cameraSet[currentIndex] || { x: 0, y: 0, scale: 1 };
+    const to = cameraSet[nextIndex] || from;
+    const interval = scene.frames[nextIndex].at - scene.frames[currentIndex].at;
+    const intervalProgress = interval > 0 ? Math.min(1, Math.max(0, (progress - scene.frames[currentIndex].at) / interval)) : 0;
+    const amount = motionIsQuiet() ? 0 : intervalProgress * intervalProgress * (3 - 2 * intervalProgress);
+    const x = from.x + (to.x - from.x) * amount;
+    const y = from.y + (to.y - from.y) * amount;
+    const scale = from.scale + (to.scale - from.scale) * amount;
+    const margin = Math.max(0, (scale - 1) * 50 - 0.15);
+    elements.cinematicFrame.style.setProperty("--camera-x", `${Math.min(margin, Math.max(-margin, x))}%`);
+    elements.cinematicFrame.style.setProperty("--camera-y", `${Math.min(margin, Math.max(-margin, y))}%`);
+    elements.cinematicFrame.style.setProperty("--camera-scale", String(scale));
+    elements.cinematicStage.style.setProperty("--scene-progress", String(progress));
+  }
+
+  async presentPair(scene, currentIndex, nextIndex, mix, boundaryFrame = null) {
+    const current = scene.frames[currentIndex];
+    const next = boundaryFrame || scene.frames[nextIndex];
+    const key = `${cinematicImageSource(current)}:${cinematicImageSource(next)}:${state.motionMode}:${reducedMotion.matches}`;
+    if (this.requestedPairKey !== key) {
+      this.requestedPairKey = key;
+      this.loadSequence += 1;
+      this.pairAnimation?.cancel();
+      this.pairAnimation = null;
+    }
+    if (this.pairKey === key) {
+      if (!this.pairAnimation) this.paintMix(mix, current === next);
+      return;
+    }
+    const sequence = this.loadSequence;
+    try {
+      const [currentResult, nextResult] = await Promise.allSettled([
+        decodeCinematicImage(current),
+        current === next ? Promise.resolve(cinematicImageSource(next)) : decodeCinematicImage(next)
+      ]);
+      if (sequence !== this.loadSequence) return;
+      if (currentResult.status !== "fulfilled") throw currentResult.reason;
+      const currentSource = currentResult.value;
+      const nextSource = nextResult.status === "fulfilled" ? nextResult.value : currentSource;
+      const previousSource = Number(this.layers[1].style.opacity) > 0.5 ? this.layers[1].src : this.layers[0].src;
+      this.pairAnimation?.cancel();
+      this.pairAnimation = null;
+      this.pairKey = nextResult.status === "fulfilled" ? key : "";
+      this.layers[0].removeAttribute("srcset");
+      this.layers[1].removeAttribute("srcset");
+      this.layers[0].src = currentSource;
+      this.layers[0].alt = current.alt;
+      this.layers[1].src = nextSource;
+      this.layers[1].alt = "";
+      elements.cinematicStage.classList.remove("is-image-missing");
+      elements.cinematicRetry.hidden = true;
+      if (state.motionMode === "quiet" && !reducedMotion.matches && this.hasRendered && previousSource !== this.layers[0].src) {
+        this.layers[0].src = previousSource;
+        this.layers[0].style.opacity = "1";
+        this.layers[1].src = currentSource;
+        const animation = this.layers[1].animate([{ opacity: 0 }, { opacity: 1 }], { duration: 160, easing: "ease-out", fill: "forwards" });
+        this.pairAnimation = animation;
+        animation.onfinish = () => {
+          if (sequence !== this.loadSequence) return;
+          this.layers[0].src = currentSource;
+          animation.cancel();
+          this.pairAnimation = null;
+          this.paintMix(0, true);
+        };
+        return;
+      }
+      this.hasRendered = true;
+      const latest = this.renderState;
+      if (latest.sceneIndex === this.activeSceneIndex) this.paintMix(latest.mix, currentSource === nextSource);
+    } catch {
+      if (sequence !== this.loadSequence) return;
+      elements.cinematicStage.classList.add("is-image-missing");
+      elements.cinematicFrameStatus.textContent = "插画暂时没有加载出来 · 文字仍可继续阅读";
+      elements.cinematicRetry.hidden = false;
+    }
+  }
+
+  paintMix(mix, sameFrame) {
+    const boundary = this.renderState.boundaryProgress || 0;
+    const amount = sameFrame ? 0 : boundary > 0 ? 1 : mix;
+    this.layers[0].style.opacity = "1";
+    this.layers[1].style.opacity = String(amount);
+    this.layers[1].style.clipPath = boundary > 0
+      ? elements.cinematicStage.dataset.transition.includes("paper")
+        ? `inset(${(1 - boundary) * 100}% 0 0)`
+        : `inset(0 0 0 ${(1 - boundary) * 100}%)`
+      : "none";
+  }
+
+  preloadAround(sceneIndex, frameIndex) {
+    if (this.dataSaver) return;
+    const scene = this.scenes[sceneIndex];
+    const nextFrame = scene?.frames[Math.min(frameIndex + 1, scene.frames.length - 1)];
+    const nextScene = this.scenes[sceneIndex + 1];
+    if (nextFrame && !reducedMotion.matches) decodeCinematicImage(nextFrame).catch(() => {});
+    if (nextScene?.frames[0]) decodeCinematicImage(nextScene.frames[0]).catch(() => {});
+  }
+
+  stopAutonomy(clearReturn = true) {
+    window.clearTimeout(this.autonomyTimer);
+    this.autonomyTimer = 0;
+    if (clearReturn) {
+      window.clearTimeout(this.autonomyReturnTimer);
+      this.autonomyReturnTimer = 0;
+    }
+    elements.cinematicStage.classList.remove("is-autonomous");
+  }
+
+  scheduleAutonomy() {
+    window.clearTimeout(this.autonomyTimer);
+    if (!this.visible || motionIsQuiet() || document.visibilityState !== "visible" || this.autonomyCount >= 3 || elements.cinematicInspectDialog.open) return;
+    const sequence = this.autonomySequence;
+    this.autonomyTimer = window.setTimeout(() => {
+      if (sequence !== this.autonomySequence || motionIsQuiet() || !this.visible) return;
+      const scene = this.scenes[this.activeSceneIndex];
+      const reactionIndex = Math.min(this.currentFrameIndex + 1, scene.frames.length - 1);
+      this.autonomyCount += 1;
+      this.flashReactionFrame(scene.frames[reactionIndex].id, true);
+      this.scheduleAutonomy();
+    }, 4000 + Math.random() * 3000);
+  }
+
+  async flashReactionFrame(frameId, autonomous = false) {
+    const frame = cinematicFrameById(frameId);
+    if (!frame || !this.visible || !this.activeScene().frames.includes(frame) || elements.cinematicInspectDialog.open || motionIsQuiet() && autonomous) return;
+    const sequence = ++this.autonomySequence;
+    this.loadSequence += 1;
+    this.requestedPairKey = "";
+    try {
+      const source = await decodeCinematicImage(frame);
+      if (sequence !== this.autonomySequence) return;
+      this.loadSequence += 1;
+      this.pairKey = "";
+      this.pairAnimation?.cancel();
+      this.pairAnimation = null;
+      this.layers[1].src = source;
+      this.layers[1].style.opacity = "1";
+      this.layers[1].style.clipPath = "none";
+      elements.cinematicStage.classList.add("is-autonomous");
+      window.clearTimeout(this.autonomyReturnTimer);
+      this.autonomyReturnTimer = window.setTimeout(() => {
+        if (sequence !== this.autonomySequence) return;
+        elements.cinematicStage.classList.remove("is-autonomous");
+        this.pairKey = "";
+        this.requestUpdate();
+      }, autonomous ? 520 : 900);
+    } catch {
+      // 自主小动作加载失败不影响主镜头。
+    }
+  }
+
+  setMotionMode() {
+    this.stopAutonomy();
+    this.autonomySequence += 1;
+    this.pairKey = "";
+    this.requestedPairKey = "";
+    this.loadSequence += 1;
+    this.pairAnimation?.cancel();
+    this.pairAnimation = null;
+    this.requestUpdate();
+    if (!motionIsQuiet()) this.scheduleAutonomy();
+  }
+
+  noteInteraction() {
+    this.autonomyCount = 0;
+    this.scheduleAutonomy();
+  }
+
+  handleVisibility() {
+    if (document.visibilityState === "visible") {
+      this.requestUpdate();
+      this.scheduleAutonomy();
+    } else {
+      this.stopAutonomy();
+      this.autonomySequence += 1;
+    }
+  }
+
+  activeScene() {
+    return this.scenes[this.activeSceneIndex] || this.scenes[0];
+  }
+
+  activeFrame() {
+    const scene = this.activeScene();
+    return scene.frames[this.currentFrameIndex] || scene.frames[0];
+  }
+}
+
+class CinematicInspector {
+  constructor() {
+    this.scene = null;
+    this.frame = null;
+    this.inspectFrame = null;
+    this.scale = 1;
+    this.x = 0;
+    this.y = 0;
+    this.pointers = new Map();
+    this.dragStart = null;
+    this.pinchStart = null;
+    this.returnFocus = null;
+    this.scrollY = 0;
+    this.loadSequence = 0;
+    this.reactionTimer = 0;
+    this.reactionSequence = 0;
+  }
+
+  setup() {
+    elements.cinematicInspectButton.addEventListener("click", () => this.open());
+    elements.cinematicVoiceToggle.addEventListener("click", () => { toggleVoiceMode(); this.syncControls(); });
+    elements.cinematicFoleyToggle.addEventListener("click", () => {
+      toggleLivingSound();
+      this.syncControls();
+    });
+    elements.cinematicVoiceStop.addEventListener("click", () => stopVoice(true, true, true));
+    this.subtitleObserver = new MutationObserver(() => {
+      if (!elements.cinematicInspectDialog.open) return;
+      elements.cinematicInspectJapanese.textContent = elements.subtitleJapanese.textContent;
+      elements.cinematicInspectChinese.textContent = elements.subtitleChinese.textContent;
+      elements.cinematicInspectPlayback.textContent = elements.voicePlaybackState.textContent;
+    });
+    this.subtitleObserver.observe(elements.subtitleBar, { childList: true, subtree: true, characterData: true });
+    elements.cinematicInspectClose.addEventListener("click", () => elements.cinematicInspectDialog.close());
+    elements.cinematicZoomOut.addEventListener("click", () => this.setScale(this.scale - 0.2));
+    elements.cinematicZoomIn.addEventListener("click", () => this.setScale(this.scale + 0.2));
+    elements.cinematicInspectReset.addEventListener("click", () => this.reset());
+    elements.cinematicInspectRetry.addEventListener("click", () => this.loadFrame(this.frame));
+    elements.cinematicCharacterHotspot.addEventListener("click", () => {
+      if (!this.scene) return;
+      const voice = CONTENT.cinematicVoices[this.scene.characterVoiceId];
+      playCinematicInteraction(this.scene.characterVoiceId, "", voice?.frame || this.frame?.id);
+    });
+    elements.cinematicInspectDialog.addEventListener("close", () => this.afterClose());
+    elements.cinematicInspectDialog.addEventListener("click", (event) => {
+      if (event.target === elements.cinematicInspectDialog) elements.cinematicInspectDialog.close();
+    });
+    const viewport = elements.cinematicInspectViewport;
+    viewport.addEventListener("wheel", (event) => this.onWheel(event), { passive: false });
+    viewport.addEventListener("dblclick", (event) => {
+      if (event.target.closest("button")) return;
+      event.preventDefault();
+      this.setScale(this.scale > 1.45 ? 1 : 2);
+    });
+    viewport.addEventListener("pointerdown", (event) => this.onPointerDown(event));
+    viewport.addEventListener("pointermove", (event) => this.onPointerMove(event));
+    viewport.addEventListener("pointerup", (event) => this.onPointerEnd(event));
+    viewport.addEventListener("pointercancel", (event) => this.onPointerEnd(event));
+    viewport.addEventListener("keydown", (event) => this.onKeyDown(event));
+    this.viewportObserver = new ResizeObserver(() => {
+      if (!elements.cinematicInspectDialog.open) return;
+      this.clampPan();
+      this.applyTransform();
+      this.positionHotspots();
+    });
+    this.viewportObserver.observe(viewport);
+    window.addEventListener("resize", () => {
+      if (!elements.cinematicInspectDialog.open) return;
+      this.clampPan();
+      this.applyTransform();
+      this.positionHotspots();
+    }, { passive: true });
+  }
+
+  open() {
+    this.scene = cinematicDirector?.activeScene() || CONTENT.cinematicScenes[0];
+    this.inspectFrame = cinematicFrameById(this.scene.inspectFrameId) || this.scene.frames[0];
+    this.frame = this.inspectFrame;
+    this.returnFocus = elements.cinematicInspectButton;
+    this.scrollY = window.scrollY;
+    collapseFeedback();
+    window.scrollTo({ top: this.scrollY, behavior: "instant" });
+    document.documentElement.classList.add("cinematic-inspecting");
+    cinematicDirector?.stopAutonomy();
+    elements.cinematicInspectAct.textContent = this.scene.label;
+    elements.cinematicInspectTitle.textContent = `看看${this.scene.label.split("·").at(-1).trim()}`;
+    elements.cinematicInspectFallback.textContent = this.scene.shortLine;
+    elements.cinematicInspectDialog.dataset.frameKind = this.scene.frameKind;
+    this.renderHotspots();
+    this.syncControls();
+    elements.cinematicInspectJapanese.textContent = "";
+    elements.cinematicInspectChinese.textContent = this.scene.shortLine;
+    elements.cinematicInspectPlayback.textContent = "碰一下物件，或者轻声叫她。";
+    this.reset();
+    this.loadFrame(this.frame);
+    if (typeof elements.cinematicInspectDialog.showModal === "function") elements.cinematicInspectDialog.showModal();
+    else elements.cinematicInspectDialog.setAttribute("open", "");
+    window.setTimeout(() => {
+      this.positionHotspots();
+      elements.cinematicInspectViewport.focus({ preventScroll: true });
+    }, 0);
+  }
+
+  async loadFrame(frame) {
+    if (!frame) return;
+    const sequence = ++this.loadSequence;
+    elements.cinematicInspectError.hidden = true;
+    elements.cinematicInspectViewport.classList.add("is-loading");
+    try {
+      const source = await decodeCinematicImage(frame, true);
+      if (sequence !== this.loadSequence) return;
+      elements.cinematicInspectImage.src = source;
+      elements.cinematicInspectImage.alt = frame.alt;
+      this.frame = frame;
+      elements.cinematicInspectViewport.classList.remove("is-loading", "is-image-missing");
+      this.positionHotspots();
+    } catch {
+      if (sequence !== this.loadSequence) return;
+      try {
+        const fallback = await decodeCinematicImage(frame);
+        if (sequence !== this.loadSequence) return;
+        elements.cinematicInspectImage.src = fallback;
+        elements.cinematicInspectImage.alt = frame.alt;
+        this.frame = frame;
+      } catch {
+        // 保留上一张成功显示的图片，仍提供重试和关闭入口。
+      }
+      if (sequence !== this.loadSequence) return;
+      elements.cinematicInspectViewport.classList.remove("is-loading");
+      elements.cinematicInspectViewport.classList.add("is-image-missing");
+      elements.cinematicInspectError.hidden = false;
+    }
+  }
+
+  syncControls() {
+    elements.cinematicVoiceToggle.textContent = `角色声音 · ${state.voiceMuted ? "关" : "开"}`;
+    elements.cinematicVoiceToggle.setAttribute("aria-pressed", String(state.voiceMuted));
+    elements.cinematicVoiceToggle.setAttribute("aria-label", state.voiceMuted ? "打开角色语音" : "关闭角色语音，只显示字幕");
+    elements.cinematicFoleyToggle.textContent = `物件声音 · ${state.roomSoundMuted ? "关" : "开"}`;
+    elements.cinematicFoleyToggle.setAttribute("aria-pressed", String(state.roomSoundMuted));
+    elements.cinematicFoleyToggle.setAttribute("aria-label", state.roomSoundMuted ? "打开物件声音" : "关闭物件声音");
+  }
+
+  showReactionFrame(frameId) {
+    const frame = cinematicFrameById(frameId);
+    if (!frame) return;
+    window.clearTimeout(this.reactionTimer);
+    const sequence = ++this.reactionSequence;
+    elements.cinematicInspectCanvas.classList.add("is-reacting");
+    this.loadFrame(frame);
+    this.reactionTimer = window.setTimeout(async () => {
+      if (sequence !== this.reactionSequence || !elements.cinematicInspectDialog.open) return;
+      await this.loadFrame(this.inspectFrame);
+      if (sequence !== this.reactionSequence || !elements.cinematicInspectDialog.open) return;
+      elements.cinematicInspectCanvas.classList.remove("is-reacting");
+    }, 1050);
+  }
+
+  renderHotspots() {
+    const mobile = window.matchMedia("(max-width: 760px)").matches;
+    const fragment = document.createDocumentFragment();
+    this.scene.hotspots.forEach((hotspot) => {
+      const position = mobile ? hotspot.mobilePosition : hotspot.desktopPosition;
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "cinematic-object-hotspot";
+      button.dataset.hotspotX = String(position.x);
+      button.dataset.hotspotY = String(position.y);
+      button.setAttribute("aria-label", hotspot.label);
+      button.innerHTML = `<svg aria-hidden="true" viewBox="0 0 32 32"><path d="M11.2 14.2c-2.1 0-3.7-2-3.7-4.4s1.6-4.3 3.7-4.3 3.6 2 3.6 4.3-1.6 4.4-3.6 4.4Zm9.6 0c-2 0-3.6-2-3.6-4.4s1.6-4.3 3.6-4.3 3.7 2 3.7 4.3-1.6 4.4-3.7 4.4ZM16 29c-5.2 0-8.5-2.2-8.5-5.5 0-3 2.2-7.3 5.2-8.5 1.8-.7 2.2 1 3.3 1s1.5-1.7 3.3-1c3 1.2 5.2 5.5 5.2 8.5 0 3.3-3.3 5.5-8.5 5.5Z"/></svg><span>${hotspot.label}</span>`;
+      button.addEventListener("click", () => playCinematicInteraction(hotspot.voiceId, hotspot.foleyId, hotspot.reactionFrame));
+      fragment.append(button);
+    });
+    elements.cinematicInspectHotspots.replaceChildren(fragment);
+    const characterPositions = {
+      door: { x: 55, y: 39 },
+      room: { x: 47, y: 36 },
+      secrets: { x: 50, y: 34 },
+      wardrobe: { x: 51, y: 25 },
+      gallery: { x: 51, y: 28 },
+      drawing: { x: 51, y: 32 },
+      goodnight: { x: 55, y: 30 }
+    };
+    const characterPosition = characterPositions[this.scene.id];
+    elements.cinematicCharacterHotspot.dataset.hotspotX = String(characterPosition.x);
+    elements.cinematicCharacterHotspot.dataset.hotspotY = String(characterPosition.y);
+    elements.cinematicCharacterHotspot.setAttribute("aria-label", `轻声呼唤${this.scene.label.split("·").at(-1).trim()}画面里的纱雾`);
+  }
+
+  positionHotspots() {
+    if (!this.scene || !elements.cinematicInspectDialog.open) return;
+    const width = elements.cinematicInspectViewport.clientWidth;
+    const height = elements.cinematicInspectViewport.clientHeight;
+    if (!width || !height) return;
+    const imageRatio = this.scene.frameKind === "portrait" ? 4 / 5 : 4 / 3;
+    const imageWidth = Math.min(width, height * imageRatio);
+    const imageHeight = imageWidth / imageRatio;
+    const imageLeft = (width - imageWidth) / 2;
+    const imageTop = (height - imageHeight) / 2;
+    [...elements.cinematicInspectHotspots.children, elements.cinematicCharacterHotspot].forEach((button) => {
+      const x = Number(button.dataset.hotspotX);
+      const y = Number(button.dataset.hotspotY);
+      button.style.left = `${imageLeft + imageWidth * x / 100}px`;
+      button.style.top = `${imageTop + imageHeight * y / 100}px`;
+    });
+  }
+
+  setScale(value) {
+    this.scale = Math.min(2, Math.max(1, Math.round(value * 100) / 100));
+    this.clampPan();
+    this.applyTransform();
+  }
+
+  reset() {
+    this.scale = 1;
+    this.x = 0;
+    this.y = 0;
+    this.applyTransform();
+  }
+
+  clampPan() {
+    const bounds = elements.cinematicInspectViewport.getBoundingClientRect();
+    const ratio = this.scene?.frameKind === "portrait" ? 4 / 5 : 4 / 3;
+    const imageWidth = Math.min(bounds.width, bounds.height * ratio);
+    const imageHeight = imageWidth / ratio;
+    const maxX = Math.max(0, (imageWidth * this.scale - bounds.width) / 2);
+    const maxY = Math.max(0, (imageHeight * this.scale - bounds.height) / 2);
+    this.x = Math.min(maxX, Math.max(-maxX, this.x));
+    this.y = Math.min(maxY, Math.max(-maxY, this.y));
+  }
+
+  applyTransform() {
+    elements.cinematicInspectCanvas.style.setProperty("--inspect-x", `${this.x}px`);
+    elements.cinematicInspectCanvas.style.setProperty("--inspect-y", `${this.y}px`);
+    elements.cinematicInspectCanvas.style.setProperty("--inspect-scale", String(this.scale));
+    elements.cinematicZoomStatus.value = `${Math.round(this.scale * 100)}%`;
+    elements.cinematicZoomStatus.textContent = `${Math.round(this.scale * 100)}%`;
+    elements.cinematicZoomOut.disabled = this.scale <= 1;
+    elements.cinematicZoomIn.disabled = this.scale >= 2;
+  }
+
+  onWheel(event) {
+    event.preventDefault();
+    this.setScale(this.scale + (event.deltaY < 0 ? 0.12 : -0.12));
+  }
+
+  onPointerDown(event) {
+    if (event.target.closest("button")) return;
+    event.preventDefault();
+    try {
+      elements.cinematicInspectViewport.setPointerCapture?.(event.pointerId);
+    } catch {
+      // 合成触控测试与部分浏览器不会为非主指针建立捕获，手势状态仍可继续维护。
+    }
+    this.pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    elements.cinematicInspectCanvas.classList.add("is-dragging");
+    if (this.pointers.size === 1) {
+      this.dragStart = { x: event.clientX, y: event.clientY, baseX: this.x, baseY: this.y };
+      this.pinchStart = null;
+    } else if (this.pointers.size === 2) {
+      const [a, b] = [...this.pointers.values()];
+      this.pinchStart = { distance: Math.hypot(a.x - b.x, a.y - b.y), scale: this.scale };
+    }
+  }
+
+  onPointerMove(event) {
+    if (!this.pointers.has(event.pointerId)) return;
+    event.preventDefault();
+    this.pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    if (this.pointers.size === 2 && this.pinchStart) {
+      const [a, b] = [...this.pointers.values()];
+      const distance = Math.hypot(a.x - b.x, a.y - b.y);
+      this.setScale(this.pinchStart.scale * distance / Math.max(1, this.pinchStart.distance));
+      return;
+    }
+    if (this.pointers.size === 1 && this.dragStart && this.scale > 1) {
+      this.x = this.dragStart.baseX + event.clientX - this.dragStart.x;
+      this.y = this.dragStart.baseY + event.clientY - this.dragStart.y;
+      this.clampPan();
+      this.applyTransform();
+    }
+  }
+
+  onPointerEnd(event) {
+    this.pointers.delete(event.pointerId);
+    try {
+      if (elements.cinematicInspectViewport.hasPointerCapture?.(event.pointerId)) {
+        elements.cinematicInspectViewport.releasePointerCapture(event.pointerId);
+      }
+    } catch {
+      // 指针已由浏览器释放时无需重复处理。
+    }
+    this.dragStart = null;
+    this.pinchStart = null;
+    if (this.pointers.size === 1) {
+      const point = [...this.pointers.values()][0];
+      this.dragStart = { ...point, baseX: this.x, baseY: this.y };
+    } else if (this.pointers.size === 0) {
+      elements.cinematicInspectCanvas.classList.remove("is-dragging");
+    }
+  }
+
+  onKeyDown(event) {
+    const step = event.shiftKey ? 64 : 28;
+    if (["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "+", "=", "-", "_", "Home"].includes(event.key)) event.preventDefault();
+    if (event.key === "ArrowLeft") this.x += step;
+    else if (event.key === "ArrowRight") this.x -= step;
+    else if (event.key === "ArrowUp") this.y += step;
+    else if (event.key === "ArrowDown") this.y -= step;
+    else if (event.key === "+" || event.key === "=") return this.setScale(this.scale + 0.2);
+    else if (event.key === "-" || event.key === "_") return this.setScale(this.scale - 0.2);
+    else if (event.key === "Home") return this.reset();
+    this.clampPan();
+    this.applyTransform();
+  }
+
+  afterClose() {
+    this.loadSequence += 1;
+    this.reactionSequence += 1;
+    window.clearTimeout(this.reactionTimer);
+    elements.cinematicInspectCanvas.classList.remove("is-reacting", "is-dragging");
+    this.pointers.clear();
+    this.reset();
+    document.documentElement.classList.remove("cinematic-inspecting");
+    window.scrollTo({ top: this.scrollY, behavior: "instant" });
+    this.returnFocus?.focus({ preventScroll: true });
+    if (activeVoicePlayer && !activeVoicePlayer.paused) showFeedback(true);
+    cinematicDirector?.requestUpdate();
+  }
+}
+
+let cinematicInspector = null;
+
+function setupCinematic() {
+  cinematicDirector = new CinematicDirector(CONTENT.cinematicScenes);
+  cinematicInspector = new CinematicInspector();
+  cinematicDirector.setup();
+  cinematicInspector.setup();
 }
 
 function handleVoiceEnded(event) {
@@ -2825,7 +3976,7 @@ async function transitionStoryFrame(key) {
 function canStoryBlink() {
   return storyInView
     && !storyBusy
-    && !reducedMotion.matches
+    && !motionIsQuiet()
     && document.visibilityState === "visible"
     && elements.storyStage.dataset.frame === "focus";
 }
@@ -3471,7 +4622,7 @@ function keepFortuneAndClose() {
 
 function preloadDoorSequence() {
   [CONTENT.heroExpressions.startled, CONTENT.heroExpressions.shy]
-    .forEach((item) => preloadResponsiveImage(item, "(max-width: 760px) calc(100vw - 1.6rem), (max-width: 1024px) 78vw, 1120px").catch(() => {}));
+    .forEach((item) => decodeCinematicImage(item).catch(() => {}));
 }
 
 function prepareVoiceLine(id) {
@@ -3484,48 +4635,18 @@ function setupAudioWarmup() {
   const voiceButtons = [...document.querySelectorAll("[data-voice]")];
   voiceButtons.forEach((button) => {
     const prepare = () => prepareVoiceLine(button.dataset.voice);
-    button.addEventListener("pointerenter", prepare, { once: true });
-    button.addEventListener("focus", prepare, { once: true });
     button.addEventListener("pointerdown", prepare, { once: true });
   });
 
   const prepareCurrentRoom = () => prepareLivingAudioForPlace(state.livingPlace);
   [elements.livingEventButton, elements.livingVoiceButton].forEach((button) => {
-    button.addEventListener("pointerenter", prepareCurrentRoom);
-    button.addEventListener("focus", prepareCurrentRoom);
     button.addEventListener("pointerdown", prepareCurrentRoom);
   });
   const prepareNextWeather = () => prepareLivingWeatherAudio(state.livingWeather === "rain" ? "clear" : "rain");
-  elements.livingWeatherToggle.addEventListener("pointerenter", prepareNextWeather);
-  elements.livingWeatherToggle.addEventListener("focus", prepareNextWeather);
   elements.livingWeatherToggle.addEventListener("pointerdown", prepareNextWeather);
 
   const prepareGoodnightDoor = () => prepareRoomFxFile(CONTENT.goodnight.doorSound);
-  elements.takeNoteButton.addEventListener("pointerenter", prepareGoodnightDoor, { once: true });
-  elements.takeNoteButton.addEventListener("focus", prepareGoodnightDoor, { once: true });
   elements.takeNoteButton.addEventListener("pointerdown", prepareGoodnightDoor, { once: true });
-
-  if (!("IntersectionObserver" in window)) {
-    voiceButtons.forEach((button) => prepareVoiceLine(button.dataset.voice));
-    prepareCurrentLivingAudio();
-    return;
-  }
-
-  const voiceObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      prepareVoiceLine(entry.target.dataset.voice);
-      voiceObserver.unobserve(entry.target);
-    });
-  }, { rootMargin: "520px 0px" });
-  voiceButtons.forEach((button) => voiceObserver.observe(button));
-
-  const roomObserver = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) return;
-    prepareCurrentLivingAudio();
-    roomObserver.disconnect();
-  }, { rootMargin: "900px 0px" });
-  roomObserver.observe(elements.livingRoom);
 }
 
 function observeDeferredSections() {
@@ -3555,7 +4676,7 @@ function observeDeferredSections() {
 function setupParallax() {
   if (reducedMotion.matches) return;
   elements.doorScene.addEventListener("pointermove", (event) => {
-    if (doorOpened) return;
+    if (doorOpened || motionIsQuiet()) return;
     const bounds = elements.doorScene.getBoundingClientRect();
     const horizontal = (event.clientX - bounds.left) / bounds.width - 0.5;
     const vertical = (event.clientY - bounds.top) / bounds.height - 0.5;
@@ -3581,7 +4702,7 @@ function scrollPageTarget(target, focusTarget = false) {
   const targetTop = target.getBoundingClientRect().top + window.scrollY;
   window.scrollTo({
     top: Math.max(0, targetTop - navHeight - 12),
-    behavior: reducedMotion.matches ? "auto" : "smooth"
+    behavior: motionIsQuiet() ? "auto" : "smooth"
   });
   if (focusTarget) target.focus({ preventScroll: true });
 }
@@ -3652,6 +4773,8 @@ elements.storyStageImage.addEventListener("error", () => {
 }, { once: true });
 
 elements.knockButton.addEventListener("click", openDoor);
+elements.motionModeButton.addEventListener("click", toggleMotionMode);
+reducedMotion.addEventListener("change", refreshMotionMode);
 elements.knockButton.addEventListener("pointerenter", preloadDoorSequence, { once: true });
 elements.knockButton.addEventListener("focus", preloadDoorSequence, { once: true });
 elements.knockButton.addEventListener("pointerdown", preloadDoorSequence, { once: true });
@@ -3720,6 +4843,7 @@ document.addEventListener("visibilitychange", () => {
     if (quietActive && !quietTimer) renderQuietCompanion();
     scheduleStoryBlink();
     scheduleLivingAutonomy();
+    cinematicDirector?.handleVisibility();
   } else {
     accumulateQuietTime(true);
     window.clearTimeout(quietTimer);
@@ -3727,6 +4851,7 @@ document.addEventListener("visibilitychange", () => {
     if (quietActive) persistStoryDraft("quiet");
     window.clearTimeout(storyBlinkTimer);
     window.clearTimeout(livingAutonomyTimer);
+    cinematicDirector?.handleVisibility();
   }
 });
 
@@ -3735,6 +4860,7 @@ window.addEventListener("pagehide", () => {
   window.clearTimeout(quietTimer);
   quietTimer = 0;
   if (quietActive) persistStoryDraft("quiet");
+  cinematicDirector?.stopAutonomy();
 });
 
 elements.livingRoomImage.addEventListener("load", () => {
@@ -3748,6 +4874,7 @@ elements.livingRoomImage.addEventListener("error", () => {
 
 applyVisitStage();
 refreshVoiceControls();
+refreshMotionMode();
 buildGalleryChapters();
 buildGalleryThumbs();
 applyOutfit(state.outfit);
@@ -3758,6 +4885,7 @@ setupSecretHints();
 setupLivingRoom();
 setupDrawingStory();
 setupWindowRain();
+setupCinematic();
 setupPageNavigation();
 setupParallax();
 setupAudioWarmup();
