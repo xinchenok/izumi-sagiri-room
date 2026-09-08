@@ -94,6 +94,24 @@ test("快速上下滚动只保留最后一幕，不让旧图片覆盖", async ({
   await expect(page.locator("#cinematicLayerA")).not.toHaveAttribute("src", /room-|goodnight-/u);
 });
 
+test("下一动作帧下载缓慢时，当前帧仍立即显示", async ({ page }) => {
+  let releaseNeighbor;
+  const blocked = new Promise((resolve) => { releaseNeighbor = resolve; });
+  await page.route("**/assets/v19/room-stops-pen-1440.webp", async (route) => {
+    await blocked;
+    await route.continue();
+  });
+  try {
+    await openClean(page);
+    await scrollScene(page, "room", 0.1);
+    await expect(page.locator("#cinematicLayerA")).toHaveAttribute("src", /room-drawing-1440\.webp$/u);
+    await expect(page.locator("#cinematicLayerA")).toHaveJSProperty("complete", true);
+    await expect(page.locator("#cinematicLayerA")).toHaveCSS("opacity", "1");
+  } finally {
+    releaseNeighbor();
+  }
+});
+
 test("观察模式支持热点、两倍缩放、边界、复位、Esc 与焦点恢复", async ({ page }) => {
   await openClean(page);
   await scrollScene(page, "room", 0.6);

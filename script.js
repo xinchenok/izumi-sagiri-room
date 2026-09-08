@@ -2859,6 +2859,7 @@ class CinematicDirector {
     this.renderState = { sceneIndex: 0, progress: 0, currentIndex: 0, nextIndex: 0, mix: 0 };
     this.pairKey = "";
     this.requestedPairKey = "";
+    this.nextReadyKey = "";
     this.pairAnimation = null;
     this.hasRendered = false;
     this.loadSequence = 0;
@@ -2877,6 +2878,7 @@ class CinematicDirector {
 
   setup() {
     if (!elements.cinematicScrollGrid || !this.beats.length) return;
+    this.layers[0].src = elements.heroCharacter.currentSrc || cinematicImageSource(this.scenes[0].frames[0]);
     elements.cinematicRetry.addEventListener("click", () => {
       this.pairKey = "";
       this.requestUpdate();
@@ -3060,23 +3062,18 @@ class CinematicDirector {
     }
     const sequence = this.loadSequence;
     try {
-      const [currentResult, nextResult] = await Promise.allSettled([
-        decodeCinematicImage(current),
-        current === next ? Promise.resolve(cinematicImageSource(next)) : decodeCinematicImage(next)
-      ]);
+      const currentSource = await decodeCinematicImage(current);
       if (sequence !== this.loadSequence) return;
-      if (currentResult.status !== "fulfilled") throw currentResult.reason;
-      const currentSource = currentResult.value;
-      const nextSource = nextResult.status === "fulfilled" ? nextResult.value : currentSource;
       const previousSource = Number(this.layers[1].style.opacity) > 0.5 ? this.layers[1].src : this.layers[0].src;
       this.pairAnimation?.cancel();
       this.pairAnimation = null;
-      this.pairKey = nextResult.status === "fulfilled" ? key : "";
+      this.pairKey = key;
+      this.nextReadyKey = current === next ? key : "";
       this.layers[0].removeAttribute("srcset");
       this.layers[1].removeAttribute("srcset");
       this.layers[0].src = currentSource;
       this.layers[0].alt = current.alt;
-      this.layers[1].src = nextSource;
+      this.layers[1].src = currentSource;
       this.layers[1].alt = "";
       elements.cinematicStage.classList.remove("is-image-missing");
       elements.cinematicRetry.hidden = true;
@@ -3096,8 +3093,19 @@ class CinematicDirector {
         return;
       }
       this.hasRendered = true;
-      const latest = this.renderState;
-      if (latest.sceneIndex === this.activeSceneIndex) this.paintMix(latest.mix, currentSource === nextSource);
+      this.paintMix(0, true);
+      if (current !== next) {
+        try {
+          const nextSource = await decodeCinematicImage(next);
+          if (sequence !== this.loadSequence) return;
+          this.layers[1].src = nextSource;
+          this.nextReadyKey = key;
+          this.paintMix(this.renderState.mix, false);
+        } catch {
+          // 邻帧失败不遮住当前帧；下一次滚动或重试可重新准备邻帧。
+          if (sequence === this.loadSequence) this.pairKey = "";
+        }
+      }
     } catch {
       if (sequence !== this.loadSequence) return;
       elements.cinematicStage.classList.add("is-image-missing");
@@ -3108,7 +3116,7 @@ class CinematicDirector {
 
   paintMix(mix, sameFrame) {
     const boundary = this.renderState.boundaryProgress || 0;
-    const amount = sameFrame ? 0 : boundary > 0 ? 1 : mix;
+    const amount = sameFrame || this.nextReadyKey !== this.pairKey ? 0 : boundary > 0 ? 1 : mix;
     this.layers[0].style.opacity = "1";
     this.layers[1].style.opacity = String(amount);
     this.layers[1].style.clipPath = boundary > 0
