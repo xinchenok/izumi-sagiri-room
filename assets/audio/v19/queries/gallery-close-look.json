@@ -1,0 +1,44 @@
+{
+  "id": "gallery-close-look",
+  "scene": "画册",
+  "japanese": "その画、近くで見るなら……感想もちゃんと言って。",
+  "chinese": "要靠近看那张画……也要认真说感想。",
+  "profile": "shy",
+  "requested_params": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "applied_scales": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 107,
+  "padded_phoneme_count": 107,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/gallery-close-look.wav",
+  "raw_wav_sha256": "f6a8e8767c3c877090421887c30f4644f53230b5dae9998dbd7ddee320651085",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -17.73,
+    "true_peak_db": 0.01,
+    "lra": 1.5,
+    "threshold": -28.09,
+    "target_offset": -0.25
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-17.73:measured_LRA=1.5:measured_TP=0.01:measured_thresh=-28.09:offset=-0.25:linear=true:print_format=summary"
+}

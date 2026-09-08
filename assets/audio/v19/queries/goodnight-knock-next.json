@@ -1,0 +1,44 @@
+{
+  "id": "goodnight-knock-next",
+  "scene": "晚安",
+  "japanese": "おやすみ。次も……ちゃんとノックしてね。",
+  "chinese": "晚安。下次也要……好好敲门哦。",
+  "profile": "shy",
+  "requested_params": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "applied_scales": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 75,
+  "padded_phoneme_count": 75,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/goodnight-knock-next.wav",
+  "raw_wav_sha256": "cd50993d68af96d74643812f21ece4858dd5aafc85291c58742d7c8fbd232da3",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -15.07,
+    "true_peak_db": -0.12,
+    "lra": 0.7,
+    "threshold": -25.61,
+    "target_offset": -1.5
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-15.07:measured_LRA=0.7:measured_TP=-0.12:measured_thresh=-25.61:offset=-1.5:linear=true:print_format=summary"
+}

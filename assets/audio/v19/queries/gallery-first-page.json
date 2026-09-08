@@ -1,0 +1,44 @@
+{
+  "id": "gallery-first-page",
+  "scene": "画册",
+  "japanese": "最初のページは、まだ線が少し震えてるの。",
+  "chinese": "第一页的线条还有一点抖。",
+  "profile": "soft",
+  "requested_params": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "applied_scales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 104,
+  "padded_phoneme_count": 104,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/gallery-first-page.wav",
+  "raw_wav_sha256": "3931f3454e1cb59eed205675339d5822d8e0460196af1f10049f8fc0a79b0d4e",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -17.37,
+    "true_peak_db": 0.09,
+    "lra": 1.2,
+    "threshold": -27.37,
+    "target_offset": 0.35
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-17.37:measured_LRA=1.2:measured_TP=0.09:measured_thresh=-27.37:offset=0.35:linear=true:print_format=summary"
+}

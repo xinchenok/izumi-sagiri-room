@@ -1,0 +1,44 @@
+{
+  "id": "room-pen-tip",
+  "scene": "房间",
+  "japanese": "ペン先を触るなら、線がずれないようにね。",
+  "chinese": "要碰笔尖的话，可别让线条歪掉。",
+  "profile": "proud",
+  "requested_params": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "applied_scales": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 92,
+  "padded_phoneme_count": 92,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/room-pen-tip.wav",
+  "raw_wav_sha256": "4a38b1face3c955bad27590f056a067f4dcd217ccf5166bd72db1104687480f0",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -14.72,
+    "true_peak_db": -0.17,
+    "lra": 0.9,
+    "threshold": -25.21,
+    "target_offset": -1.43
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-14.72:measured_LRA=0.9:measured_TP=-0.17:measured_thresh=-25.21:offset=-1.43:linear=true:print_format=summary"
+}

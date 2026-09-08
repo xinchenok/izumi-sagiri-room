@@ -1,0 +1,44 @@
+{
+  "id": "wardrobe-sleeves",
+  "scene": "衣橱",
+  "japanese": "この袖、長すぎる？　でも、手が隠れるから好き。",
+  "chinese": "这袖子太长了吗？可我喜欢它能遮住手。",
+  "profile": "shy",
+  "requested_params": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "applied_scales": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 116,
+  "padded_phoneme_count": 116,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/wardrobe-sleeves.wav",
+  "raw_wav_sha256": "9c635fddddfbe017f86a8b732f594ee2d3dcf5536a23e3abb8ff950a7a968b0e",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -19.02,
+    "true_peak_db": -0.54,
+    "lra": 3.8,
+    "threshold": -29.65,
+    "target_offset": 0.62
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-19.02:measured_LRA=3.8:measured_TP=-0.54:measured_thresh=-29.65:offset=0.62:linear=true:print_format=summary"
+}

@@ -1,0 +1,1013 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-04",
+  "generator": "内置 ImageGen 逐图清晰化编辑；Pillow Lanczos 无附加滤镜生成 4K 与响应式 WebP",
+  "identityAnchor": "assets/v18/master/hero-peek-4k.webp",
+  "styleAnchor": "assets/v19/master/room-drawing-4k.webp",
+  "styleCalibrationPrompt": "assets/v19/prompts/room-drawing.txt",
+  "archive": "assets/archive/pre-v19-cinematic-images.json",
+  "assets": [
+    {
+      "id": "door-peek",
+      "kind": "portrait",
+      "oldSource": "assets/v18/master/hero-peek-4k.webp",
+      "oldSourceSha256": "8d367013f4ad84295928f70d3a9cd3b1ee78981245c8a4ee66b638666d662b15",
+      "prompt": "assets/v19/prompts/door-peek.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/door-peek-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1176244,
+          "sha256": "f3744dee044c38283c3fa7463955f3cc4b803f5778da853a424a80283a40fd20",
+          "provenance": "assets/v19/master/door-peek-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/door-peek-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 314152,
+          "sha256": "32ee6da50a774d9f6f980ee9972affc2f2bb4a1aa1f8403f1e5fe5a7ad206a04",
+          "provenance": "assets/v19/door-peek-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/door-peek-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 94062,
+          "sha256": "8e7daf03f5c82ce8b033753f999dc625131b1fa03ecf24719a648dabdac821aa",
+          "provenance": "assets/v19/door-peek-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "door-listen",
+      "kind": "portrait",
+      "oldSource": "assets/v18/master/hero-peek-4k.webp",
+      "oldSourceSha256": "8d367013f4ad84295928f70d3a9cd3b1ee78981245c8a4ee66b638666d662b15",
+      "prompt": "assets/v19/prompts/door-listen.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/door-listen-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1172138,
+          "sha256": "b50035fd58f1aaa11bd07088d3097fcae57f348438bccd8e752f436150a72ab5",
+          "provenance": "assets/v19/master/door-listen-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/door-listen-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 322242,
+          "sha256": "6776c16afe755e8a45b3f350ff31698427564b0cdcafd837e304eef4fc647624",
+          "provenance": "assets/v19/door-listen-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/door-listen-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 97758,
+          "sha256": "fb72fe877beb5c0f67b1c0d8c262924b7ee77fcabad59da4342efce384b8ceb2",
+          "provenance": "assets/v19/door-listen-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "door-startled",
+      "kind": "portrait",
+      "oldSource": "assets/v18/master/hero-startled-4k.webp",
+      "oldSourceSha256": "123bfa1526d2c2a370fb2dec1f2de8c3986930ea7d12aa79f0c522f8d80ecd97",
+      "prompt": "assets/v19/prompts/door-startled.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/door-startled-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1151902,
+          "sha256": "ef182a639feb27e5c6c2dcc1e521c8a58ca1edd5956f3505886f66bdc73ea0dd",
+          "provenance": "assets/v19/master/door-startled-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/door-startled-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 306548,
+          "sha256": "14248d69d26fe3e9d8978ea25a090645ecdb89636b2c29921222c8275894e3f5",
+          "provenance": "assets/v19/door-startled-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/door-startled-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 95640,
+          "sha256": "0154a2f4c49473ddcd6c1b4be05c44f59c5eb4ade59b36174054f8d9c626b128",
+          "provenance": "assets/v19/door-startled-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "door-open-smile",
+      "kind": "portrait",
+      "oldSource": "assets/v18/master/hero-shy-4k.webp",
+      "oldSourceSha256": "93e1f27c12584ca162fe3715ea403e84ddf654038c1ff8819470187900ace3ae",
+      "prompt": "assets/v19/prompts/door-open-smile.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/door-open-smile-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1305174,
+          "sha256": "02a808f13ea9f56c97eb279cf7eedd1a7feb47e6b3908f34c036ec938f53ac17",
+          "provenance": "assets/v19/master/door-open-smile-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/door-open-smile-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 363728,
+          "sha256": "4c18defeb851d14815a9f610c4e57bef543a33df796adfd14db0f2f70e88202b",
+          "provenance": "assets/v19/door-open-smile-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/door-open-smile-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 104452,
+          "sha256": "85701c873102e3b2cc46a6073ec4872ed056cd669ea4db563fe6e4849ba265dc",
+          "provenance": "assets/v19/door-open-smile-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "wardrobe-hides-sleeves",
+      "kind": "portrait",
+      "oldSource": "assets/v18/master/outfit-home-4k.webp",
+      "oldSourceSha256": "dc3dab1e45fa1a561ef36144b83c15ac3790b8d52b4ecb294d9ecdc91c89da8f",
+      "prompt": "assets/v19/prompts/wardrobe-hides-sleeves.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/wardrobe-hides-sleeves-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1323142,
+          "sha256": "8efb348576075ab37c9b44a74c22c97f5fc6933fef44713d8a3c16bbcfa1bb4f",
+          "provenance": "assets/v19/master/wardrobe-hides-sleeves-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/wardrobe-hides-sleeves-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 380728,
+          "sha256": "b5bfd3d4427c9515c4cbdc3a9ca7e1596bfd276abc9865b7c7791648c6299f32",
+          "provenance": "assets/v19/wardrobe-hides-sleeves-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/wardrobe-hides-sleeves-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 110138,
+          "sha256": "2d6619f4074021718acfbf6461b4e03a6af990054a9dc69ac723ce2740c3e75b",
+          "provenance": "assets/v19/wardrobe-hides-sleeves-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "wardrobe-holds-two",
+      "kind": "portrait",
+      "oldSource": "assets/v18/master/wardrobe-living-4k.webp",
+      "oldSourceSha256": "078debf995e57eb94cc439161f34bc3900de997845985626c62a0646425f4d59",
+      "prompt": "assets/v19/prompts/wardrobe-holds-two.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/wardrobe-holds-two-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1291222,
+          "sha256": "5504440d7fd5cb996f2eed3dce2afc5057c15e1a089686790d277f7e4b1038f7",
+          "provenance": "assets/v19/master/wardrobe-holds-two-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/wardrobe-holds-two-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 353668,
+          "sha256": "202091e9f48c970662765a5e21bc7af0e982c2980df819f8a491300ce76e2e00",
+          "provenance": "assets/v19/wardrobe-holds-two-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/wardrobe-holds-two-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 104668,
+          "sha256": "969b2959648b2b2524af369beed249308cf280c749ca16cbb59df28abb87b0d9",
+          "provenance": "assets/v19/wardrobe-holds-two-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "wardrobe-adjusts-bow",
+      "kind": "portrait",
+      "oldSource": "assets/v18/master/outfit-outing-sailor-4k.webp",
+      "oldSourceSha256": "405fab77b4977ba11bf35d9caaa76e5e4646e1a9b356825c01f12164edea60f8",
+      "prompt": "assets/v19/prompts/wardrobe-adjusts-bow.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/wardrobe-adjusts-bow-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1405324,
+          "sha256": "af74a59040fe292d1dc95b1e475b2a5cc4688ef0037342ed38d651db0f86b7f3",
+          "provenance": "assets/v19/master/wardrobe-adjusts-bow-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/wardrobe-adjusts-bow-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 396186,
+          "sha256": "5bedc10fb26a1c84185f00a37375a9794e799d6659ef9725e1ffb221bd17e325",
+          "provenance": "assets/v19/wardrobe-adjusts-bow-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/wardrobe-adjusts-bow-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 110756,
+          "sha256": "95a6bd18428c012d1b6be11536d8ccb602a3f3362130704dd0db6cc755d38cc6",
+          "provenance": "assets/v19/wardrobe-adjusts-bow-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "wardrobe-chosen-shy",
+      "kind": "portrait",
+      "oldSource": "assets/v18/master/outfit-home-4k.webp",
+      "oldSourceSha256": "dc3dab1e45fa1a561ef36144b83c15ac3790b8d52b4ecb294d9ecdc91c89da8f",
+      "prompt": "assets/v19/prompts/wardrobe-chosen-shy.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/wardrobe-chosen-shy-4k.webp",
+          "width": 3072,
+          "height": 3840,
+          "bytes": 1444324,
+          "sha256": "6425ae685af4fb85c1d5ba5f137e079cad56db805537ee52b22692b33ba76d79",
+          "provenance": "assets/v19/master/wardrobe-chosen-shy-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/wardrobe-chosen-shy-1440.webp",
+          "width": 1440,
+          "height": 1800,
+          "bytes": 414170,
+          "sha256": "86be3c777331be30c7ca77e14356473112c29c801dca1f01adee0f84faed2b3b",
+          "provenance": "assets/v19/wardrobe-chosen-shy-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/wardrobe-chosen-shy-720.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 118096,
+          "sha256": "1605d61291ac444dfac1d132f37b588bae26485aed3129a0e8a972315980d775",
+          "provenance": "assets/v19/wardrobe-chosen-shy-720.webp.json"
+        }
+      }
+    },
+    {
+      "id": "room-drawing",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/studio-focus-clean-4k.webp",
+      "oldSourceSha256": "6500e0a2696382aa222bf960097493483927bd755e5588100227e3d6b5bb2f1d",
+      "prompt": "assets/v19/prompts/room-drawing.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/room-drawing-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1599386,
+          "sha256": "d0813cd34710b6699a7080cacc953646f4af7144241eebca929cf9b48b1801f3",
+          "provenance": "assets/v19/master/room-drawing-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/room-drawing-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 362414,
+          "sha256": "20b407a95e8ed5810769c8fd95c4c9f91d90fd76427559a7e588eeae2bb8ca83",
+          "provenance": "assets/v19/room-drawing-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/room-drawing-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 98498,
+          "sha256": "7d947b93a11971467d744d665df418fb3bd5e056bc545c988ce2445a95f867ad",
+          "provenance": "assets/v19/room-drawing-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/room-drawing-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 45808,
+          "sha256": "21c15765a44a5b53c22264872b0a51d94a951d231eb6899ad021ec65bb75fc7a",
+          "provenance": "assets/v19/room-drawing-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "room-stops-pen",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/studio-focus-clean-4k.webp",
+      "oldSourceSha256": "6500e0a2696382aa222bf960097493483927bd755e5588100227e3d6b5bb2f1d",
+      "prompt": "assets/v19/prompts/room-stops-pen.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/room-stops-pen-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1559988,
+          "sha256": "4aef8158c6b9fb4de64098582bc64d711c5765afb438f108b037986ad1714faa",
+          "provenance": "assets/v19/master/room-stops-pen-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/room-stops-pen-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 336352,
+          "sha256": "2404e01eb9c667328b03cb53abcb4e9ea875dd9f95d94ead63925f2f3da81686",
+          "provenance": "assets/v19/room-stops-pen-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/room-stops-pen-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 91702,
+          "sha256": "fd8d3e39b49a8fff22613bd3f59fc270544ad27c0b3324467c43af200298cd27",
+          "provenance": "assets/v19/room-stops-pen-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/room-stops-pen-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42540,
+          "sha256": "731ddeba08883973cde6e5804b32e8ea10b5ae455d868f4aca30817640b2f50d",
+          "provenance": "assets/v19/room-stops-pen-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "room-glances-over",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/studio-shy-clean-4k.webp",
+      "oldSourceSha256": "956c60d7d2ee51408b18bcf726eba4e6fa8a967b9e141689b8c453d5a8df2ca0",
+      "prompt": "assets/v19/prompts/room-glances-over.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/room-glances-over-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1503400,
+          "sha256": "baf9440465d2b34214778f692e8faf7c1ee18ceca96388c5d20cc9bbdf9cc929",
+          "provenance": "assets/v19/master/room-glances-over-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/room-glances-over-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 336682,
+          "sha256": "4f63bc4d71e50a483e55b6be76ab66fedbbca7ff33a5c651110b610b6e3c8d92",
+          "provenance": "assets/v19/room-glances-over-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/room-glances-over-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 93746,
+          "sha256": "b8d2defc6fd88716baa9ca3b6faeb0466fdb72469c2a2cacc97f91ba5d2b301f",
+          "provenance": "assets/v19/room-glances-over-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/room-glances-over-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 44026,
+          "sha256": "79c1538fa8723f11edaf8f2f4eaada5d89bd24d620aa79f9cdd78ae4eb797096",
+          "provenance": "assets/v19/room-glances-over-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "room-invites-seat",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/studio-reveal-clean-4k.webp",
+      "oldSourceSha256": "919304a964655424d635e11d14ad4553d901a45a6adc606889110ab499365d74",
+      "prompt": "assets/v19/prompts/room-invites-seat.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/room-invites-seat-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1541944,
+          "sha256": "5dd7a75c2634d96868490bde3ab33f157933a573f0218aaa9bfd4eccfb2805c8",
+          "provenance": "assets/v19/master/room-invites-seat-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/room-invites-seat-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 339704,
+          "sha256": "7c196e3435eaa9f8f3db885f444428280d356e876e1b52a96386eb6d160daa1a",
+          "provenance": "assets/v19/room-invites-seat-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/room-invites-seat-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 96672,
+          "sha256": "024353efc1f5cd04d158d75dd5267fcc1ea03f85af729b143a44abdcd3ac6664",
+          "provenance": "assets/v19/room-invites-seat-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/room-invites-seat-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 46060,
+          "sha256": "8b10edcae845dfa3a7f986980406d78c169da3a71274b236ef2aa6c1862c59d6",
+          "provenance": "assets/v19/room-invites-seat-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "secrets-caught",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/desk-secrets-4k.webp",
+      "oldSourceSha256": "263fda699d9142c7110741fcb837842756727486646345491680a4e531bb7b3e",
+      "prompt": "assets/v19/prompts/secrets-caught.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/secrets-caught-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1462756,
+          "sha256": "0277d495ff7c60ed0e0f476a14e897e07bfe51be1b856edbf6df92ceaebba106",
+          "provenance": "assets/v19/master/secrets-caught-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/secrets-caught-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 319256,
+          "sha256": "ed8a0c9fbc3ef466efe1f62c1fb4e2a17d799ddbf0f3c931cf6acd43b6601511",
+          "provenance": "assets/v19/secrets-caught-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/secrets-caught-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 89128,
+          "sha256": "8a5ab538f61177f93ed5672b61bf5d0fd932654f39bf616abedd57d6e6701078",
+          "provenance": "assets/v19/secrets-caught-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/secrets-caught-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 41564,
+          "sha256": "745dcd2b086c70e6be273b2e60c8c84171ddce5c754f44ab524449f63a3a1f06",
+          "provenance": "assets/v19/secrets-caught-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "secrets-protects-draft",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/desk-secrets-4k.webp",
+      "oldSourceSha256": "263fda699d9142c7110741fcb837842756727486646345491680a4e531bb7b3e",
+      "prompt": "assets/v19/prompts/secrets-protects-draft.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/secrets-protects-draft-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1501586,
+          "sha256": "8ba21178be14b1872a24b101583f2247959111c94fe9d93a6b89c60da1b3f762",
+          "provenance": "assets/v19/master/secrets-protects-draft-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/secrets-protects-draft-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 326248,
+          "sha256": "fc1bdc12a6ff418dafd62aefd5bd1a42199c3a1a8e33530b5d601d80fc6f1c6c",
+          "provenance": "assets/v19/secrets-protects-draft-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/secrets-protects-draft-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 90228,
+          "sha256": "6b7a80179e3f6556894686973bd8672cea5d3501ceb2926497fc07ef410733ed",
+          "provenance": "assets/v19/secrets-protects-draft-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/secrets-protects-draft-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 41180,
+          "sha256": "765867c9d9c8cdb50421f3876392f0beb1cfb98ca1d02698f519cfe16331909e",
+          "provenance": "assets/v19/secrets-protects-draft-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "secrets-opens-drawer",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/desk-secrets-4k.webp",
+      "oldSourceSha256": "263fda699d9142c7110741fcb837842756727486646345491680a4e531bb7b3e",
+      "prompt": "assets/v19/prompts/secrets-opens-drawer.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/secrets-opens-drawer-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1375894,
+          "sha256": "f089d6d0a2c38c7726a5c29c11f6889ee546c76f1a9b02eb97be0115658c4703",
+          "provenance": "assets/v19/master/secrets-opens-drawer-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/secrets-opens-drawer-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 305244,
+          "sha256": "b9712d3411eb13ef23ce44dfed3a53562bc228a9c4cba21fb3c30785229d59cd",
+          "provenance": "assets/v19/secrets-opens-drawer-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/secrets-opens-drawer-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 88964,
+          "sha256": "ae75c24e81a6fe225c91f85046c86ddd51c148f00b882bd941ce0c09455456f9",
+          "provenance": "assets/v19/secrets-opens-drawer-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/secrets-opens-drawer-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42074,
+          "sha256": "1ddd2e96b2273e81f79c3ebf6b705f86bbed7e9743b49c1e306c24ef49dbe2f3",
+          "provenance": "assets/v19/secrets-opens-drawer-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-hides-book",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/gallery-sketchbook-hide-4k.webp",
+      "oldSourceSha256": "54811b3a3e08dbb20d8f34650345346e0c488ff5fb20b3ec2580270487eea9d0",
+      "prompt": "assets/v19/prompts/gallery-hides-book.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/gallery-hides-book-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1065902,
+          "sha256": "7fb5e8434fc6ea7ba170019b54cd06208813a52296283cc4dde857d5f30dd14d",
+          "provenance": "assets/v19/master/gallery-hides-book-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/gallery-hides-book-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 229608,
+          "sha256": "1b9734226e4fc0523dd8dc96c06aff6deb7c6f51e4a157475c9bfea90ca178f7",
+          "provenance": "assets/v19/gallery-hides-book-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/gallery-hides-book-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 63284,
+          "sha256": "f96776a7de72b67c9617550017ab78976b40128d2a9d1ad265530912f5b5bc2a",
+          "provenance": "assets/v19/gallery-hides-book-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/gallery-hides-book-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 29670,
+          "sha256": "f0a4c3e27618f038fada96a5ef9ccec79e6bba952be78dbc6555b5f90375762e",
+          "provenance": "assets/v19/gallery-hides-book-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-peeks-over",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/gallery-sketchbook-hide-4k.webp",
+      "oldSourceSha256": "54811b3a3e08dbb20d8f34650345346e0c488ff5fb20b3ec2580270487eea9d0",
+      "prompt": "assets/v19/prompts/gallery-peeks-over.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/gallery-peeks-over-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1135662,
+          "sha256": "64c9817d5893570cffe6fe07a6eb1fb109def00d2ac409fdc9fc63b75dabc186",
+          "provenance": "assets/v19/master/gallery-peeks-over-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/gallery-peeks-over-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 251654,
+          "sha256": "70ed99784d12eef7a67ab44e7403012b1977c914938e1219243d38108367337b",
+          "provenance": "assets/v19/gallery-peeks-over-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/gallery-peeks-over-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 70206,
+          "sha256": "b30495643be3808612408f558d22ae4f55e9b3cd38aff68b9a575fb0bc5cf339",
+          "provenance": "assets/v19/gallery-peeks-over-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/gallery-peeks-over-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 32416,
+          "sha256": "f705b04f1e61ec6cd0a3b9cea1733959c9c37a7f437559283de6e563292812fa",
+          "provenance": "assets/v19/gallery-peeks-over-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "gallery-pushes-book",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/gallery-show-drawing-4k.webp",
+      "oldSourceSha256": "43576b5b20fb43f86c154ce6e3f7ca51c2c358a3cf7823fd12ee64aacdfb69c5",
+      "prompt": "assets/v19/prompts/gallery-pushes-book.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/gallery-pushes-book-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1114576,
+          "sha256": "ac9296117d5451a6ee3453b9ca5fcd3a0a99407bc82216d48ed297b9dc10cfb2",
+          "provenance": "assets/v19/master/gallery-pushes-book-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/gallery-pushes-book-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 244044,
+          "sha256": "9fe39466dae898177da6d3ac9cedd17dee5550715c12f50a52297ae628c1e75e",
+          "provenance": "assets/v19/gallery-pushes-book-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/gallery-pushes-book-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 67188,
+          "sha256": "fb5569a9fa38662f19b3618d8445022681d32d8f83f18b944f14b9955ba99a96",
+          "provenance": "assets/v19/gallery-pushes-book-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/gallery-pushes-book-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 31332,
+          "sha256": "a6c853965cee4c615b8ef7e81059496a66d84c4cd21e6a2d4eafce85f19c61c6",
+          "provenance": "assets/v19/gallery-pushes-book-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "drawing-focus",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/studio-focus-clean-4k.webp",
+      "oldSourceSha256": "6500e0a2696382aa222bf960097493483927bd755e5588100227e3d6b5bb2f1d",
+      "prompt": "assets/v19/prompts/drawing-focus.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/drawing-focus-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1441804,
+          "sha256": "049dd0ba506b41f8ba3b958b68965f524915a214db62d6950a39623798139fe8",
+          "provenance": "assets/v19/master/drawing-focus-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/drawing-focus-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 311034,
+          "sha256": "10597be2a4bb3d89bbae9d3376bec0716179a7f258e0c6e92ad9a219208d97fd",
+          "provenance": "assets/v19/drawing-focus-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/drawing-focus-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 87270,
+          "sha256": "3cc2986c7a91398f36c282c66cc24d0852d4617f3e8566bb825e134ab7088be1",
+          "provenance": "assets/v19/drawing-focus-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/drawing-focus-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 40494,
+          "sha256": "b894e0dfc94ecdd209cfe7298fe597f4ae74d7ba8c336a46d7268cdccc1b52ae",
+          "provenance": "assets/v19/drawing-focus-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "drawing-blink",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/studio-blink-clean-4k.webp",
+      "oldSourceSha256": "52a50f5fffedcc4985e8cc6ec8c3c168e1133f20d09ed1887520bb47ca158ec0",
+      "prompt": "assets/v19/prompts/drawing-blink.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/drawing-blink-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1486138,
+          "sha256": "0c1ea3214307ce8fdbf8f7c6b363cf97cdf39794db69b66285fb9be1d229d98d",
+          "provenance": "assets/v19/master/drawing-blink-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/drawing-blink-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 323452,
+          "sha256": "3bfdfcdc6067009b94b4dba1dcfbe2ac8ee0fafd0212952d7d15810a413809e0",
+          "provenance": "assets/v19/drawing-blink-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/drawing-blink-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 90836,
+          "sha256": "1036e3d58de779a5f026365129e0fe36344ad0a3aa40ef84755260719ce327cb",
+          "provenance": "assets/v19/drawing-blink-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/drawing-blink-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 42294,
+          "sha256": "9750eb5fdab0c4c665ef4593f565cb73980ef25858fa9aeee299b1e3d1795775",
+          "provenance": "assets/v19/drawing-blink-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "drawing-covers-page",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/studio-shy-clean-4k.webp",
+      "oldSourceSha256": "956c60d7d2ee51408b18bcf726eba4e6fa8a967b9e141689b8c453d5a8df2ca0",
+      "prompt": "assets/v19/prompts/drawing-covers-page.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/drawing-covers-page-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1618160,
+          "sha256": "e05661af88ab6f2e92cd98028eae25f532ed084518a5c9bddce30612b4faaffb",
+          "provenance": "assets/v19/master/drawing-covers-page-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/drawing-covers-page-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 356336,
+          "sha256": "d576dec09b62ee22a3356ca761d2faa11e3577c61fa865091c20de072853f6f7",
+          "provenance": "assets/v19/drawing-covers-page-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/drawing-covers-page-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 98508,
+          "sha256": "33c97a46fec6d9e312c500dafb11479b1291bfa5ca3da43bd20636171382a2cb",
+          "provenance": "assets/v19/drawing-covers-page-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/drawing-covers-page-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 45710,
+          "sha256": "46b9a33db3922ce643a0a7b4b153a67bcfd635062d2be2d97cbb3fee23786e65",
+          "provenance": "assets/v19/drawing-covers-page-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "drawing-shy-pause",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/studio-shy-clean-4k.webp",
+      "oldSourceSha256": "956c60d7d2ee51408b18bcf726eba4e6fa8a967b9e141689b8c453d5a8df2ca0",
+      "prompt": "assets/v19/prompts/drawing-shy-pause.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/drawing-shy-pause-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1493614,
+          "sha256": "91dd1103aa46162ae61679b2c9f329eb0654e5a42781e307c7fbede5a03622c0",
+          "provenance": "assets/v19/master/drawing-shy-pause-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/drawing-shy-pause-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 321392,
+          "sha256": "c8767ebed6a5038c5f8abb61a5aa5edc69bd0f6f475173a63ef033b3d2ca113e",
+          "provenance": "assets/v19/drawing-shy-pause-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/drawing-shy-pause-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 89862,
+          "sha256": "0532d120fac6f0e6479d112164e5422b512a491423fc5de7c58d8ad34a239584",
+          "provenance": "assets/v19/drawing-shy-pause-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/drawing-shy-pause-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 41300,
+          "sha256": "22102c04b42f914c1256feb02233564d57a6a1aadc69fc2a6af729a0dd3fb01f",
+          "provenance": "assets/v19/drawing-shy-pause-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "drawing-reveal",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/studio-reveal-clean-4k.webp",
+      "oldSourceSha256": "919304a964655424d635e11d14ad4553d901a45a6adc606889110ab499365d74",
+      "prompt": "assets/v19/prompts/drawing-reveal.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/drawing-reveal-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1531944,
+          "sha256": "2816920cbdab462add681991d0822fd4a7fa1e4ebcc93b48dab42dfe153aa069",
+          "provenance": "assets/v19/master/drawing-reveal-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/drawing-reveal-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 333566,
+          "sha256": "3849cc4eb9884dfc0bc4ea6d4835229631cbf92c6695005fa45cc49e88b05e01",
+          "provenance": "assets/v19/drawing-reveal-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/drawing-reveal-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 92556,
+          "sha256": "4e791184ed92447258b7b18ea03195a86391e597db2f411d36c4acd34c2c0392",
+          "provenance": "assets/v19/drawing-reveal-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/drawing-reveal-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 43154,
+          "sha256": "367c5c08bd39fa61ab0aa69d18e3685115059f11bfc8a6c122e1a4190787b7c9",
+          "provenance": "assets/v19/drawing-reveal-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "goodnight-hug",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/gallery-goodnight-clean-4k.webp",
+      "oldSourceSha256": "60f92bfef1e680e95f231b8bc33a4bf6d4f452fc0965301ea93f56e5bf57cd23",
+      "prompt": "assets/v19/prompts/goodnight-hug.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/goodnight-hug-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1177564,
+          "sha256": "edb5882d4553fa09480ee083b9233213c201c680e163ba2b1077155c1392710d",
+          "provenance": "assets/v19/master/goodnight-hug-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/goodnight-hug-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 250716,
+          "sha256": "0baeb6bdd7c9c07355b4f01523759f813eb6fea60240116d72f001e376588a4d",
+          "provenance": "assets/v19/goodnight-hug-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/goodnight-hug-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 71702,
+          "sha256": "73557c545501999272563463d2186e41c88b4da182d34797df73800d40ee0f6d",
+          "provenance": "assets/v19/goodnight-hug-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/goodnight-hug-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 34254,
+          "sha256": "95ca04a0fb6c7c87813508f428f81332803709b9626ace14300f5e8331f97cc1",
+          "provenance": "assets/v19/goodnight-hug-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "goodnight-yawn",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/gallery-goodnight-clean-4k.webp",
+      "oldSourceSha256": "60f92bfef1e680e95f231b8bc33a4bf6d4f452fc0965301ea93f56e5bf57cd23",
+      "prompt": "assets/v19/prompts/goodnight-yawn.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/goodnight-yawn-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1255802,
+          "sha256": "d1279ed42cc462668a63996e0be7643fe627b42a6c6162cc532319300f448821",
+          "provenance": "assets/v19/master/goodnight-yawn-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/goodnight-yawn-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 254736,
+          "sha256": "f42722aeef9b839a5c1c103506c35f0a93db5442f3b0ac60a83e2a12f7adc269",
+          "provenance": "assets/v19/goodnight-yawn-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/goodnight-yawn-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 71792,
+          "sha256": "3b4e2ab74f3c2468d5a4b2099cd2a21fd7d80dabadd9d70337b9a4cc8a5c5afa",
+          "provenance": "assets/v19/goodnight-yawn-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/goodnight-yawn-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 34302,
+          "sha256": "1997c0b91adc902b3bfd761859373aa7c264af2a9e9deef3f334d1076de96441",
+          "provenance": "assets/v19/goodnight-yawn-480.webp.json"
+        }
+      }
+    },
+    {
+      "id": "goodnight-wave",
+      "kind": "scene",
+      "oldSource": "assets/v18/master/gallery-goodnight-clean-4k.webp",
+      "oldSourceSha256": "60f92bfef1e680e95f231b8bc33a4bf6d4f452fc0965301ea93f56e5bf57cd23",
+      "prompt": "assets/v19/prompts/goodnight-wave.txt",
+      "versions": {
+        "4k": {
+          "path": "assets/v19/master/goodnight-wave-4k.webp",
+          "width": 3840,
+          "height": 2880,
+          "bytes": 1081416,
+          "sha256": "7ba659f05df5769bfaae3b998c23ecaf9f11ccf4c6f3e0d87aed98a39f966cad",
+          "provenance": "assets/v19/master/goodnight-wave-4k.webp.json"
+        },
+        "1440": {
+          "path": "assets/v19/goodnight-wave-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 219484,
+          "sha256": "fe140ff4d5c3501fe0a0ffcaf4f359b4f4bc2fd0b23183cd4bc5dce9259cf476",
+          "provenance": "assets/v19/goodnight-wave-1440.webp.json"
+        },
+        "720": {
+          "path": "assets/v19/goodnight-wave-720.webp",
+          "width": 720,
+          "height": 540,
+          "bytes": 56426,
+          "sha256": "4d942071f09bd4c415d39db5e8df36cca39f859ae7aa37e521a63a447e836bfa",
+          "provenance": "assets/v19/goodnight-wave-720.webp.json"
+        },
+        "480": {
+          "path": "assets/v19/goodnight-wave-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 26088,
+          "sha256": "3c35385f31ddfa56a0797484760590fd51f9cd93c43df0200c5534c68e156a7b",
+          "provenance": "assets/v19/goodnight-wave-480.webp.json"
+        }
+      }
+    }
+  ]
+}

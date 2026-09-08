@@ -1,0 +1,44 @@
+{
+  "id": "door-knock-wait",
+  "scene": "房门",
+  "japanese": "……ちゃんとノックしてくれたんだ。じゃあ、少しだけ待って。",
+  "chinese": "……你有好好敲门。那就稍微等一下。",
+  "profile": "soft",
+  "requested_params": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "applied_scales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 105,
+  "padded_phoneme_count": 105,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/door-knock-wait.wav",
+  "raw_wav_sha256": "70d298624ed56d922a65fd31652eda25cf43ccf87308e81524d458f42e2bb318",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -17.59,
+    "true_peak_db": 0.17,
+    "lra": 3.3,
+    "threshold": -28.66,
+    "target_offset": 0.26
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-17.59:measured_LRA=3.3:measured_TP=0.17:measured_thresh=-28.66:offset=0.26:linear=true:print_format=summary"
+}

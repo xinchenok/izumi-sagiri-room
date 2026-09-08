@@ -1,0 +1,44 @@
+{
+  "id": "gallery-praise",
+  "scene": "画册",
+  "japanese": "最後まで見たの？　……じゃあ、少しくらい褒めてもいいよ。",
+  "chinese": "看到最后了吗？……那稍微夸一下也可以。",
+  "profile": "proud",
+  "requested_params": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "applied_scales": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 111,
+  "padded_phoneme_count": 111,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/gallery-praise.wav",
+  "raw_wav_sha256": "11d0c5d2c37a225eada51949450b55610ff97c597d5195df178509e8970c1cca",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -18.87,
+    "true_peak_db": -0.45,
+    "lra": 1.3,
+    "threshold": -29.69,
+    "target_offset": -0.08
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-18.87:measured_LRA=1.3:measured_TP=-0.45:measured_thresh=-29.69:offset=-0.08:linear=true:print_format=summary"
+}

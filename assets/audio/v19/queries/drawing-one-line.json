@@ -1,0 +1,44 @@
+{
+  "id": "drawing-one-line",
+  "scene": "一起画",
+  "japanese": "今いいところだから、あと一本だけ線を引かせて。",
+  "chinese": "正画到关键地方，让我再画一条线。",
+  "profile": "proud",
+  "requested_params": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "applied_scales": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 108,
+  "padded_phoneme_count": 108,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/drawing-one-line.wav",
+  "raw_wav_sha256": "f15eae9203edb92afb080cb194e1c83592b83821cf32320656361b0049b4cf23",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -16.23,
+    "true_peak_db": 0.09,
+    "lra": 1.4,
+    "threshold": -26.23,
+    "target_offset": 0.19
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-16.23:measured_LRA=1.4:measured_TP=0.09:measured_thresh=-26.23:offset=0.19:linear=true:print_format=summary"
+}

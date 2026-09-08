@@ -1,0 +1,44 @@
+{
+  "id": "wardrobe-two-outfits",
+  "scene": "衣橱",
+  "japanese": "二着いっぺんに比べるの、ちょっと恥ずかしい……。",
+  "chinese": "一次比较两套，稍微有点害羞……",
+  "profile": "flustered",
+  "requested_params": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "applied_scales": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 96,
+  "padded_phoneme_count": 96,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/wardrobe-two-outfits.wav",
+  "raw_wav_sha256": "41412f3bb544bc6cdefd9339f4bc31d550538233df1b73817f5111969d8c5e19",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -15.71,
+    "true_peak_db": 0.12,
+    "lra": 0.6,
+    "threshold": -26.34,
+    "target_offset": -0.56
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-15.71:measured_LRA=0.6:measured_TP=0.12:measured_thresh=-26.34:offset=-0.56:linear=true:print_format=summary"
+}

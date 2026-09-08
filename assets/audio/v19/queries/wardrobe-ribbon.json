@@ -1,0 +1,44 @@
+{
+  "id": "wardrobe-ribbon",
+  "scene": "衣橱",
+  "japanese": "リボン、曲がってないかだけ見て。",
+  "chinese": "只帮我看看蝴蝶结有没有歪。",
+  "profile": "soft",
+  "requested_params": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "applied_scales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 66,
+  "padded_phoneme_count": 66,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/wardrobe-ribbon.wav",
+  "raw_wav_sha256": "05bb2f4f808a280e24eca486de9e9ccd399ac3f852a5c5ff57751b989ee27167",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -14.59,
+    "true_peak_db": 0.02,
+    "lra": 0.3,
+    "threshold": -25.13,
+    "target_offset": -1.06
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-14.59:measured_LRA=0.3:measured_TP=0.02:measured_thresh=-25.13:offset=-1.06:linear=true:print_format=summary"
+}

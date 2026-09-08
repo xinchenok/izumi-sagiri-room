@@ -1,0 +1,34 @@
+{
+  "verified_at": "2026-09-04T10:57:48.706492+00:00",
+  "line_count": 28,
+  "mp3_count": 28,
+  "query_count": 28,
+  "decoded_count": 28,
+  "unique_sha256_count": 28,
+  "model_sha256": "5289e9b6eaf21080803b7fe1c4dc85b5491d4c216121207a41df18dd5f68e5d7",
+  "model_hash_match": true,
+  "sample_rates": [
+    44100
+  ],
+  "channels": [
+    1
+  ],
+  "bitrates_kbps": [
+    160
+  ],
+  "duration_range_seconds": [
+    3.160816,
+    6.739592
+  ],
+  "integrated_lufs_range": [
+    -18.5,
+    -16.37
+  ],
+  "true_peak_db_range": [
+    -2.9,
+    -1.92
+  ],
+  "utf8_bom_files": [],
+  "failures": [],
+  "passed": true
+}

@@ -1,0 +1,44 @@
+{
+  "id": "door-closer",
+  "scene": "房门",
+  "japanese": "今日は……いつもより、ちょっとだけ近くてもいいよ。",
+  "chinese": "今天……可以比平时再靠近一点点。",
+  "profile": "shy",
+  "requested_params": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "applied_scales": {
+    "noise_scale": 0.6,
+    "length_scale": 1.58,
+    "noise_w": 0.72
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 99,
+  "padded_phoneme_count": 99,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/door-closer.wav",
+  "raw_wav_sha256": "2150ef4e751bb04682cacc78d0c3c1cd8f7d598db308179aeebb8a2195bf2af1",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -16.28,
+    "true_peak_db": 0.16,
+    "lra": 1.2,
+    "threshold": -26.93,
+    "target_offset": -1.43
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-16.28:measured_LRA=1.2:measured_TP=0.16:measured_thresh=-26.93:offset=-1.43:linear=true:print_format=summary"
+}

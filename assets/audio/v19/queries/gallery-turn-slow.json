@@ -1,0 +1,44 @@
+{
+  "id": "gallery-turn-slow",
+  "scene": "画册",
+  "japanese": "ページ、ゆっくりめくって。角が折れたら困るから。",
+  "chinese": "慢慢翻页。折到书角我会很困扰。",
+  "profile": "proud",
+  "requested_params": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "applied_scales": {
+    "noise_scale": 0.66,
+    "length_scale": 1.4,
+    "noise_w": 0.78
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 109,
+  "padded_phoneme_count": 109,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/gallery-turn-slow.wav",
+  "raw_wav_sha256": "90e60a720fdc980d83d9e72e5ba15f7e474b6b5ff40534a7cb69e5dd7cdf512c",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -16.42,
+    "true_peak_db": 0.05,
+    "lra": 1.5,
+    "threshold": -27.1,
+    "target_offset": -1.08
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-16.42:measured_LRA=1.5:measured_TP=0.05:measured_thresh=-27.1:offset=-1.08:linear=true:print_format=summary"
+}

@@ -1,0 +1,676 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-04T10:55:31.069747+00:00",
+  "status": "release",
+  "purpose": "V19 七幕连续镜头的 28 条独立日语角色语音",
+  "engine": {
+    "name": "Piper Plus",
+    "requested_version": "0.6.0",
+    "source_ref": "npm-v0.6.0",
+    "source_commit": "5fceade2c284a85c8da0523c48b830b434350309",
+    "source_python_version_at_same_commit": "1.12.0",
+    "source": "https://github.com/ayutaz/piper-plus",
+    "runtime_note": "npm-v0.6.0 与 Python v1.12.0 指向同一提交；在 uv 创建的 Python 3.10 环境中直接加载该提交的推理源码。",
+    "model": "ayousanz/piper-plus-tsukuyomi-chan",
+    "model_revision": "36b59c825c36bd386b8960cf3f604382f52f2a87",
+    "model_file": "tsukuyomi-chan-6lang-fp16.onnx",
+    "model_sha256": "5289e9b6eaf21080803b7fe1c4dc85b5491d4c216121207a41df18dd5f68e5d7",
+    "config_file": "config.json",
+    "config_sha256": "516058f405ec914140f34832a9d8bb5d8272ba62af9bc7ffb29349715a539780",
+    "voice_cloning": false,
+    "training": false,
+    "fine_tuning": false
+  },
+  "runtime": {
+    "python": "3.10.20",
+    "environment": "uv 管理的隔离 Python 3.10 环境；模型、环境与中间 WAV 不提交",
+    "onnxruntime": "1.23.2",
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "ffmpeg": "ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers"
+  },
+  "synthesis": {
+    "language": "ja-en-zh-es-fr-pt",
+    "speaker_id": 0,
+    "speaker_embedding": "256 维零向量",
+    "speaker_embedding_mask": 0,
+    "profiles": {
+      "soft": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "shy": {
+        "noise_scale": 0.6,
+        "length_scale": 1.58,
+        "noise_w": 0.72
+      },
+      "flustered": {
+        "noise_scale": 0.72,
+        "length_scale": 1.32,
+        "noise_w": 0.86
+      },
+      "proud": {
+        "noise_scale": 0.66,
+        "length_scale": 1.4,
+        "noise_w": 0.78
+      },
+      "sleepy": {
+        "noise_scale": 0.58,
+        "length_scale": 1.68,
+        "noise_w": 0.68
+      }
+    }
+  },
+  "postprocessing": {
+    "filters": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7",
+    "loudnorm_mode": "two-pass measured application",
+    "pitch_shift": false,
+    "codec": "MP3",
+    "sample_rate_hz": 44100,
+    "channels": 1,
+    "bitrate_kbps": 160,
+    "target_lufs": -17,
+    "true_peak_db": -1.5,
+    "lra": 7
+  },
+  "validation": {
+    "model_hash_match": true,
+    "line_count": 28,
+    "decoded_file_count": 28,
+    "all_files_decodable": true,
+    "unique_sha256_count": 28,
+    "all_hashes_unique": true
+  },
+  "lines": [
+    {
+      "id": "door-knock-wait",
+      "scene": "房门",
+      "japanese": "……ちゃんとノックしてくれたんだ。じゃあ、少しだけ待って。",
+      "chinese": "……你有好好敲门。那就稍微等一下。",
+      "profile": "soft",
+      "params": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "audio": "voice/door-knock-wait.mp3",
+      "duration_seconds": 5.12,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.9,
+      "true_peak_db": -1.94,
+      "sha256": "7d906c817dc556121dcf03c42b298d5704c0406d605b6546a0b037ad33ca6744",
+      "query": "queries/door-knock-wait.json"
+    },
+    {
+      "id": "door-startled",
+      "scene": "房门",
+      "japanese": "び、びっくりしただけ。怖がってなんかないから。",
+      "chinese": "只、只是吓了一跳。我才没有害怕。",
+      "profile": "flustered",
+      "params": {
+        "noise_scale": 0.72,
+        "length_scale": 1.32,
+        "noise_w": 0.86
+      },
+      "audio": "voice/door-startled.mp3",
+      "duration_seconds": 3.996735,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -16.37,
+      "true_peak_db": -1.94,
+      "sha256": "afaa390d193358eb20e5c66d91c83c0bf20ed831d2d1ae571bb413de81bb37a2",
+      "query": "queries/door-startled.json"
+    },
+    {
+      "id": "door-handle",
+      "scene": "房门",
+      "japanese": "ドアノブ、そんなに見ないで。今、開けるから。",
+      "chinese": "别一直盯着门把手。我现在就开。",
+      "profile": "flustered",
+      "params": {
+        "noise_scale": 0.72,
+        "length_scale": 1.32,
+        "noise_w": 0.86
+      },
+      "audio": "voice/door-handle.mp3",
+      "duration_seconds": 5.32898,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.96,
+      "true_peak_db": -1.94,
+      "sha256": "45e1cf941eb72a0092eb902d7475890261219114a6bf4d7fb2da451b90dd6ddc",
+      "query": "queries/door-handle.json"
+    },
+    {
+      "id": "door-closer",
+      "scene": "房门",
+      "japanese": "今日は……いつもより、ちょっとだけ近くてもいいよ。",
+      "chinese": "今天……可以比平时再靠近一点点。",
+      "profile": "shy",
+      "params": {
+        "noise_scale": 0.6,
+        "length_scale": 1.58,
+        "noise_w": 0.72
+      },
+      "audio": "voice/door-closer.mp3",
+      "duration_seconds": 4.649796,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.53,
+      "true_peak_db": -1.95,
+      "sha256": "bf14e50fd7430102f547d4a8da0364923fe3478e6ace7d60496b7dbb96c6e445",
+      "query": "queries/door-closer.json"
+    },
+    {
+      "id": "room-chair",
+      "scene": "房间",
+      "japanese": "そこ、椅子を少しだけ空けておいたの。",
+      "chinese": "那里……我稍微把椅子空出来了。",
+      "profile": "shy",
+      "params": {
+        "noise_scale": 0.6,
+        "length_scale": 1.58,
+        "noise_w": 0.72
+      },
+      "audio": "voice/room-chair.mp3",
+      "duration_seconds": 3.395918,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.51,
+      "true_peak_db": -1.94,
+      "sha256": "f41ec0465a091a0bbe962d916139ab974e5f3b34713b26a575cefdd963a74423",
+      "query": "queries/room-chair.json"
+    },
+    {
+      "id": "room-pen-tip",
+      "scene": "房间",
+      "japanese": "ペン先を触るなら、線がずれないようにね。",
+      "chinese": "要碰笔尖的话，可别让线条歪掉。",
+      "profile": "proud",
+      "params": {
+        "noise_scale": 0.66,
+        "length_scale": 1.4,
+        "noise_w": 0.78
+      },
+      "audio": "voice/room-pen-tip.mp3",
+      "duration_seconds": 3.918367,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.45,
+      "true_peak_db": -2.9,
+      "sha256": "659f3b149482ddbaea5a5467fb5fa01118eb2066584a27c3821d2b686c43c1cf",
+      "query": "queries/room-pen-tip.json"
+    },
+    {
+      "id": "room-curtain",
+      "scene": "房间",
+      "japanese": "カーテン、少しだけ閉めて。画面が見やすくなるから。",
+      "chinese": "把窗帘稍微拉上一点，这样屏幕会更清楚。",
+      "profile": "soft",
+      "params": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "audio": "voice/room-curtain.mp3",
+      "duration_seconds": 4.414694,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.15,
+      "true_peak_db": -1.92,
+      "sha256": "b0f8c938e6c7af66bbb17bd9f7971e67e05b8d9d8cd38e294b91cdbf3bc3950c",
+      "query": "queries/room-curtain.json"
+    },
+    {
+      "id": "room-stay",
+      "scene": "房间",
+      "japanese": "見てるだけなら……静かに隣にいてもいいよ。",
+      "chinese": "只是看的话……可以安静待在旁边。",
+      "profile": "shy",
+      "params": {
+        "noise_scale": 0.6,
+        "length_scale": 1.58,
+        "noise_w": 0.72
+      },
+      "audio": "voice/room-stay.mp3",
+      "duration_seconds": 4.466939,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.57,
+      "true_peak_db": -1.95,
+      "sha256": "fc038ffccc4eb24ccc5579ac658accbc93f825d6f4ede73964a5f927128d4a43",
+      "query": "queries/room-stay.json"
+    },
+    {
+      "id": "secrets-draft",
+      "scene": "桌面秘密",
+      "japanese": "そ、それは下書き。まだ見せる予定じゃなかったの。",
+      "chinese": "那、那只是草稿。我本来没打算给你看的。",
+      "profile": "flustered",
+      "params": {
+        "noise_scale": 0.72,
+        "length_scale": 1.32,
+        "noise_w": 0.86
+      },
+      "audio": "voice/secrets-draft.mp3",
+      "duration_seconds": 5.093878,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -16.78,
+      "true_peak_db": -1.93,
+      "sha256": "7776ae0cb41a0edbbf72737d352ce4239f2b2978e11bc19b322e5d3f2532f55e",
+      "query": "queries/secrets-draft.json"
+    },
+    {
+      "id": "secrets-headphones",
+      "scene": "桌面秘密",
+      "japanese": "ヘッドホンの向き？　いつも同じじゃないと落ち着かないだけ。",
+      "chinese": "耳机的方向？只是每次不一样我就静不下来。",
+      "profile": "proud",
+      "params": {
+        "noise_scale": 0.66,
+        "length_scale": 1.4,
+        "noise_w": 0.78
+      },
+      "audio": "voice/secrets-headphones.mp3",
+      "duration_seconds": 4.806531,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.44,
+      "true_peak_db": -2.9,
+      "sha256": "9fec964e89e6536c7a2dc682b32158bb453ddeacc2b73238bff116dac1ecf3ca",
+      "query": "queries/secrets-headphones.json"
+    },
+    {
+      "id": "secrets-drawer",
+      "scene": "桌面秘密",
+      "japanese": "引き出しは……開けるなら、私も一緒に見る。",
+      "chinese": "抽屉……要打开的话，我也一起看。",
+      "profile": "shy",
+      "params": {
+        "noise_scale": 0.6,
+        "length_scale": 1.58,
+        "noise_w": 0.72
+      },
+      "audio": "voice/secrets-drawer.mp3",
+      "duration_seconds": 4.545306,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.21,
+      "true_peak_db": -1.94,
+      "sha256": "cbb1f501101b1e9a21e90b9a7bbd59bf24581fcf8f4542d4e2c924262f0d2b8d",
+      "query": "queries/secrets-drawer.json"
+    },
+    {
+      "id": "secrets-nothing-weird",
+      "scene": "桌面秘密",
+      "japanese": "秘密って言っても、変なものは入ってないからね。",
+      "chinese": "虽说是秘密，里面可没有奇怪的东西。",
+      "profile": "flustered",
+      "params": {
+        "noise_scale": 0.72,
+        "length_scale": 1.32,
+        "noise_w": 0.86
+      },
+      "audio": "voice/secrets-nothing-weird.mp3",
+      "duration_seconds": 3.866122,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.4,
+      "true_peak_db": -1.94,
+      "sha256": "7ee1864310ce44a7c16168ff57cec07c5f11714a4e583016e4c848a96b83030d",
+      "query": "queries/secrets-nothing-weird.json"
+    },
+    {
+      "id": "wardrobe-sleeves",
+      "scene": "衣橱",
+      "japanese": "この袖、長すぎる？　でも、手が隠れるから好き。",
+      "chinese": "这袖子太长了吗？可我喜欢它能遮住手。",
+      "profile": "shy",
+      "params": {
+        "noise_scale": 0.6,
+        "length_scale": 1.58,
+        "noise_w": 0.72
+      },
+      "audio": "voice/wardrobe-sleeves.mp3",
+      "duration_seconds": 5.903673,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -18.5,
+      "true_peak_db": -1.92,
+      "sha256": "9a7317fcc987cdf11eab32589545ecf336b08ab4dbaa5fba73ff000ad0d9a869",
+      "query": "queries/wardrobe-sleeves.json"
+    },
+    {
+      "id": "wardrobe-ribbon",
+      "scene": "衣橱",
+      "japanese": "リボン、曲がってないかだけ見て。",
+      "chinese": "只帮我看看蝴蝶结有没有歪。",
+      "profile": "soft",
+      "params": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "audio": "voice/wardrobe-ribbon.mp3",
+      "duration_seconds": 3.160816,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.44,
+      "true_peak_db": -2.82,
+      "sha256": "b02df6c80b455e311c093cc7461ed02864364f7b06555c1e3c548b5695dce201",
+      "query": "queries/wardrobe-ribbon.json"
+    },
+    {
+      "id": "wardrobe-two-outfits",
+      "scene": "衣橱",
+      "japanese": "二着いっぺんに比べるの、ちょっと恥ずかしい……。",
+      "chinese": "一次比较两套，稍微有点害羞……",
+      "profile": "flustered",
+      "params": {
+        "noise_scale": 0.72,
+        "length_scale": 1.32,
+        "noise_w": 0.86
+      },
+      "audio": "voice/wardrobe-two-outfits.mp3",
+      "duration_seconds": 3.63102,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.49,
+      "true_peak_db": -1.94,
+      "sha256": "273c72c594fd9551a5a8608d6258764897ef15dc3121f02734d75a1d283de6a2",
+      "query": "queries/wardrobe-two-outfits.json"
+    },
+    {
+      "id": "wardrobe-choice-wait",
+      "scene": "衣橱",
+      "japanese": "き、決めたなら早く言って。ずっと待ってるの、もっと恥ずかしいから。",
+      "chinese": "选、选好了就快点说。一直等着更让人害羞。",
+      "profile": "flustered",
+      "params": {
+        "noise_scale": 0.72,
+        "length_scale": 1.32,
+        "noise_w": 0.86
+      },
+      "audio": "voice/wardrobe-choice-wait.mp3",
+      "duration_seconds": 6.739592,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.63,
+      "true_peak_db": -1.94,
+      "sha256": "7d38169bf2766d1f6f433c99a8492d960d017b1454c4526e5fa5d090d7fbca6f",
+      "query": "queries/wardrobe-choice-wait.json"
+    },
+    {
+      "id": "gallery-first-page",
+      "scene": "画册",
+      "japanese": "最初のページは、まだ線が少し震えてるの。",
+      "chinese": "第一页的线条还有一点抖。",
+      "profile": "soft",
+      "params": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "audio": "voice/gallery-first-page.mp3",
+      "duration_seconds": 3.552653,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.9,
+      "true_peak_db": -1.94,
+      "sha256": "5bbcc418b73596778718771cdb4e0686e66034c9e01c233372c33dacc8b8dbf5",
+      "query": "queries/gallery-first-page.json"
+    },
+    {
+      "id": "gallery-close-look",
+      "scene": "画册",
+      "japanese": "その画、近くで見るなら……感想もちゃんと言って。",
+      "chinese": "要靠近看那张画……也要认真说感想。",
+      "profile": "shy",
+      "params": {
+        "noise_scale": 0.6,
+        "length_scale": 1.58,
+        "noise_w": 0.72
+      },
+      "audio": "voice/gallery-close-look.mp3",
+      "duration_seconds": 4.754286,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.6,
+      "true_peak_db": -1.93,
+      "sha256": "af6ba0fff30972c687263f38ba16585141d333917df1de2f30a4955548ec4be0",
+      "query": "queries/gallery-close-look.json"
+    },
+    {
+      "id": "gallery-turn-slow",
+      "scene": "画册",
+      "japanese": "ページ、ゆっくりめくって。角が折れたら困るから。",
+      "chinese": "慢慢翻页。折到书角我会很困扰。",
+      "profile": "proud",
+      "params": {
+        "noise_scale": 0.66,
+        "length_scale": 1.4,
+        "noise_w": 0.78
+      },
+      "audio": "voice/gallery-turn-slow.mp3",
+      "duration_seconds": 5.355102,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.52,
+      "true_peak_db": -1.95,
+      "sha256": "51a294c2d9e8a124e05743396e1d53a7c14b0fdc5984603aef99a8bec714a7c0",
+      "query": "queries/gallery-turn-slow.json"
+    },
+    {
+      "id": "gallery-praise",
+      "scene": "画册",
+      "japanese": "最後まで見たの？　……じゃあ、少しくらい褒めてもいいよ。",
+      "chinese": "看到最后了吗？……那稍微夸一下也可以。",
+      "profile": "proud",
+      "params": {
+        "noise_scale": 0.66,
+        "length_scale": 1.4,
+        "noise_w": 0.78
+      },
+      "audio": "voice/gallery-praise.mp3",
+      "duration_seconds": 4.414694,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.65,
+      "true_peak_db": -1.94,
+      "sha256": "3bd7a39deca93c817fd7618affc7b4525c8989d02cbabedc80aabb7c8552b3f8",
+      "query": "queries/gallery-praise.json"
+    },
+    {
+      "id": "drawing-one-line",
+      "scene": "一起画",
+      "japanese": "今いいところだから、あと一本だけ線を引かせて。",
+      "chinese": "正画到关键地方，让我再画一条线。",
+      "profile": "proud",
+      "params": {
+        "noise_scale": 0.66,
+        "length_scale": 1.4,
+        "noise_w": 0.78
+      },
+      "audio": "voice/drawing-one-line.mp3",
+      "duration_seconds": 3.395918,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.94,
+      "true_peak_db": -1.95,
+      "sha256": "c4bfcfb0bca2193b4cdd28baefa77c39c7d3f886c14c22e5457cb3fce54c3419",
+      "query": "queries/drawing-one-line.json"
+    },
+    {
+      "id": "drawing-peek-again",
+      "scene": "一起画",
+      "japanese": "また覗いた。……そんなに気になるの？",
+      "chinese": "又偷看。……就这么在意吗？",
+      "profile": "flustered",
+      "params": {
+        "noise_scale": 0.72,
+        "length_scale": 1.32,
+        "noise_w": 0.86
+      },
+      "audio": "voice/drawing-peek-again.mp3",
+      "duration_seconds": 3.578776,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.44,
+      "true_peak_db": -2.67,
+      "sha256": "d4ee6bfb1c57fcbbf4d4dc618e6ed50b2eb8f70b4947ffd066d3c9e38f0eb6cd",
+      "query": "queries/drawing-peek-again.json"
+    },
+    {
+      "id": "drawing-you-are-there",
+      "scene": "一起画",
+      "japanese": "何も言わなくても、そこにいるのは分かってる。",
+      "chinese": "就算什么都不说，我也知道你在那里。",
+      "profile": "shy",
+      "params": {
+        "noise_scale": 0.6,
+        "length_scale": 1.58,
+        "noise_w": 0.72
+      },
+      "audio": "voice/drawing-you-are-there.mp3",
+      "duration_seconds": 4.597551,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -18.02,
+      "true_peak_db": -1.94,
+      "sha256": "4af11435765ad38a71a986c8b9d83f36e0d98d02d6a52a09250c0d410d7f9e74",
+      "query": "queries/drawing-you-are-there.json"
+    },
+    {
+      "id": "drawing-first-view",
+      "scene": "一起画",
+      "japanese": "できた。最初に見せるのは……今日は、あなたでいい。",
+      "chinese": "画好了。今天第一个给你看的人……可以是你。",
+      "profile": "proud",
+      "params": {
+        "noise_scale": 0.66,
+        "length_scale": 1.4,
+        "noise_w": 0.78
+      },
+      "audio": "voice/drawing-first-view.mp3",
+      "duration_seconds": 5.355102,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.43,
+      "true_peak_db": -2.39,
+      "sha256": "5141097987c398c3f01a907954c0cf8378259c44e794dd8b6a4466dc64e87deb",
+      "query": "queries/drawing-first-view.json"
+    },
+    {
+      "id": "goodnight-sleepy",
+      "scene": "晚安",
+      "japanese": "もう少し起きていたいけど、目が勝手に閉じそう……。",
+      "chinese": "还想再醒一会儿，可眼睛好像要自己闭上了……",
+      "profile": "sleepy",
+      "params": {
+        "noise_scale": 0.58,
+        "length_scale": 1.68,
+        "noise_w": 0.68
+      },
+      "audio": "voice/goodnight-sleepy.mp3",
+      "duration_seconds": 4.075102,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -18.09,
+      "true_peak_db": -1.92,
+      "sha256": "e8437bbeb0541d2d3deb6942cbdf075a9f749e14646e78e1d74c5da4f81dc32d",
+      "query": "queries/goodnight-sleepy.json"
+    },
+    {
+      "id": "goodnight-plush",
+      "scene": "晚安",
+      "japanese": "ぬいぐるみ、ちゃんと返して。これがないと眠れないの。",
+      "chinese": "玩偶要好好还给我。没有它我睡不着。",
+      "profile": "flustered",
+      "params": {
+        "noise_scale": 0.72,
+        "length_scale": 1.32,
+        "noise_w": 0.86
+      },
+      "audio": "voice/goodnight-plush.mp3",
+      "duration_seconds": 3.84,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.45,
+      "true_peak_db": -2.25,
+      "sha256": "cce5270a6d38d63cc55f4a07e896c123132d001ea8cc2928d520d74696a20ead",
+      "query": "queries/goodnight-plush.json"
+    },
+    {
+      "id": "goodnight-book",
+      "scene": "晚安",
+      "japanese": "本はここに置いておく。続きは、また今度。",
+      "chinese": "书就放在这里。下次再看后面。",
+      "profile": "soft",
+      "params": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "audio": "voice/goodnight-book.mp3",
+      "duration_seconds": 4.205714,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.83,
+      "true_peak_db": -1.93,
+      "sha256": "a6b176ab7294b759ca1c578e267e96faa833986fe92a8cbb413c23cb0904d980",
+      "query": "queries/goodnight-book.json"
+    },
+    {
+      "id": "goodnight-knock-next",
+      "scene": "晚安",
+      "japanese": "おやすみ。次も……ちゃんとノックしてね。",
+      "chinese": "晚安。下次也要……好好敲门哦。",
+      "profile": "shy",
+      "params": {
+        "noise_scale": 0.6,
+        "length_scale": 1.58,
+        "noise_w": 0.72
+      },
+      "audio": "voice/goodnight-knock-next.mp3",
+      "duration_seconds": 4.205714,
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bitrate_kbps": 160,
+      "integrated_lufs": -17.43,
+      "true_peak_db": -2.5,
+      "sha256": "bc831c39aa446073f8ccad15236c63a8e5405717891fea47cf066fb8cb14a9b3",
+      "query": "queries/goodnight-knock-next.json"
+    }
+  ]
+}

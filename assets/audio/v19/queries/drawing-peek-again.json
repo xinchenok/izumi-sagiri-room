@@ -1,0 +1,44 @@
+{
+  "id": "drawing-peek-again",
+  "scene": "一起画",
+  "japanese": "また覗いた。……そんなに気になるの？",
+  "chinese": "又偷看。……就这么在意吗？",
+  "profile": "flustered",
+  "requested_params": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "applied_scales": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 74,
+  "padded_phoneme_count": 74,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/drawing-peek-again.wav",
+  "raw_wav_sha256": "f0f0eedad3218398560abcc96936470957dde87ef52bc51f2a8b3ab069eb39b9",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -14.99,
+    "true_peak_db": -0.21,
+    "lra": 1.1,
+    "threshold": -26.07,
+    "target_offset": -1.19
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-14.99:measured_LRA=1.1:measured_TP=-0.21:measured_thresh=-26.07:offset=-1.19:linear=true:print_format=summary"
+}

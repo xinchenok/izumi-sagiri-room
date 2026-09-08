@@ -1,0 +1,44 @@
+{
+  "id": "goodnight-plush",
+  "scene": "晚安",
+  "japanese": "ぬいぐるみ、ちゃんと返して。これがないと眠れないの。",
+  "chinese": "玩偶要好好还给我。没有它我睡不着。",
+  "profile": "flustered",
+  "requested_params": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "applied_scales": {
+    "noise_scale": 0.72,
+    "length_scale": 1.32,
+    "noise_w": 0.86
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "language_id": 0,
+  "speaker_id": 0,
+  "speaker_embedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "reference_audio": null
+  },
+  "phoneme_count": 109,
+  "padded_phoneme_count": 109,
+  "short_text_padding": false,
+  "front_padding": 0,
+  "back_padding": 0,
+  "raw_wav": "raw/goodnight-plush.wav",
+  "raw_wav_sha256": "aaa5ff828080c3f87d7f41a4146d53d6f3a07795a3358ebca72e1cbaac3209b4",
+  "loudnorm_first_pass": {
+    "integrated_lufs": -15.07,
+    "true_peak_db": 0.12,
+    "lra": 0.7,
+    "threshold": -25.41,
+    "target_offset": -0.21
+  },
+  "loudnorm_second_pass_filter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-17:TP=-1.5:LRA=7:measured_I=-15.07:measured_LRA=0.7:measured_TP=0.12:measured_thresh=-25.41:offset=-0.21:linear=true:print_format=summary"
+}
