@@ -31,7 +31,7 @@
 
 ## 最低验证要求
 
-- 执行 `node --check script.js`。
+- 执行 `npm run verify`，其中包含全部运行时 JavaScript 语法、资源、旧素材保留与编码检查。
 - 检查页面引用的本地资源均存在且无 404。
 - 检查桌面、平板和手机布局，没有横向溢出。
 - 检查键盘焦点、字幕、音频失败降级和 `prefers-reduced-motion`。
