@@ -3053,6 +3053,12 @@ class CinematicDirector {
     if (this.requestedPairKey !== key) {
       this.requestedPairKey = key;
       this.loadSequence += 1;
+      if (this.pairKey === key && this.nextReadyKey !== key) this.pairKey = "";
+      if (this.pairAnimation) {
+        this.layers[0].src = this.layers[1].src;
+        this.layers[0].style.opacity = "1";
+        this.layers[1].style.opacity = "0";
+      }
       this.pairAnimation?.cancel();
       this.pairAnimation = null;
     }
