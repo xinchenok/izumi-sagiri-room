@@ -1,0 +1,45 @@
+{
+  "id": "door-strawberry",
+  "subject": "door",
+  "palette": "strawberry",
+  "title": "门缝看月亮的小猫",
+  "paletteName": "草莓黄昏",
+  "alt": "草莓黄昏配色：浅银灰小猫从半开的门后探出圆脸和小爪，看向一弯月亮与两颗小星星",
+  "generatedAt": "2026-09-08T22:25:47.888909+00:00",
+  "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+  "source": ".tmp/v20-drawings/door/strawberry.png",
+  "sourceSha256": "51d1b5c38e1b2f8cebf2cc82ecdfc2ed556867f1d41b2834d1b8e6cba51bfcdf",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "native4k": false,
+  "aspectRatio": "4:3",
+  "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+  "prompt": "Use case: illustration-story with composition reference. Produce a new clean cute anime kitten artwork for a character website's drawing board. The provided old picture is THEME AND GENERAL COMPOSITION REFERENCE ONLY. Do not inherit its brown/yellow realism, paper texture, watercolor grain, detailed fur, oil painting or aged-paper look. Create a very adorable small silver-gray kitten with soft round cheeks, short stubby limbs, tiny pink inner ears and nose, simple large clear dark eyes, little rounded paws. Thin crisp clean light-gray linework, smooth flat cel colors, at most one simple pale shadow, no painterly rendering. The drawing should feel like a sweet simple anime illustration, not a realistic animal photograph.\nCanvas: exactly 4:3 landscape. Keep every illustrated object fully inside the central 80% of width and height, leaving a clean untextured near-white paper margin of at least 10% on every edge for mounting on a drawing board. No drawn frame, no paper-edge border, no UI, no text, no signature, no watermark. Do not fill the page with a background scene; only the necessary subject vignette and a small simple ground shadow.\nPalette: strawberry dusk — soft strawberry pink, clean milk-white and a little gentle warm yellow; kitten fur stays very pale silver-gray with pink ears. No brown-orange wash, no yellowed paper, no texture, no grain, no blur, no fog, no photorealism.\nTheme: A shy kitten peeks with half its face and one little paw from behind a slightly opened small pastel-pink bedroom door on the LEFT, looking at a small pale warm-yellow crescent moon and two tiny simple stars in the open white space on the RIGHT. Door, handle, kitten and moon all remain fully inside the clean margins. Keep the expressive curious peeking relationship from the reference, but make all shapes simplified, round and cute. No real room or bed behind the door.",
+  "promptFile": "assets/v20/drawings/prompts/door-strawberry.txt",
+  "promptSha256": "ce1d801d45cf246311f548e93311c491bed39e19d1a76c3058797703093b1a30",
+  "references": [
+    {
+      "path": "assets/v18/drawing-door-moon-720.webp",
+      "sha256": "617e004e05b74cf333acf304b6fe493c1b753990b48e0af0cdf8e23013fa6607",
+      "role": "仅主题构图，不继承旧画风"
+    }
+  ],
+  "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+  "pillowVersion": "12.3.0",
+  "exports": [
+    {
+      "sizeClass": "480",
+      "file": "assets/v20/drawings/door-strawberry-480.webp",
+      "dimensions": [
+        480,
+        360
+      ],
+      "bytes": 8700,
+      "sha256": "42679b5611434c26d852dcb449a3fe0ae5d8c56c920dd96b29f837d640907701"
+    }
+  ]
+}

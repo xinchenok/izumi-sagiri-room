@@ -1,0 +1,881 @@
+{
+  "version": "20.0.0",
+  "outfitId": "outing",
+  "generatedAt": "2026-09-08T20:07:09.401122+00:00",
+  "count": 9,
+  "assets": [
+    {
+      "id": "bed-hug",
+      "outfitId": "outing",
+      "generatedAt": "2026-09-08T20:00:13.838240+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/outing/bed-hug-green.png",
+      "sourceSha256": "b43188da0f4802f2c4880c40949a3548de8f02fc58b69e453d7845ade36baf3a",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/bed-hug-green.png",
+          "sha256": "ed537c31d206c2a95ee5a0086813331f76a09d217a12ffe52f8407ac1cb4e888"
+        },
+        {
+          "path": ".tmp/v20-character/outing/standing-neutral-green.png",
+          "sha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose: bed-hug; copy image 1's pose literally. Keep both knees covered and the pink cat plush unchanged. \n",
+      "promptFile": "assets/v20/character/outing/bed-hug.prompt.txt",
+      "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose: bed-hug; copy image 1's pose literally. Keep both knees covered and the pink cat plush unchanged. \n",
+      "promptSha256": "3a8cd0d01b3c4d9a6bb13c924db1b5977ec2f4556c489de2e60acb94de0ffa2d",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/outing/bed-hug-alpha.png",
+        "sha256": "d6534f380686be4ec614068201f307792de385c98b5c76fc806c818cc507d247",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        47,
+        94,
+        1012,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.044298,
+        0.063428,
+        0.953817,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/outing/bed-hug-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 133380,
+          "sha256": "9cd8f59ac366e66932e122db8ccc2836726c5a1e9682e35e6f5ac62fda79824c",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/outing/bed-hug-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 323326,
+          "sha256": "367c695d7adb7fa86acb36479dd113e37ab22d07693bf9b9af7bfdda9afc568c",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/outing/bed-hug-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 745536,
+          "sha256": "524c362161f8e28f9c1996e0dd2a8e30cf8e6507ed6cd9285bf9f52a89712ee9",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "bed-sleepy",
+      "outfitId": "outing",
+      "generatedAt": "2026-09-08T20:05:50.729463+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/outing/bed-sleepy-green.png",
+      "sourceSha256": "6f17c92e1db3a7a3879be1a65ec7ecebd55e7575bcca2db70ad638a1cd4d9277",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/bed-sleepy-green.png",
+          "sha256": "07e2826a6f20bc3aa4dd51b193efc59526da51bf6efb6e6205770b0058d19382"
+        },
+        {
+          "path": ".tmp/v20-character/outing/standing-neutral-green.png",
+          "sha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: bed-sleepy; copy image 1's pose and face literally. Both eyes must stay CLOSED exactly like image 1, do not borrow image 2's open eyes. Keep both knees fully covered and the pink cat plush unchanged. \n",
+      "promptFile": "assets/v20/character/outing/bed-sleepy.prompt.txt",
+      "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: bed-sleepy; copy image 1's pose and face literally. Both eyes must stay CLOSED exactly like image 1, do not borrow image 2's open eyes. Keep both knees fully covered and the pink cat plush unchanged. \n",
+      "promptSha256": "5a4b3887368990c989e3bfb4e9d1ece62a380284c7bd487083f9ff70219a4c45",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/outing/bed-sleepy-alpha.png",
+        "sha256": "cc8837e2788809458bfe67e1f2744448d98d14e765323ff7cfd50d30b7c3bfee",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        48,
+        96,
+        1012,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.04524,
+        0.064777,
+        0.953817,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/outing/bed-sleepy-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 133970,
+          "sha256": "5951dfec323e3d1ac8cfd21ea5fb9449513166386132ba6943dd01d113c5f825",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/outing/bed-sleepy-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 323466,
+          "sha256": "b4540d14283d030259ab271cc57fc1f464f097f60b159357d52aced48fdc09de",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/outing/bed-sleepy-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 747228,
+          "sha256": "c80570a882bd0ac81f282664ad3b36b6c695574fe906d4d5103672ecd21646ce",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "desk-blink",
+      "outfitId": "outing",
+      "generatedAt": "2026-09-08T20:05:29.861856+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/outing/desk-blink-green.png",
+      "sourceSha256": "a353e2e825c2b18e12361ed406aa9796a95b1c228f4acfd6555209a2ebfd89e3",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/desk-blink-green.png",
+          "sha256": "4fdeec1386df09bcdfd406c2fdb143965e6bbd35f699029131c285633a5451c4"
+        },
+        {
+          "path": ".tmp/v20-character/outing/standing-neutral-green.png",
+          "sha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: desk-blink; copy image 1's pose and face literally. Both eyes must stay CLOSED exactly like image 1, do not borrow image 2's open eyes. \n",
+      "promptFile": "assets/v20/character/outing/desk-blink.prompt.txt",
+      "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: desk-blink; copy image 1's pose and face literally. Both eyes must stay CLOSED exactly like image 1, do not borrow image 2's open eyes. \n",
+      "promptSha256": "fdeab5da74e1f739e1f43e9ccbffe1f2e3969b4790bbb597bf8e819caa8b75a4",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/outing/desk-blink-alpha.png",
+        "sha256": "95c62ca6b9e38587c0bb736c99a5c16e3626501180688e934927bf9c78d8288b",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        22,
+        100,
+        1041,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.020735,
+        0.067476,
+        0.98115,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/outing/desk-blink-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 133772,
+          "sha256": "b33a5bfa5991757f05a723e4015f58aeed67f33a0d705424308d4b21654b262e",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/outing/desk-blink-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 315674,
+          "sha256": "8986c618373c6773f847a497ddfe51551d976055f51f84073297319663471875",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/outing/desk-blink-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 726714,
+          "sha256": "38b159b535478da629a4a06b002344c7f92dd76b92e5d196e8c4092fb5fd5113",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "desk-focus",
+      "outfitId": "outing",
+      "generatedAt": "2026-09-08T19:59:32.103647+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/outing/desk-focus-green.png",
+      "sourceSha256": "a62246809e3b9a035cab262ef849018eb05c1dcb720687808b8599895d66d201",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/desk-focus-green.png",
+          "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+        },
+        {
+          "path": ".tmp/v20-character/outing/standing-neutral-green.png",
+          "sha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose: desk-focus; copy image 1's pose literally. \n",
+      "promptFile": "assets/v20/character/outing/desk-focus.prompt.txt",
+      "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose: desk-focus; copy image 1's pose literally. \n",
+      "promptSha256": "ce46757a5f9f5cfc28fe328f4b3c5aaa82bf114d00fd7238b5e09ad1b2dabc8c",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/outing/desk-focus-alpha.png",
+        "sha256": "c9a8890f63c298d2974ff3bcb3c7128f8c1d10c377ea4a0f1fed69e547c3e236",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        22,
+        95,
+        1041,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.020735,
+        0.064103,
+        0.98115,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/outing/desk-focus-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 135682,
+          "sha256": "fa806ef6462517483d8f0bc7f7af302fafc37d5250c06521dfb18e14ba033ef6",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/outing/desk-focus-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 321650,
+          "sha256": "c240a78a23357675ca8f37ee64278bf364a62a9337383f21354f0646d55c0e72",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/outing/desk-focus-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 742824,
+          "sha256": "3e6e5f84ed8d60480b71e2c27cbf0513b172de6cea7f2d0922b534173129fe6f",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "desk-shy",
+      "outfitId": "outing",
+      "generatedAt": "2026-09-08T20:05:08.696871+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/outing/desk-shy-green.png",
+      "sourceSha256": "3d65dfbcc9b15f0137ac35d7e47a8317b5404a309b3bc93db010014804e1a537",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/desk-shy-green.png",
+          "sha256": "b716888c3eb571e29ce219f366bc084f3db48494e3c54ecd7373f1afd2b2a588"
+        },
+        {
+          "path": ".tmp/v20-character/outing/standing-neutral-green.png",
+          "sha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: desk-shy; copy image 1's pose and face literally. Preserve the shy blush and gentle expression from image 1. \n",
+      "promptFile": "assets/v20/character/outing/desk-shy.prompt.txt",
+      "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: desk-shy; copy image 1's pose and face literally. Preserve the shy blush and gentle expression from image 1. \n",
+      "promptSha256": "3a0fca39d7cea3ca19c3758616f98de4d8c8e03972e1acee9dd3025330e8e7dd",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/outing/desk-shy-alpha.png",
+        "sha256": "acdbfad7cd8389be6ecf2c839516dcc53fee51f27a713819dafab30b300580db",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        21,
+        97,
+        1041,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.019793,
+        0.065452,
+        0.98115,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/outing/desk-shy-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 135604,
+          "sha256": "79ef257e29b053a2960ac5d5ce154b2b493dd782691cd176012babe170a6a2d1",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/outing/desk-shy-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 324670,
+          "sha256": "f4e8b6c2421794732210f30ff9692457a74153f17db73b87e7f61547f11f0628",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/outing/desk-shy-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 741818,
+          "sha256": "ba2e25e6182e1e2bd64b29c4898ceb8c092531f4d7ca1e1728d7087f7d258538",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "reading-peek",
+      "outfitId": "outing",
+      "generatedAt": "2026-09-08T19:59:53.769577+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/outing/reading-peek-green.png",
+      "sourceSha256": "92e2d4f49c0fc5c40a274799b5378a099b81dafe29c8d5521e8d8ebe237fbf53",
+      "nativeSize": [
+        1062,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/reading-peek-green.png",
+          "sha256": "dbb5c20c14593f098118ea0f13145b17235de24fe44c0d7d762ef1f1a77e813a"
+        },
+        {
+          "path": ".tmp/v20-character/outing/standing-neutral-green.png",
+          "sha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose: reading-peek; copy image 1's pose literally. \n",
+      "promptFile": "assets/v20/character/outing/reading-peek.prompt.txt",
+      "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose: reading-peek; copy image 1's pose literally. \n",
+      "promptSha256": "a16db83625547b7981c1899290bd4015e5e22b81015f02e17574d6f9df501dd1",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/outing/reading-peek-alpha.png",
+        "sha256": "141f2b780e9b4ee54184a3cbe5c98f6a564cb0d47d5390b39fcdc1733199c5af",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        95,
+        791,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.053672,
+        0.064103,
+        0.744821,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/outing/reading-peek-720.webp",
+          "dimensions": [
+            720,
+            1005
+          ],
+          "bytes": 113714,
+          "sha256": "c1f7381c8ba9063d987180676458ec0607bd94808ed5bb106aaa126806d7328d",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/outing/reading-peek-1440.webp",
+          "dimensions": [
+            1440,
+            2009
+          ],
+          "bytes": 276692,
+          "sha256": "eb2252b122dbda28013364c72245e10b9699d99fe0366f631b07c089a7060edb",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/outing/reading-peek-4k.webp",
+          "dimensions": [
+            2752,
+            3840
+          ],
+          "bytes": 635988,
+          "sha256": "4bd17c2d26452d02aa57b9c596aede4ddee835119d8216004f01db10b9e8c500",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "standing-blink",
+      "outfitId": "outing",
+      "generatedAt": "2026-09-08T20:04:46.937034+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/outing/standing-blink-green.png",
+      "sourceSha256": "569bc8cbdaeb9ff5a5bdcf6ecb575a98479daab27b0e9498b5dd7833d5d82807",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-blink-green.png",
+          "sha256": "d6ab5923fc260d4f90f77191c3a876c8f5604d5a4aa33a58ed6866db81074781"
+        },
+        {
+          "path": ".tmp/v20-character/outing/standing-neutral-green.png",
+          "sha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: standing-blink; copy image 1's pose and face literally. Both eyes must stay CLOSED exactly like image 1, do not borrow image 2's open eyes. \n",
+      "promptFile": "assets/v20/character/outing/standing-blink.prompt.txt",
+      "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: standing-blink; copy image 1's pose and face literally. Both eyes must stay CLOSED exactly like image 1, do not borrow image 2's open eyes. \n",
+      "promptSha256": "a5ee9bff56931b737b49641866229d4f8f9c5b2f1c0bb00b269d89744e2306e8",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/outing/standing-blink-alpha.png",
+        "sha256": "aaa973c8e4b40398cc0c44695e1e41c34f595e261bd5557c4d27017a9d13d610",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        110,
+        1012,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.053723,
+        0.074224,
+        0.953817,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/outing/standing-blink-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 124854,
+          "sha256": "209cf6f1312d54c234207a74363ed6f38e4f08390e6879a67547deee9d80afbe",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/outing/standing-blink-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 303616,
+          "sha256": "a97c43a2c860fdca37cd0977a2119ccbcd37f398414e802e828fc05ccbe9f2f5",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/outing/standing-blink-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 696970,
+          "sha256": "329a022e8f52d78dda67a75e49d0acd7ffdd7a009f31ab3d6c4b2cb6938d1fed",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "standing-neutral",
+      "outfitId": "outing",
+      "generatedAt": "2026-09-08T19:59:11.170245+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/outing/standing-neutral-green.png",
+      "sourceSha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18",
+      "nativeSize": [
+        1062,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-neutral-green.png",
+          "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+        },
+        {
+          "path": "assets/v18/outfit-outing-sailor-1440.webp",
+          "sha256": "199e75b8200b6c5503207b226bcd8185ff61d5522339886e6006c30e87b59b1c"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Input image 1 is the exact edit target and identity/pose/framing/style authority. Input image 2 is CLOTHING DESIGN REFERENCE ONLY; do not inherit its body proportions, face, pose, room, lighting, dark palette, or rendering texture. Change only the character's clothes to the described outfit. Preserve image 1's exact head tilt, eye direction, gentle neutral smile, face shape, silver-white long hair, two pink bow hairclips, anatomy, natural hands, extended-hand invitation pose, relative scale, position, canvas aspect ratio and lower-edge crop. Keep the same clean cel-anime linework, smooth untextured fills, clean pale skin and simple shadows. Keep a perfectly solid #00FF00 background including all holes between strands and arms, no green reflected light on the person. This is an all-ages, fully clothed cute everyday character sprite. No text, no watermark, no UI, no room, no shadows on the background, no extra props or characters. No mature proportions, sensual pose, oil painting, dirty texture, grain, watercolor, blur, haze, complex gradients, or photorealism.\nOutfit: mint knitted long-sleeve cardigan over a modest white sailor-collar dress with navy collar, navy scarf tie, navy double-striped skirt hem, and opaque dark navy long stockings. Cardigan loose and comfortably covered; simplified clean knit line motifs, no realistic fabric texture. No hood, no cat ears on the head, no handbag or other new hand-held object. Only replace the hoodie/trousers; reveal the existing silver hair where the removed hood used to be without changing head shape.\n",
+      "promptFile": "assets/v20/character/outing/standing-neutral.prompt.txt",
+      "promptText": "Use case: identity-preserve. Input image 1 is the exact edit target and identity/pose/framing/style authority. Input image 2 is CLOTHING DESIGN REFERENCE ONLY; do not inherit its body proportions, face, pose, room, lighting, dark palette, or rendering texture. Change only the character's clothes to the described outfit. Preserve image 1's exact head tilt, eye direction, gentle neutral smile, face shape, silver-white long hair, two pink bow hairclips, anatomy, natural hands, extended-hand invitation pose, relative scale, position, canvas aspect ratio and lower-edge crop. Keep the same clean cel-anime linework, smooth untextured fills, clean pale skin and simple shadows. Keep a perfectly solid #00FF00 background including all holes between strands and arms, no green reflected light on the person. This is an all-ages, fully clothed cute everyday character sprite. No text, no watermark, no UI, no room, no shadows on the background, no extra props or characters. No mature proportions, sensual pose, oil painting, dirty texture, grain, watercolor, blur, haze, complex gradients, or photorealism.\nOutfit: mint knitted long-sleeve cardigan over a modest white sailor-collar dress with navy collar, navy scarf tie, navy double-striped skirt hem, and opaque dark navy long stockings. Cardigan loose and comfortably covered; simplified clean knit line motifs, no realistic fabric texture. No hood, no cat ears on the head, no handbag or other new hand-held object. Only replace the hoodie/trousers; reveal the existing silver hair where the removed hood used to be without changing head shape.\n",
+      "promptSha256": "2f2f31483f14e9230128d3d00f396452b4316fe32e157a4aa11097f05009303c",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/outing/standing-neutral-alpha.png",
+        "sha256": "f2bffff0a54840dbe8a494984dfee5ef4b6d668f199809468c66019a72bd48a3",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        95,
+        1012,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.053672,
+        0.064103,
+        0.952919,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/outing/standing-neutral-720.webp",
+          "dimensions": [
+            720,
+            1005
+          ],
+          "bytes": 125350,
+          "sha256": "47a8a8350d684553a9d8b9a9ffb746e9530c9ecac1ca8f92288edc61a2729de9",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/outing/standing-neutral-1440.webp",
+          "dimensions": [
+            1440,
+            2009
+          ],
+          "bytes": 304480,
+          "sha256": "8eb6a89dc071884f2201b599fc075f70e93e0e3b0c44c4950fc9f15d5c099447",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/outing/standing-neutral-4k.webp",
+          "dimensions": [
+            2752,
+            3840
+          ],
+          "bytes": 698892,
+          "sha256": "66fb698ad57b917dc75811bc048903cd49118af6e7c692764bc781ac282289e0",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "standing-shy",
+      "outfitId": "outing",
+      "generatedAt": "2026-09-08T20:04:26.128719+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/outing/standing-shy-green.png",
+      "sourceSha256": "0d2e58c3ad395c05f5d0e10495641d2791a4e29138fff1e104106d6e4a427b3f",
+      "nativeSize": [
+        1062,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-shy-green.png",
+          "sha256": "1da8cd2cb550d315f640255a182366fac3d956587a252cd5cc5c3df1ede1d249"
+        },
+        {
+          "path": ".tmp/v20-character/outing/standing-neutral-green.png",
+          "sha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18"
+        }
+      ],
+      "prompt": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: standing-shy; copy image 1's pose and face literally. Preserve the shy blush and gentle expression from image 1. \n",
+      "promptFile": "assets/v20/character/outing/standing-shy.prompt.txt",
+      "promptText": "Use case: identity-preserve. Image 1 is the exact edit target: preserve its full character pose, face shape, expression, open/closed eye state, head angle, gaze, anatomy, hand positions, held objects, size, canvas position, aspect ratio and crop. Image 2 is ONLY the approved replacement outfit reference. Do not copy its standing pose. Change only clothing in image 1 to the outfit worn in image 2, with natural folds for image 1's pose. Keep the same silver-white long hair and pink bow hairclips; remove the cat-ear hood and reveal silver hair in that area, without changing head proportions. Keep image 1's adorable all-ages round face, modest youthful proportions, clean crisp cel-anime linework, flat untextured color fills and simple shadows. Preserve all props in image 1 exactly: no additions, omissions or repositioning. No furniture, scenery, ground shadow, text, watermark, UI, extra people, or extra limbs. Background must remain solid #00FF00 everywhere around and between hair/arms, without green light spilling on the person. No oil paint, dirty texture, grain, watercolor, photorealism, blur, haze or mature/sexual styling. Outfit: soft pale mint long-sleeve cardigan with simple clean knit line motifs, over a modest white sailor dress with navy collar, navy scarf tie, double-striped navy skirt hem and fully opaque dark navy long stockings. Maintain fully covered neckline and knees; skirt drapes modestly over lap in seated poses. No hood or handbag. Current required pose/expression: standing-shy; copy image 1's pose and face literally. Preserve the shy blush and gentle expression from image 1. \n",
+      "promptSha256": "512f3d1244f304bd26ac881ccabc0eba44b01e16ffe31ee833a5197912d3cdf7",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/outing/standing-shy-alpha.png",
+        "sha256": "4a5cbcdaaec2deceea36d1c0f407cfa77a9330fa0d1381d271e869e9a6f06ba5",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        58,
+        97,
+        1011,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.054614,
+        0.065452,
+        0.951977,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/outing/standing-shy-720.webp",
+          "dimensions": [
+            720,
+            1005
+          ],
+          "bytes": 126392,
+          "sha256": "7da6f47941a82811cb316f05d2c94508add678ea051c91f937565b691c118f75",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/outing/standing-shy-1440.webp",
+          "dimensions": [
+            1440,
+            2009
+          ],
+          "bytes": 309850,
+          "sha256": "be9c5b455cfd0471dbff3f83e8a18f921d0508a862484fe435ec84095e5b5d96",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/outing/standing-shy-4k.webp",
+          "dimensions": [
+            2752,
+            3840
+          ],
+          "bytes": 712344,
+          "sha256": "498f5e98eb6226a37cbb7fddf3833dd1dc165927a0fbea891023e96dd1b90cc4",
+          "hasAlpha": true
+        }
+      ]
+    }
+  ]
+}

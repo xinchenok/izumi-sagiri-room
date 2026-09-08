@@ -1,0 +1,75 @@
+{
+  "id": "standing-neutral",
+  "outfitId": "outing",
+  "generatedAt": "2026-09-08T19:59:11.170245+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/outing/standing-neutral-green.png",
+  "sourceSha256": "69eedff1a4fd922a896b1d848086e0f9f8ec923b5ad3926b9a13b70015eb0e18",
+  "nativeSize": [
+    1062,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/standing-neutral-green.png",
+      "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+    },
+    {
+      "path": "assets/v18/outfit-outing-sailor-1440.webp",
+      "sha256": "199e75b8200b6c5503207b226bcd8185ff61d5522339886e6006c30e87b59b1c"
+    }
+  ],
+  "prompt": "Use case: identity-preserve. Input image 1 is the exact edit target and identity/pose/framing/style authority. Input image 2 is CLOTHING DESIGN REFERENCE ONLY; do not inherit its body proportions, face, pose, room, lighting, dark palette, or rendering texture. Change only the character's clothes to the described outfit. Preserve image 1's exact head tilt, eye direction, gentle neutral smile, face shape, silver-white long hair, two pink bow hairclips, anatomy, natural hands, extended-hand invitation pose, relative scale, position, canvas aspect ratio and lower-edge crop. Keep the same clean cel-anime linework, smooth untextured fills, clean pale skin and simple shadows. Keep a perfectly solid #00FF00 background including all holes between strands and arms, no green reflected light on the person. This is an all-ages, fully clothed cute everyday character sprite. No text, no watermark, no UI, no room, no shadows on the background, no extra props or characters. No mature proportions, sensual pose, oil painting, dirty texture, grain, watercolor, blur, haze, complex gradients, or photorealism.\nOutfit: mint knitted long-sleeve cardigan over a modest white sailor-collar dress with navy collar, navy scarf tie, navy double-striped skirt hem, and opaque dark navy long stockings. Cardigan loose and comfortably covered; simplified clean knit line motifs, no realistic fabric texture. No hood, no cat ears on the head, no handbag or other new hand-held object. Only replace the hoodie/trousers; reveal the existing silver hair where the removed hood used to be without changing head shape.\n",
+  "promptFile": "assets/v20/character/outing/standing-neutral.prompt.txt",
+  "promptText": "Use case: identity-preserve. Input image 1 is the exact edit target and identity/pose/framing/style authority. Input image 2 is CLOTHING DESIGN REFERENCE ONLY; do not inherit its body proportions, face, pose, room, lighting, dark palette, or rendering texture. Change only the character's clothes to the described outfit. Preserve image 1's exact head tilt, eye direction, gentle neutral smile, face shape, silver-white long hair, two pink bow hairclips, anatomy, natural hands, extended-hand invitation pose, relative scale, position, canvas aspect ratio and lower-edge crop. Keep the same clean cel-anime linework, smooth untextured fills, clean pale skin and simple shadows. Keep a perfectly solid #00FF00 background including all holes between strands and arms, no green reflected light on the person. This is an all-ages, fully clothed cute everyday character sprite. No text, no watermark, no UI, no room, no shadows on the background, no extra props or characters. No mature proportions, sensual pose, oil painting, dirty texture, grain, watercolor, blur, haze, complex gradients, or photorealism.\nOutfit: mint knitted long-sleeve cardigan over a modest white sailor-collar dress with navy collar, navy scarf tie, navy double-striped skirt hem, and opaque dark navy long stockings. Cardigan loose and comfortably covered; simplified clean knit line motifs, no realistic fabric texture. No hood, no cat ears on the head, no handbag or other new hand-held object. Only replace the hoodie/trousers; reveal the existing silver hair where the removed hood used to be without changing head shape.\n",
+  "promptSha256": "2f2f31483f14e9230128d3d00f396452b4316fe32e157a4aa11097f05009303c",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/outing/standing-neutral-alpha.png",
+    "sha256": "f2bffff0a54840dbe8a494984dfee5ef4b6d668f199809468c66019a72bd48a3",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1062,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    57,
+    95,
+    1012,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.053672,
+    0.064103,
+    0.952919,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/outing/standing-neutral-720.webp",
+      "dimensions": [
+        720,
+        1005
+      ],
+      "bytes": 125350,
+      "sha256": "47a8a8350d684553a9d8b9a9ffb746e9530c9ecac1ca8f92288edc61a2729de9",
+      "hasAlpha": true
+    }
+  ]
+}

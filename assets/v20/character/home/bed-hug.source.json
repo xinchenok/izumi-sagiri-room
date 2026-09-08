@@ -1,0 +1,93 @@
+{
+  "id": "bed-hug",
+  "outfitId": "home",
+  "generatedAt": "2026-09-08T20:01:10.383326+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/home/bed-hug-green.png",
+  "sourceSha256": "ed537c31d206c2a95ee5a0086813331f76a09d217a12ffe52f8407ac1cb4e888",
+  "nativeSize": [
+    1062,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/standing-neutral-green.png",
+      "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: isolated 2D anime girl hugging a cat plush on opaque chroma-green.\nInput image is the approved original A standing-neutral master and the exact identity/clothing/style reference. Change only the pose needed to sit gently at the bedside holding a toy.\nThe same round-faced silver-white long-haired girl wears exactly the same pink cat-ear zip hoodie with pink bow details and fluffy white zipper pom-poms, and fully covering cream pajama trousers. Her bright blue eyes and pink ribbon hair clips match the source exactly. She sits with her knees drawn comfortably close together, shoulders relaxed, cradling a small soft pastel-pink cat plush against her chest using both forearms. Her eyes are open and softly looking at the visitor, with a gentle tiny smile. The cat plush has a simple stitched cat face, ears, small paws and no text, no symbols. Hands are natural and visible around the toy. No new clothes, no bare legs, no suggestive posing.\nDo not draw any bed, pillow, furniture, room or floor. Only the fully clothed girl and her cat plush. Entire remaining image is a uniform opaque fluorescent #00FF00 background including spaces between hair and arms, with no gradient, cast shadow, green spill, checkerboard, white matte or texture.\nPortrait canvas 28:39. Head and ears entirely visible with 4% empty headroom; hair and seated legs remain in frame except a natural slight bottom clothing crop if required. Preserve petite light-Q anime proportions, clean precise cel linework, soft daylight from right and all-ages cute mood. No grain, oil painting, watercolor, text, watermark, extra limbs or objects. One PNG image only.\n",
+  "promptFile": "assets/v20/character/home/bed-hug.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: isolated 2D anime girl hugging a cat plush on opaque chroma-green.\nInput image is the approved original A standing-neutral master and the exact identity/clothing/style reference. Change only the pose needed to sit gently at the bedside holding a toy.\nThe same round-faced silver-white long-haired girl wears exactly the same pink cat-ear zip hoodie with pink bow details and fluffy white zipper pom-poms, and fully covering cream pajama trousers. Her bright blue eyes and pink ribbon hair clips match the source exactly. She sits with her knees drawn comfortably close together, shoulders relaxed, cradling a small soft pastel-pink cat plush against her chest using both forearms. Her eyes are open and softly looking at the visitor, with a gentle tiny smile. The cat plush has a simple stitched cat face, ears, small paws and no text, no symbols. Hands are natural and visible around the toy. No new clothes, no bare legs, no suggestive posing.\nDo not draw any bed, pillow, furniture, room or floor. Only the fully clothed girl and her cat plush. Entire remaining image is a uniform opaque fluorescent #00FF00 background including spaces between hair and arms, with no gradient, cast shadow, green spill, checkerboard, white matte or texture.\nPortrait canvas 28:39. Head and ears entirely visible with 4% empty headroom; hair and seated legs remain in frame except a natural slight bottom clothing crop if required. Preserve petite light-Q anime proportions, clean precise cel linework, soft daylight from right and all-ages cute mood. No grain, oil painting, watercolor, text, watermark, extra limbs or objects. One PNG image only.\n",
+  "promptSha256": "706917940a055103dc396058b9efeb002239fa28cd840aae7bb5d3aa41389d86",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/home/bed-hug-alpha.png",
+    "sha256": "ea22dae37689be84b2e63fa780135fced9f79d85c85264289d4f8c8d99d578f3",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1062,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    48,
+    47,
+    1014,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.045198,
+    0.031714,
+    0.954802,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/home/bed-hug-720.webp",
+      "dimensions": [
+        720,
+        1005
+      ],
+      "bytes": 136554,
+      "sha256": "3d2defb1d584c8b904597966e3aea5b0f0f6784774d545067f3e122b40ef19f9",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/character/home/bed-hug-1440.webp",
+      "dimensions": [
+        1440,
+        2009
+      ],
+      "bytes": 317166,
+      "sha256": "8b4ae6ab39f1a1268ef48f64de8ef40b312b74932ffd55e29c453250cf428211",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/home/bed-hug-4k.webp",
+      "dimensions": [
+        2752,
+        3840
+      ],
+      "bytes": 742772,
+      "sha256": "d7fedb6f1ec12c203d285391cfd8d80d8cf3752b6dd461694b6af70ae2f4f4ce",
+      "hasAlpha": true
+    }
+  ]
+}

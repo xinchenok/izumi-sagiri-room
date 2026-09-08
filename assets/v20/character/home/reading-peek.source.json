@@ -1,0 +1,93 @@
+{
+  "id": "reading-peek",
+  "outfitId": "home",
+  "generatedAt": "2026-09-08T20:00:52.105933+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/home/reading-peek-green.png",
+  "sourceSha256": "dbb5c20c14593f098118ea0f13145b17235de24fe44c0d7d762ef1f1a77e813a",
+  "nativeSize": [
+    1062,
+    1481
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/standing-neutral-green.png",
+      "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: isolated 2D anime character holding a sketchbook, opaque chroma-green background.\nInput image is the approved original A standing-neutral master. Preserve her exact identity, round face shape, bright blue eyes, long silver-white hair, pink ribbon clips, pink cat-ear zip hoodie with pockets and fluffy zipper tassels, cream fully covered pajama trousers, daylight and clean anime cel linework. Only change the arms and expression to the required book interaction.\nShe stands shyly holding a small cream sketchbook upright with both hands at chest height. The top edge reaches just under her nose so her expressive blue eyes and brows remain entirely visible above the book. She peeks playfully toward the visitor, not blankly staring. Her shoulders slightly curl inward in a sweet bashful gesture. Book cover is plain cream with no lettering, logo, painted text, symbols or additional illustrations. All ten fingers natural, hands hold the side edges without fusing into the book. Do not change the hoodie or add accessories.\nNo room or furniture; everything outside the girl and sketchbook is uniformly opaque fluorescent #00FF00 green, including every gap between hair strands. No shadow, gradient, green spill, checkerboard or white matte. Keep 28:39 portrait canvas, entire head and cat ears visible with 4% headroom, partial-thigh bottom crop, same character scale. Clean all-ages cute cel anime, no oil-paint or grain, no text/watermark. One image only.\n",
+  "promptFile": "assets/v20/character/home/reading-peek.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: isolated 2D anime character holding a sketchbook, opaque chroma-green background.\nInput image is the approved original A standing-neutral master. Preserve her exact identity, round face shape, bright blue eyes, long silver-white hair, pink ribbon clips, pink cat-ear zip hoodie with pockets and fluffy zipper tassels, cream fully covered pajama trousers, daylight and clean anime cel linework. Only change the arms and expression to the required book interaction.\nShe stands shyly holding a small cream sketchbook upright with both hands at chest height. The top edge reaches just under her nose so her expressive blue eyes and brows remain entirely visible above the book. She peeks playfully toward the visitor, not blankly staring. Her shoulders slightly curl inward in a sweet bashful gesture. Book cover is plain cream with no lettering, logo, painted text, symbols or additional illustrations. All ten fingers natural, hands hold the side edges without fusing into the book. Do not change the hoodie or add accessories.\nNo room or furniture; everything outside the girl and sketchbook is uniformly opaque fluorescent #00FF00 green, including every gap between hair strands. No shadow, gradient, green spill, checkerboard or white matte. Keep 28:39 portrait canvas, entire head and cat ears visible with 4% headroom, partial-thigh bottom crop, same character scale. Clean all-ages cute cel anime, no oil-paint or grain, no text/watermark. One image only.\n",
+  "promptSha256": "386d8866e289802da6e6436f7765980c7c36008fcd89c67ae517284d4127c859",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/home/reading-peek-alpha.png",
+    "sha256": "5e7fd9a51e3187a1a293cf6ec446492a5f2bbb853661de9cd103a1f1e6c31e95",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1062,
+      1481
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    57,
+    61,
+    842,
+    1481
+  ],
+  "actorBBoxNormalized": [
+    0.053672,
+    0.041188,
+    0.792844,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/home/reading-peek-720.webp",
+      "dimensions": [
+        720,
+        1004
+      ],
+      "bytes": 112378,
+      "sha256": "dd79cfc117fee7602dbd6bbb5446b0ff1bb573531393f8e687ff20edff58b279",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/character/home/reading-peek-1440.webp",
+      "dimensions": [
+        1440,
+        2008
+      ],
+      "bytes": 273228,
+      "sha256": "383c9f32a9af8522a64f34635ca9426914ec27e7613674ad524efaba36345b51",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/home/reading-peek-4k.webp",
+      "dimensions": [
+        2754,
+        3840
+      ],
+      "bytes": 631228,
+      "sha256": "f1069c7c0f9733cfaab8eab2d36d63b76259ebeafcee7a9c8a33a297f7192771",
+      "hasAlpha": true
+    }
+  ]
+}

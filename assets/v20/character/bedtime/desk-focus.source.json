@@ -1,0 +1,97 @@
+{
+  "id": "desk-focus",
+  "outfitId": "bedtime",
+  "generatedAt": "2026-09-08T20:05:39.106581+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/bedtime/desk-focus-green.png",
+  "sourceSha256": "3f885450d3501e649cb005e1958019a55cdb517467147436283278df19e5c8e7",
+  "nativeSize": [
+    1061,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/desk-focus-green.png",
+      "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+    },
+    {
+      "path": ".tmp/v20-character/bedtime/standing-neutral-green.png",
+      "sha256": "d83d57ae02b40a906dedb2af89cec86ce365fcc367adfb79759e57774f519761"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20, bedtime outfit, desk-focus pose.\nInput images: Image 1 is the exact EDIT TARGET and exclusive identity, pose, expression, props, framing, lighting and clean art reference. Image 2 is the already-approved outfit design reference ONLY, not a pose reference.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nUnchanged target action: She is seated sideways facing right, gaze down at her drawing hand, holding one dark stylus with one hand, the other hand resting ready to draw. Preserve both hands, stylus shape and location, gaze, leg positions, bottom crop and all empty gaps. Do not add desk, chair, tablet or any furniture.\nInvariants: preserve Image 1's silver-white long hair, bangs and strands, two pink hair clips, round youthful face, bright blue eyes, exact expression, head tilt, light-Q proportions, body pose, all hands and props, camera, canvas aspect ratio, scale and positions. Only clothing boundaries required by the garment may change. Do not reposition the character to resemble Image 2.\nBackdrop: match Image 1's flat vivid chroma green #00FF00 background with no objects, no gradients, no shadow, no ground. This is a temporary compositing screen. No green reflected light or green spill on hair, skin, objects or clothes; the actual clothes stay opaque and desaturated.\nStyle: identical to Image 1: crisp delicate anime ink lines, clean flat colors, simple two or three-tone cel shading, clear eyes and neat hair. No painterly strokes, no oil paint, no watercolor, no texture noise, no grain, no blurred or dirty gradients, no cloth fuzz.\nConstraints: all-ages fully covered ordinary home clothes, no mature or sensual body, no added accessories or props, no altered pose or expression, no extra fingers/limbs, no text or watermark. Return one character, not a sheet, retaining the edit target canvas.\n",
+  "promptFile": "assets/v20/character/bedtime/desk-focus.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: layered 2D anime character sprite for V20, bedtime outfit, desk-focus pose.\nInput images: Image 1 is the exact EDIT TARGET and exclusive identity, pose, expression, props, framing, lighting and clean art reference. Image 2 is the already-approved outfit design reference ONLY, not a pose reference.\nPrimary request: Change ONLY the clothes to the exact bedtime outfit in Image 2: cream button-front long-sleeve pajamas, soft strawberry-pink collar and cuffs, strawberry embroidery, loose full-length pink-and-cream gingham trousers with small strawberries. Remove the cat-ear hood from Image 1. No hood, no fleece, no dress. Match the outfit proportions and color blocks of Image 2, adapting only to the unchanged pose of Image 1.\nUnchanged target action: She is seated sideways facing right, gaze down at her drawing hand, holding one dark stylus with one hand, the other hand resting ready to draw. Preserve both hands, stylus shape and location, gaze, leg positions, bottom crop and all empty gaps. Do not add desk, chair, tablet or any furniture.\nInvariants: preserve Image 1's silver-white long hair, bangs and strands, two pink hair clips, round youthful face, bright blue eyes, exact expression, head tilt, light-Q proportions, body pose, all hands and props, camera, canvas aspect ratio, scale and positions. Only clothing boundaries required by the garment may change. Do not reposition the character to resemble Image 2.\nBackdrop: match Image 1's flat vivid chroma green #00FF00 background with no objects, no gradients, no shadow, no ground. This is a temporary compositing screen. No green reflected light or green spill on hair, skin, objects or clothes; the actual clothes stay opaque and desaturated.\nStyle: identical to Image 1: crisp delicate anime ink lines, clean flat colors, simple two or three-tone cel shading, clear eyes and neat hair. No painterly strokes, no oil paint, no watercolor, no texture noise, no grain, no blurred or dirty gradients, no cloth fuzz.\nConstraints: all-ages fully covered ordinary home clothes, no mature or sensual body, no added accessories or props, no altered pose or expression, no extra fingers/limbs, no text or watermark. Return one character, not a sheet, retaining the edit target canvas.\n",
+  "promptSha256": "f49a70b408dbec99a2aa48be19efe045b81962e4a3d5bdcf3a03ea7e4bc326f8",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/bedtime/desk-focus-alpha.png",
+    "sha256": "8e05ad46bd70164303d6c547f836353493b0c6c87f139a702e562d32fb0d7a81",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1061,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    22,
+    138,
+    1042,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.020735,
+    0.093117,
+    0.982092,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/bedtime/desk-focus-720.webp",
+      "dimensions": [
+        720,
+        1006
+      ],
+      "bytes": 125528,
+      "sha256": "8cc30c16a64a924fcdf8fc5217143d905013cfdb367d5d11a0aed977aaa666bd",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/character/bedtime/desk-focus-1440.webp",
+      "dimensions": [
+        1440,
+        2011
+      ],
+      "bytes": 307190,
+      "sha256": "892a0354f95e9fbc4b68c93a99eb70373210b342d27f621ce697a6c212bd35bf",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/bedtime/desk-focus-4k.webp",
+      "dimensions": [
+        2749,
+        3840
+      ],
+      "bytes": 721146,
+      "sha256": "dbde9440bcafc78b5111cee314a3f32ac2664149869bc7ced13f21712beab629",
+      "hasAlpha": true
+    }
+  ]
+}

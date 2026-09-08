@@ -1,0 +1,85 @@
+{
+  "id": "pencil-moon",
+  "subject": "pencil",
+  "palette": "moon",
+  "title": "抱着大铅笔的小猫",
+  "paletteName": "银蓝月光",
+  "alt": "银蓝月光配色：圆脸短四肢的浅银灰小猫坐着抱住一支大铅笔，身边散着三颗小星星",
+  "generatedAt": "2026-09-08T22:26:02.338143+00:00",
+  "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+  "source": ".tmp/v20-drawings/pencil/moon.png",
+  "sourceSha256": "0d49c58fd35273340e357f63c89f20c3abef75bbabf66dee45cb79cd1a631397",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "native4k": false,
+  "aspectRatio": "4:3",
+  "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+  "prompt": "Use case: precise-object-edit, color-palette variant. This image is the approved finished kitten artwork and the exact edit target. Change ONLY its illustration color palette as described below. Preserve the precise kitten identity, face, fur markings, expression, pose, silhouette, anatomy, linework, object shapes, sizes, positions, entire composition, plain paper, existing white margins, canvas size and exact 4:3 aspect ratio. Do not add, remove, shrink, move or redraw objects. Keep the current clean cute cel-anime illustration with thin clear lines, flat fills and simple pale shadows. Do not introduce paper texture, grain, brown/yellow aged wash, oil paint, watercolor, blur, haze, text, border, UI, signature or watermark. The background and existing paper margins stay clean near-white, not tinted.\nPalette replacement: Silver-blue moonlight palette: change the main pink door/blanket/pencil surfaces to soft silver-blue and clean silvery white, with delicate pale moon-yellow accents on the moon or stars. The kitten remains very pale silver-gray with pink inner ears/nose and exactly the same dark eyes.",
+  "promptFile": "assets/v20/drawings/prompts/pencil-moon.txt",
+  "promptSha256": "3d52363204cddce809079db6707764cc6ac7a6e9eaa5ff201c30e30e721220c0",
+  "references": [
+    {
+      "path": ".tmp/v20-drawings/pencil/strawberry.png",
+      "sha256": "a5fe0a87827bd531cc7e46991aa0c26d8f2c8e34d06c63357f661cdc6a6849ec",
+      "role": "同主题草莓母图；只改配色"
+    },
+    {
+      "path": ".tmp/v20-drawings/pencil/strawberry-initial.png",
+      "sha256": "d2c4289217e7a764d986aea0b7a63ee718d5a4fbae02875e076d5f71aa3f9704",
+      "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+    },
+    {
+      "path": "assets/v18/drawing-pencil-stars-720.webp",
+      "sha256": "52634524856250a8905dbd721993b0c958d04c718aa42583f2aaf87280d7ff2f",
+      "role": "仅主题构图，不继承旧画风"
+    }
+  ],
+  "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+  "pillowVersion": "12.3.0",
+  "exports": [
+    {
+      "sizeClass": "480",
+      "file": "assets/v20/drawings/pencil-moon-480.webp",
+      "dimensions": [
+        480,
+        360
+      ],
+      "bytes": 10768,
+      "sha256": "d64b6108a04a5b840b7698e101a89e162d2d1407627c98bc39f509047e377d8a"
+    },
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/drawings/pencil-moon-720.webp",
+      "dimensions": [
+        720,
+        540
+      ],
+      "bytes": 19818,
+      "sha256": "fb30295d52f16fd072bfe36ae9ab089e0b3195c3a10dcc3acc173209977a7e0c"
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/drawings/pencil-moon-1440.webp",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "bytes": 53258,
+      "sha256": "f719a6b8d027c155992519f84161f6de4cdb6a8921611c63393850fd8fb34370"
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/drawings/pencil-moon-4k.webp",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 264008,
+      "sha256": "e79ccf789e808961893f0ef6e1d1fa7d6f3852e93568b505447d909a91c5597e"
+    }
+  ]
+}

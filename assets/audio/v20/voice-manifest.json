@@ -1,0 +1,771 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-08T19:31:15.908148+00:00",
+  "status": "ready-for-integration",
+  "purpose": "V20 新剧情正式配音；不是声线候选试听，不替换旧版本文件",
+  "engine": {
+    "name": "Piper Plus",
+    "source": "https://github.com/ayutaz/piper-plus",
+    "sourceRef": "npm-v0.6.0",
+    "sourceCommit": "5fceade2c284a85c8da0523c48b830b434350309",
+    "pythonSourceVersion": "1.12.0"
+  },
+  "model": {
+    "name": "ayousanz/piper-plus-tsukuyomi-chan",
+    "character": "つくよみちゃん",
+    "source": "https://huggingface.co/ayousanz/piper-plus-tsukuyomi-chan",
+    "revision": "36b59c825c36bd386b8960cf3f604382f52f2a87",
+    "file": "tsukuyomi-chan-6lang-fp16.onnx",
+    "sha256": "5289e9b6eaf21080803b7fe1c4dc85b5491d4c216121207a41df18dd5f68e5d7",
+    "configSha256": "516058f405ec914140f34832a9d8bb5d8272ba62af9bc7ffb29349715a539780",
+    "license": "tsukuyomi-chan-corpus",
+    "licenseUrl": "https://tyc.rei-yumesaki.net/material/corpus/"
+  },
+  "rights": {
+    "websiteUse": "个人非商业同人作品中的预先生成配音，非官方，非原声优",
+    "credit": "Piper Plus つくよみちゃん；つくよみちゃんコーパス（CV.夢前黎 / © Rei Yumesaki）",
+    "redistribution": "音频只作为本网站作品的一部分供欣赏，不授予二次素材利用许可；模型、语料和中间 WAV 不提交。",
+    "voiceCloning": false,
+    "training": false,
+    "fineTuning": false,
+    "referenceAudio": null
+  },
+  "runtime": {
+    "python": "3.10.20",
+    "onnxruntime": "1.23.2",
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "ffmpeg": "ffmpeg version 7.1-essentials_build-www.gyan.dev Copyright (c) 2000-2024 the FFmpeg developers"
+  },
+  "synthesis": {
+    "parameters": {
+      "noise_scale": 0.64,
+      "length_scale": 1.5,
+      "noise_w": 0.76
+    },
+    "speakerEmbedding": "256 维零向量",
+    "speakerEmbeddingMask": 0,
+    "randomSeed": null,
+    "byteDeterministic": false,
+    "pitchShift": false
+  },
+  "postprocessing": {
+    "prefilters": "highpass=f=70,lowpass=f=10500",
+    "loudnorm": "two-pass",
+    "targetLufs": -18,
+    "encodingTruePeakCeilingDb": -2.0,
+    "decodedTruePeakLimitDb": -1.5,
+    "decodedLoudnessCorrection": "测量 MP3 后，在原始 WAV 的第二遍 loudnorm 后施加固定增益；不重编码 MP3，不移调。逐句增益与编码前后测量见 queries。",
+    "codec": "MP3",
+    "sampleRateHz": 44100,
+    "channels": 1,
+    "bitrateKbps": 160
+  },
+  "validation": {
+    "lineCount": 24,
+    "uniqueIds": 24,
+    "uniqueSha256": 24,
+    "decodedFileCount": 24,
+    "measurementsPassed": true,
+    "subjectiveListening": "待主流程审听，不以仪器测量冒充听感验收"
+  },
+  "lines": [
+    {
+      "id": "welcome",
+      "scene": "迎接",
+      "textJa": "おかえり。今日は……どこから見たい？",
+      "textZh": "欢迎回来。今天……想先看看哪里？",
+      "file": "assets/audio/v20/voice/welcome.mp3",
+      "duration": 3.63102,
+      "sha256": "3deadacbce443bf45f3a935a6ac4074058380ccbc9719f81fceaeeaa13bd10c1",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.02,
+        "truePeakDb": -2.74,
+        "lra": 0.4,
+        "threshold": -28.55,
+        "targetOffset": -1.5
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/welcome.wav",
+      "rawSha256": "551a62fb7533fdbe1aeee3b59b4bcde158de58015ffac9ffdc101c901f3cba48",
+      "query": "assets/audio/v20/queries/welcome.json",
+      "querySha256": "519e0bfa95fd0dbe48258c9b931fa4c710bfd967d8595cf4e229e41c9c904682",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "desk-arrive",
+      "scene": "走到桌边",
+      "textJa": "ここなら、手元が見えるでしょ。静かにしててね。",
+      "textZh": "在这里就能看清我手边了吧。要安静一点哦。",
+      "file": "assets/audio/v20/voice/desk-arrive.mp3",
+      "duration": 4.754286,
+      "sha256": "27c5e0fa6aad291d7bdbf3af7bf6c8b5a59f59b7763ba9c951051dfa2ffb59f4",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -17.99,
+        "truePeakDb": -2.13,
+        "lra": 1.3,
+        "threshold": -28.54,
+        "targetOffset": -1.12
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/desk-arrive.wav",
+      "rawSha256": "051ab75cde65c3f55354b405021dd44959a8ad79943aa71e2993f77e792edaed",
+      "query": "assets/audio/v20/queries/desk-arrive.json",
+      "querySha256": "dea2383bf369a1564d8e43d37c243bd38f5ac2dbe0c21b1caf6126946b75c00d",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "draft-noticed",
+      "scene": "草稿被看见",
+      "textJa": "あっ、それはまだ下書き。そんなにじっと見ないで……。",
+      "textZh": "啊，那还是草稿。别那么认真地盯着看……",
+      "file": "assets/audio/v20/voice/draft-noticed.mp3",
+      "duration": 4.362449,
+      "sha256": "dbc5b85b930c8296956b3f8278a612edb29821b62c4c93fa801c2c746ba031c8",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -17.86,
+        "truePeakDb": -3.05,
+        "lra": 1.0,
+        "threshold": -28.53,
+        "targetOffset": -0.97
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/draft-noticed.wav",
+      "rawSha256": "d286319046f6a6f562eda05e8e7c5a881f963b68b8434ff9778ae098a004c20d",
+      "query": "assets/audio/v20/queries/draft-noticed.json",
+      "querySha256": "f8cbc3618036ce9403490495fe21eb7fe4a065c82773d3599b9c63d14e60ebed",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "draw-invite",
+      "scene": "邀请一起画",
+      "textJa": "この絵、一緒に考えてみる？　少しだけなら、頼ってもいいかな。",
+      "textZh": "这张画，要一起想想吗？稍微依靠你一下……可以吗？",
+      "file": "assets/audio/v20/voice/draw-invite.mp3",
+      "duration": 6.896327,
+      "sha256": "b9b20e8f432160b58df6f3487bc361e6a396e1268b988583e128a53696264a89",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.01,
+        "truePeakDb": -1.86,
+        "lra": 1.0,
+        "threshold": -28.53,
+        "targetOffset": 0.02
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/draw-invite.wav",
+      "rawSha256": "5e07f06d03b8b6d6bb7ff4d2cdfcdfbce74cd404681b6838997a1e9bd2697c09",
+      "query": "assets/audio/v20/queries/draw-invite.json",
+      "querySha256": "cb9f5232bf3fe6a4aeaf3037476b33a107667babb247d32c9badee6d0beac5e4",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "quiet-company",
+      "scene": "安静陪伴",
+      "textJa": "話さなくても、大丈夫。そこにいてくれるだけでいいの。",
+      "textZh": "不说话也没关系。你待在那里就好。",
+      "file": "assets/audio/v20/voice/quiet-company.mp3",
+      "duration": 4.963265,
+      "sha256": "c4a1bb260b1031aa4109c99a738792b0c00a12597335c4df919a14fb121d08a8",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.0,
+        "truePeakDb": -1.8,
+        "lra": 1.9,
+        "threshold": -28.83,
+        "targetOffset": -0.94
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/quiet-company.wav",
+      "rawSha256": "132a89bb872076cb36e256c4693a6e646b11448cb0ca46763df1ad4916b8723a",
+      "query": "assets/audio/v20/queries/quiet-company.json",
+      "querySha256": "1d1dc2d9430a3e02d48cfa2cb62a207ca364ca2962577a7284693b1cd18185c0",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "theme-cat",
+      "scene": "选小猫主题",
+      "textJa": "小さな猫にしよう。耳も、しっぽも……丁寧に描きたいな。",
+      "textZh": "那就画只小猫吧。耳朵、尾巴……都想认真画好。",
+      "file": "assets/audio/v20/voice/theme-cat.mp3",
+      "duration": 6.791837,
+      "sha256": "af10e0713c08922e8b2261300ba6cf661471d154238a125e43fae0e2e7515eb6",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -17.99,
+        "truePeakDb": -2.16,
+        "lra": 3.5,
+        "threshold": -28.7,
+        "targetOffset": -0.49
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/theme-cat.wav",
+      "rawSha256": "eeade4dd50b303ed4f94071920055fadb0eb84f1b7fa60884f45f75fd1d21c6f",
+      "query": "assets/audio/v20/queries/theme-cat.json",
+      "querySha256": "9478da89cb6fc8ae059b1af4f059b0d6eb1cf8880c4692e746cd1eaec67033fb",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "palette-chosen",
+      "scene": "选配色",
+      "textJa": "この色にするんだね。じゃあ、ここから少しずつ塗ってみよう。",
+      "textZh": "选这个颜色呀。那就从这里开始，慢慢涂上去吧。",
+      "file": "assets/audio/v20/voice/palette-chosen.mp3",
+      "duration": 5.459592,
+      "sha256": "1fcb616b96a8d2bf4589b1f3e9a143f3cb81b2ef5bf0e64972714f1c465b4ff4",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.01,
+        "truePeakDb": -2.54,
+        "lra": 0.4,
+        "threshold": -28.17,
+        "targetOffset": -0.41
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/palette-chosen.wav",
+      "rawSha256": "c96ff401f60918db8f9f690443916eb4ae334a6d0cb93dbd1fa5224f22144342",
+      "query": "assets/audio/v20/queries/palette-chosen.json",
+      "querySha256": "5d864c8056b3a6e6fbd40a92bf70550de48c2757f185681f4cd58a98b6285e3e",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "feedback-ask",
+      "scene": "询问具体感想",
+      "textJa": "どこが好きだった？　色とか、表情とか……ちゃんと聞きたい。",
+      "textZh": "你喜欢哪里呢？颜色、表情之类的……我想认真听听。",
+      "file": "assets/audio/v20/voice/feedback-ask.mp3",
+      "duration": 5.067755,
+      "sha256": "803771b5c220bb34d6b4efbaf01c5d3f7c29ccde2eb6c6032ab818876b1e6e27",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -17.99,
+        "truePeakDb": -2.19,
+        "lra": 0.5,
+        "threshold": -28.81,
+        "targetOffset": -0.42
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/feedback-ask.wav",
+      "rawSha256": "bcd594243e091482c9fdaa3c751891c450b3de817c5033ac7407e9355b30a47b",
+      "query": "assets/audio/v20/queries/feedback-ask.json",
+      "querySha256": "9a6f8283a2eac1fcdf55cedaa3353669e70fd3d74830862a392be93ab7933ea3",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "artwork-reveal",
+      "scene": "展示完成稿",
+      "textJa": "できた。二人で決めたところ、ちゃんと絵になったね。",
+      "textZh": "画好了。我们一起决定的那些地方，真的变成画了呢。",
+      "file": "assets/audio/v20/voice/artwork-reveal.mp3",
+      "duration": 4.414694,
+      "sha256": "723fedf3d284c4aadf3aa5d10c93b4bf1f0089eda5e3bb34f4c12bd457034493",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -17.99,
+        "truePeakDb": -1.79,
+        "lra": 1.4,
+        "threshold": -28.38,
+        "targetOffset": -0.51
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/artwork-reveal.wav",
+      "rawSha256": "4b36250508e257a82d7c93b8844eb4025bdead0473501b1d391c9e4b9fb5b40e",
+      "query": "assets/audio/v20/queries/artwork-reveal.json",
+      "querySha256": "2ccd76989db4ea01fe5d1346c07bdcb8e58d42179183b8459b7ff9b910956439",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "draft-resume",
+      "scene": "恢复未完成稿",
+      "textJa": "この続き、覚えてるよ。残しておいたところから、また描こう。",
+      "textZh": "我记得这张画还没画完。就从留下来的地方，继续画吧。",
+      "file": "assets/audio/v20/voice/draft-resume.mp3",
+      "duration": 6.60898,
+      "sha256": "c091064a5deeab03cb02c273171d36599f7f23fabd387cf3992c13c3edbeeb52",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.0,
+        "truePeakDb": -1.74,
+        "lra": 1.6,
+        "threshold": -28.33,
+        "targetOffset": 0.23
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/draft-resume.wav",
+      "rawSha256": "d689630312a13219d7cc64b3e24a337d878cc12e6a5e73d325386bf9a94cf70c",
+      "query": "assets/audio/v20/queries/draft-resume.json",
+      "querySha256": "e3c87d125213c9c05484622f02c9977ef5a1355cb177ef6fc75d6da8acb819bd",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "gallery-open",
+      "scene": "打开画册",
+      "textJa": "スケッチブックを開くね。まだ恥ずかしいけど……見てもいいよ。",
+      "textZh": "我要打开画册了。虽然还是有点害羞……但可以给你看。",
+      "file": "assets/audio/v20/voice/gallery-open.mp3",
+      "duration": 5.668571,
+      "sha256": "c1167cd4b794a0e3f4c44021e583ee13122e55ed65802184dd0d7b18945290cc",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.0,
+        "truePeakDb": -2.0,
+        "lra": 1.4,
+        "threshold": -28.63,
+        "targetOffset": 0.11
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/gallery-open.wav",
+      "rawSha256": "d3c722be84b5da6a9ff78fb93ce0c7e8aeeb28bdd5669e1c00fad147225ab904",
+      "query": "assets/audio/v20/queries/gallery-open.json",
+      "querySha256": "60aaba5ead7f6604992d6fd5d12b921637f1dfb1c8d45146ea648d69b9e5ea92",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "gallery-turn",
+      "scene": "慢慢翻页",
+      "textJa": "ページは、ゆっくりね。描き込みも、見つけてくれたら嬉しい。",
+      "textZh": "翻页慢一点哦。如果你能发现画里的小细节，我会很开心。",
+      "file": "assets/audio/v20/voice/gallery-turn.mp3",
+      "duration": 6.948571,
+      "sha256": "d867f885ab444a4f1320b9234ba3d2f1ff1f8524a4d21efe4cbc8e2a5d0ccf79",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.0,
+        "truePeakDb": -2.17,
+        "lra": 1.8,
+        "threshold": -28.85,
+        "targetOffset": -0.85
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/gallery-turn.wav",
+      "rawSha256": "5e8e29e4095d67d18071f1821ae4c0d0b59707a99dd0752c658570a2b1b4a405",
+      "query": "assets/audio/v20/queries/gallery-turn.json",
+      "querySha256": "d667ecf9a1ffb16e91c9388e3bb80a2a8ab492356f3cea7dc8498d0a12326446",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "gallery-favorite",
+      "scene": "问最喜欢哪张",
+      "textJa": "この中で、どの絵が一番好き？　理由も、少しだけ教えて。",
+      "textZh": "这些画里，你最喜欢哪一张？理由也稍微告诉我一点吧。",
+      "file": "assets/audio/v20/voice/gallery-favorite.mp3",
+      "duration": 6.478367,
+      "sha256": "83f194e6ed261ff1d29dc58ab0ecaa8a53cc47df152398c98f44743428bd7657",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.19,
+        "truePeakDb": -1.64,
+        "lra": 2.5,
+        "threshold": -28.78,
+        "targetOffset": 0.51
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/gallery-favorite.wav",
+      "rawSha256": "4ec877deec373f9e0ece9c2c087bffde84d93cf25650a665ec3cee310c0f1cf4",
+      "query": "assets/audio/v20/queries/gallery-favorite.json",
+      "querySha256": "9fc794b57d63768b3274bfb7fb801bee70c313e860f1f62f053b1d21d22d50ec",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "praise-received",
+      "scene": "被认真夸奖",
+      "textJa": "そんなところまで見てくれたんだ……。うん、嬉しい。",
+      "textZh": "原来你连那种小地方都注意到了……嗯，我很开心。",
+      "file": "assets/audio/v20/voice/praise-received.mp3",
+      "duration": 4.989388,
+      "sha256": "4f31e8df7f65d4aef3bad1b3e9370e7a7155b84152267cc2323fb20d1cfc1135",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.45,
+        "truePeakDb": -1.66,
+        "lra": 6.5,
+        "threshold": -29.49,
+        "targetOffset": -0.52
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/praise-received.wav",
+      "rawSha256": "629b0d5ca40f0591614a0775ca8d83a6780631352ad191ca85f48508233a3e30",
+      "query": "assets/audio/v20/queries/praise-received.json",
+      "querySha256": "386ee8f5099fd2560852ef95b2c4b18e200ad8793be0ba9fe926ccc913ebad1b",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "wardrobe-compare",
+      "scene": "衣橱比较",
+      "textJa": "並べてみると、雰囲気が違うね。今日は、どれがいいかな。",
+      "textZh": "放在一起看，感觉还真不一样呢。今天穿哪件好呢？",
+      "file": "assets/audio/v20/voice/wardrobe-compare.mp3",
+      "duration": 7.053061,
+      "sha256": "3a465e78d543d14b36654fb808633da9c8b70d4b4b351b4affd43c9b2770e0b6",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -17.99,
+        "truePeakDb": -1.82,
+        "lra": 2.3,
+        "threshold": -28.71,
+        "targetOffset": -0.5
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/wardrobe-compare.wav",
+      "rawSha256": "7fe0142e1ff1ffe28148f5abfa8e5aed8ee8bcccb7b8618ef2b37c4edb0014aa",
+      "query": "assets/audio/v20/queries/wardrobe-compare.json",
+      "querySha256": "a4a191279078d6c6ee4f84f61966e7bfcc058807cae39494fa435828bf5a3c83",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "outfit-home",
+      "scene": "粉色猫耳家居外套与奶油长裤",
+      "textJa": "このピンクの上着、袖が長くて落ち着くの。部屋では、これが楽。",
+      "textZh": "这件粉色外套袖子长长的，让人很安心。在房间里穿它很舒服。",
+      "file": "assets/audio/v20/voice/outfit-home.mp3",
+      "duration": 6.530612,
+      "sha256": "24450a9288e7380848b5a9297f0f10af79846742da371e2221fabfd201e473e4",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.0,
+        "truePeakDb": -1.74,
+        "lra": 4.2,
+        "threshold": -29.16,
+        "targetOffset": -0.08
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/outfit-home.wav",
+      "rawSha256": "6bc0eea6d1465a033b373bdf8745d03f418d04598011a654bdc3425540d8be58",
+      "query": "assets/audio/v20/queries/outfit-home.json",
+      "querySha256": "202e9ebc2305fc72e64ef15e97897a439a07688c486af75fc077aab40c6ae90f",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "outfit-artist",
+      "scene": "蓝白格睡衣",
+      "textJa": "青いチェックのパジャマだよ。描くときも、ゆったりしてて好き。",
+      "textZh": "是蓝色格纹睡衣哦。画画时也很宽松，我很喜欢。",
+      "file": "assets/audio/v20/voice/outfit-artist.mp3",
+      "duration": 5.381224,
+      "sha256": "4aa21ed16ce01c4b650cf952a51f66d76b3edae3e53073a4220f5ee1e8ee9906",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.21,
+        "truePeakDb": -1.66,
+        "lra": 3.4,
+        "threshold": -28.74,
+        "targetOffset": 0.31
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/outfit-artist.wav",
+      "rawSha256": "e4b6ad916413dcdf8ef12bebe084d0681595a3c3afd9a35ac3b05809a57b2e11",
+      "query": "assets/audio/v20/queries/outfit-artist.json",
+      "querySha256": "abe36e1a500acbe4e940501be1f07c1cb5d48fd3b95a2cb5014da76f50756f5c",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "outfit-outing",
+      "scene": "薄荷针织外套与水手领裙装",
+      "textJa": "ミント色のカーディガン、似合ってる？　リボンも、曲がってないかな。",
+      "textZh": "薄荷色的针织外套，适合我吗？蝴蝶结也……没有歪吧。",
+      "file": "assets/audio/v20/voice/outfit-outing.mp3",
+      "duration": 6.635102,
+      "sha256": "762234a266387d87e23d3607454723367a6df575c618aba615cc7d5c3196099c",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.0,
+        "truePeakDb": -1.67,
+        "lra": 2.1,
+        "threshold": -28.61,
+        "targetOffset": 0.42
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/outfit-outing.wav",
+      "rawSha256": "522b6f20d2cb0dcf85e72ead8d5669ec1dcc9e1b17890f3132b9bfc4d0f0d30d",
+      "query": "assets/audio/v20/queries/outfit-outing.json",
+      "querySha256": "849cd3fa99af9a3dec595628e2f89c7e1ccf31c51e865cfdbf7847667394d461",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "outfit-bedtime",
+      "scene": "草莓奶油粉睡衣长裤",
+      "textJa": "いちごミルクみたいな色でしょ。このパジャマ、肌触りがいいの。",
+      "textZh": "像草莓牛奶一样的颜色吧。这套睡衣摸起来很舒服。",
+      "file": "assets/audio/v20/voice/outfit-bedtime.mp3",
+      "duration": 5.564082,
+      "sha256": "5994b5e64b2ad57b520510dde5d536645c9f894c6e6d8c3c70f6877560e2cd7c",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -17.99,
+        "truePeakDb": -3.07,
+        "lra": 0.8,
+        "threshold": -28.57,
+        "targetOffset": -0.45
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/outfit-bedtime.wav",
+      "rawSha256": "278b0a4e6e1f12acd61c2d48f8ed516e5a03fe63f9fbf5adbf24d9d9a3a3691d",
+      "query": "assets/audio/v20/queries/outfit-bedtime.json",
+      "querySha256": "a32f723d6b74979a77b35ac92e40b4733f2f321523de0e884c652c32bb723566",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "outfit-hooded",
+      "scene": "薄荷灰猫耳连帽毯与长裤",
+      "textJa": "この毛布、猫の耳がついてるの。すっぽり包まると、あったかいよ。",
+      "textZh": "这条毯子带着猫耳朵。把自己整个裹起来，就暖暖的。",
+      "file": "assets/audio/v20/voice/outfit-hooded.mp3",
+      "duration": 7.079184,
+      "sha256": "6750eb9cf9b270e1cdd8d95644c504772e85f2dfdcc3c95ab042de9ef4ee80c5",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -17.98,
+        "truePeakDb": -1.87,
+        "lra": 2.6,
+        "threshold": -28.55,
+        "targetOffset": -0.08
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/outfit-hooded.wav",
+      "rawSha256": "72fb5264e8a01a43302e2a180d28408c07ab8925c6cf4abd9d25412c1622859f",
+      "query": "assets/audio/v20/queries/outfit-hooded.json",
+      "querySha256": "2fa072baad167fbba1bed1163a75aa1fe8a40413f90ebe9992590ea0270fd10c",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "window-rain",
+      "scene": "窗边细雨，仅在雨天触发",
+      "textJa": "細かい雨の音、聞こえる？　しばらく、ここで聞いていようか。",
+      "textZh": "听得见细细的雨声吗？要不要在这里听一会儿？",
+      "file": "assets/audio/v20/voice/window-rain.mp3",
+      "duration": 6.896327,
+      "sha256": "277309dd8b3bfe7195801f8d80630de71ef5cdda8496b3b8d1c91dbe1f62a240",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.0,
+        "truePeakDb": -1.77,
+        "lra": 3.6,
+        "threshold": -28.67,
+        "targetOffset": -0.75
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/window-rain.wav",
+      "rawSha256": "3ca76b736426500482ea246c904dcc9dcbe58406c5cd90872236514a016d1626",
+      "query": "assets/audio/v20/queries/window-rain.json",
+      "querySha256": "6e32d7deedd884bd13c31560cc61decc7365034a630db4a29d08cd0c18cf4a25",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "bed-plush",
+      "scene": "床边抱玩偶",
+      "textJa": "この子、抱いてると落ち着くの。ふわふわで、ちょうどいい大きさ。",
+      "textZh": "抱着这个孩子就会安心。软软的，大小也刚刚好。",
+      "file": "assets/audio/v20/voice/bed-plush.mp3",
+      "duration": 6.4,
+      "sha256": "73c3335778a78aa9d2b3352bb10cb9d28b6ebd17b95d29b4057525c7832d3ce5",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.01,
+        "truePeakDb": -3.5,
+        "lra": 0.7,
+        "threshold": -28.81,
+        "targetOffset": -1.0
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/bed-plush.wav",
+      "rawSha256": "8ebe6b43cacd9f47eeeee6ae8869bd7cf9bfb21fae7ce5fea6dd8e8270788e2e",
+      "query": "assets/audio/v20/queries/bed-plush.json",
+      "querySha256": "55d9146bf55d941f03da4054a062061df6fe9c765cf79916cc7ef9eb425df038",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "goodnight",
+      "scene": "晚安",
+      "textJa": "おやすみ。明日も……無理しないでね。",
+      "textZh": "晚安。明天也……不要勉强自己哦。",
+      "file": "assets/audio/v20/voice/goodnight.mp3",
+      "duration": 3.94449,
+      "sha256": "557ecec1fd060cb0ec0c727b688e4eb90ec5a0d6ce34d97c7d529b5f34d79b05",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.02,
+        "truePeakDb": -3.25,
+        "lra": 1.7,
+        "threshold": -29.0,
+        "targetOffset": -2.26
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/goodnight.wav",
+      "rawSha256": "a9506f417d9026bdf5badb0f074d4656cd9b931743114e2dd5f516e4a3780135",
+      "query": "assets/audio/v20/queries/goodnight.json",
+      "querySha256": "7c031fd94f8176776c79f1704eb392918f152e5ff2ca685788403c199b1df291",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    },
+    {
+      "id": "note-kept",
+      "scene": "收好纸条",
+      "textJa": "その紙、なくさないでね。読んだら……そっとしまっておいて。",
+      "textZh": "那张纸不要弄丢哦。读完以后……轻轻收好吧。",
+      "file": "assets/audio/v20/voice/note-kept.mp3",
+      "duration": 6.19102,
+      "sha256": "fe64d6f05e65d2d2b102248cc71026a875bb59ac43489abe755612360e69ebf5",
+      "parameters": {
+        "noise_scale": 0.64,
+        "length_scale": 1.5,
+        "noise_w": 0.76
+      },
+      "loudness": {
+        "integratedLufs": -18.0,
+        "truePeakDb": -2.07,
+        "lra": 0.4,
+        "threshold": -28.62,
+        "targetOffset": -0.27
+      },
+      "rawFile": ".tmp/v20-voice/20260908-193100/raw/note-kept.wav",
+      "rawSha256": "41e1d02f6183983775b62653bd865df6c91f1e1bd2f6be7fc76d6874009eb31c",
+      "query": "assets/audio/v20/queries/note-kept.json",
+      "querySha256": "a6fcfa0f225f79a89b0a125a90dea2696aefff67ace9671abe95d86836787e2d",
+      "sampleRateHz": 44100,
+      "channels": 1,
+      "bitrateKbps": 160,
+      "decoded": true
+    }
+  ]
+}

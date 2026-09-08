@@ -1,0 +1,53 @@
+{
+  "id": "outfit-outing",
+  "scene": "薄荷针织外套与水手领裙装",
+  "textJa": "ミント色のカーディガン、似合ってる？　リボンも、曲がってないかな。",
+  "textZh": "薄荷色的针织外套，适合我吗？蝴蝶结也……没有歪吧。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 120,
+  "paddedPhonemeCount": 120,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/outfit-outing.wav",
+  "rawSha256": "522b6f20d2cb0dcf85e72ead8d5669ec1dcc9e1b17890f3132b9bfc4d0f0d30d",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -16.75,
+    "truePeakDb": -0.54,
+    "lra": 1.8,
+    "threshold": -27.41,
+    "targetOffset": 0.3,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.76,
+      "truePeakDb": -2.45,
+      "lra": 2.2,
+      "threshold": -29.38,
+      "targetOffset": 0.42
+    },
+    "decodedLoudnessCorrectionGainDb": 0.76
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-16.75:measured_LRA=1.8:measured_TP=-0.54:measured_thresh=-27.41:offset=0.3:linear=true:print_format=summary,volume=0.7600dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

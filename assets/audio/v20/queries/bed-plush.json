@@ -1,0 +1,53 @@
+{
+  "id": "bed-plush",
+  "scene": "床边抱玩偶",
+  "textJa": "この子、抱いてると落ち着くの。ふわふわで、ちょうどいい大きさ。",
+  "textZh": "抱着这个孩子就会安心。软软的，大小也刚刚好。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 126,
+  "paddedPhonemeCount": 126,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/bed-plush.wav",
+  "rawSha256": "8ebe6b43cacd9f47eeeee6ae8869bd7cf9bfb21fae7ce5fea6dd8e8270788e2e",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -14.98,
+    "truePeakDb": -0.48,
+    "lra": 0.8,
+    "threshold": -25.78,
+    "targetOffset": -1.01,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.44,
+      "truePeakDb": -3.94,
+      "lra": 0.8,
+      "threshold": -29.19,
+      "targetOffset": -0.99
+    },
+    "decodedLoudnessCorrectionGainDb": 0.44
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-14.98:measured_LRA=0.8:measured_TP=-0.48:measured_thresh=-25.78:offset=-1.01:linear=true:print_format=summary,volume=0.4400dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

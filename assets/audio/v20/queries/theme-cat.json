@@ -1,0 +1,53 @@
+{
+  "id": "theme-cat",
+  "scene": "选小猫主题",
+  "textJa": "小さな猫にしよう。耳も、しっぽも……丁寧に描きたいな。",
+  "textZh": "那就画只小猫吧。耳朵、尾巴……都想认真画好。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 128,
+  "paddedPhonemeCount": 128,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/theme-cat.wav",
+  "rawSha256": "eeade4dd50b303ed4f94071920055fadb0eb84f1b7fa60884f45f75fd1d21c6f",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -16.02,
+    "truePeakDb": -0.2,
+    "lra": 3.5,
+    "threshold": -26.73,
+    "targetOffset": -0.49,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.46,
+      "truePeakDb": -2.61,
+      "lra": 3.5,
+      "threshold": -29.17,
+      "targetOffset": -0.5
+    },
+    "decodedLoudnessCorrectionGainDb": 0.46
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-16.02:measured_LRA=3.5:measured_TP=-0.2:measured_thresh=-26.73:offset=-0.49:linear=true:print_format=summary,volume=0.4600dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

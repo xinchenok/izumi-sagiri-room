@@ -1,0 +1,53 @@
+{
+  "id": "praise-received",
+  "scene": "被认真夸奖",
+  "textJa": "そんなところまで見てくれたんだ……。うん、嬉しい。",
+  "textZh": "原来你连那种小地方都注意到了……嗯，我很开心。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 93,
+  "paddedPhonemeCount": 93,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/praise-received.wav",
+  "rawSha256": "629b0d5ca40f0591614a0775ca8d83a6780631352ad191ca85f48508233a3e30",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -18.63,
+    "truePeakDb": -0.21,
+    "lra": 6.3,
+    "threshold": -29.67,
+    "targetOffset": -0.12,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -19.15,
+      "truePeakDb": -2.43,
+      "lra": 6.6,
+      "threshold": -30.13,
+      "targetOffset": -0.52
+    },
+    "decodedLoudnessCorrectionGainDb": 0.78
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-18.63:measured_LRA=6.3:measured_TP=-0.21:measured_thresh=-29.67:offset=-0.12:linear=true:print_format=summary,volume=0.7800dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

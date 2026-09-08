@@ -1,0 +1,93 @@
+{
+  "id": "desk-blink",
+  "outfitId": "home",
+  "generatedAt": "2026-09-08T20:00:32.196393+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/home/desk-blink-green.png",
+  "sourceSha256": "4fdeec1386df09bcdfd406c2fdb143965e6bbd35f699029131c285633a5451c4",
+  "nativeSize": [
+    1061,
+    1482
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/desk-focus-green.png",
+      "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: one closed-eye blink frame of the supplied seated drawing sprite.\nThe input image is the approved desk-focus master. Change ONLY the eyelids to a natural brief gentle blink: both eyes closed with delicate relaxed eyelash curves, no squinting, no exaggerated grin. Keep the same brows and tiny mouth, exact head angle and position, entire body, long hair, cat-ear pink hoodie, cream covered trousers, stylus and both hands pixel-position consistent. Do not change pose, framing, light, hair, folds or colors.\nSame portrait canvas and green background: uniform opaque fluorescent #00FF00 in all empty spaces. Do not add any desk, chair, room, shadow, extra object, text, watermark or checkerboard. Preserve cute all-ages clean cel linework. One PNG only.\n",
+  "promptFile": "assets/v20/character/home/desk-blink.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: one closed-eye blink frame of the supplied seated drawing sprite.\nThe input image is the approved desk-focus master. Change ONLY the eyelids to a natural brief gentle blink: both eyes closed with delicate relaxed eyelash curves, no squinting, no exaggerated grin. Keep the same brows and tiny mouth, exact head angle and position, entire body, long hair, cat-ear pink hoodie, cream covered trousers, stylus and both hands pixel-position consistent. Do not change pose, framing, light, hair, folds or colors.\nSame portrait canvas and green background: uniform opaque fluorescent #00FF00 in all empty spaces. Do not add any desk, chair, room, shadow, extra object, text, watermark or checkerboard. Preserve cute all-ages clean cel linework. One PNG only.\n",
+  "promptSha256": "de8dcad8fc66a680e17e37b5bd2408d2d6707486cb1b37d6ddd57ff4276b2ce7",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/home/desk-blink-alpha.png",
+    "sha256": "1c77e2ced4f234a72e8088cf1320cac266743cef482a3e2cb7523b6bf8f06c8e",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1061,
+      1482
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    22,
+    42,
+    1041,
+    1482
+  ],
+  "actorBBoxNormalized": [
+    0.020735,
+    0.02834,
+    0.98115,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/home/desk-blink-720.webp",
+      "dimensions": [
+        720,
+        1006
+      ],
+      "bytes": 130808,
+      "sha256": "d9fc04867d418b4174ee064bee9ba84032fb9ccc68d5383c0bf5ebecf5da0a6d",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/character/home/desk-blink-1440.webp",
+      "dimensions": [
+        1440,
+        2011
+      ],
+      "bytes": 308992,
+      "sha256": "ab9f466d009d0a185978c05924c35d48aa4e75d77f8a4bdb9bf6a49b4c8993cf",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/home/desk-blink-4k.webp",
+      "dimensions": [
+        2749,
+        3840
+      ],
+      "bytes": 722820,
+      "sha256": "840db425ee78a4fe84803a92adbcf519b4ed41a9cdc4fea361192b746f976d2b",
+      "hasAlpha": true
+    }
+  ]
+}

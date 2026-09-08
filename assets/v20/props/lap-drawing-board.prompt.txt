@@ -1,0 +1,10 @@
+Use case: precise-object-edit
+Image 1 is the board sprite to correct. Image 2 is the exact fixed character pose for registration only; do not reproduce any person pixels.
+
+Keep exactly the same clean pale-wood board and blank white sheet style. Fix ONLY its position, size and perspective so the whole board fits inside the image and its white sheet touches just below the pen tip shown in Image 2. The current board is too low, too far left and cut off by the right edge. The board must not be cropped. Move it upward and make it narrower.
+
+Use EXACTLY the Image 2 portrait canvas aspect 1062:1482. The requested canvas is 1062 pixels wide, 1482 pixels tall. Keep all of the canvas except the lower-right board plain opaque fluorescent #00FF00. Do not reframe the board to fill the canvas. The whole board should have these approximate four top-surface corners in this 1062x1482 canvas, clockwise from the far left: (640,1050), (1016,986), (1040,1150), (704,1238). The bottom thickness adds at most 12 pixels. Rightmost board point is x=1040, leaving 22 pixels of green margin; never clip the right edge. This is a small lightweight LAP board, not a large landscape table.
+
+Its blank white paper inset should have corners around (656,1053), (1008,997), (1023,1137), (711,1219). At x=936 the top edge of the paper is near y=1008, immediately below the character's stylus tip at (936,1003), leaving the pen and fingers unobscured when composited in front. This specific placement matters more than symmetry or centering.
+
+Render only this board and one completely blank white sheet. No character, hands, legs, clothes, hair, pen, chair, room, shadows outside the board, text, marks, diagrams, logo or watermark. No chessboard, transparency, gradient green or green spill. Clean cute anime cel linework, smooth light wood without grain or dirty texture, soft light from upper right. Output one PNG image with the same composition and large green empty space described above.

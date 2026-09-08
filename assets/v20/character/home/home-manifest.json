@@ -1,0 +1,854 @@
+{
+  "version": "20.0.0",
+  "outfitId": "home",
+  "generatedAt": "2026-09-08T20:04:38.433535+00:00",
+  "count": 9,
+  "assets": [
+    {
+      "id": "bed-hug",
+      "outfitId": "home",
+      "generatedAt": "2026-09-08T20:01:10.383326+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/home/bed-hug-green.png",
+      "sourceSha256": "ed537c31d206c2a95ee5a0086813331f76a09d217a12ffe52f8407ac1cb4e888",
+      "nativeSize": [
+        1062,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-neutral-green.png",
+          "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: isolated 2D anime girl hugging a cat plush on opaque chroma-green.\nInput image is the approved original A standing-neutral master and the exact identity/clothing/style reference. Change only the pose needed to sit gently at the bedside holding a toy.\nThe same round-faced silver-white long-haired girl wears exactly the same pink cat-ear zip hoodie with pink bow details and fluffy white zipper pom-poms, and fully covering cream pajama trousers. Her bright blue eyes and pink ribbon hair clips match the source exactly. She sits with her knees drawn comfortably close together, shoulders relaxed, cradling a small soft pastel-pink cat plush against her chest using both forearms. Her eyes are open and softly looking at the visitor, with a gentle tiny smile. The cat plush has a simple stitched cat face, ears, small paws and no text, no symbols. Hands are natural and visible around the toy. No new clothes, no bare legs, no suggestive posing.\nDo not draw any bed, pillow, furniture, room or floor. Only the fully clothed girl and her cat plush. Entire remaining image is a uniform opaque fluorescent #00FF00 background including spaces between hair and arms, with no gradient, cast shadow, green spill, checkerboard, white matte or texture.\nPortrait canvas 28:39. Head and ears entirely visible with 4% empty headroom; hair and seated legs remain in frame except a natural slight bottom clothing crop if required. Preserve petite light-Q anime proportions, clean precise cel linework, soft daylight from right and all-ages cute mood. No grain, oil painting, watercolor, text, watermark, extra limbs or objects. One PNG image only.\n",
+      "promptFile": "assets/v20/character/home/bed-hug.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: isolated 2D anime girl hugging a cat plush on opaque chroma-green.\nInput image is the approved original A standing-neutral master and the exact identity/clothing/style reference. Change only the pose needed to sit gently at the bedside holding a toy.\nThe same round-faced silver-white long-haired girl wears exactly the same pink cat-ear zip hoodie with pink bow details and fluffy white zipper pom-poms, and fully covering cream pajama trousers. Her bright blue eyes and pink ribbon hair clips match the source exactly. She sits with her knees drawn comfortably close together, shoulders relaxed, cradling a small soft pastel-pink cat plush against her chest using both forearms. Her eyes are open and softly looking at the visitor, with a gentle tiny smile. The cat plush has a simple stitched cat face, ears, small paws and no text, no symbols. Hands are natural and visible around the toy. No new clothes, no bare legs, no suggestive posing.\nDo not draw any bed, pillow, furniture, room or floor. Only the fully clothed girl and her cat plush. Entire remaining image is a uniform opaque fluorescent #00FF00 background including spaces between hair and arms, with no gradient, cast shadow, green spill, checkerboard, white matte or texture.\nPortrait canvas 28:39. Head and ears entirely visible with 4% empty headroom; hair and seated legs remain in frame except a natural slight bottom clothing crop if required. Preserve petite light-Q anime proportions, clean precise cel linework, soft daylight from right and all-ages cute mood. No grain, oil painting, watercolor, text, watermark, extra limbs or objects. One PNG image only.\n",
+      "promptSha256": "706917940a055103dc396058b9efeb002239fa28cd840aae7bb5d3aa41389d86",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/home/bed-hug-alpha.png",
+        "sha256": "ea22dae37689be84b2e63fa780135fced9f79d85c85264289d4f8c8d99d578f3",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        48,
+        47,
+        1014,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.045198,
+        0.031714,
+        0.954802,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/home/bed-hug-720.webp",
+          "dimensions": [
+            720,
+            1005
+          ],
+          "bytes": 136554,
+          "sha256": "3d2defb1d584c8b904597966e3aea5b0f0f6784774d545067f3e122b40ef19f9",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/home/bed-hug-1440.webp",
+          "dimensions": [
+            1440,
+            2009
+          ],
+          "bytes": 317166,
+          "sha256": "8b4ae6ab39f1a1268ef48f64de8ef40b312b74932ffd55e29c453250cf428211",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/home/bed-hug-4k.webp",
+          "dimensions": [
+            2752,
+            3840
+          ],
+          "bytes": 742772,
+          "sha256": "d7fedb6f1ec12c203d285391cfd8d80d8cf3752b6dd461694b6af70ae2f4f4ce",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "bed-sleepy",
+      "outfitId": "home",
+      "generatedAt": "2026-09-08T20:01:30.151323+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/home/bed-sleepy-green.png",
+      "sourceSha256": "07e2826a6f20bc3aa4dd51b193efc59526da51bf6efb6e6205770b0058d19382",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/bed-hug-green.png",
+          "sha256": "ed537c31d206c2a95ee5a0086813331f76a09d217a12ffe52f8407ac1cb4e888"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: one sleepy expression variation of the supplied bedside cat-plush sprite.\nThe input image is the approved bed-hug master. Change ONLY the girl's face to a peaceful sleepy expression: both eyes softly closed, relaxed brows, a very tiny contented smile. Preserve the same head tilt and face shape. Do not lower or shift her head. Preserve exactly the curled seated pose, both covered knees, feet crop, hands wrapped around the pastel-pink cat plush, plush face and paws, flowing silver-white hair, pink ribbon clips, pink cat-ear hoodie, cream pajama trousers, all clothing folds, daylight, scale and composition.\nBackground must remain uniform opaque fluorescent #00FF00 in all empty regions and hair gaps. No bed, pillow, floor, chair, room, shadow, gradient, text, watermark, checkerboard or extra prop. Clean crisp cute cel anime, all-ages, fully clothed. No grain, oil-paint shading, mature styling or extra limbs. One PNG with same framing as the input.\n",
+      "promptFile": "assets/v20/character/home/bed-sleepy.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: one sleepy expression variation of the supplied bedside cat-plush sprite.\nThe input image is the approved bed-hug master. Change ONLY the girl's face to a peaceful sleepy expression: both eyes softly closed, relaxed brows, a very tiny contented smile. Preserve the same head tilt and face shape. Do not lower or shift her head. Preserve exactly the curled seated pose, both covered knees, feet crop, hands wrapped around the pastel-pink cat plush, plush face and paws, flowing silver-white hair, pink ribbon clips, pink cat-ear hoodie, cream pajama trousers, all clothing folds, daylight, scale and composition.\nBackground must remain uniform opaque fluorescent #00FF00 in all empty regions and hair gaps. No bed, pillow, floor, chair, room, shadow, gradient, text, watermark, checkerboard or extra prop. Clean crisp cute cel anime, all-ages, fully clothed. No grain, oil-paint shading, mature styling or extra limbs. One PNG with same framing as the input.\n",
+      "promptSha256": "8037536726bdbaef54f67d32245c58ef78c40715ff6ee9e637cb6af124e42552",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/home/bed-sleepy-alpha.png",
+        "sha256": "be0c4ac6c1d167edfc66f103654f59df54c8576c119d858c2cefd855a525b619",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        48,
+        47,
+        1013,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.04524,
+        0.031714,
+        0.95476,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/home/bed-sleepy-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 131000,
+          "sha256": "96116b8a6cde0ddc05533595893fb45b4c4e4715c41b9d4d54d8c611a751dad9",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/home/bed-sleepy-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 314704,
+          "sha256": "759035d11366a70f748c41a7014803ad00f8473236921440ff52c8c84142ee4e",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/home/bed-sleepy-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 728570,
+          "sha256": "b3e45003064cf330c4f95c28ba9a6d908670646e7d49f147b39b6c614b811b6d",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "desk-blink",
+      "outfitId": "home",
+      "generatedAt": "2026-09-08T20:00:32.196393+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/home/desk-blink-green.png",
+      "sourceSha256": "4fdeec1386df09bcdfd406c2fdb143965e6bbd35f699029131c285633a5451c4",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/desk-focus-green.png",
+          "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: one closed-eye blink frame of the supplied seated drawing sprite.\nThe input image is the approved desk-focus master. Change ONLY the eyelids to a natural brief gentle blink: both eyes closed with delicate relaxed eyelash curves, no squinting, no exaggerated grin. Keep the same brows and tiny mouth, exact head angle and position, entire body, long hair, cat-ear pink hoodie, cream covered trousers, stylus and both hands pixel-position consistent. Do not change pose, framing, light, hair, folds or colors.\nSame portrait canvas and green background: uniform opaque fluorescent #00FF00 in all empty spaces. Do not add any desk, chair, room, shadow, extra object, text, watermark or checkerboard. Preserve cute all-ages clean cel linework. One PNG only.\n",
+      "promptFile": "assets/v20/character/home/desk-blink.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: one closed-eye blink frame of the supplied seated drawing sprite.\nThe input image is the approved desk-focus master. Change ONLY the eyelids to a natural brief gentle blink: both eyes closed with delicate relaxed eyelash curves, no squinting, no exaggerated grin. Keep the same brows and tiny mouth, exact head angle and position, entire body, long hair, cat-ear pink hoodie, cream covered trousers, stylus and both hands pixel-position consistent. Do not change pose, framing, light, hair, folds or colors.\nSame portrait canvas and green background: uniform opaque fluorescent #00FF00 in all empty spaces. Do not add any desk, chair, room, shadow, extra object, text, watermark or checkerboard. Preserve cute all-ages clean cel linework. One PNG only.\n",
+      "promptSha256": "de8dcad8fc66a680e17e37b5bd2408d2d6707486cb1b37d6ddd57ff4276b2ce7",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/home/desk-blink-alpha.png",
+        "sha256": "1c77e2ced4f234a72e8088cf1320cac266743cef482a3e2cb7523b6bf8f06c8e",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        22,
+        42,
+        1041,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.020735,
+        0.02834,
+        0.98115,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/home/desk-blink-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 130808,
+          "sha256": "d9fc04867d418b4174ee064bee9ba84032fb9ccc68d5383c0bf5ebecf5da0a6d",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/home/desk-blink-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 308992,
+          "sha256": "ab9f466d009d0a185978c05924c35d48aa4e75d77f8a4bdb9bf6a49b4c8993cf",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/home/desk-blink-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 722820,
+          "sha256": "840db425ee78a4fe84803a92adbcf519b4ed41a9cdc4fea361192b746f976d2b",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "desk-focus",
+      "outfitId": "home",
+      "generatedAt": "2026-09-08T19:59:50.336389+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/home/desk-focus-green.png",
+      "sourceSha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce",
+      "nativeSize": [
+        1062,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-neutral-green.png",
+          "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: isolated 2D anime seated drawing character sprite on opaque chroma-green.\nInput image is the approved original A standing-neutral master, used to lock identity, clothing, linework, colors and daylight. Change only the pose required for sitting at her drawing desk.\nDraw the exact same silver-white long-haired girl with the identical round face, bright blue eyes, pink bow clips, pink cat-ear zip hoodie with sleeve cuffs/pocket bow/white pom-poms, and cream fully covering pajama trousers. She sits naturally on an invisible chair facing toward the right, in a three-quarter side view, with her upper body leaning slightly forward over an invisible desk at elbow height. Her right hand holds a slim dark digital stylus and draws toward the lower right; her left hand rests lightly beside the drawing area. Her eyes look down attentively at her work, a tiny focused mouth, cheeks softly rosy. Keep both hands anatomically natural, fully visible and delicately drawn. Her long hair flows behind her back without covering the writing hand.\nDo not draw any furniture: no chair, desk, tablet, floor or room. Only the girl and her held stylus. The desk and chair are provided as separate website layers. Empty space below/around/between limbs and strands must be a single flat opaque fluorescent #00FF00 green, no background shadow or green reflection.\nPortrait composition 28:39, head fully visible with around 4% headroom, body arranged compactly inside canvas, fingertips within frame, crop through upper thighs at the bottom similarly to the reference. Preserve the existing petite proportions and soft daylight from right. Clean crisp anime cel drawing, smooth flat colors, no new wardrobe details, no mature/sexualized styling, no oil-paint grain, blurry shading, text, watermark, checkerboard or extra limbs. One PNG image.\n",
+      "promptFile": "assets/v20/character/home/desk-focus.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: isolated 2D anime seated drawing character sprite on opaque chroma-green.\nInput image is the approved original A standing-neutral master, used to lock identity, clothing, linework, colors and daylight. Change only the pose required for sitting at her drawing desk.\nDraw the exact same silver-white long-haired girl with the identical round face, bright blue eyes, pink bow clips, pink cat-ear zip hoodie with sleeve cuffs/pocket bow/white pom-poms, and cream fully covering pajama trousers. She sits naturally on an invisible chair facing toward the right, in a three-quarter side view, with her upper body leaning slightly forward over an invisible desk at elbow height. Her right hand holds a slim dark digital stylus and draws toward the lower right; her left hand rests lightly beside the drawing area. Her eyes look down attentively at her work, a tiny focused mouth, cheeks softly rosy. Keep both hands anatomically natural, fully visible and delicately drawn. Her long hair flows behind her back without covering the writing hand.\nDo not draw any furniture: no chair, desk, tablet, floor or room. Only the girl and her held stylus. The desk and chair are provided as separate website layers. Empty space below/around/between limbs and strands must be a single flat opaque fluorescent #00FF00 green, no background shadow or green reflection.\nPortrait composition 28:39, head fully visible with around 4% headroom, body arranged compactly inside canvas, fingertips within frame, crop through upper thighs at the bottom similarly to the reference. Preserve the existing petite proportions and soft daylight from right. Clean crisp anime cel drawing, smooth flat colors, no new wardrobe details, no mature/sexualized styling, no oil-paint grain, blurry shading, text, watermark, checkerboard or extra limbs. One PNG image.\n",
+      "promptSha256": "0dc9dfec22fe88789ca2c4748824c35df89aa37ab44af1236d2d4589675dbfff",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/home/desk-focus-alpha.png",
+        "sha256": "35084c23ab99097530e9af3a17e5efd54e6bad6af9cd77889b827f079c3f75b3",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        21,
+        42,
+        1042,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.019774,
+        0.02834,
+        0.981168,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/home/desk-focus-720.webp",
+          "dimensions": [
+            720,
+            1005
+          ],
+          "bytes": 131156,
+          "sha256": "99a7b78a2408fb02ceca87789075492a25c2dd6fe43829158239dfaf428439b6",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/home/desk-focus-1440.webp",
+          "dimensions": [
+            1440,
+            2009
+          ],
+          "bytes": 314420,
+          "sha256": "a04a778d2184043faf16a6d879da60bc83a36aa41ff5f73b3481ed9cf0894afb",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/home/desk-focus-4k.webp",
+          "dimensions": [
+            2752,
+            3840
+          ],
+          "bytes": 739318,
+          "sha256": "0dcb27be9b588334af4a5fb42fbacdaf6f19675f57f31c99fe17a27e9d7dea6a",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "desk-shy",
+      "outfitId": "home",
+      "generatedAt": "2026-09-08T20:00:11.254101+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/home/desk-shy-green.png",
+      "sourceSha256": "b716888c3eb571e29ce219f366bc084f3db48494e3c54ecd7373f1afd2b2a588",
+      "nativeSize": [
+        1061,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/desk-focus-green.png",
+          "sha256": "953a3e3028d712c7bfe1853c1ff7345a67d44619573ab7f8058c79b48c9048ce"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: one facial-expression variation of the supplied seated drawing sprite.\nThe input image is the approved desk-focus master. Change ONLY her gaze and tiny facial expression: she briefly notices the visitor beside her, both blue eyes turn slightly toward the viewer, eyebrows soften, cheeks become a touch rosier and her small mouth gives a shy pleased smile. Keep her head at the exact same angle and coordinates. Lock every other feature: identical silver-white hair strands, cat ears, pink bows, pink hoodie, cream fully covered pajama trousers, seated body, left resting hand, right writing hand and stylus, clothing folds, lighting, margins and crop. No body or hand movement, no head enlargement.\nRemain an opaque uniform #00FF00 chroma-green portrait image, same dimensions and composition as the input. Only the girl and stylus; no desk, chair, furniture, scenery, texture, cast shadow, gradient, green spill, checkerboard, text or watermark. Cute clean anime cel style, all-ages, fully clothed. One image only.\n",
+      "promptFile": "assets/v20/character/home/desk-shy.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: one facial-expression variation of the supplied seated drawing sprite.\nThe input image is the approved desk-focus master. Change ONLY her gaze and tiny facial expression: she briefly notices the visitor beside her, both blue eyes turn slightly toward the viewer, eyebrows soften, cheeks become a touch rosier and her small mouth gives a shy pleased smile. Keep her head at the exact same angle and coordinates. Lock every other feature: identical silver-white hair strands, cat ears, pink bows, pink hoodie, cream fully covered pajama trousers, seated body, left resting hand, right writing hand and stylus, clothing folds, lighting, margins and crop. No body or hand movement, no head enlargement.\nRemain an opaque uniform #00FF00 chroma-green portrait image, same dimensions and composition as the input. Only the girl and stylus; no desk, chair, furniture, scenery, texture, cast shadow, gradient, green spill, checkerboard, text or watermark. Cute clean anime cel style, all-ages, fully clothed. One image only.\n",
+      "promptSha256": "e650a43171b65b707398c3cb93c674de8d557cd1dad2ff636f7a80d90ce4a031",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/home/desk-shy-alpha.png",
+        "sha256": "7b7e66a2641ffcda2e332e9d078fc23b334156c034bf60ce1ef6a464d5e3ae87",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1061,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        21,
+        42,
+        1041,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.019793,
+        0.02834,
+        0.98115,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/home/desk-shy-720.webp",
+          "dimensions": [
+            720,
+            1006
+          ],
+          "bytes": 131106,
+          "sha256": "4213c2dac7a877cafda6b059adfa7dc5bb949bf65a9e382aef647f72cb70ecb5",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/home/desk-shy-1440.webp",
+          "dimensions": [
+            1440,
+            2011
+          ],
+          "bytes": 311116,
+          "sha256": "0a3634692b2aa63af298ff52f13fb323f1e90262ff89b47bdf010a277aab0a79",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/home/desk-shy-4k.webp",
+          "dimensions": [
+            2749,
+            3840
+          ],
+          "bytes": 727412,
+          "sha256": "410e74269e0e421122a1b8d8ae9739e1dfba635c0f3b5b82e8bdb5f0cbf9d735",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "reading-peek",
+      "outfitId": "home",
+      "generatedAt": "2026-09-08T20:00:52.105933+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/home/reading-peek-green.png",
+      "sourceSha256": "dbb5c20c14593f098118ea0f13145b17235de24fe44c0d7d762ef1f1a77e813a",
+      "nativeSize": [
+        1062,
+        1481
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-neutral-green.png",
+          "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: isolated 2D anime character holding a sketchbook, opaque chroma-green background.\nInput image is the approved original A standing-neutral master. Preserve her exact identity, round face shape, bright blue eyes, long silver-white hair, pink ribbon clips, pink cat-ear zip hoodie with pockets and fluffy zipper tassels, cream fully covered pajama trousers, daylight and clean anime cel linework. Only change the arms and expression to the required book interaction.\nShe stands shyly holding a small cream sketchbook upright with both hands at chest height. The top edge reaches just under her nose so her expressive blue eyes and brows remain entirely visible above the book. She peeks playfully toward the visitor, not blankly staring. Her shoulders slightly curl inward in a sweet bashful gesture. Book cover is plain cream with no lettering, logo, painted text, symbols or additional illustrations. All ten fingers natural, hands hold the side edges without fusing into the book. Do not change the hoodie or add accessories.\nNo room or furniture; everything outside the girl and sketchbook is uniformly opaque fluorescent #00FF00 green, including every gap between hair strands. No shadow, gradient, green spill, checkerboard or white matte. Keep 28:39 portrait canvas, entire head and cat ears visible with 4% headroom, partial-thigh bottom crop, same character scale. Clean all-ages cute cel anime, no oil-paint or grain, no text/watermark. One image only.\n",
+      "promptFile": "assets/v20/character/home/reading-peek.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: isolated 2D anime character holding a sketchbook, opaque chroma-green background.\nInput image is the approved original A standing-neutral master. Preserve her exact identity, round face shape, bright blue eyes, long silver-white hair, pink ribbon clips, pink cat-ear zip hoodie with pockets and fluffy zipper tassels, cream fully covered pajama trousers, daylight and clean anime cel linework. Only change the arms and expression to the required book interaction.\nShe stands shyly holding a small cream sketchbook upright with both hands at chest height. The top edge reaches just under her nose so her expressive blue eyes and brows remain entirely visible above the book. She peeks playfully toward the visitor, not blankly staring. Her shoulders slightly curl inward in a sweet bashful gesture. Book cover is plain cream with no lettering, logo, painted text, symbols or additional illustrations. All ten fingers natural, hands hold the side edges without fusing into the book. Do not change the hoodie or add accessories.\nNo room or furniture; everything outside the girl and sketchbook is uniformly opaque fluorescent #00FF00 green, including every gap between hair strands. No shadow, gradient, green spill, checkerboard or white matte. Keep 28:39 portrait canvas, entire head and cat ears visible with 4% headroom, partial-thigh bottom crop, same character scale. Clean all-ages cute cel anime, no oil-paint or grain, no text/watermark. One image only.\n",
+      "promptSha256": "386d8866e289802da6e6436f7765980c7c36008fcd89c67ae517284d4127c859",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/home/reading-peek-alpha.png",
+        "sha256": "5e7fd9a51e3187a1a293cf6ec446492a5f2bbb853661de9cd103a1f1e6c31e95",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1481
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        61,
+        842,
+        1481
+      ],
+      "actorBBoxNormalized": [
+        0.053672,
+        0.041188,
+        0.792844,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/home/reading-peek-720.webp",
+          "dimensions": [
+            720,
+            1004
+          ],
+          "bytes": 112378,
+          "sha256": "dd79cfc117fee7602dbd6bbb5446b0ff1bb573531393f8e687ff20edff58b279",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/home/reading-peek-1440.webp",
+          "dimensions": [
+            1440,
+            2008
+          ],
+          "bytes": 273228,
+          "sha256": "383c9f32a9af8522a64f34635ca9426914ec27e7613674ad524efaba36345b51",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/home/reading-peek-4k.webp",
+          "dimensions": [
+            2754,
+            3840
+          ],
+          "bytes": 631228,
+          "sha256": "f1069c7c0f9733cfaab8eab2d36d63b76259ebeafcee7a9c8a33a297f7192771",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "standing-blink",
+      "outfitId": "home",
+      "generatedAt": "2026-09-08T19:59:29.181470+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/home/standing-blink-green.png",
+      "sourceSha256": "d6ab5923fc260d4f90f77191c3a876c8f5604d5a4aa33a58ed6866db81074781",
+      "nativeSize": [
+        1062,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-neutral-green.png",
+          "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: one closed-eye blink frame for the supplied anime sprite.\nInput image is the approved standing-neutral master. Change ONLY the eyelids into a natural relaxed blink: both eyes gently closed as two delicate curved anime eyelash lines, without squinting or exaggerated smile. Preserve the tiny smile, brows, head tilt and every other visible feature. Absolutely lock the character position, body silhouette, head outline, silver-white hair strands, pink clips, cat-ear pink hoodie, cream fully covered pajama trousers, hands, clothing folds, light and portrait framing. No gesture or pose changes, no extra props.\nRetain an opaque flat #00FF00 chroma-green backdrop including all empty holes between hair/arms/fingers. No actual transparency or checkerboard, no room, shadow, text, watermark, green spill, grain or painterly texture. Same 28:39 portrait ratio, same headroom and bottom thigh crop. Clean cute cel-anime, fully clothed, all-ages. One PNG image only.\n",
+      "promptFile": "assets/v20/character/home/standing-blink.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: one closed-eye blink frame for the supplied anime sprite.\nInput image is the approved standing-neutral master. Change ONLY the eyelids into a natural relaxed blink: both eyes gently closed as two delicate curved anime eyelash lines, without squinting or exaggerated smile. Preserve the tiny smile, brows, head tilt and every other visible feature. Absolutely lock the character position, body silhouette, head outline, silver-white hair strands, pink clips, cat-ear pink hoodie, cream fully covered pajama trousers, hands, clothing folds, light and portrait framing. No gesture or pose changes, no extra props.\nRetain an opaque flat #00FF00 chroma-green backdrop including all empty holes between hair/arms/fingers. No actual transparency or checkerboard, no room, shadow, text, watermark, green spill, grain or painterly texture. Same 28:39 portrait ratio, same headroom and bottom thigh crop. Clean cute cel-anime, fully clothed, all-ages. One PNG image only.\n",
+      "promptSha256": "2cf193a4d6ad65abd78ac8c0147fa5986c628863652a47289144565ec6ab4632",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/home/standing-blink-alpha.png",
+        "sha256": "0943db691e91fd9ecb545751fffa2024f2381b606dda732dd08842a55923ddcb",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        61,
+        1013,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.053672,
+        0.041161,
+        0.953861,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/home/standing-blink-720.webp",
+          "dimensions": [
+            720,
+            1005
+          ],
+          "bytes": 120010,
+          "sha256": "37d09bed15880d319c0a5ff1eadf2c023d2ea5e9d4192d1575308f591383107e",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/home/standing-blink-1440.webp",
+          "dimensions": [
+            1440,
+            2009
+          ],
+          "bytes": 290226,
+          "sha256": "104395204f2c7f798c13265a8b477d45eef5fd52628fb45799ba14f5b4ed5528",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/home/standing-blink-4k.webp",
+          "dimensions": [
+            2752,
+            3840
+          ],
+          "bytes": 671792,
+          "sha256": "86084852b0d82688b022290a6d4cc3ee3043a8b5525c6ae6af480119a36b39ae",
+          "hasAlpha": true
+        }
+      ]
+    },
+    {
+      "id": "standing-neutral",
+      "outfitId": "home",
+      "generatedAt": "2026-09-08T19:58:50.057974+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/home/standing-neutral-green.png",
+      "sourceSha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37",
+      "nativeSize": [
+        1062,
+        1481
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".impeccable/build/sagiri-character-reference.png",
+          "sha256": "264205c8ccac98826d6a85507202f6e6b604cbe2e795725dabab7fa12819acd2"
+        }
+      ],
+      "prompt": "Use case: precise-object-edit\nAsset type: 2D anime character sprite on a perfectly solid chroma-green background.\nInput image: the approved original A character crop. It is the sole identity, clothing, pose, framing and lighting reference.\n\nChange only the background: replace the complete bedroom, furniture, chair, all UI and the flat pink UI-obscuring strips with one uniform, pure fluorescent green color #00FF00 (RGB 0,255,0). This is an intentionally opaque green-screen production image. Do not create transparency. Do not draw checkerboards, white areas, gray areas, scenery, shadows, gradients, texture or atmospheric color in the green background. All empty holes between hair strands, the arms and the fingers must be the same #00FF00 green. No green reflection or green spill on the character.\n\nPreserve the exact same drawing of the girl: her identical round face shape, subtle small shy smile, two bright blue eyes looking back toward the visitor, long silver-white hair, pink ribbon clips, pink cat-ear zip hoodie with pocket bows and fluffy zipper pom-poms, fully covering cream pajama trousers, original standing turned pose with one hand close to her chest and the other hand extending to the right in invitation. Keep her clean anime cel outlines, daylight, pale colors, natural hand anatomy and existing folds unchanged. Do not enlarge the eyes, change the head tilt, restyle the face, change clothing or add new props.\n\nComposition MUST follow the approved source pixel geometry: portrait 672:936 (28:39). Keep the character the same size and position as the source, including roughly 4% green empty headroom above the highest cat ear. The outer hair starts at about 4% of canvas width near the lower left, the extended fingertips reach about 96% of the width. Bottom edge cuts through the upper thighs as in the reference. Restore only the small strip of cream pajama fabric obscured by the old bottom navigation; do not extend the canvas, invent full legs/feet, zoom, crop tighter, move the character or add new margins.\n\nRequested output: PNG, preferably 1008x1404 or a larger same-aspect canvas; flat #00FF00 color everywhere outside the intact character. No text, watermark, grain, oil-paint texture, watercolor, blurry edges, mature or sexualized styling, extra fingers, extra limbs, extra objects. Preserve the character's cute all-ages mood precisely.\n",
+      "promptFile": "assets/v20/character/home/standing-neutral.prompt.txt",
+      "promptText": "Use case: precise-object-edit\nAsset type: 2D anime character sprite on a perfectly solid chroma-green background.\nInput image: the approved original A character crop. It is the sole identity, clothing, pose, framing and lighting reference.\n\nChange only the background: replace the complete bedroom, furniture, chair, all UI and the flat pink UI-obscuring strips with one uniform, pure fluorescent green color #00FF00 (RGB 0,255,0). This is an intentionally opaque green-screen production image. Do not create transparency. Do not draw checkerboards, white areas, gray areas, scenery, shadows, gradients, texture or atmospheric color in the green background. All empty holes between hair strands, the arms and the fingers must be the same #00FF00 green. No green reflection or green spill on the character.\n\nPreserve the exact same drawing of the girl: her identical round face shape, subtle small shy smile, two bright blue eyes looking back toward the visitor, long silver-white hair, pink ribbon clips, pink cat-ear zip hoodie with pocket bows and fluffy zipper pom-poms, fully covering cream pajama trousers, original standing turned pose with one hand close to her chest and the other hand extending to the right in invitation. Keep her clean anime cel outlines, daylight, pale colors, natural hand anatomy and existing folds unchanged. Do not enlarge the eyes, change the head tilt, restyle the face, change clothing or add new props.\n\nComposition MUST follow the approved source pixel geometry: portrait 672:936 (28:39). Keep the character the same size and position as the source, including roughly 4% green empty headroom above the highest cat ear. The outer hair starts at about 4% of canvas width near the lower left, the extended fingertips reach about 96% of the width. Bottom edge cuts through the upper thighs as in the reference. Restore only the small strip of cream pajama fabric obscured by the old bottom navigation; do not extend the canvas, invent full legs/feet, zoom, crop tighter, move the character or add new margins.\n\nRequested output: PNG, preferably 1008x1404 or a larger same-aspect canvas; flat #00FF00 color everywhere outside the intact character. No text, watermark, grain, oil-paint texture, watercolor, blurry edges, mature or sexualized styling, extra fingers, extra limbs, extra objects. Preserve the character's cute all-ages mood precisely.\n",
+      "promptSha256": "158304e5ddc2954391ee138eb85baa35f85630ff16acc7246ac6736e9fe9043d",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/home/standing-neutral-alpha.png",
+        "sha256": "221b331689105666577dc1807bfd63c4a10daaa73af242b5c9d12e96cd115510",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1481
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        57,
+        61,
+        1013,
+        1481
+      ],
+      "actorBBoxNormalized": [
+        0.053672,
+        0.041188,
+        0.953861,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/home/standing-neutral-720.webp",
+          "dimensions": [
+            720,
+            1004
+          ],
+          "bytes": 122326,
+          "sha256": "30dee0046cc223dbd0ae656489b4be7d6703887dc2bc7f62115b53dd651ba20e",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/home/standing-neutral-1440.webp",
+          "dimensions": [
+            1440,
+            2008
+          ],
+          "bytes": 294634,
+          "sha256": "1fa80055a11f4e352ee34576e5f78777dc7f4db88faade643dd1114b0511a3b3",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/home/standing-neutral-4k.webp",
+          "dimensions": [
+            2754,
+            3840
+          ],
+          "bytes": 682642,
+          "sha256": "7ecaf7afefee33deffabe7c9a55c0bf5fc5e08a6b6ed5b84e86e8a249aecf2c5",
+          "hasAlpha": true
+        }
+      ],
+      "plate": {
+        "file": "assets/plates/sagiri-character.png",
+        "dimensions": [
+          1062,
+          1481
+        ],
+        "sha256": "cff2e8e13a4ad9b98279ece34fa978100ae8287b9549130a9c819d242bd8495d",
+        "hasAlpha": true
+      }
+    },
+    {
+      "id": "standing-shy",
+      "outfitId": "home",
+      "generatedAt": "2026-09-08T19:59:08.680362+00:00",
+      "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+      "source": ".tmp/v20-character/home/standing-shy-green.png",
+      "sourceSha256": "1da8cd2cb550d315f640255a182366fac3d956587a252cd5cc5c3df1ede1d249",
+      "nativeSize": [
+        1062,
+        1482
+      ],
+      "nativeMode": "RGB",
+      "references": [
+        {
+          "path": ".tmp/v20-character/home/standing-neutral-green.png",
+          "sha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37"
+        }
+      ],
+      "prompt": "Use case: identity-preserve\nAsset type: one 2D anime animation frame on an opaque chroma-green backdrop.\nInput image is the approved standing-neutral master. Preserve the entire image pixel geometry and identical character placement, body silhouette, cat-ear pink hoodie, cream fully covered pajama trousers, hair, hands, daylight, linework, framing and 28:39 portrait canvas. Change ONLY her eyebrows, eyes, blush and tiny mouth: she notices the visitor's kindness, her blue eyes soften and glance just slightly toward the visitor, with a slightly more bashful small smile and subtle rosy cheeks. Do not move her head or body. Keep all hair, clothing folds, fingers and props unchanged. Do not enlarge the eyes or make a different face.\nThe entire empty background remains opaque, flat fluorescent green #00FF00, including all spaces between hair strands and fingers. No green light spill, white halo, shadow, gradient, texture, checkerboard, room, furniture, text or watermark. Keep the same 4% headroom, invitation hand position and bottom cropped-thigh framing. Clean cel-anime illustration, all-ages and fully clothed. Output one PNG, not a spritesheet, no side-by-side pictures.\n",
+      "promptFile": "assets/v20/character/home/standing-shy.prompt.txt",
+      "promptText": "Use case: identity-preserve\nAsset type: one 2D anime animation frame on an opaque chroma-green backdrop.\nInput image is the approved standing-neutral master. Preserve the entire image pixel geometry and identical character placement, body silhouette, cat-ear pink hoodie, cream fully covered pajama trousers, hair, hands, daylight, linework, framing and 28:39 portrait canvas. Change ONLY her eyebrows, eyes, blush and tiny mouth: she notices the visitor's kindness, her blue eyes soften and glance just slightly toward the visitor, with a slightly more bashful small smile and subtle rosy cheeks. Do not move her head or body. Keep all hair, clothing folds, fingers and props unchanged. Do not enlarge the eyes or make a different face.\nThe entire empty background remains opaque, flat fluorescent green #00FF00, including all spaces between hair strands and fingers. No green light spill, white halo, shadow, gradient, texture, checkerboard, room, furniture, text or watermark. Keep the same 4% headroom, invitation hand position and bottom cropped-thigh framing. Clean cel-anime illustration, all-ages and fully clothed. Output one PNG, not a spritesheet, no side-by-side pictures.\n",
+      "promptSha256": "fe860eae2edac9b2adc3cd161ec9f49577ac0e4a6d2204942181cfd54440bf12",
+      "alphaPreparation": {
+        "method": "FFmpeg 标准专用背景色键封装",
+        "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+        "source": ".tmp/v20-character/home/standing-shy-alpha.png",
+        "sha256": "99d93cfac1b00a63fa4f49ea0682da88634422ea7ad0592d7652ab93a2d600c8",
+        "mode": "RGBA",
+        "range": [
+          0,
+          255
+        ],
+        "nativeSize": [
+          1062,
+          1482
+        ],
+        "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+        "cornerAlpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "actorBBox": [
+        58,
+        62,
+        1011,
+        1482
+      ],
+      "actorBBoxNormalized": [
+        0.054614,
+        0.041835,
+        0.951977,
+        1.0
+      ],
+      "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+      "exports": [
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/character/home/standing-shy-720.webp",
+          "dimensions": [
+            720,
+            1005
+          ],
+          "bytes": 119708,
+          "sha256": "f58d0040e5f06b4ada308e88759bcccfa166acf48763927bfc1a098242c3e239",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/character/home/standing-shy-1440.webp",
+          "dimensions": [
+            1440,
+            2009
+          ],
+          "bytes": 289886,
+          "sha256": "739b4b72f65b9ea4d50e971841a5947111f2bfd894805bee0d0a04f6b1df2ef6",
+          "hasAlpha": true
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/character/home/standing-shy-4k.webp",
+          "dimensions": [
+            2752,
+            3840
+          ],
+          "bytes": 671968,
+          "sha256": "a9126c354e50100c2b1e50d7b53c0880a6b039e2b493eb287597c18a2e877474",
+          "hasAlpha": true
+        }
+      ]
+    }
+  ]
+}

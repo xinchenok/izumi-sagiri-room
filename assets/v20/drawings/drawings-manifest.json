@@ -1,0 +1,916 @@
+{
+  "schemaVersion": 1,
+  "version": "20.0.0",
+  "generatedAt": "2026-09-08T22:26:04.147506+00:00",
+  "count": 9,
+  "webpCount": 36,
+  "subjects": {
+    "door": {
+      "title": "门缝看月亮的小猫",
+      "alt": "浅银灰小猫从半开的门后探出圆脸和小爪，看向一弯月亮与两颗小星星"
+    },
+    "blanket": {
+      "title": "被窝里画星星的小猫",
+      "alt": "浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星"
+    },
+    "pencil": {
+      "title": "抱着大铅笔的小猫",
+      "alt": "圆脸短四肢的浅银灰小猫坐着抱住一支大铅笔，身边散着三颗小星星"
+    }
+  },
+  "palettes": {
+    "strawberry": "草莓黄昏",
+    "mint": "薄荷雨夜",
+    "moon": "银蓝月光"
+  },
+  "artworks": [
+    {
+      "id": "blanket-mint",
+      "subject": "blanket",
+      "palette": "mint",
+      "title": "被窝里画星星的小猫",
+      "paletteName": "薄荷雨夜",
+      "alt": "薄荷雨夜配色：浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星",
+      "generatedAt": "2026-09-08T22:25:54.967801+00:00",
+      "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+      "source": ".tmp/v20-drawings/blanket/mint.png",
+      "sourceSha256": "798094a352c6c034e9a1d1a70287a6e7be5a83daba6827b06562fd043c60bd29",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "native4k": false,
+      "aspectRatio": "4:3",
+      "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+      "prompt": "Use case: precise-object-edit, color-palette variant. This image is the approved finished kitten artwork and the exact edit target. Change ONLY its illustration color palette as described below. Preserve the precise kitten identity, face, fur markings, expression, pose, silhouette, anatomy, linework, object shapes, sizes, positions, entire composition, plain paper, existing white margins, canvas size and exact 4:3 aspect ratio. Do not add, remove, shrink, move or redraw objects. Keep the current clean cute cel-anime illustration with thin clear lines, flat fills and simple pale shadows. Do not introduce paper texture, grain, brown/yellow aged wash, oil paint, watercolor, blur, haze, text, border, UI, signature or watermark. The background and existing paper margins stay clean near-white, not tinted.\nPalette replacement: Mint rainy-night palette: change the main pink door/blanket/pencil surfaces to pale mint green, use cool clean white and a little desaturated blue for secondary accents, and replace warm sunset-yellow decorations with soft cool pale-blue/white accents. The kitten remains very pale silver-gray with pink inner ears/nose and exactly the same dark eyes.",
+      "promptFile": "assets/v20/drawings/prompts/blanket-mint.txt",
+      "promptSha256": "fb58672cab37a9628aafacbbc946c04a26e055cefaf6a62d465ebc43a380d371",
+      "references": [
+        {
+          "path": ".tmp/v20-drawings/blanket/strawberry.png",
+          "sha256": "ece03e62c71d2598c5ed754bf8e537b32b99d4f2a0fb9417c96429d8653d8bdc",
+          "role": "同主题草莓母图；只改配色"
+        },
+        {
+          "path": ".tmp/v20-drawings/blanket/strawberry-initial.png",
+          "sha256": "44f6e8af4a8def72c24920500a0c114f8edf71f31b76f337c1906afd3c6fadd0",
+          "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+        },
+        {
+          "path": "assets/v18/drawing-blanket-star-720.webp",
+          "sha256": "f2c43cc87887864b981163cf6101338e0b102e47d42ddc685be1a0c16490e90c",
+          "role": "仅主题构图，不继承旧画风"
+        }
+      ],
+      "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+      "pillowVersion": "12.3.0",
+      "exports": [
+        {
+          "sizeClass": "480",
+          "file": "assets/v20/drawings/blanket-mint-480.webp",
+          "dimensions": [
+            480,
+            360
+          ],
+          "bytes": 15636,
+          "sha256": "0a2118300ef60b9367d726ec7aa0d404aa99a4e076b5311bf2ca61835a0fec6f"
+        },
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/drawings/blanket-mint-720.webp",
+          "dimensions": [
+            720,
+            540
+          ],
+          "bytes": 29124,
+          "sha256": "baffe0dfbbd703e9c2350c57a73c37f2f19f3d9b99c5a6e237e54aa3db7d1c41"
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/drawings/blanket-mint-1440.webp",
+          "dimensions": [
+            1440,
+            1080
+          ],
+          "bytes": 80710,
+          "sha256": "7b1fedf21d6fb464de39c2a8574813617761b449ba873f9c8f375af0373dff7d"
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/drawings/blanket-mint-4k.webp",
+          "dimensions": [
+            3840,
+            2880
+          ],
+          "bytes": 321978,
+          "sha256": "6a48d2f976ba5a4b6340baef59736626e72b28c273593a8a2f527c7e770854fb"
+        }
+      ]
+    },
+    {
+      "id": "blanket-moon",
+      "subject": "blanket",
+      "palette": "moon",
+      "title": "被窝里画星星的小猫",
+      "paletteName": "银蓝月光",
+      "alt": "银蓝月光配色：浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星",
+      "generatedAt": "2026-09-08T22:25:56.796067+00:00",
+      "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+      "source": ".tmp/v20-drawings/blanket/moon.png",
+      "sourceSha256": "7ec982e0eb624b583a81b3caf5976df9df131f9d6824cb25ddee65db6daa15a5",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "native4k": false,
+      "aspectRatio": "4:3",
+      "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+      "prompt": "Use case: precise-object-edit. This silver-blue kitten artwork is the exact edit target. There is one accidental shape change to fix: the pale yellow decorations printed on the blanket should ALL be ordinary FIVE-POINT STARS, not crescent moons. Replace each pale yellow crescent on the blanket with a five-point star of the same pale yellow, at the same printed-decoration location and same approximate size. Keep every existing white and yellow five-point star unchanged. There must be no crescent shapes on the blanket. Change NOTHING ELSE: preserve kitten face, fur markings, eyes, paws, pencil, paper with outlined star, blanket outline and folds, all object positions and scales, silver-blue/milk-white/moon-yellow palette, white margins, clean cel linework, 1448×1086 exact 4:3 canvas. Do not change colors, zoom, crop, add props, add text, watermark, border, texture, blur or grain.",
+      "promptFile": "assets/v20/drawings/prompts/blanket-moon.txt",
+      "promptSha256": "31d8075602258c66e30a564c012b1aa4f0ba27a872677137eaa0bf88fb0de1aa",
+      "references": [
+        {
+          "path": ".tmp/v20-drawings/blanket/moon-initial.png",
+          "sha256": "af6e89d55f163acb5602d57c7342a0ce2d04c6332af9b7fe45cf1598a0dbc433",
+          "role": "银蓝配色初版，仅把误变为月牙的毯面图案恢复成五角星"
+        },
+        {
+          "path": ".tmp/v20-drawings/blanket/strawberry.png",
+          "sha256": "ece03e62c71d2598c5ed754bf8e537b32b99d4f2a0fb9417c96429d8653d8bdc",
+          "role": "同主题草莓母图；只改配色"
+        },
+        {
+          "path": ".tmp/v20-drawings/blanket/strawberry-initial.png",
+          "sha256": "44f6e8af4a8def72c24920500a0c114f8edf71f31b76f337c1906afd3c6fadd0",
+          "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+        },
+        {
+          "path": "assets/v18/drawing-blanket-star-720.webp",
+          "sha256": "f2c43cc87887864b981163cf6101338e0b102e47d42ddc685be1a0c16490e90c",
+          "role": "仅主题构图，不继承旧画风"
+        }
+      ],
+      "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+      "pillowVersion": "12.3.0",
+      "exports": [
+        {
+          "sizeClass": "480",
+          "file": "assets/v20/drawings/blanket-moon-480.webp",
+          "dimensions": [
+            480,
+            360
+          ],
+          "bytes": 17366,
+          "sha256": "785a71f4325db474133af674a017a40b6737280b41d5541032b6c7af2afa5a7e"
+        },
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/drawings/blanket-moon-720.webp",
+          "dimensions": [
+            720,
+            540
+          ],
+          "bytes": 32368,
+          "sha256": "d6c68add38b3cd777d2c6f21670eb97443ed896fcbb42bcac37803273906ab9e"
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/drawings/blanket-moon-1440.webp",
+          "dimensions": [
+            1440,
+            1080
+          ],
+          "bytes": 90574,
+          "sha256": "a156bcc2e4476f788ebdfab73700bd24cdabfcfe831e987dd2db3e2d55addaf6"
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/drawings/blanket-moon-4k.webp",
+          "dimensions": [
+            3840,
+            2880
+          ],
+          "bytes": 365288,
+          "sha256": "d148dc8710fe69c103e1e0d51116f54d2a0d313e620451b2b3a136f0a6062667"
+        }
+      ]
+    },
+    {
+      "id": "blanket-strawberry",
+      "subject": "blanket",
+      "palette": "strawberry",
+      "title": "被窝里画星星的小猫",
+      "paletteName": "草莓黄昏",
+      "alt": "草莓黄昏配色：浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星",
+      "generatedAt": "2026-09-08T22:25:53.140214+00:00",
+      "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+      "source": ".tmp/v20-drawings/blanket/strawberry.png",
+      "sourceSha256": "ece03e62c71d2598c5ed754bf8e537b32b99d4f2a0fb9417c96429d8653d8bdc",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "native4k": false,
+      "aspectRatio": "4:3",
+      "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+      "prompt": "Use case: precise-object-edit for production layout. Preserve this exact kitten illustration: same character face and fur markings, pose, limbs, props, clean cel linework, strawberry-pink/milk-white/warm-yellow palette and all relative positions. Do not redraw the scene concept or change expressions. The ONLY change is to shrink the entire illustrated group together to about 80% of its current size and center that intact group on the same 4:3 canvas. Every colored object, outline and shadow must sit entirely inside a generous central rectangle, leaving AT LEAST 12% completely empty clean white margin on all four edges. For the 1448×1086 canvas, keep all artwork safely within x=180..1268, y=140..946. No cut-off pencil tip, blanket edge or shadow. Preserve aspect ratio of every object and the group. No frame, border, UI, labels, signature, text, watermarks, new objects, paper texture, grain, watercolor, blur, gradients over the background or dirty colors. Pure near-white paper outside the compact centered artwork.",
+      "promptFile": "assets/v20/drawings/prompts/blanket-strawberry.txt",
+      "promptSha256": "5f9ff2b1bde083d1f5afd2af4edbe5008079aa01ea64e6c6b17929b780ee941c",
+      "references": [
+        {
+          "path": ".tmp/v20-drawings/blanket/strawberry-initial.png",
+          "sha256": "44f6e8af4a8def72c24920500a0c114f8edf71f31b76f337c1906afd3c6fadd0",
+          "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+        },
+        {
+          "path": "assets/v18/drawing-blanket-star-720.webp",
+          "sha256": "f2c43cc87887864b981163cf6101338e0b102e47d42ddc685be1a0c16490e90c",
+          "role": "仅主题构图，不继承旧画风"
+        }
+      ],
+      "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+      "pillowVersion": "12.3.0",
+      "exports": [
+        {
+          "sizeClass": "480",
+          "file": "assets/v20/drawings/blanket-strawberry-480.webp",
+          "dimensions": [
+            480,
+            360
+          ],
+          "bytes": 16664,
+          "sha256": "239d513356bb9c730335bd5e5315fe75e8fdcbd34e5dc47bd98b5a3f1ffc60e7"
+        },
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/drawings/blanket-strawberry-720.webp",
+          "dimensions": [
+            720,
+            540
+          ],
+          "bytes": 30472,
+          "sha256": "b6734a6a29e2f1848f5d52ed7706ff6f40762782efd60a61d707dcc585bfa682"
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/drawings/blanket-strawberry-1440.webp",
+          "dimensions": [
+            1440,
+            1080
+          ],
+          "bytes": 83888,
+          "sha256": "1e10f1055a619845a4c29aa30b0539228535e727dad72df6796c0994f993f70d"
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/drawings/blanket-strawberry-4k.webp",
+          "dimensions": [
+            3840,
+            2880
+          ],
+          "bytes": 343750,
+          "sha256": "00df6173f03de59cd035b62d4339228fd832a37d5ab7d3fc0d17dee4def7742d"
+        }
+      ]
+    },
+    {
+      "id": "door-mint",
+      "subject": "door",
+      "palette": "mint",
+      "title": "门缝看月亮的小猫",
+      "paletteName": "薄荷雨夜",
+      "alt": "薄荷雨夜配色：浅银灰小猫从半开的门后探出圆脸和小爪，看向一弯月亮与两颗小星星",
+      "generatedAt": "2026-09-08T22:25:49.625706+00:00",
+      "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+      "source": ".tmp/v20-drawings/door/mint.png",
+      "sourceSha256": "050fa79656ca52723fbfe0e8af1b8ec77bfff1fd99050756aaeeeb92421d71c5",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "native4k": false,
+      "aspectRatio": "4:3",
+      "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+      "prompt": "Use case: precise-object-edit, color-palette variant. This image is the approved finished kitten artwork and the exact edit target. Change ONLY its illustration color palette as described below. Preserve the precise kitten identity, face, fur markings, expression, pose, silhouette, anatomy, linework, object shapes, sizes, positions, entire composition, plain paper, existing white margins, canvas size and exact 4:3 aspect ratio. Do not add, remove, shrink, move or redraw objects. Keep the current clean cute cel-anime illustration with thin clear lines, flat fills and simple pale shadows. Do not introduce paper texture, grain, brown/yellow aged wash, oil paint, watercolor, blur, haze, text, border, UI, signature or watermark. The background and existing paper margins stay clean near-white, not tinted.\nPalette replacement: Mint rainy-night palette: change the main pink door/blanket/pencil surfaces to pale mint green, use cool clean white and a little desaturated blue for secondary accents, and replace warm sunset-yellow decorations with soft cool pale-blue/white accents. The kitten remains very pale silver-gray with pink inner ears/nose and exactly the same dark eyes.",
+      "promptFile": "assets/v20/drawings/prompts/door-mint.txt",
+      "promptSha256": "fb58672cab37a9628aafacbbc946c04a26e055cefaf6a62d465ebc43a380d371",
+      "references": [
+        {
+          "path": ".tmp/v20-drawings/door/strawberry.png",
+          "sha256": "51d1b5c38e1b2f8cebf2cc82ecdfc2ed556867f1d41b2834d1b8e6cba51bfcdf",
+          "role": "同主题草莓母图；只改配色"
+        },
+        {
+          "path": "assets/v18/drawing-door-moon-720.webp",
+          "sha256": "617e004e05b74cf333acf304b6fe493c1b753990b48e0af0cdf8e23013fa6607",
+          "role": "仅主题构图，不继承旧画风"
+        }
+      ],
+      "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+      "pillowVersion": "12.3.0",
+      "exports": [
+        {
+          "sizeClass": "480",
+          "file": "assets/v20/drawings/door-mint-480.webp",
+          "dimensions": [
+            480,
+            360
+          ],
+          "bytes": 9362,
+          "sha256": "fb442baaf9e13efe58a6e2d8cec4454c5bbecbd092367f70522fed956de157da"
+        },
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/drawings/door-mint-720.webp",
+          "dimensions": [
+            720,
+            540
+          ],
+          "bytes": 16924,
+          "sha256": "9c26f55f3fc35798e06af9e2619f15f2b1b4b5f8da527f1165920c90389bdf90"
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/drawings/door-mint-1440.webp",
+          "dimensions": [
+            1440,
+            1080
+          ],
+          "bytes": 47000,
+          "sha256": "a3b5f60642ae74afc969d0dbf16d8900f31da03a79a0861aabc1984c0400ba2f"
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/drawings/door-mint-4k.webp",
+          "dimensions": [
+            3840,
+            2880
+          ],
+          "bytes": 250158,
+          "sha256": "9a64e712d16c35aa10825205b0ab701980efba5e8d92063a458efa9405cf1cc8"
+        }
+      ]
+    },
+    {
+      "id": "door-moon",
+      "subject": "door",
+      "palette": "moon",
+      "title": "门缝看月亮的小猫",
+      "paletteName": "银蓝月光",
+      "alt": "银蓝月光配色：浅银灰小猫从半开的门后探出圆脸和小爪，看向一弯月亮与两颗小星星",
+      "generatedAt": "2026-09-08T22:25:51.378773+00:00",
+      "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+      "source": ".tmp/v20-drawings/door/moon.png",
+      "sourceSha256": "1414ee60dfeb3cd217802468e8d799631fd0289fc5b715666d17f02e5a4a30b8",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "native4k": false,
+      "aspectRatio": "4:3",
+      "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+      "prompt": "Use case: precise-object-edit, color-palette variant. This image is the approved finished kitten artwork and the exact edit target. Change ONLY its illustration color palette as described below. Preserve the precise kitten identity, face, fur markings, expression, pose, silhouette, anatomy, linework, object shapes, sizes, positions, entire composition, plain paper, existing white margins, canvas size and exact 4:3 aspect ratio. Do not add, remove, shrink, move or redraw objects. Keep the current clean cute cel-anime illustration with thin clear lines, flat fills and simple pale shadows. Do not introduce paper texture, grain, brown/yellow aged wash, oil paint, watercolor, blur, haze, text, border, UI, signature or watermark. The background and existing paper margins stay clean near-white, not tinted.\nPalette replacement: Silver-blue moonlight palette: change the main pink door/blanket/pencil surfaces to soft silver-blue and clean silvery white, with delicate pale moon-yellow accents on the moon or stars. The kitten remains very pale silver-gray with pink inner ears/nose and exactly the same dark eyes.",
+      "promptFile": "assets/v20/drawings/prompts/door-moon.txt",
+      "promptSha256": "3d52363204cddce809079db6707764cc6ac7a6e9eaa5ff201c30e30e721220c0",
+      "references": [
+        {
+          "path": ".tmp/v20-drawings/door/strawberry.png",
+          "sha256": "51d1b5c38e1b2f8cebf2cc82ecdfc2ed556867f1d41b2834d1b8e6cba51bfcdf",
+          "role": "同主题草莓母图；只改配色"
+        },
+        {
+          "path": "assets/v18/drawing-door-moon-720.webp",
+          "sha256": "617e004e05b74cf333acf304b6fe493c1b753990b48e0af0cdf8e23013fa6607",
+          "role": "仅主题构图，不继承旧画风"
+        }
+      ],
+      "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+      "pillowVersion": "12.3.0",
+      "exports": [
+        {
+          "sizeClass": "480",
+          "file": "assets/v20/drawings/door-moon-480.webp",
+          "dimensions": [
+            480,
+            360
+          ],
+          "bytes": 9018,
+          "sha256": "8965245792a0b88ac3644d4cde9576c757c2a20e029f44e21cc744237604a18c"
+        },
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/drawings/door-moon-720.webp",
+          "dimensions": [
+            720,
+            540
+          ],
+          "bytes": 16402,
+          "sha256": "79640e8e89f65d1f6e643c03e19009e3960e1fc68717adec96127b454840a823"
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/drawings/door-moon-1440.webp",
+          "dimensions": [
+            1440,
+            1080
+          ],
+          "bytes": 45256,
+          "sha256": "2cc0326fb9cd2eaee779fa0ae180f46482cabfc51d7c905336f1b7dde0f010cc"
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/drawings/door-moon-4k.webp",
+          "dimensions": [
+            3840,
+            2880
+          ],
+          "bytes": 250768,
+          "sha256": "1eb5df515177f4cb943019152d8266541a6e6663b641e5d3ee32ab47f81183b4"
+        }
+      ]
+    },
+    {
+      "id": "door-strawberry",
+      "subject": "door",
+      "palette": "strawberry",
+      "title": "门缝看月亮的小猫",
+      "paletteName": "草莓黄昏",
+      "alt": "草莓黄昏配色：浅银灰小猫从半开的门后探出圆脸和小爪，看向一弯月亮与两颗小星星",
+      "generatedAt": "2026-09-08T22:25:47.888909+00:00",
+      "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+      "source": ".tmp/v20-drawings/door/strawberry.png",
+      "sourceSha256": "51d1b5c38e1b2f8cebf2cc82ecdfc2ed556867f1d41b2834d1b8e6cba51bfcdf",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "native4k": false,
+      "aspectRatio": "4:3",
+      "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+      "prompt": "Use case: illustration-story with composition reference. Produce a new clean cute anime kitten artwork for a character website's drawing board. The provided old picture is THEME AND GENERAL COMPOSITION REFERENCE ONLY. Do not inherit its brown/yellow realism, paper texture, watercolor grain, detailed fur, oil painting or aged-paper look. Create a very adorable small silver-gray kitten with soft round cheeks, short stubby limbs, tiny pink inner ears and nose, simple large clear dark eyes, little rounded paws. Thin crisp clean light-gray linework, smooth flat cel colors, at most one simple pale shadow, no painterly rendering. The drawing should feel like a sweet simple anime illustration, not a realistic animal photograph.\nCanvas: exactly 4:3 landscape. Keep every illustrated object fully inside the central 80% of width and height, leaving a clean untextured near-white paper margin of at least 10% on every edge for mounting on a drawing board. No drawn frame, no paper-edge border, no UI, no text, no signature, no watermark. Do not fill the page with a background scene; only the necessary subject vignette and a small simple ground shadow.\nPalette: strawberry dusk — soft strawberry pink, clean milk-white and a little gentle warm yellow; kitten fur stays very pale silver-gray with pink ears. No brown-orange wash, no yellowed paper, no texture, no grain, no blur, no fog, no photorealism.\nTheme: A shy kitten peeks with half its face and one little paw from behind a slightly opened small pastel-pink bedroom door on the LEFT, looking at a small pale warm-yellow crescent moon and two tiny simple stars in the open white space on the RIGHT. Door, handle, kitten and moon all remain fully inside the clean margins. Keep the expressive curious peeking relationship from the reference, but make all shapes simplified, round and cute. No real room or bed behind the door.",
+      "promptFile": "assets/v20/drawings/prompts/door-strawberry.txt",
+      "promptSha256": "ce1d801d45cf246311f548e93311c491bed39e19d1a76c3058797703093b1a30",
+      "references": [
+        {
+          "path": "assets/v18/drawing-door-moon-720.webp",
+          "sha256": "617e004e05b74cf333acf304b6fe493c1b753990b48e0af0cdf8e23013fa6607",
+          "role": "仅主题构图，不继承旧画风"
+        }
+      ],
+      "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+      "pillowVersion": "12.3.0",
+      "exports": [
+        {
+          "sizeClass": "480",
+          "file": "assets/v20/drawings/door-strawberry-480.webp",
+          "dimensions": [
+            480,
+            360
+          ],
+          "bytes": 8700,
+          "sha256": "42679b5611434c26d852dcb449a3fe0ae5d8c56c920dd96b29f837d640907701"
+        },
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/drawings/door-strawberry-720.webp",
+          "dimensions": [
+            720,
+            540
+          ],
+          "bytes": 16206,
+          "sha256": "108228c8a62f4b935cefea381613325cb316446b68edc2ae41cc71132e4e6b02"
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/drawings/door-strawberry-1440.webp",
+          "dimensions": [
+            1440,
+            1080
+          ],
+          "bytes": 47152,
+          "sha256": "873cf685a513f2049735468f8a2ca2b46888c3266d919aec4d77a5720167aa45"
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/drawings/door-strawberry-4k.webp",
+          "dimensions": [
+            3840,
+            2880
+          ],
+          "bytes": 235482,
+          "sha256": "66e22fb083a8c90a20150af59481a8e719f9131afcfec21b855f18b08a788338"
+        }
+      ]
+    },
+    {
+      "id": "pencil-mint",
+      "subject": "pencil",
+      "palette": "mint",
+      "title": "抱着大铅笔的小猫",
+      "paletteName": "薄荷雨夜",
+      "alt": "薄荷雨夜配色：圆脸短四肢的浅银灰小猫坐着抱住一支大铅笔，身边散着三颗小星星",
+      "generatedAt": "2026-09-08T22:26:00.500855+00:00",
+      "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+      "source": ".tmp/v20-drawings/pencil/mint.png",
+      "sourceSha256": "08594a025ddd72eb48d5100cde84a9591db5bb62f20bf9a9200cbdf938cb38de",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "native4k": false,
+      "aspectRatio": "4:3",
+      "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+      "prompt": "Use case: precise-object-edit, color-palette variant. This image is the approved finished kitten artwork and the exact edit target. Change ONLY its illustration color palette as described below. Preserve the precise kitten identity, face, fur markings, expression, pose, silhouette, anatomy, linework, object shapes, sizes, positions, entire composition, plain paper, existing white margins, canvas size and exact 4:3 aspect ratio. Do not add, remove, shrink, move or redraw objects. Keep the current clean cute cel-anime illustration with thin clear lines, flat fills and simple pale shadows. Do not introduce paper texture, grain, brown/yellow aged wash, oil paint, watercolor, blur, haze, text, border, UI, signature or watermark. The background and existing paper margins stay clean near-white, not tinted.\nPalette replacement: Mint rainy-night palette: change the main pink door/blanket/pencil surfaces to pale mint green, use cool clean white and a little desaturated blue for secondary accents, and replace warm sunset-yellow decorations with soft cool pale-blue/white accents. The kitten remains very pale silver-gray with pink inner ears/nose and exactly the same dark eyes.",
+      "promptFile": "assets/v20/drawings/prompts/pencil-mint.txt",
+      "promptSha256": "fb58672cab37a9628aafacbbc946c04a26e055cefaf6a62d465ebc43a380d371",
+      "references": [
+        {
+          "path": ".tmp/v20-drawings/pencil/strawberry.png",
+          "sha256": "a5fe0a87827bd531cc7e46991aa0c26d8f2c8e34d06c63357f661cdc6a6849ec",
+          "role": "同主题草莓母图；只改配色"
+        },
+        {
+          "path": ".tmp/v20-drawings/pencil/strawberry-initial.png",
+          "sha256": "d2c4289217e7a764d986aea0b7a63ee718d5a4fbae02875e076d5f71aa3f9704",
+          "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+        },
+        {
+          "path": "assets/v18/drawing-pencil-stars-720.webp",
+          "sha256": "52634524856250a8905dbd721993b0c958d04c718aa42583f2aaf87280d7ff2f",
+          "role": "仅主题构图，不继承旧画风"
+        }
+      ],
+      "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+      "pillowVersion": "12.3.0",
+      "exports": [
+        {
+          "sizeClass": "480",
+          "file": "assets/v20/drawings/pencil-mint-480.webp",
+          "dimensions": [
+            480,
+            360
+          ],
+          "bytes": 10324,
+          "sha256": "2f7baf24979561f30e2a89366ac6467931527d914d84300580d9518d8e542f72"
+        },
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/drawings/pencil-mint-720.webp",
+          "dimensions": [
+            720,
+            540
+          ],
+          "bytes": 19000,
+          "sha256": "49f27e1eb4ae4d93d4e3a5f27074b66e6d1f564a8dcdc5c7af88994f93a5e906"
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/drawings/pencil-mint-1440.webp",
+          "dimensions": [
+            1440,
+            1080
+          ],
+          "bytes": 51496,
+          "sha256": "96b4db92e375905c60855f6cbc74641fba6e341b723bb391394e9e41edbc6b75"
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/drawings/pencil-mint-4k.webp",
+          "dimensions": [
+            3840,
+            2880
+          ],
+          "bytes": 263212,
+          "sha256": "85ca0cb2081986d2f4cbbe815851d5eb18e56847bdce0be2ff4c7bcc43d04029"
+        }
+      ]
+    },
+    {
+      "id": "pencil-moon",
+      "subject": "pencil",
+      "palette": "moon",
+      "title": "抱着大铅笔的小猫",
+      "paletteName": "银蓝月光",
+      "alt": "银蓝月光配色：圆脸短四肢的浅银灰小猫坐着抱住一支大铅笔，身边散着三颗小星星",
+      "generatedAt": "2026-09-08T22:26:02.338143+00:00",
+      "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+      "source": ".tmp/v20-drawings/pencil/moon.png",
+      "sourceSha256": "0d49c58fd35273340e357f63c89f20c3abef75bbabf66dee45cb79cd1a631397",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "native4k": false,
+      "aspectRatio": "4:3",
+      "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+      "prompt": "Use case: precise-object-edit, color-palette variant. This image is the approved finished kitten artwork and the exact edit target. Change ONLY its illustration color palette as described below. Preserve the precise kitten identity, face, fur markings, expression, pose, silhouette, anatomy, linework, object shapes, sizes, positions, entire composition, plain paper, existing white margins, canvas size and exact 4:3 aspect ratio. Do not add, remove, shrink, move or redraw objects. Keep the current clean cute cel-anime illustration with thin clear lines, flat fills and simple pale shadows. Do not introduce paper texture, grain, brown/yellow aged wash, oil paint, watercolor, blur, haze, text, border, UI, signature or watermark. The background and existing paper margins stay clean near-white, not tinted.\nPalette replacement: Silver-blue moonlight palette: change the main pink door/blanket/pencil surfaces to soft silver-blue and clean silvery white, with delicate pale moon-yellow accents on the moon or stars. The kitten remains very pale silver-gray with pink inner ears/nose and exactly the same dark eyes.",
+      "promptFile": "assets/v20/drawings/prompts/pencil-moon.txt",
+      "promptSha256": "3d52363204cddce809079db6707764cc6ac7a6e9eaa5ff201c30e30e721220c0",
+      "references": [
+        {
+          "path": ".tmp/v20-drawings/pencil/strawberry.png",
+          "sha256": "a5fe0a87827bd531cc7e46991aa0c26d8f2c8e34d06c63357f661cdc6a6849ec",
+          "role": "同主题草莓母图；只改配色"
+        },
+        {
+          "path": ".tmp/v20-drawings/pencil/strawberry-initial.png",
+          "sha256": "d2c4289217e7a764d986aea0b7a63ee718d5a4fbae02875e076d5f71aa3f9704",
+          "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+        },
+        {
+          "path": "assets/v18/drawing-pencil-stars-720.webp",
+          "sha256": "52634524856250a8905dbd721993b0c958d04c718aa42583f2aaf87280d7ff2f",
+          "role": "仅主题构图，不继承旧画风"
+        }
+      ],
+      "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+      "pillowVersion": "12.3.0",
+      "exports": [
+        {
+          "sizeClass": "480",
+          "file": "assets/v20/drawings/pencil-moon-480.webp",
+          "dimensions": [
+            480,
+            360
+          ],
+          "bytes": 10768,
+          "sha256": "d64b6108a04a5b840b7698e101a89e162d2d1407627c98bc39f509047e377d8a"
+        },
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/drawings/pencil-moon-720.webp",
+          "dimensions": [
+            720,
+            540
+          ],
+          "bytes": 19818,
+          "sha256": "fb30295d52f16fd072bfe36ae9ab089e0b3195c3a10dcc3acc173209977a7e0c"
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/drawings/pencil-moon-1440.webp",
+          "dimensions": [
+            1440,
+            1080
+          ],
+          "bytes": 53258,
+          "sha256": "f719a6b8d027c155992519f84161f6de4cdb6a8921611c63393850fd8fb34370"
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/drawings/pencil-moon-4k.webp",
+          "dimensions": [
+            3840,
+            2880
+          ],
+          "bytes": 264008,
+          "sha256": "e79ccf789e808961893f0ef6e1d1fa7d6f3852e93568b505447d909a91c5597e"
+        }
+      ]
+    },
+    {
+      "id": "pencil-strawberry",
+      "subject": "pencil",
+      "palette": "strawberry",
+      "title": "抱着大铅笔的小猫",
+      "paletteName": "草莓黄昏",
+      "alt": "草莓黄昏配色：圆脸短四肢的浅银灰小猫坐着抱住一支大铅笔，身边散着三颗小星星",
+      "generatedAt": "2026-09-08T22:25:58.714835+00:00",
+      "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+      "source": ".tmp/v20-drawings/pencil/strawberry.png",
+      "sourceSha256": "a5fe0a87827bd531cc7e46991aa0c26d8f2c8e34d06c63357f661cdc6a6849ec",
+      "sourceWidth": 1448,
+      "sourceHeight": 1086,
+      "nativeSize": [
+        1448,
+        1086
+      ],
+      "native4k": false,
+      "aspectRatio": "4:3",
+      "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+      "prompt": "Use case: precise-object-edit for production layout. Preserve this exact kitten illustration: same character face and fur markings, pose, limbs, props, clean cel linework, strawberry-pink/milk-white/warm-yellow palette and all relative positions. Do not redraw the scene concept or change expressions. The ONLY change is to shrink the entire illustrated group together to about 80% of its current size and center that intact group on the same 4:3 canvas. Every colored object, outline and shadow must sit entirely inside a generous central rectangle, leaving AT LEAST 12% completely empty clean white margin on all four edges. For the 1448×1086 canvas, keep all artwork safely within x=180..1268, y=140..946. No cut-off pencil tip, blanket edge or shadow. Preserve aspect ratio of every object and the group. No frame, border, UI, labels, signature, text, watermarks, new objects, paper texture, grain, watercolor, blur, gradients over the background or dirty colors. Pure near-white paper outside the compact centered artwork.",
+      "promptFile": "assets/v20/drawings/prompts/pencil-strawberry.txt",
+      "promptSha256": "5f9ff2b1bde083d1f5afd2af4edbe5008079aa01ea64e6c6b17929b780ee941c",
+      "references": [
+        {
+          "path": ".tmp/v20-drawings/pencil/strawberry-initial.png",
+          "sha256": "d2c4289217e7a764d986aea0b7a63ee718d5a4fbae02875e076d5f71aa3f9704",
+          "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+        },
+        {
+          "path": "assets/v18/drawing-pencil-stars-720.webp",
+          "sha256": "52634524856250a8905dbd721993b0c958d04c718aa42583f2aaf87280d7ff2f",
+          "role": "仅主题构图，不继承旧画风"
+        }
+      ],
+      "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+      "pillowVersion": "12.3.0",
+      "exports": [
+        {
+          "sizeClass": "480",
+          "file": "assets/v20/drawings/pencil-strawberry-480.webp",
+          "dimensions": [
+            480,
+            360
+          ],
+          "bytes": 10176,
+          "sha256": "c78c37ccd0b60f22e6751c9f3ff87af359ab8c7a8a8f3b4ed70c3767ab72b479"
+        },
+        {
+          "sizeClass": "720",
+          "file": "assets/v20/drawings/pencil-strawberry-720.webp",
+          "dimensions": [
+            720,
+            540
+          ],
+          "bytes": 18042,
+          "sha256": "1e8e9fcaa15a36c4ed982c6dae49387a64900c8f7a4ddc7fdf24217ea2252bbd"
+        },
+        {
+          "sizeClass": "1440",
+          "file": "assets/v20/drawings/pencil-strawberry-1440.webp",
+          "dimensions": [
+            1440,
+            1080
+          ],
+          "bytes": 51360,
+          "sha256": "f781b0d85a1833f1bcc37268ccec8df598482cf09567e3e84d9c1c0aed742a47"
+        },
+        {
+          "sizeClass": "4k",
+          "file": "assets/v20/drawings/pencil-strawberry-4k.webp",
+          "dimensions": [
+            3840,
+            2880
+          ],
+          "bytes": 244182,
+          "sha256": "12d139418f6d0c5d6c132f4a74522a2181a64d773bb839db8a49f187297b891e"
+        }
+      ]
+    }
+  ],
+  "mapping": {
+    "door": {
+      "mint": {
+        "id": "door-mint",
+        "subject": "door",
+        "palette": "mint",
+        "title": "门缝看月亮的小猫",
+        "alt": "薄荷雨夜配色：浅银灰小猫从半开的门后探出圆脸和小爪，看向一弯月亮与两颗小星星",
+        "image": "assets/v20/drawings/door-mint-4k.webp",
+        "medium": "assets/v20/drawings/door-mint-1440.webp",
+        "small": "assets/v20/drawings/door-mint-720.webp",
+        "thumb": "assets/v20/drawings/door-mint-480.webp",
+        "width": 3840,
+        "height": 2880,
+        "mediumWidth": 1440,
+        "smallWidth": 720
+      },
+      "moon": {
+        "id": "door-moon",
+        "subject": "door",
+        "palette": "moon",
+        "title": "门缝看月亮的小猫",
+        "alt": "银蓝月光配色：浅银灰小猫从半开的门后探出圆脸和小爪，看向一弯月亮与两颗小星星",
+        "image": "assets/v20/drawings/door-moon-4k.webp",
+        "medium": "assets/v20/drawings/door-moon-1440.webp",
+        "small": "assets/v20/drawings/door-moon-720.webp",
+        "thumb": "assets/v20/drawings/door-moon-480.webp",
+        "width": 3840,
+        "height": 2880,
+        "mediumWidth": 1440,
+        "smallWidth": 720
+      },
+      "strawberry": {
+        "id": "door-strawberry",
+        "subject": "door",
+        "palette": "strawberry",
+        "title": "门缝看月亮的小猫",
+        "alt": "草莓黄昏配色：浅银灰小猫从半开的门后探出圆脸和小爪，看向一弯月亮与两颗小星星",
+        "image": "assets/v20/drawings/door-strawberry-4k.webp",
+        "medium": "assets/v20/drawings/door-strawberry-1440.webp",
+        "small": "assets/v20/drawings/door-strawberry-720.webp",
+        "thumb": "assets/v20/drawings/door-strawberry-480.webp",
+        "width": 3840,
+        "height": 2880,
+        "mediumWidth": 1440,
+        "smallWidth": 720
+      }
+    },
+    "blanket": {
+      "mint": {
+        "id": "blanket-mint",
+        "subject": "blanket",
+        "palette": "mint",
+        "title": "被窝里画星星的小猫",
+        "alt": "薄荷雨夜配色：浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星",
+        "image": "assets/v20/drawings/blanket-mint-4k.webp",
+        "medium": "assets/v20/drawings/blanket-mint-1440.webp",
+        "small": "assets/v20/drawings/blanket-mint-720.webp",
+        "thumb": "assets/v20/drawings/blanket-mint-480.webp",
+        "width": 3840,
+        "height": 2880,
+        "mediumWidth": 1440,
+        "smallWidth": 720
+      },
+      "moon": {
+        "id": "blanket-moon",
+        "subject": "blanket",
+        "palette": "moon",
+        "title": "被窝里画星星的小猫",
+        "alt": "银蓝月光配色：浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星",
+        "image": "assets/v20/drawings/blanket-moon-4k.webp",
+        "medium": "assets/v20/drawings/blanket-moon-1440.webp",
+        "small": "assets/v20/drawings/blanket-moon-720.webp",
+        "thumb": "assets/v20/drawings/blanket-moon-480.webp",
+        "width": 3840,
+        "height": 2880,
+        "mediumWidth": 1440,
+        "smallWidth": 720
+      },
+      "strawberry": {
+        "id": "blanket-strawberry",
+        "subject": "blanket",
+        "palette": "strawberry",
+        "title": "被窝里画星星的小猫",
+        "alt": "草莓黄昏配色：浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星",
+        "image": "assets/v20/drawings/blanket-strawberry-4k.webp",
+        "medium": "assets/v20/drawings/blanket-strawberry-1440.webp",
+        "small": "assets/v20/drawings/blanket-strawberry-720.webp",
+        "thumb": "assets/v20/drawings/blanket-strawberry-480.webp",
+        "width": 3840,
+        "height": 2880,
+        "mediumWidth": 1440,
+        "smallWidth": 720
+      }
+    },
+    "pencil": {
+      "mint": {
+        "id": "pencil-mint",
+        "subject": "pencil",
+        "palette": "mint",
+        "title": "抱着大铅笔的小猫",
+        "alt": "薄荷雨夜配色：圆脸短四肢的浅银灰小猫坐着抱住一支大铅笔，身边散着三颗小星星",
+        "image": "assets/v20/drawings/pencil-mint-4k.webp",
+        "medium": "assets/v20/drawings/pencil-mint-1440.webp",
+        "small": "assets/v20/drawings/pencil-mint-720.webp",
+        "thumb": "assets/v20/drawings/pencil-mint-480.webp",
+        "width": 3840,
+        "height": 2880,
+        "mediumWidth": 1440,
+        "smallWidth": 720
+      },
+      "moon": {
+        "id": "pencil-moon",
+        "subject": "pencil",
+        "palette": "moon",
+        "title": "抱着大铅笔的小猫",
+        "alt": "银蓝月光配色：圆脸短四肢的浅银灰小猫坐着抱住一支大铅笔，身边散着三颗小星星",
+        "image": "assets/v20/drawings/pencil-moon-4k.webp",
+        "medium": "assets/v20/drawings/pencil-moon-1440.webp",
+        "small": "assets/v20/drawings/pencil-moon-720.webp",
+        "thumb": "assets/v20/drawings/pencil-moon-480.webp",
+        "width": 3840,
+        "height": 2880,
+        "mediumWidth": 1440,
+        "smallWidth": 720
+      },
+      "strawberry": {
+        "id": "pencil-strawberry",
+        "subject": "pencil",
+        "palette": "strawberry",
+        "title": "抱着大铅笔的小猫",
+        "alt": "草莓黄昏配色：圆脸短四肢的浅银灰小猫坐着抱住一支大铅笔，身边散着三颗小星星",
+        "image": "assets/v20/drawings/pencil-strawberry-4k.webp",
+        "medium": "assets/v20/drawings/pencil-strawberry-1440.webp",
+        "small": "assets/v20/drawings/pencil-strawberry-720.webp",
+        "thumb": "assets/v20/drawings/pencil-strawberry-480.webp",
+        "width": 3840,
+        "height": 2880,
+        "mediumWidth": 1440,
+        "smallWidth": 720
+      }
+    }
+  },
+  "notes": [
+    "实际配色由独立 ImageGen 编辑图承载，不能用 CSS 染纸冒充配色分支。",
+    "4K 档为 3840×2880 等比放大导出，不是原生 4K 生图。",
+    "旧三张小猫图、旧人物和十一张画廊均保留。"
+  ]
+}

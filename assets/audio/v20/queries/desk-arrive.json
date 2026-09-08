@@ -1,0 +1,53 @@
+{
+  "id": "desk-arrive",
+  "scene": "走到桌边",
+  "textJa": "ここなら、手元が見えるでしょ。静かにしててね。",
+  "textZh": "在这里就能看清我手边了吧。要安静一点哦。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 103,
+  "paddedPhonemeCount": 103,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/desk-arrive.wav",
+  "rawSha256": "051ab75cde65c3f55354b405021dd44959a8ad79943aa71e2993f77e792edaed",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -17.66,
+    "truePeakDb": -0.45,
+    "lra": 1.3,
+    "threshold": -28.21,
+    "targetOffset": -1.14,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.31,
+      "truePeakDb": -2.43,
+      "lra": 1.3,
+      "threshold": -28.86,
+      "targetOffset": -1.12
+    },
+    "decodedLoudnessCorrectionGainDb": 0.31
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-17.66:measured_LRA=1.3:measured_TP=-0.45:measured_thresh=-28.21:offset=-1.14:linear=true:print_format=summary,volume=0.3100dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

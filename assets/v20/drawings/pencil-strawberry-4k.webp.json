@@ -1,0 +1,50 @@
+{
+  "id": "pencil-strawberry",
+  "subject": "pencil",
+  "palette": "strawberry",
+  "title": "抱着大铅笔的小猫",
+  "paletteName": "草莓黄昏",
+  "alt": "草莓黄昏配色：圆脸短四肢的浅银灰小猫坐着抱住一支大铅笔，身边散着三颗小星星",
+  "generatedAt": "2026-09-08T22:25:58.714835+00:00",
+  "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+  "source": ".tmp/v20-drawings/pencil/strawberry.png",
+  "sourceSha256": "a5fe0a87827bd531cc7e46991aa0c26d8f2c8e34d06c63357f661cdc6a6849ec",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "native4k": false,
+  "aspectRatio": "4:3",
+  "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+  "prompt": "Use case: precise-object-edit for production layout. Preserve this exact kitten illustration: same character face and fur markings, pose, limbs, props, clean cel linework, strawberry-pink/milk-white/warm-yellow palette and all relative positions. Do not redraw the scene concept or change expressions. The ONLY change is to shrink the entire illustrated group together to about 80% of its current size and center that intact group on the same 4:3 canvas. Every colored object, outline and shadow must sit entirely inside a generous central rectangle, leaving AT LEAST 12% completely empty clean white margin on all four edges. For the 1448×1086 canvas, keep all artwork safely within x=180..1268, y=140..946. No cut-off pencil tip, blanket edge or shadow. Preserve aspect ratio of every object and the group. No frame, border, UI, labels, signature, text, watermarks, new objects, paper texture, grain, watercolor, blur, gradients over the background or dirty colors. Pure near-white paper outside the compact centered artwork.",
+  "promptFile": "assets/v20/drawings/prompts/pencil-strawberry.txt",
+  "promptSha256": "5f9ff2b1bde083d1f5afd2af4edbe5008079aa01ea64e6c6b17929b780ee941c",
+  "references": [
+    {
+      "path": ".tmp/v20-drawings/pencil/strawberry-initial.png",
+      "sha256": "d2c4289217e7a764d986aea0b7a63ee718d5a4fbae02875e076d5f71aa3f9704",
+      "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+    },
+    {
+      "path": "assets/v18/drawing-pencil-stars-720.webp",
+      "sha256": "52634524856250a8905dbd721993b0c958d04c718aa42583f2aaf87280d7ff2f",
+      "role": "仅主题构图，不继承旧画风"
+    }
+  ],
+  "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+  "pillowVersion": "12.3.0",
+  "exports": [
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/drawings/pencil-strawberry-4k.webp",
+      "dimensions": [
+        3840,
+        2880
+      ],
+      "bytes": 244182,
+      "sha256": "12d139418f6d0c5d6c132f4a74522a2181a64d773bb839db8a49f187297b891e"
+    }
+  ]
+}

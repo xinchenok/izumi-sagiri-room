@@ -1,0 +1,102 @@
+{
+  "id": "standing-neutral",
+  "outfitId": "home",
+  "generatedAt": "2026-09-08T19:58:50.057974+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/home/standing-neutral-green.png",
+  "sourceSha256": "dce720b69af8e7a3484cc399deb959330e469a01b27ae0e5120bc6307338cd37",
+  "nativeSize": [
+    1062,
+    1481
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".impeccable/build/sagiri-character-reference.png",
+      "sha256": "264205c8ccac98826d6a85507202f6e6b604cbe2e795725dabab7fa12819acd2"
+    }
+  ],
+  "prompt": "Use case: precise-object-edit\nAsset type: 2D anime character sprite on a perfectly solid chroma-green background.\nInput image: the approved original A character crop. It is the sole identity, clothing, pose, framing and lighting reference.\n\nChange only the background: replace the complete bedroom, furniture, chair, all UI and the flat pink UI-obscuring strips with one uniform, pure fluorescent green color #00FF00 (RGB 0,255,0). This is an intentionally opaque green-screen production image. Do not create transparency. Do not draw checkerboards, white areas, gray areas, scenery, shadows, gradients, texture or atmospheric color in the green background. All empty holes between hair strands, the arms and the fingers must be the same #00FF00 green. No green reflection or green spill on the character.\n\nPreserve the exact same drawing of the girl: her identical round face shape, subtle small shy smile, two bright blue eyes looking back toward the visitor, long silver-white hair, pink ribbon clips, pink cat-ear zip hoodie with pocket bows and fluffy zipper pom-poms, fully covering cream pajama trousers, original standing turned pose with one hand close to her chest and the other hand extending to the right in invitation. Keep her clean anime cel outlines, daylight, pale colors, natural hand anatomy and existing folds unchanged. Do not enlarge the eyes, change the head tilt, restyle the face, change clothing or add new props.\n\nComposition MUST follow the approved source pixel geometry: portrait 672:936 (28:39). Keep the character the same size and position as the source, including roughly 4% green empty headroom above the highest cat ear. The outer hair starts at about 4% of canvas width near the lower left, the extended fingertips reach about 96% of the width. Bottom edge cuts through the upper thighs as in the reference. Restore only the small strip of cream pajama fabric obscured by the old bottom navigation; do not extend the canvas, invent full legs/feet, zoom, crop tighter, move the character or add new margins.\n\nRequested output: PNG, preferably 1008x1404 or a larger same-aspect canvas; flat #00FF00 color everywhere outside the intact character. No text, watermark, grain, oil-paint texture, watercolor, blurry edges, mature or sexualized styling, extra fingers, extra limbs, extra objects. Preserve the character's cute all-ages mood precisely.\n",
+  "promptFile": "assets/v20/character/home/standing-neutral.prompt.txt",
+  "promptText": "Use case: precise-object-edit\nAsset type: 2D anime character sprite on a perfectly solid chroma-green background.\nInput image: the approved original A character crop. It is the sole identity, clothing, pose, framing and lighting reference.\n\nChange only the background: replace the complete bedroom, furniture, chair, all UI and the flat pink UI-obscuring strips with one uniform, pure fluorescent green color #00FF00 (RGB 0,255,0). This is an intentionally opaque green-screen production image. Do not create transparency. Do not draw checkerboards, white areas, gray areas, scenery, shadows, gradients, texture or atmospheric color in the green background. All empty holes between hair strands, the arms and the fingers must be the same #00FF00 green. No green reflection or green spill on the character.\n\nPreserve the exact same drawing of the girl: her identical round face shape, subtle small shy smile, two bright blue eyes looking back toward the visitor, long silver-white hair, pink ribbon clips, pink cat-ear zip hoodie with pocket bows and fluffy zipper pom-poms, fully covering cream pajama trousers, original standing turned pose with one hand close to her chest and the other hand extending to the right in invitation. Keep her clean anime cel outlines, daylight, pale colors, natural hand anatomy and existing folds unchanged. Do not enlarge the eyes, change the head tilt, restyle the face, change clothing or add new props.\n\nComposition MUST follow the approved source pixel geometry: portrait 672:936 (28:39). Keep the character the same size and position as the source, including roughly 4% green empty headroom above the highest cat ear. The outer hair starts at about 4% of canvas width near the lower left, the extended fingertips reach about 96% of the width. Bottom edge cuts through the upper thighs as in the reference. Restore only the small strip of cream pajama fabric obscured by the old bottom navigation; do not extend the canvas, invent full legs/feet, zoom, crop tighter, move the character or add new margins.\n\nRequested output: PNG, preferably 1008x1404 or a larger same-aspect canvas; flat #00FF00 color everywhere outside the intact character. No text, watermark, grain, oil-paint texture, watercolor, blurry edges, mature or sexualized styling, extra fingers, extra limbs, extra objects. Preserve the character's cute all-ages mood precisely.\n",
+  "promptSha256": "158304e5ddc2954391ee138eb85baa35f85630ff16acc7246ac6736e9fe9043d",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/home/standing-neutral-alpha.png",
+    "sha256": "221b331689105666577dc1807bfd63c4a10daaa73af242b5c9d12e96cd115510",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1062,
+      1481
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    57,
+    61,
+    1013,
+    1481
+  ],
+  "actorBBoxNormalized": [
+    0.053672,
+    0.041188,
+    0.953861,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "720",
+      "file": "assets/v20/character/home/standing-neutral-720.webp",
+      "dimensions": [
+        720,
+        1004
+      ],
+      "bytes": 122326,
+      "sha256": "30dee0046cc223dbd0ae656489b4be7d6703887dc2bc7f62115b53dd651ba20e",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/character/home/standing-neutral-1440.webp",
+      "dimensions": [
+        1440,
+        2008
+      ],
+      "bytes": 294634,
+      "sha256": "1fa80055a11f4e352ee34576e5f78777dc7f4db88faade643dd1114b0511a3b3",
+      "hasAlpha": true
+    },
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/home/standing-neutral-4k.webp",
+      "dimensions": [
+        2754,
+        3840
+      ],
+      "bytes": 682642,
+      "sha256": "7ecaf7afefee33deffabe7c9a55c0bf5fc5e08a6b6ed5b84e86e8a249aecf2c5",
+      "hasAlpha": true
+    }
+  ],
+  "plate": {
+    "file": "assets/plates/sagiri-character.png",
+    "dimensions": [
+      1062,
+      1481
+    ],
+    "sha256": "cff2e8e13a4ad9b98279ece34fa978100ae8287b9549130a9c819d242bd8495d",
+    "hasAlpha": true
+  }
+}

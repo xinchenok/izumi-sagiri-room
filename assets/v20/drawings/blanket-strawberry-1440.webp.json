@@ -1,0 +1,50 @@
+{
+  "id": "blanket-strawberry",
+  "subject": "blanket",
+  "palette": "strawberry",
+  "title": "被窝里画星星的小猫",
+  "paletteName": "草莓黄昏",
+  "alt": "草莓黄昏配色：浅银灰小猫藏在小被窝帐篷里，用短铅笔在白色画纸上认真画下一颗星星",
+  "generatedAt": "2026-09-08T22:25:53.140214+00:00",
+  "generation": "内置 ImageGen；先制作草莓主题母图，再以同主题母图编辑配色",
+  "source": ".tmp/v20-drawings/blanket/strawberry.png",
+  "sourceSha256": "ece03e62c71d2598c5ed754bf8e537b32b99d4f2a0fb9417c96429d8653d8bdc",
+  "sourceWidth": 1448,
+  "sourceHeight": 1086,
+  "nativeSize": [
+    1448,
+    1086
+  ],
+  "native4k": false,
+  "aspectRatio": "4:3",
+  "paperMarginIntent": "四边至少 10% 清白留白；留白由 ImageGen 构图完成，不使用程序补边",
+  "prompt": "Use case: precise-object-edit for production layout. Preserve this exact kitten illustration: same character face and fur markings, pose, limbs, props, clean cel linework, strawberry-pink/milk-white/warm-yellow palette and all relative positions. Do not redraw the scene concept or change expressions. The ONLY change is to shrink the entire illustrated group together to about 80% of its current size and center that intact group on the same 4:3 canvas. Every colored object, outline and shadow must sit entirely inside a generous central rectangle, leaving AT LEAST 12% completely empty clean white margin on all four edges. For the 1448×1086 canvas, keep all artwork safely within x=180..1268, y=140..946. No cut-off pencil tip, blanket edge or shadow. Preserve aspect ratio of every object and the group. No frame, border, UI, labels, signature, text, watermarks, new objects, paper texture, grain, watercolor, blur, gradients over the background or dirty colors. Pure near-white paper outside the compact centered artwork.",
+  "promptFile": "assets/v20/drawings/prompts/blanket-strawberry.txt",
+  "promptSha256": "5f9ff2b1bde083d1f5afd2af4edbe5008079aa01ea64e6c6b17929b780ee941c",
+  "references": [
+    {
+      "path": ".tmp/v20-drawings/blanket/strawberry-initial.png",
+      "sha256": "44f6e8af4a8def72c24920500a0c114f8edf71f31b76f337c1906afd3c6fadd0",
+      "role": "已生成草莓母图；仅调整整体构图大小与白边，形状、身份和色彩保持"
+    },
+    {
+      "path": "assets/v18/drawing-blanket-star-720.webp",
+      "sha256": "f2c43cc87887864b981163cf6101338e0b102e47d42ddc685be1a0c16490e90c",
+      "role": "仅主题构图，不继承旧画风"
+    }
+  ],
+  "resizeMethod": "仅 Pillow Lanczos 等比缩放和 WebP 编码；没有裁切、锐化、调色、纹理或降噪处理",
+  "pillowVersion": "12.3.0",
+  "exports": [
+    {
+      "sizeClass": "1440",
+      "file": "assets/v20/drawings/blanket-strawberry-1440.webp",
+      "dimensions": [
+        1440,
+        1080
+      ],
+      "bytes": 83888,
+      "sha256": "1e10f1055a619845a4c29aa30b0539228535e727dad72df6796c0994f993f70d"
+    }
+  ]
+}

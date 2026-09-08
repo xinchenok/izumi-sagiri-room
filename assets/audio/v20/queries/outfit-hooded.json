@@ -1,0 +1,53 @@
+{
+  "id": "outfit-hooded",
+  "scene": "薄荷灰猫耳连帽毯与长裤",
+  "textJa": "この毛布、猫の耳がついてるの。すっぽり包まると、あったかいよ。",
+  "textZh": "这条毯子带着猫耳朵。把自己整个裹起来，就暖暖的。",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 148,
+  "paddedPhonemeCount": 148,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/outfit-hooded.wav",
+  "rawSha256": "72fb5264e8a01a43302e2a180d28408c07ab8925c6cf4abd9d25412c1622859f",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -18.52,
+    "truePeakDb": 0.04,
+    "lra": 2.9,
+    "threshold": -29.09,
+    "targetOffset": 0.22,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.58,
+      "truePeakDb": -2.44,
+      "lra": 2.6,
+      "threshold": -29.15,
+      "targetOffset": -0.09
+    },
+    "decodedLoudnessCorrectionGainDb": 0.58
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-18.52:measured_LRA=2.9:measured_TP=0.04:measured_thresh=-29.09:offset=0.22:linear=true:print_format=summary,volume=0.5800dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}

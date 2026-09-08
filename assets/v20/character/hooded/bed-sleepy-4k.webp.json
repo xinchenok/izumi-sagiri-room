@@ -1,0 +1,75 @@
+{
+  "id": "bed-sleepy",
+  "outfitId": "hooded",
+  "generatedAt": "2026-09-08T20:07:12.591528+00:00",
+  "generation": "内置 ImageGen：人物造型与背景颜色；没有程序重绘人物",
+  "source": ".tmp/v20-character/hooded/bed-sleepy-green.png",
+  "sourceSha256": "8182824994c3709779bc1638f35bf2d81cfb4db5db71a8cce2d12c233d86b534",
+  "nativeSize": [
+    1061,
+    1483
+  ],
+  "nativeMode": "RGB",
+  "references": [
+    {
+      "path": ".tmp/v20-character/home/bed-sleepy-green.png",
+      "sha256": "07e2826a6f20bc3aa4dd51b193efc59526da51bf6efb6e6205770b0058d19382"
+    },
+    {
+      "path": ".tmp/v20-character/hooded/bed-hug-green.png",
+      "sha256": "ebcb8783c5341b6b62a5cf7a5cbbcf233d82da0705b39854a574910cc885aedb"
+    }
+  ],
+  "prompt": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, hooded clothes, bed-sleepy state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact hooded-blanket outfit in Image 2: roomy low-saturation pale mint-gray wearable blanket with full sleeves, hood up with cat ears, cream scalloped fleece trim and pink bow/pompom closure, charcoal-gray loose full-length trousers. Pale gray-mint fabric, never saturated green or cyan. No zipper, no fitted jacket hem; match the spacious blanket silhouette and trim of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep the exact curled-up seated pose hugging the same smiling pink cat plush, both full-trousered knees together, the same head tilt and peacefully closed sleepy eyes from Image 1. Do not reopen eyes, change plush or hand position, or add bed/furniture.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+  "promptFile": "assets/v20/character/hooded/bed-sleepy.prompt.txt",
+  "promptText": "Use case: identity-preserve\nAsset type: V20 layered 2D anime character animation sprite, hooded clothes, bed-sleepy state.\nInput images: Image 1 is the exact EDIT TARGET and mandatory pose/expression/identity/canvas reference. Image 2 is the already accepted same-outfit sprite and is ONLY the garment design reference, not a face or expression replacement.\nPrimary request: Change ONLY the clothes to the exact hooded-blanket outfit in Image 2: roomy low-saturation pale mint-gray wearable blanket with full sleeves, hood up with cat ears, cream scalloped fleece trim and pink bow/pompom closure, charcoal-gray loose full-length trousers. Pale gray-mint fabric, never saturated green or cyan. No zipper, no fitted jacket hem; match the spacious blanket silhouette and trim of Image 2, adapting only to the unchanged pose of Image 1.\nTarget action to keep unchanged: Keep the exact curled-up seated pose hugging the same smiling pink cat plush, both full-trousered knees together, the same head tilt and peacefully closed sleepy eyes from Image 1. Do not reopen eyes, change plush or hand position, or add bed/furniture.\nInvariants: leave the silver-white long hair, bangs and strands, pink hair clips, round youthful face, exact eyes/eyelids and blush/mouth shape, head position, light-Q proportions, body pose, hand and prop coordinates, camera and canvas framing exactly as in Image 1. Only garment features required by the clothing swap may change. Match Image 2's specific collar/hood, cuffs, trim, button/bow design, trouser pattern and color; do not import Image 2's eye expression or pose.\nBackdrop: completely flat vivid chroma green #00FF00, no scenery, no cast shadow or ground. Preserve the subject's crisp separable silhouette. No green spill on skin, silver hair, garments or objects; clothing is opaque and low-saturation, never backdrop green.\nStyle: match Image 1's clean bright cel-anime sprite, delicate crisp linework, simple two or three shadow tones and smooth flat color fields. Zero painterly texture, watercolor, muddy shading, fuzz/grain, oily highlights or blurry glow.\nConstraints: one all-ages fully and modestly clothed youthful character, no mature/sensual body, no text, watermark, extra objects, extra limbs or fingers. Do not change the target pose, prop, expression, crop, scale or aspect ratio. No character sheet, no duplicated panels.\n",
+  "promptSha256": "22d7bab1ae6968ee614c5caefcb480c70f1fbe91068e3e18a50823be5f0fef0d",
+  "alphaPreparation": {
+    "method": "FFmpeg 标准专用背景色键封装",
+    "filter": "chromakey=0x00FF00:0.22:0.10,format=rgba,geq=r='r(X,Y)':g='if(lt(alpha(X,Y),250),min(g(X,Y),(r(X,Y)+b(X,Y))/2),g(X,Y))':b='b(X,Y)':a='alpha(X,Y)',format=rgba",
+    "source": ".tmp/v20-character/hooded/bed-sleepy-alpha.png",
+    "sha256": "b3fdf34982df4f98c2a8c138f045d969971840b21b4353003902a384df389d30",
+    "mode": "RGBA",
+    "range": [
+      0,
+      255
+    ],
+    "nativeSize": [
+      1061,
+      1483
+    ],
+    "despillScope": "只对 alpha < 250 的边缘封装像素限制绿色；不透明人物内部 RGB 与标准色键结果逐像素一致",
+    "cornerAlpha": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "actorBBox": [
+    48,
+    44,
+    1011,
+    1483
+  ],
+  "actorBBoxNormalized": [
+    0.04524,
+    0.02967,
+    0.952875,
+    1.0
+  ],
+  "resize": "Lanczos 等比导出；4K 为最长边 3840 的放大导出，不是原生 4K 生成",
+  "exports": [
+    {
+      "sizeClass": "4k",
+      "file": "assets/v20/character/hooded/bed-sleepy-4k.webp",
+      "dimensions": [
+        2747,
+        3840
+      ],
+      "bytes": 665298,
+      "sha256": "1adaf56a2b73ba36287bb650140a26a0132b8684b9b2a02ecc89ac046826b479",
+      "hasAlpha": true
+    }
+  ]
+}

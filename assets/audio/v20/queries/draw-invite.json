@@ -1,0 +1,53 @@
+{
+  "id": "draw-invite",
+  "scene": "邀请一起画",
+  "textJa": "この絵、一緒に考えてみる？　少しだけなら、頼ってもいいかな。",
+  "textZh": "这张画，要一起想想吗？稍微依靠你一下……可以吗？",
+  "parameters": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "appliedScales": {
+    "noise_scale": 0.64,
+    "length_scale": 1.5,
+    "noise_w": 0.76
+  },
+  "language": "ja-en-zh-es-fr-pt",
+  "languageId": 0,
+  "speakerId": 0,
+  "speakerEmbedding": {
+    "kind": "zero-vector",
+    "shape": [
+      1,
+      256
+    ],
+    "mask": 0,
+    "referenceAudio": null
+  },
+  "phonemeCount": 130,
+  "paddedPhonemeCount": 130,
+  "paddingApplied": false,
+  "frontPadding": 0,
+  "backPadding": 0,
+  "rawFile": ".tmp/v20-voice/20260908-193100/raw/draw-invite.wav",
+  "rawSha256": "5e07f06d03b8b6d6bb7ff4d2cdfcdfbce74cd404681b6838997a1e9bd2697c09",
+  "rawSampleRateHz": 22050,
+  "loudnormFirstPass": {
+    "integratedLufs": -16.77,
+    "truePeakDb": 0.07,
+    "lra": 1.0,
+    "threshold": -27.3,
+    "targetOffset": -0.08,
+    "encodedMeasurementBeforeGain": {
+      "integratedLufs": -18.58,
+      "truePeakDb": -2.44,
+      "lra": 1.0,
+      "threshold": -29.11,
+      "targetOffset": 0.02
+    },
+    "decodedLoudnessCorrectionGainDb": 0.58
+  },
+  "loudnormSecondPassFilter": "highpass=f=70,lowpass=f=10500,loudnorm=I=-18:TP=-2.0:LRA=7:measured_I=-16.77:measured_LRA=1.0:measured_TP=0.07:measured_thresh=-27.3:offset=-0.08:linear=true:print_format=summary,volume=0.5800dB",
+  "rawReusedFrom": ".tmp\\v20-voice\\20260908-192919"
+}
