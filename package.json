@@ -1,6 +1,6 @@
 {
   "name": "izumi-sagiri-room",
-  "version": "19.0.1",
+  "version": "20.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,9 @@
     "images:v19": "python tools/build-v19-images.py --batch-root .tmp/v19-images-clean",
     "images:v19-manifest": "python tools/build-v19-manifest.py",
     "audio:v19-foley": "node tools/build-cinematic-foley-v19.mjs",
-    "verify": "node tools/verify-site.mjs",
+    "verify": "node tools/verify-site.mjs && node tools/verify-v20-assets.mjs",
+    "verify:v20": "node tools/verify-v20-assets.mjs --json",
+    "audio:v20": "python tools/build-v20-voice.py",
     "test:e2e": "playwright test",
     "test": "npm run verify && npm run test:e2e"
   },

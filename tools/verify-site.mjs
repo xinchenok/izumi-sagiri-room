@@ -81,11 +81,12 @@ function runCheck(label, check) {
 }
 
 function checkJavaScriptSyntax() {
-  const result = spawnSync(process.execPath, ["--check", resolve(ROOT, "script.js")], {
-    encoding: "utf8"
-  });
-  if (result.status === 0) return [];
-  return [(result.stderr || result.stdout || "Node 语法检查失败").trim()];
+  const issues = [];
+  for (const name of ["script.js", "room-core.js", "room-inspector.js", "room.js"]) {
+    const result = spawnSync(process.execPath, ["--check", resolve(ROOT, name)], { encoding: "utf8" });
+    if (result.status !== 0) issues.push(`${name}：${(result.stderr || result.stdout || "Node 语法检查失败").trim()}`);
+  }
+  return issues;
 }
 
 function checkHtmlStructure() {
@@ -125,8 +126,8 @@ function normalizeLocalReference(reference) {
 
 function checkLocalResources() {
   const html = readUtf8(resolve(ROOT, "index.html"));
-  const css = readUtf8(resolve(ROOT, "styles.css"));
-  const script = readUtf8(resolve(ROOT, "script.js"));
+  const css = ["styles.css", "inspector.css"].map(name => readUtf8(resolve(ROOT, name))).join("\n");
+  const script = ["script.js", "room-core.js", "room-inspector.js", "room.js"].map(name => readUtf8(resolve(ROOT, name))).join("\n");
   const references = new Set();
 
   for (const match of html.matchAll(/\s(?:href|poster|src)\s*=\s*(["'])(.*?)\1/giu)) {
@@ -145,7 +146,7 @@ function checkLocalResources() {
   }
   for (const match of script.matchAll(/(["'`])(assets\/[^"'`\s?#)]+)(?:\?[^"'`\s)]*)?\1/giu)) {
     const localReference = normalizeLocalReference(match[2]);
-    if (localReference && !localReference.includes("${")) references.add(localReference);
+    if (localReference && !localReference.includes("${") && extname(localReference) && !/[\\/]$/u.test(localReference)) references.add(localReference);
   }
 
   const issues = [];
@@ -395,7 +396,7 @@ runCheck("HTML 的 ID 与锚点", checkHtmlStructure);
 runCheck("页面本地资源", checkLocalResources);
 runCheck("JSON 解析", () => checkJson(files));
 runCheck("V18 图片矩阵与旧图归档", checkV18Images);
-runCheck("V19 连续镜头、语音、拟音与归档", checkV19Release);
+runCheck("V19 保留素材、语音、拟音与归档", checkV19Release);
 runCheck("UTF-8、BOM 与乱码特征", () => checkTextEncoding(files));
 
 if (failures.length > 0) {
