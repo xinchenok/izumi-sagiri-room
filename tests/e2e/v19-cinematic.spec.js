@@ -112,6 +112,32 @@ test("下一动作帧下载缓慢时，当前帧仍立即显示", async ({ page 
   }
 });
 
+test("离开再返回未加载完的配对，邻帧完成后仍能接上", async ({ page }) => {
+  let releaseNeighbor;
+  let releaseOther;
+  const neighbor = new Promise((resolve) => { releaseNeighbor = resolve; });
+  const other = new Promise((resolve) => { releaseOther = resolve; });
+  await page.route("**/assets/v19/room-stops-pen-1440.webp", async (route) => { await neighbor; await route.continue(); });
+  await page.route("**/assets/v19/secrets-caught-1440.webp", async (route) => { await other; await route.continue(); });
+  try {
+    await openClean(page);
+    await scrollScene(page, "room", 0.1);
+    await expect(page.locator("#cinematicLayerA")).toHaveAttribute("src", /room-drawing-1440\.webp$/u);
+    await scrollScene(page, "secrets", 0.1);
+    await expect(page.locator("#cinematicStage")).toHaveAttribute("data-scene", "secrets");
+    await scrollScene(page, "room", 0.25);
+    await expect(page.locator("#cinematicStage")).toHaveAttribute("data-scene", "room");
+    releaseNeighbor();
+    await expect(page.locator("#cinematicLayerB")).toHaveAttribute("src", /room-stops-pen-1440\.webp$/u);
+    await expect.poll(() => page.locator("#cinematicLayerB").evaluate((image) => Number(image.style.opacity))).toBeGreaterThan(0.3);
+    releaseOther();
+    await expect(page.locator("#cinematicLayerA")).toHaveAttribute("src", /room-drawing-1440\.webp$/u);
+  } finally {
+    releaseNeighbor();
+    releaseOther();
+  }
+});
+
 test("观察模式支持热点、两倍缩放、边界、复位、Esc 与焦点恢复", async ({ page }) => {
   await openClean(page);
   await scrollScene(page, "room", 0.6);

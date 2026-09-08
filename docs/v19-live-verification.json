@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "version": "19.0.1",
+  "cacheMarker": "20260909-1",
+  "verifiedAt": "2026-09-08T17:43:56.838Z",
+  "canonicalUrl": "https://xinchenok.github.io/izumi-sagiri-room/",
+  "runtimeCommit": "fa7ae7c0f08144035511bd14e21f293594655098",
+  "featurePullRequest": "https://github.com/xinchenok/izumi-sagiri-room/pull/21",
+  "loadingFixPullRequest": "https://github.com/xinchenok/izumi-sagiri-room/pull/22",
+  "pagesDeployment": "https://github.com/xinchenok/izumi-sagiri-room/actions/runs/34258623448",
+  "localAndCiRegressionCount": 28,
+  "hashVerification": {
+    "algorithm": "SHA-256",
+    "totalFiles": 152,
+    "images": 96,
+    "voices": 28,
+    "foley": 21,
+    "runtimeTextAndManifests": 7,
+    "initialAssetCommit": "35994e7180ed327f66549a4a28cbbdd95e57b960",
+    "assetFilesUnchangedInLoadingFix": true,
+    "allMatched": true,
+    "note": "首轮四个图片连接中断后单独重取，全部哈希一致。19.0.1 重新核对七个运行文本/清单，其余145个二进制素材未改变。"
+  },
+  "browserRuns": [
+    {
+      "viewport": [1440, 900],
+      "deviceScaleFactor": 1,
+      "engine": "Chromium",
+      "input": "原生鼠标滚轮逐幕滚动，等待实际图片完成加载",
+      "sevenScenesVisible": true,
+      "scrollRequestsAudio": false,
+      "observationSource": "assets/v19/master/goodnight-wave-4k.webp",
+      "voiceActuallyPlayed": "assets/audio/v19/voice/goodnight-book.mp3",
+      "visibleJapaneseAndChinese": true,
+      "scrollAndFocusRestored": true,
+      "consoleErrors": 0,
+      "httpErrors": 0,
+      "horizontalOverflow": false
+    },
+    {
+      "viewport": [390, 844],
+      "deviceScaleFactor": 3,
+      "engine": "Chromium 手机尺寸模拟",
+      "input": "原生滚轮驱动页面滚动，触摸能力启用；不是实机触控测试",
+      "sevenScenesVisible": true,
+      "scrollRequestsAudio": false,
+      "requests4K": false,
+      "observationSource": "assets/v19/goodnight-wave-1440.webp",
+      "voiceActuallyPlayed": "assets/audio/v19/voice/goodnight-book.mp3",
+      "visibleJapaneseAndChinese": true,
+      "scrollAndFocusRestored": true,
+      "consoleErrors": 0,
+      "httpErrors": 0,
+      "horizontalOverflow": false
+    }
+  ],
+  "independentFinishReview": "PASS",
+  "impeccableDetector": {
+    "runs": 1,
+    "status": "DEGRADED",
+    "reason": "本机缺少 HTML/CSS 解析依赖，仅正则扫描；不能视为完整检测或计算对比度通过"
+  },
+  "remainingScope": [
+    "真实手机、屏幕阅读器、Firefox 和 Safari 的实机复测",
+    "旧图、源 PNG、中间音频和复核现场保留，未执行清场"
+  ]
+}
