@@ -3543,6 +3543,7 @@ class CinematicInspector {
     document.documentElement.classList.remove("cinematic-inspecting");
     window.scrollTo({ top: this.scrollY, behavior: "instant" });
     this.returnFocus?.focus({ preventScroll: true });
+    if (activeVoicePlayer && !activeVoicePlayer.paused) showFeedback(true);
     cinematicDirector?.requestUpdate();
   }
 }

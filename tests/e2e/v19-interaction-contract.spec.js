@@ -230,6 +230,10 @@ test("角色静音与物件静音互不连带，重新开启后各自恢复点�
   await expect.poll(() => playedFiles(page)).toEqual([
     `${FOLEY_ROOT}${foley}.mp3`, `${VOICE_ROOT}${voice}.mp3`, `${FOLEY_ROOT}${foley}.mp3`, `${VOICE_ROOT}${voice}.mp3`
   ]);
+  await closeInspection(page);
+  await expect(page.locator("#feedbackDock")).toHaveClass(/\bis-peeking\b/u);
+  await expect(page.locator("#subtitleJapanese")).toBeVisible();
+  await expect(page.locator("#subtitleJapanese")).toHaveText(japanese);
 });
 
 for (const failure of ["浏览器拒播", "音频文件缺失"]) {
