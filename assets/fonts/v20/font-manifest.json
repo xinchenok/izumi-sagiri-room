@@ -1,38 +1,44 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-08T23:12:10.701943+00:00",
+  "generatedAt": "2026-09-08T23:44:35.460688+00:00",
   "fontToolsVersion": "4.62.0",
   "purpose": "V20 本地字体；正文 Noto SC、日文 Noto JP、短标题文楷、房间 h1 龙藏体五字门签；非官方衍生子集名称",
   "sourcesPinned": true,
   "inputFiles": [
     {
       "path": "index.html",
-      "sha256": "94f1e9c4e60f9da5a71af7ed77cbf79aba7c95c7f5a429d242482d6d8b5a9bc7",
-      "bytes": 32729
+      "sha256": "15c7255183eda5951bb2ee6befc8d4a95aab1d84f8ddc44fdc06bfc60e3f7956",
+      "canonicalSha256": "1f87806116f903dcd05c5aa22655497388e04556bbf8d616c31378daa7744f29",
+      "bytes": 33616
     },
     {
       "path": "script.js",
-      "sha256": "00b09c5e3515210e82894d2434c0abac14ad203b10d29a3380d18c9f1fe37574",
-      "bytes": 101469
+      "sha256": "a51e44356903dbf1002e653f95b469b4dc6b3fdf25a00cda0bd0b3408ad54fc5",
+      "canonicalSha256": "00b09c5e3515210e82894d2434c0abac14ad203b10d29a3380d18c9f1fe37574",
+      "bytes": 104129
     },
     {
       "path": "room-core.js",
-      "sha256": "fb7ec1a4733eb3009f5d6305274a574e05adee033fe6fcb47e7e7c9be51302fe",
-      "bytes": 20040
+      "sha256": "3377c768c4d31484e1564d08f5d8bee0e2655e839c1af88936a8dfba5b108ab7",
+      "canonicalSha256": "fb7ec1a4733eb3009f5d6305274a574e05adee033fe6fcb47e7e7c9be51302fe",
+      "bytes": 20674
     },
     {
       "path": "room.js",
-      "sha256": "7d68798cd34fe8770def48b8f5b866a833f6cc91eb50519eaa7789cb74a6c1e2",
-      "bytes": 73790
+      "sha256": "b2515570cc6b631095e55db4fa63231c48f53d26959e154d422496d84f19d9b0",
+      "canonicalSha256": "7d68798cd34fe8770def48b8f5b866a833f6cc91eb50519eaa7789cb74a6c1e2",
+      "bytes": 75954
     },
     {
       "path": "room-inspector.js",
-      "sha256": "9d228776a7a9c095d23170b0701839180f56f518397b9b469ea454acc1a5e861",
-      "bytes": 19298
+      "sha256": "56fd8959d960c13ed098e5321789d98bb0f9093a6bb28aeed819f58a53936c20",
+      "canonicalSha256": "9d228776a7a9c095d23170b0701839180f56f518397b9b469ea454acc1a5e861",
+      "bytes": 19694
     },
     {
       "path": "assets/audio/v20/voice-manifest.json",
       "sha256": "a224a219dec8ebfe756d978f17e9ddeaa396f026f7ad022322420a54913346e5",
+      "canonicalSha256": "9188992f2bad9e2f91dbfaeea3469cb027a1e0bb48309410e70c85d440d32469",
       "bytes": 30561
     }
   ],

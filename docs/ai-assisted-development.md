@@ -5,8 +5,8 @@
 - 访问地址：<https://xinchenok.github.io/izumi-sagiri-room/>。
 - 当前实现：V20「走进纱雾的日常」，分支 `codex/v20-room-redesign`。
 - 目标版本／缓存标识：`20.0.0`／`20260909-v20-1`。
-- 当前发布状态：本地 57 项测试全部通过，含真实音频与 `file://`；独立审查四项视觉修复 F2–F5 已解决，F1 工具逐像素流程仍未闭环。detector 只执行一次，有 warnings 且捕获截断，未伪报全绿。CI 与正式发布仍待闭环。
-- 最终发布与知识收尾凭证：`docs/v20-release-receipt.json`，由发布负责人根据真实结果填写，不预造提交或时间。
+- 当前发布状态：live verified。PR #24 已合并，CI 与 Pages 成功；正式站 221 个文件指纹、五地点换装、画册、共同创作、晚安和刷新恢复已验证。本地 57 项测试通过，含真实音频与 `file://`。独立审查 F2–F5 已解决，F1 工具流程仍未闭环；detector 有 warnings 且捕获截断，未伪报全绿。
+- 最终发布与知识收尾凭证：[v20-release-receipt.json](v20-release-receipt.json)，记录真实运行提交、验证时间、部署任务与资源指纹。
 
 ## 当前应该先读什么
 
@@ -47,7 +47,7 @@ V20 继续使用 Piper Plus「つくよみちゃん」公开预训练模型做�
 
 初始整帧图像相似度达到 0.88 以上，但 Impeccable 的逐控件像素 gate 未接受中文字体和对比度调整，强制跳过请求也被拒绝。该 gate **没有通过**，差异报告仍保留在 `.impeccable/review/diff/hero`。实现继续以已批准样稿为构图参考，真实可读性、无障碍和独立完成审查仍须分别验证，不写成“全部工具已通过”。
 
-最终 detector 已按约定唯一一次执行，回执在本地 `.impeccable/review/v20-detector.json`：`runCount: 1`、`exitCode: 0`、`truncated: true`。输出包含 warnings，不能把退出码或截断回执当作“无问题通过”；不再运行第二次检测器。旧 DESIGN 系统尚未同步引起的提示等待独立 documenter 对齐，标题低对比度警告等待 review 修正与复查。真实本地音频和 `file://` 已纳入 57 项通过结果，但最终独立审查、远端 CI、合并、Pages 与正式网址仍待发布凭证。
+最终 detector 仅执行一次，回执记录 `runCount: 1`、`exitCode: 0`、`truncated: true`，存在 warnings，不能据此称无问题通过。独立文档代理已将 DESIGN 与 sidecar 同步为实际 V20；独立审查确认标题对比度约 8.40:1、箭头、手机手笔板坐标及 200% 观察清晰度四项修复均 resolved。F1 逐像素工具流程仍为 unresolved，formal disposition 保留 fix。真实音频、`file://`、CI、Pages 及正式站指纹与交互结果已进入发布凭证。
 
 ## 当前复现与后续维护
 
