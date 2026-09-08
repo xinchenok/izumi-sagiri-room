@@ -87,6 +87,7 @@ def collect_codepoints(paths: list[Path]) -> tuple[set[int], list[dict]]:
         if raw.startswith(b"\xef\xbb\xbf"):
             raise ValueError(f"文本含 BOM：{path}")
         text = raw.decode("utf-8")
+        canonical_sha256 = hashlib.sha256(text.replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")).hexdigest()
         text += html.unescape(text)
         # 保留源码直接文字，也解析 JS/JSON Unicode 转义与 HTML 数字实体。
         text += "".join(chr(int(value, 16)) for value in re.findall(r"\\u\{([0-9a-fA-F]{1,6})\}", text))
@@ -94,8 +95,25 @@ def collect_codepoints(paths: list[Path]) -> tuple[set[int], list[dict]]:
         text += "".join(chr(int(value, 16)) for value in re.findall(r"&#x([0-9a-fA-F]+);", text))
         text += "".join(chr(int(value)) for value in re.findall(r"&#([0-9]+);", text))
         codepoints.update(ord(character) for character in text if not unicodedata.category(character).startswith("C"))
-        inputs.append({"path": relative(path), "sha256": sha256(path), "bytes": len(raw)})
+        inputs.append({"path": relative(path), "sha256": hashlib.sha256(raw).hexdigest(), "canonicalSha256": canonical_sha256, "bytes": len(raw)})
     return codepoints, inputs
+
+
+def merge_input_fingerprints(previous_inputs: list[dict], current_inputs: list[dict]) -> list[dict]:
+    """单字体构建仅补充已确认内容未变的 LF 指纹，不掩盖其余字体的过期输入。"""
+    current_by_path = {record["path"]: record for record in current_inputs}
+    result = []
+    for previous in previous_inputs:
+        record = dict(previous)
+        current = current_by_path.get(record["path"])
+        if current and (
+            current["sha256"] == record["sha256"]
+            or current["canonicalSha256"] == record["sha256"]
+            or current["canonicalSha256"] == record.get("canonicalSha256")
+        ):
+            record["canonicalSha256"] = current["canonicalSha256"]
+        result.append(record)
+    return result
 
 
 def rename_family(font: TTFont, family: str) -> None:
@@ -168,7 +186,7 @@ def build(source_dir: Path, output_dir: Path, scan_files: list[Path], families: 
     manifest = {
         "schemaVersion": 1, "generatedAt": generated_at, "fontToolsVersion": fonttools_version,
         "purpose": "V20 本地字体；正文 Noto SC、日文 Noto JP、短标题文楷、房间 h1 龙藏体五字门签；非官方衍生子集名称",
-        "sourcesPinned": True, "inputFiles": previous.get("inputFiles", inputs),
+        "sourcesPinned": True, "inputFiles": merge_input_fingerprints(previous["inputFiles"], inputs) if previous.get("inputFiles") else inputs,
         "requestedCodepoints": previous.get("requestedCodepoints", [f"U+{cp:04X}" for cp in sorted(codepoints)]),
         "fonts": sorted(records, key=lambda record: next(index for index, source in enumerate(SOURCES) if source["family"] == record["family"])),
         "rebuild": "python tools/build-v20-fonts.py --source-dir .tmp/v20-fonts/source --scan " + " ".join(relative(path) for path in scan_files),

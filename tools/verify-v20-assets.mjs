@@ -312,6 +312,13 @@ function voices() {
   requireThat(shipped.length === 24 && shipped.every((path) => audioPaths.has(pathLabel(path))), "语音目录存在未登记或多余 MP3");
 }
 
+function fontInputMatches(input, bytes) {
+  const rawSha256 = createHash("sha256").update(bytes).digest("hex");
+  const text = new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+  const canonicalSha256 = createHash("sha256").update(text.replace(/\r\n?/gu, "\n"), "utf8").digest("hex");
+  return rawSha256 === input.sha256 || canonicalSha256 === input.canonicalSha256 || canonicalSha256 === input.sha256;
+}
+
 function fonts() {
   const manifest = loadJson("assets/fonts/v20/font-manifest.json");
   const fontFamilies = new Set(["RoomTitle", "RoomBody", "RoomJapanese", "RoomSign"]);
@@ -319,7 +326,8 @@ function fonts() {
   for (const input of manifest.inputFiles) check(`字体扫描输入 ${input.path}`, () => {
     const path = runtimePath(input.path);
     requireThat(hashShape(input.sha256), "缺少构建时输入指纹");
-    if (fileHash(path) !== input.sha256) notes.push(`字体扫描输入已变化，最终发布前重建子集：${input.path}`);
+    if (input.canonicalSha256 !== undefined) requireThat(hashShape(input.canonicalSha256), "LF 内容指纹格式错误");
+    if (!fontInputMatches(input, readFileSync(path))) notes.push(`字体扫描输入已变化，最终发布前重建子集：${input.path}`);
   });
   for (const font of manifest.fonts) check(`字体 ${font.family}`, () => {
     const bytes = readFileSync(releasedFile(font.output, font.outputSha256, font.bytes));

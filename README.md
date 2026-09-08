@@ -6,7 +6,9 @@
 
 ## 当前版本与发布状态
 
-V20 重构版本为 `20.0.0`，发布缓存标识为 `20260909-v20-1`。2026-09-09 最新本地 57 项测试全部通过，包含真实音频播放和 `file://` 路径。独立审查列出的标题、箭头、手机画板错位和观察清晰度四项均已修复；逐像素工具流程仍未闭环，唯一一次 detector 有 warnings 且回执截断，不能宣称全绿。远端 CI 和正式发布仍待处理；最终提交、部署与正式网址验证以 `docs/v20-release-receipt.json` 为准。
+V20 已上线，版本 `20.0.0`，缓存标识 `20260909-v20-1`。[PR #24](https://github.com/xinchenok/izumi-sagiri-room/pull/24) 已合并，CI 与 Pages 成功；正式网址的 221 个运行文件／素材指纹、五地点换装、画册、共同创作、晚安和刷新恢复均已验证。本地 57 项测试通过，包含真实音频与 `file://`。
+
+独立审查列出的四项视觉修复已解决，但逐像素工具流程 F1 仍未闭环，检测器有 warnings 且回执截断，未宣称全部工具全绿。完整证据见[发布凭证](docs/v20-release-receipt.json)。
 
 ## 房间里可以做什么
 
@@ -34,12 +36,8 @@ node tests\support\static-server.mjs
 
 ```powershell
 npm ci
-node --check script.js
-node --check room-core.js
-node --check room.js
-node --check room-inspector.js
-node tools\verify-v20-assets.mjs
-npx playwright test tests/e2e/v20-room-navigation.spec.js tests/e2e/v20-memory-stories.spec.js tests/e2e/v20-audio-invitations.spec.js tests/e2e/v20-observation-motion.spec.js
+npx playwright install chromium
+npm test
 ```
 
 资产检查核对 45 个人物母图记录、135 张透明人物 WebP、8 张日夜房间 WebP、9 张实际配色作品及 36 个 WebP、3 个画板 WebP、24 句新配音、4 份字体子集与 809 份旧素材保留凭证。真实浏览器本地测量的冷加载 playing 事件为约 134ms，三次缓存重播为 13–14ms，字幕先即时显示；这不是扬声器端到端延迟或主观听感保证。
