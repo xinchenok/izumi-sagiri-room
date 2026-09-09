@@ -1,33 +1,33 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-08T23:44:35.460688+00:00",
+  "generatedAt": "2026-09-09T01:27:44.410281+00:00",
   "fontToolsVersion": "4.62.0",
   "purpose": "V20 本地字体；正文 Noto SC、日文 Noto JP、短标题文楷、房间 h1 龙藏体五字门签；非官方衍生子集名称",
   "sourcesPinned": true,
   "inputFiles": [
     {
       "path": "index.html",
-      "sha256": "15c7255183eda5951bb2ee6befc8d4a95aab1d84f8ddc44fdc06bfc60e3f7956",
-      "canonicalSha256": "1f87806116f903dcd05c5aa22655497388e04556bbf8d616c31378daa7744f29",
-      "bytes": 33616
+      "sha256": "15299de17723d596822cc23c98903218da2f2510a9fd82ecd7ee05a7fe1ecdfe",
+      "canonicalSha256": "a8a7550898a49b19867c9ac517ccb73d5801f3c6660acdd1b9526ec885bd1756",
+      "bytes": 33610
     },
     {
       "path": "script.js",
-      "sha256": "a51e44356903dbf1002e653f95b469b4dc6b3fdf25a00cda0bd0b3408ad54fc5",
-      "canonicalSha256": "00b09c5e3515210e82894d2434c0abac14ad203b10d29a3380d18c9f1fe37574",
-      "bytes": 104129
+      "sha256": "e0a25e91341d1c6773bc479c429673ebf74c419c2f34813fe11012c62478de71",
+      "canonicalSha256": "e0a25e91341d1c6773bc479c429673ebf74c419c2f34813fe11012c62478de71",
+      "bytes": 102776
     },
     {
       "path": "room-core.js",
-      "sha256": "3377c768c4d31484e1564d08f5d8bee0e2655e839c1af88936a8dfba5b108ab7",
-      "canonicalSha256": "fb7ec1a4733eb3009f5d6305274a574e05adee033fe6fcb47e7e7c9be51302fe",
-      "bytes": 20674
+      "sha256": "96540781cf1f125d742c9d9f01558a9ef0bc2e6d58bdec78b9fa10e645f15dfb",
+      "canonicalSha256": "96540781cf1f125d742c9d9f01558a9ef0bc2e6d58bdec78b9fa10e645f15dfb",
+      "bytes": 20107
     },
     {
       "path": "room.js",
-      "sha256": "b2515570cc6b631095e55db4fa63231c48f53d26959e154d422496d84f19d9b0",
-      "canonicalSha256": "7d68798cd34fe8770def48b8f5b866a833f6cc91eb50519eaa7789cb74a6c1e2",
-      "bytes": 75954
+      "sha256": "e415eb0ec11524e28babd04bd8ccefc5cc3eb7e1c804280ebd7bed5749671c1b",
+      "canonicalSha256": "e415eb0ec11524e28babd04bd8ccefc5cc3eb7e1c804280ebd7bed5749671c1b",
+      "bytes": 85336
     },
     {
       "path": "room-inspector.js",
@@ -322,6 +322,7 @@
     "U+4F4F",
     "U+4F53",
     "U+4F55",
+    "U+4F59",
     "U+4F5C",
     "U+4F60",
     "U+4F7F",
@@ -759,6 +760,7 @@
     "U+6765",
     "U+677E",
     "U+677F",
+    "U+6784",
     "U+6795",
     "U+679A",
     "U+679C",
@@ -1219,14 +1221,14 @@
       "sourceSha256": "39ad71264b588165b469e35e6afb162a378dacd1f95348160240ba9038ac3009",
       "sourceBytes": 25575676,
       "output": "assets/fonts/v20/RoomTitle.woff2",
-      "outputSha256": "071b8ff722aaf68eb1b972826bf6553759f3b1931251b410c2556ec44e61c44a",
-      "bytes": 259700,
+      "outputSha256": "540691e2458dade870f1398256904d484b5b25b540dca307e2e73a3043b14adb",
+      "bytes": 259984,
       "weight": 400,
       "style": "normal",
       "license": "SIL Open Font License 1.1",
-      "requestedCodepointCount": 1160,
-      "cmapCodepointCount": 1160,
-      "glyphCount": 1428,
+      "requestedCodepointCount": 1162,
+      "cmapCodepointCount": 1162,
+      "glyphCount": 1430,
       "missingLanguageCodepoints": [],
       "missingAfterExport": [],
       "systemFallbackSymbols": []
@@ -1245,14 +1247,14 @@
       "sourceSha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
       "sourceBytes": 16437364,
       "output": "assets/fonts/v20/RoomBody.woff2",
-      "outputSha256": "5557a7549c0df37d514dbcfab16de4ac241f095397174168a12eec7ef063ce88",
-      "bytes": 395472,
+      "outputSha256": "669f7a33ec0504c1338655b25928ca413d6d0fc76cb6a7a7ae3da49441b2cd42",
+      "bytes": 396764,
       "weight": 400,
       "style": "normal",
       "license": "SIL Open Font License 1.1",
-      "requestedCodepointCount": 1160,
-      "cmapCodepointCount": 1160,
-      "glyphCount": 2540,
+      "requestedCodepointCount": 1162,
+      "cmapCodepointCount": 1162,
+      "glyphCount": 2544,
       "missingLanguageCodepoints": [],
       "missingAfterExport": [],
       "systemFallbackSymbols": []
@@ -1271,14 +1273,14 @@
       "sourceSha256": "68a3fc98800b2a27b371f2fb79991daf3633bd89309d4ffaa6946fd587f375b5",
       "sourceBytes": 16467736,
       "output": "assets/fonts/v20/RoomJapanese.woff2",
-      "outputSha256": "47dff6ab710a2d3471d48b45e93a66c93a251826fa38261d3f7f6f4b65fe378d",
-      "bytes": 402600,
+      "outputSha256": "f000fc5b27e5e9deccba1d15d47c61fd9fc599123fb9550b824e212939305019",
+      "bytes": 402508,
       "weight": 400,
       "style": "normal",
       "license": "SIL Open Font License 1.1",
-      "requestedCodepointCount": 1160,
-      "cmapCodepointCount": 1160,
-      "glyphCount": 2577,
+      "requestedCodepointCount": 1162,
+      "cmapCodepointCount": 1162,
+      "glyphCount": 2581,
       "missingLanguageCodepoints": [],
       "missingAfterExport": [],
       "systemFallbackSymbols": []

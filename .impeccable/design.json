@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-08T23:18:18.320Z",
+  "generatedAt": "2026-09-09T01:27:30.852Z",
   "title": "Design System: 纱雾的房间",
   "extensions": {
     "colorMeta": {
@@ -284,6 +284,11 @@
         "name": "memory-photo",
         "value": "0 5px 15px rgba(93, 67, 60, 0.12)",
         "purpose": "真实保存成稿的回忆照片。"
+      },
+      {
+        "name": "draft-cover",
+        "value": "2px 4px 10px #74505d29",
+        "purpose": "独立盖纸与画作的轻微纸层距离。"
       }
     ],
     "motion": [
@@ -318,9 +323,29 @@
         "purpose": "实际窗格中的细雨；不扩展到人物和室内。"
       },
       {
-        "name": "paper-peek",
-        "value": "0.7s",
-        "purpose": "藏画纸面的裁切变化。"
+        "name": "draft-cover-transform",
+        "value": "0.22s",
+        "purpose": "独立盖纸层的位移与旋转过渡，不裁剪人物。"
+      },
+      {
+        "name": "draft-cover-clip",
+        "value": "0.24s",
+        "purpose": "盖纸层留出一角的裁切过渡，膝板作品同步状态。"
+      },
+      {
+        "name": "draft-peek-caught",
+        "value": "260ms",
+        "purpose": "偷看触发后由 reveal 进入 caught，盖纸盖回。"
+      },
+      {
+        "name": "draft-peek-corner",
+        "value": "620ms",
+        "purpose": "caught 后再等待 360ms，即触发后 620ms 留在 corner；安静或减少动态时直接到露角结果。"
+      },
+      {
+        "name": "hand-over-paper",
+        "value": "0.65s",
+        "purpose": "成稿纸面从 translate(20px, 8px) rotate(-2deg) 与局部裁切回到原位；不是新增人物递画姿态。"
       },
       {
         "name": "reduced-motion",
@@ -380,9 +405,9 @@
       "name": "小日常选择",
       "kind": "button",
       "refersTo": "story-choice",
-      "description": "明确可选的短句与补充说明，不使用正确答案、奖励或倒计时语言。",
-      "html": "<button class=\"ds-story-choice\" type=\"button\"><span>安静坐在旁边</span><small>不催她，也不一直盯着屏幕</small></button>",
-      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-story-choice{display:flex;flex-direction:column;align-items:flex-start;text-align:left;width:100%;border:1px solid #e8ccd7;border-radius:13px;background:#fffdfd;color:var(--ink,#323142);padding:.65rem .85rem;min-height:48px;cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;line-height:1.6;transition:border-color .2s var(--ease,cubic-bezier(0.16,1,0.3,1)),background .2s var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-story-choice span{font-size:.89rem}.ds-story-choice small{font-size:.74rem;color:#785969;margin-top:.2rem}.ds-story-choice:hover{border-color:#b54a70;color:#8f3456;background:#fff0f6}.ds-story-choice:active{transform:translateY(1px)}.ds-story-choice:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(max-width:760px){.ds-story-choice{min-height:52px}}@media(prefers-reduced-motion:reduce){.ds-story-choice{transition:none;animation:none}}"
+      "description": "陪画的已选配色示例；题材以三张实际草图呈现，配色有真实数据色签，所有陪画选项以 aria-pressed、边线和已选文字共同标记。",
+      "html": "<button class=\"ds-story-choice\" type=\"button\" aria-pressed=\"true\"><span class=\"ds-swatch\" aria-hidden=\"true\"><i style=\"background-color:#acd9ca\"></i><i style=\"background-color:#d8e8f0\"></i><i style=\"background-color:#62988b\"></i></span><small class=\"ds-choice-mark\">已选</small><span>薄荷雨夜</span><small>安静的薄荷青压住窗外雨声</small></button>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-story-choice{display:flex;flex-direction:column;align-items:flex-start;text-align:left;width:100%;border:1px solid #e8ccd7;border-radius:13px;background:#fffdfd;color:var(--ink,#323142);padding:.65rem .85rem;min-height:48px;cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;line-height:1.6;transition:border-color .2s var(--ease,cubic-bezier(0.16,1,0.3,1)),background .2s var(--ease,cubic-bezier(0.16,1,0.3,1))}.ds-story-choice span{font-size:.89rem}.ds-story-choice small{font-size:.74rem;color:#785969;margin-top:.2rem}.ds-story-choice:hover{border-color:#b54a70;color:#8f3456;background:#fff0f6}.ds-story-choice:active{transform:translateY(1px)}.ds-story-choice:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(max-width:760px){.ds-story-choice{min-height:52px}}@media(prefers-reduced-motion:reduce){.ds-story-choice{transition:none;animation:none}}.ds-story-choice{position:relative}.ds-story-choice[aria-pressed=\"true\"]{border-color:var(--rose,#b74063);background:#fceaf1}.ds-choice-mark{align-self:flex-end;color:#8f3456!important;font-size:.65rem!important;margin:0!important}.ds-swatch{display:flex;width:100%;gap:3px;margin:0 0 .3rem}.ds-swatch i{display:block;flex:1;height:14px;border:1px solid #96717f;border-radius:3px}"
     },
     {
       "name": "局部阅读面板",
@@ -415,6 +440,14 @@
       "description": "字幕跟随当前面板；中文为主，日文和准备状态附在同一处，示例展示声音失败的重试入口。",
       "html": "<div class=\"ds-dialogue-footer\" aria-live=\"polite\" aria-atomic=\"true\"><p class=\"ds-dialogue-zh\">欢迎回来。今天……想先看看哪里？</p><p class=\"ds-dialogue-ja\" lang=\"ja\">おかえり。今日は……どこから見たい？</p><span class=\"ds-voice-status\">声音暂时没有播放，台词已经留下。可以再听一次。</span><div class=\"ds-voice-tools\"><button type=\"button\">再听一次</button><button type=\"button\">停止</button><button type=\"button\">回看对话</button></div></div>",
       "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}@font-face{font-family:RoomJapanese;src:url(\"assets/fonts/v20/RoomJapanese.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-dialogue-footer{padding:.65rem 1.1rem .9rem;border-top:1px solid #ecdde4;background:#fff4f8;color:var(--ink,#323142);font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;}.ds-dialogue-zh{margin:0;font-size:.94rem;line-height:1.7}.ds-dialogue-ja{margin:.35rem 0 0;font-family:RoomJapanese,RoomBody,sans-serif;font-size:.76rem;line-height:1.6;color:#775565}.ds-voice-status{display:block;margin-top:.3rem;font-size:.68rem;color:#705367}.ds-voice-tools{display:flex;gap:.7rem;align-items:center;margin-top:.3rem}.ds-voice-tools button{border:0;border-bottom:1px solid #c88aa0;background:none;font-size:.75rem;padding:.15rem .05rem;color:#744357;min-height:44px;min-width:44px;cursor:pointer;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;line-height:1.6}.ds-voice-tools button:hover{cursor:pointer}.ds-voice-tools button:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}@media(max-width:760px){.ds-dialogue-footer{padding:.65rem .85rem}.ds-dialogue-zh{font-size:.91rem}.ds-dialogue-ja{font-size:.75rem}}"
+    },
+    {
+      "name": "陪画工具与文字回应",
+      "kind": "custom",
+      "refersTo": "drawing-footer",
+      "description": "陪画工具置于字幕页脚，正文滚动时仍可见，离开该面板即移除；默认保留十二条分支文字，配音须主动点击并使用对应音频的准确字幕。选择日志用正文中的原生 details 折叠；安静阶段按保存的 20/45/75 秒恢复，不设完成门槛。",
+      "html": "<div class=\"ds-drawing-footer\"><div class=\"ds-drawing-tools\"><button type=\"button\" aria-expanded=\"false\">偷看画到哪里了</button><button type=\"button\">听她说说画稿</button><button type=\"button\">先把画稿留在这里</button></div><div class=\"ds-drawing-caption\" aria-live=\"polite\" aria-atomic=\"true\"><p>门只开这么大……但月亮还是看得见。</p><span>文字回应</span></div></div>",
+      "css": "@font-face{font-family:RoomBody;src:url(\"assets/fonts/v20/RoomBody.woff2\") format(\"woff2\");font-weight:400;font-display:swap}.ds-drawing-footer{padding:.65rem 1.1rem .9rem;border-top:1px solid #ecdde4;background:#fff4f8;color:var(--ink,#323142);font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;line-height:1.6;max-height:38%;overflow:auto}.ds-drawing-tools{display:flex;flex-wrap:wrap;border:0;padding:0;margin:0 0 .4rem;gap:.25rem}.ds-drawing-tools button{border:1px solid #deb9c9;background:#fffdfd;color:var(--ink,#323142);border-radius:18px;min-height:44px;margin:.1rem 0;padding:.35rem .5rem;font-family:RoomBody,\"Microsoft YaHei\",sans-serif;font-weight:400;font-size:.75rem;line-height:1.6;cursor:pointer}.ds-drawing-tools button:hover{border-color:#b54a70;color:#8f3456;background:#fff0f6}.ds-drawing-tools button:focus-visible{outline:3px solid var(--focus,#215c89);outline-offset:4px}.ds-drawing-caption p{margin:0;font-size:.94rem;line-height:1.7}.ds-drawing-caption>span{display:block;margin-top:.3rem;font-size:.68rem;color:#705367}@media(max-width:760px){.ds-drawing-footer{padding:.65rem .85rem;max-height:none}.ds-drawing-caption p{font-size:.91rem}}"
     }
   ],
   "narrative": {
