@@ -3,9 +3,9 @@
 - 更新日期：2026-09-09。
 - 项目仓库：<https://github.com/xinchenok/izumi-sagiri-room>。
 - 访问地址：<https://xinchenok.github.io/izumi-sagiri-room/>。
-- 当前实现：V20「走进纱雾的日常」，分支 `codex/v20-room-redesign`。
-- 目标版本／缓存标识：`20.0.0`／`20260909-v20-1`。
-- 当前发布状态：live verified。PR #24 已合并，CI 与 Pages 成功；正式站 221 个文件指纹、五地点换装、画册、共同创作、晚安和刷新恢复已验证。本地 57 项测试通过，含真实音频与 `file://`。独立审查 F2–F5 已解决，F1 工具流程仍未闭环；detector 有 warnings 且捕获截断，未伪报全绿。
+- 当前实现：V20.0.1 剧情式陪画补全，分支 `codex/v20-drawing-interaction-restore`；[修复说明](v20-drawing-restoration.md)。
+- 当前代码版本／缓存标识：`20.0.1`／`20260909-v20-2`。
+- 首次 V20.0.0 发布已验证；当前补丁增加 8 项旧功能对照回归，共 65 项，部署状态以最新 Actions 为准。旧版的专属分支文字与过程曾漏迁移，不能用早先 57 项通过概括完整保留。独立审查 F1 工具流程限制继续保留，未伪报全绿。
 - 最终发布与知识收尾凭证：[v20-release-receipt.json](v20-release-receipt.json)，记录真实运行提交、验证时间、部署任务与资源指纹。
 
 ## 当前应该先读什么

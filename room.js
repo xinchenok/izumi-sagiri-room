@@ -522,6 +522,20 @@
           return;
         }
         if (id === "drawingRestart") return this.startDrawing(true);
+        if (id === "pauseDrawing") return this.closePanel();
+        if (id === "quietBack") return this.action("drawing-back", target);
+        if (d.action === "drawing-back" && this.panelId === "drawing")
+          return this.action(d.action, target);
+        if (id === "drawingListen")
+          return this.enterThen(() =>
+            this.perform(
+              this.drawingListenCue ||
+                (this.store.data.drawingDraft
+                  ? E.drawingStages[this.store.data.drawingDraft.step].voice
+                  : "artwork-reveal"),
+              { pose: "desk-shy" },
+            ),
+          );
         if (id === "quietContinue") {
           this.accumulateQuiet();
           this.store.data.drawingDraft.mode = "choices";
@@ -735,13 +749,23 @@
         String(value),
       );
       if (speak && !specialStory) {
-        if (route.panel === "drawing") this.perform("draw-invite");
-        else if (route.panel === "gallery")
+        if (route.panel === "drawing") {
+          if (this.store.data.drawingDraft?.mode === "quiet")
+            this.renderQuietBeat(true);
+          else this.perform("draw-invite");
+        } else if (route.panel === "gallery")
           this.perform("gallery-open", { pose: "reading-peek" });
         else if (route.panel === "goodnight")
           this.perform("goodnight", { pose: "bed-sleepy" });
         else this.perform(E.scenes[route.scene].voice);
-      } else if (!speak) this.caption(E.scenes[route.scene].line);
+      } else if (!speak) {
+        if (
+          route.panel === "drawing" &&
+          this.store.data.drawingDraft?.mode === "quiet"
+        )
+          this.renderQuietBeat(true);
+        else this.caption(E.scenes[route.scene].line);
+      }
       return true;
     }
     renderScene() {
@@ -765,7 +789,10 @@
       if (this.sceneId === "room") {
         const [first, second] = $("#roomActions").children;
         first.id = "approachButton";
-        first.insertAdjacentHTML("beforeend", '<svg class="action-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>');
+        first.insertAdjacentHTML(
+          "beforeend",
+          '<svg class="action-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg>',
+        );
         second.id = "lookButton";
       }
       this.renderHotspots();
@@ -885,12 +912,7 @@
       await wait(Math.max(0, 1200 - (performance.now() - started)));
       if (token !== this.interactionToken) return;
       this.busy = false;
-      this.pose =
-        this.panelId === "gallery"
-          ? "reading-peek"
-          : this.panelId === "goodnight"
-            ? "bed-sleepy"
-            : E.scenes[this.sceneId].pose;
+      this.pose = this.restingPose();
       await this.director.show(this.sceneId, this.pose, this.store.data.outfit);
       this.scheduleIdle();
     }
@@ -1168,11 +1190,15 @@
           draft.updatedAt = Date.now();
           this.store.save();
           this.renderDrawing();
+          this.respondToDrawing("可以再选一次……我还没有往下画。", {
+            pose: "desk-focus",
+          });
         }
         return;
       }
     }
     openPanel(id) {
+      this.panelFooter.querySelector(".drawing-tools")?.remove();
       this.panelId = id;
       this.panel.dataset.panel = id;
       this.panel.hidden = false;
@@ -1209,6 +1235,7 @@
         }
     }
     hidePanel() {
+      this.panelFooter.querySelector(".drawing-tools")?.remove();
       this.panelId = "";
       this.panel.dataset.panel = "";
       this.panel.hidden = true;
@@ -1516,6 +1543,39 @@
             "data-choice-kind": kind,
             "data-choice-value": value,
           });
+          if (["presence", "subject", "palette", "praise"].includes(kind)) {
+            const selected =
+              this.store.data.drawingDraft?.choices[kind] === value;
+            b.setAttribute("aria-pressed", String(selected));
+            if (kind === "subject")
+              b.append(
+                make("img", {
+                  class: "subject-sketch",
+                  src: this.artInfo({
+                    subject: value,
+                    artVersion: this.store.data.drawingDraft?.artVersion,
+                  }).thumb,
+                  alt: "",
+                  width: "120",
+                  height: "90",
+                  loading: "lazy",
+                }),
+              );
+            if (kind === "palette") {
+              const swatch = make("span", {
+                class: "swatch",
+                "aria-hidden": "true",
+              });
+              for (const color of E.drawingPaletteSwatches[value]) {
+                const chip = make("i");
+                chip.style.backgroundColor = color;
+                swatch.append(chip);
+              }
+              b.append(swatch);
+            }
+            if (selected)
+              b.append(make("small", { class: "choice-mark" }, "已选"));
+          }
           b.append(make("span", {}, label));
           if (item.detail) b.append(make("small", {}, item.detail));
           return b;
@@ -1531,6 +1591,7 @@
           mode: "choices",
           quietElapsedMs: 0,
           peekCount: 0,
+          responses: [],
           updatedAt: Date.now(),
         };
       this.drawingActive = true;
@@ -1540,7 +1601,11 @@
       this.renderDrawing();
     }
     renderDrawing() {
+      this.panelFooter.querySelector(".drawing-tools")?.remove();
       const draft = this.store.data.drawingDraft;
+      this.peekSequence = (this.peekSequence || 0) + 1;
+      this.drawingPeekState = draft?.step >= 3 ? "revealed" : "covered";
+      this.drawingListenCue = null;
       this.panelBody.replaceChildren();
       this.updateDrawingBoard();
       if (draft && !this.drawingActive) {
@@ -1570,18 +1635,28 @@
           E.ui.quietLine,
         );
         this.panelBody.append(
+          make("h3", { id: "quietBeatTitle" }, "她重新握住了笔。"),
           status,
+          make(
+            "ol",
+            {
+              id: "quietBeats",
+              class: "quiet-beats",
+              "aria-label": "这段安静的陪伴",
+            },
+            CONTENT.drawingStory.quietBeats.map((beat) =>
+              make("li", {}, beat.title),
+            ),
+          ),
           make(
             "p",
             { class: "small-note" },
             "只在你留在这里、页面看得见时记住这段安静。",
           ),
-          button("现在继续一起画", {
-            id: "quietContinue",
-            class: "subtle-action",
-          }),
         );
+        this.appendDrawingTools();
         this.quietLast = performance.now();
+        this.renderQuietBeat(true);
         return;
       }
       const kinds = ["presence", "subject", "palette", "praise"];
@@ -1598,6 +1673,18 @@
         "你最喜欢画里的哪一点？",
       ];
       this.panelBody.append(make("h3", {}, titles[draft.step]));
+      const stage = E.drawingStages[draft.step];
+      this.panelBody.append(
+        make(
+          "p",
+          { id: "drawingStageNote", class: "drawing-stage-note" },
+          stage.title +
+            "。" +
+            (draft.step === 2 && draft.choices.subject
+              ? CONTENT.drawingStory.subjects[draft.choices.subject].stageNote
+              : stage.note),
+        ),
+      );
       const workspace = make("div", { class: "drawing-workspace" });
       if (draft.choices.subject)
         workspace.append(
@@ -1615,8 +1702,6 @@
             class: "subtle-action",
           }),
         );
-      if (draft.choices.subject)
-        this.panelBody.append(button("偷看画到哪里了", { id: "peekDraft" }));
       if (draft.step > 0)
         this.panelBody.append(
           button("回到上一个选择", {
@@ -1624,6 +1709,7 @@
             class: "subtle-action",
           }),
         );
+      this.appendDrawingTools();
     }
     chooseStory(kind, value) {
       const now = Date.now();
@@ -1703,6 +1789,10 @@
       if (!map[kind]?.[value]) return;
       draft.choices[kind] = value;
       draft.updatedAt = now;
+      const option = map[kind][value];
+      if (!Array.isArray(draft.responses)) draft.responses = [];
+      draft.responses.push({ kind, value });
+      draft.responses = draft.responses.slice(-16);
       if (kind === "presence") {
         draft.step = 1;
         if (value === "quiet") {
@@ -1711,24 +1801,146 @@
         }
         this.store.save();
         this.renderDrawing();
-        this.perform(value === "quiet" ? "quiet-company" : "draw-invite");
+        this.respondToDrawing(option.line, {
+          pose: value === "distance" ? "desk-shy" : "desk-focus",
+        });
         return;
       }
       if (kind === "subject") {
         draft.step = 2;
         this.store.save();
         this.renderDrawing();
-        this.perform("theme-cat", { fx: "drawing-stylus-line" });
+        this.respondToDrawing(option.line, { fx: "drawing-stylus-line" });
         return;
       }
       if (kind === "palette") {
         draft.step = 3;
         this.store.save();
         this.renderDrawing();
-        this.perform("palette-chosen");
+        this.respondToDrawing(option.line, { fx: "gallery-photo-slide" });
         return;
       }
       this.completeDrawing();
+    }
+    restingPose() {
+      if (this.panelId === "gallery") return "reading-peek";
+      if (this.panelId === "goodnight") return "bed-sleepy";
+      const draft = this.store.data.drawingDraft;
+      if (this.panelId === "drawing" && draft?.mode === "quiet") {
+        const beat = CONTENT.drawingStory.quietBeats.findLast(
+          (item) => draft.quietElapsedMs >= item.at,
+        );
+        return beat?.frame === "shy" ? "desk-shy" : "desk-focus";
+      }
+      return E.scenes[this.sceneId].pose;
+    }
+    async respondToDrawing(line, { pose = "desk-shy", fx } = {}) {
+      this.caption(line);
+      const token = this.interactionToken;
+      this.busy = true;
+      this.invite.hidden = true;
+      this.stage.dataset.voiceState = "text";
+      $("#voiceStatus").hidden = false;
+      $("#voiceStatus").textContent = "文字回应";
+      if (fx) this.sound.playEffect(CONTENT.cinematicFoley[fx]?.file || fx);
+      await this.director.show(this.sceneId, pose, this.store.data.outfit);
+      if (!this.still()) await wait(700);
+      if (token !== this.interactionToken) return;
+      this.busy = false;
+      this.pose = this.restingPose();
+      await this.director.show(this.sceneId, this.pose, this.store.data.outfit);
+      this.scheduleIdle();
+    }
+    appendDrawingTools() {
+      this.panelFooter.querySelector(".drawing-tools")?.remove();
+      const toolsRow = make("div", { class: "choice-row drawing-tools" });
+      const currentDraft = this.store.data.drawingDraft;
+      if (currentDraft?.mode === "quiet")
+        toolsRow.append(
+          button("现在继续一起画", {
+            id: "quietContinue",
+            class: "subtle-action",
+          }),
+          button("回到刚才那一步", { id: "quietBack" }),
+        );
+      else if (currentDraft?.choices.subject)
+        toolsRow.append(
+          button("偷看画到哪里了", {
+            id: "peekDraft",
+            "aria-controls": "draftPreview",
+            "aria-expanded": String(this.drawingPeekState === "revealed"),
+          }),
+        );
+      toolsRow.append(
+        button(E.drawingCopy.voice, {
+          id: "drawingListen",
+          class: "subtle-action",
+        }),
+        button(E.drawingCopy.pause, { id: "pauseDrawing" }),
+      );
+      this.panelFooter.prepend(toolsRow);
+      const draft =
+        this.store.data.drawingDraft || this.store.data.sharedDrawing;
+      if (!draft) return;
+      const groups = {
+        presence: CONTENT.drawingStory.presence,
+        subject: CONTENT.drawingStory.subjects,
+        palette: CONTENT.drawingStory.palettes,
+        praise: CONTENT.drawingStory.praises,
+      };
+      const choices = draft.choices || draft;
+      const responses = Array.isArray(draft.responses)
+        ? draft.responses
+        : Object.entries(choices)
+            .filter(([kind]) => groups[kind])
+            .map(([kind, value]) => ({ kind, value }));
+      const log = make(
+        "details",
+        { id: "drawingResponseLog", class: "drawing-response-log" },
+        make("summary", {}, E.drawingCopy.log),
+      );
+      for (const { kind, value } of responses) {
+        const option =
+          kind === "peek"
+            ? CONTENT.drawingStory.peekReactions[value]
+            : groups[kind]?.[value];
+        if (option)
+          log.append(
+            make(
+              "p",
+              {},
+              (option.label || "偷看画稿") +
+                "：“" +
+                (option.line || option.text) +
+                "”",
+            ),
+          );
+      }
+      if (log.children.length > 1) this.panelBody.append(log);
+    }
+    renderQuietBeat(force = false) {
+      const draft = this.store.data.drawingDraft;
+      if (!draft || draft.mode !== "quiet" || !$("#quietStatus")) return;
+      const index = CONTENT.drawingStory.quietBeats.findLastIndex(
+        (beat) => draft.quietElapsedMs >= beat.at,
+      );
+      if (!force && index === this.lastQuietBeat) return;
+      this.lastQuietBeat = index;
+      const beat = CONTENT.drawingStory.quietBeats[index];
+      $("#quietBeatTitle").textContent = beat?.title || "她重新握住了笔。";
+      $("#quietStatus").textContent = beat?.line || E.ui.quietLine;
+      $("#quietStatus").dataset.elapsed = String(
+        Math.floor(draft.quietElapsedMs),
+      );
+      $("#quietStatus").dataset.beat = String(index);
+      for (const [i, node] of [...$("#quietBeats").children].entries()) {
+        node.dataset.reached = String(i <= index);
+        node.setAttribute("aria-current", i === index ? "step" : "false");
+      }
+      if ((force || !this.still()) && !this.busy && !document.hidden) {
+        this.pose = beat?.frame === "shy" ? "desk-shy" : "desk-focus";
+        this.director.show("desk", this.pose, this.store.data.outfit);
+      }
     }
     artInfo(choices) {
       if (!choices?.subject) return null;
@@ -1750,6 +1962,10 @@
         aspect: current?.aspect || 1062 / 1481,
         size: smallScreen() ? "720" : "1440",
         artwork: this.artInfo(choices)?.small || "",
+        paperState:
+          this.panelId === "drawing" && draft
+            ? this.drawingPeekState || "covered"
+            : "revealed",
       };
     }
     updateDrawingBoard() {
@@ -1758,7 +1974,7 @@
     artwork(choices, completed) {
       const subject = this.artInfo(choices);
       if (!subject) return make("span");
-      return make(
+      const figure = make(
         "figure",
         {
           class:
@@ -1787,6 +2003,29 @@
             : "",
         ),
       );
+      if (!completed && this.panelId === "drawing") {
+        figure.classList.add("draft-paper");
+        figure.dataset.peekState = this.drawingPeekState || "covered";
+        figure
+          .querySelector(".art-tint")
+          .append(
+            make(
+              "div",
+              { id: "draftCover", class: "draft-cover", "aria-hidden": "true" },
+              make("span", {}, "先不许偷看。"),
+            ),
+          );
+        figure.append(
+          make(
+            "p",
+            { class: "draft-hint" },
+            figure.dataset.peekState === "revealed"
+              ? "这次，可以认真看看了。"
+              : E.drawingCopy.covered,
+          ),
+        );
+      }
+      return figure;
     }
     completeDrawing() {
       const d = this.store.data,
@@ -1802,6 +2041,9 @@
         ...draft.choices,
         artVersion: draft.artVersion,
         completedAt: Date.now(),
+        responses: Array.isArray(draft.responses)
+          ? draft.responses.slice(-16)
+          : [],
       };
       d.sharedDrawing = drawing;
       d.sharedDrawings.push(drawing);
@@ -1825,30 +2067,87 @@
         ),
       );
       this.panelBody.scrollTop = 0;
+      $("#sharedDrawing").classList.add("is-revealed");
+      this.panelBody.prepend(
+        make(
+          "p",
+          { id: "drawingStageNote", class: "drawing-stage-note" },
+          E.drawingCopy.reveal,
+        ),
+      );
+      this.panelBody.append(
+        make(
+          "p",
+          { id: "drawingMemoryText", class: "drawing-memory-text" },
+          this.drawingMemoryText(drawing),
+        ),
+      );
+      this.appendDrawingTools();
       this.updateDrawingBoard();
       this.renderMemoryPin();
-      this.perform("artwork-reveal", {
+      this.drawingListenCue = "artwork-reveal";
+      this.respondToDrawing(CONTENT.drawingStory.praises[drawing.praise].line, {
         pose: "desk-shy",
         fx: "drawing-sheet-push",
       });
     }
-    peek() {
+    async peek() {
       const draft = this.store.data.drawingDraft;
-      if (!draft) return;
+      const paper = $(".draft-paper");
+      if (!draft || !paper) return;
       draft.peekCount = Math.min(3, (draft.peekCount || 0) + 1);
       draft.updatedAt = Date.now();
-      this.store.save();
-      this.panelBody.classList.remove("is-peeking");
-      void this.panelBody.offsetWidth;
-      this.panelBody.classList.add("is-peeking");
-      this.perform(
-        draft.peekCount === 1
-          ? "draft-noticed"
-          : draft.peekCount === 2
-            ? "drawing-peek-again"
-            : "drawing-you-are-there",
-        { pose: "desk-shy", fx: "drawing-paper-cover" },
+      const index = draft.peekCount - 1,
+        reaction = CONTENT.drawingStory.peekReactions[index];
+      $("#drawingResponseLog")?.append(
+        make("p", {}, reaction.label + "：“" + reaction.text + "”"),
       );
+      if (!Array.isArray(draft.responses)) draft.responses = [];
+      draft.responses.push({ kind: "peek", value: index });
+      draft.responses = draft.responses.slice(-16);
+      this.store.save();
+      this.drawingListenCue = [
+        "draft-noticed",
+        "drawing-peek-again",
+        "drawing-you-are-there",
+      ][index];
+      this.respondToDrawing(reaction.text, {
+        pose: "desk-shy",
+        fx: "drawing-paper-cover",
+      });
+      const sequence = (this.peekSequence = (this.peekSequence || 0) + 1);
+      const set = (state) => {
+        if (
+          sequence !== this.peekSequence ||
+          !paper.isConnected ||
+          this.panelId !== "drawing" ||
+          draft !== this.store.data.drawingDraft
+        )
+          return false;
+        paper.dataset.peekState = state;
+        this.drawingPeekState = state;
+        this.updateDrawingBoard();
+        paper.querySelector(".draft-hint").textContent =
+          state === "caught"
+            ? E.drawingCopy.caught
+            : state === "corner"
+              ? E.drawingCopy.corner
+              : reaction.label;
+        $("#peekDraft")?.setAttribute(
+          "aria-expanded",
+          String(state !== "caught" && state !== "covered"),
+        );
+        return true;
+      };
+      if (this.still()) {
+        set("corner");
+        return;
+      }
+      if (!set("reveal")) return;
+      await wait(260);
+      if (!set("caught")) return;
+      await wait(360);
+      set("corner");
     }
     accumulateQuiet() {
       const now = performance.now(),
@@ -1871,13 +2170,7 @@
         const status = $("#quietStatus");
         if (status) {
           status.dataset.elapsed = String(Math.floor(draft.quietElapsedMs));
-          const index = CONTENT.drawingStory.quietBeats.findLastIndex(
-            (beat) => draft.quietElapsedMs >= beat.at,
-          );
-          if (index >= 0 && index !== this.lastQuietBeat) {
-            status.textContent = CONTENT.drawingStory.quietBeats[index].line;
-            this.lastQuietBeat = index;
-          }
+          this.renderQuietBeat();
         }
       }
       this.quietLast = now;
@@ -2033,6 +2326,20 @@
           make("span", {}, "上次那张，还在这里"),
         );
     }
+    drawingMemoryText(drawing) {
+      const data = CONTENT.drawingStory;
+      return (
+        "你" +
+        data.presence[drawing.presence].memory +
+        "，一起选了“" +
+        data.subjects[drawing.subject].label +
+        "”和" +
+        data.palettes[drawing.palette].label +
+        "。你说“" +
+        data.praises[drawing.praise].memory +
+        "”，她还记得。"
+      );
+    }
     renderMemories() {
       const drawings = this.store.data.sharedDrawings;
       this.panelBody.replaceChildren(
@@ -2045,14 +2352,23 @@
       for (const drawing of [...drawings].reverse()) {
         const figure = this.artwork(drawing, false);
         figure.removeAttribute("id");
-        figure.append(
+        figure
+          .querySelector("figcaption")
+          .append(
+            make(
+              "small",
+              { class: "drawing-date" },
+              new Date(drawing.completedAt).toLocaleDateString("zh-CN"),
+            ),
+          );
+        this.panelBody.append(
+          figure,
           make(
-            "figcaption",
-            {},
-            new Date(drawing.completedAt).toLocaleDateString("zh-CN"),
+            "p",
+            { class: "drawing-memory-text" },
+            this.drawingMemoryText(drawing),
           ),
         );
-        this.panelBody.append(figure);
       }
     }
     activity() {

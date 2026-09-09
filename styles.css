@@ -902,23 +902,6 @@ button:disabled {
   font-size: 0.89rem;
   margin: 0.45rem 0;
 }
-.is-peeking .art-tint {
-  animation: paper-peek 0.7s var(--ease);
-}
-@keyframes paper-peek {
-  0% {
-    clip-path: inset(0 0 65% 0);
-  }
-  45% {
-    clip-path: inset(0);
-  }
-  70% {
-    clip-path: inset(0 0 40% 0);
-  }
-  100% {
-    clip-path: inset(0);
-  }
-}
 .secret-objects {
   display: flex;
   flex-wrap: wrap;
@@ -1578,8 +1561,8 @@ html:not([data-js="true"]) .place-navigation {
   font-family: RoomSign, RoomTitle, serif;
   color: #683e53;
   background: #fff9fa;
-  padding: .04em .28em .1em;
-  border-radius: .16em .32em .32em .16em;
+  padding: 0.04em 0.28em 0.1em;
+  border-radius: 0.16em 0.32em 0.32em 0.16em;
   text-shadow: none;
   -webkit-text-stroke: 0;
 }
@@ -1615,7 +1598,7 @@ html[data-idle-rest="true"] #roomCharacter {
 
 /* 画板与成稿共用人物坐标，不覆盖手指或在切换地点后留下漂浮道具。 */
 .room-stage[data-night="true"] > .room-dialogue {
-  padding: .7rem 1rem;
+  padding: 0.7rem 1rem;
   background: #fff9fa;
   border-radius: 15px;
 }
@@ -1624,7 +1607,220 @@ html[data-idle-rest="true"] #roomCharacter {
   pointer-events: none;
   z-index: 2;
 }
-.action-arrow {width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.action-arrow {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+/* 陪画的选择有具体回应，稿纸的开合是真实图层，不裁剪人物来假装动作。 */
+.drawing-stage-note {
+  color: var(--ink-soft);
+  font-size: 0.84rem !important;
+  line-height: 1.75;
+  margin: 0.35rem 0 1rem !important;
+}
+.story-choices button {
+  position: relative;
+}
+.story-choices button[aria-pressed="true"] {
+  border-color: var(--rose);
+  background: #fceaf1;
+}
+.choice-mark {
+  align-self: flex-end;
+  color: #8f3456 !important;
+  font-size: 0.65rem !important;
+  margin: 0 !important;
+}
+.story-choices .subject-sketch {
+  width: 100%;
+  height: 90px;
+  object-fit: contain;
+  background: #fff;
+  margin-bottom: 0.25rem;
+  border-radius: 5px;
+}
+.story-choices:has(.subject-sketch) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+.story-choices:has(.subject-sketch) button {
+  padding: 0.4rem;
+  justify-content: flex-start;
+}
+.story-choices:has(.subject-sketch) small:not(.choice-mark) {
+  display: none;
+}
+.story-choices:has(.subject-sketch) button > span {
+  font-size: 0.8rem;
+}
+.swatch {
+  display: flex;
+  width: 100%;
+  gap: 3px;
+  margin: 0 0 0.3rem;
+}
+.swatch i {
+  display: block;
+  flex: 1;
+  height: 14px;
+  border: 1px solid #96717f;
+  border-radius: 3px;
+}
+.drawing-tools {
+  padding-top: 0.6rem;
+  margin-top: 0.7rem;
+  border-top: 1px solid #ead3de;
+}
+.drawing-tools button {
+  font-size: 0.77rem;
+}
+.room-panel[data-panel="drawing"] .panel-footer {
+  max-height: 38%;
+}
+.panel-footer .drawing-tools {
+  border: 0;
+  padding: 0;
+  margin: 0 0 0.4rem;
+  gap: 0.25rem;
+}
+.panel-footer .drawing-tools button {
+  margin: 0.1rem 0;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.75rem;
+}
+@media (max-width: 760px) {
+  .room-panel[data-panel="drawing"] .panel-footer {
+    max-height: none;
+  }
+}
+.drawing-response-log summary {
+  min-height: 44px;
+  display: list-item;
+  padding: 0.6rem 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.drawing-response-log p {
+  font-size: 0.81rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid #efdfe6;
+}
+.draft-paper .art-tint {
+  isolation: isolate;
+}
+.draft-cover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: #fff3f7;
+  border: 1px solid #d7b7c6;
+  box-shadow: 2px 4px 10px #74505d29;
+  transform-origin: right bottom;
+  transition:
+    transform 0.22s var(--ease),
+    clip-path 0.24s var(--ease);
+  z-index: 2;
+}
+.draft-cover span {
+  font:
+    400 1rem/1.7 RoomTitle,
+    serif;
+  color: #754259;
+}
+.draft-paper[data-peek-state="reveal"] .draft-cover,
+.draft-paper[data-peek-state="revealed"] .draft-cover {
+  transform: translate(102%, 8%) rotate(6deg);
+}
+.draft-paper[data-peek-state="corner"] .draft-cover {
+  clip-path: polygon(45% 0, 100% 0, 100% 100%, 0 100%, 0 45%);
+}
+.draft-paper .draft-hint {
+  font-size: 0.74rem;
+  line-height: 1.6;
+  margin: 0.4rem 0;
+  color: var(--ink-soft);
+}
+.drawing-board-stage[data-paper-state="covered"] .board-artwork,
+.drawing-board-stage[data-paper-state="caught"] .board-artwork {
+  visibility: hidden;
+}
+.drawing-board-stage[data-paper-state="corner"] .board-artwork {
+  clip-path: polygon(0 0, 45% 0, 0 45%);
+}
+.quiet-beats {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  border-top: 1px solid #ecd1dc;
+}
+.quiet-beats li {
+  position: relative;
+  padding: 0.5rem 0.5rem 0.5rem 1.2rem;
+  font-size: 0.77rem;
+  color: #775565;
+  border-bottom: 1px solid #ecd1dc;
+}
+.quiet-beats li::before {
+  content: "";
+  position: absolute;
+  left: 0.1rem;
+  top: 0.9rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  border: 1px solid #96717f;
+  border-radius: 50%;
+}
+.quiet-beats li[data-reached="true"] {
+  color: #70324b;
+  background: #f8e8ef;
+}
+.quiet-beats li[data-reached="true"]::before {
+  background: var(--rose);
+  border-color: var(--rose);
+}
+.quiet-beats li[aria-current="step"] {
+  font-weight: 600;
+}
+.shared-art.is-revealed {
+  animation: hand-over-paper 0.65s var(--ease);
+}
+.drawing-memory-text {
+  font-family: RoomTitle, serif;
+  font-size: 1rem !important;
+  line-height: 1.8 !important;
+}
+.drawing-date {
+  display: block;
+  font-family: RoomBody, sans-serif;
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+}
+@keyframes hand-over-paper {
+  from {
+    transform: translate(20px, 8px) rotate(-2deg);
+    clip-path: inset(0 8% 18% 0);
+  }
+  to {
+    transform: none;
+    clip-path: inset(0);
+  }
+}
+html[data-motion="quiet"] .draft-cover,
+html[data-motion="quiet"] .shared-art.is-revealed {
+  animation: none;
+  transition: none;
+}
 .lap-drawing-board {
   position: absolute;
   inset: 0;

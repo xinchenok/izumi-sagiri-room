@@ -596,6 +596,7 @@ const RoomKit = (() => {
       root,
       update(values) {
         config = { ...config, ...values };
+        root.dataset.paperState = config.paperState || "revealed";
         root.hidden = !config.visible;
         if (config.visible) {
           const source = CONTENT.roomExperience.drawingBoard;

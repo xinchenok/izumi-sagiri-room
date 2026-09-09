@@ -2103,7 +2103,7 @@ CONTENT.roomExperience = {
       ],
       objects: [
         ["衣橱", "wardrobe", 14, 27],
-        ["未完成的画", "drawing", 85, 38],
+        ["陪她画画", "drawing", 85, 38],
         ["翻翻画册", "gallery", 94, 76],
       ],
       voice: "welcome",
@@ -2120,7 +2120,7 @@ CONTENT.roomExperience = {
         ["桌面的小秘密", "secrets"],
       ],
       objects: [
-        ["看看草稿", "drawing", 84, 42],
+        ["一起完成画稿", "drawing", 84, 42],
         ["翻翻画册", "gallery", 94, 76],
         ["抽屉里的东西", "secrets", 78, 65],
       ],
@@ -2471,6 +2471,42 @@ CONTENT.roomExperience.characterVoicePools = {
 };
 CONTENT.outfits.home.description =
   "宽松的猫耳外套和柔软长裤，袖口里藏着一点点害羞。";
+CONTENT.roomExperience.drawingStages = [
+  {
+    title: "她终于发现旁边有人",
+    note: "她握着笔没有回头，只用余光确认椅子有没有被拉开。",
+    voice: "draw-invite",
+  },
+  {
+    title: "她新建了一张空白画布",
+    note: "她把三个很小的构图草稿排在数位板边缘，等你认真选一个。",
+    voice: "theme-cat",
+  },
+  {
+    title: "线稿已经慢慢成形",
+    note: "笔尖停在色盘上方。三张调色纸签，被轻轻推到你手边。",
+    voice: "palette-chosen",
+  },
+  {
+    title: "她把画稿转过来一点",
+    note: "不要只说“可爱”。她装作在检查线条，其实在等一句具体的感想。",
+    voice: "feedback-ask",
+  },
+];
+CONTENT.roomExperience.drawingPaletteSwatches = {
+  strawberry: ["#efb3c4", "#f9dfb6", "#bb7991"],
+  mint: ["#acd9ca", "#d8e8f0", "#62988b"],
+  moon: ["#c0d1ef", "#eef0f8", "#8799bd"],
+};
+CONTENT.roomExperience.drawingCopy = {
+  covered: "她把草稿压在另一张纸下面。想看，可以轻轻问她。",
+  caught: "她赶紧把稿纸盖住了。",
+  corner: "……只给你看这一小角。",
+  reveal: "她停下笔，先把这张画推到你面前。",
+  pause: "先把画稿留在这里",
+  voice: "听她说说画稿",
+  log: "回看刚才的选择与回应",
+};
 CONTENT.roomExperience.artworks = {
   door: {
     mint: {
