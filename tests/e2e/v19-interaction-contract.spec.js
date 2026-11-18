@@ -1,6 +1,20 @@
 import { expect, test } from "@playwright/test";
 
-const STORAGE_KEY = "sagiri-room-state-v2";
+const STORAGE_KEY = "sagiri-room-state-v2-v19-rollback";
+
+test("临时回滚读取已有存档，后续操作只写回滚副本", async ({ page }) => {
+  const originalKey = "sagiri-room-state-v2";
+  const original = JSON.stringify({ outfit: "outing", motionMode: "lively", episodeProgress: { wardrobe: { step: 1 } } });
+  await page.addInitScript(({ key, value }) => {
+    if (!localStorage.getItem(key)) localStorage.setItem(key, value);
+  }, { key: originalKey, value: original });
+  await page.goto("/");
+  await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key))?.outfit, STORAGE_KEY)).toBe("outing");
+  await page.evaluate(key => localStorage.setItem(key, JSON.stringify({ outfit: "bedtime" })), STORAGE_KEY);
+  await page.reload();
+  await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key))?.outfit, STORAGE_KEY)).toBe("bedtime");
+  expect(await page.evaluate(key => localStorage.getItem(key), originalKey)).toBe(original);
+});
 const VOICE_ROOT = "assets/audio/v19/voice/";
 const FOLEY_ROOT = "assets/audio/v19/foley/";
 
