@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const STORAGE_KEY = "sagiri-room-state-v2";
+const STORAGE_KEY = "sagiri-room-state-v2-v19-rollback";
 
 const sceneFrames = {
   door: [
